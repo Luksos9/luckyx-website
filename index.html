@@ -1,0 +1,1686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lucky X | ServiceNow Certification Practice Tests 2026</title>
+<meta name="description" content="You finished the official learning path but you're not sure you'd pass. 7,000+ students used Lucky X practice tests to close that gap. 18 exams, 4,700+ questions, every answer sourced to official docs. $9.99 with lifetime access.">
+<meta name="keywords" content="ServiceNow certification, CIS practice test, CSA exam prep, CAD practice questions, CMDB CSDM, ServiceNow 2026, Lucky X">
+<meta name="author" content="Lukasz Szumilas">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://luckyx.dev/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lucky X | ServiceNow Certification Practice Tests">
+<meta property="og:description" content="7,000+ students passed their ServiceNow cert with these practice tests. $9.99 vs $99 from MeasureUp. Every answer sourced to official docs.">
+<meta property="og:url" content="https://luckyx.dev/">
+<meta property="og:site_name" content="Lucky X">
+<meta property="og:image" content="https://luckyx.dev/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lucky X | ServiceNow Certification Practice Tests">
+<meta name="twitter:description" content="7,000+ students passed their ServiceNow cert with these practice tests. $9.99 vs $99 from MeasureUp. Every answer sourced to official docs.">
+<meta name="twitter:image" content="https://luckyx.dev/og-image.png">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Lucky X",
+  "description": "ServiceNow certification practice tests with sourced explanations linked to official documentation",
+  "url": "https://luckyx.dev/",
+  "founder": {
+    "@type": "Person",
+    "name": "Lukasz Szumilas",
+    "jobTitle": "ServiceNow Developer & Educator"
+  },
+  "offers": {
+    "@type": "AggregateOffer",
+    "lowPrice": "9.99",
+    "highPrice": "9.99",
+    "priceCurrency": "USD",
+    "offerCount": "18"
+  }
+}
+</script>
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#f5f2ed">
+<script>
+  (function() {
+    var t = localStorage.getItem('luckyx-theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+    else if (window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.setAttribute('data-theme', 'dark');
+    else document.documentElement.setAttribute('data-theme', 'light');
+  })();
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BLYHHC76GG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BLYHHC76GG');
+</script>
+
+<style>
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+
+:root {
+  --orange: #dd5c0c;
+  --orange-bright: #ff8c42;
+  --orange-deep: #8a3a08;
+  --orange-darker: #5c2506;
+  --orange-dim: rgba(221,92,12,0.12);
+  --orange-glow: rgba(221,92,12,0.07);
+  --bg: #060606;
+  --bg-raised: #0d0d0d;
+  --bg-card: #101010;
+  --border: rgba(255,255,255,0.05);
+  --border-hover: rgba(221,92,12,0.35);
+  --text: #eaeaea;
+  --text-dim: #777;
+  --text-faint: #3e3e3e;
+  --teal: #1a3a38;
+  --teal-deep: #0d2624;
+  --star: #dd5c0c;
+  --glass: rgba(14,14,16,0.75);
+  --font: 'Outfit', sans-serif;
+  --ease-bounce: cubic-bezier(0.34, 1.2, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --grain-opacity: 0.028;
+  --card-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  --hero-glow: rgba(221,92,12,0.06);
+  --proof-bg: var(--bg-raised);
+  --num-bg: var(--bg-raised);
+  --invert: 0;
+}
+
+[data-theme="light"] {
+  --bg: #f5f2ed;
+  --bg-raised: #ffffff;
+  --bg-card: #ffffff;
+  --border: rgba(0,0,0,0.07);
+  --border-hover: rgba(221,92,12,0.4);
+  --text: #1a1a1a;
+  --text-dim: #6b6560;
+  --text-faint: #b5afa8;
+  --teal: #e8f0ef;
+  --teal-deep: #d5e2e0;
+  --glass: rgba(245,242,237,0.8);
+  --grain-opacity: 0.015;
+  --card-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  --hero-glow: rgba(221,92,12,0.04);
+  --proof-bg: #ece8e2;
+  --num-bg: #ece8e2;
+  --invert: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  line-height: 1.6;
+  transition: background-color 0.5s ease, color 0.4s ease;
+}
+
+/* Film grain */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: var(--grain-opacity);
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ============ FLOATING LIQUID ORANGE NAV ============ */
+.nav-outer {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.nav-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  border-radius: 22px;
+  background: var(--glass);
+  backdrop-filter: blur(40px) saturate(1.3);
+  -webkit-backdrop-filter: blur(40px) saturate(1.3);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.6), 0 0 80px var(--orange-glow);
+}
+
+.nav-indicator {
+  position: absolute;
+  top: 6px; left: 6px;
+  width: 52px; height: 42px;
+  pointer-events: none;
+  z-index: 2;
+  transition: transform 0.5s var(--ease-bounce);
+}
+
+.nav-indicator .glow {
+  position: absolute;
+  inset: -6px;
+  border-radius: 24px;
+  background: var(--orange);
+  opacity: 0.14;
+  filter: blur(14px);
+}
+
+.nav-indicator .clip {
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.nav-indicator .spin {
+  position: absolute;
+  width: 200%; height: 200%;
+  top: -50%; left: -50%;
+  animation: orange-spin 4.5s linear infinite;
+  background: conic-gradient(
+    from 0deg,
+    #5c2506 0deg, #8a3a08 18deg, #dd5c0c 38deg, #ff8c42 52deg,
+    #dd5c0c 62deg, #f0a070 64deg, #ffffff 66deg, #ffffff 71deg,
+    #f0a070 73deg, #ffb8a0 74deg, #e8a0b8 76deg, #dd5c0c 80deg,
+    #a04a0a 105deg, #5c2506 135deg, #8a3a08 158deg, #dd5c0c 178deg,
+    #5c2506 180deg, #8a3a08 198deg, #dd5c0c 218deg, #ff8c42 232deg,
+    #dd5c0c 242deg, #f0a070 244deg, #ffffff 246deg, #ffffff 251deg,
+    #f0a070 253deg, #ffb8a0 254deg, #e8a0b8 256deg, #dd5c0c 260deg,
+    #a04a0a 285deg, #5c2506 315deg, #8a3a08 338deg, #dd5c0c 358deg,
+    #5c2506 360deg
+  );
+}
+
+@keyframes orange-spin { to { transform: rotate(360deg); } }
+
+.nav-indicator .inner {
+  position: absolute;
+  inset: 2px;
+  border-radius: 16px;
+  background: var(--glass);
+  backdrop-filter: blur(40px);
+}
+
+.nav-btn {
+  position: relative;
+  width: 52px; height: 42px;
+  display: flex; align-items: center; justify-content: center;
+  background: none; border: none; cursor: pointer; z-index: 3;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav-btn svg {
+  width: 20px; height: 20px;
+  stroke: var(--text-dim); stroke-width: 1.5; fill: none;
+  transition: stroke 0.25s ease;
+}
+
+.nav-btn.active svg { stroke: #fff; }
+
+.nav-divider {
+  width: 1px; height: 18px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+/* ============ HERO ============ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 24px 60px;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -10%; left: 50%;
+  width: 700px; height: 700px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, var(--hero-glow) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 100px;
+  background: var(--orange-dim);
+  border: 1px solid rgba(221,92,12,0.2);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--orange);
+  letter-spacing: 0.3px;
+  margin-bottom: 36px;
+  animation: fadeUp 0.7s ease both;
+}
+
+.hero-pill .pulse {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--orange);
+  animation: pulse-dot 2s ease infinite;
+}
+
+@keyframes pulse-dot { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+@keyframes fadeUp { from{opacity:0;transform:translateY(16px);} to{opacity:1;transform:translateY(0);} }
+
+.hero h1 {
+  font-size: clamp(52px, 9vw, 110px);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -3px;
+  margin-bottom: 20px;
+  animation: fadeUp 0.7s ease 0.08s both;
+}
+
+.hero h1 .x {
+  position: relative;
+  color: var(--orange);
+}
+
+.hero h1 .x::after {
+  content: 'X';
+  position: absolute;
+  top: 0; left: 0;
+  background: linear-gradient(90deg, var(--orange), var(--orange-bright), #fff, var(--orange-bright), var(--orange));
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: liq-shimmer 4s ease infinite;
+}
+
+@keyframes liq-shimmer { 0%{background-position:100% 0;} 100%{background-position:-100% 0;} }
+
+.hero-sub {
+  font-size: clamp(16px, 2.2vw, 22px);
+  font-weight: 400;
+  color: var(--text-dim);
+  max-width: 520px;
+  line-height: 1.5;
+  margin-bottom: 36px;
+  animation: fadeUp 0.7s ease 0.16s both;
+}
+
+.hero-sub strong { color: var(--text); font-weight: 600; }
+
+/* Stats */
+.stats-row {
+  display: flex;
+  gap: 1px;
+  background: var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  animation: fadeUp 0.7s ease 0.24s both;
+  margin-bottom: 0;
+}
+
+.stat-item {
+  background: var(--bg-raised);
+  padding: 26px 36px;
+  text-align: center;
+  flex: 1;
+  min-width: 130px;
+}
+
+.stat-num {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stat-num .acc { color: var(--orange); }
+
+.stat-lbl {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: var(--text-dim);
+  font-weight: 500;
+}
+
+/* ============ EMAIL CAPTURE / LEAD MAGNET ============ */
+.lead-section {
+  position: relative;
+  padding: 52px 24px;
+  overflow: hidden;
+}
+
+.lead-section::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 600px; height: 400px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse, rgba(221,92,12,0.05) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.lead-box {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 40px;
+  border-radius: 16px;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.lead-box::before {
+  content: '';
+  position: absolute;
+  top: -1px; left: 10%; right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--orange), var(--orange-bright), var(--orange), transparent);
+  animation: cta-line-pulse 3s ease infinite;
+}
+
+@keyframes cta-line-pulse { 0%,100%{opacity:0.6;} 50%{opacity:1;} }
+
+.lead-tag {
+  display: inline-block;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.lead-box h2 {
+  font-size: clamp(22px, 3.2vw, 30px);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.lead-box .lead-desc {
+  font-size: 14px;
+  color: var(--text-dim);
+  max-width: 480px;
+  margin: 0 auto 28px;
+  line-height: 1.6;
+}
+
+.lead-form {
+  display: flex;
+  gap: 10px;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.lead-form input[type="email"] {
+  flex: 1;
+  padding: 13px 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.lead-form input[type="email"]::placeholder {
+  color: var(--text-faint);
+}
+
+.lead-form input[type="email"]:focus {
+  border-color: rgba(221,92,12,0.4);
+}
+
+.lead-form button {
+  padding: 13px 24px;
+  background: var(--orange);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.2s var(--ease-bounce), box-shadow 0.2s ease;
+}
+
+.lead-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(221,92,12,0.25);
+}
+
+.lead-note {
+  font-size: 11px;
+  color: var(--text-faint);
+  margin-top: 14px;
+}
+
+/* ============ SECTIONS ============ */
+.section {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.sec-head { padding: 52px 0 28px; }
+
+.sec-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.sec-title {
+  font-size: clamp(26px, 3.8vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  line-height: 1.15;
+  max-width: 580px;
+}
+
+/* ============ CERT PATH FILTER ============ */
+.filter-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.filter-btn {
+  padding: 7px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-dim);
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  border-color: rgba(221,92,12,0.3);
+  color: var(--text);
+}
+
+.filter-btn.active {
+  background: var(--orange-dim);
+  border-color: rgba(221,92,12,0.4);
+  color: var(--orange);
+}
+
+/* ============ COURSE GRID ============ */
+.course-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding-bottom: 40px;
+  justify-content: center;
+}
+
+.course-card {
+  flex: 0 1 calc(25% - 11px);
+  min-width: 280px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.25s var(--ease-smooth), border-color 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  color: inherit;
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
+  box-shadow: 0 16px 48px rgba(221,92,12,0.06);
+}
+
+.card-top {
+  height: 130px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-top-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-deep) 55%, #080e0d 100%);
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.45s var(--ease-smooth);
+}
+
+.course-card:hover .card-top-bg {
+  transform: scale(1.06);
+}
+
+.card-top-bg.has-img {
+  background-blend-mode: normal;
+}
+
+.card-top-bg.has-img::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(26,58,56,0.52) 0%, rgba(13,38,36,0.58) 55%, rgba(8,14,13,0.68) 100%);
+  z-index: 1;
+}
+
+.card-top-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 25% 65%, rgba(221,92,12,0.08) 0%, transparent 55%);
+  z-index: 2;
+}
+
+.card-ring {
+  position: relative;
+  width: 48px; height: 48px;
+  z-index: 2;
+}
+
+.card-ring .r-clip {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.card-ring .r-spin {
+  position: absolute;
+  width: 200%; height: 200%;
+  top: -50%; left: -50%;
+  animation: orange-spin 7s linear infinite;
+  background: conic-gradient(
+    from 0deg,
+    #5c2506, #dd5c0c 30%, #ff8c42 38%, #ffffff 40%, #dd5c0c 44%,
+    #5c2506 50%,
+    #5c2506, #dd5c0c 80%, #ff8c42 88%, #ffffff 90%, #dd5c0c 94%,
+    #5c2506 100%
+  );
+}
+
+.card-ring .r-inner {
+  position: absolute;
+  inset: 2px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-deep) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-ring .r-code {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  line-height: 1.1;
+}
+
+.card-badge {
+  position: absolute;
+  top: 10px; left: 10px;
+  padding: 3px 9px;
+  border-radius: 5px;
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  z-index: 3;
+}
+
+.b-best { background: var(--orange); color: #fff; }
+.b-high { background: #9a5a1e; color: #fff; }
+.b-hot { background: #c43030; color: #fff; }
+.b-new { background: #1f7a50; color: #fff; }
+
+/* Next cert suggestion on card */
+.card-next {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  margin: 0 -18px -18px;
+  background: rgba(221,92,12,0.04);
+  border-top: 1px solid rgba(221,92,12,0.08);
+  font-size: 11px;
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.card-next:hover {
+  background: rgba(221,92,12,0.1);
+}
+
+.card-next .arrow-icon {
+  color: var(--orange);
+  font-size: 10px;
+  flex-shrink: 0;
+}
+
+.card-next strong {
+  color: var(--orange);
+  font-weight: 600;
+}
+
+.card-body { padding: 16px 18px 18px; }
+
+.card-title {
+  font-size: 14.5px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 5px;
+  letter-spacing: -0.2px;
+}
+
+.card-desc {
+  font-size: 12px;
+  color: var(--text-dim);
+  line-height: 1.45;
+  margin-bottom: 12px;
+}
+
+.card-pub {
+  font-size: 10px;
+  color: var(--text-faint);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.card-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.r-num { font-weight: 700; color: var(--orange); }
+.r-stars { color: var(--orange); font-size: 11px; letter-spacing: 1px; }
+.r-count { color: var(--text-faint); font-size: 11px; }
+
+.card-tags {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.t {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 5px;
+  padding: 2px 8px;
+  font-size: 10px;
+  color: var(--text-dim);
+  font-weight: 500;
+}
+
+.card-price {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.p-now { font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
+.p-was { font-size: 12px; color: var(--text-faint); text-decoration: line-through; }
+.p-off { background: var(--orange); color: #fff; font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 4px; }
+
+/* ============ SOCIAL PROOF TICKER ============ */
+.proof-strip {
+  padding: 24px 24px;
+  overflow: hidden;
+  position: relative;
+}
+
+.proof-track {
+  display: flex;
+  gap: 24px;
+  animation: scroll-proof 40s linear infinite;
+  width: max-content;
+}
+
+.proof-track:hover { animation-play-state: paused; }
+
+@keyframes scroll-proof {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.proof-item {
+  flex-shrink: 0;
+  padding: 16px 24px;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 13px;
+  color: var(--text-dim);
+  max-width: 340px;
+  line-height: 1.5;
+}
+
+.proof-item .proof-stars {
+  color: var(--orange);
+  font-size: 11px;
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+}
+
+/* ============ WHY SECTION ============ */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 60px;
+}
+
+.why-card {
+  background: var(--bg-raised);
+  padding: 36px 28px;
+}
+
+.why-num {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--orange);
+  opacity: 0.25;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.why-title { font-size: 16px; font-weight: 600; margin-bottom: 8px; letter-spacing: -0.2px; }
+.why-desc { font-size: 13px; color: var(--text-dim); line-height: 1.55; }
+
+/* ============ NUMBERS STRIP ============ */
+.num-strip {
+  padding: 36px 24px;
+  text-align: center;
+  position: relative;
+}
+
+.num-strip::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  width: 500px; height: 300px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(221,92,12,0.04) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.num-headline {
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+}
+
+.num-headline .acc { color: var(--orange); }
+
+.num-sub {
+  font-size: 14px;
+  color: var(--text-dim);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.55;
+}
+
+/* ============ CTA ============ */
+.cta-section {
+  padding: 40px 24px 60px;
+  text-align: center;
+}
+
+.cta-box {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 52px 36px;
+  border-radius: 16px;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-box::before {
+  content: '';
+  position: absolute;
+  top: -1px; left: 15%; right: 15%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--orange), var(--orange-bright), var(--orange), transparent);
+  animation: cta-line-pulse 3s ease infinite;
+}
+
+.cta-box h2 {
+  font-size: clamp(22px, 3.2vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  margin-bottom: 10px;
+}
+
+.cta-box p {
+  font-size: 14px;
+  color: var(--text-dim);
+  margin-bottom: 28px;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  background: var(--orange);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font);
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s var(--ease-bounce), box-shadow 0.2s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(221,92,12,0.25);
+}
+
+.cta-btn svg {
+  width: 16px; height: 16px;
+  stroke: currentColor; stroke-width: 2; fill: none;
+}
+
+/* ============ FOOTER ============ */
+.site-footer {
+  padding: 36px 24px 100px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+.site-footer a { color: var(--orange); text-decoration: none; }
+.ft-brand { font-weight: 700; font-size: 14px; color: var(--text-dim); margin-bottom: 6px; letter-spacing: 1.5px; }
+
+/* ============ THEME TOGGLE ============ */
+.theme-toggle-wrap {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+}
+
+.theme-toggle {
+  position: relative;
+  width: 72px;
+  height: 36px;
+  border-radius: 36px;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background 0.6s ease, box-shadow 0.6s ease;
+  background: linear-gradient(135deg, #0f1b2d 0%, #1a2744 50%, #0d1a30 100%);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+  -webkit-tap-highlight-color: transparent;
+}
+
+[data-theme="light"] .theme-toggle {
+  background: linear-gradient(135deg, #87CEEB 0%, #5ba8d4 40%, #4a98c9 100%);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.3);
+}
+
+/* Stars (visible in dark mode) */
+.toggle-stars {
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+
+[data-theme="light"] .toggle-stars { opacity: 0; }
+
+.toggle-star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #fff;
+  border-radius: 50%;
+  animation: twinkle 3s ease infinite alternate;
+}
+
+.toggle-star:nth-child(1) { top: 8px; left: 12px; animation-delay: 0s; }
+.toggle-star:nth-child(2) { top: 18px; left: 22px; animation-delay: 0.7s; width: 1.5px; height: 1.5px; }
+.toggle-star:nth-child(3) { top: 10px; left: 34px; animation-delay: 1.4s; }
+.toggle-star:nth-child(4) { top: 24px; left: 16px; animation-delay: 0.3s; width: 1px; height: 1px; }
+.toggle-star:nth-child(5) { top: 6px; left: 46px; animation-delay: 1s; width: 1.5px; height: 1.5px; }
+
+@keyframes twinkle { 0% { opacity: 0.3; } 100% { opacity: 1; } }
+
+/* Clouds (visible in light mode) */
+.toggle-clouds {
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.5s ease 0.15s;
+  opacity: 0;
+}
+
+[data-theme="light"] .toggle-clouds { opacity: 1; }
+
+.toggle-cloud {
+  position: absolute;
+  background: rgba(255,255,255,0.6);
+  border-radius: 20px;
+}
+
+.toggle-cloud:nth-child(1) {
+  width: 18px; height: 8px;
+  top: 22px; left: 36px;
+  background: rgba(255,255,255,0.5);
+}
+
+.toggle-cloud:nth-child(2) {
+  width: 14px; height: 6px;
+  top: 10px; left: 42px;
+  background: rgba(255,255,255,0.4);
+}
+
+.toggle-cloud:nth-child(3) {
+  width: 10px; height: 5px;
+  top: 16px; left: 52px;
+  background: rgba(255,255,255,0.35);
+}
+
+/* The orb (sun/moon) */
+.toggle-orb {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  transition: transform 0.5s var(--ease-bounce), background 0.5s ease, box-shadow 0.5s ease;
+  background: linear-gradient(135deg, #e8e4df 0%, #c8c0b8 100%);
+  box-shadow: 0 0 8px rgba(200,192,184,0.3), inset -3px -2px 0 rgba(180,172,164,0.5);
+  z-index: 3;
+}
+
+[data-theme="light"] .toggle-orb {
+  transform: translateX(36px);
+  background: linear-gradient(135deg, #ffd43b 0%, #ff9500 100%);
+  box-shadow: 0 0 14px rgba(255,180,0,0.5), 0 0 40px rgba(255,150,0,0.15);
+}
+
+/* Moon craters (visible in dark) */
+.orb-crater {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(160,150,140,0.35);
+  transition: opacity 0.4s ease;
+}
+
+.orb-crater:nth-child(1) { width: 6px; height: 6px; top: 8px; left: 6px; }
+.orb-crater:nth-child(2) { width: 4px; height: 4px; top: 16px; left: 14px; }
+.orb-crater:nth-child(3) { width: 3px; height: 3px; top: 6px; left: 16px; }
+
+[data-theme="light"] .orb-crater { opacity: 0; }
+
+/* Sun rays (visible in light) */
+.orb-rays {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,212,59,0);
+  transition: border-color 0.5s ease 0.2s;
+}
+
+[data-theme="light"] .orb-rays {
+  border-color: rgba(255,212,59,0.25);
+}
+
+/* ============ LIGHT MODE OVERRIDES ============ */
+[data-theme="light"] .hero h1 { color: #1a1a1a; }
+[data-theme="light"] .hero h1 .x::after {
+  background: linear-gradient(90deg, var(--orange), var(--orange-bright), #fff, var(--orange-bright), var(--orange));
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+[data-theme="light"] .stat-num { color: #1a1a1a; }
+[data-theme="light"] .stat-item { background: var(--bg-raised); }
+
+[data-theme="light"] .course-card {
+  box-shadow: var(--card-shadow);
+}
+
+[data-theme="light"] .card-top-bg:not(.has-img) {
+  background: linear-gradient(135deg, #1a3a38 0%, #0d2624 55%, #0a1e1c 100%);
+}
+
+[data-theme="light"] .nav-bar {
+  background: rgba(255,255,255,0.82);
+  border-color: rgba(0,0,0,0.06);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.12), 0 0 80px var(--orange-glow);
+}
+
+[data-theme="light"] .nav-indicator .inner {
+  background: rgba(255,255,255,0.85);
+}
+
+[data-theme="light"] .nav-btn svg { stroke: #999; }
+[data-theme="light"] .nav-btn.active svg { stroke: #1a1a1a; }
+
+[data-theme="light"] .lead-box {
+  box-shadow: var(--card-shadow);
+}
+
+[data-theme="light"] .lead-form input[type="email"] {
+  border-color: rgba(0,0,0,0.1);
+  background: rgba(0,0,0,0.03);
+  color: #1a1a1a;
+}
+
+[data-theme="light"] .lead-form input[type="email"]::placeholder {
+  color: #bbb;
+}
+
+[data-theme="light"] .why-card {
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.04);
+}
+
+[data-theme="light"] .cta-box {
+  box-shadow: var(--card-shadow);
+  background: #fff;
+  border-color: rgba(221,92,12,0.12);
+}
+
+[data-theme="light"] .cta-box p {
+  color: #6b6560;
+}
+
+[data-theme="light"] .card-ring .r-inner {
+  background: linear-gradient(135deg, #1a3a38 0%, #0d2624 100%);
+}
+
+[data-theme="light"] .p-now { color: #1a1a1a; }
+
+[data-theme="light"] .t {
+  background: rgba(0,0,0,0.04);
+  border-color: rgba(0,0,0,0.08);
+  color: #6b6560;
+}
+
+[data-theme="light"] .proof-item {
+  border-color: rgba(0,0,0,0.06);
+  color: #6b6560;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+[data-theme="light"] .card-next {
+  background: rgba(221,92,12,0.05);
+  border-top-color: rgba(221,92,12,0.1);
+}
+
+[data-theme="light"] .num-sub { color: #6b6560; }
+[data-theme="light"] .card-desc { color: #6b6560; }
+[data-theme="light"] .card-pub { color: #b5afa8; }
+[data-theme="light"] .r-count { color: #b5afa8; }
+[data-theme="light"] .p-was { color: #b5afa8; }
+
+[data-theme="light"] .filter-btn {
+  border-color: rgba(0,0,0,0.1);
+  color: #6b6560;
+}
+
+[data-theme="light"] .filter-btn:hover {
+  border-color: rgba(221,92,12,0.35);
+  color: #1a1a1a;
+}
+
+[data-theme="light"] .filter-btn.active {
+  background: rgba(221,92,12,0.08);
+  border-color: rgba(221,92,12,0.3);
+}
+
+[data-theme="light"] .cta-box h2,
+[data-theme="light"] .lead-box h2 { color: #1a1a1a; }
+
+[data-theme="light"] .site-footer {
+  border-top-color: rgba(0,0,0,0.06);
+}
+
+/* ============ SCROLL REVEAL ============ */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger > .reveal {
+  transition-delay: calc(var(--i, 0) * 0.08s);
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+  .stats-row { flex-direction: column; }
+  .stat-item { padding: 18px 20px; }
+  .course-card { flex: 0 1 100%; min-width: 0; }
+  .why-grid { grid-template-columns: 1fr; }
+  .cta-box { padding: 36px 20px; }
+  .nav-outer { bottom: 16px; }
+  .lead-box { padding: 36px 20px; }
+  .lead-form { flex-direction: column; }
+  .lead-form button { width: 100%; }
+  .filter-row { gap: 6px; }
+  .theme-toggle-wrap { top: 14px; right: 14px; }
+  .theme-toggle { width: 62px; height: 32px; }
+  .toggle-orb { width: 24px; height: 24px; }
+  [data-theme="light"] .toggle-orb { transform: translateX(30px); }
+}
+
+@media (max-width: 480px) {
+  .hero { padding: 60px 16px 40px; }
+  .section { padding: 0 16px; }
+  .lead-section { padding: 40px 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Theme toggle -->
+<div class="theme-toggle-wrap">
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+    <div class="toggle-stars">
+      <span class="toggle-star"></span>
+      <span class="toggle-star"></span>
+      <span class="toggle-star"></span>
+      <span class="toggle-star"></span>
+      <span class="toggle-star"></span>
+    </div>
+    <div class="toggle-clouds">
+      <span class="toggle-cloud"></span>
+      <span class="toggle-cloud"></span>
+      <span class="toggle-cloud"></span>
+    </div>
+    <div class="toggle-orb">
+      <span class="orb-crater"></span>
+      <span class="orb-crater"></span>
+      <span class="orb-crater"></span>
+      <div class="orb-rays"></div>
+    </div>
+  </button>
+</div>
+
+<!-- Floating liquid orange nav -->
+<nav class="nav-outer">
+  <div class="nav-bar">
+    <div class="nav-indicator" id="navInd">
+      <div class="glow"></div>
+      <div class="clip"><div class="spin"></div></div>
+      <div class="inner"></div>
+    </div>
+    <button class="nav-btn active" data-s="hero" aria-label="Home">
+      <svg viewBox="0 0 24 24"><path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
+    </button>
+    <div class="nav-divider"></div>
+    <button class="nav-btn" data-s="courses" aria-label="Courses">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+    </button>
+    <div class="nav-divider"></div>
+    <button class="nav-btn" data-s="why" aria-label="About">
+      <svg viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 16v-4M12 8h.01"/></svg>
+    </button>
+    <div class="nav-divider"></div>
+    <button class="nav-btn" data-s="cta" aria-label="Get started">
+      <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+  <div class="hero-pill"><span class="pulse"></span>18 practice exams &bull; 4,700+ questions</div>
+  <h1>Lucky <span class="x">X</span></h1>
+  <p class="hero-sub">You finished the official learning path. You're still not sure you'd pass. <strong>7,000+ students</strong> used these practice tests to close that gap. Most of them passed on the first try.</p>
+
+  <div class="stats-row">
+    <div class="stat-item">
+      <div class="stat-num">7,000<span class="acc">+</span></div>
+      <div class="stat-lbl">Students</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">18</div>
+      <div class="stat-lbl">First-Try Passes</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">4,700<span class="acc">+</span></div>
+      <div class="stat-lbl">Questions</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">4.6</div>
+      <div class="stat-lbl">Avg Rating</div>
+    </div>
+  </div>
+</section>
+
+<!-- MeasureUp price comparison -->
+<div class="num-strip reveal">
+  <p class="num-headline"><span class="acc">$9.99</span> per course &bull; lifetime access &bull; no expiration</p>
+  <p class="num-sub">ServiceNow's official partner charges $99 for 150 questions with 30-day access. Lucky X: 400+ questions, sourced explanations, lifetime access, $9.99. Same exam.</p>
+</div>
+
+<!-- Courses -->
+<section class="section" id="courses">
+  <div class="sec-head reveal">
+    <div class="sec-label">Practice Tests</div>
+    <h2 class="sec-title">Pick the exam you're preparing for.</h2>
+  </div>
+
+  <div class="filter-row reveal" id="filters"></div>
+  <div class="course-grid" id="grid"></div>
+</section>
+
+<!-- Social proof ticker -->
+<div class="proof-strip">
+  <div class="proof-track" id="proofTrack"></div>
+</div>
+
+<!-- Why -->
+<section class="section" id="why">
+  <div class="sec-head reveal">
+    <div class="sec-label">Why Lucky X</div>
+    <h2 class="sec-title">You shouldn't have to trust exam prep materials on faith.</h2>
+  </div>
+  <div class="why-grid reveal-stagger">
+    <div class="why-card reveal" style="--i:0">
+      <div class="why-num">01</div>
+      <div class="why-title">Click any source link. Verify it yourself.</div>
+      <div class="why-desc">Each answer includes a direct link to the official ServiceNow documentation page. If a source can't be confirmed, the question doesn't get published. It gets flagged until it can. You don't have to take anyone's word for it.</div>
+    </div>
+    <div class="why-card reveal" style="--i:1">
+      <div class="why-num">02</div>
+      <div class="why-title">18 exams. 18 first-try passes. One rule.</div>
+      <div class="why-desc">A course only exists for a certification the author has personally passed on the first attempt. That rule has never changed. That's how you know the questions match what actually shows up on exam day.</div>
+    </div>
+    <div class="why-card reveal" style="--i:2">
+      <div class="why-num">03</div>
+      <div class="why-title">Every wrong answer explained too</div>
+      <div class="why-desc">You don't just learn that option C is correct. You learn why option A fails, why B only works in a different context, and why D sounds right but breaks under a specific condition. That's how you stop guessing.</div>
+    </div>
+    <div class="why-card reveal" style="--i:3">
+      <div class="why-num">04</div>
+      <div class="why-title">Updated when ServiceNow updates</div>
+      <div class="why-desc">Exam specs change with each platform release. These courses track the Zurich release and February 2026 blueprints. Questions that no longer apply get cut. New topics get added within weeks.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Email capture / lead magnet -->
+<section class="lead-section" id="roadmap">
+  <div class="lead-box reveal">
+    <div class="lead-tag">Free download</div>
+    <h2>2026 ServiceNow Certification Roadmap</h2>
+    <p class="lead-desc">Which cert to take first. Which ones build on each other. Study time estimates per track. Salary data. One PDF, zero fluff.</p>
+    <form class="lead-form" id="leadForm" action="#" method="POST">
+      <input type="email" name="email" placeholder="your@email.com" required autocomplete="email">
+      <button type="submit">Get the roadmap</button>
+    </form>
+    <p class="lead-note">No spam. One email when a new cert course launches. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="cta">
+  <div class="cta-box reveal">
+    <h2>Your exam costs $350 if you don't pass</h2>
+    <p>Every course is $9.99 with lifetime access. Udemy gives you 30 days to decide. Check the explanations. Click the source links. If you're not convinced, get a full refund.</p>
+    <a href="https://www.udemy.com/user/lucky-x/" target="_blank" rel="noopener" class="cta-btn" data-track="cta-browse-all">
+      Find your exam on Udemy
+      <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="ft-brand">LUCKY X</div>
+  <p>ServiceNow Certification Practice Tests &bull; Every answer sourced to official docs &bull; <a href="https://www.udemy.com/user/lucky-x/" target="_blank" rel="noopener">Udemy</a> &bull; <a href="https://www.linkedin.com/in/lukaszszumilas/" target="_blank" rel="noopener">LinkedIn</a></p>
+</footer>
+
+<script>
+/* ======== COURSE DATA WITH REFERRAL LINKS + CROSS-SELL ======== */
+const courses = [
+  { title:"CIS-Discovery / RISCO", code:"DISCO", desc:"Real exam-style questions with full Discovery and RISCO coverage across all domains", rating:4.9, ratings:261, q:113, badge:"best", price:9.99, orig:89.99, track:"infra", ref:"https://www.udemy.com/course/pass-your-servicenow-cis-discovery-exam-vancouver-2023/?referralCode=752D974C366D4DEBE963", next:"SM" },
+  { title:"Certified Application Developer", code:"CAD", desc:"329 questions covering every CAD exam domain with detailed explanations", rating:4.5, ratings:208, q:329, badge:null, price:9.99, orig:84.99, track:"dev", ref:"https://www.udemy.com/course/pass-your-servicenow-cad-exam/?referralCode=CF61F2B36C7F02F40EFB", next:"ITSM" },
+  { title:"CIS Hardware Asset Mgmt", code:"HAM", desc:"Full HAM coverage with per-option reasoning for every question", rating:5.0, ratings:1, q:249, badge:"new", price:9.99, orig:86.99, track:"asset", ref:"https://www.udemy.com/course/pass-servicenow-cis-hardware-asset-management-ham/?referralCode=58ECB1F51A94EC5A7F09", next:"SAM" },
+  { title:"CIS Risk & Compliance GRC/IRM", code:"GRC", desc:"500 questions on Entities, Risk, Compliance, and all IRM exam areas", rating:4.0, ratings:null, q:500, badge:null, price:9.99, orig:66.99, track:"risk", ref:"https://www.udemy.com/course/pass-servicenow-cis-risk-and-compliance-grc-irm-rc/?referralCode=BAC69ADCBF13729F4018", next:"TPRM" },
+  { title:"CIS Event Management", code:"EM", desc:"Full CIS-EM exam scope including Event Roles and Alert rules", rating:3.8, ratings:1, q:200, badge:"hot", price:9.99, orig:84.99, track:"infra", ref:"https://www.udemy.com/course/pass-servicenow-cis-event-management-cis-em/?referralCode=CA03695C46AF6880DDE1", next:"DISCO" },
+  { title:"CIS Field Service Mgmt", code:"FSM", desc:"334 FSM questions formatted to match actual exam structure", rating:4.5, ratings:31, q:334, badge:null, price:9.99, orig:66.99, track:"service", ref:"https://www.udemy.com/course/pass-servicenow-cis-field-service-mangement-fsm/?referralCode=411E2ADCD2ACF3DE5FC7", next:"CSM" },
+  { title:"CIS Security Incident Response", code:"SIR", desc:"All SIR exam topics with clear reasoning per answer choice", rating:5.0, ratings:17, q:251, badge:null, price:9.99, orig:66.99, track:"security", ref:"https://www.udemy.com/course/pass-servicenow-cis-security-incident-response-sir/?referralCode=FF6F1DFCBBA2F3C7188D", next:"VR" },
+  { title:"CIS Strategic Portfolio Mgmt", code:"SPM", desc:"Full SPM coverage with exam-realistic question structure", rating:5.0, ratings:13, q:200, badge:"high", price:9.99, orig:66.99, track:"service", ref:"https://www.udemy.com/course/pass-your-servicenow-cis-strategic-portfolio-management-spm/?referralCode=D08240CA36DE435A8CD0", next:"PA" },
+  { title:"CIS Vulnerability Response", code:"VR", desc:"213 questions across all Vulnerability Response exam domains", rating:5.0, ratings:20, q:213, badge:null, price:9.99, orig:66.99, track:"security", ref:"https://www.udemy.com/course/pass-your-servicenow-cis-vulnerability-response-vr-exam/?referralCode=EE503A8EA58C23039100", next:"SIR" },
+  { title:"CIS Customer Service Mgmt", code:"CSM", desc:"348 questions on 30+ CSM topics with per-option explanations", rating:4.6, ratings:25, q:348, badge:"high", price:9.99, orig:66.99, track:"service", ref:"https://www.udemy.com/course/pass-your-servicenow-cis-customer-service-management-csm/?referralCode=211B4B7795C55DA7281A", next:"FSM" },
+  { title:"CIS Data Foundations / CSDM", code:"DF", desc:"470 questions on CMDB, CSDM, and Data Foundations exam areas", rating:4.9, ratings:144, q:470, badge:null, price:9.99, orig:66.99, track:"data", ref:"https://www.udemy.com/course/pass-servicenow-cis-data-foundations-cmdbcsdm/?referralCode=442CA6D450663B1D42AF", next:"SM" },
+  { title:"CSA System Administrator", code:"CSA", desc:"Full CSA practice test covering all exam objectives", rating:4.5, ratings:2, q:250, badge:null, price:9.99, orig:66.99, track:"core", ref:"https://www.udemy.com/course/pass-your-servicenow-csa-certified-system-administrator/?referralCode=2AE0DFA7BE468BCA8888", next:"CAD" },
+  { title:"CIS Service Mapping", code:"SM", desc:"217 Service Mapping questions with explanation for every choice", rating:4.2, ratings:27, q:217, badge:null, price:9.99, orig:66.99, track:"infra", ref:"https://www.udemy.com/course/pass-servicenow-cis-service-mapping-sm-exam/?referralCode=E4C8DC2D2F2DDEEA86D5", next:"DISCO" },
+  { title:"CIS Software Asset Mgmt", code:"SAM", desc:"250 SAM questions aligned to the latest exam blueprint", rating:4.8, ratings:50, q:250, badge:"high", price:9.99, orig:66.99, track:"asset", ref:"https://www.udemy.com/course/pass-your-servicenow-cis-software-asset-mgmt-sam-exam/?referralCode=627AA3E200F1159EDF94", next:"HAM" },
+  { title:"CAS Performance Analytics", code:"PA", desc:"PA certification prep covering reports, indicators, and dashboards", rating:4.0, ratings:1, q:218, badge:null, price:9.99, orig:66.99, track:"dev", ref:"https://www.udemy.com/course/pass-your-servicenow-cas-pa-exam/?referralCode=A8ACE29CC7E537680674", next:"SPM" },
+  { title:"CIS HR Service Delivery", code:"HRSD", desc:"220 HRSD questions with reasoning for every answer option", rating:4.0, ratings:10, q:220, badge:"high", price:9.99, orig:66.99, track:"service", ref:"https://www.udemy.com/course/pass-your-servicenow-cis-hrsd-exam/?referralCode=AE0D8C9891F0CAAD71D1", next:"CSM" },
+  { title:"CIS IT Service Management", code:"ITSM", desc:"ITSM practice test with detailed breakdowns per question", rating:4.2, ratings:17, q:100, badge:null, price:9.99, orig:86.99, track:"core", ref:"https://www.udemy.com/course/pass-your-servicenow-cis-itsm-exam/?referralCode=3D0B3C1C48CE64275156", next:"DF" },
+  { title:"CIS Third-Party Risk Mgmt", code:"TPRM", desc:"Full TPRM coverage with 100+ questions and growing", rating:4.5, ratings:null, q:100, badge:"new", price:9.99, orig:86.99, track:"risk", ref:"https://www.udemy.com/course/pass-servicenow-cis-third-party-risk-management-tprm/", next:"GRC" },
+];
+
+/* Track definitions for filter buttons */
+const tracks = {
+  all: "All Certs",
+  core: "Core (CSA/ITSM)",
+  dev: "Developer",
+  data: "Data & CMDB",
+  infra: "Infrastructure",
+  service: "Service Mgmt",
+  asset: "Asset Mgmt",
+  security: "Security",
+  risk: "Risk & Compliance"
+};
+
+/* Render filter buttons */
+const filterRow = document.getElementById('filters');
+Object.entries(tracks).forEach(([key, label]) => {
+  const btn = document.createElement('button');
+  btn.className = 'filter-btn' + (key === 'all' ? ' active' : '');
+  btn.textContent = label;
+  btn.dataset.track = key;
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderGrid(key === 'all' ? null : key);
+  });
+  filterRow.appendChild(btn);
+});
+
+const grid = document.getElementById('grid');
+const bc = { best:'b-best', high:'b-high', hot:'b-hot', new:'b-new' };
+const bl = { best:'Bestseller', high:'Highest Rated', hot:'Hot & New', new:'New' };
+
+/* Map course codes to hero image filenames */
+const heroImg = {};
+courses.forEach(c => {
+  const key = c.code === 'GRC' ? 'rc' : c.code.toLowerCase();
+  heroImg[c.code] = 'Course Hero Image/' + key + '.webp';
+});
+
+function stars(r) {
+  const f = Math.floor(r);
+  const h = (r % 1) >= 0.3 ? 1 : 0;
+  return '\u2605'.repeat(f) + (h ? '\u2606' : '') + '\u2606'.repeat(5 - f - h);
+}
+
+function getNextCourse(code) {
+  return courses.find(c => c.code === code);
+}
+
+function renderGrid(trackFilter) {
+  grid.innerHTML = '';
+  const filtered = trackFilter ? courses.filter(c => c.track === trackFilter) : courses;
+
+  filtered.forEach(c => {
+    const pct = Math.round((1 - c.price / c.orig) * 100);
+    const nextCourse = c.next ? getNextCourse(c.next) : null;
+
+    const a = document.createElement('a');
+    a.className = 'course-card';
+    a.href = c.ref;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.dataset.track = 'click-course-' + c.code;
+
+    let nextHtml = '';
+    if (nextCourse) {
+      nextHtml = `<a href="${nextCourse.ref}" target="_blank" rel="noopener" class="card-next" onclick="event.stopPropagation()"><span class="arrow-icon">&rarr;</span> Next cert: <strong>${nextCourse.code}</strong></a>`;
+    }
+
+    const imgPath = heroImg[c.code];
+    a.innerHTML = `
+      <div class="card-top">
+        <div class="card-top-bg${imgPath ? ' has-img' : ''}"${imgPath ? ` data-bg="${imgPath}"` : ''}></div>
+        ${c.badge ? `<span class="card-badge ${bc[c.badge]}">${bl[c.badge]}</span>` : ''}
+        <div class="card-ring">
+          <div class="r-clip"><div class="r-spin"></div></div>
+          <div class="r-inner"><span class="r-code">${c.code}</span></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">${c.title}</div>
+        <div class="card-desc">${c.desc}</div>
+        <div class="card-pub">LUCKY X</div>
+        <div class="card-rating">
+          <span class="r-num">${c.rating.toFixed(1)}</span>
+          <span class="r-stars">${stars(c.rating)}</span>
+          ${c.ratings ? `<span class="r-count">(${c.ratings})</span>` : ''}
+        </div>
+        <div class="card-tags">
+          <span class="t">${c.q} questions</span>
+          <span class="t">All Levels</span>
+        </div>
+        <div class="card-price">
+          <span class="p-now">$${c.price.toFixed(2)}</span>
+          <span class="p-was">$${c.orig.toFixed(2)}</span>
+          <span class="p-off">${pct}% off</span>
+        </div>
+        ${nextHtml}
+      </div>`;
+    grid.appendChild(a);
+  });
+
+  if (imgObs) {
+    document.querySelectorAll('.card-top-bg[data-bg]').forEach(el => imgObs.observe(el));
+  }
+}
+
+let imgObs = null;
+renderGrid(null);
+
+/* ======== LAZY LOAD HERO IMAGES ======== */
+imgObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const bg = e.target.dataset.bg;
+      if (bg) e.target.style.backgroundImage = `url('${bg}')`;
+      imgObs.unobserve(e.target);
+    }
+  });
+}, { rootMargin: '200px 0px' });
+
+document.querySelectorAll('.card-top-bg[data-bg]').forEach(el => imgObs.observe(el));
+
+/* ======== SOCIAL PROOF TICKER ======== */
+const reviews = [
+  "Passed CIS-DF first try. The doc links in every explanation made a huge difference",
+  "Used this for 10 days straight and passed. The wrong answer explanations saved me",
+  "Failed once with another provider, passed easily with Lucky X",
+  "Every question has a source link. I could actually verify what I was studying",
+  "Passed my exam last week. Came back for ITSM now",
+  "The per-option breakdowns taught me more than the official learning path",
+  "Best $10 I ever spent. Exam felt familiar after these practice tests",
+  "Passed first attempt after two weeks with this course",
+  "I checked the doc links on 20 questions. Every single one was accurate",
+  "Failed with MeasureUp, passed with Lucky X. Half the price, twice the questions",
+  "Got my certification today. The explanations actually teach you the reasoning",
+  "Third Lucky X course. Passed all three certs on the first try",
+];
+
+const proofTrack = document.getElementById('proofTrack');
+const allReviews = [...reviews, ...reviews];
+allReviews.forEach(r => {
+  const div = document.createElement('div');
+  div.className = 'proof-item';
+  div.innerHTML = `<div class="proof-stars">\u2605\u2605\u2605\u2605\u2605</div>${r}`;
+  proofTrack.appendChild(div);
+});
+
+/* ======== NAV ======== */
+const btns = document.querySelectorAll('.nav-btn');
+const ind = document.getElementById('navInd');
+
+function setNav(i) {
+  btns.forEach(b => b.classList.remove('active'));
+  btns[i].classList.add('active');
+  ind.style.transform = `translateX(${i * 53}px)`;
+}
+
+btns.forEach((b, i) => {
+  b.addEventListener('click', () => {
+    setNav(i);
+    const el = document.getElementById(b.dataset.s);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+const secs = ['hero', 'courses', 'why', 'cta'];
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const idx = secs.indexOf(e.target.id);
+      if (idx >= 0) setNav(idx);
+    }
+  });
+}, { threshold: 0.25 });
+
+secs.forEach(id => { const el = document.getElementById(id); if (el) obs.observe(el); });
+setNav(0);
+
+/* ======== CONVERTKIT LEAD FORM ======== */
+document.getElementById('leadForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const email = this.querySelector('input[type="email"]').value;
+  const btn = this.querySelector('button');
+  const input = this.querySelector('input');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  /* ConvertKit form ID: replace FORM_ID after creating your form at app.convertkit.com */
+  const CONVERTKIT_FORM_ID = '9183962';
+
+  fetch(`https://app.convertkit.com/forms/${CONVERTKIT_FORM_ID}/subscriptions`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+    body: JSON.stringify({ email_address: email })
+  })
+  .then(r => {
+    if (r.ok || r.status === 200 || r.status === 201) {
+      btn.textContent = 'Sent! Check your inbox';
+      btn.style.background = '#1f7a50';
+      input.disabled = true;
+    } else {
+      btn.textContent = 'Get the Free Roadmap';
+      btn.style.background = '';
+      btn.disabled = false;
+    }
+  })
+  .catch(() => {
+    btn.textContent = 'Get the Free Roadmap';
+    btn.style.background = '';
+    btn.disabled = false;
+  });
+});
+
+/* ======== THEME TOGGLE ======== */
+const themeToggle = document.getElementById('themeToggle');
+const savedTheme = localStorage.getItem('luckyx-theme');
+
+if (savedTheme) {
+  document.documentElement.setAttribute('data-theme', savedTheme);
+} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  document.documentElement.setAttribute('data-theme', 'dark');
+} else {
+  document.documentElement.setAttribute('data-theme', 'light');
+}
+
+themeToggle.addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme');
+  const next = current === 'light' ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('luckyx-theme', next);
+});
+
+/* ======== SCROLL REVEAL ======== */
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+</script>
+</body>
+</html>
