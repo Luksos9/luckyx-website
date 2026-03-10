@@ -565,6 +565,21 @@ body::after {
   min-width: 130px;
 }
 
+.stat-icon {
+  margin-bottom: 8px;
+}
+
+.stat-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--orange);
+  stroke-width: 1.8;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.7;
+}
+
 .stat-num {
   font-size: 30px;
   font-weight: 700;
@@ -623,6 +638,27 @@ body::after {
 }
 
 @keyframes cta-line-pulse { 0%,100%{opacity:0.6;} 50%{opacity:1;} }
+
+.lead-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--orange-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+}
+
+.lead-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--orange);
+  stroke-width: 1.8;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
 .lead-tag {
   display: inline-block;
@@ -780,7 +816,8 @@ body::after {
   transition: transform 0.25s var(--ease-smooth), border-color 0.25s ease, box-shadow 0.25s ease;
   cursor: pointer;
   text-decoration: none;
-  display: block;
+  display: flex;
+  flex-direction: column;
   color: inherit;
 }
 
@@ -925,7 +962,12 @@ body::after {
   font-weight: 600;
 }
 
-.card-body { padding: 16px 18px 18px; }
+.card-body {
+  padding: 16px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
 
 h3.card-title,
 .card-title {
@@ -969,6 +1011,7 @@ h3.card-title,
   gap: 5px;
   flex-wrap: wrap;
   margin-bottom: 14px;
+  margin-top: auto;
 }
 
 .t {
@@ -987,6 +1030,7 @@ h3.card-title,
   gap: 7px;
   padding-top: 12px;
   border-top: 1px solid var(--border);
+  margin-bottom: 4px;
 }
 
 .p-now { font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
@@ -1049,13 +1093,25 @@ h3.card-title,
   padding: 36px 28px;
 }
 
-.why-num {
-  font-size: 32px;
-  font-weight: 800;
-  color: var(--orange);
-  opacity: 0.25;
-  line-height: 1;
+.why-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--orange-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 16px;
+}
+
+.why-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--orange);
+  stroke-width: 1.8;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .why-title { font-size: 16px; font-weight: 600; margin-bottom: 8px; letter-spacing: -0.2px; }
@@ -1351,6 +1407,14 @@ h3.card-title,
 }
 
 .ft-links a:hover { color: var(--orange); }
+
+.ft-links a svg {
+  width: 14px;
+  height: 14px;
+  vertical-align: -2px;
+  margin-right: 4px;
+  fill: currentColor;
+}
 
 .ft-bottom {
   font-size: 11px;
@@ -1776,18 +1840,22 @@ h3.card-title,
 
   <div class="stats-row">
     <div class="stat-item">
+      <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
       <div class="stat-num">7,000<span class="acc">+</span></div>
       <div class="stat-lbl">Students</div>
     </div>
     <div class="stat-item">
+      <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg></div>
       <div class="stat-num">18/18</div>
       <div class="stat-lbl">Exams Passed</div>
     </div>
     <div class="stat-item">
+      <div class="stat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></div>
       <div class="stat-num">4,700<span class="acc">+</span></div>
       <div class="stat-lbl">Questions</div>
     </div>
     <div class="stat-item">
+      <div class="stat-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="none"/></svg></div>
       <div class="stat-num">4.6</div>
       <div class="stat-lbl">Avg Rating</div>
     </div>
@@ -1824,22 +1892,22 @@ h3.card-title,
   </div>
   <div class="why-grid reveal-stagger">
     <div class="why-card reveal" style="--i:0">
-      <div class="why-num">01</div>
+      <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
       <div class="why-title">Click any source link. Verify it yourself.</div>
       <div class="why-desc">Each answer includes a direct link to the official ServiceNow documentation page. If a source can't be confirmed, the question doesn't get published. It gets flagged until it can. You don't have to take anyone's word for it.</div>
     </div>
     <div class="why-card reveal" style="--i:1">
-      <div class="why-num">02</div>
+      <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5C7 4 7 7 7 7"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5C17 4 17 7 17 7"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div>
       <div class="why-title">18 exams. 18 first-try passes. One rule.</div>
       <div class="why-desc">A course only exists for a certification the author has personally passed on the first attempt. That rule has never changed. That's how you know the questions match what actually shows up on exam day.</div>
     </div>
     <div class="why-card reveal" style="--i:2">
-      <div class="why-num">03</div>
+      <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></div>
       <div class="why-title">Every wrong answer explained too</div>
       <div class="why-desc">You don't just learn that option C is correct. You learn why option A fails, why B only works in a different context, and why D sounds right but breaks under a specific condition. That's how you stop guessing.</div>
     </div>
     <div class="why-card reveal" style="--i:3">
-      <div class="why-num">04</div>
+      <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg></div>
       <div class="why-title">Updated when ServiceNow updates</div>
       <div class="why-desc">Exam specs change with each platform release. These courses track the Zurich release and February 2026 blueprints. Questions that no longer apply get cut. New topics get added within weeks.</div>
     </div>
@@ -1855,6 +1923,7 @@ h3.card-title,
 <!-- Lead magnet -->
 <section class="lead-section" id="roadmap">
   <div class="lead-box reveal">
+    <div class="lead-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M12 18v-6"/><path d="m9 15 3 3 3-3"/></svg></div>
     <div class="lead-tag">Free download</div>
     <h2>2026 ServiceNow Certification Roadmap</h2>
     <p class="lead-desc">Which cert to take first. Which ones build on each other. Study time estimates per track. Salary data. One PDF, zero fluff.</p>
@@ -1947,8 +2016,8 @@ h3.card-title,
       <a href="#why">Why Lucky X</a>
       <a href="#faq">FAQ</a>
       <a href="#roadmap">Free Roadmap</a>
-      <a href="https://www.udemy.com/user/lucky-x/" target="_blank" rel="noopener">Udemy</a>
-      <a href="https://www.linkedin.com/in/lukaszszumilas/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.udemy.com/user/lucky-x/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm-1.66 14.58V7.42l6.36 4.58-6.36 4.58Z"/></svg>Udemy</a>
+      <a href="https://www.linkedin.com/in/lukaszszumilas/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
     </nav>
     <div class="ft-bottom">&copy; 2026 Lucky X &bull; Built by Lukasz Szumilas</div>
   </div>
@@ -1957,24 +2026,24 @@ h3.card-title,
 <script>
 /* ======== COURSE DATA WITH REFERRAL LINKS + CROSS-SELL ======== */
 const courses = [
-  { title:"CIS-Discovery / RISCO", code:"DISCO", desc:"Real exam-style questions with full Discovery and RISCO coverage across all domains", rating:4.9, ratings:261, q:113, badge:"best", price:9.99, orig:89.99, track:"infra", ref:"https://www.udemy.com/course/pass-your-servicenow-cis-discovery-exam-vancouver-2023/?referralCode=752D974C366D4DEBE963", next:"SM" },
+  { title:"CIS-Discovery / RISCO", code:"DISCO", desc:"Real exam-style questions with full Discovery and RISCO coverage across all domains", rating:4.9, ratings:261, q:113, badge:"best", price:9.99, orig:84.99, track:"infra", ref:"https://www.udemy.com/course/pass-your-servicenow-cis-discovery-exam-vancouver-2023/?referralCode=752D974C366D4DEBE963", next:"SM" },
   { title:"Certified Application Developer", code:"CAD", desc:"329 questions covering every CAD exam domain with detailed explanations", rating:4.5, ratings:208, q:329, badge:null, price:9.99, orig:84.99, track:"dev", ref:"https://www.udemy.com/course/pass-your-servicenow-cad-exam/?referralCode=CF61F2B36C7F02F40EFB", next:"ITSM" },
-  { title:"CIS Hardware Asset Mgmt", code:"HAM", desc:"Full HAM coverage with per-option reasoning for every question", rating:5.0, ratings:1, q:249, badge:"new", price:9.99, orig:86.99, track:"asset", ref:"https://www.udemy.com/course/pass-servicenow-cis-hardware-asset-management-ham/?referralCode=58ECB1F51A94EC5A7F09", next:"SAM" },
-  { title:"CIS Risk & Compliance GRC/IRM", code:"GRC", desc:"500 questions on Entities, Risk, Compliance, and all IRM exam areas", rating:4.0, ratings:null, q:500, badge:null, price:9.99, orig:66.99, track:"risk", ref:"https://www.udemy.com/course/pass-servicenow-cis-risk-and-compliance-grc-irm-rc/?referralCode=BAC69ADCBF13729F4018", next:"TPRM" },
+  { title:"CIS Hardware Asset Mgmt", code:"HAM", desc:"Full HAM coverage with per-option reasoning for every question", rating:5.0, ratings:1, q:249, badge:"new", price:9.99, orig:84.99, track:"asset", ref:"https://www.udemy.com/course/pass-servicenow-cis-hardware-asset-management-ham/?referralCode=58ECB1F51A94EC5A7F09", next:"SAM" },
+  { title:"CIS Risk & Compliance GRC/IRM", code:"GRC", desc:"500 questions on Entities, Risk, Compliance, and all IRM exam areas", rating:4.0, ratings:null, q:500, badge:null, price:9.99, orig:84.99, track:"risk", ref:"https://www.udemy.com/course/pass-servicenow-cis-risk-and-compliance-grc-irm-rc/?referralCode=BAC69ADCBF13729F4018", next:"TPRM" },
   { title:"CIS Event Management", code:"EM", desc:"Full CIS-EM exam scope including Event Roles and Alert rules", rating:3.8, ratings:1, q:200, badge:"hot", price:9.99, orig:84.99, track:"infra", ref:"https://www.udemy.com/course/pass-servicenow-cis-event-management-cis-em/?referralCode=CA03695C46AF6880DDE1", next:"DISCO" },
-  { title:"CIS Field Service Mgmt", code:"FSM", desc:"334 FSM questions formatted to match actual exam structure", rating:4.5, ratings:31, q:334, badge:null, price:9.99, orig:66.99, track:"service", ref:"https://www.udemy.com/course/pass-servicenow-cis-field-service-mangement-fsm/?referralCode=411E2ADCD2ACF3DE5FC7", next:"CSM" },
-  { title:"CIS Security Incident Response", code:"SIR", desc:"All SIR exam topics with clear reasoning per answer choice", rating:5.0, ratings:17, q:251, badge:null, price:9.99, orig:66.99, track:"security", ref:"https://www.udemy.com/course/pass-servicenow-cis-security-incident-response-sir/?referralCode=FF6F1DFCBBA2F3C7188D", next:"VR" },
-  { title:"CIS Strategic Portfolio Mgmt", code:"SPM", desc:"Full SPM coverage with exam-realistic question structure", rating:5.0, ratings:13, q:200, badge:"high", price:9.99, orig:66.99, track:"service", ref:"https://www.udemy.com/course/pass-your-servicenow-cis-strategic-portfolio-management-spm/?referralCode=D08240CA36DE435A8CD0", next:"PA" },
-  { title:"CIS Vulnerability Response", code:"VR", desc:"213 questions across all Vulnerability Response exam domains", rating:5.0, ratings:20, q:213, badge:null, price:9.99, orig:66.99, track:"security", ref:"https://www.udemy.com/course/pass-your-servicenow-cis-vulnerability-response-vr-exam/?referralCode=EE503A8EA58C23039100", next:"SIR" },
-  { title:"CIS Customer Service Mgmt", code:"CSM", desc:"348 questions on 30+ CSM topics with per-option explanations", rating:4.6, ratings:25, q:348, badge:"high", price:9.99, orig:66.99, track:"service", ref:"https://www.udemy.com/course/pass-your-servicenow-cis-customer-service-management-csm/?referralCode=211B4B7795C55DA7281A", next:"FSM" },
-  { title:"CIS Data Foundations / CSDM", code:"DF", desc:"470 questions on CMDB, CSDM, and Data Foundations exam areas", rating:4.9, ratings:144, q:470, badge:null, price:9.99, orig:66.99, track:"data", ref:"https://www.udemy.com/course/pass-servicenow-cis-data-foundations-cmdbcsdm/?referralCode=442CA6D450663B1D42AF", next:"SM" },
-  { title:"CSA System Administrator", code:"CSA", desc:"Full CSA practice test covering all exam objectives", rating:4.5, ratings:2, q:250, badge:null, price:9.99, orig:66.99, track:"core", ref:"https://www.udemy.com/course/pass-your-servicenow-csa-certified-system-administrator/?referralCode=2AE0DFA7BE468BCA8888", next:"CAD" },
-  { title:"CIS Service Mapping", code:"SM", desc:"217 Service Mapping questions with explanation for every choice", rating:4.2, ratings:27, q:217, badge:null, price:9.99, orig:66.99, track:"infra", ref:"https://www.udemy.com/course/pass-servicenow-cis-service-mapping-sm-exam/?referralCode=E4C8DC2D2F2DDEEA86D5", next:"DISCO" },
-  { title:"CIS Software Asset Mgmt", code:"SAM", desc:"250 SAM questions aligned to the latest exam blueprint", rating:4.8, ratings:50, q:250, badge:"high", price:9.99, orig:66.99, track:"asset", ref:"https://www.udemy.com/course/pass-your-servicenow-cis-software-asset-mgmt-sam-exam/?referralCode=627AA3E200F1159EDF94", next:"HAM" },
-  { title:"CAS Performance Analytics", code:"PA", desc:"PA certification prep covering reports, indicators, and dashboards", rating:4.0, ratings:1, q:218, badge:null, price:9.99, orig:66.99, track:"dev", ref:"https://www.udemy.com/course/pass-your-servicenow-cas-pa-exam/?referralCode=A8ACE29CC7E537680674", next:"SPM" },
-  { title:"CIS HR Service Delivery", code:"HRSD", desc:"220 HRSD questions with reasoning for every answer option", rating:4.0, ratings:10, q:220, badge:"high", price:9.99, orig:66.99, track:"service", ref:"https://www.udemy.com/course/pass-your-servicenow-cis-hrsd-exam/?referralCode=AE0D8C9891F0CAAD71D1", next:"CSM" },
-  { title:"CIS IT Service Management", code:"ITSM", desc:"ITSM practice test with detailed breakdowns per question", rating:4.2, ratings:17, q:100, badge:null, price:9.99, orig:86.99, track:"core", ref:"https://www.udemy.com/course/pass-your-servicenow-cis-itsm-exam/?referralCode=3D0B3C1C48CE64275156", next:"DF" },
-  { title:"CIS Third-Party Risk Mgmt", code:"TPRM", desc:"Full TPRM coverage with 100+ questions and growing", rating:4.5, ratings:null, q:100, badge:"new", price:9.99, orig:86.99, track:"risk", ref:"https://www.udemy.com/course/pass-servicenow-cis-third-party-risk-management-tprm/?referralCode=D6DDF7F1E21D051B5047", next:"GRC" },
+  { title:"CIS Field Service Mgmt", code:"FSM", desc:"334 FSM questions formatted to match actual exam structure", rating:4.5, ratings:31, q:334, badge:null, price:9.99, orig:84.99, track:"service", ref:"https://www.udemy.com/course/pass-servicenow-cis-field-service-mangement-fsm/?referralCode=411E2ADCD2ACF3DE5FC7", next:"CSM" },
+  { title:"CIS Security Incident Response", code:"SIR", desc:"All SIR exam topics with clear reasoning per answer choice", rating:5.0, ratings:17, q:251, badge:null, price:9.99, orig:84.99, track:"security", ref:"https://www.udemy.com/course/pass-servicenow-cis-security-incident-response-sir/?referralCode=FF6F1DFCBBA2F3C7188D", next:"VR" },
+  { title:"CIS Strategic Portfolio Mgmt", code:"SPM", desc:"Full SPM coverage with exam-realistic question structure", rating:5.0, ratings:13, q:200, badge:"high", price:9.99, orig:84.99, track:"service", ref:"https://www.udemy.com/course/pass-your-servicenow-cis-strategic-portfolio-management-spm/?referralCode=D08240CA36DE435A8CD0", next:"PA" },
+  { title:"CIS Vulnerability Response", code:"VR", desc:"213 questions across all Vulnerability Response exam domains", rating:5.0, ratings:20, q:213, badge:null, price:9.99, orig:84.99, track:"security", ref:"https://www.udemy.com/course/pass-your-servicenow-cis-vulnerability-response-vr-exam/?referralCode=EE503A8EA58C23039100", next:"SIR" },
+  { title:"CIS Customer Service Mgmt", code:"CSM", desc:"348 questions on 30+ CSM topics with per-option explanations", rating:4.6, ratings:25, q:348, badge:"high", price:9.99, orig:84.99, track:"service", ref:"https://www.udemy.com/course/pass-your-servicenow-cis-customer-service-management-csm/?referralCode=211B4B7795C55DA7281A", next:"FSM" },
+  { title:"CIS Data Foundations / CSDM", code:"DF", desc:"470 questions on CMDB, CSDM, and Data Foundations exam areas", rating:4.9, ratings:144, q:470, badge:null, price:9.99, orig:84.99, track:"data", ref:"https://www.udemy.com/course/pass-servicenow-cis-data-foundations-cmdbcsdm/?referralCode=442CA6D450663B1D42AF", next:"SM" },
+  { title:"CSA System Administrator", code:"CSA", desc:"Full CSA practice test covering all exam objectives", rating:4.5, ratings:2, q:250, badge:null, price:9.99, orig:84.99, track:"core", ref:"https://www.udemy.com/course/pass-your-servicenow-csa-certified-system-administrator/?referralCode=2AE0DFA7BE468BCA8888", next:"CAD" },
+  { title:"CIS Service Mapping", code:"SM", desc:"217 Service Mapping questions with explanation for every choice", rating:4.2, ratings:27, q:217, badge:null, price:9.99, orig:84.99, track:"infra", ref:"https://www.udemy.com/course/pass-servicenow-cis-service-mapping-sm-exam/?referralCode=E4C8DC2D2F2DDEEA86D5", next:"DISCO" },
+  { title:"CIS Software Asset Mgmt", code:"SAM", desc:"250 SAM questions aligned to the latest exam blueprint", rating:4.8, ratings:50, q:250, badge:"high", price:9.99, orig:84.99, track:"asset", ref:"https://www.udemy.com/course/pass-your-servicenow-cis-software-asset-mgmt-sam-exam/?referralCode=627AA3E200F1159EDF94", next:"HAM" },
+  { title:"CAS Performance Analytics", code:"PA", desc:"PA certification prep covering reports, indicators, and dashboards", rating:4.0, ratings:1, q:218, badge:null, price:9.99, orig:84.99, track:"dev", ref:"https://www.udemy.com/course/pass-your-servicenow-cas-pa-exam/?referralCode=A8ACE29CC7E537680674", next:"SPM" },
+  { title:"CIS HR Service Delivery", code:"HRSD", desc:"220 HRSD questions with reasoning for every answer option", rating:4.0, ratings:10, q:220, badge:"high", price:9.99, orig:84.99, track:"service", ref:"https://www.udemy.com/course/pass-your-servicenow-cis-hrsd-exam/?referralCode=AE0D8C9891F0CAAD71D1", next:"CSM" },
+  { title:"CIS IT Service Management", code:"ITSM", desc:"ITSM practice test with detailed breakdowns per question", rating:4.2, ratings:17, q:100, badge:null, price:9.99, orig:84.99, track:"core", ref:"https://www.udemy.com/course/pass-your-servicenow-cis-itsm-exam/?referralCode=3D0B3C1C48CE64275156", next:"DF" },
+  { title:"CIS Third-Party Risk Mgmt", code:"TPRM", desc:"Full TPRM coverage with 100+ questions and growing", rating:4.5, ratings:null, q:100, badge:"new", price:9.99, orig:84.99, track:"risk", ref:"https://www.udemy.com/course/pass-servicenow-cis-third-party-risk-management-tprm/?referralCode=D6DDF7F1E21D051B5047", next:"GRC" },
 ];
 
 /* Track definitions for filter buttons */
