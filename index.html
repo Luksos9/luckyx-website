@@ -261,6 +261,123 @@ body::after {
   overflow: hidden;
 }
 
+/* Animated background container */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Subtle grid pattern */
+.hero-grid {
+  position: absolute;
+  inset: -20%;
+  opacity: 0.03;
+  background-image:
+    linear-gradient(rgba(221,92,12,0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(221,92,12,0.3) 1px, transparent 1px);
+  background-size: 80px 80px;
+  transform: perspective(500px) rotateX(35deg) scale(2.5);
+  transform-origin: center 70%;
+  mask-image: radial-gradient(ellipse 60% 50% at 50% 60%, black 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 60%, black 20%, transparent 70%);
+}
+
+[data-theme="light"] .hero-grid {
+  opacity: 0.025;
+  background-image:
+    linear-gradient(rgba(221,92,12,0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(221,92,12,0.4) 1px, transparent 1px);
+}
+
+/* Floating gradient orbs */
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  will-change: transform;
+}
+
+.hero-orb-1 {
+  width: 500px;
+  height: 500px;
+  top: -15%;
+  left: -10%;
+  background: radial-gradient(circle, rgba(221,92,12,0.06) 0%, transparent 70%);
+  animation: orb-drift-1 20s ease-in-out infinite;
+}
+
+.hero-orb-2 {
+  width: 400px;
+  height: 400px;
+  bottom: -10%;
+  right: -10%;
+  background: radial-gradient(circle, rgba(26,58,56,0.08) 0%, transparent 70%);
+  animation: orb-drift-2 25s ease-in-out infinite;
+}
+
+.hero-orb-3 {
+  width: 300px;
+  height: 300px;
+  top: 40%;
+  right: 20%;
+  background: radial-gradient(circle, rgba(221,92,12,0.04) 0%, transparent 70%);
+  animation: orb-drift-3 18s ease-in-out infinite;
+}
+
+[data-theme="light"] .hero-orb-1 {
+  background: radial-gradient(circle, rgba(221,92,12,0.04) 0%, transparent 70%);
+}
+
+[data-theme="light"] .hero-orb-2 {
+  background: radial-gradient(circle, rgba(26,58,56,0.05) 0%, transparent 70%);
+}
+
+[data-theme="light"] .hero-orb-3 {
+  background: radial-gradient(circle, rgba(221,92,12,0.03) 0%, transparent 70%);
+}
+
+@keyframes orb-drift-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(60px, 30px) scale(1.05); }
+  66% { transform: translate(-30px, 50px) scale(0.95); }
+}
+
+@keyframes orb-drift-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-50px, -30px) scale(1.08); }
+  66% { transform: translate(40px, -20px) scale(0.97); }
+}
+
+@keyframes orb-drift-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-40px, 25px) scale(1.1); }
+}
+
+/* Faint horizontal scan line effect */
+.hero-scan {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(221,92,12,0.008) 3px,
+    rgba(221,92,12,0.008) 4px
+  );
+  opacity: 0.5;
+}
+
+[data-theme="light"] .hero-scan { opacity: 0.3; }
+
+/* Ensure all hero content sits above the background */
+.hero > *:not(.hero-bg) {
+  position: relative;
+  z-index: 1;
+}
+
 .hero::before {
   content: '';
   position: absolute;
@@ -1308,6 +1425,13 @@ body::after {
 
 <!-- Hero -->
 <section class="hero" id="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
+    <div class="hero-scan"></div>
+  </div>
   <div class="hero-pill"><span class="pulse"></span>18 practice exams &bull; 4,700+ questions</div>
   <h1>Lucky <span class="x">X</span></h1>
   <p class="hero-sub">You finished the official learning path.<br>Now make sure you pass the certification exam.</p>
