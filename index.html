@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lucky X | ServiceNow Certification Practice Tests 2026</title>
-<meta name="description" content="You finished the official learning path but you're not sure you'd pass. 7,000+ students used Lucky X practice tests to close that gap. 18 exams, 4,700+ questions, every answer sourced to official docs. $9.99 with lifetime access.">
+<meta name="description" content="Your first attempt is free. Your second costs $350. Practice on 4,700+ ServiceNow exam questions with sourced explanations. Every answer links to official docs. $9.99 with lifetime access.">
 <meta name="keywords" content="ServiceNow certification, CIS practice test, CSA exam prep, CAD practice questions, CMDB CSDM, ServiceNow 2026, Lucky X">
 <meta name="author" content="Lukasz Szumilas">
 <meta name="robots" content="index, follow">
@@ -1310,7 +1310,7 @@ body::after {
 <section class="hero" id="hero">
   <div class="hero-pill"><span class="pulse"></span>18 practice exams &bull; 4,700+ questions</div>
   <h1>Lucky <span class="x">X</span></h1>
-  <p class="hero-sub">You finished the official learning path. You're still not sure you'd pass. <strong>7,000+ students</strong> used these practice tests to close that gap. Most of them passed on the first try.</p>
+  <p class="hero-sub">You finished the official learning path. You're still not sure you'd pass.</p>
 
   <div class="stats-row">
     <div class="stat-item">
@@ -1334,7 +1334,7 @@ body::after {
 
 <!-- MeasureUp price comparison -->
 <div class="num-strip reveal">
-  <p class="num-headline"><span class="acc">$9.99</span> per course &bull; lifetime access &bull; no expiration</p>
+  <p class="num-headline">Your first attempt is free. Your second costs <span class="acc">$350</span>.</p>
   <p class="num-sub">ServiceNow's official partner charges $99 for 150 questions with 30-day access. Lucky X: 400+ questions, sourced explanations, lifetime access, $9.99. Same exam.</p>
 </div>
 
@@ -1384,7 +1384,13 @@ body::after {
   </div>
 </section>
 
-<!-- Email capture / lead magnet -->
+<!-- The teaching angle -->
+<div class="num-strip reveal">
+  <p class="num-headline">Every question explains the reasoning and links to <span class="acc">official documentation</span></p>
+  <p class="num-sub">You don't just get tested. You learn why each answer is right or wrong, with a clickable source to prove it. That's how 7,000+ students passed their certification on the first attempt.</p>
+</div>
+
+<!-- Lead magnet -->
 <section class="lead-section" id="roadmap">
   <div class="lead-box reveal">
     <div class="lead-tag">Free download</div>
@@ -1401,8 +1407,8 @@ body::after {
 <!-- CTA -->
 <section class="cta-section" id="cta">
   <div class="cta-box reveal">
-    <h2>Your exam costs $350 if you don't pass</h2>
-    <p>Every course is $9.99 with lifetime access. Udemy gives you 30 days to decide. Check the explanations. Click the source links. If you're not convinced, get a full refund.</p>
+    <h2>$9.99 with lifetime access. $350 if you fail.</h2>
+    <p>Udemy gives you 30 days to decide. Check the explanations. Click the source links. If you're not convinced, get a full refund.</p>
     <a href="https://www.udemy.com/user/lucky-x/" target="_blank" rel="noopener" class="cta-btn" data-track="cta-browse-all">
       Find your exam on Udemy
       <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -1641,14 +1647,14 @@ document.getElementById('leadForm').addEventListener('submit', function(e) {
       btn.style.background = '#1f7a50';
       input.disabled = true;
     } else {
-      btn.textContent = 'Something went wrong — try again';
+      btn.textContent = 'Something went wrong. Try again';
       btn.style.background = '#c43030';
       btn.disabled = false;
       setTimeout(() => { btn.textContent = 'Get the roadmap'; btn.style.background = ''; }, 3000);
     }
   })
   .catch(() => {
-    btn.textContent = 'Something went wrong — try again';
+    btn.textContent = 'Something went wrong. Try again';
     btn.style.background = '#c43030';
     btn.disabled = false;
     setTimeout(() => { btn.textContent = 'Get the roadmap'; btn.style.background = ''; }, 3000);
