@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /2026-ServiceNow-Certification-Roadmap.pdf
+
+Sitemap: https://luckyx.dev/sitemap.xml

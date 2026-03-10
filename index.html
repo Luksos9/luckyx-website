@@ -62,6 +62,8 @@
     else document.documentElement.setAttribute('data-theme', 'light');
   })();
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLYHHC76GG"></script>
@@ -1316,8 +1318,8 @@ body::after {
       <div class="stat-lbl">Students</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">18</div>
-      <div class="stat-lbl">First-Try Passes</div>
+      <div class="stat-num">18/18</div>
+      <div class="stat-lbl">Exams Passed</div>
     </div>
     <div class="stat-item">
       <div class="stat-num">4,700<span class="acc">+</span></div>
@@ -1434,7 +1436,7 @@ const courses = [
   { title:"CAS Performance Analytics", code:"PA", desc:"PA certification prep covering reports, indicators, and dashboards", rating:4.0, ratings:1, q:218, badge:null, price:9.99, orig:66.99, track:"dev", ref:"https://www.udemy.com/course/pass-your-servicenow-cas-pa-exam/?referralCode=A8ACE29CC7E537680674", next:"SPM" },
   { title:"CIS HR Service Delivery", code:"HRSD", desc:"220 HRSD questions with reasoning for every answer option", rating:4.0, ratings:10, q:220, badge:"high", price:9.99, orig:66.99, track:"service", ref:"https://www.udemy.com/course/pass-your-servicenow-cis-hrsd-exam/?referralCode=AE0D8C9891F0CAAD71D1", next:"CSM" },
   { title:"CIS IT Service Management", code:"ITSM", desc:"ITSM practice test with detailed breakdowns per question", rating:4.2, ratings:17, q:100, badge:null, price:9.99, orig:86.99, track:"core", ref:"https://www.udemy.com/course/pass-your-servicenow-cis-itsm-exam/?referralCode=3D0B3C1C48CE64275156", next:"DF" },
-  { title:"CIS Third-Party Risk Mgmt", code:"TPRM", desc:"Full TPRM coverage with 100+ questions and growing", rating:4.5, ratings:null, q:100, badge:"new", price:9.99, orig:86.99, track:"risk", ref:"https://www.udemy.com/course/pass-servicenow-cis-third-party-risk-management-tprm/", next:"GRC" },
+  { title:"CIS Third-Party Risk Mgmt", code:"TPRM", desc:"Full TPRM coverage with 100+ questions and growing", rating:4.5, ratings:null, q:100, badge:"new", price:9.99, orig:86.99, track:"risk", ref:"https://www.udemy.com/course/pass-servicenow-cis-third-party-risk-management-tprm/?referralCode=D6DDF7F1E21D051B5047", next:"GRC" },
 ];
 
 /* Track definitions for filter buttons */
@@ -1639,15 +1641,17 @@ document.getElementById('leadForm').addEventListener('submit', function(e) {
       btn.style.background = '#1f7a50';
       input.disabled = true;
     } else {
-      btn.textContent = 'Get the Free Roadmap';
-      btn.style.background = '';
+      btn.textContent = 'Something went wrong — try again';
+      btn.style.background = '#c43030';
       btn.disabled = false;
+      setTimeout(() => { btn.textContent = 'Get the roadmap'; btn.style.background = ''; }, 3000);
     }
   })
   .catch(() => {
-    btn.textContent = 'Get the Free Roadmap';
-    btn.style.background = '';
+    btn.textContent = 'Something went wrong — try again';
+    btn.style.background = '#c43030';
     btn.disabled = false;
+    setTimeout(() => { btn.textContent = 'Get the roadmap'; btn.style.background = ''; }, 3000);
   });
 });
 
