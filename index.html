@@ -19,12 +19,16 @@
 <meta property="og:image" content="https://luckyx.dev/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Lucky X - ServiceNow Certification Practice Tests with 4,700+ questions">
+<meta property="og:locale" content="en_US">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Lucky X | ServiceNow Certification Practice Tests">
 <meta name="twitter:description" content="7,000+ students passed their ServiceNow cert with these practice tests. $9.99 vs $99 from MeasureUp. Every answer sourced to official docs.">
 <meta name="twitter:image" content="https://luckyx.dev/og-image.png">
+<meta name="twitter:image:alt" content="Lucky X - ServiceNow Certification Practice Tests with 4,700+ questions">
+<meta name="twitter:creator" content="@luckyxdev">
 
 <!-- Structured Data -->
 <script type="application/ld+json">
@@ -34,10 +38,16 @@
   "name": "Lucky X",
   "description": "ServiceNow certification practice tests with sourced explanations linked to official documentation",
   "url": "https://luckyx.dev/",
+  "logo": "https://luckyx.dev/favicon-512.png",
+  "sameAs": [
+    "https://www.udemy.com/user/lucky-x/",
+    "https://www.linkedin.com/in/lukaszszumilas/"
+  ],
   "founder": {
     "@type": "Person",
     "name": "Lukasz Szumilas",
-    "jobTitle": "ServiceNow Developer & Educator"
+    "jobTitle": "ServiceNow Developer & Educator",
+    "sameAs": "https://www.linkedin.com/in/lukaszszumilas/"
   },
   "offers": {
     "@type": "AggregateOffer",
@@ -45,7 +55,87 @@
     "highPrice": "9.99",
     "priceCurrency": "USD",
     "offerCount": "18"
-  }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.6",
+    "reviewCount": "828",
+    "bestRating": "5"
+  },
+  "numberOfStudents": "7000"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How are the questions different from brain dumps?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "These are original practice questions written to match the exam blueprint — not copied from the real exam. Every answer includes a link to official ServiceNow documentation so you can verify the reasoning yourself."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do the questions match the current exam version?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. All courses are updated for the Zurich release and the February 2026 exam blueprints. When ServiceNow changes the exam spec, outdated questions are removed and new ones are added within weeks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I don't pass after using these tests?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Udemy offers a 30-day money-back guarantee on every course. If you're not satisfied for any reason, you can request a full refund directly through Udemy — no questions asked."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many questions are in each practice test?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each course contains between 100 and 500 questions depending on the certification. All 18 courses combined offer 4,700+ unique practice questions with detailed explanations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why are these $9.99 when MeasureUp charges $99?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MeasureUp is ServiceNow's official partner and charges premium pricing with 30-day access limits. Lucky X courses are self-published on Udemy with lifetime access, more questions, and sourced explanations — at a fraction of the cost."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Has the author actually passed all 18 exams?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — every single one on the first attempt. A course is only published for a certification the author has personally passed. That's the rule, and it has never been broken."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I get lifetime access?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Once you purchase a course on Udemy, you have lifetime access — including all future updates. When new questions are added or existing ones are revised, you get those changes automatically."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which certification should I start with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most people start with CSA (Certified System Administrator), then move to a CIS specialization. Download the free 2026 Certification Roadmap for the recommended order, study time estimates, and salary data per track."
+      }
+    }
+  ]
 }
 </script>
 
@@ -64,7 +154,10 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" as="style">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://app.convertkit.com">
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLYHHC76GG"></script>
 <script>
@@ -834,6 +927,7 @@ body::after {
 
 .card-body { padding: 16px 18px 18px; }
 
+h3.card-title,
 .card-title {
   font-size: 14.5px;
   font-weight: 600;
@@ -1138,17 +1232,136 @@ body::after {
   flex-shrink: 0;
 }
 
+/* ============ FAQ SECTION ============ */
+.faq-section {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 52px 24px 40px;
+}
+
+.faq-section .sec-head { padding: 0 0 28px; }
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.faq-item {
+  background: var(--bg-raised);
+}
+
+.faq-q {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font);
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--text);
+  text-align: left;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.faq-q:hover { color: var(--orange); }
+
+.faq-q svg {
+  width: 18px; height: 18px;
+  stroke: var(--text-faint);
+  stroke-width: 2;
+  fill: none;
+  flex-shrink: 0;
+  transition: transform 0.3s var(--ease-smooth), stroke 0.2s ease;
+}
+
+.faq-item.open .faq-q svg {
+  transform: rotate(45deg);
+  stroke: var(--orange);
+}
+
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s var(--ease-smooth), padding 0.35s ease;
+}
+
+.faq-item.open .faq-a {
+  max-height: 200px;
+}
+
+.faq-a-inner {
+  padding: 0 24px 20px;
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.65;
+}
+
+.faq-a-inner a { color: var(--orange); text-decoration: none; }
+.faq-a-inner a:hover { text-decoration: underline; }
+
+[data-theme="light"] .faq-item {
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.04);
+}
+
 /* ============ FOOTER ============ */
 .site-footer {
-  padding: 36px 24px 100px;
-  text-align: center;
+  padding: 48px 24px 100px;
   border-top: 1px solid var(--border);
   font-size: 12px;
   color: var(--text-faint);
 }
 
+.ft-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.ft-brand { font-weight: 700; font-size: 16px; color: var(--text-dim); letter-spacing: 1.5px; }
+.ft-tagline { font-size: 13px; color: var(--text-dim); max-width: 400px; line-height: 1.5; }
+
+.ft-links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ft-links a {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.ft-links a:hover { color: var(--orange); }
+
+.ft-bottom {
+  font-size: 11px;
+  color: var(--text-faint);
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  width: 100%;
+  text-align: center;
+}
+
 .site-footer a { color: var(--orange); text-decoration: none; }
-.ft-brand { font-weight: 700; font-size: 14px; color: var(--text-dim); margin-bottom: 6px; letter-spacing: 1.5px; }
 
 /* ============ THEME TOGGLE ============ */
 .theme-toggle-wrap {
@@ -1436,16 +1649,67 @@ body::after {
   .theme-toggle { width: 62px; height: 32px; }
   .toggle-orb { width: 24px; height: 24px; }
   [data-theme="light"] .toggle-orb { transform: translateX(30px); }
+  .faq-q { font-size: 13.5px; padding: 18px 20px; }
+  .faq-a-inner { padding: 0 20px 18px; }
+  .ft-links { gap: 16px; }
+  .course-grid { gap: 12px; }
 }
 
 @media (max-width: 480px) {
   .hero { padding: 60px 16px 40px; }
   .section { padding: 0 16px; }
   .lead-section { padding: 40px 16px; }
+  .faq-section { padding: 40px 16px; }
+}
+
+@media (max-width: 375px) {
+  .hero h1 { font-size: 44px; letter-spacing: -2px; }
+  .hero-sub { font-size: 15px; }
+  .stat-item { padding: 14px 16px; }
+  .stat-num { font-size: 24px; }
+  .stat-lbl { font-size: 9px; letter-spacing: 2px; }
+  .sec-title { font-size: 22px; }
+  .cta-price-card { padding: 16px 14px; flex: 0 1 140px; }
+  .cta-price-amount { font-size: 24px; }
+  .cta-btn { font-size: 14px; padding: 14px 28px; }
+  .faq-q { font-size: 13px; padding: 16px 18px; }
+  .faq-a-inner { padding: 0 18px 16px; font-size: 12px; }
+  .why-card { padding: 28px 20px; }
+  .lead-box { padding: 28px 16px; }
+  .num-headline { font-size: 20px; }
+  .num-sub { font-size: 13px; }
+}
+
+/* Skip to content (accessibility) */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--orange);
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 10000;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 0 0 8px 0;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Touch targets (min 44px for WCAG 2.2 AA) */
+@media (pointer: coarse) {
+  .filter-btn { min-height: 44px; padding: 10px 16px; }
+  .nav-btn { min-width: 52px; min-height: 44px; }
+  .faq-q { min-height: 48px; }
 }
 </style>
 </head>
 <body>
+
+<a href="#courses" class="skip-link">Skip to practice tests</a>
 
 <!-- Theme toggle -->
 <div class="theme-toggle-wrap">
@@ -1472,7 +1736,7 @@ body::after {
 </div>
 
 <!-- Floating liquid orange nav -->
-<nav class="nav-outer">
+<nav class="nav-outer" aria-label="Main navigation">
   <div class="nav-bar">
     <div class="nav-indicator" id="navInd">
       <div class="glow"></div>
@@ -1548,7 +1812,7 @@ body::after {
 </section>
 
 <!-- Social proof ticker -->
-<div class="proof-strip">
+<div class="proof-strip" role="marquee" aria-label="Student testimonials">
   <div class="proof-track" id="proofTrack"></div>
 </div>
 
@@ -1630,10 +1894,64 @@ body::after {
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="sec-head reveal">
+    <div class="sec-label">FAQ</div>
+    <h2 class="sec-title">Common questions</h2>
+  </div>
+  <div class="faq-list reveal" role="list">
+    <div class="faq-item" role="listitem">
+      <button class="faq-q" aria-expanded="false">How are the questions different from brain dumps?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
+      <div class="faq-a" role="region"><div class="faq-a-inner">These are original practice questions written to match the exam blueprint — not copied from the real exam. Every answer includes a link to official ServiceNow documentation so you can verify the reasoning yourself.</div></div>
+    </div>
+    <div class="faq-item" role="listitem">
+      <button class="faq-q" aria-expanded="false">Do the questions match the current exam version?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
+      <div class="faq-a" role="region"><div class="faq-a-inner">Yes. All courses are updated for the Zurich release and the February 2026 exam blueprints. When ServiceNow changes the exam spec, outdated questions are removed and new ones are added within weeks.</div></div>
+    </div>
+    <div class="faq-item" role="listitem">
+      <button class="faq-q" aria-expanded="false">What if I don't pass after using these tests?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
+      <div class="faq-a" role="region"><div class="faq-a-inner">Udemy offers a 30-day money-back guarantee on every course. If you're not satisfied for any reason, you can request a full refund directly through Udemy — no questions asked.</div></div>
+    </div>
+    <div class="faq-item" role="listitem">
+      <button class="faq-q" aria-expanded="false">How many questions are in each practice test?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
+      <div class="faq-a" role="region"><div class="faq-a-inner">Each course contains between 100 and 500 questions depending on the certification. All 18 courses combined offer 4,700+ unique practice questions with detailed explanations.</div></div>
+    </div>
+    <div class="faq-item" role="listitem">
+      <button class="faq-q" aria-expanded="false">Why are these $9.99 when MeasureUp charges $99?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
+      <div class="faq-a" role="region"><div class="faq-a-inner">MeasureUp is ServiceNow's official partner and charges premium pricing with 30-day access limits. Lucky X courses are self-published on Udemy with lifetime access, more questions, and sourced explanations — at a fraction of the cost.</div></div>
+    </div>
+    <div class="faq-item" role="listitem">
+      <button class="faq-q" aria-expanded="false">Has the author actually passed all 18 exams?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
+      <div class="faq-a" role="region"><div class="faq-a-inner">Yes — every single one on the first attempt. A course is only published for a certification the author has personally passed. That's the rule, and it has never been broken.</div></div>
+    </div>
+    <div class="faq-item" role="listitem">
+      <button class="faq-q" aria-expanded="false">Do I get lifetime access?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
+      <div class="faq-a" role="region"><div class="faq-a-inner">Yes. Once you purchase a course on Udemy, you have lifetime access — including all future updates. When new questions are added or existing ones are revised, you get those changes automatically.</div></div>
+    </div>
+    <div class="faq-item" role="listitem">
+      <button class="faq-q" aria-expanded="false">Which certification should I start with?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
+      <div class="faq-a" role="region"><div class="faq-a-inner">Most people start with CSA (Certified System Administrator), then move to a CIS specialization. Download the free <a href="#roadmap">2026 Certification Roadmap</a> above for the recommended order, study time estimates, and salary data per track.</div></div>
+    </div>
+  </div>
+</section>
+
 <!-- Footer -->
-<footer class="site-footer">
-  <div class="ft-brand">LUCKY X</div>
-  <p>ServiceNow Certification Practice Tests &bull; Every answer sourced to official docs &bull; <a href="https://www.udemy.com/user/lucky-x/" target="_blank" rel="noopener">Udemy</a> &bull; <a href="https://www.linkedin.com/in/lukaszszumilas/" target="_blank" rel="noopener">LinkedIn</a></p>
+<footer class="site-footer" role="contentinfo">
+  <div class="ft-inner">
+    <div class="ft-brand">LUCKY X</div>
+    <p class="ft-tagline">ServiceNow certification practice tests with every answer sourced to official documentation.</p>
+    <nav class="ft-links" aria-label="Footer navigation">
+      <a href="#hero">Home</a>
+      <a href="#courses">Practice Tests</a>
+      <a href="#why">Why Lucky X</a>
+      <a href="#faq">FAQ</a>
+      <a href="#roadmap">Free Roadmap</a>
+      <a href="https://www.udemy.com/user/lucky-x/" target="_blank" rel="noopener">Udemy</a>
+      <a href="https://www.linkedin.com/in/lukaszszumilas/" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+    <div class="ft-bottom">&copy; 2026 Lucky X &bull; Built by Lukasz Szumilas</div>
+  </div>
 </footer>
 
 <script>
@@ -1729,22 +2047,23 @@ function renderGrid(trackFilter) {
     }
 
     const imgPath = heroImg[c.code];
+    a.setAttribute('aria-label', `${c.title} - ${c.q} practice questions, $${c.price.toFixed(2)}`);
     a.innerHTML = `
       <div class="card-top">
-        <div class="card-top-bg${imgPath ? ' has-img' : ''}"${imgPath ? ` data-bg="${imgPath}"` : ''}></div>
+        <div class="card-top-bg${imgPath ? ' has-img' : ''}"${imgPath ? ` data-bg="${imgPath}" role="img" aria-label="${c.title} course hero image"` : ''}></div>
         ${c.badge ? `<span class="card-badge ${bc[c.badge]}">${bl[c.badge]}</span>` : ''}
-        <div class="card-ring">
+        <div class="card-ring" aria-hidden="true">
           <div class="r-clip"><div class="r-spin"></div></div>
           <div class="r-inner"><span class="r-code">${c.code}</span></div>
         </div>
       </div>
       <div class="card-body">
-        <div class="card-title">${c.title}</div>
+        <h3 class="card-title">${c.title}</h3>
         <div class="card-desc">${c.desc}</div>
         <div class="card-pub">LUCKY X</div>
-        <div class="card-rating">
+        <div class="card-rating" aria-label="Rating: ${c.rating.toFixed(1)} out of 5 stars${c.ratings ? ', ' + c.ratings + ' reviews' : ''}">
           <span class="r-num">${c.rating.toFixed(1)}</span>
-          <span class="r-stars">${stars(c.rating)}</span>
+          <span class="r-stars" aria-hidden="true">${stars(c.rating)}</span>
           ${c.ratings ? `<span class="r-count">(${c.ratings})</span>` : ''}
         </div>
         <div class="card-tags">
@@ -1753,7 +2072,7 @@ function renderGrid(trackFilter) {
         </div>
         <div class="card-price">
           <span class="p-now">$${c.price.toFixed(2)}</span>
-          <span class="p-was">$${c.orig.toFixed(2)}</span>
+          <span class="p-was" aria-label="Original price $${c.orig.toFixed(2)}">$${c.orig.toFixed(2)}</span>
           <span class="p-off">${pct}% off</span>
         </div>
         ${nextHtml}
@@ -1841,7 +2160,16 @@ setNav(0);
 /* ======== CONVERTKIT LEAD FORM ======== */
 document.getElementById('leadForm').addEventListener('submit', function(e) {
   e.preventDefault();
-  const email = this.querySelector('input[type="email"]').value;
+  const rawEmail = this.querySelector('input[type="email"]').value.trim().toLowerCase();
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(rawEmail) || rawEmail.length > 254) {
+    const errBtn = this.querySelector('button');
+    errBtn.textContent = 'Please enter a valid email';
+    errBtn.style.background = '#c43030';
+    setTimeout(() => { errBtn.textContent = 'Get the roadmap'; errBtn.style.background = ''; }, 3000);
+    return;
+  }
+  const email = rawEmail;
   const btn = this.querySelector('button');
   const input = this.querySelector('input');
   btn.textContent = 'Sending...';
@@ -1905,6 +2233,22 @@ const revealObs = new IntersectionObserver(entries => {
 }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
 document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+/* ======== FAQ ACCORDION ======== */
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
 </script>
 </body>
 </html>
