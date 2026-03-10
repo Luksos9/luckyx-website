@@ -274,7 +274,7 @@ body::after {
 .hero-grid {
   position: absolute;
   inset: -20%;
-  opacity: 0.12;
+  opacity: 0.16;
   background-image:
     linear-gradient(rgba(221,92,12,0.5) 1px, transparent 1px),
     linear-gradient(90deg, rgba(221,92,12,0.5) 1px, transparent 1px);
@@ -286,17 +286,17 @@ body::after {
 }
 
 [data-theme="light"] .hero-grid {
-  opacity: 0.08;
+  opacity: 0.14;
   background-image:
-    linear-gradient(rgba(221,92,12,0.6) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(221,92,12,0.6) 1px, transparent 1px);
+    linear-gradient(rgba(221,92,12,0.7) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(221,92,12,0.7) 1px, transparent 1px);
 }
 
 /* Floating gradient orbs */
 .hero-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(50px);
+  filter: blur(45px);
   will-change: transform;
 }
 
@@ -305,7 +305,7 @@ body::after {
   height: 600px;
   top: -15%;
   left: -10%;
-  background: radial-gradient(circle, rgba(221,92,12,0.25) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(221,92,12,0.3) 0%, transparent 70%);
   animation: orb-drift-1 20s ease-in-out infinite;
 }
 
@@ -314,7 +314,7 @@ body::after {
   height: 500px;
   bottom: -10%;
   right: -10%;
-  background: radial-gradient(circle, rgba(26,58,56,0.3) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(26,58,56,0.35) 0%, transparent 70%);
   animation: orb-drift-2 25s ease-in-out infinite;
 }
 
@@ -323,20 +323,20 @@ body::after {
   height: 350px;
   top: 40%;
   right: 20%;
-  background: radial-gradient(circle, rgba(221,92,12,0.18) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(221,92,12,0.22) 0%, transparent 70%);
   animation: orb-drift-3 18s ease-in-out infinite;
 }
 
 [data-theme="light"] .hero-orb-1 {
-  background: radial-gradient(circle, rgba(221,92,12,0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(221,92,12,0.28) 0%, transparent 70%);
 }
 
 [data-theme="light"] .hero-orb-2 {
-  background: radial-gradient(circle, rgba(26,58,56,0.18) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(26,58,56,0.3) 0%, transparent 70%);
 }
 
 [data-theme="light"] .hero-orb-3 {
-  background: radial-gradient(circle, rgba(221,92,12,0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(221,92,12,0.22) 0%, transparent 70%);
 }
 
 @keyframes orb-drift-1 {
