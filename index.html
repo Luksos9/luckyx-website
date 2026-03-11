@@ -368,17 +368,6 @@ body::after {
   stroke: var(--orange);
   filter: drop-shadow(0 0 6px rgba(221,92,12,0.4));
 }
-.nav-btn.nav-primary::after {
-  content: '';
-  position: absolute;
-  bottom: 2px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: var(--orange);
-}
 
 .nav-divider {
   width: 1px; height: 18px;
@@ -2005,7 +1994,7 @@ h3.card-title,
     <h2 class="sec-title">Pick the exam you're preparing for.</h2>
   </div>
 
-  <!-- Filter buttons removed — all courses always visible for better conversion -->
+  <div class="filter-row reveal" id="filters"></div>
   <div class="course-grid" id="grid">
     <!-- Static course links for SEO (visible without JS, replaced by JS-rendered cards) -->
     <noscript>
@@ -2233,7 +2222,34 @@ const tracks = {
   risk: "Risk & Compliance"
 };
 
-/* Filter buttons removed — always show all courses for smoother conversion */
+/* Render filter buttons with toggle behavior */
+const filterRow = document.getElementById('filters');
+Object.entries(tracks).forEach(([key, label]) => {
+  const btn = document.createElement('button');
+  btn.className = 'filter-btn' + (key === 'all' ? ' active' : '');
+  btn.textContent = label;
+  btn.dataset.track = key;
+  btn.addEventListener('click', () => {
+    if (key === 'all') {
+      /* "All Certs" always resets to show everything */
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderGrid(null);
+    } else if (btn.classList.contains('active')) {
+      /* Unclick: deactivate this filter, show all */
+      btn.classList.remove('active');
+      const allBtn = filterRow.querySelector('[data-track="all"]');
+      if (allBtn) allBtn.classList.add('active');
+      renderGrid(null);
+    } else {
+      /* Click: activate this filter */
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderGrid(key);
+    }
+  });
+  filterRow.appendChild(btn);
+});
 
 const grid = document.getElementById('grid');
 const bc = { best:'b-best', high:'b-high', hot:'b-hot', new:'b-new' };
@@ -2377,16 +2393,20 @@ function setNav(i) {
   ind.style.transform = `translateX(${i * 53}px)`;
 }
 
+let navLocked = false;
 btns.forEach((b, i) => {
   b.addEventListener('click', () => {
+    navLocked = true;
     setNav(i);
     const el = document.getElementById(b.dataset.s);
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setTimeout(() => { navLocked = false; }, 1200);
   });
 });
 
 const secs = ['hero', 'courses', 'why', 'cta'];
 const obs = new IntersectionObserver(entries => {
+  if (navLocked) return;
   entries.forEach(e => {
     if (e.isIntersecting) {
       const idx = secs.indexOf(e.target.id);
