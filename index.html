@@ -1169,6 +1169,31 @@ h3.card-title,
   padding: 36px 24px;
   text-align: center;
   position: relative;
+  overflow: hidden;
+}
+
+/* Vertical grid lines bleeding down from hero */
+.num-grid-extend {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.10;
+  background-image:
+    linear-gradient(90deg, rgba(221,92,12,0.5) 1px, transparent 1px);
+  background-size: 80px 80px;
+  background-position: center top;
+  clip-path: polygon(
+    0% 0%, 100% 0%,
+    100% 55%, 92% 70%, 80% 58%, 68% 75%,
+    55% 62%, 42% 78%, 30% 60%, 18% 72%, 8% 55%, 0% 68%
+  );
+}
+
+[data-theme="light"] .num-grid-extend {
+  opacity: 0.08;
+  background-image:
+    linear-gradient(90deg, rgba(221,92,12,0.7) 1px, transparent 1px);
 }
 
 .num-strip::before {
@@ -1186,6 +1211,8 @@ h3.card-title,
   font-weight: 700;
   letter-spacing: -0.5px;
   margin-bottom: 6px;
+  position: relative;
+  z-index: 1;
 }
 
 .num-headline .acc { color: var(--orange); }
@@ -1196,6 +1223,8 @@ h3.card-title,
   max-width: 480px;
   margin: 0 auto;
   line-height: 1.55;
+  position: relative;
+  z-index: 1;
 }
 
 /* ============ CTA ============ */
@@ -1913,6 +1942,7 @@ h3.card-title,
 
 <!-- MeasureUp price comparison -->
 <div class="num-strip reveal">
+  <div class="num-grid-extend"></div>
   <p class="num-headline">Your first attempt is free. Your second costs <span class="acc">$350</span>.</p>
   <p class="num-sub">ServiceNow's official partner charges $99 for 150 questions with 30-day access. Lucky X: 400+ questions, sourced explanations, lifetime access, $9.99. Same exam.</p>
 </div>
