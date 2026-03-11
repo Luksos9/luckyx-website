@@ -1170,27 +1170,28 @@ h3.card-title,
   overflow: hidden;
 }
 
-/* Vertical grid lines bleeding down from hero */
+/* Grid continuation from hero into num-strip */
 .num-grid-extend {
   position: absolute;
-  inset: 0;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.10;
+  opacity: 0.16;
   background-image:
+    linear-gradient(rgba(221,92,12,0.5) 1px, transparent 1px),
     linear-gradient(90deg, rgba(221,92,12,0.5) 1px, transparent 1px);
   background-size: 80px 80px;
-  background-position: center top;
-  clip-path: polygon(
-    0% 0%, 100% 0%,
-    100% 55%, 92% 70%, 80% 58%, 68% 75%,
-    55% 62%, 42% 78%, 30% 60%, 18% 72%, 8% 55%, 0% 68%
-  );
+  transform: perspective(500px) rotateX(35deg) scale(2.5);
+  transform-origin: center 30%;
+  mask-image: linear-gradient(to bottom, black 0%, black 30%, transparent 70%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 30%, transparent 70%);
 }
 
 [data-theme="light"] .num-grid-extend {
-  opacity: 0.08;
+  opacity: 0.14;
   background-image:
+    linear-gradient(rgba(221,92,12,0.7) 1px, transparent 1px),
     linear-gradient(90deg, rgba(221,92,12,0.7) 1px, transparent 1px);
 }
 
