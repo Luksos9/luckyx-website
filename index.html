@@ -2393,26 +2393,29 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 (function() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  function animateCountUp(el) {
+  function animateCountUp(el, delay) {
     var target = parseFloat(el.dataset.countTo);
     var decimals = parseInt(el.dataset.countDecimals || '0');
     var suffix = el.dataset.countSuffix || '';
     var useComma = el.dataset.countFormat === 'comma';
-    var duration = 1600;
-    var start = performance.now();
+    var duration = 2000;
+    var start = null;
 
-    function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+    /* Smooth ease-out-quart — fast start, gentle landing */
+    function ease(t) { var t1 = 1 - t; return 1 - t1 * t1 * t1 * t1; }
 
     function tick(now) {
+      if (start === null) start = now;
       var elapsed = now - start;
       var progress = Math.min(elapsed / duration, 1);
-      var value = easeOut(progress) * target;
+      var value = ease(progress) * target;
       var display = decimals > 0 ? value.toFixed(decimals) : Math.floor(value).toString();
       if (useComma) display = parseInt(display).toLocaleString('en-US');
       el.innerHTML = display + (suffix ? '<span class="acc">' + suffix + '</span>' : '');
       if (progress < 1) requestAnimationFrame(tick);
     }
-    requestAnimationFrame(tick);
+
+    setTimeout(function() { requestAnimationFrame(tick); }, delay);
   }
 
   var statsRow = document.querySelector('.stats-row');
@@ -2427,7 +2430,8 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
   var statsObs = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
       if (e.isIntersecting) {
-        e.target.querySelectorAll('.stat-num[data-count-to]').forEach(animateCountUp);
+        var items = e.target.querySelectorAll('.stat-num[data-count-to]');
+        items.forEach(function(el, i) { animateCountUp(el, i * 120); });
         statsObs.unobserve(e.target);
       }
     });
