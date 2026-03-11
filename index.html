@@ -2421,6 +2421,13 @@ function handleLeadSubmit(form) {
       btn.textContent = 'Sent! Check your inbox';
       btn.style.background = '#1f7a50';
       input.disabled = true;
+      if (typeof gtag === 'function') {
+        gtag('event', 'generate_lead', {
+          event_category: 'email_capture',
+          event_label: form.id || 'unknown_form',
+          value: 1
+        });
+      }
     } else {
       btn.textContent = 'Something went wrong. Try again';
       btn.style.background = '#c43030';
@@ -2453,6 +2460,9 @@ function handleLeadSubmit(form) {
     shown = true;
     sessionStorage.setItem('luckyx-exit-shown', '1');
     overlay.classList.add('active');
+    if (typeof gtag === 'function') {
+      gtag('event', 'exit_popup_shown', { event_category: 'engagement' });
+    }
   }
 
   function hidePopup() {
