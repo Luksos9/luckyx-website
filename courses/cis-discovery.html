@@ -13,18 +13,16 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="CIS-Discovery / RISCO Practice Test 2026 | Lucky X">
-<meta property="og:description" content="113 ServiceNow CIS-Discovery practice questions with sourced explanations. Master horizontal discovery, service mapping, and MID Servers.">
+<meta property="og:description" content="Prepare for the ServiceNow CIS-Discovery certification with 113 real exam-style practice questions. Covers all Discovery and RISCO domains including horizontal discovery, service mapping patterns, MID">
 <meta property="og:url" content="https://luckyx.dev/courses/cis-discovery.html">
 <meta property="og:site_name" content="Lucky X">
 <meta property="og:image" content="https://luckyx.dev/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
 <meta property="og:locale" content="en_US">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="CIS-Discovery / RISCO Practice Test 2026 | Lucky X">
-<meta name="twitter:description" content="113 ServiceNow CIS-Discovery practice questions with sourced explanations. Master horizontal discovery, service mapping, and MID Servers.">
+<meta name="twitter:description" content="Prepare for the ServiceNow CIS-Discovery certification with 113 real exam-style practice questions. Covers all Discovery and RISCO domains including horizontal discovery, service mapping patterns, MID">
 <meta name="twitter:image" content="https://luckyx.dev/og-image.png">
 <meta name="twitter:creator" content="@luckyxdev">
 
@@ -69,6 +67,134 @@
     "bestRating": "5",
     "worstRating": "1"
   }
+}
+</script>
+
+<!-- Structured Data: Quiz -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Quiz",
+  "name": "Free CIS-Discovery / RISCO Sample Questions",
+  "description": "Try 5 free sample questions from the CIS-Discovery / RISCO practice test",
+  "url": "https://luckyx.dev/courses/cis-discovery.html#free-quiz",
+  "educationalAlignment": {
+    "@type": "AlignmentObject",
+    "alignmentType": "assesses",
+    "targetName": "ServiceNow DISCO Certification"
+  },
+  "hasPart": [
+    {
+      "@type": "Question",
+      "name": "What is the primary function of the MID Server in ServiceNow Discovery?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To act as a proxy between the ServiceNow instance and the network"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "To store discovered CI data locally"
+        },
+        {
+          "@type": "Answer",
+          "text": "To replace the CMDB"
+        },
+        {
+          "@type": "Answer",
+          "text": "To manage user authentication"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "Which Discovery pattern type is used to discover horizontal applications like web servers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Horizontal Pattern"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Top-Down Pattern"
+        },
+        {
+          "@type": "Answer",
+          "text": "Service Pattern"
+        },
+        {
+          "@type": "Answer",
+          "text": "Network Pattern"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "What protocol does ServiceNow Discovery primarily use to discover Windows servers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "WMI"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "SSH"
+        },
+        {
+          "@type": "Answer",
+          "text": "SNMP"
+        },
+        {
+          "@type": "Answer",
+          "text": "HTTP"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "In ServiceNow Discovery, what is a 'shazzam' probe used for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Port scanning to identify open services"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Classifying discovered devices by OS type"
+        },
+        {
+          "@type": "Answer",
+          "text": "Mapping network topology"
+        },
+        {
+          "@type": "Answer",
+          "text": "Testing credential validity"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "What is the purpose of Identification Rules in Discovery?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To determine which CI a discovered device maps to in the CMDB"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "To authenticate against target devices"
+        },
+        {
+          "@type": "Answer",
+          "text": "To schedule discovery runs"
+        },
+        {
+          "@type": "Answer",
+          "text": "To filter out unwanted network traffic"
+        }
+      ]
+    }
+  ]
 }
 </script>
 
@@ -194,10 +320,40 @@ a:hover { text-decoration: underline; }
 .theme-toggle { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border); background: var(--bg-raised); cursor: pointer; display: flex; align-items: center; justify-content: center; }
 .theme-toggle svg { width: 18px; height: 18px; stroke: var(--text-dim); stroke-width: 2; fill: none; }
 
+/* Quiz section */
+.quiz-section { margin-top: 48px; }
+.quiz-section h2 { font-size: 1.3rem; font-weight: 600; margin-bottom: 8px; }
+.quiz-intro { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 24px; }
+.quiz-card { background: var(--bg-raised); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 16px; transition: border-color 0.2s; }
+.quiz-card[data-state="correct"] { border-color: #2ea043; }
+.quiz-card[data-state="wrong"] { border-color: #d73a49; }
+.quiz-q { font-weight: 600; font-size: 1rem; margin-bottom: 16px; line-height: 1.5; }
+.quiz-q-num { color: var(--orange); font-weight: 700; margin-right: 6px; }
+.quiz-opts { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.quiz-opt { display: flex; align-items: flex-start; gap: 10px; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border); cursor: pointer; transition: background 0.15s, border-color 0.15s; color: var(--text-dim); font-size: 0.95rem; line-height: 1.5; }
+.quiz-opt:hover { background: rgba(221,92,12,0.06); border-color: var(--border-hover); }
+.quiz-opt.selected { background: rgba(221,92,12,0.1); border-color: var(--orange); color: var(--text); }
+.quiz-opt.correct { background: rgba(46,160,67,0.1); border-color: #2ea043; color: var(--text); }
+.quiz-opt.wrong { background: rgba(215,58,73,0.1); border-color: #d73a49; }
+.quiz-opt[disabled] { pointer-events: none; }
+.quiz-opt-letter { width: 22px; height: 22px; border-radius: 50%; background: var(--bg-card); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 600; flex-shrink: 0; color: var(--text-dim); }
+.quiz-opt.selected .quiz-opt-letter { background: var(--orange); color: #fff; border-color: var(--orange); }
+.quiz-opt.correct .quiz-opt-letter { background: #2ea043; color: #fff; border-color: #2ea043; }
+.quiz-opt.wrong .quiz-opt-letter { background: #d73a49; color: #fff; border-color: #d73a49; }
+.quiz-explain { display: none; margin-top: 12px; padding: 12px 16px; background: var(--bg-card); border-radius: 8px; font-size: 0.9rem; color: var(--text-dim); line-height: 1.6; border-left: 3px solid var(--orange); }
+.quiz-explain.show { display: block; }
+.quiz-score { margin-top: 24px; padding: 20px; background: var(--bg-raised); border-radius: 12px; border: 1px solid var(--border); text-align: center; display: none; }
+.quiz-score.show { display: block; }
+.quiz-score-num { font-size: 2rem; font-weight: 800; color: var(--orange); }
+.quiz-score-label { color: var(--text-dim); font-size: 0.95rem; margin-top: 4px; }
+.quiz-score-msg { margin-top: 12px; font-size: 0.95rem; color: var(--text-dim); }
+.quiz-score .cp-cta { margin-top: 16px; font-size: 1rem; padding: 12px 32px; display: inline-flex; }
+
 @media (max-width: 600px) {
   .cp-title { font-size: 1.5rem; }
   .cp-price { font-size: 1.5rem; }
   .cp-cta { width: 100%; justify-content: center; }
+  .quiz-card { padding: 16px; }
 }
 </style>
 </head>
@@ -294,6 +450,70 @@ a:hover { text-decoration: underline; }
     </ul>
   </div>
 
+  <section class="quiz-section" id="free-quiz">
+    <h2>Try 5 Free DISCO Questions</h2>
+    <p class="quiz-intro">Test your knowledge before you buy. These sample questions are from our full 113-question practice test.</p>
+        <div class="quiz-card" id="qcard0">
+      <div class="quiz-q"><span class="quiz-q-num">1.</span>What is the primary function of the MID Server in ServiceNow Discovery?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>To store discovered CI data locally</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>To act as a proxy between the ServiceNow instance and the network</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>To replace the CMDB</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>To manage user authentication</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp0">The MID Server acts as a proxy that facilitates communication between a ServiceNow instance and external applications, data sources, or services on the customer's network.</div>
+    </div>
+    <div class="quiz-card" id="qcard1">
+      <div class="quiz-q"><span class="quiz-q-num">2.</span>Which Discovery pattern type is used to discover horizontal applications like web servers?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>Top-Down Pattern</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>Horizontal Pattern</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>Service Pattern</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>Network Pattern</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp1">Horizontal patterns discover applications that run on multiple servers, such as web servers, database servers, and application servers.</div>
+    </div>
+    <div class="quiz-card" id="qcard2">
+      <div class="quiz-q"><span class="quiz-q-num">3.</span>What protocol does ServiceNow Discovery primarily use to discover Windows servers?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>SSH</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>SNMP</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>WMI</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>HTTP</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp2">Windows Management Instrumentation (WMI) is the primary protocol used for discovering Windows-based servers and their configurations.</div>
+    </div>
+    <div class="quiz-card" id="qcard3">
+      <div class="quiz-q"><span class="quiz-q-num">4.</span>In ServiceNow Discovery, what is a 'shazzam' probe used for?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>Port scanning to identify open services</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>Classifying discovered devices by OS type</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>Mapping network topology</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>Testing credential validity</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp3">Shazzam probes perform port scanning to identify which services are running on discovered devices by checking for open ports.</div>
+    </div>
+    <div class="quiz-card" id="qcard4">
+      <div class="quiz-q"><span class="quiz-q-num">5.</span>What is the purpose of Identification Rules in Discovery?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>To authenticate against target devices</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>To determine which CI a discovered device maps to in the CMDB</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>To schedule discovery runs</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>To filter out unwanted network traffic</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp4">Identification Rules define the criteria used to match discovered devices to existing Configuration Items (CIs) in the CMDB, preventing duplicate records.</div>
+    </div>
+    <div class="quiz-score" id="quizScore">
+      <div class="quiz-score-num" id="quizScoreNum">0/5</div>
+      <div class="quiz-score-label">Sample Quiz Score</div>
+      <div class="quiz-score-msg" id="quizScoreMsg"></div>
+      <a href="https://www.udemy.com/course/pass-your-servicenow-cis-discovery-exam-vancouver-2023/?referralCode=752D974C366D4DEBE963" target="_blank" rel="noopener" class="cp-cta">
+        Get all 113 questions
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
   <div class="cp-bottom">
     <p>Looking for a different certification?</p>
     <a href="/#courses">Browse all 18 practice tests &rarr;</a>
@@ -312,6 +532,33 @@ a:hover { text-decoration: underline; }
     const next = current === 'light' ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', next);
     localStorage.setItem('luckyx-theme', next);
+  });
+
+  // Quiz logic
+  const answers = [1,1,2,0,1];
+  let answered = 0, score = 0;
+  document.querySelectorAll('.quiz-opt').forEach(function(opt) {
+    opt.addEventListener('click', function() {
+      var qi = parseInt(this.dataset.q);
+      var idx = parseInt(this.dataset.idx);
+      var card = document.getElementById('qcard' + qi);
+      if (card.dataset.state) return;
+      var isCorrect = idx === answers[qi];
+      if (isCorrect) { score++; this.classList.add('correct'); card.dataset.state = 'correct'; }
+      else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
+      this.classList.add('selected');
+      card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
+      document.getElementById('qexp' + qi).classList.add('show');
+      answered++;
+      if (answered === answers.length) {
+        var el = document.getElementById('quizScore');
+        el.classList.add('show');
+        document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
+        var msg = score === 5 ? 'Perfect score! You are well prepared.' : score >= 3 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
+        document.getElementById('quizScoreMsg').textContent = msg;
+        if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: 'DISCO', quiz_score: score });
+      }
+    });
   });
 </script>
 </body>

@@ -13,18 +13,16 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="CIS Service Mapping Practice Test 2026 | Lucky X">
-<meta property="og:description" content="217 ServiceNow CIS-Service Mapping practice questions with sourced explanations. Master mapping patterns and top-down discovery.">
+<meta property="og:description" content="Prepare for the ServiceNow CIS-Service Mapping exam with 217 practice questions. Covers service mapping patterns, top-down discovery, connection attributes, traffic-based discovery, and map reliabilit">
 <meta property="og:url" content="https://luckyx.dev/courses/cis-service-mapping.html">
 <meta property="og:site_name" content="Lucky X">
 <meta property="og:image" content="https://luckyx.dev/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
 <meta property="og:locale" content="en_US">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="CIS Service Mapping Practice Test 2026 | Lucky X">
-<meta name="twitter:description" content="217 ServiceNow CIS-Service Mapping practice questions with sourced explanations. Master mapping patterns and top-down discovery.">
+<meta name="twitter:description" content="Prepare for the ServiceNow CIS-Service Mapping exam with 217 practice questions. Covers service mapping patterns, top-down discovery, connection attributes, traffic-based discovery, and map reliabilit">
 <meta name="twitter:image" content="https://luckyx.dev/og-image.png">
 <meta name="twitter:creator" content="@luckyxdev">
 
@@ -69,6 +67,134 @@
     "bestRating": "5",
     "worstRating": "1"
   }
+}
+</script>
+
+<!-- Structured Data: Quiz -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Quiz",
+  "name": "Free CIS Service Mapping Sample Questions",
+  "description": "Try 5 free sample questions from the CIS Service Mapping practice test",
+  "url": "https://luckyx.dev/courses/cis-service-mapping.html#free-quiz",
+  "educationalAlignment": {
+    "@type": "AlignmentObject",
+    "alignmentType": "assesses",
+    "targetName": "ServiceNow SM Certification"
+  },
+  "hasPart": [
+    {
+      "@type": "Question",
+      "name": "What is Service Mapping in ServiceNow?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An automated process that discovers and maps relationships between IT components that make up a business service"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Drawing network diagrams manually"
+        },
+        {
+          "@type": "Answer",
+          "text": "Creating org charts"
+        },
+        {
+          "@type": "Answer",
+          "text": "Mapping customer journeys"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "What is a Top-Down Pattern?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A discovery pattern that starts from an entry point and maps all connected components of a service"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "A coding style"
+        },
+        {
+          "@type": "Answer",
+          "text": "A management hierarchy"
+        },
+        {
+          "@type": "Answer",
+          "text": "A data sorting algorithm"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "What are Connection Attributes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Properties that define how service components connect to each other (ports, protocols, process names)"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Database connection strings"
+        },
+        {
+          "@type": "Answer",
+          "text": "User profile fields"
+        },
+        {
+          "@type": "Answer",
+          "text": "Network cable specifications"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "What is Traffic-Based Discovery?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Using network traffic data to discover connections between CIs that traditional probes might miss"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Monitoring road traffic"
+        },
+        {
+          "@type": "Answer",
+          "text": "Analyzing website visitor traffic"
+        },
+        {
+          "@type": "Answer",
+          "text": "Measuring bandwidth usage"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "What does Map Reliability indicate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A confidence score showing how complete and accurate a service map is"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Network uptime"
+        },
+        {
+          "@type": "Answer",
+          "text": "GPS signal strength"
+        },
+        {
+          "@type": "Answer",
+          "text": "Data backup success rate"
+        }
+      ]
+    }
+  ]
 }
 </script>
 
@@ -194,10 +320,40 @@ a:hover { text-decoration: underline; }
 .theme-toggle { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border); background: var(--bg-raised); cursor: pointer; display: flex; align-items: center; justify-content: center; }
 .theme-toggle svg { width: 18px; height: 18px; stroke: var(--text-dim); stroke-width: 2; fill: none; }
 
+/* Quiz section */
+.quiz-section { margin-top: 48px; }
+.quiz-section h2 { font-size: 1.3rem; font-weight: 600; margin-bottom: 8px; }
+.quiz-intro { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 24px; }
+.quiz-card { background: var(--bg-raised); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 16px; transition: border-color 0.2s; }
+.quiz-card[data-state="correct"] { border-color: #2ea043; }
+.quiz-card[data-state="wrong"] { border-color: #d73a49; }
+.quiz-q { font-weight: 600; font-size: 1rem; margin-bottom: 16px; line-height: 1.5; }
+.quiz-q-num { color: var(--orange); font-weight: 700; margin-right: 6px; }
+.quiz-opts { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.quiz-opt { display: flex; align-items: flex-start; gap: 10px; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border); cursor: pointer; transition: background 0.15s, border-color 0.15s; color: var(--text-dim); font-size: 0.95rem; line-height: 1.5; }
+.quiz-opt:hover { background: rgba(221,92,12,0.06); border-color: var(--border-hover); }
+.quiz-opt.selected { background: rgba(221,92,12,0.1); border-color: var(--orange); color: var(--text); }
+.quiz-opt.correct { background: rgba(46,160,67,0.1); border-color: #2ea043; color: var(--text); }
+.quiz-opt.wrong { background: rgba(215,58,73,0.1); border-color: #d73a49; }
+.quiz-opt[disabled] { pointer-events: none; }
+.quiz-opt-letter { width: 22px; height: 22px; border-radius: 50%; background: var(--bg-card); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 600; flex-shrink: 0; color: var(--text-dim); }
+.quiz-opt.selected .quiz-opt-letter { background: var(--orange); color: #fff; border-color: var(--orange); }
+.quiz-opt.correct .quiz-opt-letter { background: #2ea043; color: #fff; border-color: #2ea043; }
+.quiz-opt.wrong .quiz-opt-letter { background: #d73a49; color: #fff; border-color: #d73a49; }
+.quiz-explain { display: none; margin-top: 12px; padding: 12px 16px; background: var(--bg-card); border-radius: 8px; font-size: 0.9rem; color: var(--text-dim); line-height: 1.6; border-left: 3px solid var(--orange); }
+.quiz-explain.show { display: block; }
+.quiz-score { margin-top: 24px; padding: 20px; background: var(--bg-raised); border-radius: 12px; border: 1px solid var(--border); text-align: center; display: none; }
+.quiz-score.show { display: block; }
+.quiz-score-num { font-size: 2rem; font-weight: 800; color: var(--orange); }
+.quiz-score-label { color: var(--text-dim); font-size: 0.95rem; margin-top: 4px; }
+.quiz-score-msg { margin-top: 12px; font-size: 0.95rem; color: var(--text-dim); }
+.quiz-score .cp-cta { margin-top: 16px; font-size: 1rem; padding: 12px 32px; display: inline-flex; }
+
 @media (max-width: 600px) {
   .cp-title { font-size: 1.5rem; }
   .cp-price { font-size: 1.5rem; }
   .cp-cta { width: 100%; justify-content: center; }
+  .quiz-card { padding: 16px; }
 }
 </style>
 </head>
@@ -294,6 +450,70 @@ a:hover { text-decoration: underline; }
     </ul>
   </div>
 
+  <section class="quiz-section" id="free-quiz">
+    <h2>Try 5 Free SM Questions</h2>
+    <p class="quiz-intro">Test your knowledge before you buy. These sample questions are from our full 217-question practice test.</p>
+        <div class="quiz-card" id="qcard0">
+      <div class="quiz-q"><span class="quiz-q-num">1.</span>What is Service Mapping in ServiceNow?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>Drawing network diagrams manually</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>An automated process that discovers and maps relationships between IT components that make up a business service</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>Creating org charts</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>Mapping customer journeys</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp0">Service Mapping automatically discovers and visualizes all the IT infrastructure components (servers, applications, databases) and their relationships that support a specific business service.</div>
+    </div>
+    <div class="quiz-card" id="qcard1">
+      <div class="quiz-q"><span class="quiz-q-num">2.</span>What is a Top-Down Pattern?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>A coding style</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>A discovery pattern that starts from an entry point and maps all connected components of a service</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>A management hierarchy</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>A data sorting algorithm</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp1">Top-Down Patterns start from a known entry point (like a URL or load balancer) and discover all downstream components — application servers, databases, and infrastructure — that comprise the service.</div>
+    </div>
+    <div class="quiz-card" id="qcard2">
+      <div class="quiz-q"><span class="quiz-q-num">3.</span>What are Connection Attributes?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>Database connection strings</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>Properties that define how service components connect to each other (ports, protocols, process names)</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>User profile fields</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>Network cable specifications</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp2">Connection Attributes define the characteristics (ports, protocols, process names) used to identify and map connections between service components during the discovery process.</div>
+    </div>
+    <div class="quiz-card" id="qcard3">
+      <div class="quiz-q"><span class="quiz-q-num">4.</span>What is Traffic-Based Discovery?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>Monitoring road traffic</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>Using network traffic data to discover connections between CIs that traditional probes might miss</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>Analyzing website visitor traffic</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>Measuring bandwidth usage</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp3">Traffic-Based Discovery analyzes actual network traffic flow data to identify connections between CIs, discovering relationships that traditional probe-based discovery might not detect.</div>
+    </div>
+    <div class="quiz-card" id="qcard4">
+      <div class="quiz-q"><span class="quiz-q-num">5.</span>What does Map Reliability indicate?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>Network uptime</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>A confidence score showing how complete and accurate a service map is</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>GPS signal strength</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>Data backup success rate</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp4">Map Reliability is a health score that indicates the completeness and accuracy of a service map, flagging missing components, stale data, or unresolved connection issues.</div>
+    </div>
+    <div class="quiz-score" id="quizScore">
+      <div class="quiz-score-num" id="quizScoreNum">0/5</div>
+      <div class="quiz-score-label">Sample Quiz Score</div>
+      <div class="quiz-score-msg" id="quizScoreMsg"></div>
+      <a href="https://www.udemy.com/course/pass-servicenow-cis-service-mapping-sm-exam/?referralCode=E4C8DC2D2F2DDEEA86D5" target="_blank" rel="noopener" class="cp-cta">
+        Get all 217 questions
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
   <div class="cp-bottom">
     <p>Looking for a different certification?</p>
     <a href="/#courses">Browse all 18 practice tests &rarr;</a>
@@ -312,6 +532,33 @@ a:hover { text-decoration: underline; }
     const next = current === 'light' ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', next);
     localStorage.setItem('luckyx-theme', next);
+  });
+
+  // Quiz logic
+  const answers = [1,1,1,1,1];
+  let answered = 0, score = 0;
+  document.querySelectorAll('.quiz-opt').forEach(function(opt) {
+    opt.addEventListener('click', function() {
+      var qi = parseInt(this.dataset.q);
+      var idx = parseInt(this.dataset.idx);
+      var card = document.getElementById('qcard' + qi);
+      if (card.dataset.state) return;
+      var isCorrect = idx === answers[qi];
+      if (isCorrect) { score++; this.classList.add('correct'); card.dataset.state = 'correct'; }
+      else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
+      this.classList.add('selected');
+      card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
+      document.getElementById('qexp' + qi).classList.add('show');
+      answered++;
+      if (answered === answers.length) {
+        var el = document.getElementById('quizScore');
+        el.classList.add('show');
+        document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
+        var msg = score === 5 ? 'Perfect score! You are well prepared.' : score >= 3 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
+        document.getElementById('quizScoreMsg').textContent = msg;
+        if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: 'SM', quiz_score: score });
+      }
+    });
   });
 </script>
 </body>
