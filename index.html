@@ -363,6 +363,23 @@ body::after {
 
 .nav-btn.active svg { stroke: var(--text); }
 
+/* Emphasize courses button as primary CTA */
+.nav-btn.nav-primary svg {
+  stroke: var(--orange);
+  filter: drop-shadow(0 0 6px rgba(221,92,12,0.4));
+}
+.nav-btn.nav-primary::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--orange);
+}
+
 .nav-divider {
   width: 1px; height: 18px;
   background: var(--border);
@@ -1686,6 +1703,7 @@ h3.card-title,
 
 [data-theme="light"] .nav-btn svg { stroke: #999; }
 [data-theme="light"] .nav-btn.active svg { stroke: var(--text); }
+[data-theme="light"] .nav-btn.nav-primary svg { stroke: var(--orange); }
 
 [data-theme="light"] .lead-box {
   box-shadow: var(--card-shadow);
@@ -1903,7 +1921,7 @@ h3.card-title,
       <svg viewBox="0 0 24 24"><path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
     </button>
     <div class="nav-divider"></div>
-    <button class="nav-btn" data-s="courses" aria-label="Courses">
+    <button class="nav-btn nav-primary" data-s="courses" aria-label="Courses">
       <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
     </button>
     <div class="nav-divider"></div>
@@ -1987,7 +2005,7 @@ h3.card-title,
     <h2 class="sec-title">Pick the exam you're preparing for.</h2>
   </div>
 
-  <div class="filter-row reveal" id="filters"></div>
+  <!-- Filter buttons removed — all courses always visible for better conversion -->
   <div class="course-grid" id="grid">
     <!-- Static course links for SEO (visible without JS, replaced by JS-rendered cards) -->
     <noscript>
@@ -2215,20 +2233,7 @@ const tracks = {
   risk: "Risk & Compliance"
 };
 
-/* Render filter buttons */
-const filterRow = document.getElementById('filters');
-Object.entries(tracks).forEach(([key, label]) => {
-  const btn = document.createElement('button');
-  btn.className = 'filter-btn' + (key === 'all' ? ' active' : '');
-  btn.textContent = label;
-  btn.dataset.track = key;
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    renderGrid(key === 'all' ? null : key);
-  });
-  filterRow.appendChild(btn);
-});
+/* Filter buttons removed — always show all courses for smoother conversion */
 
 const grid = document.getElementById('grid');
 const bc = { best:'b-best', high:'b-high', hot:'b-hot', new:'b-new' };
