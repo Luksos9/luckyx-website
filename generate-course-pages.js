@@ -57,7 +57,7 @@ function generatePage(course) {
 <title>${course.title} Practice Test 2026 | ServiceNow ${course.code} Exam Prep | Lucky X</title>
 <meta name="description" content="${course.longDesc}">
 <meta name="keywords" content="${course.keywords}, ServiceNow certification 2026, ServiceNow practice test, Lucky X">
-<meta name="author" content="Lukasz Szumilas">
+<meta name="author" content="Lucky X">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="${canonicalUrl}">
 
@@ -89,11 +89,11 @@ function generatePage(course) {
     "@type": "Organization",
     "name": "Lucky X",
     "url": "https://luckyx.dev/",
-    "sameAs": ["https://www.udemy.com/user/lucky-x/", "https://www.linkedin.com/in/lukaszszumilas/"]
+    "sameAs": ["https://www.udemy.com/user/lucky-x/"]
   },
   "creator": {
-    "@type": "Person",
-    "name": "Lukasz Szumilas"
+    "@type": "Organization",
+    "name": "Lucky X"
   },
   "educationalLevel": "Professional Certification",
   "teaches": "ServiceNow ${course.code} Certification",
@@ -351,7 +351,7 @@ a:hover { text-decoration: underline; }
 </main>
 
 <footer class="cp-footer">
-  <p>&copy; 2026 Lucky X &middot; <a href="/">luckyx.dev</a> &middot; <a href="https://www.linkedin.com/in/lukaszszumilas/" target="_blank" rel="noopener">LinkedIn</a></p>
+  <p>&copy; 2026 Lucky X &middot; <a href="/">luckyx.dev</a></p>
 </footer>
 
 <script>
