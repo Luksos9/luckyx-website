@@ -13,18 +13,16 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="CIS Customer Service Mgmt Practice Test 2026 | Lucky X">
-<meta property="og:description" content="348 ServiceNow CIS-CSM practice questions with sourced explanations. Master case management, agent workspace, and customer portals.">
+<meta property="og:description" content="Prepare for the ServiceNow CIS-Customer Service Management exam with 348 practice questions covering 30+ CSM topics. Includes case management, agent workspace, customer portal, and service contracts. ">
 <meta property="og:url" content="https://luckyx.dev/courses/cis-csm.html">
 <meta property="og:site_name" content="Lucky X">
 <meta property="og:image" content="https://luckyx.dev/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
 <meta property="og:locale" content="en_US">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="CIS Customer Service Mgmt Practice Test 2026 | Lucky X">
-<meta name="twitter:description" content="348 ServiceNow CIS-CSM practice questions with sourced explanations. Master case management, agent workspace, and customer portals.">
+<meta name="twitter:description" content="Prepare for the ServiceNow CIS-Customer Service Management exam with 348 practice questions covering 30+ CSM topics. Includes case management, agent workspace, customer portal, and service contracts. ">
 <meta name="twitter:image" content="https://luckyx.dev/og-image.png">
 <meta name="twitter:creator" content="@luckyxdev">
 
@@ -69,6 +67,134 @@
     "bestRating": "5",
     "worstRating": "1"
   }
+}
+</script>
+
+<!-- Structured Data: Quiz -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Quiz",
+  "name": "Free CIS Customer Service Mgmt Sample Questions",
+  "description": "Try 5 free sample questions from the CIS Customer Service Mgmt practice test",
+  "url": "https://luckyx.dev/courses/cis-csm.html#free-quiz",
+  "educationalAlignment": {
+    "@type": "AlignmentObject",
+    "alignmentType": "assesses",
+    "targetName": "ServiceNow CSM Certification"
+  },
+  "hasPart": [
+    {
+      "@type": "Question",
+      "name": "What is the primary purpose of Customer Service Management (CSM)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To provide end-to-end customer service from issue to resolution across departments"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "To manage internal IT tickets"
+        },
+        {
+          "@type": "Answer",
+          "text": "To handle payroll"
+        },
+        {
+          "@type": "Answer",
+          "text": "To configure firewalls"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Agent Workspace in CSM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A configurable UI that gives agents a unified view of customer cases and related information"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "A physical office space"
+        },
+        {
+          "@type": "Answer",
+          "text": "A code editor"
+        },
+        {
+          "@type": "Answer",
+          "text": "A project management board"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "What is a Customer Account in CSM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A record representing a company or organization that is a customer"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "A user login"
+        },
+        {
+          "@type": "Answer",
+          "text": "A bank account"
+        },
+        {
+          "@type": "Answer",
+          "text": "A social media profile"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Customer Portal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A self-service web interface where customers can submit and track their cases"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "An admin console"
+        },
+        {
+          "@type": "Answer",
+          "text": "A VPN gateway"
+        },
+        {
+          "@type": "Answer",
+          "text": "A development tool"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "What are Service Contracts in CSM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Agreements defining the level of service and entitlements for a customer"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Employment agreements"
+        },
+        {
+          "@type": "Answer",
+          "text": "Software licenses"
+        },
+        {
+          "@type": "Answer",
+          "text": "NDAs"
+        }
+      ]
+    }
+  ]
 }
 </script>
 
@@ -194,10 +320,40 @@ a:hover { text-decoration: underline; }
 .theme-toggle { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border); background: var(--bg-raised); cursor: pointer; display: flex; align-items: center; justify-content: center; }
 .theme-toggle svg { width: 18px; height: 18px; stroke: var(--text-dim); stroke-width: 2; fill: none; }
 
+/* Quiz section */
+.quiz-section { margin-top: 48px; }
+.quiz-section h2 { font-size: 1.3rem; font-weight: 600; margin-bottom: 8px; }
+.quiz-intro { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 24px; }
+.quiz-card { background: var(--bg-raised); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 16px; transition: border-color 0.2s; }
+.quiz-card[data-state="correct"] { border-color: #2ea043; }
+.quiz-card[data-state="wrong"] { border-color: #d73a49; }
+.quiz-q { font-weight: 600; font-size: 1rem; margin-bottom: 16px; line-height: 1.5; }
+.quiz-q-num { color: var(--orange); font-weight: 700; margin-right: 6px; }
+.quiz-opts { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.quiz-opt { display: flex; align-items: flex-start; gap: 10px; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border); cursor: pointer; transition: background 0.15s, border-color 0.15s; color: var(--text-dim); font-size: 0.95rem; line-height: 1.5; }
+.quiz-opt:hover { background: rgba(221,92,12,0.06); border-color: var(--border-hover); }
+.quiz-opt.selected { background: rgba(221,92,12,0.1); border-color: var(--orange); color: var(--text); }
+.quiz-opt.correct { background: rgba(46,160,67,0.1); border-color: #2ea043; color: var(--text); }
+.quiz-opt.wrong { background: rgba(215,58,73,0.1); border-color: #d73a49; }
+.quiz-opt[disabled] { pointer-events: none; }
+.quiz-opt-letter { width: 22px; height: 22px; border-radius: 50%; background: var(--bg-card); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 600; flex-shrink: 0; color: var(--text-dim); }
+.quiz-opt.selected .quiz-opt-letter { background: var(--orange); color: #fff; border-color: var(--orange); }
+.quiz-opt.correct .quiz-opt-letter { background: #2ea043; color: #fff; border-color: #2ea043; }
+.quiz-opt.wrong .quiz-opt-letter { background: #d73a49; color: #fff; border-color: #d73a49; }
+.quiz-explain { display: none; margin-top: 12px; padding: 12px 16px; background: var(--bg-card); border-radius: 8px; font-size: 0.9rem; color: var(--text-dim); line-height: 1.6; border-left: 3px solid var(--orange); }
+.quiz-explain.show { display: block; }
+.quiz-score { margin-top: 24px; padding: 20px; background: var(--bg-raised); border-radius: 12px; border: 1px solid var(--border); text-align: center; display: none; }
+.quiz-score.show { display: block; }
+.quiz-score-num { font-size: 2rem; font-weight: 800; color: var(--orange); }
+.quiz-score-label { color: var(--text-dim); font-size: 0.95rem; margin-top: 4px; }
+.quiz-score-msg { margin-top: 12px; font-size: 0.95rem; color: var(--text-dim); }
+.quiz-score .cp-cta { margin-top: 16px; font-size: 1rem; padding: 12px 32px; display: inline-flex; }
+
 @media (max-width: 600px) {
   .cp-title { font-size: 1.5rem; }
   .cp-price { font-size: 1.5rem; }
   .cp-cta { width: 100%; justify-content: center; }
+  .quiz-card { padding: 16px; }
 }
 </style>
 </head>
@@ -294,6 +450,70 @@ a:hover { text-decoration: underline; }
     </ul>
   </div>
 
+  <section class="quiz-section" id="free-quiz">
+    <h2>Try 5 Free CSM Questions</h2>
+    <p class="quiz-intro">Test your knowledge before you buy. These sample questions are from our full 348-question practice test.</p>
+        <div class="quiz-card" id="qcard0">
+      <div class="quiz-q"><span class="quiz-q-num">1.</span>What is the primary purpose of Customer Service Management (CSM)?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>To manage internal IT tickets</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>To provide end-to-end customer service from issue to resolution across departments</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>To handle payroll</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>To configure firewalls</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp0">CSM connects customer service with other departments (field service, engineering, operations) to resolve complex customer issues end-to-end, not just manage individual tickets.</div>
+    </div>
+    <div class="quiz-card" id="qcard1">
+      <div class="quiz-q"><span class="quiz-q-num">2.</span>What is the Agent Workspace in CSM?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>A physical office space</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>A configurable UI that gives agents a unified view of customer cases and related information</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>A code editor</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>A project management board</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp1">Agent Workspace provides customer service agents with a single-pane interface showing case details, customer information, interaction history, and knowledge articles for efficient case resolution.</div>
+    </div>
+    <div class="quiz-card" id="qcard2">
+      <div class="quiz-q"><span class="quiz-q-num">3.</span>What is a Customer Account in CSM?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>A user login</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>A record representing a company or organization that is a customer</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>A bank account</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>A social media profile</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp2">A Customer Account represents an external company or organization that is a customer, storing company details, contacts, contracts, assets, and service history.</div>
+    </div>
+    <div class="quiz-card" id="qcard3">
+      <div class="quiz-q"><span class="quiz-q-num">4.</span>What is the Customer Portal?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>An admin console</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>A self-service web interface where customers can submit and track their cases</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>A VPN gateway</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>A development tool</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp3">The Customer Portal is a self-service interface where external customers can submit new cases, track existing cases, browse knowledge articles, and manage their account information.</div>
+    </div>
+    <div class="quiz-card" id="qcard4">
+      <div class="quiz-q"><span class="quiz-q-num">5.</span>What are Service Contracts in CSM?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>Employment agreements</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>Agreements defining the level of service and entitlements for a customer</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>Software licenses</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>NDAs</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp4">Service Contracts define the terms, entitlements, and service levels agreed upon with a customer, determining what support they are entitled to receive and under what conditions.</div>
+    </div>
+    <div class="quiz-score" id="quizScore">
+      <div class="quiz-score-num" id="quizScoreNum">0/5</div>
+      <div class="quiz-score-label">Sample Quiz Score</div>
+      <div class="quiz-score-msg" id="quizScoreMsg"></div>
+      <a href="https://www.udemy.com/course/pass-your-servicenow-cis-customer-service-management-csm/?referralCode=211B4B7795C55DA7281A" target="_blank" rel="noopener" class="cp-cta">
+        Get all 348 questions
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
   <div class="cp-bottom">
     <p>Looking for a different certification?</p>
     <a href="/#courses">Browse all 18 practice tests &rarr;</a>
@@ -312,6 +532,33 @@ a:hover { text-decoration: underline; }
     const next = current === 'light' ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', next);
     localStorage.setItem('luckyx-theme', next);
+  });
+
+  // Quiz logic
+  const answers = [1,1,1,1,1];
+  let answered = 0, score = 0;
+  document.querySelectorAll('.quiz-opt').forEach(function(opt) {
+    opt.addEventListener('click', function() {
+      var qi = parseInt(this.dataset.q);
+      var idx = parseInt(this.dataset.idx);
+      var card = document.getElementById('qcard' + qi);
+      if (card.dataset.state) return;
+      var isCorrect = idx === answers[qi];
+      if (isCorrect) { score++; this.classList.add('correct'); card.dataset.state = 'correct'; }
+      else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
+      this.classList.add('selected');
+      card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
+      document.getElementById('qexp' + qi).classList.add('show');
+      answered++;
+      if (answered === answers.length) {
+        var el = document.getElementById('quizScore');
+        el.classList.add('show');
+        document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
+        var msg = score === 5 ? 'Perfect score! You are well prepared.' : score >= 3 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
+        document.getElementById('quizScoreMsg').textContent = msg;
+        if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: 'CSM', quiz_score: score });
+      }
+    });
   });
 </script>
 </body>

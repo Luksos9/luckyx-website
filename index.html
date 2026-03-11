@@ -1063,6 +1063,17 @@ body::after {
   transition: opacity 0.2s;
 }
 .card-details:hover { opacity: 0.8; }
+.card-free-quiz {
+  display: block;
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-dim);
+  font-weight: 500;
+  padding: 4px 0 0;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.card-free-quiz:hover { color: var(--orange); }
 
 .card-body {
   padding: 16px 18px 18px;
@@ -2326,6 +2337,7 @@ function renderGrid(trackFilter) {
           <span class="p-off">${pct}% off</span>
         </div>
         <span class="card-details" data-slug="${c.slug}">View details &rarr;</span>
+        <span class="card-free-quiz" data-slug="${c.slug}">Try 5 free questions</span>
         ${nextHtml}
       </div>`;
     grid.appendChild(a);
@@ -2346,6 +2358,12 @@ document.getElementById('grid').addEventListener('click', function(e) {
     e.preventDefault();
     e.stopPropagation();
     window.location.href = '/courses/' + details.dataset.slug + '.html';
+  }
+  const freeQuiz = e.target.closest('.card-free-quiz');
+  if (freeQuiz) {
+    e.preventDefault();
+    e.stopPropagation();
+    window.location.href = '/courses/' + freeQuiz.dataset.slug + '.html#free-quiz';
   }
 });
 

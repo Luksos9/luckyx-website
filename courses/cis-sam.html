@@ -13,18 +13,16 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="CIS Software Asset Mgmt Practice Test 2026 | Lucky X">
-<meta property="og:description" content="250 ServiceNow CIS-SAM practice questions with sourced explanations. Master software models, entitlements, and license calculations.">
+<meta property="og:description" content="Pass the ServiceNow CIS-Software Asset Management exam with 250 practice questions aligned to the latest blueprint. Covers software models, entitlements, license calculations, SAM workspace, and norma">
 <meta property="og:url" content="https://luckyx.dev/courses/cis-sam.html">
 <meta property="og:site_name" content="Lucky X">
 <meta property="og:image" content="https://luckyx.dev/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
 <meta property="og:locale" content="en_US">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="CIS Software Asset Mgmt Practice Test 2026 | Lucky X">
-<meta name="twitter:description" content="250 ServiceNow CIS-SAM practice questions with sourced explanations. Master software models, entitlements, and license calculations.">
+<meta name="twitter:description" content="Pass the ServiceNow CIS-Software Asset Management exam with 250 practice questions aligned to the latest blueprint. Covers software models, entitlements, license calculations, SAM workspace, and norma">
 <meta name="twitter:image" content="https://luckyx.dev/og-image.png">
 <meta name="twitter:creator" content="@luckyxdev">
 
@@ -69,6 +67,134 @@
     "bestRating": "5",
     "worstRating": "1"
   }
+}
+</script>
+
+<!-- Structured Data: Quiz -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Quiz",
+  "name": "Free CIS Software Asset Mgmt Sample Questions",
+  "description": "Try 5 free sample questions from the CIS Software Asset Mgmt practice test",
+  "url": "https://luckyx.dev/courses/cis-sam.html#free-quiz",
+  "educationalAlignment": {
+    "@type": "AlignmentObject",
+    "alignmentType": "assesses",
+    "targetName": "ServiceNow SAM Certification"
+  },
+  "hasPart": [
+    {
+      "@type": "Question",
+      "name": "What is the primary goal of Software Asset Management (SAM)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Managing software licenses to ensure compliance and optimize costs"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Writing software code"
+        },
+        {
+          "@type": "Answer",
+          "text": "Designing user interfaces"
+        },
+        {
+          "@type": "Answer",
+          "text": "Testing software applications"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "What is a Software Entitlement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A record representing the rights to use software as defined by a license agreement"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "A user permission"
+        },
+        {
+          "@type": "Answer",
+          "text": "A software feature"
+        },
+        {
+          "@type": "Answer",
+          "text": "A warranty document"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "What is Software Normalization?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The process of standardizing software names and publishers from discovery data into a consistent library"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Code formatting"
+        },
+        {
+          "@type": "Answer",
+          "text": "Data encryption"
+        },
+        {
+          "@type": "Answer",
+          "text": "File compression"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "What does License Calculation do in SAM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Compares installed/used software against purchased entitlements to determine compliance position"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Calculates software development time"
+        },
+        {
+          "@type": "Answer",
+          "text": "Calculates server costs"
+        },
+        {
+          "@type": "Answer",
+          "text": "Estimates project timelines"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "What is the SAM Workspace?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A centralized dashboard for managing software assets, compliance status, and optimization opportunities"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "A physical room"
+        },
+        {
+          "@type": "Answer",
+          "text": "A code editor"
+        },
+        {
+          "@type": "Answer",
+          "text": "A testing environment"
+        }
+      ]
+    }
+  ]
 }
 </script>
 
@@ -194,10 +320,40 @@ a:hover { text-decoration: underline; }
 .theme-toggle { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border); background: var(--bg-raised); cursor: pointer; display: flex; align-items: center; justify-content: center; }
 .theme-toggle svg { width: 18px; height: 18px; stroke: var(--text-dim); stroke-width: 2; fill: none; }
 
+/* Quiz section */
+.quiz-section { margin-top: 48px; }
+.quiz-section h2 { font-size: 1.3rem; font-weight: 600; margin-bottom: 8px; }
+.quiz-intro { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 24px; }
+.quiz-card { background: var(--bg-raised); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 16px; transition: border-color 0.2s; }
+.quiz-card[data-state="correct"] { border-color: #2ea043; }
+.quiz-card[data-state="wrong"] { border-color: #d73a49; }
+.quiz-q { font-weight: 600; font-size: 1rem; margin-bottom: 16px; line-height: 1.5; }
+.quiz-q-num { color: var(--orange); font-weight: 700; margin-right: 6px; }
+.quiz-opts { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.quiz-opt { display: flex; align-items: flex-start; gap: 10px; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border); cursor: pointer; transition: background 0.15s, border-color 0.15s; color: var(--text-dim); font-size: 0.95rem; line-height: 1.5; }
+.quiz-opt:hover { background: rgba(221,92,12,0.06); border-color: var(--border-hover); }
+.quiz-opt.selected { background: rgba(221,92,12,0.1); border-color: var(--orange); color: var(--text); }
+.quiz-opt.correct { background: rgba(46,160,67,0.1); border-color: #2ea043; color: var(--text); }
+.quiz-opt.wrong { background: rgba(215,58,73,0.1); border-color: #d73a49; }
+.quiz-opt[disabled] { pointer-events: none; }
+.quiz-opt-letter { width: 22px; height: 22px; border-radius: 50%; background: var(--bg-card); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 600; flex-shrink: 0; color: var(--text-dim); }
+.quiz-opt.selected .quiz-opt-letter { background: var(--orange); color: #fff; border-color: var(--orange); }
+.quiz-opt.correct .quiz-opt-letter { background: #2ea043; color: #fff; border-color: #2ea043; }
+.quiz-opt.wrong .quiz-opt-letter { background: #d73a49; color: #fff; border-color: #d73a49; }
+.quiz-explain { display: none; margin-top: 12px; padding: 12px 16px; background: var(--bg-card); border-radius: 8px; font-size: 0.9rem; color: var(--text-dim); line-height: 1.6; border-left: 3px solid var(--orange); }
+.quiz-explain.show { display: block; }
+.quiz-score { margin-top: 24px; padding: 20px; background: var(--bg-raised); border-radius: 12px; border: 1px solid var(--border); text-align: center; display: none; }
+.quiz-score.show { display: block; }
+.quiz-score-num { font-size: 2rem; font-weight: 800; color: var(--orange); }
+.quiz-score-label { color: var(--text-dim); font-size: 0.95rem; margin-top: 4px; }
+.quiz-score-msg { margin-top: 12px; font-size: 0.95rem; color: var(--text-dim); }
+.quiz-score .cp-cta { margin-top: 16px; font-size: 1rem; padding: 12px 32px; display: inline-flex; }
+
 @media (max-width: 600px) {
   .cp-title { font-size: 1.5rem; }
   .cp-price { font-size: 1.5rem; }
   .cp-cta { width: 100%; justify-content: center; }
+  .quiz-card { padding: 16px; }
 }
 </style>
 </head>
@@ -294,6 +450,70 @@ a:hover { text-decoration: underline; }
     </ul>
   </div>
 
+  <section class="quiz-section" id="free-quiz">
+    <h2>Try 5 Free SAM Questions</h2>
+    <p class="quiz-intro">Test your knowledge before you buy. These sample questions are from our full 250-question practice test.</p>
+        <div class="quiz-card" id="qcard0">
+      <div class="quiz-q"><span class="quiz-q-num">1.</span>What is the primary goal of Software Asset Management (SAM)?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>Writing software code</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>Managing software licenses to ensure compliance and optimize costs</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>Designing user interfaces</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>Testing software applications</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp0">SAM manages the full software license lifecycle — tracking entitlements, measuring usage, ensuring compliance with vendor agreements, and optimizing license costs to avoid over/under-licensing.</div>
+    </div>
+    <div class="quiz-card" id="qcard1">
+      <div class="quiz-q"><span class="quiz-q-num">2.</span>What is a Software Entitlement?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>A user permission</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>A record representing the rights to use software as defined by a license agreement</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>A software feature</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>A warranty document</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp1">A Software Entitlement records the purchased rights to use software, including the license type, quantity, metrics (per user, per device), and terms from the vendor agreement.</div>
+    </div>
+    <div class="quiz-card" id="qcard2">
+      <div class="quiz-q"><span class="quiz-q-num">3.</span>What is Software Normalization?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>Code formatting</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>The process of standardizing software names and publishers from discovery data into a consistent library</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>Data encryption</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>File compression</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp2">Software Normalization maps the varied software names found by discovery (e.g., 'MS Office', 'Microsoft Office 365') to standardized publisher and product names in the software library.</div>
+    </div>
+    <div class="quiz-card" id="qcard3">
+      <div class="quiz-q"><span class="quiz-q-num">4.</span>What does License Calculation do in SAM?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>Calculates software development time</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>Compares installed/used software against purchased entitlements to determine compliance position</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>Calculates server costs</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>Estimates project timelines</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp3">License Calculation compares the number of software installations or allocations against purchased entitlements, showing whether the organization is compliant, over-licensed, or under-licensed.</div>
+    </div>
+    <div class="quiz-card" id="qcard4">
+      <div class="quiz-q"><span class="quiz-q-num">5.</span>What is the SAM Workspace?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>A physical room</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>A centralized dashboard for managing software assets, compliance status, and optimization opportunities</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>A code editor</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>A testing environment</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp4">The SAM Workspace provides a centralized interface with dashboards, reports, and quick actions for software asset managers to monitor compliance, track spending, and identify optimization opportunities.</div>
+    </div>
+    <div class="quiz-score" id="quizScore">
+      <div class="quiz-score-num" id="quizScoreNum">0/5</div>
+      <div class="quiz-score-label">Sample Quiz Score</div>
+      <div class="quiz-score-msg" id="quizScoreMsg"></div>
+      <a href="https://www.udemy.com/course/pass-your-servicenow-cis-software-asset-mgmt-sam-exam/?referralCode=627AA3E200F1159EDF94" target="_blank" rel="noopener" class="cp-cta">
+        Get all 250 questions
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
   <div class="cp-bottom">
     <p>Looking for a different certification?</p>
     <a href="/#courses">Browse all 18 practice tests &rarr;</a>
@@ -312,6 +532,33 @@ a:hover { text-decoration: underline; }
     const next = current === 'light' ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', next);
     localStorage.setItem('luckyx-theme', next);
+  });
+
+  // Quiz logic
+  const answers = [1,1,1,1,1];
+  let answered = 0, score = 0;
+  document.querySelectorAll('.quiz-opt').forEach(function(opt) {
+    opt.addEventListener('click', function() {
+      var qi = parseInt(this.dataset.q);
+      var idx = parseInt(this.dataset.idx);
+      var card = document.getElementById('qcard' + qi);
+      if (card.dataset.state) return;
+      var isCorrect = idx === answers[qi];
+      if (isCorrect) { score++; this.classList.add('correct'); card.dataset.state = 'correct'; }
+      else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
+      this.classList.add('selected');
+      card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
+      document.getElementById('qexp' + qi).classList.add('show');
+      answered++;
+      if (answered === answers.length) {
+        var el = document.getElementById('quizScore');
+        el.classList.add('show');
+        document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
+        var msg = score === 5 ? 'Perfect score! You are well prepared.' : score >= 3 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
+        document.getElementById('quizScoreMsg').textContent = msg;
+        if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: 'SAM', quiz_score: score });
+      }
+    });
   });
 </script>
 </body>
