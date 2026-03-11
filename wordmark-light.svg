@@ -1,0 +1,7 @@
+<svg width="920" height="200" viewBox="0 0 320 80" xmlns="http://www.w3.org/2000/svg">
+  <text x="0" y="60" font-family="DM Sans, sans-serif" font-weight="800" font-size="56" fill="#1a1a1a" letter-spacing="-2">Lucky</text>
+  <g transform="translate(220, 7) scale(0.55)">
+    <path d="M32 28L52 60L32 92H50L60 76L70 92H88L68 60L88 28H70L60 44L50 28H32Z" fill="#c95a24" opacity="0.6"/>
+    <path d="M36 24L56 56L36 88H54L64 72L74 88H92L72 56L92 24H74L64 40L54 24H36Z" fill="#e8733a"/>
+  </g>
+</svg>
