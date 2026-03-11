@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 ServiceNow Certification Roadmap — Lucky X</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --orange:#dd5c0c;
+    --orange-bright:#ff8c42;
+    --orange-deep:#8a3a08;
+    --text:#2a2725;
+    --text-dim:#6b6560;
+    --text-faint:#9a9590;
+    --bg:#ffffff;
+    --bg-alt:#f7f5f1;
+    --bg-card:#f2efea;
+    --border:rgba(0,0,0,0.08);
+    --teal:#1a3a38;
+    --teal-light:#e8f0ef;
+    --font:'Outfit',sans-serif;
+  }
+  html{font-size:16px}
+  body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.6;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+
+  /* Page / Print Setup */
+  @page{size:A4;margin:0}
+  .page{
+    width:210mm;min-height:297mm;max-height:297mm;
+    margin:0 auto;padding:20mm 18mm;
+    position:relative;overflow:hidden;
+    page-break-after:always;
+    background:var(--bg);
+  }
+  .page:last-child{page-break-after:auto}
+
+  /* Screen-only spacing between pages */
+  @media screen{
+    body{background:#d0cdc8;padding:20px 0}
+    .page{box-shadow:0 4px 24px rgba(0,0,0,0.15);margin-bottom:20px;border-radius:4px}
+  }
+  @media print{
+    body{background:white}
+    .page{box-shadow:none;border-radius:0}
+  }
+
+  /* Typography */
+  h1{font-size:36px;font-weight:800;letter-spacing:-1.5px;line-height:1.05;color:var(--text)}
+  h2{font-size:22px;font-weight:700;letter-spacing:-0.5px;line-height:1.2;color:var(--text);margin-bottom:14px}
+  h3{font-size:15px;font-weight:700;letter-spacing:-0.3px;line-height:1.3;color:var(--text);margin-bottom:6px}
+  p{font-size:13px;line-height:1.6;color:var(--text-dim)}
+  .subtitle{font-size:16px;font-weight:400;color:var(--text-dim);line-height:1.5;margin-top:8px}
+  .section-intro{font-size:13px;color:var(--text-dim);margin-bottom:16px;line-height:1.6}
+  .small{font-size:11px;color:var(--text-faint);line-height:1.5}
+  .accent{color:var(--orange)}
+  .bold{font-weight:700}
+  .orange-line{width:40px;height:3px;background:var(--orange);border-radius:2px;margin-bottom:14px}
+
+  /* Cover Page */
+  .cover{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:30mm 24mm}
+  .cover-logo{width:80px;height:80px;margin-bottom:32px}
+  .cover h1{font-size:44px;letter-spacing:-2px;margin-bottom:12px}
+  .cover .subtitle{font-size:20px;margin-bottom:40px}
+  .cover-stats{display:flex;gap:32px;margin-top:40px}
+  .cover-stat{text-align:center}
+  .cover-stat .num{font-size:28px;font-weight:800;color:var(--orange);letter-spacing:-1px}
+  .cover-stat .label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text-dim);margin-top:4px}
+  .cover-badge{display:inline-block;background:var(--orange);color:white;font-size:11px;font-weight:600;letter-spacing:1px;padding:6px 16px;border-radius:20px;margin-bottom:32px;text-transform:uppercase}
+  .cover-url{position:absolute;bottom:20mm;font-size:14px;font-weight:600;color:var(--orange);letter-spacing:1px}
+
+  /* Stats Row */
+  .stats-row{display:flex;gap:12px;margin-bottom:20px}
+  .stat-card{flex:1;background:var(--bg-alt);border-radius:10px;padding:14px 12px;text-align:center;border:1px solid var(--border)}
+  .stat-card .num{font-size:22px;font-weight:800;color:var(--orange);letter-spacing:-0.5px}
+  .stat-card .label{font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-dim);margin-top:3px}
+
+  /* Salary Table (Why page) */
+  .salary-table{width:100%;border-collapse:collapse;font-size:12px;margin-top:12px}
+  .salary-table th{text-align:left;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-faint);padding:8px 8px 6px;border-bottom:2px solid var(--border)}
+  .salary-table td{padding:7px 8px;border-bottom:1px solid var(--border);vertical-align:middle}
+  .salary-table tr:last-child td{border-bottom:none}
+  .salary-table .salary{font-weight:700;color:var(--orange);white-space:nowrap}
+  .salary-table .highlight{background:rgba(221,92,12,0.04)}
+  .salary-table .cert-level{font-weight:600}
+
+  /* Callout Box */
+  .callout{background:rgba(221,92,12,0.05);border-left:3px solid var(--orange);border-radius:0 8px 8px 0;padding:12px 14px;margin:14px 0;font-size:12px;line-height:1.6;color:var(--text)}
+  .callout strong{color:var(--orange)}
+
+  /* Cert Map Visual */
+  .map-container{position:relative}
+  .track-row{display:flex;align-items:center;margin-bottom:8px}
+  .track-label{width:110px;flex-shrink:0;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-dim);padding-right:8px;text-align:right}
+  .track-certs{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+  .cert-node{
+    display:inline-flex;align-items:center;justify-content:center;
+    background:var(--bg-alt);border:1.5px solid var(--border);border-radius:8px;
+    padding:6px 10px;font-size:11px;font-weight:600;color:var(--text);
+    position:relative;white-space:nowrap;
+  }
+  .cert-node.start{border-color:var(--orange);background:rgba(221,92,12,0.08)}
+  .cert-node.start::before{content:"START";position:absolute;top:-12px;left:50%;transform:translateX(-50%);font-size:7px;font-weight:800;color:var(--orange);letter-spacing:1.5px}
+  .cert-node.gateway{border-color:var(--orange);border-style:dashed;background:rgba(221,92,12,0.06)}
+  .cert-node.gateway::after{content:"NEW REQ";position:absolute;bottom:-12px;left:50%;transform:translateX(-50%);font-size:7px;font-weight:800;color:var(--orange);letter-spacing:1px}
+  .arrow{color:var(--text-faint);font-size:14px;font-weight:300}
+  .track-line{border-left:2px dashed var(--border);height:8px;margin-left:55px}
+
+  /* Decision Table */
+  .decision-table{width:100%;border-collapse:collapse;font-size:11.5px;margin-top:10px}
+  .decision-table th{text-align:left;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-faint);padding:7px 8px 5px;border-bottom:2px solid var(--border)}
+  .decision-table td{padding:7px 8px;border-bottom:1px solid var(--border);vertical-align:top}
+  .decision-table tr:last-child td{border-bottom:none}
+  .decision-table .track-name{font-weight:700;color:var(--orange);white-space:nowrap}
+  .decision-table .salary-range{font-weight:700;color:var(--teal);white-space:nowrap}
+  .decision-table .path{font-weight:600;font-size:11px}
+
+  /* Track Cards */
+  .track-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .track-card{background:var(--bg-alt);border-radius:10px;padding:13px 14px;border:1px solid var(--border)}
+  .track-card .track-title{font-size:13px;font-weight:700;color:var(--orange);margin-bottom:3px;display:flex;align-items:center;gap:6px}
+  .track-card .track-path{font-size:11px;font-weight:600;color:var(--text);margin-bottom:4px}
+  .track-card .track-meta{font-size:10px;color:var(--text-dim);line-height:1.5}
+  .track-card .track-meta strong{color:var(--text)}
+  .track-card .track-questions{display:inline-block;background:rgba(221,92,12,0.08);color:var(--orange);font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;margin-top:4px}
+
+  /* Exam Format Table */
+  .exam-table{width:100%;border-collapse:collapse;font-size:10.5px;margin-top:10px}
+  .exam-table th{text-align:left;font-size:8px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--text-faint);padding:6px 5px 4px;border-bottom:2px solid var(--border)}
+  .exam-table td{padding:5px;border-bottom:1px solid var(--border);vertical-align:middle}
+  .exam-table tr:last-child td{border-bottom:none}
+  .exam-table .cert-name{font-weight:600;white-space:nowrap}
+  .exam-table .free-badge{background:var(--orange);color:white;font-size:8px;font-weight:700;padding:1px 5px;border-radius:3px;letter-spacing:0.5px}
+  .exam-table .req-badge{background:rgba(221,92,12,0.1);color:var(--orange);font-size:8px;font-weight:700;padding:1px 5px;border-radius:3px}
+
+  /* Tips List */
+  .tips-list{list-style:none;counter-reset:tips}
+  .tips-list li{counter-increment:tips;padding:8px 0 8px 36px;border-bottom:1px solid var(--border);position:relative;font-size:12px;line-height:1.5}
+  .tips-list li:last-child{border-bottom:none}
+  .tips-list li::before{
+    content:counter(tips);position:absolute;left:0;top:8px;
+    width:24px;height:24px;border-radius:6px;
+    background:var(--orange);color:white;
+    font-size:11px;font-weight:700;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .tips-list .tip-title{font-weight:700;color:var(--text)}
+  .tips-list .tip-desc{color:var(--text-dim);font-size:11.5px}
+
+  /* Schedule */
+  .schedule{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+  .week-card{background:var(--bg-alt);border-radius:10px;padding:14px;border:1px solid var(--border)}
+  .week-card .week-num{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--orange);margin-bottom:4px}
+  .week-card .week-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:6px}
+  .week-card ul{list-style:none;font-size:11px;color:var(--text-dim);line-height:1.6}
+  .week-card ul li::before{content:"";display:inline-block;width:5px;height:5px;background:var(--orange);border-radius:50%;margin-right:6px;vertical-align:middle}
+
+  /* Reference Table (back page) */
+  .ref-table{width:100%;border-collapse:collapse;font-size:11px;margin-top:12px}
+  .ref-table th{text-align:left;font-size:8px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--text-faint);padding:7px 6px 5px;border-bottom:2px solid var(--border)}
+  .ref-table td{padding:6px;border-bottom:1px solid var(--border)}
+  .ref-table tr:last-child td{border-bottom:none}
+  .ref-table .rating{color:var(--orange);font-weight:700}
+  .ref-table .q-count{font-weight:700}
+
+  .page-footer{position:absolute;bottom:18mm;left:18mm;right:18mm;display:flex;justify-content:space-between;align-items:center;font-size:9px;color:var(--text-faint)}
+  .page-footer .url{font-weight:600;color:var(--orange);font-size:10px}
+
+  /* Highlight box */
+  .highlight-box{background:var(--teal);color:#e0f0ee;border-radius:10px;padding:14px 16px;margin:14px 0}
+  .highlight-box h3{color:#ffffff;margin-bottom:4px}
+  .highlight-box p{color:#b0d8d4;font-size:12px}
+  .highlight-box .num{color:#5ce0d0;font-weight:800;font-size:18px}
+
+  /* Two-col layout */
+  .two-col{display:flex;gap:16px}
+  .two-col .col{flex:1}
+
+  .urgency-box{background:#fff3e8;border:1.5px solid var(--orange);border-radius:8px;padding:10px 14px;margin:10px 0}
+  .urgency-box p{color:var(--text);font-size:12px;font-weight:500}
+  .urgency-box strong{color:var(--orange)}
+</style>
+</head>
+<body>
+
+<!-- ==================== PAGE 1: COVER ==================== -->
+<div class="page cover">
+  <svg width="80" height="80" viewBox="0 0 512 512" class="cover-logo">
+    <rect width="512" height="512" rx="96" fill="#060606"/>
+    <rect x="24" y="24" width="464" height="464" rx="76" fill="none" stroke="#dd5c0c" stroke-width="4" opacity="0.3"/>
+    <text x="256" y="310" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="280" fill="#dd5c0c" text-anchor="middle" letter-spacing="-20">LX</text>
+  </svg>
+  <div class="cover-badge">2026 Edition</div>
+  <h1>The ServiceNow<br>Certification Roadmap</h1>
+  <p class="subtitle">18 certifications. 8 career tracks. One clear path.<br>Salary data, exam blueprints, study schedules, and the tips that actually matter.</p>
+  <div class="cover-stats">
+    <div class="cover-stat">
+      <div class="num">31,000+</div>
+      <div class="label">Open Jobs</div>
+    </div>
+    <div class="cover-stat">
+      <div class="num">$13.28B</div>
+      <div class="label">Platform Revenue</div>
+    </div>
+    <div class="cover-stat">
+      <div class="num">20–40%</div>
+      <div class="label">Salary Premium</div>
+    </div>
+    <div class="cover-stat">
+      <div class="num">4,700+</div>
+      <div class="label">Practice Questions</div>
+    </div>
+  </div>
+  <div class="cover-url">luckyx.dev</div>
+</div>
+
+<!-- ==================== PAGE 2: WHY IT MATTERS ==================== -->
+<div class="page">
+  <div class="orange-line"></div>
+  <h2>Why ServiceNow Certifications Matter</h2>
+  <p class="section-intro">ServiceNow isn't a niche skill anymore. It's the backbone of enterprise operations at 85% of Fortune 500 companies, with $13.28 billion in annual revenue growing at 21% year-over-year. The ecosystem has more open jobs than qualified professionals to fill them.</p>
+
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="num">31,000+</div>
+      <div class="label">Open Jobs Globally</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">~200K</div>
+      <div class="label">Certified Pros</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">85%</div>
+      <div class="label">Fortune 500 Use It</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">71%</div>
+      <div class="label">Employers Reimburse</div>
+    </div>
+  </div>
+
+  <h3>How Salary Scales with Certifications</h3>
+  <table class="salary-table">
+    <thead><tr><th>Certification Level</th><th>US Salary Range</th><th>What Changes</th></tr></thead>
+    <tbody>
+      <tr><td class="cert-level">No certification</td><td>$60,000 – $85,000</td><td>Baseline IT salary with ServiceNow exposure</td></tr>
+      <tr><td class="cert-level">CSA only</td><td class="salary">$75,000 – $100,000</td><td>Entry-to-mid admin roles unlock</td></tr>
+      <tr class="highlight"><td class="cert-level">CSA + 1–2 CIS specialties</td><td class="salary">$100,000 – $140,000</td><td>Mid-level specialist / consultant</td></tr>
+      <tr class="highlight"><td class="cert-level">3+ certifications</td><td class="salary">$130,000 – $180,000+</td><td>Senior consultant / architect roles</td></tr>
+      <tr><td class="cert-level">CTA (Technical Architect)</td><td class="salary">$158,000 – $200,000+</td><td>Elite credential, few hundred holders globally</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <strong>The ROI math is simple:</strong> Invest $600–$1,000 for your CSA (free course + $300 exam + study materials). Unlock a $80K–$120K salary floor. Stack 2–3 CIS specialties to reach $130K–$180K+. 31% of certified professionals saw salary increases within one year and nearly one-third secured promotions.
+  </div>
+
+  <div class="two-col">
+    <div class="col">
+      <h3>Career Growth Stats</h3>
+      <p style="font-size:12px">
+        <span class="bold accent">20–40%</span> salary premium over non-certified peers<br>
+        <span class="bold accent">31%</span> saw raises within 12 months<br>
+        <span class="bold accent">40%</span> more interview callbacks with certification<br>
+        <span class="bold accent">38%</span> higher productivity (IDC study)
+      </p>
+    </div>
+    <div class="col">
+      <h3>Market Trajectory</h3>
+      <p style="font-size:12px">
+        <span class="bold">2024:</span> $10.98B revenue<br>
+        <span class="bold">2025:</span> $13.28B revenue (+21%)<br>
+        <span class="bold">2026:</span> ~$15B forecast<br>
+        <span class="bold accent">Now Assist AI:</span> targeting $1B ACV by 2026
+      </p>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>The 2026 ServiceNow Certification Roadmap</span>
+    <span class="url">luckyx.dev</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 3: CERTIFICATION MAP ==================== -->
+<div class="page">
+  <div class="orange-line"></div>
+  <h2>The Certification Map</h2>
+  <p class="section-intro">Every ServiceNow certification path starts with CSA. In 2026, CIS-Data Foundations became a mandatory prerequisite for 7 CIS exams — a major change that affects your study order.</p>
+
+  <div class="map-container" style="margin-top:16px">
+    <!-- Entry Point -->
+    <div class="track-row">
+      <div class="track-label">Entry Point</div>
+      <div class="track-certs">
+        <div class="cert-node start">CSA</div>
+        <span class="arrow">&#8594;</span>
+        <div class="cert-node">CAD</div>
+        <span class="arrow" style="margin-left:24px">&#8594;</span>
+        <div class="cert-node gateway">CIS-DF</div>
+        <span class="small" style="margin-left:8px;font-size:10px;color:var(--orange);font-weight:600">Required for 7 CIS exams below</span>
+      </div>
+    </div>
+
+    <div style="height:12px"></div>
+
+    <div class="track-row">
+      <div class="track-label">Core</div>
+      <div class="track-certs">
+        <div class="cert-node">CSA</div>
+        <span class="arrow">&#8594;</span>
+        <div class="cert-node">CIS-ITSM</div>
+      </div>
+    </div>
+
+    <div class="track-row">
+      <div class="track-label">Developer</div>
+      <div class="track-certs">
+        <div class="cert-node">CAD</div>
+        <span class="arrow">&#8594;</span>
+        <div class="cert-node">CAS-PA</div>
+      </div>
+    </div>
+
+    <div class="track-row">
+      <div class="track-label">Data &amp; CMDB</div>
+      <div class="track-certs">
+        <div class="cert-node gateway" style="font-size:10px">CIS-DF</div>
+        <span class="arrow">&#8594;</span>
+        <div class="cert-node">CIS-SM</div>
+      </div>
+    </div>
+
+    <div class="track-row">
+      <div class="track-label">Infrastructure</div>
+      <div class="track-certs">
+        <div class="cert-node">CIS-Discovery</div>
+        <span class="arrow">&#8592;&#8594;</span>
+        <div class="cert-node">CIS-SM</div>
+        <span class="arrow" style="margin-left:8px">|</span>
+        <div class="cert-node">CIS-EM</div>
+      </div>
+    </div>
+
+    <div class="track-row">
+      <div class="track-label">Service Mgmt</div>
+      <div class="track-certs">
+        <div class="cert-node">CIS-CSM</div>
+        <span class="arrow">&#8592;&#8594;</span>
+        <div class="cert-node">CIS-FSM</div>
+        <span class="arrow" style="margin-left:8px">|</span>
+        <div class="cert-node">CIS-HRSD</div>
+        <span class="arrow" style="margin-left:8px">|</span>
+        <div class="cert-node">CIS-SPM</div>
+      </div>
+    </div>
+
+    <div class="track-row">
+      <div class="track-label">Asset Mgmt</div>
+      <div class="track-certs">
+        <div class="cert-node">CIS-SAM</div>
+        <span class="arrow">&#8592;&#8594;</span>
+        <div class="cert-node">CIS-HAM</div>
+      </div>
+    </div>
+
+    <div class="track-row">
+      <div class="track-label">Security</div>
+      <div class="track-certs">
+        <div class="cert-node">CIS-SIR</div>
+        <span class="arrow">&#8592;&#8594;</span>
+        <div class="cert-node">CIS-VR</div>
+      </div>
+    </div>
+
+    <div class="track-row">
+      <div class="track-label">Risk &amp; GRC</div>
+      <div class="track-certs">
+        <div class="cert-node">CIS-GRC</div>
+        <span class="arrow">&#8592;&#8594;</span>
+        <div class="cert-node">CIS-TPRM</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="urgency-box" style="margin-top:16px">
+    <p><strong>2026 Alert:</strong> CIS-Data Foundations is <strong>FREE until June 30, 2026</strong> (normally $450). If you hold CIS-ITSM, HAM, SAM, Discovery, SM, VR, or SIR — you must pass CIS-DF by <strong>December 31, 2026</strong> to keep your certification active.</p>
+  </div>
+
+  <div class="callout">
+    <strong>Key 2026 Changes:</strong> Exams moved from Kryterion to <strong>Pearson VUE</strong>. Vouchers eliminated — exam eligibility now unlocked by completing required Now Learning courses (which are free). Remote proctoring still available for all exams.
+  </div>
+
+  <div class="page-footer">
+    <span>The 2026 ServiceNow Certification Roadmap</span>
+    <span class="url">luckyx.dev</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 4: WHICH TRACK IS RIGHT FOR YOU? ==================== -->
+<div class="page">
+  <div class="orange-line"></div>
+  <h2>Which Track Is Right For You?</h2>
+  <p class="section-intro">Your ideal certification path depends on your current role and career goals. Use this table to find your track, then follow the recommended order on the next pages.</p>
+
+  <table class="decision-table">
+    <thead>
+      <tr><th>If You Work In...</th><th>Your Track</th><th>Start With</th><th>US Salary Range</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>IT Support, Help Desk, Platform Admin</td>
+        <td class="track-name">Core</td>
+        <td class="path">CSA &#8594; CIS-ITSM</td>
+        <td class="salary-range">$70K – $155K</td>
+      </tr>
+      <tr>
+        <td>Scripting, App Building, Flow Designer</td>
+        <td class="track-name">Developer</td>
+        <td class="path">CAD &#8594; CAS-PA</td>
+        <td class="salary-range">$100K – $183K</td>
+      </tr>
+      <tr>
+        <td>CMDB, Data Quality, Configuration Mgmt</td>
+        <td class="track-name">Data &amp; CMDB</td>
+        <td class="path">CIS-DF &#8594; CIS-SM</td>
+        <td class="salary-range">$95K – $165K</td>
+      </tr>
+      <tr>
+        <td>Network, Cloud, Discovery, ITOM</td>
+        <td class="track-name">Infrastructure</td>
+        <td class="path">CIS-Discovery &#8594; SM &#8594; EM</td>
+        <td class="salary-range">$100K – $170K</td>
+      </tr>
+      <tr>
+        <td>Customer Support, Field Ops, HR</td>
+        <td class="track-name">Service Mgmt</td>
+        <td class="path">CSM / FSM / HRSD &#8594; SPM</td>
+        <td class="salary-range">$90K – $165K</td>
+      </tr>
+      <tr>
+        <td>Software Licensing, Hardware Lifecycle</td>
+        <td class="track-name">Asset Mgmt</td>
+        <td class="path">CIS-SAM &#8592;&#8594; CIS-HAM</td>
+        <td class="salary-range">$95K – $165K</td>
+      </tr>
+      <tr>
+        <td>Security Operations, Incident Response</td>
+        <td class="track-name">Security</td>
+        <td class="path">CIS-SIR &#8592;&#8594; CIS-VR</td>
+        <td class="salary-range">$105K – $200K</td>
+      </tr>
+      <tr>
+        <td>GRC, Audit, Vendor Risk, Compliance</td>
+        <td class="track-name">Risk &amp; Compliance</td>
+        <td class="path">CIS-GRC &#8592;&#8594; CIS-TPRM</td>
+        <td class="salary-range">$105K – $200K+</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout" style="margin-top:16px">
+    <strong>Pro tip:</strong> Security and GRC/Risk roles command the highest premiums due to regulatory demand and talent scarcity. San Francisco, New York, and DC run 15–25% above national averages. Finance, healthcare, and government sectors pay 10–20% above tech for the same roles.
+  </div>
+
+  <h3 style="margin-top:18px">Experience Matters — But Not How You'd Expect</h3>
+  <table class="salary-table" style="font-size:11px">
+    <thead><tr><th>Experience</th><th>Admin Track</th><th>Developer Track</th><th>Specialist / Consultant</th></tr></thead>
+    <tbody>
+      <tr><td class="cert-level">Entry (0–2 yrs)</td><td>$70K – $85K</td><td>$88K – $108K</td><td>$80K – $100K</td></tr>
+      <tr><td class="cert-level">Mid (3–7 yrs)</td><td>$95K – $108K</td><td>$120K – $145K</td><td>$110K – $140K</td></tr>
+      <tr class="highlight"><td class="cert-level">Senior (8+ yrs)</td><td class="salary">$130K – $183K</td><td class="salary">$137K – $208K</td><td class="salary">$130K – $180K</td></tr>
+    </tbody>
+  </table>
+
+  <div class="page-footer">
+    <span>The 2026 ServiceNow Certification Roadmap</span>
+    <span class="url">luckyx.dev</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 5: TRACK DEEP DIVES (1 of 2) ==================== -->
+<div class="page">
+  <div class="orange-line"></div>
+  <h2>Track Deep Dives</h2>
+  <p class="section-intro">What each track covers, how long to study, and how many practice questions are available.</p>
+
+  <div class="track-grid">
+    <!-- Core -->
+    <div class="track-card">
+      <div class="track-title">Core (CSA / ITSM)</div>
+      <div class="track-path">CSA &#8594; CIS-ITSM</div>
+      <div class="track-meta">
+        <strong>Best for:</strong> IT admins, help desk, platform administrators<br>
+        <strong>CSA covers:</strong> Platform overview, user admin, notifications, reporting, service catalog, knowledge management<br>
+        <strong>CIS-ITSM covers:</strong> Incident, problem, change management<br>
+        <strong>Study time:</strong> CSA: 20–40 hrs (experienced) / 60–100 hrs (newcomer). ITSM: 40–80 hrs
+      </div>
+      <div class="track-questions">350 practice questions</div>
+    </div>
+
+    <!-- Developer -->
+    <div class="track-card">
+      <div class="track-title">Developer (CAD / PA)</div>
+      <div class="track-path">CAD &#8594; CAS-PA</div>
+      <div class="track-meta">
+        <strong>Best for:</strong> Developers, scripters, app builders<br>
+        <strong>CAD covers:</strong> Scripting, UI policies, business rules, client scripts, flow designer, application scoping<br>
+        <strong>CAS-PA covers:</strong> Indicators, breakdowns, dashboards, analytics hubs, reporting<br>
+        <strong>Study time:</strong> CAD: 40–60 hrs. PA: 20–40 hrs
+      </div>
+      <div class="track-questions">547 practice questions</div>
+    </div>
+
+    <!-- Data & CMDB -->
+    <div class="track-card">
+      <div class="track-title">Data &amp; CMDB</div>
+      <div class="track-path">CIS-DF &#8594; CIS-SM</div>
+      <div class="track-meta">
+        <strong>Best for:</strong> CMDB managers, data quality analysts, configuration managers<br>
+        <strong>CIS-DF covers:</strong> CMDB health, CSDM, identification &amp; reconciliation, data quality<br>
+        <strong>CIS-SM covers:</strong> Service mapping patterns, top-down discovery, connection attributes<br>
+        <strong>Study time:</strong> DF: 40–80 hrs. SM: 40–60 hrs
+      </div>
+      <div class="track-questions">687 practice questions</div>
+    </div>
+
+    <!-- Infrastructure -->
+    <div class="track-card">
+      <div class="track-title">Infrastructure (ITOM)</div>
+      <div class="track-path">CIS-Discovery &#8592;&#8594; CIS-SM | CIS-EM</div>
+      <div class="track-meta">
+        <strong>Best for:</strong> Network engineers, cloud ops, ITOM specialists<br>
+        <strong>Covers:</strong> Horizontal discovery, MID Server config, service mapping, event rules, alert management, event correlation<br>
+        <strong>Study time:</strong> 40–80 hrs per cert
+      </div>
+      <div class="track-questions">530 practice questions</div>
+    </div>
+
+    <!-- Service Mgmt -->
+    <div class="track-card">
+      <div class="track-title">Service Management</div>
+      <div class="track-path">CSM &#8592;&#8594; FSM | HRSD | SPM</div>
+      <div class="track-meta">
+        <strong>Best for:</strong> Customer service leads, field ops, HR tech, portfolio managers<br>
+        <strong>Covers:</strong> Case management, agent workspace, work orders, dispatch, employee center, lifecycle events, demand management<br>
+        <strong>Study time:</strong> 40–80 hrs per cert
+      </div>
+      <div class="track-questions">1,102 practice questions</div>
+    </div>
+
+    <!-- Asset Mgmt -->
+    <div class="track-card">
+      <div class="track-title">Asset Management</div>
+      <div class="track-path">CIS-SAM &#8592;&#8594; CIS-HAM</div>
+      <div class="track-meta">
+        <strong>Best for:</strong> Software licensing analysts, hardware asset managers<br>
+        <strong>SAM covers:</strong> Software models, entitlements, license calculations, normalization<br>
+        <strong>HAM covers:</strong> Asset lifecycle, stockrooms, model categories, HAM workspace<br>
+        <strong>Study time:</strong> 40–60 hrs per cert
+      </div>
+      <div class="track-questions">499 practice questions</div>
+    </div>
+
+    <!-- Security -->
+    <div class="track-card">
+      <div class="track-title">Security Operations</div>
+      <div class="track-path">CIS-SIR &#8592;&#8594; CIS-VR</div>
+      <div class="track-meta">
+        <strong>Best for:</strong> SOC analysts, security engineers, incident responders<br>
+        <strong>SIR covers:</strong> Security incidents, threat intelligence, SIEM integration, security playbooks<br>
+        <strong>VR covers:</strong> Vulnerability groups, remediation tasks, scanner integration<br>
+        <strong>Study time:</strong> 40–80 hrs per cert
+      </div>
+      <div class="track-questions">464 practice questions</div>
+    </div>
+
+    <!-- Risk & Compliance -->
+    <div class="track-card">
+      <div class="track-title">Risk &amp; Compliance (GRC)</div>
+      <div class="track-path">CIS-GRC &#8592;&#8594; CIS-TPRM</div>
+      <div class="track-meta">
+        <strong>Best for:</strong> GRC analysts, auditors, vendor risk managers<br>
+        <strong>GRC covers:</strong> Entity management, risk assessment, compliance, policy lifecycle, audit management<br>
+        <strong>TPRM covers:</strong> Third-party lifecycle, vendor tiering, engagements, compliance tracking<br>
+        <strong>Study time:</strong> 40–80 hrs per cert
+      </div>
+      <div class="track-questions">600 practice questions</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>The 2026 ServiceNow Certification Roadmap</span>
+    <span class="url">luckyx.dev</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 6: EXAM FORMAT & COST ==================== -->
+<div class="page">
+  <div class="orange-line"></div>
+  <h2>Exam Format &amp; Cost Reference</h2>
+  <p class="section-intro">All exams are delivered via Pearson VUE (as of November 2025). Remote proctoring available. Results are pass/fail only — failed exams show domain-level scores.</p>
+
+  <table class="exam-table">
+    <thead>
+      <tr><th>Certification</th><th>Questions</th><th>Time</th><th>Passing*</th><th>Cost</th><th>Retake</th><th>CIS-DF Req?</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="cert-name">CSA System Administrator</td><td>60</td><td>90 min</td><td>~70%</td><td>$300</td><td>$150</td><td>No</td></tr>
+      <tr><td class="cert-name">CAD Application Developer</td><td>60</td><td>90 min</td><td>~70%</td><td>$300</td><td>$150</td><td>No</td></tr>
+      <tr><td class="cert-name">CIS-DF Data Foundations</td><td>45–75</td><td>90 min</td><td>~70%</td><td><span class="free-badge">FREE*</span></td><td>$350</td><td>N/A</td></tr>
+      <tr><td class="cert-name">CIS-ITSM</td><td>60</td><td>90 min</td><td>~70%</td><td>$450</td><td>$225</td><td><span class="req-badge">YES</span></td></tr>
+      <tr><td class="cert-name">CIS-Discovery / RISCO</td><td>60</td><td>90 min</td><td>~70%</td><td>$450</td><td>$225</td><td><span class="req-badge">YES</span></td></tr>
+      <tr><td class="cert-name">CIS-Service Mapping</td><td>60</td><td>90 min</td><td>~70%</td><td>$450</td><td>$225</td><td><span class="req-badge">YES</span></td></tr>
+      <tr><td class="cert-name">CIS-Event Management</td><td>60</td><td>90 min</td><td>~70%</td><td>$450</td><td>$225</td><td>No</td></tr>
+      <tr><td class="cert-name">CIS-CSM</td><td>60</td><td>90 min</td><td>~70%</td><td>$450</td><td>$225</td><td>No</td></tr>
+      <tr><td class="cert-name">CIS-FSM</td><td>60</td><td>90 min</td><td>~70%</td><td>$450</td><td>$225</td><td>No</td></tr>
+      <tr><td class="cert-name">CIS-HRSD</td><td>60</td><td>90 min</td><td>~70%</td><td>$450</td><td>$225</td><td>No</td></tr>
+      <tr><td class="cert-name">CIS-SPM</td><td>60</td><td>90 min</td><td>~70%</td><td>$450</td><td>$225</td><td>No</td></tr>
+      <tr><td class="cert-name">CIS-SAM</td><td>60</td><td>90 min</td><td>~70%</td><td>$450</td><td>$225</td><td><span class="req-badge">YES</span></td></tr>
+      <tr><td class="cert-name">CIS-HAM</td><td>60</td><td>90 min</td><td>~70%</td><td>$450</td><td>$225</td><td><span class="req-badge">YES</span></td></tr>
+      <tr><td class="cert-name">CIS-SIR</td><td>60</td><td>90 min</td><td>~70%</td><td>$450</td><td>$225</td><td><span class="req-badge">YES</span></td></tr>
+      <tr><td class="cert-name">CIS-VR</td><td>60</td><td>90 min</td><td>~70%</td><td>$450</td><td>$225</td><td><span class="req-badge">YES</span></td></tr>
+      <tr><td class="cert-name">CIS-GRC / IRM</td><td>60</td><td>90 min</td><td>~70%</td><td>$450</td><td>$225</td><td>No</td></tr>
+      <tr><td class="cert-name">CIS-TPRM</td><td>60</td><td>90 min</td><td>~70%</td><td>$450</td><td>$225</td><td>No</td></tr>
+      <tr><td class="cert-name">CAS-PA</td><td>60</td><td>90 min</td><td>~70%</td><td>$300</td><td>$150</td><td>No</td></tr>
+    </tbody>
+  </table>
+
+  <p class="small" style="margin-top:8px">*Passing score: ServiceNow does not publish official pass percentages. Results are pass/fail. ~70% is community consensus; actual cutoff may be 75–80%. Multi-select questions require ALL correct answers — no partial credit.</p>
+
+  <div class="urgency-box">
+    <p><strong>CIS-DF is FREE until June 30, 2026</strong> (normally $450). First attempt only. This is the single best deal in the ServiceNow certification ecosystem right now.</p>
+  </div>
+
+  <div class="two-col" style="margin-top:12px">
+    <div class="col">
+      <h3>Retake Policy</h3>
+      <p style="font-size:11px">
+        <strong>1st fail:</strong> wait 3 days<br>
+        <strong>2nd fail:</strong> wait 30 days<br>
+        <strong>3rd+ fail:</strong> wait 6 months<br>
+        No cap on total retakes. Non-refundable once registered. Cancel/reschedule free up to 72 hrs before.
+      </p>
+    </div>
+    <div class="col">
+      <h3>Maintenance (Delta Exams)</h3>
+      <p style="font-size:11px">
+        Certs expire if not maintained. Delta exams: ~10 questions, non-proctored, open book, 60 minutes. Must pass within 90 days of each platform release. Up to 5 attempts. <strong>$200/year</strong> maintenance fee covers all held certs.
+      </p>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>The 2026 ServiceNow Certification Roadmap</span>
+    <span class="url">luckyx.dev</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 7: EXAM DAY PLAYBOOK ==================== -->
+<div class="page">
+  <div class="orange-line"></div>
+  <h2>The Exam Day Playbook</h2>
+  <p class="section-intro">10 tips sourced from community veterans, Reddit threads, and people who've passed (and failed). No generic advice — only what actually moves the needle.</p>
+
+  <ol class="tips-list">
+    <li>
+      <span class="tip-title">90 seconds per question — mark and move.</span><br>
+      <span class="tip-desc">60 questions in 90 minutes. If you're stuck past 2 minutes, flag it and come back. Don't let one question eat into time for three others.</span>
+    </li>
+    <li>
+      <span class="tip-title">The eBook beats the video course.</span><br>
+      <span class="tip-desc">Community consensus is clear: the official eBook (provided after completing the training) is THE study resource. "Refer only and only eBook — all mainline exams are based on eBook only." The video course teaches practical skills; the eBook teaches exam answers.</span>
+    </li>
+    <li>
+      <span class="tip-title">Score 85–90% on practice tests before booking.</span><br>
+      <span class="tip-desc">The community-validated threshold. The community recommends 90%+ twice consecutively. Don't book until you consistently hit this range across multiple full mock exams.</span>
+    </li>
+    <li>
+      <span class="tip-title">Multi-select = all or nothing.</span><br>
+      <span class="tip-desc">Questions that say "select all that apply" give zero points for partial answers. Treat each option as an independent true/false decision. This is the single biggest trap cited by community members.</span>
+    </li>
+    <li>
+      <span class="tip-title">Vocabulary kills experienced admins.</span><br>
+      <span class="tip-desc">A 6-year ServiceNow admin publicly shared failing CSA on his first attempt. Why? "The exam format is PURELY vocabulary-based." Knowing how to do something in the platform doesn't mean recognizing the correct answer in ServiceNow's official terminology.</span>
+    </li>
+    <li>
+      <span class="tip-title">Read the Exam Blueprint — it's your cheat sheet.</span><br>
+      <span class="tip-desc">ServiceNow publishes exact percentage weightings per domain. If "Change Management" is 25% of the exam, that's 15 questions. Focus your study time proportionally. Review the blueprint the night before.</span>
+    </li>
+    <li>
+      <span class="tip-title">Use your PDI — it's free and unlimited.</span><br>
+      <span class="tip-desc">ServiceNow provides a free Personal Developer Instance for hands-on labs. Use it to validate concepts you're unsure about. Available 24/7, no restrictions. Hands-on practice cements theoretical knowledge.</span>
+    </li>
+    <li>
+      <span class="tip-title">Watch for "best practice" traps.</span><br>
+      <span class="tip-desc">Multiple answers may be technically correct, but the exam wants ServiceNow's recommended best practice — not just "it works." When two answers seem right, choose the one aligned with official documentation.</span>
+    </li>
+    <li>
+      <span class="tip-title">Online proctoring: test your setup first.</span><br>
+      <span class="tip-desc">You need an external webcam (1.5m cable recommended) plus your laptop cam. Audio required — proctors may interrupt mid-exam. No bathroom breaks once started. Many community members recommend testing at a Pearson VUE center instead for a smoother experience.</span>
+    </li>
+    <li>
+      <span class="tip-title">The night before: eBook, not practice tests.</span><br>
+      <span class="tip-desc">Last-minute cramming with practice tests adds anxiety, not knowledge. Review key eBook chapters for the highest-weighted domains. Go in with fresh eyes and confidence, not fatigue.</span>
+    </li>
+  </ol>
+
+  <div class="page-footer">
+    <span>The 2026 ServiceNow Certification Roadmap</span>
+    <span class="url">luckyx.dev</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 8: STUDY SCHEDULE ==================== -->
+<div class="page">
+  <div class="orange-line"></div>
+  <h2>The 4-Week Study Schedule</h2>
+  <p class="section-intro">A proven framework that works for any ServiceNow certification. Adjust the pace based on your experience level — newcomers may need 6–8 weeks instead of 4.</p>
+
+  <div class="schedule">
+    <div class="week-card">
+      <div class="week-num">Week 1</div>
+      <div class="week-title">Learn the Material</div>
+      <ul>
+        <li>Complete the official Now Learning course (free)</li>
+        <li>Read the eBook cover-to-cover, chapter by chapter</li>
+        <li>Take notes on unfamiliar terminology</li>
+        <li>Set up your free PDI and follow along with labs</li>
+        <li>Review the Exam Blueprint — note domain weightings</li>
+      </ul>
+    </div>
+
+    <div class="week-card">
+      <div class="week-num">Week 2</div>
+      <div class="week-title">First Practice Round</div>
+      <ul>
+        <li>Take your first full practice exam (untimed)</li>
+        <li>Review every wrong answer — read the explanation</li>
+        <li>Document your weak domains in a study log</li>
+        <li>Re-read eBook chapters for weak areas</li>
+        <li>Target: identify your bottom 2–3 domains</li>
+      </ul>
+    </div>
+
+    <div class="week-card">
+      <div class="week-num">Week 3</div>
+      <div class="week-title">Deep Dive Weak Areas</div>
+      <ul>
+        <li>Focus exclusively on your weakest domains</li>
+        <li>Use PDI to build hands-on muscle memory</li>
+        <li>Retake practice questions for weak areas only</li>
+        <li>Cross-reference answers with official documentation</li>
+        <li>Target: no domain below 75% accuracy</li>
+      </ul>
+    </div>
+
+    <div class="week-card">
+      <div class="week-num">Week 4</div>
+      <div class="week-title">Mock Exams &amp; Book It</div>
+      <ul>
+        <li>Take full timed mock exams (90 minutes, 60 questions)</li>
+        <li>Aim for 85–90%+ on at least 2–3 consecutive attempts</li>
+        <li>Review Exam Blueprint one final time</li>
+        <li>Book your exam for early in the week (fresh mind)</li>
+        <li>Night before: light eBook review, early sleep</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:14px">
+    <strong>Study time benchmarks:</strong> CSA takes 20–40 hours for experienced IT pros, 60–100 hours for career switchers. CIS exams take 40–80 hours with a CSA foundation. The CTA program is a mandatory 13-week cohort requiring 200+ hours. Calendar-wise, most people need 2–6 weeks for a CIS exam with consistent daily study.
+  </div>
+
+  <div class="highlight-box">
+    <h3>The Resources That Actually Matter</h3>
+    <p>
+      <strong style="color:#5ce0d0">1.</strong> Official eBook (from Now Learning course completion) — the #1 study resource<br>
+      <strong style="color:#5ce0d0">2.</strong> ServiceNow Exam Blueprint — tells you exactly what % each domain is worth<br>
+      <strong style="color:#5ce0d0">3.</strong> Personal Developer Instance (PDI) — free hands-on lab environment<br>
+      <strong style="color:#5ce0d0">4.</strong> Validated practice tests with sourced explanations — not Quizlet, not ClassMarker<br>
+      <strong style="color:#5ce0d0">5.</strong> Official ServiceNow documentation (docs.servicenow.com)
+    </p>
+  </div>
+
+  <p class="small" style="margin-top:10px;text-align:center">Community warning: many third-party practice tests contain wrong answers. "Don't go for Quizlet or ClassMarker because most of the time they have the wrong answers." Always validate answers against official documentation.</p>
+
+  <div class="page-footer">
+    <span>The 2026 ServiceNow Certification Roadmap</span>
+    <span class="url">luckyx.dev</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 9: LUCKY X REFERENCE ==================== -->
+<div class="page">
+  <div class="orange-line"></div>
+  <h2>Lucky X Practice Test Reference</h2>
+  <p class="section-intro">Every answer sourced to official ServiceNow documentation. Per-option explanations tell you why wrong answers are wrong — not just which one is right. All 18 certifications, 4,700+ questions, $9.99 each with lifetime access.</p>
+
+  <table class="ref-table">
+    <thead>
+      <tr><th>Certification</th><th>Code</th><th>Track</th><th>Questions</th><th>Rating</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>CSA System Administrator</td><td>CSA</td><td>Core</td><td class="q-count">250</td><td class="rating">4.5</td></tr>
+      <tr><td>CIS-ITSM</td><td>ITSM</td><td>Core</td><td class="q-count">100</td><td class="rating">4.2</td></tr>
+      <tr><td>Certified Application Developer</td><td>CAD</td><td>Developer</td><td class="q-count">329</td><td class="rating">4.5</td></tr>
+      <tr><td>CAS Performance Analytics</td><td>PA</td><td>Developer</td><td class="q-count">218</td><td class="rating">4.0</td></tr>
+      <tr><td>CIS Data Foundations / CSDM</td><td>DF</td><td>Data &amp; CMDB</td><td class="q-count">470</td><td class="rating">4.9</td></tr>
+      <tr><td>CIS-Discovery / RISCO</td><td>DISCO</td><td>Infrastructure</td><td class="q-count">113</td><td class="rating">4.9</td></tr>
+      <tr><td>CIS Service Mapping</td><td>SM</td><td>Infrastructure</td><td class="q-count">217</td><td class="rating">4.2</td></tr>
+      <tr><td>CIS Event Management</td><td>EM</td><td>Infrastructure</td><td class="q-count">200</td><td class="rating">3.8</td></tr>
+      <tr><td>CIS Customer Service Mgmt</td><td>CSM</td><td>Service Mgmt</td><td class="q-count">348</td><td class="rating">4.6</td></tr>
+      <tr><td>CIS Field Service Mgmt</td><td>FSM</td><td>Service Mgmt</td><td class="q-count">334</td><td class="rating">4.5</td></tr>
+      <tr><td>CIS HR Service Delivery</td><td>HRSD</td><td>Service Mgmt</td><td class="q-count">220</td><td class="rating">4.0</td></tr>
+      <tr><td>CIS Strategic Portfolio Mgmt</td><td>SPM</td><td>Service Mgmt</td><td class="q-count">200</td><td class="rating">5.0</td></tr>
+      <tr><td>CIS Software Asset Mgmt</td><td>SAM</td><td>Asset Mgmt</td><td class="q-count">250</td><td class="rating">4.8</td></tr>
+      <tr><td>CIS Hardware Asset Mgmt</td><td>HAM</td><td>Asset Mgmt</td><td class="q-count">249</td><td class="rating">5.0</td></tr>
+      <tr><td>CIS Security Incident Response</td><td>SIR</td><td>Security</td><td class="q-count">251</td><td class="rating">5.0</td></tr>
+      <tr><td>CIS Vulnerability Response</td><td>VR</td><td>Security</td><td class="q-count">213</td><td class="rating">5.0</td></tr>
+      <tr><td>CIS Risk &amp; Compliance GRC/IRM</td><td>GRC</td><td>Risk &amp; GRC</td><td class="q-count">500</td><td class="rating">4.0</td></tr>
+      <tr><td>CIS Third-Party Risk Mgmt</td><td>TPRM</td><td>Risk &amp; GRC</td><td class="q-count">100</td><td class="rating">4.5</td></tr>
+    </tbody>
+  </table>
+
+  <div class="stats-row" style="margin-top:16px">
+    <div class="stat-card">
+      <div class="num">4,700+</div>
+      <div class="label">Total Questions</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">18</div>
+      <div class="label">Certifications</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">$9.99</div>
+      <div class="label">Each (Lifetime)</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">100%</div>
+      <div class="label">Sourced to Docs</div>
+    </div>
+  </div>
+
+  <div class="highlight-box" style="text-align:center;margin-top:16px">
+    <h3>What Makes Lucky X Different</h3>
+    <p style="font-size:13px;margin-top:6px">
+      Every single answer option is explained — not just the correct one.<br>
+      Every explanation links to the official ServiceNow documentation page.<br>
+      No brain dumps. No memorization. Genuine understanding.<br>
+      <strong style="color:#5ce0d0;font-size:14px;margin-top:8px;display:inline-block">$9.99 with lifetime access. No 30-day expiry.</strong>
+    </p>
+  </div>
+
+  <div style="text-align:center;margin-top:20px">
+    <svg width="48" height="48" viewBox="0 0 512 512" style="vertical-align:middle">
+      <rect width="512" height="512" rx="96" fill="#060606"/>
+      <rect x="24" y="24" width="464" height="464" rx="76" fill="none" stroke="#dd5c0c" stroke-width="4" opacity="0.3"/>
+      <text x="256" y="310" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="280" fill="#dd5c0c" text-anchor="middle" letter-spacing="-20">LX</text>
+    </svg>
+    <p style="font-size:18px;font-weight:700;color:var(--orange);margin-top:8px;letter-spacing:0.5px">luckyx.dev</p>
+    <p class="small" style="margin-top:4px">Made by someone who passed all 18 exams on the first attempt.</p>
+  </div>
+
+  <div class="page-footer">
+    <span>The 2026 ServiceNow Certification Roadmap</span>
+    <span class="url">luckyx.dev</span>
+  </div>
+</div>
+
+</body>
+</html>
