@@ -335,6 +335,10 @@ a:hover { text-decoration: underline; }
 .quiz-opt.wrong .quiz-opt-letter { background: #d73a49; color: #fff; border-color: #d73a49; }
 .quiz-explain { display: none; margin-top: 12px; padding: 12px 16px; background: var(--bg-card); border-radius: 8px; font-size: 0.9rem; color: var(--text-dim); line-height: 1.6; border-left: 3px solid var(--orange); }
 .quiz-explain.show { display: block; }
+.quiz-choose { font-weight: 400; color: var(--orange); font-size: 0.85rem; margin-left: 4px; }
+.quiz-submit-btn { margin-top: 12px; padding: 10px 24px; background: var(--orange); color: #fff; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.15s, transform 0.1s; }
+.quiz-submit-btn:hover { background: #c75400; }
+.quiz-submit-btn:active { transform: scale(0.97); }
 .quiz-score { margin-top: 24px; padding: 20px; background: var(--bg-raised); border-radius: 12px; border: 1px solid var(--border); text-align: center; display: none; }
 .quiz-score.show { display: block; }
 .quiz-score-num { font-size: 2rem; font-weight: 800; color: var(--orange); }
@@ -458,60 +462,250 @@ a:hover { text-decoration: underline; }
   </div>
 
   <section class="quiz-section" id="free-quiz">
-    <h2>Try 5 Free TPRM Questions</h2>
-    <p class="quiz-intro">Test your knowledge before you buy. These sample questions are from our full 100-question practice test.</p>
-        <div class="quiz-card" id="qcard0">
-      <div class="quiz-q"><span class="quiz-q-num">1.</span>What is Third-Party Risk Management (TPRM)?</div>
+    <h2>Try 15 Free TPRM Questions</h2>
+    <p class="quiz-intro">Test your knowledge before you buy — including multiple-choice and multi-select, just like the real exam.</p>
+    <div class="quiz-card" id="qcard0">
+      <div class="quiz-q"><span class="quiz-q-num">1.</span>When the GRC: Policy and Compliance Management application is installed, what GRC related list displays on the Third-party Risk Issue record?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>Managing personal investments</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>A process for assessing and mitigating risks associated with external vendors and partners</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>Managing team schedules</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>Configuring third-party software</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>Policies</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>Policy Exceptions</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>Configuration baseline</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>Citations</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp0">TPRM is the process of identifying, assessing, monitoring, and mitigating risks that arise from an organization's relationships with third-party vendors, suppliers, and business partners.</div>
+      <div class="quiz-explain" id="qexp0">Correct Answer: Policy Exceptions
+Source
+
+ServiceNow: TPRM Architecture and Data Model PDF (page 10)
+If the link fails, search Google for: ServiceNow Zurich TPRM issue GRC Policy Compliance related list
+
+Expert Explanation
+The Third-party Risk Issue record (sn_vdr_risk_asmt_issue) extends the base GRC Issue table (sn_grc_issue). When GRC: Policy and Compliance Management is installed, the platform adds policy exception capabilities to all GRC issue records. Because TPRM Issues inherit from the GRC Issue table, they automatically gain the Policy Exceptions related list.</div>
     </div>
     <div class="quiz-card" id="qcard1">
-      <div class="quiz-q"><span class="quiz-q-num">2.</span>What is Vendor Tiering in TPRM?</div>
+      <div class="quiz-q"><span class="quiz-q-num">2.</span>To what do third parties have direct access?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>Organizing vendor product shelves</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>Classifying vendors by risk level to determine the appropriate depth of risk assessment</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>Ranking vendors by price</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>Sorting vendors alphabetically</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>Update and respond to issues and tasks.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>View other third party&#x27;s assessment responses.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>Modify issue remediation workflow.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>View other third party&#x27;s issues and tasks.</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp1">Vendor Tiering classifies third-party vendors into risk categories (Critical, High, Medium, Low) based on factors like data access, business impact, and regulatory requirements, determining assessment depth.</div>
+      <div class="quiz-explain" id="qexp1">Correct Answer: Update and respond to issues and tasks.
+Source
+
+ServiceNow Community: TPRM Third-party Portal
+If the link fails, search Google for: ServiceNow Zurich TPRM third party portal access issues tasks
+
+Expert Explanation
+Third-party contacts access the portal using the snc_external role, which restricts their view to records explicitly scoped to their organization. Within that scope, they can view, update, and respond to issues and tasks assigned to them: submitting remediation evidence, adding comments, and updating task statuses.</div>
     </div>
     <div class="quiz-card" id="qcard2">
-      <div class="quiz-q"><span class="quiz-q-num">3.</span>What is a Risk Assessment in TPRM?</div>
+      <div class="quiz-q"><span class="quiz-q-num">3.</span>Which related list is used when relating a Third party assessment question to a Control Objective record?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>A financial audit</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>A structured evaluation of the risks posed by a vendor relationship across multiple risk domains</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>A penetration test</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>A vendor product review</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>Questionnaire templates</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>Category metrics</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>Third-party questions</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>Assessment metrics</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp2">A Risk Assessment is a structured evaluation examining a vendor across risk domains (security, compliance, financial stability, operational resilience) to identify and quantify risks in the relationship.</div>
+      <div class="quiz-explain" id="qexp2">Correct Answer: Assessment metrics
+Source
+
+Official Doc: How-to Third-party Risk Management (GRC KB PDF)
+If the link fails, search Google for: ServiceNow Zurich TPRM control objective related list assessment metrics question
+
+Expert Explanation
+Control Objective records in the GRC: Policy and Compliance module have an Assessment metrics related list that enables the linkage between specific questionnaire questions (asmt_metric records) and the control framework. When a metric is added to this related list on a Control Objective, the third party&#x27;s response to that question automatically drives the compliance status of Controls linked to that Control Objective.</div>
     </div>
     <div class="quiz-card" id="qcard3">
-      <div class="quiz-q"><span class="quiz-q-num">4.</span>What is an Engagement in TPRM?</div>
+      <div class="quiz-q"><span class="quiz-q-num">4.</span>As a final step before closing the Third-party Risk Assessment, what task(s) would the Risk Assessor typically do?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>A marriage proposal</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>A formal record representing a specific business relationship or contract with a vendor</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>A customer survey</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>A marketing campaign</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>Flag questions for follow up.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>Review comments and evaluates the risk.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>Create issues within the assessment.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>Perform a tiering assessment.</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp3">An Engagement represents a specific business relationship, contract, or project with a third-party vendor, tracking the scope of the relationship and associated risk assessments.</div>
+      <div class="quiz-explain" id="qexp3">Correct Answer: Review comments and evaluates the risk.
+Source
+
+ServiceNow Community: TPRM External Risk Assessments
+If the link fails, search Google for: ServiceNow Zurich TPRM risk assessment closing final review state
+
+Expert Explanation
+The TPRM assessment lifecycle moves through: Draft, Scheduled, In Progress, Awaiting Approval, and Closed. Before the Assessor advances the record to Awaiting Approval or Closed, their final task is to review all submitted questionnaire responses, read third-party comments, and evaluate the overall risk level. Intermediate steps like flagging questions or creating issues happen during the In Progress phase when reviewing individual answers.</div>
     </div>
     <div class="quiz-card" id="qcard4">
-      <div class="quiz-q"><span class="quiz-q-num">5.</span>What is Continuous Monitoring in TPRM?</div>
+      <div class="quiz-q"><span class="quiz-q-num">5.</span>Which of the following describes the Third-party Tiering process?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>24/7 server monitoring</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>Ongoing surveillance of vendor risk indicators to detect changes in risk posture between formal assessments</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>Continuous Integration</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>Real-time network monitoring</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>A process to evaluate a third party&#x27;s risk based on their responses to a questionnaire.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>A process to evaluate a third party&#x27;s risk based on their performance.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>A process to evaluate a third party&#x27;s risk based on the criticality of the services they provide.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>A process to evaluate a third party&#x27;s risk based on their financial stability.</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp4">Continuous Monitoring tracks vendor risk indicators (security ratings, news, compliance status) on an ongoing basis between formal assessments, enabling early detection of emerging risks.</div>
+      <div class="quiz-explain" id="qexp4">Correct Answer: A process to evaluate a third party&#x27;s risk based on the criticality of the services they provide.
+Source
+
+ServiceNow: What is Third-party Risk Management?
+If the link fails, search Google for: ServiceNow Zurich TPRM third-party tiering criticality services definition
+
+Expert Explanation
+Third-party Tiering is the process of classifying vendors into risk tiers (e.g., Tier 1, Tier 2, or Tier 3 based on the criticality of the services they provide to the organization. Factors include: access to sensitive data, the potential business impact if the vendor fails or is compromised, regulatory exposure, and the substitutability of the vendor.</div>
+    </div>
+    <div class="quiz-card" id="qcard5">
+      <div class="quiz-q"><span class="quiz-q-num">6.</span>To customize the default greeting image on the Third-Party Risk Portal, what must an administrator do?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="5"><span class="quiz-opt-letter">A</span><span>Upload a replacement image via Third-party Risk Management &gt; Administration &gt; Portal Settings.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="5"><span class="quiz-opt-letter">B</span><span>Clone the SVDP Greeting widget and modify the Body HTML Template field of the cloned widget.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="5"><span class="quiz-opt-letter">C</span><span>Upload the replacement image in the Service Portal Branding Editor under the background image settings.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="5"><span class="quiz-opt-letter">D</span><span>Modify the sys_portal_page record for the vendor portal welcome page to reference the new image URL.</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp5">Correct AnswerClone the SVDP Greeting widget and modify its Body HTML Template field
+SourceServiceNow Community: TPRM Speed Learning   Portal branding
+ExplanationThe Third-Party Risk Portal (SVDP   ServiceNow Vendor Due Diligence Portal) is built on the standard Service Portal framework. Overall branding   logo and color scheme   is configured through the Service Portal Branding Editor at Service Portal &gt; Service Portal Configuration &gt; Branding Editor.</div>
+    </div>
+    <div class="quiz-card" id="qcard6">
+      <div class="quiz-q"><span class="quiz-q-num">7.</span>When a vendor risk issue owner selects Accept during the Respond state, what happens to the control&amp;#x27;s compliance status?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="6"><span class="quiz-opt-letter">A</span><span>The control status changes to Accepted and is excluded from future risk calculations until the exception expires.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="6"><span class="quiz-opt-letter">B</span><span>The control status remains non-compliant until the control is re-assessed after the exception is closed.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="6"><span class="quiz-opt-letter">C</span><span>The control status automatically changes to Compliant when the exception is approved by the Compliance Manager.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="6"><span class="quiz-opt-letter">D</span><span>The control status is set to Waived and the associated assessment score is recalculated excluding that control.</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp6">Correct AnswerControl status remains non-compliant until the control is re-assessed
+SourceServiceNow Community: TPRM Speed Learning   Remediation vs acceptance
+ExplanationIn the Respond state, the issue owner has two paths: Remediate (fix the root cause and close the issue properly) or Accept (acknowledge the risk without fixing it). Selecting Accept creates an exception record that formally documents the known control failure and the business decision to accept the associated risk. However, the control status remains non-compliant throughout the exception period. The issue stays in the Respond state until the exception is closed.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard7">
+      <div class="quiz-q"><span class="quiz-q-num">8.</span>What are benefits of using the Third-party Portal? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="7"><span class="quiz-opt-letter">A</span><span>The Third-party Portal consolidates all communications and artifacts to a single system of truth.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="7"><span class="quiz-opt-letter">B</span><span>Third-party Portal allows the Third-party Risk Assessor team to reassign parts of an Inherent Risk Assessment.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="7"><span class="quiz-opt-letter">C</span><span>The Third-party Portal matches a database of documents to document requests.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="7"><span class="quiz-opt-letter">D</span><span>The Third-party Portal reduces risk for an organization by enabling secure communications with the third-party.</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="7"><span class="quiz-opt-letter">E</span><span>The Third-party Portal can be leveraged by the third party to work with other partners.</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="7" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp7">Correct Answers: The Third-party Portal consolidates all communications and artifacts to a single system of truth. The Third-party Portal reduces risk for an organization by enabling secure communications with the third-party.
+Source
+
+ServiceNow Community: TPRM Third-party Portal overview
+If the link fails, search Google for: ServiceNow Zurich TPRM third-party portal benefits consolidation secure communication
+
+Expert Explanation
+The Third-party Portal solves two problems simultaneously.</div>
+    </div>
+    <div class="quiz-card" id="qcard8">
+      <div class="quiz-q"><span class="quiz-q-num">9.</span>What can be said concerning the number of third-party contacts?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="8"><span class="quiz-opt-letter">A</span><span>A third party must have one designated internal third-party manager.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="8"><span class="quiz-opt-letter">B</span><span>A third party can designate more than one contact as the primary, but must have a minimum of one primary contact.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="8"><span class="quiz-opt-letter">C</span><span>A third party can only designate one contact as the primary contact, but may have multiple non-primary contacts.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="8"><span class="quiz-opt-letter">D</span><span>A third party can only designate one contact as the primary and must have a minimum of one non-primary contact.</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp8">Correct Answer: A third party can designate more than one contact as the primary, but must have a minimum of one primary contact.
+Source
+
+AC3: ServiceNow TPRM Overview
+If the link fails, search Google for: ServiceNow Zurich TPRM third-party contact primary multiple minimum
+
+Expert Explanation
+Each third-party organization in TPRM must have at least one primary contact to receive assessments and act as the main liaison. The &quot;primary&quot; designation is a boolean field on the Third-party Contact form, meaning multiple contacts can have it set to true simultaneously.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard9">
+      <div class="quiz-q"><span class="quiz-q-num">10.</span>Which metric data types are NOT supported in the Smart Assessment Engine (SAE) and must be converted before migration? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="9"><span class="quiz-opt-letter">A</span><span>Percentage</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="9"><span class="quiz-opt-letter">B</span><span>Image Scale</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="9"><span class="quiz-opt-letter">C</span><span>Choice</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="9"><span class="quiz-opt-letter">D</span><span>Multiple Selection</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="9"><span class="quiz-opt-letter">E</span><span>Yes/No</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="9" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp9">Correct AnswerPercentage and Image Scale
+Sourcedocs.servicenow.com: SAE Migration (Zurich)
+ExplanationBefore migrating to the Smart Assessment Engine, questionnaire templates must be reviewed for unsupported data types. Four types are not supported in SAE: Percentage (convert to Number), Image Scale (convert to Radio Button), Ranking, and Custom Metric. These must be converted in the classic template designer before running the SAE migration. Failure to convert these types will block the migration process.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard10">
+      <div class="quiz-q"><span class="quiz-q-num">11.</span>If a Third-party Risk Issue is for internal use only, what states can be skipped? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="10"><span class="quiz-opt-letter">A</span><span>Analyze</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="10"><span class="quiz-opt-letter">B</span><span>Finalize with Third-party</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="10"><span class="quiz-opt-letter">C</span><span>New</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="10"><span class="quiz-opt-letter">D</span><span>Submitted to Third-party</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="10" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp10">Correct Answers: Finalize with Third-party. Submitted to Third-party.
+Source
+
+ServiceNow Community: TPRM Issue Management and Remediation
+If the link fails, search Google for: ServiceNow Zurich TPRM issue workflow internal states submitted finalize skip
+
+Expert Explanation
+The default TPRM Issue workflow includes these states: New, Analyze, Submitted to Third-party, Finalize with Third-party, Review, Closed. The states Submitted to Third-party and Finalize with Third-party exist specifically for issues that require external vendor involvement: sending the issue to the vendor for remediation and then finalizing it after their response.</div>
+    </div>
+    <div class="quiz-card" id="qcard11">
+      <div class="quiz-q"><span class="quiz-q-num">12.</span>How can the Contract Risk state be bypassed in a Due Diligence Request?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="11"><span class="quiz-opt-letter">A</span><span>By assigning the TPR Assessor role to the DDR instead of the Contract Negotiator role.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="11"><span class="quiz-opt-letter">B</span><span>By enabling the system property sn_vdr_risk_asmt.skip_contract_risk on the Properties page.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="11"><span class="quiz-opt-letter">C</span><span>By checking the Skip Contract Risk Process checkbox on the DDR form.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="11"><span class="quiz-opt-letter">D</span><span>By setting the DDR Priority to 5-Planning, which triggers an automatic bypass of the contract stage.</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp11">Correct AnswerBy checking the Skip Contract Risk Process checkbox on the DDR form.
+Sourcedocs.servicenow.com: DDR Form Fields (Vancouver)
+ExplanationThe Due Diligence Request form includes a checkbox field called &quot;Skip Contract Risk Process.&quot; When this is checked, the DDR workflow skips the Contract Risk state entirely after the Pending Manager Approval state, moving directly to Closed. This is useful when a contract review is not needed   for example, an existing vendor reassessment where the contract terms are already in place.
+Why Others Are WrongRole assignment has no effect on state transitions. No system property named skip_contract_risk exists.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard12">
+      <div class="quiz-q"><span class="quiz-q-num">13.</span>Which GRC roles are contained within the Third-Party Assessment Reviewer role? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="12"><span class="quiz-opt-letter">A</span><span>compliance_reader</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="12"><span class="quiz-opt-letter">B</span><span>risk_reader</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="12"><span class="quiz-opt-letter">C</span><span>sn_risk.manager</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="12"><span class="quiz-opt-letter">D</span><span>task_editor</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="12"><span class="quiz-opt-letter">E</span><span>sn_compliance.admin</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="12" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp12">Correct Answercompliance_reader and risk_reader
+Sourcedocs.servicenow.com: TPRM Roles Reference (Vancouver)
+ExplanationThe Third-Party Assessment Reviewer role (sn_vdr_risk_asmt.vendor_assessment_reviewer) contains four roles: compliance_reader, risk_reader, task_editor, and vendor_reader.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard13">
+      <div class="quiz-q"><span class="quiz-q-num">14.</span>Which of the following are available out-of-the-box as third-party risk assessment types? (Choose three.) <span class="quiz-choose">(choose 3)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="13"><span class="quiz-opt-letter">A</span><span>Cloud Security Alliance (CSA)</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="13"><span class="quiz-opt-letter">B</span><span>SIG Lite</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="13"><span class="quiz-opt-letter">C</span><span>ISO 27001</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="13"><span class="quiz-opt-letter">D</span><span>NIST 800-53</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="13"><span class="quiz-opt-letter">E</span><span>VSA</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="13" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp13">Correct Answers: Cloud Security Alliance (CSA), SIG Lite, VSA
+Source
+
+Shared Assessments: ServiceNow TPRM Toolkit (content partner)
+If the link fails, search Google for: ServiceNow Zurich TPRM out-of-the-box questionnaire types CSA SIG Lite VSA
+
+Expert Explanation
+ServiceNow TPRM ships with pre-built assessment questionnaire content from industry-standard frameworks.</div>
+    </div>
+    <div class="quiz-card" id="qcard14">
+      <div class="quiz-q"><span class="quiz-q-num">15.</span>What does accepting an Issue mark?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="14"><span class="quiz-opt-letter">A</span><span>An implication that the known control failure is unimportant.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="14"><span class="quiz-opt-letter">B</span><span>An intention to create an exception for a known control failure or risk.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="14"><span class="quiz-opt-letter">C</span><span>Attempted remediation failed.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="14"><span class="quiz-opt-letter">D</span><span>Special third parties get an exception.</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp14">Correct Answer: An intention to create an exception for a known control failure or risk.
+Source
+
+ServiceNow Elite: GRC Issue Management
+If the link fails, search Google for: ServiceNow Zurich TPRM GRC accept issue exception control failure
+
+Expert Explanation
+In ServiceNow GRC and TPRM, accepting an issue is a specific risk disposition action meaning the organization formally acknowledges a known control failure or risk and chooses not to remediate it immediately. Instead, they create a policy exception that documents the acceptance decision, its business justification, the approver, and an expiry date.</div>
     </div>
     <div class="quiz-score" id="quizScore">
-      <div class="quiz-score-num" id="quizScoreNum">0/5</div>
+      <div class="quiz-score-num" id="quizScoreNum">0/15</div>
       <div class="quiz-score-label">Sample Quiz Score</div>
       <div class="quiz-score-msg" id="quizScoreMsg"></div>
       <a href="https://www.udemy.com/course/pass-servicenow-cis-third-party-risk-management-tprm/?referralCode=D6DDF7F1E21D051B5047" target="_blank" rel="noopener" class="cp-cta">
@@ -542,33 +736,83 @@ a:hover { text-decoration: underline; }
   });
 
   // Quiz logic
-  const answers = [1,1,1,1,1];
+  const answers = [1, 0, 3, 1, 2, 1, 1, [0, 3], 1, [0, 1], [1, 3], 2, [0, 1], [0, 1, 4], 1];
   let answered = 0, score = 0;
+  const multiSelections = {};
+
   document.querySelectorAll('.quiz-opt').forEach(function(opt) {
     opt.addEventListener('click', function() {
       var qi = parseInt(this.dataset.q);
-      var idx = parseInt(this.dataset.idx);
       var card = document.getElementById('qcard' + qi);
       if (card.dataset.state) return;
-      var isCorrect = idx === answers[qi];
-      if (isCorrect) { score++; this.classList.add('correct'); card.dataset.state = 'correct'; }
-      else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
-      this.classList.add('selected');
-      card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
-      document.getElementById('qexp' + qi).classList.add('show');
-      answered++;
-      if (answered === answers.length) {
-        var el = document.getElementById('quizScore');
-        el.classList.add('show');
-        document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
-        var msg = score === 5 ? 'Perfect score! You are well prepared.' : score >= 3 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
-        document.getElementById('quizScoreMsg').textContent = msg;
-        if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: 'TPRM', quiz_score: score });
+      var idx = parseInt(this.dataset.idx);
+      var isMulti = Array.isArray(answers[qi]);
+
+      if (isMulti) {
+        // Multi-select: toggle selection
+        if (!multiSelections[qi]) multiSelections[qi] = new Set();
+        if (multiSelections[qi].has(idx)) {
+          multiSelections[qi].delete(idx);
+          this.classList.remove('selected');
+        } else {
+          multiSelections[qi].add(idx);
+          this.classList.add('selected');
+        }
+        // Show/hide submit button
+        var btn = card.querySelector('.quiz-submit-btn');
+        btn.style.display = multiSelections[qi].size > 0 ? 'block' : 'none';
+      } else {
+        // Single answer: immediate check
+        var isCorrect = idx === answers[qi];
+        if (isCorrect) { score++; this.classList.add('correct'); card.dataset.state = 'correct'; }
+        else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
+        this.classList.add('selected');
+        card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
+        document.getElementById('qexp' + qi).classList.add('show');
+        answered++;
+        checkDone();
       }
     });
   });
 
-  
-</script>
+  document.querySelectorAll('.quiz-submit-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var qi = parseInt(this.dataset.q);
+      var card = document.getElementById('qcard' + qi);
+      if (card.dataset.state) return;
+      var selected = Array.from(multiSelections[qi] || []).sort();
+      var correct = answers[qi].slice().sort();
+      var isCorrect = selected.length === correct.length && selected.every(function(v, i) { return v === correct[i]; });
+      var opts = card.querySelectorAll('.quiz-opt');
+      if (isCorrect) {
+        score++;
+        card.dataset.state = 'correct';
+        selected.forEach(function(i) { opts[i].classList.add('correct'); });
+      } else {
+        card.dataset.state = 'wrong';
+        selected.forEach(function(i) {
+          if (correct.indexOf(i) === -1) opts[i].classList.add('wrong');
+          else opts[i].classList.add('correct');
+        });
+        correct.forEach(function(i) { opts[i].classList.add('correct'); });
+      }
+      opts.forEach(function(o) { o.setAttribute('disabled',''); });
+      this.style.display = 'none';
+      document.getElementById('qexp' + qi).classList.add('show');
+      answered++;
+      checkDone();
+    });
+  });
+
+  function checkDone() {
+    if (answered === answers.length) {
+      var el = document.getElementById('quizScore');
+      el.classList.add('show');
+      document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
+      var msg = score === answers.length ? 'Perfect score! You are well prepared.' : score >= 10 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
+      document.getElementById('quizScoreMsg').textContent = msg;
+      if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: 'TPRM', quiz_score: score });
+    }
+  }</script>
 </body>
 </html>

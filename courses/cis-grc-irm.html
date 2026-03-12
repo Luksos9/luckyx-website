@@ -335,6 +335,10 @@ a:hover { text-decoration: underline; }
 .quiz-opt.wrong .quiz-opt-letter { background: #d73a49; color: #fff; border-color: #d73a49; }
 .quiz-explain { display: none; margin-top: 12px; padding: 12px 16px; background: var(--bg-card); border-radius: 8px; font-size: 0.9rem; color: var(--text-dim); line-height: 1.6; border-left: 3px solid var(--orange); }
 .quiz-explain.show { display: block; }
+.quiz-choose { font-weight: 400; color: var(--orange); font-size: 0.85rem; margin-left: 4px; }
+.quiz-submit-btn { margin-top: 12px; padding: 10px 24px; background: var(--orange); color: #fff; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.15s, transform 0.1s; }
+.quiz-submit-btn:hover { background: #c75400; }
+.quiz-submit-btn:active { transform: scale(0.97); }
 .quiz-score { margin-top: 24px; padding: 20px; background: var(--bg-raised); border-radius: 12px; border: 1px solid var(--border); text-align: center; display: none; }
 .quiz-score.show { display: block; }
 .quiz-score-num { font-size: 2rem; font-weight: 800; color: var(--orange); }
@@ -458,60 +462,170 @@ a:hover { text-decoration: underline; }
   </div>
 
   <section class="quiz-section" id="free-quiz">
-    <h2>Try 5 Free GRC Questions</h2>
-    <p class="quiz-intro">Test your knowledge before you buy. These sample questions are from our full 500-question practice test.</p>
-        <div class="quiz-card" id="qcard0">
-      <div class="quiz-q"><span class="quiz-q-num">1.</span>What does GRC stand for in the ServiceNow context?</div>
+    <h2>Try 15 Free GRC Questions</h2>
+    <p class="quiz-intro">Test your knowledge before you buy — including multiple-choice and multi-select, just like the real exam.</p>
+    <div class="quiz-card" id="qcard0">
+      <div class="quiz-q"><span class="quiz-q-num">1.</span>In the Audit Workspace an Auditor creates an Evidence Request task and assigns it to a First Line user. When the First Line user opens the task to respond which action are they strictly required to take to move the workflow forward</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>General Resource Configuration</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>Governance, Risk, and Compliance</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>Global Risk Control</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>Group Role Compliance</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>Create a new Control Test</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>Attach a file or link to a record and submit the task for approval</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>Manually close the Audit Engagement</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>Mark the related Control as Compliant</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp0">GRC stands for Governance, Risk, and Compliance — a framework for managing organizational governance, enterprise risk management, and regulatory compliance.</div>
+      <div class="quiz-explain" id="qexp0">0. Correct Answer:Attach a file or link to a record and submit the task for approval1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Evidence Request WorkflowSearch Tip: If the link fails, search Google for: ServiceNow Zurich Evidence Request response taskOfficial Proof: &quot;The responder must provide evidence by either attaching a document or providing a link to an existing ServiceNow record before submitting the task for review.&quot;2. Detailed Expert ExplanationIn the Audit Workspace, the Evidence Request task (sn_audit_evidence_request) is the primary communication bridge between the auditor (second line) and the business (first line).</div>
     </div>
     <div class="quiz-card" id="qcard1">
-      <div class="quiz-q"><span class="quiz-q-num">2.</span>What is a Policy in ServiceNow GRC?</div>
+      <div class="quiz-q"><span class="quiz-q-num">2.</span>To allow other applications such as Incident Management to request a policy exception you must configure the Integration Registry. What is a mandatory field on the Integration Registry form</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>A firewall rule</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>A documented set of rules governing organizational behavior</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>A type of incident</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>A workflow activity</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>Source application</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>Policy exception target table</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>Flow Designer flow</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>Requesting user</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp1">A Policy is a formal document that defines rules, standards, or guidelines that an organization must follow to maintain compliance with regulations or internal standards.</div>
+      <div class="quiz-explain" id="qexp1">0. Correct Answer:Policy exception target table1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Integration Registry for Policy ExceptionsSearch Tip: If link fails, search Google for: ServiceNow Zurich Integration Registry Policy Exception target tableOfficial Proof: &quot;In the Integration Registry, the Policy exception target table is a mandatory field that defines which table the exception record will be associated with.&quot;2.</div>
     </div>
     <div class="quiz-card" id="qcard2">
-      <div class="quiz-q"><span class="quiz-q-num">3.</span>What is the purpose of Risk Assessment in GRC?</div>
+      <div class="quiz-q"><span class="quiz-q-num">3.</span>Which specific role enables a user to report a Risk Event such as a financial loss or near-miss from the Service Portal without granting them full access to the backend Risk Management application</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>To calculate software license costs</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>To evaluate the likelihood and impact of identified risks</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>To assign user roles</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>To schedule system backups</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>sn_risk.user</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>sn_grc.business_user</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>sn_risk.manager</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>sn_grc.reader</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp2">Risk Assessment evaluates the likelihood of a risk occurring and its potential impact on the organization, helping prioritize risk response strategies.</div>
+      <div class="quiz-explain" id="qexp2">0. Correct Answer:sn_grc.business_user1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: GRC Business User RoleSearch Tip: If the link fails, search Google for: ServiceNow Zurich sn_grc.business_user risk event portalOfficial Proof: &quot;The sn_grc.business_user role is intended for users who need to perform basic GRC activities, such as reporting risk events or responding to attestations, via the Service Portal.&quot;2. Detailed Expert ExplanationThe Risk Event module (sn_risk_event) is designed to capture data from the &quot;First Line.&quot; Most employees in an organization do not need to see the full Risk Register or RAM configurations.</div>
     </div>
     <div class="quiz-card" id="qcard3">
-      <div class="quiz-q"><span class="quiz-q-num">4.</span>Which module manages regulatory requirements in GRC?</div>
+      <div class="quiz-q"><span class="quiz-q-num">4.</span>When configuring a Risk Assessment Methodology (RAM) you have the option to define the Assessment Context. Which context type would you select if you need to assess a specific ServiceNow record such as a Change Request or Project directly without requiring the record to be defined as a GRC Entity</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>Incident Management</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>Compliance Management</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>Change Management</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>Knowledge Management</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>Entity-based</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>Class-based</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>Object-based</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>Record-based</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp3">Compliance Management handles regulatory requirements, authority documents, citations, and compliance controls to ensure the organization meets regulatory obligations.</div>
+      <div class="quiz-explain" id="qexp3">0. Correct Answer:Object-based1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: RAM Assessment ContextsSearch Tip: If the link fails, search Google for: ServiceNow Zurich RAM Object-based assessment contextOfficial Proof: &quot;Object-based assessments allow users to perform risk assessments on any table record in the ServiceNow instance without the need for creating a GRC Entity.&quot;2. Detailed Expert ExplanationHistorically, to assess anything in GRC, you first had to create an Entity (Profile). For tactical items like a single Change Request or a Project, this created a lot of administrative &quot;noise&quot; in the Entity table.</div>
     </div>
     <div class="quiz-card" id="qcard4">
-      <div class="quiz-q"><span class="quiz-q-num">5.</span>What is an Entity in ServiceNow GRC?</div>
+      <div class="quiz-q"><span class="quiz-q-num">5.</span>In a quantitative risk analysis if the Single Loss Expectancy (SLE) is $1000000 and the Annualized Rate of Occurrence (ARO) is 20% what is the Annualized Loss Expectancy (ALE)</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>A database table</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>A business unit, department, or process subject to governance</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>A type of user role</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>An API endpoint</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>$200,000</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>$2,000,000</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>$10,000</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>$1,000,000</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp4">An Entity represents an organizational unit (business unit, department, process, or vendor) that is subject to governance, risk management, and compliance requirements.</div>
+      <div class="quiz-explain" id="qexp4">0. Correct Answer:$200,0001. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Risk Score CalculationSearch Tip: If the link fails, search Google for: ServiceNow Zurich ALE calculation formulaOfficial Proof: &quot;The Annualized Loss Expectancy (ALE) is the product of the Single Loss Expectancy (SLE) and the Annualized Rate of Occurrence (ARO).&quot;2. Detailed Expert ExplanationIn ServiceNow Risk Management, quantitative scoring follows the standard FAIR/ISO methodology.</div>
+    </div>
+    <div class="quiz-card" id="qcard5">
+      <div class="quiz-q"><span class="quiz-q-num">6.</span>What would you use in order to accommodate a customer&amp;#x27;s unique process around policy approvals? For example each policy needs a second layer of approval.</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="5"><span class="quiz-opt-letter">A</span><span>Create a new field and create notifications</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="5"><span class="quiz-opt-letter">B</span><span>Add a new related list to keep track of who has already approved it and who hasn&#x27;t approved yet</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="5"><span class="quiz-opt-letter">C</span><span>Add a UI Action to track who the stakeholders are</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="5"><span class="quiz-opt-letter">D</span><span>Create a new workflow in the workflow editor</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp5">0. Correct Answer: Create a new workflow in the workflow editor1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Policy Lifecycle CustomizationSearch Tip: If link fails, search Google for: ServiceNow Zurich modify policy approval workflowOfficial Proof: &quot;The policy approval process is driven by a workflow; modifying the approval layers requires creating or updating the workflow associated with the policy record.&quot;2. Detailed Expert Explanation The Policy lifecycle is governed by an engine. While simple configurations can be done via properties, adding a layer of approval (logic) is a functional change.</div>
+    </div>
+    <div class="quiz-card" id="qcard6">
+      <div class="quiz-q"><span class="quiz-q-num">7.</span>Which specific table stores the many-to-many relationship links between Control Objectives and Citations</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="6"><span class="quiz-opt-letter">A</span><span>sn_compliance_m2m_policy_profile_type</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="6"><span class="quiz-opt-letter">B</span><span>sn_compliance_m2m_statement_citation</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="6"><span class="quiz-opt-letter">C</span><span>sn_compliance_m2m_statement_policy</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="6"><span class="quiz-opt-letter">D</span><span>sn_compliance_citation_m2m_objective</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp6">0. Correct Answer:sn_compliance_m2m_statement_citation1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Policy and Compliance TablesSearch Tip: If the link fails, search Google for: ServiceNow Zurich sn_compliance_m2m_statement_citationOfficial Proof: &quot;The many-to-many relationship between Control Objectives (internally named statements) and Citations is managed in the sn_compliance_m2m_statement_citation table.&quot;2.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard7">
+      <div class="quiz-q"><span class="quiz-q-num">8.</span>When configuring the Assessment Context for a Risk Assessment Methodology (RAM) in the Advanced Risk application which of the following are valid options (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="7"><span class="quiz-opt-letter">A</span><span>Risk Statement</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="7"><span class="quiz-opt-letter">B</span><span>Risk</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="7"><span class="quiz-opt-letter">C</span><span>Project Risk</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="7"><span class="quiz-opt-letter">D</span><span>Object</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="7" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp7">0. Correct Answer:Risk AND Object1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Assessment Context in RAMSearch Tip: If the link fails, search Google for: ServiceNow Zurich Risk Assessment Methodology ContextOfficial Proof: &quot;When defining a RAM, you select the assessment context. The options include Risk, which assesses a registered risk record, and Object, which allows assessments directly on any ServiceNow table record.&quot;2.</div>
+    </div>
+    <div class="quiz-card" id="qcard8">
+      <div class="quiz-q"><span class="quiz-q-num">9.</span>You have configured two different Entity Class Rules that both target the Department [cmn_department] table. If a specific Department record matches the conditions defined in both rules which logic determines which Entity Class is assigned</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="8"><span class="quiz-opt-letter">A</span><span>The rule created most recently takes precedence</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="8"><span class="quiz-opt-letter">B</span><span>The rule with the lowest Order value takes precedence</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="8"><span class="quiz-opt-letter">C</span><span>Both classes are assigned to the Entity</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="8"><span class="quiz-opt-letter">D</span><span>The system prevents the Entity from being created until the conflict is resolved</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp8">0. Correct Answer:The rule with the lowest Order value takes precedence1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Entity Class RulesSearch Tip: If the link fails, search Google for: ServiceNow Zurich Entity Class Rule precedence OrderOfficial Proof: &quot;When multiple entity class rules apply to the same record, the rule with the lowest order value is processed first and the corresponding class is assigned.&quot;2. Detailed Expert ExplanationServiceNow follows a consistent &quot;Order&quot; logic across the platform (Business Rules, UI Policies, etc.).</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard9">
+      <div class="quiz-q"><span class="quiz-q-num">10.</span>Who can request approval for a policy? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="9"><span class="quiz-opt-letter">A</span><span>Policy owner</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="9"><span class="quiz-opt-letter">B</span><span>Policy requester</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="9"><span class="quiz-opt-letter">C</span><span>Compliance manager</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="9"><span class="quiz-opt-letter">D</span><span>Audit manager</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="9"><span class="quiz-opt-letter">E</span><span>Risk manager</span></li>
+      <li class="quiz-opt" data-idx="5" data-q="9"><span class="quiz-opt-letter">F</span><span>Policy contributor</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="9" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp9">0. Correct Answer:Policy owner Policy requester1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Request policy approvalSearch Tip: If the link fails, search Google for: ServiceNow Zurich policy approval request rolesOfficial Proof: &quot;The Policy Owner or the Policy Requester can move a policy to the Awaiting Approval state once the initial drafting and review are complete.&quot;2.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard10">
+      <div class="quiz-q"><span class="quiz-q-num">11.</span>What are the most common baseline tables used in an entity filter to generate entities for an entity type? (Choose three.) <span class="quiz-choose">(choose 3)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="10"><span class="quiz-opt-letter">A</span><span>cmn_job_center</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="10"><span class="quiz-opt-letter">B</span><span>cmn_department</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="10"><span class="quiz-opt-letter">C</span><span>cmn_location</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="10"><span class="quiz-opt-letter">D</span><span>core_company</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="10"><span class="quiz-opt-letter">E</span><span>cmn_geography</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="10" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp10">0. Correct Answer:cmn_department cmn_location core_company1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Create an entity filter in the Core UISearch Tip: If the link fails, search Google for: ServiceNow Zurich common baseline tables for entity filtersOfficial Proof: &quot;When creating entity filters, organizations commonly use foundational platform tables like Department [cmn_department], Location [cmn_location], and Company [core_company] to drive automated scoping.&quot;2. Detailed Expert ExplanationEntity Filters use a &quot;Source Table&quot; to automatically generate entities.</div>
+    </div>
+    <div class="quiz-card" id="qcard11">
+      <div class="quiz-q"><span class="quiz-q-num">12.</span>For classic risk assessment indicator failure factor represents the impact of risk indicator failures on what score?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="11"><span class="quiz-opt-letter">A</span><span>Inherent ALE</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="11"><span class="quiz-opt-letter">B</span><span>Calculated ALE</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="11"><span class="quiz-opt-letter">C</span><span>Residual ALE</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="11"><span class="quiz-opt-letter">D</span><span>Inherent SLE</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp11">0. Correct Answer: Calculated ALE1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Calculate Risk ScoreSearch Tip: If the link fails, search Google for: ServiceNow Zurich Risk Indicator Failure Factor ALEOfficial Proof: &quot;The Calculated ALE is derived from the Residual ALE plus the failure factor... Failed indicators increase the Calculated ALE, moving it closer to the Inherent ALE.&quot;2. Detailed Expert Explanation This is the math of Quantitative Risk.Inherent ALE: The max loss (e.g., $1M).Residual ALE: The target loss if controls work (e.g., $100k).The Reality: If your monitors (Indicators) say &quot;The control is broken,&quot; you are no longer safe at $100k.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard12">
+      <div class="quiz-q"><span class="quiz-q-num">13.</span>When setting up a Regulatory Change Management integration with a provider RSS feed which records are required to be configured (Choose three.) <span class="quiz-choose">(choose 3)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="12"><span class="quiz-opt-letter">A</span><span>Regulatory Taxonomy</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="12"><span class="quiz-opt-letter">B</span><span>Feed Source</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="12"><span class="quiz-opt-letter">C</span><span>Connection and Credentials</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="12"><span class="quiz-opt-letter">D</span><span>Provider</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="12"><span class="quiz-opt-letter">E</span><span>Regulatory Event</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="12" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp12">0. Correct Answer:Feed Source Connection and Credentials Provider1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Set up Regulatory Change Management integrationSearch Tip: If link fails, search Google for: ServiceNow Zurich Regulatory Change Management integration setupOfficial Proof: &quot;To successfully integrate a regulatory feed, you must define the Provider, establish Connection and Credentials for the RSS or API endpoint, and configure the Feed Source to map incoming data.&quot;2. Detailed Expert ExplanationRegulatory Change Management (RCM) acts as an &quot;Ingestion Engine&quot; for external legal shifts.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard13">
+      <div class="quiz-q"><span class="quiz-q-num">14.</span>For a particular risk assessment methodology (RAM) the control effectiveness score is calculated based on an individual assessment of controls. What are options for control identification? (Choose three.) <span class="quiz-choose">(choose 3)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="13"><span class="quiz-opt-letter">A</span><span>Controls are identified from library and ad-hoc</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="13"><span class="quiz-opt-letter">B</span><span>Controls are identified from indicator results</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="13"><span class="quiz-opt-letter">C</span><span>Controls are identified from library</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="13"><span class="quiz-opt-letter">D</span><span>Controls are identified ad-hoc</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="13"><span class="quiz-opt-letter">E</span><span>Controls are identified from related issues</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="13" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp13">0. Correct Answer:Controls are identified from library and ad-hocControls are identified from libraryControls are identified ad-hoc1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Configure a Risk Assessment MethodologySearch Tip: If link fails, search Google for: ServiceNow Zurich RAM Control Identification OptionsOfficial Proof: &quot;When configuring the Control Assessment section of a RAM, you can specify how controls are identified: through the GRC Library, manually (Ad-hoc), or a combination of both.&quot;2. Detailed Expert Explanation Advanced Risk (RAM) allows you to perform Control Assessments during a Risk Assessment.</div>
+    </div>
+    <div class="quiz-card" id="qcard14">
+      <div class="quiz-q"><span class="quiz-q-num">15.</span>If a Control is created manually for an Entity and that Entity is later added to an Entity Type that automatically generates the same Control what is the result</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="14"><span class="quiz-opt-letter">A</span><span>ServiceNow identifies the existing control and links it</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="14"><span class="quiz-opt-letter">B</span><span>ServiceNow overwrites the manual control with the automatic one</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="14"><span class="quiz-opt-letter">C</span><span>ServiceNow creates a duplicate control and triggers a notification</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="14"><span class="quiz-opt-letter">D</span><span>ServiceNow creates a duplicate control without notifying the control owner</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp14">0. Correct Answer:ServiceNow creates a duplicate control without notifying the control owner1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Item Generation and duplicatesSearch Tip: If link fails, search Google for: ServiceNow Zurich GRC duplicate control generationOfficial Proof: &quot;The Item Generation engine does not check for existing manual records; it creates a new control record for every intersection defined in the entity type, which may result in duplicates.&quot;2.</div>
     </div>
     <div class="quiz-score" id="quizScore">
-      <div class="quiz-score-num" id="quizScoreNum">0/5</div>
+      <div class="quiz-score-num" id="quizScoreNum">0/15</div>
       <div class="quiz-score-label">Sample Quiz Score</div>
       <div class="quiz-score-msg" id="quizScoreMsg"></div>
       <a href="https://www.udemy.com/course/pass-servicenow-cis-risk-and-compliance-grc-irm-rc/?referralCode=BAC69ADCBF13729F4018" target="_blank" rel="noopener" class="cp-cta">
@@ -542,33 +656,83 @@ a:hover { text-decoration: underline; }
   });
 
   // Quiz logic
-  const answers = [1,1,1,1,1];
+  const answers = [1, 1, 1, 2, 0, 3, 1, [1, 3], 1, [0, 1], [1, 2, 3], 1, [1, 2, 3], [0, 2, 3], 3];
   let answered = 0, score = 0;
+  const multiSelections = {};
+
   document.querySelectorAll('.quiz-opt').forEach(function(opt) {
     opt.addEventListener('click', function() {
       var qi = parseInt(this.dataset.q);
-      var idx = parseInt(this.dataset.idx);
       var card = document.getElementById('qcard' + qi);
       if (card.dataset.state) return;
-      var isCorrect = idx === answers[qi];
-      if (isCorrect) { score++; this.classList.add('correct'); card.dataset.state = 'correct'; }
-      else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
-      this.classList.add('selected');
-      card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
-      document.getElementById('qexp' + qi).classList.add('show');
-      answered++;
-      if (answered === answers.length) {
-        var el = document.getElementById('quizScore');
-        el.classList.add('show');
-        document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
-        var msg = score === 5 ? 'Perfect score! You are well prepared.' : score >= 3 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
-        document.getElementById('quizScoreMsg').textContent = msg;
-        if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: 'GRC', quiz_score: score });
+      var idx = parseInt(this.dataset.idx);
+      var isMulti = Array.isArray(answers[qi]);
+
+      if (isMulti) {
+        // Multi-select: toggle selection
+        if (!multiSelections[qi]) multiSelections[qi] = new Set();
+        if (multiSelections[qi].has(idx)) {
+          multiSelections[qi].delete(idx);
+          this.classList.remove('selected');
+        } else {
+          multiSelections[qi].add(idx);
+          this.classList.add('selected');
+        }
+        // Show/hide submit button
+        var btn = card.querySelector('.quiz-submit-btn');
+        btn.style.display = multiSelections[qi].size > 0 ? 'block' : 'none';
+      } else {
+        // Single answer: immediate check
+        var isCorrect = idx === answers[qi];
+        if (isCorrect) { score++; this.classList.add('correct'); card.dataset.state = 'correct'; }
+        else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
+        this.classList.add('selected');
+        card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
+        document.getElementById('qexp' + qi).classList.add('show');
+        answered++;
+        checkDone();
       }
     });
   });
 
-  
-</script>
+  document.querySelectorAll('.quiz-submit-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var qi = parseInt(this.dataset.q);
+      var card = document.getElementById('qcard' + qi);
+      if (card.dataset.state) return;
+      var selected = Array.from(multiSelections[qi] || []).sort();
+      var correct = answers[qi].slice().sort();
+      var isCorrect = selected.length === correct.length && selected.every(function(v, i) { return v === correct[i]; });
+      var opts = card.querySelectorAll('.quiz-opt');
+      if (isCorrect) {
+        score++;
+        card.dataset.state = 'correct';
+        selected.forEach(function(i) { opts[i].classList.add('correct'); });
+      } else {
+        card.dataset.state = 'wrong';
+        selected.forEach(function(i) {
+          if (correct.indexOf(i) === -1) opts[i].classList.add('wrong');
+          else opts[i].classList.add('correct');
+        });
+        correct.forEach(function(i) { opts[i].classList.add('correct'); });
+      }
+      opts.forEach(function(o) { o.setAttribute('disabled',''); });
+      this.style.display = 'none';
+      document.getElementById('qexp' + qi).classList.add('show');
+      answered++;
+      checkDone();
+    });
+  });
+
+  function checkDone() {
+    if (answered === answers.length) {
+      var el = document.getElementById('quizScore');
+      el.classList.add('show');
+      document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
+      var msg = score === answers.length ? 'Perfect score! You are well prepared.' : score >= 10 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
+      document.getElementById('quizScoreMsg').textContent = msg;
+      if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: 'GRC', quiz_score: score });
+    }
+  }</script>
 </body>
 </html>

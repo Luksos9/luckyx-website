@@ -342,6 +342,10 @@ a:hover { text-decoration: underline; }
 .quiz-opt.wrong .quiz-opt-letter { background: #d73a49; color: #fff; border-color: #d73a49; }
 .quiz-explain { display: none; margin-top: 12px; padding: 12px 16px; background: var(--bg-card); border-radius: 8px; font-size: 0.9rem; color: var(--text-dim); line-height: 1.6; border-left: 3px solid var(--orange); }
 .quiz-explain.show { display: block; }
+.quiz-choose { font-weight: 400; color: var(--orange); font-size: 0.85rem; margin-left: 4px; }
+.quiz-submit-btn { margin-top: 12px; padding: 10px 24px; background: var(--orange); color: #fff; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.15s, transform 0.1s; }
+.quiz-submit-btn:hover { background: #c75400; }
+.quiz-submit-btn:active { transform: scale(0.97); }
 .quiz-score { margin-top: 24px; padding: 20px; background: var(--bg-raised); border-radius: 12px; border: 1px solid var(--border); text-align: center; display: none; }
 .quiz-score.show { display: block; }
 .quiz-score-num { font-size: 2rem; font-weight: 800; color: var(--orange); }
@@ -465,60 +469,265 @@ a:hover { text-decoration: underline; }
   </div>
 
   <section class="quiz-section" id="free-quiz">
-    <h2>Try 5 Free SM Questions</h2>
-    <p class="quiz-intro">Test your knowledge before you buy. These sample questions are from our full 217-question practice test.</p>
-        <div class="quiz-card" id="qcard0">
-      <div class="quiz-q"><span class="quiz-q-num">1.</span>What is Service Mapping in ServiceNow?</div>
+    <h2>Try 15 Free SM Questions</h2>
+    <p class="quiz-intro">Test your knowledge before you buy — including multiple-choice and multi-select, just like the real exam.</p>
+    <div class="quiz-card" id="qcard0">
+      <div class="quiz-q"><span class="quiz-q-num">1.</span>What should be checked in CI Identification rules to insert/update CIs with no regard to other CIs or relationships?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>Drawing network diagrams manually</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>An automated process that discovers and maps relationships between IT components that make up a business service</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>Creating org charts</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>Mapping customer journeys</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>The Mandatory checkbox</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>The Independent checkbox</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>The Standalone checkbox</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>The Override checkbox</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp0">Service Mapping automatically discovers and visualizes all the IT infrastructure components (servers, applications, databases) and their relationships that support a specific business service.</div>
+      <div class="quiz-explain" id="qexp0">Correct Answer: The Independent checkbox
+Source
+
+Official Doc: CI Identification and Reconciliation Engine
+If the link fails, search Google for: ServiceNow Zurich CI Identification rule Independent checkbox standalone insert update
+
+Expert Explanation
+In the CI Identification and Reconciliation Engine (IRE), each identification rule has an Independent checkbox. When checked, the IRE processes that CI type without evaluating relationships to other CIs first. This is important for CI classes that do not depend on a host or container CI for their identity, such as top-level infrastructure devices.</div>
     </div>
     <div class="quiz-card" id="qcard1">
-      <div class="quiz-q"><span class="quiz-q-num">2.</span>What is a Top-Down Pattern?</div>
+      <div class="quiz-q"><span class="quiz-q-num">2.</span>Which of the following lists the correct sequence of phases in ServiceNow Discovery?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>A coding style</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>A discovery pattern that starts from an entry point and maps all connected components of a service</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>A management hierarchy</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>A data sorting algorithm</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>Scanning → Classification → Identification → Exploration</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>Scanning → Identification → Classification → Exploration</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>Classification → Scanning → Identification → Exploration</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>Scanning → Classification → Exploration → Identification</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp1">Top-Down Patterns start from a known entry point (like a URL or load balancer) and discover all downstream components — application servers, databases, and infrastructure — that comprise the service.</div>
+      <div class="quiz-explain" id="qexp1">ServiceNow’s horizontal Discovery flow consistently uses this sequence:Scanning Phase – Detects open ports and services (Shazzam probe).Classification Phase – Determines device type (OS, role).Identification Phase – Matches device to existing CMDB records or creates a new CI.Exploration Phase – Gathers in-depth details and builds relationships.This sequence ensures structured and accurate discovery, enabling the CMDB to remain consistent and reliable.Correct choice: Scanning → Classification → Identification → Exploration</div>
     </div>
     <div class="quiz-card" id="qcard2">
-      <div class="quiz-q"><span class="quiz-q-num">3.</span>What are Connection Attributes?</div>
+      <div class="quiz-q"><span class="quiz-q-num">3.</span>What is the name of the Store App that extends Service Mapping with automated service suggestions and an ML-powered framework?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>Database connection strings</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>Properties that define how service components connect to each other (ports, protocols, process names)</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>User profile fields</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>Network cable specifications</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>Service Mapping Advanced</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>Service Mapping Plus</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>ML Mapping Suite</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>Automated Service Suggestions App</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp2">Connection Attributes define the characteristics (ports, protocols, process names) used to identify and map connections between service components during the discovery process.</div>
+      <div class="quiz-explain" id="qexp2">ServiceNow offers the Service Mapping Plus app as an optional add-on that introduces ML enhancements to simplify and automate service discovery, such as suggesting services based on patterns, traffic, tags, and fingerprints. This streamlined functionality accelerates mapping workflows and improves accuracy compared with baseline Service Mapping features.store.servicenow.com VirimaCorrect choice: Service Mapping Plus</div>
     </div>
     <div class="quiz-card" id="qcard3">
-      <div class="quiz-q"><span class="quiz-q-num">4.</span>What is Traffic-Based Discovery?</div>
+      <div class="quiz-q"><span class="quiz-q-num">4.</span>In which table are tag key-value pairs stored when discovered by ServiceNow Discovery for Tag-Based Service Mapping?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>Monitoring road traffic</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>Using network traffic data to discover connections between CIs that traditional probes might miss</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>Analyzing website visitor traffic</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>Measuring bandwidth usage</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>cmdb_key_value</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>cmdb_tag</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>cmdb_tag_kv</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>cmdb_ci_tag_value</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp3">Traffic-Based Discovery analyzes actual network traffic flow data to identify connections between CIs, discovering relationships that traditional probe-based discovery might not detect.</div>
+      <div class="quiz-explain" id="qexp3">For Tag-Based Service Mapping, ServiceNow relies on the cmdb_key_value table as the central store for tags captured during Discovery. Each tag from cloud or infrastructure resources is recorded here as a key-value pair, which can then be used to dynamically identify and map services based on tagging criteria.Correct choice: cmdb_key_value.</div>
     </div>
     <div class="quiz-card" id="qcard4">
-      <div class="quiz-q"><span class="quiz-q-num">5.</span>What does Map Reliability indicate?</div>
+      <div class="quiz-q"><span class="quiz-q-num">5.</span>What is true about the execution of connection sections?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>Network uptime</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>A confidence score showing how complete and accurate a service map is</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>GPS signal strength</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>Data backup success rate</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>Only the first matching connection section runs</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>Connection sections run before identification sections</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>All connection sections execute after a successful identification section</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>Connection sections only run if the CI is new</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp4">Map Reliability is a health score that indicates the completeness and accuracy of a service map, flagging missing components, stale data, or unresolved connection issues.</div>
+      <div class="quiz-explain" id="qexp4">Correct Answer: All connection sections execute after a successful identification section
+Source
+
+Official Doc: Service Mapping pattern sections
+If the link fails, search Google for: ServiceNow Zurich connection sections all execute after identification succeeds
+
+Expert Explanation
+Connection sections map the dependencies of an identified CI: the load balancers in front of it, the databases behind it, the message queues it communicates with. Because a complex application can have many types of dependencies, multiple connection sections co-exist in a single pattern. When identification succeeds, all connection sections execute in sequence, each discovering a different relationship type.</div>
+    </div>
+    <div class="quiz-card" id="qcard5">
+      <div class="quiz-q"><span class="quiz-q-num">6.</span>Which item in the CMDB Identification and Reconciliation application lets an admin specify authorized data sources that can update a table or set of attributes?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="5"><span class="quiz-opt-letter">A</span><span>Reclassification Tasks</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="5"><span class="quiz-opt-letter">B</span><span>Identification Rules</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="5"><span class="quiz-opt-letter">C</span><span>Datasource Precedence Rules</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="5"><span class="quiz-opt-letter">D</span><span>Reconciliation Rules</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp5">The IRE module ensures CMDB data accuracy through Reconciliation Rules, which define allowed data source access at both the table and attribute level. When multiple sources are authorized, Data Source Precedence Rules establish the order in which updates are accepted, helping prevent data conflicts and maintain trust in the CMDB.AnswerReconciliation Rules</div>
+    </div>
+    <div class="quiz-card" id="qcard6">
+      <div class="quiz-q"><span class="quiz-q-num">7.</span>Which widget in the Service Mapping Workspace lets you identify servers that haven’t been mapped yet?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="6"><span class="quiz-opt-letter">A</span><span>Candidate List</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="6"><span class="quiz-opt-letter">B</span><span>Unmapped Servers</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="6"><span class="quiz-opt-letter">C</span><span>Service Health Dashboard</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="6"><span class="quiz-opt-letter">D</span><span>Service Groups</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp6">In the Service Mapping Workspace, the “Unmapped Servers” widget is your go-to tool for spotting servers that aren’t yet part of any application service topology. It clearly shows two categories:Unmapped servers with candidate – those servers that have possible service associations suggested by ML.Unmapped servers without candidate – servers that need immediate attention as they lack any mapping guidance.These insights help you prioritize mapping activities, ensuring no critical infrastructure components are overlooked in your service models.Correct choice: Unmapped Servers.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard7">
+      <div class="quiz-q"><span class="quiz-q-num">8.</span>Which two items are typical prerequisites shown as “ready” on the Service Mapping Home page before you start? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="7"><span class="quiz-opt-letter">A</span><span>At least one validated MID Server</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="7"><span class="quiz-opt-letter">B</span><span>At least one tag rule</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="7"><span class="quiz-opt-letter">C</span><span>Working credentials for needed protocols</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="7"><span class="quiz-opt-letter">D</span><span>A published pattern for every technology in scope</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="7" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp7">Correct choices:
+- At least one validated MID Server
+- Working credentials for needed protocols
+
+Overall explanation
+Readiness focuses on a validated MID and working credentials.
+
+
+URLs (supporting)
+https://www.servicenow.com/docs/bundle/washingtondc-it-operations-management/page/product/service-mapping/task/check-service-mapping-readiness-for-mapping.html
+https://www.servicenow.com/docs/bundle/yokohama-it-operations-management/page/product/service-mapping/task/t_CreateEntryPoint.html
+https://www.servicenow.com/docs/bundle/vancouver-it-operations-management/page/product/service-mapping/task/t_CreateEntryPoint.html
+
+Sources (official docs)
+https://www.servicenow.com/docs/bundle/washingtondc-it-operations-management/page/product/service-mapping/task/check-service-mapping-readiness-for-mapping.html
+https://www.servicenow.com/docs/bundle/vancouver-it-operations-management/page/product/service-mapping/task/t_CreateEntryPoint.html.</div>
+    </div>
+    <div class="quiz-card" id="qcard8">
+      <div class="quiz-q"><span class="quiz-q-num">9.</span>In a Regex Parse (Parse variable), which capture group number represents the full match?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="8"><span class="quiz-opt-letter">A</span><span>0</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="8"><span class="quiz-opt-letter">B</span><span>1</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="8"><span class="quiz-opt-letter">C</span><span>&#x27;-1</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="8"><span class="quiz-opt-letter">D</span><span>It depends on a setting</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp8">Correct choices:
+- 0
+
+Overall explanation
+Group 0 is the entire match; groups 1..n are the captures.
+
+
+URLs (supporting)
+https://www.servicenow.com/docs/bundle/washingtondc-it-operations-management/page/product/service-mapping/concept/pattern-based-discovery.html
+https://www.servicenow.com/docs/bundle/vancouver-it-operations-management/page/product/service-mapping/task/t_DefineConnecSectionPatDef.html
+https://www.servicenow.com/docs/bundle/yokohama-it-operations-management/page/product/discovery/reference/r_DiscoveryPortsAndProtocols.html
+
+Sources (official docs)
+https://www.servicenow.com/docs/bundle/washingtondc-it-operations-management/page/product/service-mapping/concept/pattern-based-discovery.html
+https://www.servicenow.com/docs/bundle/vancouver-it-operations-management/page/product/service-mapping/task/t_DefineConnecSectionPatDef.html
+https://www.servicenow.com/docs/bundle/yokohama-it-operations-management/page/product/discovery/reference/r_DiscoveryPortsAndProtocols.html.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard9">
+      <div class="quiz-q"><span class="quiz-q-num">10.</span>Which two protocols are most commonly used by patterns to gather data from Linux targets? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="9"><span class="quiz-opt-letter">A</span><span>SSH</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="9"><span class="quiz-opt-letter">B</span><span>WMI</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="9"><span class="quiz-opt-letter">C</span><span>SNMP</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="9"><span class="quiz-opt-letter">D</span><span>WinRM</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="9" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp9">Correct choices:
+- SSH
+- SNMP
+
+Overall explanation
+SSH and SNMP are typical; WMI/WinRM are Windows-only.
+
+
+URLs (supporting)
+https://www.servicenow.com/docs/bundle/washingtondc-it-operations-management/page/product/service-mapping/concept/pattern-based-discovery.html
+https://www.servicenow.com/docs/bundle/vancouver-it-operations-management/page/product/service-mapping/task/t_DefineConnecSectionPatDef.html
+https://www.servicenow.com/docs/bundle/yokohama-it-operations-management/page/product/discovery/reference/r_DiscoveryPortsAndProtocols.html
+
+Sources (official docs)
+https://www.servicenow.com/docs/bundle/washingtondc-it-operations-management/page/product/service-mapping/concept/pattern-based-discovery.html
+https://www.servicenow.com/docs/bundle/vancouver-it-operations-management/page/product/service-mapping/task/t_DefineConnecSectionPatDef.html
+https://www.servicenow.com/docs/bundle/yokohama-it-operations-management/page/product/discovery/reference/r_DiscoveryPortsAndProtocols.html.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard10">
+      <div class="quiz-q"><span class="quiz-q-num">11.</span>What would be the selling point for a customer to purchase Event Management? (Choose 4) <span class="quiz-choose">(choose 4)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="10"><span class="quiz-opt-letter">A</span><span>Reduce alert noise through correlation and deduplication</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="10"><span class="quiz-opt-letter">B</span><span>Accelerate incident response through automated alert-to-incident creation</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="10"><span class="quiz-opt-letter">C</span><span>Gain visibility into service health via Service Mapping integration</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="10"><span class="quiz-opt-letter">D</span><span>Integrate with existing monitoring tools into one platform</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="10"><span class="quiz-opt-letter">E</span><span>Replace all existing monitoring tools entirely</span></li>
+      <li class="quiz-opt" data-idx="5" data-q="10"><span class="quiz-opt-letter">F</span><span>Eliminate the need for a CMDB</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="10" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp10">Correct Answers: Reduce alert noise; Accelerate incident response; Gain visibility into service health; Integrate monitoring tools into one platform
+Source
+
+Official Doc: Event Management overview
+If the link fails, search Google for: ServiceNow Zurich Event Management business value selling points ITOM
+
+Expert Explanation
+ServiceNow Event Management delivers value across four proven dimensions. First, correlation and deduplication reduce alert volume by up to 90% in complex environments. Second, automated incident creation from alerts eliminates manual triage steps.</div>
+    </div>
+    <div class="quiz-card" id="qcard11">
+      <div class="quiz-q"><span class="quiz-q-num">12.</span>Which phase best describes the flow of Service Mapping?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="11"><span class="quiz-opt-letter">A</span><span>Entry Point &gt; Host Detection &gt; Classification &gt; Identification &gt; Connection</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="11"><span class="quiz-opt-letter">B</span><span>Scanning &gt; Classification &gt; Identification &gt; Exploration</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="11"><span class="quiz-opt-letter">C</span><span>Entry Point &gt; Scanning &gt; Exploration &gt; Connection</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="11"><span class="quiz-opt-letter">D</span><span>Classification &gt; Scanning &gt; Entry Point &gt; Identification</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp11">Correct Answer: Entry Point &gt; Host Detection &gt; Classification &gt; Identification &gt; Connection
+
+Source
+
+Official Doc: Service Mapping application service discovery process
+If the link fails, search Google for: ServiceNow Zurich Service Mapping discovery process phases
+
+
+Expert Explanation
+Service Mapping uses a top-down approach starting from a defined Entry Point (URL, TCP host/port, or DB connection string). If the host is not already in the CMDB, Host Detection triggers first. Once the host exists, Classification identifies the device type, after which Identification matches the application via pattern identification sections.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard12">
+      <div class="quiz-q"><span class="quiz-q-num">13.</span>A device sits behind a firewall. Mapping fails at first hop. Which two fixes are most relevant? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="12"><span class="quiz-opt-letter">A</span><span>Open protocol ports from the MID to the target (e.g., 22, 135/445, 161)</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="12"><span class="quiz-opt-letter">B</span><span>Increase the MID JVM heap</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="12"><span class="quiz-opt-letter">C</span><span>Place a MID Server in the same network zone</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="12"><span class="quiz-opt-letter">D</span><span>Raise the instance’s node count</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="12" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp12">Correct choices:
+- Open protocol ports from the MID to the target (e.g., 22, 135/445, 161)
+- Place a MID Server in the same network zone
+
+Overall explanation
+Ensure network reachability and consider a MID inside the same zone.
+
+
+URLs (supporting)
+https://www.servicenow.com/docs/bundle/vancouver-it-operations-management/page/product/service-mapping/concept/service-mapping-get-started.html
+https://www.servicenow.com/docs/bundle/yokohama-it-operations-management/page/product/service-mapping/reference/prerequisites-service-mapping.html
+
+Sources (official docs)
+https://www.servicenow.com/docs/bundle/vancouver-it-operations-management/page/product/service-mapping/concept/service-mapping-get-started.html
+https://www.servicenow.com/docs/bundle/yokohama-it-operations-management/page/product/service-mapping/reference/prerequisites-service-mapping.html.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard13">
+      <div class="quiz-q"><span class="quiz-q-num">14.</span>What preparations need to be done before starting the Service Mapping process? (Choose 4) <span class="quiz-choose">(choose 4)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="13"><span class="quiz-opt-letter">A</span><span>Credentials inserted and tested</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="13"><span class="quiz-opt-letter">B</span><span>Gather info about the applications</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="13"><span class="quiz-opt-letter">C</span><span>Insert all network devices</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="13"><span class="quiz-opt-letter">D</span><span>Service Mapping plugin installed</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="13"><span class="quiz-opt-letter">E</span><span>Discuss with SMEs</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="13" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp13">Correct Answers: Credentials inserted and tested; Gather info about the applications; Service Mapping plugin installed; Discuss with SMEs
+Source
+
+Official Doc: Service Mapping prerequisites
+If the link fails, search Google for: ServiceNow Zurich Service Mapping prerequisites before starting
+
+Expert Explanation
+Before Service Mapping can produce accurate maps, four conditions must be true. The Service Mapping plugin (com.snc.service-mapping) must be active. Credentials for all target technologies (Windows, Linux, DB, middleware) must be configured under Discovery &gt; Credentials and validated. Application landscape knowledge gathered from architecture diagrams tells you what entry points to configure.</div>
+    </div>
+    <div class="quiz-card" id="qcard14">
+      <div class="quiz-q"><span class="quiz-q-num">15.</span>Which reference lists the MID Server properties that control its behavior?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="14"><span class="quiz-opt-letter">A</span><span>“MID Server Properties” documentation</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="14"><span class="quiz-opt-letter">B</span><span>“Prerequisites for Service Mapping” guide</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="14"><span class="quiz-opt-letter">C</span><span>“Components installed with Service Mapping” reference</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="14"><span class="quiz-opt-letter">D</span><span>“Quick Start Tests for Service Mapping” guide</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp14">The MID Server Properties doc lists configurable properties.</div>
     </div>
     <div class="quiz-score" id="quizScore">
-      <div class="quiz-score-num" id="quizScoreNum">0/5</div>
+      <div class="quiz-score-num" id="quizScoreNum">0/15</div>
       <div class="quiz-score-label">Sample Quiz Score</div>
       <div class="quiz-score-msg" id="quizScoreMsg"></div>
       <a href="https://www.udemy.com/course/pass-servicenow-cis-service-mapping-sm-exam/?referralCode=E4C8DC2D2F2DDEEA86D5" target="_blank" rel="noopener" class="cp-cta">
@@ -549,33 +758,83 @@ a:hover { text-decoration: underline; }
   });
 
   // Quiz logic
-  const answers = [1,1,1,1,1];
+  const answers = [1, 0, 1, 0, 2, 3, 1, [0, 2], 0, [0, 2], [0, 1, 2, 3], 0, [0, 2], [0, 1, 3, 4], 0];
   let answered = 0, score = 0;
+  const multiSelections = {};
+
   document.querySelectorAll('.quiz-opt').forEach(function(opt) {
     opt.addEventListener('click', function() {
       var qi = parseInt(this.dataset.q);
-      var idx = parseInt(this.dataset.idx);
       var card = document.getElementById('qcard' + qi);
       if (card.dataset.state) return;
-      var isCorrect = idx === answers[qi];
-      if (isCorrect) { score++; this.classList.add('correct'); card.dataset.state = 'correct'; }
-      else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
-      this.classList.add('selected');
-      card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
-      document.getElementById('qexp' + qi).classList.add('show');
-      answered++;
-      if (answered === answers.length) {
-        var el = document.getElementById('quizScore');
-        el.classList.add('show');
-        document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
-        var msg = score === 5 ? 'Perfect score! You are well prepared.' : score >= 3 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
-        document.getElementById('quizScoreMsg').textContent = msg;
-        if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: 'SM', quiz_score: score });
+      var idx = parseInt(this.dataset.idx);
+      var isMulti = Array.isArray(answers[qi]);
+
+      if (isMulti) {
+        // Multi-select: toggle selection
+        if (!multiSelections[qi]) multiSelections[qi] = new Set();
+        if (multiSelections[qi].has(idx)) {
+          multiSelections[qi].delete(idx);
+          this.classList.remove('selected');
+        } else {
+          multiSelections[qi].add(idx);
+          this.classList.add('selected');
+        }
+        // Show/hide submit button
+        var btn = card.querySelector('.quiz-submit-btn');
+        btn.style.display = multiSelections[qi].size > 0 ? 'block' : 'none';
+      } else {
+        // Single answer: immediate check
+        var isCorrect = idx === answers[qi];
+        if (isCorrect) { score++; this.classList.add('correct'); card.dataset.state = 'correct'; }
+        else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
+        this.classList.add('selected');
+        card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
+        document.getElementById('qexp' + qi).classList.add('show');
+        answered++;
+        checkDone();
       }
     });
   });
 
-  
-</script>
+  document.querySelectorAll('.quiz-submit-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var qi = parseInt(this.dataset.q);
+      var card = document.getElementById('qcard' + qi);
+      if (card.dataset.state) return;
+      var selected = Array.from(multiSelections[qi] || []).sort();
+      var correct = answers[qi].slice().sort();
+      var isCorrect = selected.length === correct.length && selected.every(function(v, i) { return v === correct[i]; });
+      var opts = card.querySelectorAll('.quiz-opt');
+      if (isCorrect) {
+        score++;
+        card.dataset.state = 'correct';
+        selected.forEach(function(i) { opts[i].classList.add('correct'); });
+      } else {
+        card.dataset.state = 'wrong';
+        selected.forEach(function(i) {
+          if (correct.indexOf(i) === -1) opts[i].classList.add('wrong');
+          else opts[i].classList.add('correct');
+        });
+        correct.forEach(function(i) { opts[i].classList.add('correct'); });
+      }
+      opts.forEach(function(o) { o.setAttribute('disabled',''); });
+      this.style.display = 'none';
+      document.getElementById('qexp' + qi).classList.add('show');
+      answered++;
+      checkDone();
+    });
+  });
+
+  function checkDone() {
+    if (answered === answers.length) {
+      var el = document.getElementById('quizScore');
+      el.classList.add('show');
+      document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
+      var msg = score === answers.length ? 'Perfect score! You are well prepared.' : score >= 10 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
+      document.getElementById('quizScoreMsg').textContent = msg;
+      if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: 'SM', quiz_score: score });
+    }
+  }</script>
 </body>
 </html>

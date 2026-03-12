@@ -342,6 +342,10 @@ a:hover { text-decoration: underline; }
 .quiz-opt.wrong .quiz-opt-letter { background: #d73a49; color: #fff; border-color: #d73a49; }
 .quiz-explain { display: none; margin-top: 12px; padding: 12px 16px; background: var(--bg-card); border-radius: 8px; font-size: 0.9rem; color: var(--text-dim); line-height: 1.6; border-left: 3px solid var(--orange); }
 .quiz-explain.show { display: block; }
+.quiz-choose { font-weight: 400; color: var(--orange); font-size: 0.85rem; margin-left: 4px; }
+.quiz-submit-btn { margin-top: 12px; padding: 10px 24px; background: var(--orange); color: #fff; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.15s, transform 0.1s; }
+.quiz-submit-btn:hover { background: #c75400; }
+.quiz-submit-btn:active { transform: scale(0.97); }
 .quiz-score { margin-top: 24px; padding: 20px; background: var(--bg-raised); border-radius: 12px; border: 1px solid var(--border); text-align: center; display: none; }
 .quiz-score.show { display: block; }
 .quiz-score-num { font-size: 2rem; font-weight: 800; color: var(--orange); }
@@ -465,60 +469,178 @@ a:hover { text-decoration: underline; }
   </div>
 
   <section class="quiz-section" id="free-quiz">
-    <h2>Try 5 Free PA Questions</h2>
-    <p class="quiz-intro">Test your knowledge before you buy. These sample questions are from our full 218-question practice test.</p>
-        <div class="quiz-card" id="qcard0">
-      <div class="quiz-q"><span class="quiz-q-num">1.</span>What is a Performance Analytics Indicator?</div>
+    <h2>Try 15 Free CAS-PA Questions</h2>
+    <p class="quiz-intro">Test your knowledge before you buy — including multiple-choice and multi-select, just like the real exam.</p>
+    <div class="quiz-card" id="qcard0">
+      <div class="quiz-q"><span class="quiz-q-num">1.</span>According to the CAS-PA Mainline Blueprint, which Learning Domain carries the highest percentage weight on the certification exam?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>A KPI widget only</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>A metric that tracks and measures business performance data over time</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>A status light on hardware</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>A code quality metric</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>Data Visualization</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>Configure Breakdowns and Breakdown Sources</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>Configure Indicators and Indicator Sources</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>Architecture and Deployment</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp0">An Indicator (also called a KPI) is a defined metric that collects, tracks, and measures specific business data points over time, enabling trend analysis and performance monitoring.</div>
+      <div class="quiz-explain" id="qexp0">Correct Answer: Configure Indicators and Indicator SourcesSourceOfficial: CAS-PA Exam SpecificationIf the link fails, search Google for: ServiceNow CAS-PA exam blueprint domain weights percentageExpert ExplanationThe CAS-PA Mainline Blueprint specifies the weight of each learning domain on the certification exam. Configure Indicators and Indicator Sources carries the highest weight at 26%, reflecting the centrality of indicators to Performance Analytics.</div>
     </div>
     <div class="quiz-card" id="qcard1">
-      <div class="quiz-q"><span class="quiz-q-num">2.</span>What is a Breakdown in Performance Analytics?</div>
+      <div class="quiz-q"><span class="quiz-q-num">2.</span>The formula for the &amp;quot;% of incidents resolved by first assigned group&amp;quot; is configured as: ([[Number of resolved incidents by first assigned group]] / [[Number of resolved incidents]]) * 100. You observe a &amp;quot;No Score&amp;quot; output when the denominator indicator equals 0. What is the best method to enhance this formula so it returns 0 instead of &amp;quot;No Score&amp;quot;?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>A system failure</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>A dimension used to segment indicator data into meaningful groups (e.g., by priority, category, group)</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>A debugging tool</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>A maintenance window</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>Enable the property &quot;Allow formula component to be NULL&quot;.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>Set the system property &quot;Value when nil&quot; to 0.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>Add a conditional JavaScript statement in the formula to return 0 if the value of Number of Resolved Incidents is 0.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>Enable the property &quot;Render continuous lines&quot;.</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp1">A Breakdown segments indicator data into sub-groups based on a field (like priority, category, or assignment group), allowing you to analyze which segments drive overall performance.</div>
+      <div class="quiz-explain" id="qexp1">Correct Answer: Add a conditional JavaScript statement in the formula to return 0 if the value of Number of Resolved Incidents is 0.SourceOfficial Doc: Formula IndicatorsIf the link fails, search Google for: ServiceNow formula indicator division by zero JavaScript conditionalExpert ExplanationFormula Indicators support JavaScript expressions. When a denominator indicator equals zero, the formula produces a &quot;No Score&quot; result. The correct approach is to add a conditional check directly in the formula: if ([[denominator]] == 0) { 0 } else { ([[numerator]] / [[denominator]]) * 100 }.</div>
     </div>
     <div class="quiz-card" id="qcard2">
-      <div class="quiz-q"><span class="quiz-q-num">3.</span>What is a Scheduled Data Collection?</div>
+      <div class="quiz-q"><span class="quiz-q-num">3.</span>What architectural change happens to the legacy pa_scores table during an upgrade to the Washington DC release (assuming the instance has fewer than 43 million scores)?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>A database backup schedule</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>A job that runs at defined intervals to collect and store indicator scores and breakdown data</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>A meeting scheduler</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>A log rotation policy</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>The table remains the sole repository for RaptorDB operations.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>The table is converted to an offline data repository.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>The scores are migrated automatically to the pa_scores_l1 and pa_scores_l2 tables.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>Data is permanently flushed to optimize database storage.</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp2">Scheduled Data Collections are jobs that run on a defined schedule to collect current scores for indicators and their breakdowns, building the historical data needed for trend analysis.</div>
+      <div class="quiz-explain" id="qexp2">Correct Answer: The scores are migrated automatically to the pa_scores_l1 and pa_scores_l2 tables.SourceOfficial Doc: PA Scores MigrationIf the link fails, search Google for: ServiceNow pa_scores migration pa_scores_l1 pa_scores_l2 Washington DCExpert ExplanationDuring the Washington DC release upgrade, the legacy pa_scores table is deprecated. For instances with fewer than 43 million scores, the data is automatically migrated to two new optimized tables: pa_scores_l1 (first-level breakdown scores) and pa_scores_l2 (second-level/matrix scores).</div>
     </div>
     <div class="quiz-card" id="qcard3">
-      <div class="quiz-q"><span class="quiz-q-num">4.</span>What is the Analytics Hub?</div>
+      <div class="quiz-q"><span class="quiz-q-num">4.</span>To generate reliable and accurate predictive trends using Performance Analytics forecasting, what minimum amount of historical data is generally recommended by ServiceNow best practices?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>A physical data center</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>A centralized interface for exploring and analyzing all Performance Analytics data and visualizations</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>A network monitoring tool</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>A hardware diagnostics center</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>At least 30 days</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>At least 3 months</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>At least 6 months</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>At least 12 months</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp3">The Analytics Hub is a centralized workspace where users can explore all PA indicators, view trends, compare breakdowns, and create ad-hoc analyses without building custom dashboards.</div>
+      <div class="quiz-explain" id="qexp3">Correct Answer: At least 12 monthsSourceOfficial Doc: ForecastingIf the link fails, search Google for: ServiceNow Performance Analytics forecasting minimum historical data 12 monthsExpert ExplanationPerformance Analytics forecasting uses algorithms that analyze historical patterns to project future trends. ServiceNow recommends a minimum of 12 months of historical data so the algorithm can account for seasonal variations, cyclical patterns, and sufficient data points to reduce statistical noise. Shorter timeframes miss annual cycles and produce unreliable projections.Why the Others Are Wrong30 days: Far too few data points.</div>
     </div>
     <div class="quiz-card" id="qcard4">
-      <div class="quiz-q"><span class="quiz-q-num">5.</span>What is an Interactive Filter in PA dashboards?</div>
+      <div class="quiz-q"><span class="quiz-q-num">5.</span>When configuring a Bucket Group for a continuous variable like &amp;#x27;Incident Age (Days)&amp;#x27;, what happens to records whose age exceeds the maximum value defined in the highest available bucket during data collection?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>An email spam filter</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>A dashboard control that lets users dynamically filter the data displayed across multiple widgets</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>A water filtration system</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>A code linting tool</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>The entire data collection job aborts immediately.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>The record is automatically assigned to a newly generated dynamic bucket.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>The record is processed but placed into the &#x27;Unassigned&#x27; or empty breakdown element category.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>The system automatically alters the maximum value of the highest bucket to accommodate the record.</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp4">Interactive Filters provide dashboard controls that allow users to dynamically filter the data shown across multiple widgets simultaneously, enabling focused analysis on specific criteria.</div>
+      <div class="quiz-explain" id="qexp4">Correct Answer: The record is processed but placed into the &#x27;Unassigned&#x27; or empty breakdown element category.
+Source
+
+Official Doc: Bucket Groups
+If the link fails, search Google for: ServiceNow Performance Analytics Bucket Group out of range unassigned element
+
+Expert Explanation
+Bucket Groups convert continuous numeric fields into discrete breakdown elements for analysis. When a record&#x27;s value (e.g., incident age = 95 days) does not fit within any defined bucket range, the data collection engine assigns that record to an unassigned breakdown element rather than discarding the record or aborting the job.</div>
+    </div>
+    <div class="quiz-card" id="qcard5">
+      <div class="quiz-q"><span class="quiz-q-num">6.</span>What is the primary reason for running a Historic Data Collection job immediately after activating a new Analytics and Reporting Solution (Content Pack)?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="5"><span class="quiz-opt-letter">A</span><span>To clear outdated caching issues on the dashboard.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="5"><span class="quiz-opt-letter">B</span><span>To populate the new indicators with past data, providing immediate insight into existing trends.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="5"><span class="quiz-opt-letter">C</span><span>To populate the Performance Analytics tables with data going forward on a daily basis.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="5"><span class="quiz-opt-letter">D</span><span>To automatically build new unassigned breakdown elements.</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp5">Correct Answer: To populate the new indicators with past data, providing immediate insight into existing trends.SourceOfficial Doc: Data Collector ConfigurationIf the link fails, search Google for: ServiceNow historic data collector job backfill past data initial setupExpert ExplanationWhen a new Analytics and Reporting Solution (Content Pack) is activated, its indicators have no historical data. Running the Historic Data Collector job backfills the PA tables with past data from your existing records.</div>
+    </div>
+    <div class="quiz-card" id="qcard6">
+      <div class="quiz-q"><span class="quiz-q-num">7.</span>Interactive Filters allow users to dynamically adjust the data displayed on a dashboard. Which system role is required to create new Interactive Filters?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="6"><span class="quiz-opt-letter">A</span><span>pa_admin</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="6"><span class="quiz-opt-letter">B</span><span>pa_power_user</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="6"><span class="quiz-opt-letter">C</span><span>report_admin</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="6"><span class="quiz-opt-letter">D</span><span>interactive_filter_user</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp6">Correct Answer: report_adminSourceOfficial Doc: Interactive FiltersIf the link fails, search Google for: ServiceNow Interactive Filters role report_admin createExpert ExplanationInteractive Filters are part of the Reporting module, not Performance Analytics. Creating new Interactive Filters requires the report_admin role.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard7">
+      <div class="quiz-q"><span class="quiz-q-num">8.</span>What &amp;#x27;related lists&amp;#x27; are available on the formula indicator form? (Choose 3.) <span class="quiz-choose">(choose 3)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="7"><span class="quiz-opt-letter">A</span><span>Targets</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="7"><span class="quiz-opt-letter">B</span><span>Contributing Indicators</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="7"><span class="quiz-opt-letter">C</span><span>Breakdowns</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="7"><span class="quiz-opt-letter">D</span><span>Signals</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="7" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp7">Correct Answers: Targets, Contributing Indicators, and BreakdownsSourceOfficial Doc: Formula IndicatorsIf the link fails, search Google for: ServiceNow PA formula indicator related lists targets contributing breakdownsExpert ExplanationThe Formula Indicator form includes three key related lists: Contributing Indicators (shows the indicators referenced in the formula), Targets (allows setting target values for the formula&#x27;s output), and Breakdowns (allows associating breakdowns to slice the formula results).</div>
+    </div>
+    <div class="quiz-card" id="qcard8">
+      <div class="quiz-q"><span class="quiz-q-num">9.</span>When utilizing Text Analytics in Performance Analytics, which of the following is an allowed visualization type specifically for Text Analytics Widgets?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="8"><span class="quiz-opt-letter">A</span><span>Keyword List</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="8"><span class="quiz-opt-letter">B</span><span>Breakdown</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="8"><span class="quiz-opt-letter">C</span><span>Word Cloud</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="8"><span class="quiz-opt-letter">D</span><span>Time series</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp8">Correct Answer: Word CloudSourceOfficial Doc: Text AnalyticsIf the link fails, search Google for: ServiceNow Performance Analytics Text Analytics Word Cloud visualizationExpert ExplanationText Analytics in Performance Analytics analyzes string fields (like Short Description) to identify frequently occurring words and phrases.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard9">
+      <div class="quiz-q"><span class="quiz-q-num">10.</span>Within the Platform Analytics Library, administrators are tasked with identifying and deprecating unused indicators to reduce daily processing overhead. Which new columns introduced in the Zurich release directly facilitate this auditing process? <span class="quiz-choose">(choose 2)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="9"><span class="quiz-opt-letter">A</span><span>Viewed</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="9"><span class="quiz-opt-letter">B</span><span>Collection Inserts</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="9"><span class="quiz-opt-letter">C</span><span>Views</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="9"><span class="quiz-opt-letter">D</span><span>Target Gap</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="9"><span class="quiz-opt-letter">E</span><span>Diagnostic Status</span></li>
+      <li class="quiz-opt" data-idx="5" data-q="9"><span class="quiz-opt-letter">F</span><span>Related Dashboards</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="9" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp9">Correct Answers: Viewed; ViewsSourceServiceNow Community: Getting Started with Platform AnalyticsIf the link fails, search Google for: ServiceNow Platform Analytics Library Viewed Views columns Zurich usageExpert ExplanationThe Zurich release introduces &quot;Viewed&quot; (boolean: has it been accessed?) and &quot;Views&quot; (count of total accesses) in the Platform Analytics Library.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard10">
+      <div class="quiz-q"><span class="quiz-q-num">11.</span>A Performance Analytics Widget does not follow the Dashboard Breakdown Source. Select the possible reasons for this behavior. (Choose 3) <span class="quiz-choose">(choose 3)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="10"><span class="quiz-opt-letter">A</span><span>It is a time series type widget.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="10"><span class="quiz-opt-letter">B</span><span>The Indicator in the Widget has no configured Breakdowns.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="10"><span class="quiz-opt-letter">C</span><span>“Follow Element” is not checked in the Widget data settings.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="10"><span class="quiz-opt-letter">D</span><span>The Widget is prevented from seeing the data due to Element security.</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="10"><span class="quiz-opt-letter">E</span><span>The Breakdown used by the Widget is using a different Breakdown Source.</span></li>
+      <li class="quiz-opt" data-idx="5" data-q="10"><span class="quiz-opt-letter">F</span><span>The Widget is configured to follow an Interactive Filter.</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="10" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp10">Correct Answers: The Indicator has no configured Breakdowns, &quot;Follow Element&quot; is not checked, and Element security prevents data access.SourceOfficial Doc: Dashboard Breakdown SourceIf the link fails, search Google for: ServiceNow PA widget not following dashboard breakdown source follow elementExpert ExplanationA PA widget may not follow the Dashboard Breakdown Source for three reasons. First, the Indicator must have configured Breakdowns: if no breakdowns exist on the indicator, there is nothing to filter. Second, &quot;Follow Element&quot; must be enabled in the widget data settings to allow the widget to respond to breakdown selections.</div>
+    </div>
+    <div class="quiz-card" id="qcard11">
+      <div class="quiz-q"><span class="quiz-q-num">12.</span>How are responsible users reminded when a signal remains unresolved ?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="11"><span class="quiz-opt-letter">A</span><span>Via Virtual Agent</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="11"><span class="quiz-opt-letter">B</span><span>Via Connect Chat</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="11"><span class="quiz-opt-letter">C</span><span>By email notification</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="11"><span class="quiz-opt-letter">D</span><span>By text message</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp11">Correct Answer: By email notificationSourceOfficial Doc: KPI Signals NotificationsIf the link fails, search Google for: ServiceNow KPI signals reminder email notification unresolved responsible userExpert ExplanationWhen a KPI signal remains unresolved, the system sends email notification reminders to responsible users. This escalation mechanism ensures that detected anomalies are not ignored. The notification system uses standard ServiceNow email notification workflows, with configurable frequency and content to prompt users to review and act on outstanding signals.Why the Others Are WrongVia Virtual Agent: Virtual Agent is an AI-powered chatbot for employee self-service.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard12">
+      <div class="quiz-q"><span class="quiz-q-num">13.</span>Select all statements that accurately describe the Platform Analytics Workspace / Analytics Center application. (Choose 2.) <span class="quiz-choose">(choose 2)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="12"><span class="quiz-opt-letter">A</span><span>The Analytics Center replaces the classic Performance Analytics application.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="12"><span class="quiz-opt-letter">B</span><span>The Platform Analytics Workspace is a paid application.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="12"><span class="quiz-opt-letter">C</span><span>The Platform Analytics Workspace lets you manage Next Experience data visualizations and dashboards.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="12"><span class="quiz-opt-letter">D</span><span>You can configure the Analytics Center to be accessible from any ServiceNow Workspace.</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="12" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp12">Correct Answers: Manages Next Experience visualizations/dashboards AND accessible from any WorkspaceSourceOfficial Doc: Analytics CenterIf the link fails, search Google for: ServiceNow Platform Analytics Workspace Analytics Center Next Experience dashboardsExpert ExplanationThe Platform Analytics Workspace manages Next Experience data visualizations and dashboards. The Analytics Center can be configured for any ServiceNow Workspace, making PA data available across different workspace contexts. Classic PA coexists (not replaced), and Platform Analytics Workspace is included with PA licensing.Why the Others Are WrongReplaces classic PA: Analytics Center supplements but does not replace classic PA.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard13">
+      <div class="quiz-q"><span class="quiz-q-num">14.</span>When deploying Now Assist for Platform Analytics, users can create &amp;quot;Explorations.&amp;quot; Which of the following advanced capabilities are supported within the Explorations interface? <span class="quiz-choose">(choose 3)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="13"><span class="quiz-opt-letter">A</span><span>Executing scripted breakdown mappings via natural language.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="13"><span class="quiz-opt-letter">B</span><span>Adding a generated data visualization directly to a dashboard.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="13"><span class="quiz-opt-letter">C</span><span>Sharing the exploration with tagged users for collaboration.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="13"><span class="quiz-opt-letter">D</span><span>Summarizing the entire exploration via Generative AI.</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="13"><span class="quiz-opt-letter">E</span><span>Modifying the underlying RaptorDB column-store index.</span></li>
+      <li class="quiz-opt" data-idx="5" data-q="13"><span class="quiz-opt-letter">F</span><span>Resetting KPI Signal baselines automatically.</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="13" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp13">Correct Answers: Adding a generated visualization to a dashboard; Sharing with tagged users; Summarizing via Generative AISourceServiceNow Community: Data Visualization Generation Quick Start GuideIf the link fails, search Google for: ServiceNow Now Assist Explorations pin dashboard share summarizeExpert ExplanationExplorations support three key capabilities: pin generated visualizations to PA dashboards, share with tagged users for collaborative review, and summarize via Generative AI for quick stakeholder consumption.</div>
+    </div>
+    <div class="quiz-card" id="qcard14">
+      <div class="quiz-q"><span class="quiz-q-num">15.</span>How many levels of Breakdowns are collected if the &amp;quot;Collect breakdown matrix&amp;quot; property is NOT checked on the Indicator record?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="14"><span class="quiz-opt-letter">A</span><span>0 - This must be checked to collect any Breakdowns.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="14"><span class="quiz-opt-letter">B</span><span>There is no limit on the levels of Breakdowns collected.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="14"><span class="quiz-opt-letter">C</span><span>2 - Two levels of Breakdowns are always collected by default.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="14"><span class="quiz-opt-letter">D</span><span>1 - Without the matrix, a single level of Breakdowns is collected.</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp14">Correct Answer: 1: Without the matrix, a single level of Breakdowns is collected.SourceOfficial Doc: Automated IndicatorsIf the link fails, search Google for: ServiceNow collect breakdown matrix single level two levelsExpert ExplanationThe Collect breakdown matrix checkbox on the Indicator record controls whether intersecting data across multiple breakdown dimensions is collected. When unchecked, the data collector captures only one level of breakdown (e.g., by Priority).</div>
     </div>
     <div class="quiz-score" id="quizScore">
-      <div class="quiz-score-num" id="quizScoreNum">0/5</div>
+      <div class="quiz-score-num" id="quizScoreNum">0/15</div>
       <div class="quiz-score-label">Sample Quiz Score</div>
       <div class="quiz-score-msg" id="quizScoreMsg"></div>
       <a href="https://www.udemy.com/course/pass-your-servicenow-cas-pa-exam/?referralCode=A8ACE29CC7E537680674" target="_blank" rel="noopener" class="cp-cta">
@@ -549,33 +671,83 @@ a:hover { text-decoration: underline; }
   });
 
   // Quiz logic
-  const answers = [1,1,1,1,1];
+  const answers = [2, 2, 2, 3, 2, 1, 2, [1, 0, 2], 2, [0, 2], [1, 2, 3], 2, [2, 3], [1, 2, 3], 3];
   let answered = 0, score = 0;
+  const multiSelections = {};
+
   document.querySelectorAll('.quiz-opt').forEach(function(opt) {
     opt.addEventListener('click', function() {
       var qi = parseInt(this.dataset.q);
-      var idx = parseInt(this.dataset.idx);
       var card = document.getElementById('qcard' + qi);
       if (card.dataset.state) return;
-      var isCorrect = idx === answers[qi];
-      if (isCorrect) { score++; this.classList.add('correct'); card.dataset.state = 'correct'; }
-      else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
-      this.classList.add('selected');
-      card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
-      document.getElementById('qexp' + qi).classList.add('show');
-      answered++;
-      if (answered === answers.length) {
-        var el = document.getElementById('quizScore');
-        el.classList.add('show');
-        document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
-        var msg = score === 5 ? 'Perfect score! You are well prepared.' : score >= 3 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
-        document.getElementById('quizScoreMsg').textContent = msg;
-        if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: 'PA', quiz_score: score });
+      var idx = parseInt(this.dataset.idx);
+      var isMulti = Array.isArray(answers[qi]);
+
+      if (isMulti) {
+        // Multi-select: toggle selection
+        if (!multiSelections[qi]) multiSelections[qi] = new Set();
+        if (multiSelections[qi].has(idx)) {
+          multiSelections[qi].delete(idx);
+          this.classList.remove('selected');
+        } else {
+          multiSelections[qi].add(idx);
+          this.classList.add('selected');
+        }
+        // Show/hide submit button
+        var btn = card.querySelector('.quiz-submit-btn');
+        btn.style.display = multiSelections[qi].size > 0 ? 'block' : 'none';
+      } else {
+        // Single answer: immediate check
+        var isCorrect = idx === answers[qi];
+        if (isCorrect) { score++; this.classList.add('correct'); card.dataset.state = 'correct'; }
+        else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
+        this.classList.add('selected');
+        card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
+        document.getElementById('qexp' + qi).classList.add('show');
+        answered++;
+        checkDone();
       }
     });
   });
 
-  
-</script>
+  document.querySelectorAll('.quiz-submit-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var qi = parseInt(this.dataset.q);
+      var card = document.getElementById('qcard' + qi);
+      if (card.dataset.state) return;
+      var selected = Array.from(multiSelections[qi] || []).sort();
+      var correct = answers[qi].slice().sort();
+      var isCorrect = selected.length === correct.length && selected.every(function(v, i) { return v === correct[i]; });
+      var opts = card.querySelectorAll('.quiz-opt');
+      if (isCorrect) {
+        score++;
+        card.dataset.state = 'correct';
+        selected.forEach(function(i) { opts[i].classList.add('correct'); });
+      } else {
+        card.dataset.state = 'wrong';
+        selected.forEach(function(i) {
+          if (correct.indexOf(i) === -1) opts[i].classList.add('wrong');
+          else opts[i].classList.add('correct');
+        });
+        correct.forEach(function(i) { opts[i].classList.add('correct'); });
+      }
+      opts.forEach(function(o) { o.setAttribute('disabled',''); });
+      this.style.display = 'none';
+      document.getElementById('qexp' + qi).classList.add('show');
+      answered++;
+      checkDone();
+    });
+  });
+
+  function checkDone() {
+    if (answered === answers.length) {
+      var el = document.getElementById('quizScore');
+      el.classList.add('show');
+      document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
+      var msg = score === answers.length ? 'Perfect score! You are well prepared.' : score >= 10 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
+      document.getElementById('quizScoreMsg').textContent = msg;
+      if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: 'CAS-PA', quiz_score: score });
+    }
+  }</script>
 </body>
 </html>

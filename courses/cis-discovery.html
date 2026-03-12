@@ -342,6 +342,10 @@ a:hover { text-decoration: underline; }
 .quiz-opt.wrong .quiz-opt-letter { background: #d73a49; color: #fff; border-color: #d73a49; }
 .quiz-explain { display: none; margin-top: 12px; padding: 12px 16px; background: var(--bg-card); border-radius: 8px; font-size: 0.9rem; color: var(--text-dim); line-height: 1.6; border-left: 3px solid var(--orange); }
 .quiz-explain.show { display: block; }
+.quiz-choose { font-weight: 400; color: var(--orange); font-size: 0.85rem; margin-left: 4px; }
+.quiz-submit-btn { margin-top: 12px; padding: 10px 24px; background: var(--orange); color: #fff; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.15s, transform 0.1s; }
+.quiz-submit-btn:hover { background: #c75400; }
+.quiz-submit-btn:active { transform: scale(0.97); }
 .quiz-score { margin-top: 24px; padding: 20px; background: var(--bg-raised); border-radius: 12px; border: 1px solid var(--border); text-align: center; display: none; }
 .quiz-score.show { display: block; }
 .quiz-score-num { font-size: 2rem; font-weight: 800; color: var(--orange); }
@@ -465,60 +469,236 @@ a:hover { text-decoration: underline; }
   </div>
 
   <section class="quiz-section" id="free-quiz">
-    <h2>Try 5 Free DISCO Questions</h2>
-    <p class="quiz-intro">Test your knowledge before you buy. These sample questions are from our full 113-question practice test.</p>
-        <div class="quiz-card" id="qcard0">
-      <div class="quiz-q"><span class="quiz-q-num">1.</span>What is the primary function of the MID Server in ServiceNow Discovery?</div>
+    <h2>Try 15 Free Discovery Questions</h2>
+    <p class="quiz-intro">Test your knowledge before you buy — including multiple-choice and multi-select, just like the real exam.</p>
+    <div class="quiz-card" id="qcard0">
+      <div class="quiz-q"><span class="quiz-q-num">1.</span>What is the default configuration regarding the creation of cmdb_ci_linux_server CIs for Kubernetes nodes by the Informer in ServiceNow?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>To store discovered CI data locally</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>To act as a proxy between the ServiceNow instance and the network</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>To replace the CMDB</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>To manage user authentication</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>The Kubernetes nodes are ignored by default and do not create any CIs.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>A cmdb_ci_linux_server CI is created for each Kubernetes node by default.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>The Informer creates a cmdb_ci_windows_server CI for each Kubernetes node by default.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>No CIs are created unless manually configured each time.</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp0">The MID Server acts as a proxy that facilitates communication between a ServiceNow instance and external applications, data sources, or services on the customer's network.</div>
+      <div class="quiz-explain" id="qexp0">Correct Answer: A cmdb_ci_linux_server CI is created for each Kubernetes node by default.
+
+Source
+
+  Official Doc: Kubernetes Discovery configuration
+  If the link fails, search Google for: ServiceNow Zurich Informer Kubernetes node cmdb_ci_linux_server default
+
+
+Expert Explanation
+ServiceNow&#x27;s Informer component automatically creates a cmdb_ci_linux_server CI for every Kubernetes node it discovers by default. This reflects the fact that Kubernetes runs overwhelmingly on Linux infrastructure.</div>
     </div>
     <div class="quiz-card" id="qcard1">
-      <div class="quiz-q"><span class="quiz-q-num">2.</span>Which Discovery pattern type is used to discover horizontal applications like web servers?</div>
+      <div class="quiz-q"><span class="quiz-q-num">2.</span>On which operating system are MID Servers most commonly installed in enterprise environments?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>Top-Down Pattern</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>Horizontal Pattern</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>Service Pattern</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>Network Pattern</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>Linux</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>macOS</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>Windows</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>Solaris</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp1">Horizontal patterns discover applications that run on multiple servers, such as web servers, database servers, and application servers.</div>
+      <div class="quiz-explain" id="qexp1">Correct Answer: Windows
+Source
+
+Official Doc: MID Server installation guide
+If the link fails, search Google for: ServiceNow Zurich MID Server Windows Linux most common platform installation
+
+Expert Explanation
+The ServiceNow MID Server supports two host operating systems: Windows and Linux. Windows is the most commonly deployed platform because most enterprise data centers run Windows infrastructure and Windows MID Servers can natively execute WMI queries and PowerShell scripts against Windows targets. The Windows installer (MSI/EXE) provides a graphical wizard making setup straightforward.</div>
     </div>
     <div class="quiz-card" id="qcard2">
-      <div class="quiz-q"><span class="quiz-q-num">3.</span>What protocol does ServiceNow Discovery primarily use to discover Windows servers?</div>
+      <div class="quiz-q"><span class="quiz-q-num">3.</span>What is the default time interval for a MID Server to check the ServiceNow instance for an available upgrade?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>SSH</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>SNMP</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>WMI</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>HTTP</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>5 minutes</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>15 minutes</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>30 minutes</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>60 minutes</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp2">Windows Management Instrumentation (WMI) is the primary protocol used for discovering Windows-based servers and their configurations.</div>
+      <div class="quiz-explain" id="qexp2">Correct Answer: 60 minutes (1 hour)
+Source
+
+ServiceNow KB0860948: MID Server auto-upgrade interval
+If the link fails, search Google for: ServiceNow Zurich MID Server auto-upgrade check interval 60 minutes 3600 seconds KB0860948
+
+Expert Explanation
+The MID Server runs an internal AutoUpgrade monitor thread that periodically contacts the ServiceNow instance to check whether a new MID Server version is available for the connected instance. This thread runs on a 3600-second (60-minute) cycle, as evidenced by the thread name AutoUpgrade.3600 visible in MID Server logs.</div>
     </div>
     <div class="quiz-card" id="qcard3">
-      <div class="quiz-q"><span class="quiz-q-num">4.</span>In ServiceNow Discovery, what is a 'shazzam' probe used for?</div>
+      <div class="quiz-q"><span class="quiz-q-num">4.</span>Which choice best represents how to modify the functionality shown in this image?(Image shows the “Tracked Files” tab on a Discovery Pattern, listing file paths, CI types, and save‑content options.)</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>Port scanning to identify open services</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>Classifying discovered devices by OS type</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>Mapping network topology</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>Testing credential validity</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>From a Classifier</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>From a Discovery Pattern</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>From the MID Server</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>From a Probe</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp3">Shazzam probes perform port scanning to identify which services are running on discovered devices by checking for open ports.</div>
+      <div class="quiz-explain" id="qexp3">ExplanationDiscovery Pattern Holds Tracked‑File DefinitionsThe Tracked Files tab appears on a Discovery Pattern record, where you can edit existing tracked‑file entries or create new ones to capture configuration files for an application CI ServiceNow.</div>
     </div>
     <div class="quiz-card" id="qcard4">
-      <div class="quiz-q"><span class="quiz-q-num">5.</span>What is the purpose of Identification Rules in Discovery?</div>
+      <div class="quiz-q"><span class="quiz-q-num">5.</span>Which ServiceNow release has introduced the possibility of migrating probes to patterns?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>To authenticate against target devices</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>To determine which CI a discovered device maps to in the CMDB</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>To schedule discovery runs</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>To filter out unwanted network traffic</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>New York</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>Orlando</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>Paris</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>Quebec</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp4">Identification Rules define the criteria used to match discovered devices to existing Configuration Items (CIs) in the CMDB, preventing duplicate records.</div>
+      <div class="quiz-explain" id="qexp4">Source: DocumentationThe correct answer is: New YorkExplanation:The release of New York in ServiceNow introduced the capability to migrate probes to patterns. Prior to the New York release, ServiceNow used probes for discovery, which were scripts specifically written for each discovery target. However, with the New York release, ServiceNow introduced patterns as a more flexible and scalable approach to discovery.Patterns allow for a more modular and reusable way to define discovery behavior. They are collections of probe modules, sensors, and identification rules that can be applied to multiple target devices or systems.</div>
+    </div>
+    <div class="quiz-card" id="qcard5">
+      <div class="quiz-q"><span class="quiz-q-num">6.</span>Amazon Web Service resource module _____ is used to specify the parameters for the AssumeRole call.</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="5"><span class="quiz-opt-letter">A</span><span>AWS Security Group</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="5"><span class="quiz-opt-letter">B</span><span>AWS IAM Role</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="5"><span class="quiz-opt-letter">C</span><span>AWS Cross Assume Role Parameters</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="5"><span class="quiz-opt-letter">D</span><span>AWS S3 Bucket</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp5">Source: KB ArticleThe correct answer is AWS Cross Assume Role Parameters.Explanation:In ServiceNow, when working with the Amazon Web Service (AWS) resource module, you use the AWS Cross Assume Role Parameters to specify the parameters for the AssumeRole call. The AssumeRole call is an AWS Security Token Service (STS) API operation that allows you to assume a role in another AWS account.By providing the necessary parameters in the AWS Cross Assume Role Parameters, such as the role ARN, session name, and external ID, you can establish a cross-account trust and assume the specified role.</div>
+    </div>
+    <div class="quiz-card" id="qcard6">
+      <div class="quiz-q"><span class="quiz-q-num">7.</span>What feature helps identify and resolve critical discovery tasks in the Discovery Admin Workspace?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="6"><span class="quiz-opt-letter">A</span><span>Quick Discovery</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="6"><span class="quiz-opt-letter">B</span><span>ECC queue load</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="6"><span class="quiz-opt-letter">C</span><span>Discovery tuning advice</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="6"><span class="quiz-opt-letter">D</span><span>Discovery Admin Workspace Home page</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp6">Correct Answer: Discovery Admin Workspace Home page
+
+Source
+
+  Official Doc: Discovery Admin Workspace - Home page overview
+  If the link fails, search Google for: ServiceNow Zurich Discovery Admin Workspace Home page critical tasks
+
+
+Expert Explanation
+The Discovery Admin Workspace Home page is the central operations hub for Discovery administrators. It surfaces critical discovery tasks that require attention, such as MID Server connectivity issues, credential failures, and stalled schedules, and provides direct action links to resolve them.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard7">
+      <div class="quiz-q"><span class="quiz-q-num">8.</span>ServiceNow Discovery finds and maps dependencies for which of the following storage types? (Select 3) <span class="quiz-choose">(choose 3)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="7"><span class="quiz-opt-letter">A</span><span>Direct-attached storage (DAS)</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="7"><span class="quiz-opt-letter">B</span><span>Network-attached storage (NAS)</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="7"><span class="quiz-opt-letter">C</span><span>Storage area network (SAN)</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="7"><span class="quiz-opt-letter">D</span><span>Redundant Array of Independent Disks (RAID)</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="7" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp7">Correct Answers: Direct-attached storage (DAS), Network-attached storage (NAS), and Storage area network (SAN)
+Source
+
+Official Doc: Storage Discovery
+If the link fails, search Google for: ServiceNow Zurich Discovery storage DAS NAS SAN dependencies
+
+Expert Explanation
+ServiceNow Discovery includes dedicated storage discovery capability that maps three types of external storage infrastructure. DAS (Direct-Attached Storage) covers devices physically connected to a single server via SCSI, SAS, or USB. NAS (Network-Attached Storage) covers file-level storage devices accessible over a network (e.g., NetApp filers).</div>
+    </div>
+    <div class="quiz-card" id="qcard8">
+      <div class="quiz-q"><span class="quiz-q-num">9.</span>Where is the Shazzam probe placed at the beginning of horizontal discovery?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="8"><span class="quiz-opt-letter">A</span><span>In a request in the Target.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="8"><span class="quiz-opt-letter">B</span><span>In the Pattern Log.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="8"><span class="quiz-opt-letter">C</span><span>In a request in the ECC queue.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="8"><span class="quiz-opt-letter">D</span><span>In the Discovery Log.</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp8">Source: DocumentationThe correct answer is &quot;In a request in the ECC queue&quot;.Explanation:In ServiceNow, the ECC (Enterprise Control Center) Queue is a table that stores messages and data transferred between a MID Server and the ServiceNow instance. When a discovery is initiated, the Shazzam probe (a powerful and flexible probe that can run any command on a target device) is placed in a request in the ECC Queue to be processed by a MID Server.You can think of the ECC Queue like a post office and the Shazzam probe like a letter. When you want to send a letter (probe), you drop it off at the post office (ECC Queue).</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard9">
+      <div class="quiz-q"><span class="quiz-q-num">10.</span>What is found on the far‑right section of the Pattern Designer for horizontal patterns? (Choose 2) <span class="quiz-choose">(choose 2)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="9"><span class="quiz-opt-letter">A</span><span>CI Attributes</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="9"><span class="quiz-opt-letter">B</span><span>Operations</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="9"><span class="quiz-opt-letter">C</span><span>Temporary Variables</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="9"><span class="quiz-opt-letter">D</span><span>CMDB Dashboard</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="9" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp9">Explanation:In the Pattern Designer for horizontal (infrastructure) discovery, the right‑hand pane is dedicated to displaying variable data: both the CI Attributes (fields of the target CI) and the Temporary Variables generated during each step. The Operations list lives in the middle pane, and there is no CMDB Dashboard tab in the designer UI for horizontal patterns. Ben SchererServiceNowDetailed ExplanationsCI Attributes (correct)The CI Attributes tab shows the mapped fields of the CI type selected by the pattern (for example, name, serial_number, etc.). These are the actual attributes that will be populated in the CMDB record.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard10">
+      <div class="quiz-q"><span class="quiz-q-num">11.</span>What options are available in the Merge Table step of a ServiceNow Discovery pattern? (Select 3) <span class="quiz-choose">(choose 3)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="10"><span class="quiz-opt-letter">A</span><span>First Table</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="10"><span class="quiz-opt-letter">B</span><span>Second Table</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="10"><span class="quiz-opt-letter">C</span><span>Target Table</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="10"><span class="quiz-opt-letter">D</span><span>Primary Table</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="10" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp10">Correct Answers: First Table, Second Table, and Target Table
+Source
+
+ServiceNow KB1476162: Merge tables in Discovery patterns
+If the link fails, search Google for: ServiceNow Zurich Discovery pattern Merge Table step options First Second Target
+
+Expert Explanation
+The Merge Table step in a Discovery pattern combines the contents of two source tables into a single output table. The step has exactly three configurable fields: First Table (the name of the first tabular variable to merge), Second Table (the name of the second tabular variable), and Target Table (the name of the resulting merged tabular variable that subsequent steps will reference).</div>
+    </div>
+    <div class="quiz-card" id="qcard11">
+      <div class="quiz-q"><span class="quiz-q-num">12.</span>What role is required to access the Discovery Admin Workspace?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="11"><span class="quiz-opt-letter">A</span><span>it_service_manager</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="11"><span class="quiz-opt-letter">B</span><span>network_operator</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="11"><span class="quiz-opt-letter">C</span><span>discovery_user</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="11"><span class="quiz-opt-letter">D</span><span>discovery_admin</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp11">Correct Answer: discovery_admin
+
+Source
+
+  Official Doc: Discovery Admin Workspace - Roles and access
+  If the link fails, search Google for: ServiceNow Zurich Discovery Admin Workspace required role discovery_admin
+
+
+Expert Explanation
+The Discovery Admin Workspace is a privileged interface for configuring and monitoring all aspects of ServiceNow Discovery. Access requires the discovery_admin role (or the global admin role), which grants full administrative control over discovery schedules, MID Server management, credential configuration, and workspace dashboards.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard12">
+      <div class="quiz-q"><span class="quiz-q-num">13.</span>Which of the following are valid syntaxes for referencing a tabular variable in a ServiceNow Discovery pattern step? (Select 3) <span class="quiz-choose">(choose 3)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="12"><span class="quiz-opt-letter">A</span><span>$table[1].example</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="12"><span class="quiz-opt-letter">B</span><span>$table[].example</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="12"><span class="quiz-opt-letter">C</span><span>$table[*].example</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="12"><span class="quiz-opt-letter">D</span><span>$table[X].example</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="12" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp12">Correct Answers: $table[1].example, $table[].example, and $table[*].example
+Source
+
+ServiceNow Community: Tabular variable syntax in patterns
+If the link fails, search Google for: ServiceNow Zurich Discovery pattern tabular variable syntax NDL table wildcard index
+
+Expert Explanation
+Tabular variables in ServiceNow Discovery patterns (NDL) use bracket notation to access rows. The three valid syntaxes serve different purposes: $table[1].field accesses a specific row by 1-based index (row 1 is the first row). $table[].field is used in iteration contexts, processing the current row during a loop.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard13">
+      <div class="quiz-q"><span class="quiz-q-num">14.</span>What are the 3 benefits of using Discovery? (choose 3 options) <span class="quiz-choose">(choose 3)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="13"><span class="quiz-opt-letter">A</span><span>Enabling service impact analysis</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="13"><span class="quiz-opt-letter">B</span><span>Realizing fast time to value</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="13"><span class="quiz-opt-letter">C</span><span>Using Industry-Standard Dev Tools</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="13"><span class="quiz-opt-letter">D</span><span>Extending IT throughout your IT infrastructure</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="13" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp13">Source: LinkedIN ArticleThe correct answers are &quot;Enabling service impact analysis&quot;, &quot;Realizing fast time to value&quot;, and &quot;Extending IT throughout your IT infrastructure&quot;.Explanation:&quot;Enabling service impact analysis&quot;: One of the main benefits of using Discovery in ServiceNow is that it provides visibility into your IT infrastructure. It enables service impact analysis by creating a comprehensive and accurate Configuration Management Database (CMDB). This CMDB can be used to understand how different Configuration Items (CIs) relate to each other and what impact changes or incidents might have on various services.</div>
+    </div>
+    <div class="quiz-card" id="qcard14">
+      <div class="quiz-q"><span class="quiz-q-num">15.</span>What does ITOM Content Service deliver to users on a weekly basis?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="14"><span class="quiz-opt-letter">A</span><span>New software installation packages for IT infrastructure enhancement.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="14"><span class="quiz-opt-letter">B</span><span>Updates to the physical servers in the user&#x27;s infrastructure.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="14"><span class="quiz-opt-letter">C</span><span>Updated tutorials and user manuals for ServiceNow ITOM Content Service.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="14"><span class="quiz-opt-letter">D</span><span>New Configuration Items (CIs) identified from products currently in use.</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp14">Correct Answer: New Configuration Items (CIs) identified from products currently in use.
+
+Source
+
+  Official Doc: ITOM Content Service overview
+  If the link fails, search Google for: ServiceNow Zurich ITOM Content Service weekly CI delivery
+
+
+Expert Explanation
+ITOM Content Service continuously scans your infrastructure to track products running in your environment. Every week, it delivers newly identified Configuration Items (CIs) from those products directly to your instance.</div>
     </div>
     <div class="quiz-score" id="quizScore">
-      <div class="quiz-score-num" id="quizScoreNum">0/5</div>
+      <div class="quiz-score-num" id="quizScoreNum">0/15</div>
       <div class="quiz-score-label">Sample Quiz Score</div>
       <div class="quiz-score-msg" id="quizScoreMsg"></div>
       <a href="https://www.udemy.com/course/pass-your-servicenow-cis-discovery-exam-vancouver-2023/?referralCode=752D974C366D4DEBE963" target="_blank" rel="noopener" class="cp-cta">
@@ -549,33 +729,83 @@ a:hover { text-decoration: underline; }
   });
 
   // Quiz logic
-  const answers = [1,1,2,0,1];
+  const answers = [1, 2, 3, 1, 0, 2, 3, [0, 1, 2], 2, [0, 2], [0, 1, 2], 3, [0, 1, 2], [0, 1, 3], 3];
   let answered = 0, score = 0;
+  const multiSelections = {};
+
   document.querySelectorAll('.quiz-opt').forEach(function(opt) {
     opt.addEventListener('click', function() {
       var qi = parseInt(this.dataset.q);
-      var idx = parseInt(this.dataset.idx);
       var card = document.getElementById('qcard' + qi);
       if (card.dataset.state) return;
-      var isCorrect = idx === answers[qi];
-      if (isCorrect) { score++; this.classList.add('correct'); card.dataset.state = 'correct'; }
-      else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
-      this.classList.add('selected');
-      card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
-      document.getElementById('qexp' + qi).classList.add('show');
-      answered++;
-      if (answered === answers.length) {
-        var el = document.getElementById('quizScore');
-        el.classList.add('show');
-        document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
-        var msg = score === 5 ? 'Perfect score! You are well prepared.' : score >= 3 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
-        document.getElementById('quizScoreMsg').textContent = msg;
-        if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: 'DISCO', quiz_score: score });
+      var idx = parseInt(this.dataset.idx);
+      var isMulti = Array.isArray(answers[qi]);
+
+      if (isMulti) {
+        // Multi-select: toggle selection
+        if (!multiSelections[qi]) multiSelections[qi] = new Set();
+        if (multiSelections[qi].has(idx)) {
+          multiSelections[qi].delete(idx);
+          this.classList.remove('selected');
+        } else {
+          multiSelections[qi].add(idx);
+          this.classList.add('selected');
+        }
+        // Show/hide submit button
+        var btn = card.querySelector('.quiz-submit-btn');
+        btn.style.display = multiSelections[qi].size > 0 ? 'block' : 'none';
+      } else {
+        // Single answer: immediate check
+        var isCorrect = idx === answers[qi];
+        if (isCorrect) { score++; this.classList.add('correct'); card.dataset.state = 'correct'; }
+        else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
+        this.classList.add('selected');
+        card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
+        document.getElementById('qexp' + qi).classList.add('show');
+        answered++;
+        checkDone();
       }
     });
   });
 
-  
-</script>
+  document.querySelectorAll('.quiz-submit-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var qi = parseInt(this.dataset.q);
+      var card = document.getElementById('qcard' + qi);
+      if (card.dataset.state) return;
+      var selected = Array.from(multiSelections[qi] || []).sort();
+      var correct = answers[qi].slice().sort();
+      var isCorrect = selected.length === correct.length && selected.every(function(v, i) { return v === correct[i]; });
+      var opts = card.querySelectorAll('.quiz-opt');
+      if (isCorrect) {
+        score++;
+        card.dataset.state = 'correct';
+        selected.forEach(function(i) { opts[i].classList.add('correct'); });
+      } else {
+        card.dataset.state = 'wrong';
+        selected.forEach(function(i) {
+          if (correct.indexOf(i) === -1) opts[i].classList.add('wrong');
+          else opts[i].classList.add('correct');
+        });
+        correct.forEach(function(i) { opts[i].classList.add('correct'); });
+      }
+      opts.forEach(function(o) { o.setAttribute('disabled',''); });
+      this.style.display = 'none';
+      document.getElementById('qexp' + qi).classList.add('show');
+      answered++;
+      checkDone();
+    });
+  });
+
+  function checkDone() {
+    if (answered === answers.length) {
+      var el = document.getElementById('quizScore');
+      el.classList.add('show');
+      document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
+      var msg = score === answers.length ? 'Perfect score! You are well prepared.' : score >= 10 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
+      document.getElementById('quizScoreMsg').textContent = msg;
+      if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: 'Discovery', quiz_score: score });
+    }
+  }</script>
 </body>
 </html>

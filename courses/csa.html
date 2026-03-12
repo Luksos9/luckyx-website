@@ -342,6 +342,10 @@ a:hover { text-decoration: underline; }
 .quiz-opt.wrong .quiz-opt-letter { background: #d73a49; color: #fff; border-color: #d73a49; }
 .quiz-explain { display: none; margin-top: 12px; padding: 12px 16px; background: var(--bg-card); border-radius: 8px; font-size: 0.9rem; color: var(--text-dim); line-height: 1.6; border-left: 3px solid var(--orange); }
 .quiz-explain.show { display: block; }
+.quiz-choose { font-weight: 400; color: var(--orange); font-size: 0.85rem; margin-left: 4px; }
+.quiz-submit-btn { margin-top: 12px; padding: 10px 24px; background: var(--orange); color: #fff; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.15s, transform 0.1s; }
+.quiz-submit-btn:hover { background: #c75400; }
+.quiz-submit-btn:active { transform: scale(0.97); }
 .quiz-score { margin-top: 24px; padding: 20px; background: var(--bg-raised); border-radius: 12px; border: 1px solid var(--border); text-align: center; display: none; }
 .quiz-score.show { display: block; }
 .quiz-score-num { font-size: 2rem; font-weight: 800; color: var(--orange); }
@@ -465,60 +469,176 @@ a:hover { text-decoration: underline; }
   </div>
 
   <section class="quiz-section" id="free-quiz">
-    <h2>Try 5 Free CSA Questions</h2>
-    <p class="quiz-intro">Test your knowledge before you buy. These sample questions are from our full 250-question practice test.</p>
-        <div class="quiz-card" id="qcard0">
-      <div class="quiz-q"><span class="quiz-q-num">1.</span>What is a UI Policy in ServiceNow?</div>
+    <h2>Try 15 Free CSA Questions</h2>
+    <p class="quiz-intro">Test your knowledge before you buy — including multiple-choice and multi-select, just like the real exam.</p>
+    <div class="quiz-card" id="qcard0">
+      <div class="quiz-q"><span class="quiz-q-num">1.</span>When importing data, what happens to imported rows if no coalesce field is specified?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>A company's branding guidelines</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>A rule that dynamically changes form field behavior (visibility, mandatory, read-only) without scripting</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>A network security policy</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>A data retention policy</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>All rows are rejected; coalesce is required.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>All rows are treated as new records. No existing records are updated.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>Duplicate rows are rejected from the import.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>All rows are treated as new records, but errors will be flagged.</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp0">UI Policies dynamically change form behavior — making fields visible/hidden, mandatory/optional, or read-only — based on conditions, without requiring any scripting.</div>
+      <div class="quiz-explain" id="qexp0">Correct Answer: All rows are treated as new records. No existing records are updated.SourceOfficial Doc: Coalesce ValuesIf the link fails, search Google for: ServiceNow Zurich coalesce field import transform no coalesce new recordsExpert ExplanationThe coalesce field tells the transform map how to match incoming rows to existing records. Without it, there is no matching logic, so the transform treats every row as new and inserts it. This means running the same import twice without coalesce creates duplicate records. The import does not fail or flag errors for missing coalesce.Why the Others Are WrongAll rows rejected: Coalesce is optional.</div>
     </div>
     <div class="quiz-card" id="qcard1">
-      <div class="quiz-q"><span class="quiz-q-num">2.</span>What is the Service Catalog?</div>
+      <div class="quiz-q"><span class="quiz-q-num">2.</span>What is the definition of a group?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>A list of servers</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>A self-service portal where users can request IT services and products</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>A hardware inventory</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>A knowledge base</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>A collection of subject matter experts</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>A department</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>An escalation pod</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>A collection of users</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="1"><span class="quiz-opt-letter">E</span><span>A collection of tasks</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp1">The Service Catalog provides a self-service storefront where end users can browse and request IT services, hardware, software, and other offerings through standardized request forms.</div>
+      <div class="quiz-explain" id="qexp1">Correct Answer: A collection of usersSourceOfficial Doc: GroupsIf the link fails, search Google for: ServiceNow Zurich group definition collection users sys_user_groupExpert ExplanationA group (sys_user_group) is a collection of users. Groups serve multiple purposes: task assignment, role inheritance, notification distribution, and approval routing. Members of a group can see tasks assigned to that group in &quot;My Groups Work.&quot;Why the Others Are WrongSME collection: Too specific. Groups contain any users, not just experts.Department: A different organizational entity (cmn_department).Escalation pod: Not a ServiceNow term.Task collection: Groups contain users; tasks are assigned TO groups.Memory TipGroup = users. Period. sys_user_group holds people, and work gets assigned to them.</div>
     </div>
     <div class="quiz-card" id="qcard2">
-      <div class="quiz-q"><span class="quiz-q-num">3.</span>What is an Access Control Rule (ACL)?</div>
+      <div class="quiz-q"><span class="quiz-q-num">3.</span>What field contains a record’s 32-character, unique identifier?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>A firewall rule</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>A security rule that controls which users can read, write, create, or delete records</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>A network routing rule</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>A password policy</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>sn_rec_id</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>rec_id</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>u_id</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>sys_id</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="2"><span class="quiz-opt-letter">E</span><span>sn_gu_id</span></li>
+      <li class="quiz-opt" data-idx="5" data-q="2"><span class="quiz-opt-letter">F</span><span>sn_sys_id</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp2">ACLs define security permissions that control access to tables, fields, and records based on user roles, conditions, and scripts — determining who can see and modify data.</div>
+      <div class="quiz-explain" id="qexp2">Correct Answer: sys_idSourceOfficial Doc: System DictionaryIf the link fails, search Google for: ServiceNow Zurich sys_id field 32 character unique identifier recordExpert ExplanationThe sys_id field stores the unique 32-character GUID (Globally Unique Identifier) for every record in ServiceNow. It is a system field present on all tables, used for internal record references, relationships, URLs, and API operations. The sys_id cannot be modified after record creation.Why the Others Are Wrongsn_rec_id, rec_id, u_id, sn_gu_id, sn_sys_id: None of these are real ServiceNow system field names.</div>
     </div>
     <div class="quiz-card" id="qcard3">
-      <div class="quiz-q"><span class="quiz-q-num">4.</span>What are Notifications in ServiceNow?</div>
+      <div class="quiz-q"><span class="quiz-q-num">4.</span>Which tool graphically displays an infrastructure view for a CI and its relationships to other CIs?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>Browser pop-ups only</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>Automated emails triggered by events or conditions on records</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>Push notifications to mobile phones only</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>System log entries</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>Schema Map</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>Dependency View</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>Dependency Map</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>Database View</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp3">Notifications are automated email messages sent when specific conditions are met on records (e.g., incident assigned, change approved), configured with recipients, conditions, and templates.</div>
+      <div class="quiz-explain" id="qexp3">Correct Answer: Dependency ViewSourceOfficial Doc: Dependency ViewsIf the link fails, search Google for: ServiceNow Zurich Dependency View CI relationships infrastructure graphicalExpert ExplanationDependency View provides an interactive graphical display of a Configuration Item and its relationships to other CIs. It shows upstream dependencies (what this CI relies on) and downstream dependents (what relies on this CI). The view helps teams understand impact analysis and service dependencies within the CMDB.Why the Others Are WrongSchema Map: Displays table-to-table schema relationships, not CI-to-CI infrastructure dependencies.Dependency Map: Not the official ServiceNow feature name.</div>
     </div>
     <div class="quiz-card" id="qcard4">
-      <div class="quiz-q"><span class="quiz-q-num">5.</span>What is a Knowledge Base?</div>
+      <div class="quiz-q"><span class="quiz-q-num">5.</span>Which one of the following is NOT a type of Visual Task Board?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>A database backup</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>A structured collection of articles that provide information and solutions to common issues</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>A type of report</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>A training program</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>Flexible</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>Freeform</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>Feature</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>Guided boards</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp4">A Knowledge Base is an organized collection of articles (solutions, FAQs, how-tos) that help users resolve issues independently, reducing ticket volume and improving self-service.</div>
+      <div class="quiz-explain" id="qexp4">Correct Answer: FeatureSourceOfficial Doc: UI16 Application NavigatorIf the link fails, search Google for: ServiceNow Zurich Visual Task Board types Flexible Freeform GuidedExpert ExplanationServiceNow Visual Task Boards come in three types: Flexible (lane-based with drag-and-drop between columns), Freeform (sticky-note style canvas), and Guided (structured workflow with defined steps). &quot;Feature&quot; is not a VTB type.Why the Others Are WrongFlexible: A valid VTB type. Uses lanes (columns) where users drag cards to update record states like a Kanban board.Freeform: A valid VTB type.</div>
+    </div>
+    <div class="quiz-card" id="qcard5">
+      <div class="quiz-q"><span class="quiz-q-num">6.</span>How to define an ACL to allow itil users to create incidents?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="5"><span class="quiz-opt-letter">A</span><span>Name: incident.None; Operation: create; Role: itil</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="5"><span class="quiz-opt-letter">B</span><span>Name: incident.Any; Operation: write; Permission: itil</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="5"><span class="quiz-opt-letter">C</span><span>Name: incident:*; Permission: write; Role: itil</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="5"><span class="quiz-opt-letter">D</span><span>Name: incident.None; Permission: create; Role: itil</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="5"><span class="quiz-opt-letter">E</span><span>Name: incident:*;Operation: write; Permission: itil</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp5">Correct Answer: Name: incident.None; Operation: create; Role: itilSourceOfficial Doc: Access Control RulesIf the link fails, search Google for: ServiceNow Zurich ACL incident create operation itil role table-levelExpert ExplanationTo define an ACL allowing itil users to create incidents: set Name to incident.None (table-level with no specific field), Operation to create, and add Role: itil. The &quot;None&quot; in the name indicates a table-level ACL rather than a field-level one. The Operation field specifies the permitted action.Why the Others Are Wrongincident.Any; Operation: write: &quot;write&quot; covers updates, not record creation.</div>
+    </div>
+    <div class="quiz-card" id="qcard6">
+      <div class="quiz-q"><span class="quiz-q-num">7.</span>What is a recommended best practice before importing data?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="6"><span class="quiz-opt-letter">A</span><span>Adjust Transform Maps after loading into target</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="6"><span class="quiz-opt-letter">B</span><span>Use one extremely large Import Set</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="6"><span class="quiz-opt-letter">C</span><span>Create a new Import Set table for each load</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="6"><span class="quiz-opt-letter">D</span><span>Plan time to remove obsolete or inaccurate source data</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="6"><span class="quiz-opt-letter">E</span><span>Use Data Scrub Workspace to clean imports</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp6">Correct Answer: Plan time to remove obsolete or inaccurate source dataSourceOfficial Doc: Import Set Best PracticesIf the link fails, search Google for: ServiceNow Zurich import set best practices clean data before importingExpert ExplanationBefore importing data, you should plan time to review and clean the source data. Remove duplicate, obsolete, or inaccurate records from the source file before loading. Importing dirty data creates downstream problems: duplicate records, incorrect relationships, and unreliable reports.Why the Others Are WrongAdjust Transform Maps after loading: This is a corrective step, not a best practice.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard7">
+      <div class="quiz-q"><span class="quiz-q-num">8.</span>Which of the following can be customized through the Basic Configuration UI16 module? (Choose three.) <span class="quiz-choose">(choose 3)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="7"><span class="quiz-opt-letter">A</span><span>Banner Image</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="7"><span class="quiz-opt-letter">B</span><span>Record Number Format</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="7"><span class="quiz-opt-letter">C</span><span>Browser Tab Title</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="7"><span class="quiz-opt-letter">D</span><span>System Date Format</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="7"><span class="quiz-opt-letter">E</span><span>Form Header Size</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="7" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp7">Correct Answer: Banner Image; Browser Tab Title; System Date FormatSource  Official Doc: Platform User Interface  If the link fails, search Google for: ServiceNow Zurich Basic Configuration UI16 banner browser tab title date formatExpert ExplanationThe Basic Configuration UI16 module provides a centralized form for branding and display settings. The Banner Image controls the company logo in the header. The Browser Tab Title sets the text shown in the browser tab.</div>
+    </div>
+    <div class="quiz-card" id="qcard8">
+      <div class="quiz-q"><span class="quiz-q-num">9.</span>What action helps to see which modules are visible to a user?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="8"><span class="quiz-opt-letter">A</span><span>Install the Bomgar plug-in</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="8"><span class="quiz-opt-letter">B</span><span>Initiate a Connect Chat session</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="8"><span class="quiz-opt-letter">C</span><span>Launch a NowChat window</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="8"><span class="quiz-opt-letter">D</span><span>Impersonate the user</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp8">Correct Answer: Impersonate the userSourceOfficial Doc: Impersonating a UserIf the link fails, search Google for: ServiceNow Zurich impersonate user see modules visible roles navigationExpert ExplanationImpersonating a user allows an admin to assume that user&#x27;s identity and see the platform exactly as they do. This includes their application navigator, visible modules, forms, and security restrictions. It is the most effective way to diagnose what a user can and cannot see.Why the Others Are WrongBomgar plug-in: A remote desktop tool for screen sharing, not for checking module visibility within ServiceNow.Connect Chat: A messaging feature.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard9">
+      <div class="quiz-q"><span class="quiz-q-num">10.</span>From a form, what would you click to add additional fields to the form? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="9"><span class="quiz-opt-letter">A</span><span>Context Menu &gt; Form &gt; Layout</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="9"><span class="quiz-opt-letter">B</span><span>Context Menu &gt; Configure &gt; Form Layout</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="9"><span class="quiz-opt-letter">C</span><span>Context Menu &gt; Configure &gt; Form Design</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="9"><span class="quiz-opt-letter">D</span><span>Right click on header &gt; Add &gt; Field</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="9"><span class="quiz-opt-letter">E</span><span>Context Menu &gt; Form &gt; Designer</span></li>
+      <li class="quiz-opt" data-idx="5" data-q="9"><span class="quiz-opt-letter">F</span><span>Right click on header &gt; Configure &gt; UX Dashboard</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="9" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp9">Correct Answer: Context Menu &gt; Configure &gt; Form Layout; Context Menu &gt; Configure &gt; Form DesignSourceOfficial Doc: UI16 Application NavigatorIf the link fails, search Google for: ServiceNow Zurich Configure Form Layout Form Designer add fieldsExpert ExplanationTwo tools for adding fields to a form, both under the Configure menu: Form Layout uses a list-based slush bucket interface to add/remove/reorder fields, and Form Designer provides a visual drag-and-drop interface. Both are accessed from the form&#x27;s context menu (hamburger icon) &gt; Configure.Why the Others Are WrongForm &gt; Layout / Form &gt; Designer: Wrong menu paths.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard10">
+      <div class="quiz-q"><span class="quiz-q-num">11.</span>Examples of UI Actions relating to forms? (Choose three.) <span class="quiz-choose">(choose 3)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="10"><span class="quiz-opt-letter">A</span><span>Form Columns</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="10"><span class="quiz-opt-letter">B</span><span>Form View</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="10"><span class="quiz-opt-letter">C</span><span>Form Buttons</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="10"><span class="quiz-opt-letter">D</span><span>Form Context Menu</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="10"><span class="quiz-opt-letter">E</span><span>Form Links</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="10" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp10">Correct Answers: Form Buttons; Form Context Menu; Form LinksSourceOfficial Doc: UI ActionsIf the link fails, search Google for: ServiceNow Zurich UI Actions form buttons context menu linksExpert ExplanationUI Actions create interactive elements on forms and lists. The three form-related types are: Form Buttons (clickable buttons like Save, Update), Form Context Menu items (right-click menu options on the form header), and Form Links (clickable links in form sections).</div>
+    </div>
+    <div class="quiz-card" id="qcard11">
+      <div class="quiz-q"><span class="quiz-q-num">12.</span>Create Incident, Password Reset, and Report outage: what do these services in the Service Catalog have in common?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="11"><span class="quiz-opt-letter">A</span><span>They direct the user to a record producer</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="11"><span class="quiz-opt-letter">B</span><span>They direct the user to a catalog property</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="11"><span class="quiz-opt-letter">C</span><span>They direct the user to a catalog UI policy</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="11"><span class="quiz-opt-letter">D</span><span>They direct the user to a catalog client script</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp11">Correct Answer: They direct the user to a record producerSource  Official Doc: Record Producers  If the link fails, search Google for: ServiceNow Zurich record producer create incident password reset report outageExpert ExplanationThese are all Record Producers in the Service Catalog. &quot;Create Incident&quot; produces an Incident record, &quot;Password Reset&quot; produces a password reset request record, and &quot;Report Outage&quot; produces an outage record. Each one uses the Record Producer mechanism to create records directly on their target tables from a catalog-style form.Why the Others Are Wrong  Catalog property: Catalog properties are configuration settings (like approval rules).</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard12">
+      <div class="quiz-q"><span class="quiz-q-num">13.</span>When building a table extended from a base table, which fields do you need to create? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="12"><span class="quiz-opt-letter">A</span><span>The fields that are not in the base table</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="12"><span class="quiz-opt-letter">B</span><span>The mandatory fields for the base table</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="12"><span class="quiz-opt-letter">C</span><span>The fields that are specific to the extended table</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="12"><span class="quiz-opt-letter">D</span><span>The reference fields for the base table</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="12" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp12">Correct Answers: The fields that are not in the base table; The fields that are specific to the extended tableSourceOfficial Doc: Table ExtensionIf the link fails, search Google for: ServiceNow Zurich table extension inherited fields create new fieldsExpert ExplanationExtended tables inherit all fields from their parent/base table. You only need to create fields that are new and specific to the extended table. Both correct answers express the same concept: only create what does not already exist in the base table.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard13">
+      <div class="quiz-q"><span class="quiz-q-num">14.</span>Benefits of Flow Designer include which of the following? (Choose three.) <span class="quiz-choose">(choose 3)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="13"><span class="quiz-opt-letter">A</span><span>Provides IDE for complicated scripting</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="13"><span class="quiz-opt-letter">B</span><span>Provides built-in libraries/APIs for complex coding</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="13"><span class="quiz-opt-letter">C</span><span>Automatically populates SLA records</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="13"><span class="quiz-opt-letter">D</span><span>Natural-language descriptions of flow logic</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="13"><span class="quiz-opt-letter">E</span><span>No-code application development</span></li>
+      <li class="quiz-opt" data-idx="5" data-q="13"><span class="quiz-opt-letter">F</span><span>Easy integration with third-party systems</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="13" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp13">Correct Answers: Natural-language descriptions of flow logic, No-code application development, Easy integration with third-party systemsSourceOfficial Doc: Flow DesignerIf the link fails, search Google for: ServiceNow Zurich Flow Designer benefits no-code natural language integrationExpert ExplanationFlow Designer offers three key benefits: natural-language descriptions that make flow logic readable by anyone, no-code development through a visual builder that eliminates the need for scripting, and easy third-party integration via Integration Hub spokes.</div>
+    </div>
+    <div class="quiz-card" id="qcard14">
+      <div class="quiz-q"><span class="quiz-q-num">15.</span>Which ServiceNow capability allows you to provide knowledge articles via a conversational interface?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="14"><span class="quiz-opt-letter">A</span><span>Agent Assist</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="14"><span class="quiz-opt-letter">B</span><span>Virtual Agent</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="14"><span class="quiz-opt-letter">C</span><span>Now Messenger</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="14"><span class="quiz-opt-letter">D</span><span>Connect Agent</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp14">Correct Answer: Virtual AgentSourceOfficial Doc: Virtual AgentIf the link fails, search Google for: ServiceNow Zurich Virtual Agent conversational knowledge articles chatbotExpert ExplanationVirtual Agent is a ServiceNow chatbot that provides knowledge articles and resolves common requests through a conversational interface.</div>
     </div>
     <div class="quiz-score" id="quizScore">
-      <div class="quiz-score-num" id="quizScoreNum">0/5</div>
+      <div class="quiz-score-num" id="quizScoreNum">0/15</div>
       <div class="quiz-score-label">Sample Quiz Score</div>
       <div class="quiz-score-msg" id="quizScoreMsg"></div>
       <a href="https://www.udemy.com/course/pass-your-servicenow-csa-certified-system-administrator/?referralCode=2AE0DFA7BE468BCA8888" target="_blank" rel="noopener" class="cp-cta">
@@ -549,33 +669,83 @@ a:hover { text-decoration: underline; }
   });
 
   // Quiz logic
-  const answers = [1,1,1,1,1];
+  const answers = [1, 3, 3, 1, 2, 0, 3, [0, 2, 3], 3, [1, 2], [2, 3, 4], 0, [0, 2], [3, 4, 5], 1];
   let answered = 0, score = 0;
+  const multiSelections = {};
+
   document.querySelectorAll('.quiz-opt').forEach(function(opt) {
     opt.addEventListener('click', function() {
       var qi = parseInt(this.dataset.q);
-      var idx = parseInt(this.dataset.idx);
       var card = document.getElementById('qcard' + qi);
       if (card.dataset.state) return;
-      var isCorrect = idx === answers[qi];
-      if (isCorrect) { score++; this.classList.add('correct'); card.dataset.state = 'correct'; }
-      else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
-      this.classList.add('selected');
-      card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
-      document.getElementById('qexp' + qi).classList.add('show');
-      answered++;
-      if (answered === answers.length) {
-        var el = document.getElementById('quizScore');
-        el.classList.add('show');
-        document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
-        var msg = score === 5 ? 'Perfect score! You are well prepared.' : score >= 3 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
-        document.getElementById('quizScoreMsg').textContent = msg;
-        if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: 'CSA', quiz_score: score });
+      var idx = parseInt(this.dataset.idx);
+      var isMulti = Array.isArray(answers[qi]);
+
+      if (isMulti) {
+        // Multi-select: toggle selection
+        if (!multiSelections[qi]) multiSelections[qi] = new Set();
+        if (multiSelections[qi].has(idx)) {
+          multiSelections[qi].delete(idx);
+          this.classList.remove('selected');
+        } else {
+          multiSelections[qi].add(idx);
+          this.classList.add('selected');
+        }
+        // Show/hide submit button
+        var btn = card.querySelector('.quiz-submit-btn');
+        btn.style.display = multiSelections[qi].size > 0 ? 'block' : 'none';
+      } else {
+        // Single answer: immediate check
+        var isCorrect = idx === answers[qi];
+        if (isCorrect) { score++; this.classList.add('correct'); card.dataset.state = 'correct'; }
+        else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
+        this.classList.add('selected');
+        card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
+        document.getElementById('qexp' + qi).classList.add('show');
+        answered++;
+        checkDone();
       }
     });
   });
 
-  
-</script>
+  document.querySelectorAll('.quiz-submit-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var qi = parseInt(this.dataset.q);
+      var card = document.getElementById('qcard' + qi);
+      if (card.dataset.state) return;
+      var selected = Array.from(multiSelections[qi] || []).sort();
+      var correct = answers[qi].slice().sort();
+      var isCorrect = selected.length === correct.length && selected.every(function(v, i) { return v === correct[i]; });
+      var opts = card.querySelectorAll('.quiz-opt');
+      if (isCorrect) {
+        score++;
+        card.dataset.state = 'correct';
+        selected.forEach(function(i) { opts[i].classList.add('correct'); });
+      } else {
+        card.dataset.state = 'wrong';
+        selected.forEach(function(i) {
+          if (correct.indexOf(i) === -1) opts[i].classList.add('wrong');
+          else opts[i].classList.add('correct');
+        });
+        correct.forEach(function(i) { opts[i].classList.add('correct'); });
+      }
+      opts.forEach(function(o) { o.setAttribute('disabled',''); });
+      this.style.display = 'none';
+      document.getElementById('qexp' + qi).classList.add('show');
+      answered++;
+      checkDone();
+    });
+  });
+
+  function checkDone() {
+    if (answered === answers.length) {
+      var el = document.getElementById('quizScore');
+      el.classList.add('show');
+      document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
+      var msg = score === answers.length ? 'Perfect score! You are well prepared.' : score >= 10 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
+      document.getElementById('quizScoreMsg').textContent = msg;
+      if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: 'CSA', quiz_score: score });
+    }
+  }</script>
 </body>
 </html>

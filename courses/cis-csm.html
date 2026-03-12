@@ -342,6 +342,10 @@ a:hover { text-decoration: underline; }
 .quiz-opt.wrong .quiz-opt-letter { background: #d73a49; color: #fff; border-color: #d73a49; }
 .quiz-explain { display: none; margin-top: 12px; padding: 12px 16px; background: var(--bg-card); border-radius: 8px; font-size: 0.9rem; color: var(--text-dim); line-height: 1.6; border-left: 3px solid var(--orange); }
 .quiz-explain.show { display: block; }
+.quiz-choose { font-weight: 400; color: var(--orange); font-size: 0.85rem; margin-left: 4px; }
+.quiz-submit-btn { margin-top: 12px; padding: 10px 24px; background: var(--orange); color: #fff; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.15s, transform 0.1s; }
+.quiz-submit-btn:hover { background: #c75400; }
+.quiz-submit-btn:active { transform: scale(0.97); }
 .quiz-score { margin-top: 24px; padding: 20px; background: var(--bg-raised); border-radius: 12px; border: 1px solid var(--border); text-align: center; display: none; }
 .quiz-score.show { display: block; }
 .quiz-score-num { font-size: 2rem; font-weight: 800; color: var(--orange); }
@@ -465,60 +469,270 @@ a:hover { text-decoration: underline; }
   </div>
 
   <section class="quiz-section" id="free-quiz">
-    <h2>Try 5 Free CSM Questions</h2>
-    <p class="quiz-intro">Test your knowledge before you buy. These sample questions are from our full 348-question practice test.</p>
-        <div class="quiz-card" id="qcard0">
-      <div class="quiz-q"><span class="quiz-q-num">1.</span>What is the primary purpose of Customer Service Management (CSM)?</div>
+    <h2>Try 15 Free CSM Questions</h2>
+    <p class="quiz-intro">Test your knowledge before you buy — including multiple-choice and multi-select, just like the real exam.</p>
+    <div class="quiz-card" id="qcard0">
+      <div class="quiz-q"><span class="quiz-q-num">1.</span>Your organization (a Service Provider) uses ServiceNow CSM to support a corporate client who also uses their own ServiceNow instance. You want to configure a seamless integration where a request created in the client&amp;amp;#x27;s instance automatically creates a Case in your instance, and updates are synced bi-directionally. Which application is specifically designed to facilitate this instance-to-instance workflow?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>To manage internal IT tickets</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>To provide end-to-end customer service from issue to resolution across departments</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>To handle payroll</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>To configure firewalls</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>Remote Process Sync</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>Service Bridge</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>IntegrationHub ETL</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>REST Message V2</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="0"><span class="quiz-opt-letter">E</span><span>External Case Import</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp0">CSM connects customer service with other departments (field service, engineering, operations) to resolve complex customer issues end-to-end, not just manage individual tickets.</div>
+      <div class="quiz-explain" id="qexp0">Correct Answer: Service Bridge
+Source
+
+Official Doc: Service Bridge (Zurich)
+If the link fails, search Google for: ServiceNow Zurich Service Bridge instance-to-instance CSM provider consumer
+
+Expert Explanation
+Service Bridge is a native ServiceNow capability for connecting a consumer instance (the client organization) to a provider instance (the service provider). When a consumer creates a case or request, Service Bridge automatically creates a corresponding Provider Task or Case in the provider&#x27;s instance. Updates flow bidirectionally: resolution notes, state changes, and comments sync between instances without custom API development.</div>
     </div>
     <div class="quiz-card" id="qcard1">
-      <div class="quiz-q"><span class="quiz-q-num">2.</span>What is the Agent Workspace in CSM?</div>
+      <div class="quiz-q"><span class="quiz-q-num">2.</span>In the CSM Configurable Workspace, a supervisor wants to monitor live chat interactions to detect when a customer is becoming frustrated or angry. Which Predictive Intelligence capability analyzes the tone of the conversation in real-time and displays a score (e.g., Positive, Neutral, Negative) to the agent and supervisor?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>A physical office space</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>A configurable UI that gives agents a unified view of customer cases and related information</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>A code editor</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>A project management board</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>Intent Detection</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>Sentiment Analysis</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>Cluster Analysis</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>Interaction Trending</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="1"><span class="quiz-opt-letter">E</span><span>Emotional Intelligence Plugin</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp1">Agent Workspace provides customer service agents with a single-pane interface showing case details, customer information, interaction history, and knowledge articles for efficient case resolution.</div>
+      <div class="quiz-explain" id="qexp1">Correct Answer: Sentiment Analysis
+Source
+
+Official Doc: Case Sentiment Analysis (Zurich)
+If the link fails, search Google for: ServiceNow Zurich Sentiment Analysis CSM live chat supervisor monitoring
+
+Expert Explanation
+Sentiment Analysis in CSM applies machine learning to evaluate the emotional tone of customer messages in real time. The workspace displays a sentiment indicator (positive, neutral, negative) that updates as the conversation progresses. Supervisors can monitor the sentiment across all active chats from their workspace view and intervene when a customer&#x27;s sentiment turns sharply negative.</div>
     </div>
     <div class="quiz-card" id="qcard2">
-      <div class="quiz-q"><span class="quiz-q-num">3.</span>What is a Customer Account in CSM?</div>
+      <div class="quiz-q"><span class="quiz-q-num">3.</span>Your organization uses the Technology Provider Service Management (TPSM) application. Instead of using the generic &amp;amp;quot;Case&amp;amp;quot; table for everything, TPSM introduces a specialized table designed to handle product support inquiries with specific fields and workflows. What is this concept known as in the CSM architecture?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>A user login</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>A record representing a company or organization that is a customer</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>A bank account</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>A social media profile</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>Case Categories</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>Service Definitions</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>Case Types</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>Task Extension</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp2">A Customer Account represents an external company or organization that is a customer, storing company details, contacts, contracts, assets, and service history.</div>
+      <div class="quiz-explain" id="qexp2">Correct Answer: Case Types
+Source
+
+Official Doc: Technology Provider Service Management (Zurich)
+If the link fails, search Google for: ServiceNow Zurich TPSM Technology Provider Service Management Case Types industry vertical
+
+Expert Explanation
+Technology Provider Service Management (TPSM) is a CSM industry vertical for technology companies that manufacture and sell products requiring specialized post-sale support (hardware defects, firmware issues, RMA processing). TPSM introduces Case Types that extend the base sn_customerservice_case table with fields, states, and workflows specific to technology product support scenarios.</div>
     </div>
     <div class="quiz-card" id="qcard3">
-      <div class="quiz-q"><span class="quiz-q-num">4.</span>What is the Customer Portal?</div>
+      <div class="quiz-q"><span class="quiz-q-num">4.</span>You need to send a product alert (Publication) to all customers who have purchased a specific &amp;amp;quot;Router Model X&amp;amp;quot;. You want the list of recipients to automatically update if new customers purchase this router tomorrow. Which type of Recipient List should you create?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>An admin console</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>A self-service web interface where customers can submit and track their cases</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>A VPN gateway</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>A development tool</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>Static Recipient List</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>Dynamic Recipient List</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>Import Set List</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>Entitlement List</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp3">The Customer Portal is a self-service interface where external customers can submit new cases, track existing cases, browse knowledge articles, and manage their account information.</div>
+      <div class="quiz-explain" id="qexp3">Correct Answer: Dynamic Recipient List
+Source
+
+Official Doc: Targeted Communications (Zurich)
+If the link fails, search Google for: ServiceNow Zurich Dynamic Recipient List Targeted Communications product model ownership auto-refresh
+
+Expert Explanation
+Dynamic Recipient Lists in CSM Targeted Communications automatically maintain their membership by evaluating a condition against customer and product records. For a product alert, the condition would be &quot;Install Base Item Product Model = [vulnerable model name].&quot; The &quot;Targeted Communications Recipients Refresh&quot; scheduled job runs daily to add new customers who acquired the product and remove customers who no longer own it.</div>
     </div>
     <div class="quiz-card" id="qcard4">
-      <div class="quiz-q"><span class="quiz-q-num">5.</span>What are Service Contracts in CSM?</div>
+      <div class="quiz-q"><span class="quiz-q-num">5.</span>In the CSM Configurable Workspace, which specific feature provides agents with a consolidated, 360-degree view of a customer—including a timeline of recent interactions, key touchpoints, and KPIs—without requiring the agent to navigate away from the current interaction?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>Employment agreements</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>Agreements defining the level of service and entitlements for a customer</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>Software licenses</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>NDAs</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>Agent Assist</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>Customer Central</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>Contextual Side Panel</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>Interaction Record</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="4"><span class="quiz-opt-letter">E</span><span>360 Customer Dashboard</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp4">Service Contracts define the terms, entitlements, and service levels agreed upon with a customer, determining what support they are entitled to receive and under what conditions.</div>
+      <div class="quiz-explain" id="qexp4">Correct Answer: Customer Central
+Source
+
+Official Doc: Customer Central (Zurich)
+If the link fails, search Google for: ServiceNow Zurich Customer Central CSM Configurable Workspace 360
+
+Expert Explanation
+Customer Central is an optional plugin that adds two tabs to the CSM Configurable Workspace sidebar: Customer Information (a consolidated view of account details, owned products, entitlements, and related records) and Customer Activity (a holistic timeline of all past interactions and cases).</div>
+    </div>
+    <div class="quiz-card" id="qcard5">
+      <div class="quiz-q"><span class="quiz-q-num">6.</span>A Service Desk Manager wants to identify &amp;amp;quot;hot topics&amp;amp;quot; or emerging issues that do not yet have a specific category, such as a sudden spike in users reporting &amp;amp;quot;VPN slowness&amp;amp;quot; after a patch. Which Predictive Intelligence capability groups similar historical cases together to help visualize these trends?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="5"><span class="quiz-opt-letter">A</span><span>Classification</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="5"><span class="quiz-opt-letter">B</span><span>Similarity</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="5"><span class="quiz-opt-letter">C</span><span>Clustering</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="5"><span class="quiz-opt-letter">D</span><span>Regression</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp5">Correct Answer: Clustering
+Source
+
+Official Doc: Clustering (Zurich Predictive Intelligence)
+If the link fails, search Google for: ServiceNow Zurich Predictive Intelligence Clustering trending case topics CSM unsupervised
+
+Expert Explanation
+Clustering is an unsupervised Predictive Intelligence model that groups cases (or other records) based on the similarity of their text fields and shared attributes, without requiring a predefined taxonomy.</div>
+    </div>
+    <div class="quiz-card" id="qcard6">
+      <div class="quiz-q"><span class="quiz-q-num">7.</span>When the CSM Extension for Request Management is active, if a customer submits a Service Catalog Request (REQ) directly via the portal (without starting from an existing Case), what does the system automatically generate to ensure the support team tracks this interaction?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="6"><span class="quiz-opt-letter">A</span><span>It creates a &quot;Shadow&quot; Incident.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="6"><span class="quiz-opt-letter">B</span><span>It creates a Parent Case and links the Request to it.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="6"><span class="quiz-opt-letter">C</span><span>It only creates the Request; no Case is involved.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="6"><span class="quiz-opt-letter">D</span><span>It creates a Universal Task.</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp6">Correct Answer: It creates a Parent Case and links the Request to it.
+Source
+
+Official Doc: CSM integration with Request Management (Zurich)
+If the link fails, search Google for: ServiceNow Zurich CSM Request Management extension parent Case auto-created catalog request
+
+Expert Explanation
+The CSM Extension for Request Management (plugin: com.sn_cs_sm_request) installs a business rule called &quot;Create Case For Request.&quot; When a customer submits a Service Catalog Request (REQ) directly through the portal without already being in the context of an open case, this rule fires and automatically creates a parent Case linked to the Request.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard7">
+      <div class="quiz-q"><span class="quiz-q-num">8.</span>Advanced Work Assignment (AWA) routes work items to agents based on availability and skills. Which of the following are valid, out-of-the-box Service Channels that AWA can route in the CSM application? (Choose three.) <span class="quiz-choose">(choose 3)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="7"><span class="quiz-opt-letter">A</span><span>Case</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="7"><span class="quiz-opt-letter">B</span><span>Knowledge Article</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="7"><span class="quiz-opt-letter">C</span><span>Walk-up</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="7"><span class="quiz-opt-letter">D</span><span>Chat</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="7"><span class="quiz-opt-letter">E</span><span>Email</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="7" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp7">Correct Answers: Case, Walk-up, and Chat
+Source
+
+Official Doc: Advanced Work Assignment overview (Zurich)
+If the link fails, search Google for: ServiceNow Zurich AWA service channels Case Chat Walk-up Incident OOB
+
+Expert Explanation
+Out-of-the-box, Advanced Work Assignment includes these base system service channels: Case, Chat, Walk-up, and Incident. Each represents a distinct type of work item that AWA routes to agents based on capacity, skill match, and availability. Email is not a service channel: when a customer sends an email, the platform creates a Case from it, and that Case is then routed by the Case service channel.</div>
+    </div>
+    <div class="quiz-card" id="qcard8">
+      <div class="quiz-q"><span class="quiz-q-num">9.</span>In a Business-to-Consumer (B2C) implementation, you need to model a family structure where a &amp;amp;quot;Head of Household&amp;amp;quot; can manage cases and view products for other family members. How is this relationship primarily defined in the data model?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="8"><span class="quiz-opt-letter">A</span><span>By creating a parent-child relationship between two Contact records.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="8"><span class="quiz-opt-letter">B</span><span>By populating the Household reference field on the Consumer record.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="8"><span class="quiz-opt-letter">C</span><span>By creating a Partner account for the family.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="8"><span class="quiz-opt-letter">D</span><span>By using the Relationship [cmn_relationship] table to link Consumers.</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp8">Correct Answer: By populating the Household reference field on the Consumer record.
+Source
+
+Official Doc: B2C Customer Data Model (Zurich)
+If the link fails, search Google for: ServiceNow Zurich CSM B2C Household Consumer record family model
+
+Expert Explanation
+In ServiceNow&#x27;s B2C data model, a Household (csm_household) is the grouping entity for a family unit. Each family member is a Consumer (csm_consumer), and their record includes a Household reference field pointing to the shared household record. This model allows one consumer to be designated the &quot;Head of Household,&quot; granting them administrative control over shared products, service entitlements, and cases.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard9">
+      <div class="quiz-q"><span class="quiz-q-num">10.</span>Which Business Rules are part of the Customer Service Management baseline configuration Choose two. <span class="quiz-choose">(choose 2)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="9"><span class="quiz-opt-letter">A</span><span>Apply Role by Customer</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="9"><span class="quiz-opt-letter">B</span><span>Auto Assessment</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="9"><span class="quiz-opt-letter">C</span><span>Change Update to Close</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="9"><span class="quiz-opt-letter">D</span><span>Update Case Entitlement</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="9" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp9">Correct Answers: Auto Assessment and Update Case Entitlement
+Source
+
+Official Doc: Business Rules Installed with Customer Service Management
+If the link fails, search Google for: ServiceNow CSM baseline business rules auto assessment update case entitlement
+
+Expert Explanation
+The CSM baseline configuration ships with specific business rules to automate common operational tasks. Auto Assessment triggers automatic evaluation of case quality or satisfaction assessment criteria when defined conditions are met. Update Case Entitlement fires when a case closes, automatically deducting from the customer&#x27;s active entitlement counters.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard10">
+      <div class="quiz-q"><span class="quiz-q-num">11.</span>What should be emphasized when designing solutions Choose three. <span class="quiz-choose">(choose 3)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="10"><span class="quiz-opt-letter">A</span><span>Minimize customizations</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="10"><span class="quiz-opt-letter">B</span><span>Focus Out-of-the-box functionality</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="10"><span class="quiz-opt-letter">C</span><span>Design for Scalability</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="10"><span class="quiz-opt-letter">D</span><span>Mobile friendly functionality</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="10" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp10">Correct Answers: Minimize customizations, Focus Out-of-the-box functionality, and Design for Scalability
+Source
+
+Community: Mastering CSM with ServiceNow
+If the link fails, search Google for: ServiceNow CSM design solutions minimize customizations OOB scalability
+
+Expert Explanation
+Minimizing customizations limits the risk of conflicting scripts, preserves baseline workflow integrity, and avoids &quot;skip list&quot; scenarios during upgrades. Focusing on OOB functionality ensures that solutions remain supported by ServiceNow and benefit from platform enhancements in future releases.</div>
+    </div>
+    <div class="quiz-card" id="qcard11">
+      <div class="quiz-q"><span class="quiz-q-num">12.</span>ServiceNow provides two distinct mobile applications. Which application is specifically designed for Customer Service Agents (fulfillers) to accept, update, and resolve cases while working remotely, as opposed to the application used by employees/requesters to submit issues?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="11"><span class="quiz-opt-letter">A</span><span>Now Mobile</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="11"><span class="quiz-opt-letter">B</span><span>ServiceNow Mobile Agent</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="11"><span class="quiz-opt-letter">C</span><span>Mobile Classic</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="11"><span class="quiz-opt-letter">D</span><span>Service Portal Mobile</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp11">Correct Answer: ServiceNow Mobile Agent
+Source
+
+Official Doc: Mobile Agent overview (Zurich)
+If the link fails, search Google for: ServiceNow Zurich Mobile Agent app fulfiller CSM IT agent native
+
+Expert Explanation
+ServiceNow maintains two core mobile applications. Now Mobile serves the employee/requester persona: submitting requests, checking approvals, and accessing company information. Mobile Agent serves the fulfiller persona: IT service agents, CSM case agents, Field Service technicians, and HR case agents. Mobile Agent provides access to work queues, case records, knowledge articles, and service management workflows optimized for mobile use.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard12">
+      <div class="quiz-q"><span class="quiz-q-num">13.</span>The Workforce Optimization for Customer Service application provides a dedicated workspace for Managers. Which of the following capabilities are primarily managed within this workspace? (Choose three.) <span class="quiz-choose">(choose 3)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="12"><span class="quiz-opt-letter">A</span><span>Managing Channel Capacity and Queues</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="12"><span class="quiz-opt-letter">B</span><span>Developing and assigning Coaching assessments</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="12"><span class="quiz-opt-letter">C</span><span>Creating new Customer Contacts</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="12"><span class="quiz-opt-letter">D</span><span>Managing Agent Schedules and Shifts</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="12"><span class="quiz-opt-letter">E</span><span>Configuring Service Portals</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="12" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp12">Correct Answers: Managing Channel Capacity and Queues, Developing and assigning Coaching assessments, and Managing Agent Schedules and Shifts
+Source
+
+ServiceNow Store: Workforce Optimization for Customer Service Management
+If the link fails, search Google for: ServiceNow Zurich Workforce Optimization CSM manager capabilities
+
+Expert Explanation
+Workforce Optimization (WFO) for CSM provides a manager-specific workspace with three core operational areas: real-time channel and queue capacity management (adjusting how much work flows to agents), coaching assessments (structured performance reviews assigned to agents), and agent schedule and shift management (viewing adherence, modifying shifts).</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard13">
+      <div class="quiz-q"><span class="quiz-q-num">14.</span>What are available matching criteria for case assignment in Customer Service Management Choose three. <span class="quiz-choose">(choose 3)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="13"><span class="quiz-opt-letter">A</span><span>Partner Hours</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="13"><span class="quiz-opt-letter">B</span><span>Matching Skills</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="13"><span class="quiz-opt-letter">C</span><span>Distance</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="13"><span class="quiz-opt-letter">D</span><span>Certifications</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="13"><span class="quiz-opt-letter">E</span><span>Assigned Cases</span></li>
+      <li class="quiz-opt" data-idx="5" data-q="13"><span class="quiz-opt-letter">F</span><span>Availability Today</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="13" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp13">Correct Answers: Matching Skills, Assigned Cases, and Availability TodaySourceOfficial Doc: Case Assignment Matching CriteriaIf the link fails, search Google for: ServiceNow case assignment matching criteria availability skills assigned cases defaultExpert ExplanationCSM case assignment uses matching rules with configurable criteria. The default Recommendation for Case Assignment rule includes three criteria: Matching Skills (does the agent have required skills?), Assigned Cases (what is the agent workload?), and Availability Today (is the agent working today?). A fourth criterion, Distance, is available in the system but not included in the default rule.</div>
+    </div>
+    <div class="quiz-card" id="qcard14">
+      <div class="quiz-q"><span class="quiz-q-num">15.</span>When configuring Advanced Work Assignment to route different types of work (such as Chats, Cases, or Walk-up Requests) to agents, which record is used to define the specific source table and the conditions for work items to be created?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="14"><span class="quiz-opt-letter">A</span><span>Queue</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="14"><span class="quiz-opt-letter">B</span><span>Service Channel</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="14"><span class="quiz-opt-letter">C</span><span>Assignment Rule</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="14"><span class="quiz-opt-letter">D</span><span>Work Item Link</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp14">Correct Answer: Service Channel
+Source
+
+Official Doc: AWA Service Channels (Zurich)
+If the link fails, search Google for: ServiceNow Zurich AWA Service Channel type of work routing
+
+Expert Explanation
+In Advanced Work Assignment, a Service Channel is the top-level configuration object that defines a distinct type of work. Out-of-the-box channels include Chat, Case, Walk-up, and Incident. Each channel configures agent capacity (how many concurrent items an agent can handle), utilization thresholds, and required presence states. Queues live beneath channels and subdivide work items within that type.</div>
     </div>
     <div class="quiz-score" id="quizScore">
-      <div class="quiz-score-num" id="quizScoreNum">0/5</div>
+      <div class="quiz-score-num" id="quizScoreNum">0/15</div>
       <div class="quiz-score-label">Sample Quiz Score</div>
       <div class="quiz-score-msg" id="quizScoreMsg"></div>
       <a href="https://www.udemy.com/course/pass-your-servicenow-cis-customer-service-management-csm/?referralCode=211B4B7795C55DA7281A" target="_blank" rel="noopener" class="cp-cta">
@@ -549,33 +763,83 @@ a:hover { text-decoration: underline; }
   });
 
   // Quiz logic
-  const answers = [1,1,1,1,1];
+  const answers = [1, 1, 2, 1, 1, 2, 1, [0, 2, 3], 1, [1, 3], [0, 1, 2], 1, [0, 1, 3], [1, 4, 5], 1];
   let answered = 0, score = 0;
+  const multiSelections = {};
+
   document.querySelectorAll('.quiz-opt').forEach(function(opt) {
     opt.addEventListener('click', function() {
       var qi = parseInt(this.dataset.q);
-      var idx = parseInt(this.dataset.idx);
       var card = document.getElementById('qcard' + qi);
       if (card.dataset.state) return;
-      var isCorrect = idx === answers[qi];
-      if (isCorrect) { score++; this.classList.add('correct'); card.dataset.state = 'correct'; }
-      else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
-      this.classList.add('selected');
-      card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
-      document.getElementById('qexp' + qi).classList.add('show');
-      answered++;
-      if (answered === answers.length) {
-        var el = document.getElementById('quizScore');
-        el.classList.add('show');
-        document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
-        var msg = score === 5 ? 'Perfect score! You are well prepared.' : score >= 3 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
-        document.getElementById('quizScoreMsg').textContent = msg;
-        if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: 'CSM', quiz_score: score });
+      var idx = parseInt(this.dataset.idx);
+      var isMulti = Array.isArray(answers[qi]);
+
+      if (isMulti) {
+        // Multi-select: toggle selection
+        if (!multiSelections[qi]) multiSelections[qi] = new Set();
+        if (multiSelections[qi].has(idx)) {
+          multiSelections[qi].delete(idx);
+          this.classList.remove('selected');
+        } else {
+          multiSelections[qi].add(idx);
+          this.classList.add('selected');
+        }
+        // Show/hide submit button
+        var btn = card.querySelector('.quiz-submit-btn');
+        btn.style.display = multiSelections[qi].size > 0 ? 'block' : 'none';
+      } else {
+        // Single answer: immediate check
+        var isCorrect = idx === answers[qi];
+        if (isCorrect) { score++; this.classList.add('correct'); card.dataset.state = 'correct'; }
+        else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
+        this.classList.add('selected');
+        card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
+        document.getElementById('qexp' + qi).classList.add('show');
+        answered++;
+        checkDone();
       }
     });
   });
 
-  
-</script>
+  document.querySelectorAll('.quiz-submit-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var qi = parseInt(this.dataset.q);
+      var card = document.getElementById('qcard' + qi);
+      if (card.dataset.state) return;
+      var selected = Array.from(multiSelections[qi] || []).sort();
+      var correct = answers[qi].slice().sort();
+      var isCorrect = selected.length === correct.length && selected.every(function(v, i) { return v === correct[i]; });
+      var opts = card.querySelectorAll('.quiz-opt');
+      if (isCorrect) {
+        score++;
+        card.dataset.state = 'correct';
+        selected.forEach(function(i) { opts[i].classList.add('correct'); });
+      } else {
+        card.dataset.state = 'wrong';
+        selected.forEach(function(i) {
+          if (correct.indexOf(i) === -1) opts[i].classList.add('wrong');
+          else opts[i].classList.add('correct');
+        });
+        correct.forEach(function(i) { opts[i].classList.add('correct'); });
+      }
+      opts.forEach(function(o) { o.setAttribute('disabled',''); });
+      this.style.display = 'none';
+      document.getElementById('qexp' + qi).classList.add('show');
+      answered++;
+      checkDone();
+    });
+  });
+
+  function checkDone() {
+    if (answered === answers.length) {
+      var el = document.getElementById('quizScore');
+      el.classList.add('show');
+      document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
+      var msg = score === answers.length ? 'Perfect score! You are well prepared.' : score >= 10 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
+      document.getElementById('quizScoreMsg').textContent = msg;
+      if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: 'CSM', quiz_score: score });
+    }
+  }</script>
 </body>
 </html>

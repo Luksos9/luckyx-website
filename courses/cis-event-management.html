@@ -342,6 +342,10 @@ a:hover { text-decoration: underline; }
 .quiz-opt.wrong .quiz-opt-letter { background: #d73a49; color: #fff; border-color: #d73a49; }
 .quiz-explain { display: none; margin-top: 12px; padding: 12px 16px; background: var(--bg-card); border-radius: 8px; font-size: 0.9rem; color: var(--text-dim); line-height: 1.6; border-left: 3px solid var(--orange); }
 .quiz-explain.show { display: block; }
+.quiz-choose { font-weight: 400; color: var(--orange); font-size: 0.85rem; margin-left: 4px; }
+.quiz-submit-btn { margin-top: 12px; padding: 10px 24px; background: var(--orange); color: #fff; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.15s, transform 0.1s; }
+.quiz-submit-btn:hover { background: #c75400; }
+.quiz-submit-btn:active { transform: scale(0.97); }
 .quiz-score { margin-top: 24px; padding: 20px; background: var(--bg-raised); border-radius: 12px; border: 1px solid var(--border); text-align: center; display: none; }
 .quiz-score.show { display: block; }
 .quiz-score-num { font-size: 2rem; font-weight: 800; color: var(--orange); }
@@ -465,60 +469,168 @@ a:hover { text-decoration: underline; }
   </div>
 
   <section class="quiz-section" id="free-quiz">
-    <h2>Try 5 Free EM Questions</h2>
-    <p class="quiz-intro">Test your knowledge before you buy. These sample questions are from our full 200-question practice test.</p>
-        <div class="quiz-card" id="qcard0">
-      <div class="quiz-q"><span class="quiz-q-num">1.</span>What is the primary purpose of Event Management in ServiceNow?</div>
+    <h2>Try 15 Free EM Questions</h2>
+    <p class="quiz-intro">Test your knowledge before you buy — including multiple-choice and multi-select, just like the real exam.</p>
+    <div class="quiz-card" id="qcard0">
+      <div class="quiz-q"><span class="quiz-q-num">1.</span>You have an event with a Source of &amp;#x27;Trap from Enterprise 111&amp;#x27; but the alert created for this event shows a Source of &amp;#x27;Oracle EM&amp;#x27;. If you want to change what this is set to where in the event rule would you do this?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>To manage calendar events</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>To process and correlate IT infrastructure events into actionable alerts</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>To schedule meetings</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>To track project milestones</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>Transform and Compose Alert Output tab</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>Event rule info tab</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>CI Binding tab</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>Event Filter tab</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp0">Event Management processes raw events from monitoring tools, correlates them, and creates actionable alerts that can trigger incident creation or notification workflows.</div>
+      <div class="quiz-explain" id="qexp0">0. Correct Answer: Transform and Compose Alert Output tab1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Event rule configurationSearch Tip: If the link fails, search Google for: ServiceNow Zurich Event Rule Transform and Compose Alert OutputOfficial Proof: &quot;Use the Transform and Compose Alert Output tab to map event fields to alert fields... You can manually set the Source field here.&quot;2. Detailed Expert ExplanationAn Event Rule has a specific flow.Event Filter: Determines if the rule runs.Transform and Compose Alert Output: This is the &quot;Workshop.&quot; Here, you take the raw event data and reshape it.</div>
     </div>
     <div class="quiz-card" id="qcard1">
-      <div class="quiz-q"><span class="quiz-q-num">2.</span>What is the difference between an Event and an Alert?</div>
+      <div class="quiz-q"><span class="quiz-q-num">2.</span>In default configuration using baseline connectors how often is event data collected from event sources?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>They are the same thing</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>Events are raw data; Alerts are processed, correlated, and actionable</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>Alerts come before Events</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>Events are for hardware; Alerts are for software</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>Once every minute</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>Every 2 minutes</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>Twice every minute</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>Every 5 minutes</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp1">Events are raw monitoring data received from external tools. Alerts are created after events are processed, deduplicated, and correlated into meaningful, actionable items.</div>
+      <div class="quiz-explain" id="qexp1">0. Correct Answer:Every 2 minutes1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Create a connector instanceSearch Tip: If the link fails, search Google for: ServiceNow Zurich connector instance polling intervalOfficial Proof: &quot;Scheduling: Enter the interval in seconds for the connector to poll the external event source. The default is 120 seconds.&quot;2. Detailed Expert ExplanationThis is a standard configuration setting for pull-based connectors (like SolarWinds, SCOM, or AWS CloudWatch). The ServiceNow MID Server initiates a connection to the external tool&#x27;s API to &quot;fetch&quot; new events.Default Interval: 120 seconds.Math: 120 seconds ÷ 60 = 2 minutes.</div>
     </div>
     <div class="quiz-card" id="qcard2">
-      <div class="quiz-q"><span class="quiz-q-num">3.</span>Which component receives events from external monitoring tools?</div>
+      <div class="quiz-q"><span class="quiz-q-num">3.</span>Entry Points: When using Service Mapping to build a &amp;quot;Mapped Application Service&amp;quot; what is the primary function of an Entry Point?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>The CMDB</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>The MID Server</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>The Service Catalog</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>The Knowledge Base</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>It defines the login credentials for the service.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>It defines the first tier of the application connection (e.g. a URL or IP/Port) to begin discovery.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>It defines the person responsible for the service.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>It defines the API endpoint for the Event Connector.</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp2">The MID Server receives events from external monitoring tools via connectors and forwards them to the ServiceNow instance for processing.</div>
+      <div class="quiz-explain" id="qexp2">0. Correct Answer:It defines the first tier of the application connection (e.g. a URL or IP/Port) to begin discovery.1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Entry points for service mappingSearch Tip: If the link fails, search Google for: ServiceNow Zurich Service Mapping entry point definitionOfficial Proof: &quot;An Entry Point is the starting point for Service Mapping to discover an application service. It typically consists of a URL, IP address, and port (e.g., https://myapp.acme.com:443) which the system probes to find the initial CI and then traverses dependencies.&quot;2.</div>
     </div>
     <div class="quiz-card" id="qcard3">
-      <div class="quiz-q"><span class="quiz-q-num">4.</span>What is Event Correlation in ServiceNow?</div>
+      <div class="quiz-q"><span class="quiz-q-num">4.</span>Event Class Variable When writing custom JavaScript in an Event Rule which internal variable allows access to the classification object of the event?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>Linking events to user profiles</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>Grouping related events together to reduce noise and identify root causes</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>Sorting events by date</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>Assigning events to support groups</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>current</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>event_class</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>evt</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>binding</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp3">Event Correlation groups related events together using correlation rules, reducing alert noise and helping identify the root cause of infrastructure issues.</div>
+      <div class="quiz-explain" id="qexp3">0. Correct Answer: event_class1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Event rule scriptsSearch Tip: If the link fails, search Google for: ServiceNow Zurich Event Rule script event_class variableOfficial Proof: &quot;In the script section... the event_class variable allows you to access or modify the message key and other classification attributes.&quot;2. Detailed Expert Explanation Sometimes the drag-and-drop UI isn&#x27;t enough, and you need to write a script (JavaScript) inside the Event Rule.</div>
     </div>
     <div class="quiz-card" id="qcard4">
-      <div class="quiz-q"><span class="quiz-q-num">5.</span>What is the function of an Alert Management Rule?</div>
+      <div class="quiz-q"><span class="quiz-q-num">5.</span>What is an alert called that moves from an open to a closed state multiple times within a designated time-frame?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>To delete old events</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>To define automated actions when alerts meet certain conditions</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>To create new monitoring tools</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>To manage user passwords</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>Fluctuating</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>Swinging</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>Flipping</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>Flapping</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp4">Alert Management Rules define automated actions (like creating incidents, sending notifications, or running workflows) that execute when alerts match specified conditions.</div>
+      <div class="quiz-explain" id="qexp4">0. Correct Answer: Flapping1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Configure alert flappingSearch Tip: If the link fails, search Google for: ServiceNow Zurich Configure alert flappingOfficial Proof: &quot;Flapping occurs when the event source continues to generate events even after its associated alert has been closed. Flapping causes the resource&#x27;s status to repeatedly fluctuate.&quot;2. Detailed Expert Explanation In IT Operations, a &quot;Flapping&quot; asset is one that is unstable—it goes Up/Down/Up/Down rapidly.</div>
+    </div>
+    <div class="quiz-card" id="qcard5">
+      <div class="quiz-q"><span class="quiz-q-num">6.</span>Alert Automation vs. Management Rules: What is one of the primary benefits of using Alert Automation in Service Operations Workspace compared to legacy Alert Management Rules?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="5"><span class="quiz-opt-letter">A</span><span>It uses back-end tables separate from those in event management rules</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="5"><span class="quiz-opt-letter">B</span><span>It offers a simplified experience for creating and managing event and alert-related rules</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="5"><span class="quiz-opt-letter">C</span><span>It enables centralized administration for all alert management</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="5"><span class="quiz-opt-letter">D</span><span>It allows for the use of JavaScript in all fields</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp5">0. Correct Answer:It offers a simplified experience for creating and managing event and alert-related rules1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Alert Automation builderSearch Tip: If the link fails, search Google for: ServiceNow Zurich Alert Automation vs Alert Management RulesOfficial Proof: &quot;Alert Automation provides a unified, low-code interface for creating logic that governs alert behavior, such as grouping, enriching, and responding, offering a simplified user experience compared to the classic list-based rule configuration.&quot;2.</div>
+    </div>
+    <div class="quiz-card" id="qcard6">
+      <div class="quiz-q"><span class="quiz-q-num">7.</span>Mandatory Connector Functions You are writing a custom JavaScript based Event Connector to pull events from a legacy mainframe via REST Which specific function must be defined in your script to allow the Test Connector button in the UI to validate credentials without actually pulling data</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="6"><span class="quiz-opt-letter">A</span><span>execute()</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="6"><span class="quiz-opt-letter">B</span><span>collect()</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="6"><span class="quiz-opt-letter">C</span><span>testConnection()</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="6"><span class="quiz-opt-letter">D</span><span>validateAuth()</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp6">0. Correct Answer: testConnection()1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Create a custom event connectorSearch Tip: If the link fails, search Google for: ServiceNow Zurich Javascript connector testConnection functionOfficial Proof: &quot;The connector script must include a testConnection() function. This function is called when the user clicks &#x27;Test Connector&#x27; to verify connectivity and credentials.&quot;2. Detailed Expert Explanation When you write a custom connector, you need two main gears:collect(): The heavy gear. It runs every 120 seconds, grabs data, and processes it.testConnection(): The lightweight gear.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard7">
+      <div class="quiz-q"><span class="quiz-q-num">8.</span>Synthetic Monitoring: Synthetic monitors in the ServiceNow Event Management context can be hosted from which of the following locations? (Choose three) <span class="quiz-choose">(choose 3)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="7"><span class="quiz-opt-letter">A</span><span>A MID Server</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="7"><span class="quiz-opt-letter">B</span><span>A cluster of Agent Client Collector (ACC) agents</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="7"><span class="quiz-opt-letter">C</span><span>A ServiceNow Glide instance (for public endpoints)</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="7"><span class="quiz-opt-letter">D</span><span>The end-user&#x27;s browser</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="7"><span class="quiz-opt-letter">E</span><span>A third-party cloud monitoring agent</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="7" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp7">0. Correct Answer:A MID Server A cluster of Agent Client Collector (ACC) agents A ServiceNow Glide instance (for public endpoints)1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Agent Client Collector for MonitoringSearch Tip: If the link fails, search Google for: ServiceNow Zurich Synthetic Monitoring locationsOfficial Proof: &quot;Synthetic checks can be executed from a MID Server (for internal checks), an Agent Client Collector (for endpoint perspective), or directly from the ServiceNow Instance (for public-facing URLs).&quot;2. Detailed Expert ExplanationSynthetic Monitoring (&quot;Robot Users&quot;) simulates user traffic to test uptime.MID Server: Traditional method.</div>
+    </div>
+    <div class="quiz-card" id="qcard8">
+      <div class="quiz-q"><span class="quiz-q-num">9.</span>The correct regex to capture the name of the server in &amp;quot;the server webserver3.domain.com is down&amp;quot; would be:</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="8"><span class="quiz-opt-letter">A</span><span>.*(\w+\.\w+\.\w+).*</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="8"><span class="quiz-opt-letter">B</span><span>The server (.*)\s.*</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="8"><span class="quiz-opt-letter">C</span><span>.*\s(\w+\.\w+\.\w+).*</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="8"><span class="quiz-opt-letter">D</span><span>the server (.*).*</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp8">0. Correct Answer:.\s(\w+.\w+.\w+).1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Regex in event rulesSearch Tip: If the link fails, search Google for: ServiceNow Zurich regex event rule capture groupOfficial Proof: &quot;You can use regular expressions (regex) to extract values from event fields... Use parentheses () to define the capture group that will be mapped to a variable.&quot;2. Detailed Expert ExplanationLet&#x27;s break down why this specific Regex works for the string &quot;the server webserver3.domain.com is down&quot;:.\s: This matches any character followed by a whitespace. In this sentence, it matches the r in &quot;server&quot; and the following space.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard9">
+      <div class="quiz-q"><span class="quiz-q-num">10.</span>You have a very large networking environment and have noticed that your event notifications are either not being triggered or are delayed. What are best options to try to resolve this issue? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="9"><span class="quiz-opt-letter">A</span><span>Ensure all Event Management - process events jobs are set to a Ready state</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="9"><span class="quiz-opt-letter">B</span><span>Verify that the Bucket field in the event table is set to zero (0)</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="9"><span class="quiz-opt-letter">C</span><span>Add additional event processor jobs</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="9"><span class="quiz-opt-letter">D</span><span>Ensure multi-node event processing is disabled</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="9" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp9">0. Correct Answer: Ensure all Event Management – process events jobs are set to a Ready state Add additional event processor jobsPrimary Source (Zurich Release)Direct Documentation Link: Official Doc: Performance troubleshootingSearch Tip: If the link fails, search Google for: ServiceNow Zurich event processing lag bucketOfficial Proof: &quot;To increase event processing throughput, you can increase the number of scheduled jobs... Ensure that existing jobs are not stuck in an Error or Running state for too long.&quot;Detailed Expert Explanation Event processing in ServiceNow is handled by Scheduled Jobs that read from the em_event table.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard10">
+      <div class="quiz-q"><span class="quiz-q-num">11.</span>Which two methods can be used to improve the processing of events in large network environments? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="10"><span class="quiz-opt-letter">A</span><span>Enable multi-node processing</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="10"><span class="quiz-opt-letter">B</span><span>Increase the source polling interval</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="10"><span class="quiz-opt-letter">C</span><span>Ensure the bucket value in the event table is greater than 0</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="10"><span class="quiz-opt-letter">D</span><span>Increase the number of scheduled jobs processing events</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="10" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp10">0. Correct Answer: Enable multi-node processing Increase the number of scheduled jobs processing events1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Event Management performanceSearch Tip: If the link fails, search Google for: ServiceNow Zurich Event Management performance tuningOfficial Proof: &quot;To handle high event volume... you can enable multi-node processing... and increase the number of scheduled jobs (bucket processors) to run in parallel.&quot;2. Detailed Expert Explanation This question is the strategic companion to Question 89.</div>
+    </div>
+    <div class="quiz-card" id="qcard11">
+      <div class="quiz-q"><span class="quiz-q-num">12.</span>In Service Operations Workspace what tool shows relationships between configuration items and alerts with real time updates and detailed impact paths?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="11"><span class="quiz-opt-letter">A</span><span>CMDB identification and reconciliation engine IRE</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="11"><span class="quiz-opt-letter">B</span><span>Unified service map</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="11"><span class="quiz-opt-letter">C</span><span>Dependency view map</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="11"><span class="quiz-opt-letter">D</span><span>CMDB class manager</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp11">0. Correct Answer:Unified service map1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Service Operations Workspace Unified MapSearch Tip: If the link fails, search Google for: ServiceNow Zurich Service Operations Workspace Unified MapOfficial Proof: &quot;The Unified Map in Service Operations Workspace visualizes the relationships between CIs, Services, and Alerts in a single, interactive view with real-time state updates.&quot;2.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard12">
+      <div class="quiz-q"><span class="quiz-q-num">13.</span>MID less ACC Deployment You are deploying Agent Client Collector in a MID less configuration for a fleet of roaming laptops Workstation Discovery that are rarely on the corporate VPN Which two specific parameters are required during installation to register these agents directly Choose two <span class="quiz-choose">(choose 2)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="12"><span class="quiz-opt-letter">A</span><span>A valid MID Server User credential</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="12"><span class="quiz-opt-letter">B</span><span>The Agent Registration Key generated on the instance</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="12"><span class="quiz-opt-letter">C</span><span>The public DNS name of the Cloud Services Endpoint</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="12"><span class="quiz-opt-letter">D</span><span>The internal IP of the primary MID Server</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="12" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp12">0. Correct Answer: The Agent Registration Key generated on the instance The public DNS name of the Cloud Services Endpoint (or MID Gateway) (Note: Standard answers for MID-less/Direct connect often involve the &quot;Registration Key&quot; and the &quot;Instance/Gateway URL&quot;.)1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: ACC direct connectionSearch Tip: If the link fails, search Google for: ServiceNow Zurich ACC MID-less installation parametersOfficial Proof: &quot;For direct connection... provide the Instance URL (or Gateway) and the Agent Registration Key... This key authenticates the agent without requiring a MID Server user.&quot;2.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard13">
+      <div class="quiz-q"><span class="quiz-q-num">14.</span>Which customer challenges questions does Event Management help resolve? choose three <span class="quiz-choose">(choose 3)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="13"><span class="quiz-opt-letter">A</span><span>What devices are we using?</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="13"><span class="quiz-opt-letter">B</span><span>Did we deprecate assets we do not own?</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="13"><span class="quiz-opt-letter">C</span><span>What is the current state of our IT infrastructure?</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="13"><span class="quiz-opt-letter">D</span><span>How do we know what servers and applications provide services?</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="13"><span class="quiz-opt-letter">E</span><span>How can I automate and prioritize remediation tasks and notifications?</span></li>
+      <li class="quiz-opt" data-idx="5" data-q="13"><span class="quiz-opt-letter">F</span><span>How can we consolidate our monitoring tools into a single management system</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="13" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp13">0. Correct Answer:What is the current state of our IT infrastructure? How can I automate and prioritize remediation tasks and notifications? How can we consolidate our monitoring tools into a single management system?1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Event Management value propositionSearch Tip: If the link fails, search Google for: ServiceNow Zurich Event Management benefitsOfficial Proof: &quot;Event Management provides a single pane of glass for monitoring (Consolidation), visualizes real-time health (Current State), and enables automated response to alerts (Remediation).&quot;2.</div>
+    </div>
+    <div class="quiz-card" id="qcard14">
+      <div class="quiz-q"><span class="quiz-q-num">15.</span>Log Source Mapping In Health Log Analytics HLA raw log data must be mapped to a specific structure to extract meaningful fields like timestamp host and severity Which component is responsible for defining the Grok patterns or regular expressions used to parse this incoming text</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="14"><span class="quiz-opt-letter">A</span><span>Log Listener</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="14"><span class="quiz-opt-letter">B</span><span>Source Type Structure</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="14"><span class="quiz-opt-letter">C</span><span>Metric Intelligence Policy</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="14"><span class="quiz-opt-letter">D</span><span>Event Rule Transform</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp14">0. Correct Answer: Source Type Structure1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: HLA source type structureSearch Tip: If the link fails, search Google for: ServiceNow Zurich HLA Source Type Structure GrokOfficial Proof: &quot;A Source Type Structure defines how to parse log data... using Grok patterns or regex to map raw text to fields like timestamp, severity, and host.&quot;2. Detailed Expert Explanation Logs are messy text (Oct 10 10:00:00 Error HostA).</div>
     </div>
     <div class="quiz-score" id="quizScore">
-      <div class="quiz-score-num" id="quizScoreNum">0/5</div>
+      <div class="quiz-score-num" id="quizScoreNum">0/15</div>
       <div class="quiz-score-label">Sample Quiz Score</div>
       <div class="quiz-score-msg" id="quizScoreMsg"></div>
       <a href="https://www.udemy.com/course/pass-servicenow-cis-event-management-cis-em/?referralCode=CA03695C46AF6880DDE1" target="_blank" rel="noopener" class="cp-cta">
@@ -549,33 +661,83 @@ a:hover { text-decoration: underline; }
   });
 
   // Quiz logic
-  const answers = [1,1,1,1,1];
+  const answers = [0, 1, 1, 1, 3, 1, 2, [0, 1, 2], 2, [0, 2], [0, 3], 1, [1, 2], [2, 4, 5], 1];
   let answered = 0, score = 0;
+  const multiSelections = {};
+
   document.querySelectorAll('.quiz-opt').forEach(function(opt) {
     opt.addEventListener('click', function() {
       var qi = parseInt(this.dataset.q);
-      var idx = parseInt(this.dataset.idx);
       var card = document.getElementById('qcard' + qi);
       if (card.dataset.state) return;
-      var isCorrect = idx === answers[qi];
-      if (isCorrect) { score++; this.classList.add('correct'); card.dataset.state = 'correct'; }
-      else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
-      this.classList.add('selected');
-      card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
-      document.getElementById('qexp' + qi).classList.add('show');
-      answered++;
-      if (answered === answers.length) {
-        var el = document.getElementById('quizScore');
-        el.classList.add('show');
-        document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
-        var msg = score === 5 ? 'Perfect score! You are well prepared.' : score >= 3 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
-        document.getElementById('quizScoreMsg').textContent = msg;
-        if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: 'EM', quiz_score: score });
+      var idx = parseInt(this.dataset.idx);
+      var isMulti = Array.isArray(answers[qi]);
+
+      if (isMulti) {
+        // Multi-select: toggle selection
+        if (!multiSelections[qi]) multiSelections[qi] = new Set();
+        if (multiSelections[qi].has(idx)) {
+          multiSelections[qi].delete(idx);
+          this.classList.remove('selected');
+        } else {
+          multiSelections[qi].add(idx);
+          this.classList.add('selected');
+        }
+        // Show/hide submit button
+        var btn = card.querySelector('.quiz-submit-btn');
+        btn.style.display = multiSelections[qi].size > 0 ? 'block' : 'none';
+      } else {
+        // Single answer: immediate check
+        var isCorrect = idx === answers[qi];
+        if (isCorrect) { score++; this.classList.add('correct'); card.dataset.state = 'correct'; }
+        else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
+        this.classList.add('selected');
+        card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
+        document.getElementById('qexp' + qi).classList.add('show');
+        answered++;
+        checkDone();
       }
     });
   });
 
-  
-</script>
+  document.querySelectorAll('.quiz-submit-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var qi = parseInt(this.dataset.q);
+      var card = document.getElementById('qcard' + qi);
+      if (card.dataset.state) return;
+      var selected = Array.from(multiSelections[qi] || []).sort();
+      var correct = answers[qi].slice().sort();
+      var isCorrect = selected.length === correct.length && selected.every(function(v, i) { return v === correct[i]; });
+      var opts = card.querySelectorAll('.quiz-opt');
+      if (isCorrect) {
+        score++;
+        card.dataset.state = 'correct';
+        selected.forEach(function(i) { opts[i].classList.add('correct'); });
+      } else {
+        card.dataset.state = 'wrong';
+        selected.forEach(function(i) {
+          if (correct.indexOf(i) === -1) opts[i].classList.add('wrong');
+          else opts[i].classList.add('correct');
+        });
+        correct.forEach(function(i) { opts[i].classList.add('correct'); });
+      }
+      opts.forEach(function(o) { o.setAttribute('disabled',''); });
+      this.style.display = 'none';
+      document.getElementById('qexp' + qi).classList.add('show');
+      answered++;
+      checkDone();
+    });
+  });
+
+  function checkDone() {
+    if (answered === answers.length) {
+      var el = document.getElementById('quizScore');
+      el.classList.add('show');
+      document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
+      var msg = score === answers.length ? 'Perfect score! You are well prepared.' : score >= 10 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
+      document.getElementById('quizScoreMsg').textContent = msg;
+      if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: 'EM', quiz_score: score });
+    }
+  }</script>
 </body>
 </html>

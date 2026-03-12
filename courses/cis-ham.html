@@ -342,6 +342,10 @@ a:hover { text-decoration: underline; }
 .quiz-opt.wrong .quiz-opt-letter { background: #d73a49; color: #fff; border-color: #d73a49; }
 .quiz-explain { display: none; margin-top: 12px; padding: 12px 16px; background: var(--bg-card); border-radius: 8px; font-size: 0.9rem; color: var(--text-dim); line-height: 1.6; border-left: 3px solid var(--orange); }
 .quiz-explain.show { display: block; }
+.quiz-choose { font-weight: 400; color: var(--orange); font-size: 0.85rem; margin-left: 4px; }
+.quiz-submit-btn { margin-top: 12px; padding: 10px 24px; background: var(--orange); color: #fff; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.15s, transform 0.1s; }
+.quiz-submit-btn:hover { background: #c75400; }
+.quiz-submit-btn:active { transform: scale(0.97); }
 .quiz-score { margin-top: 24px; padding: 20px; background: var(--bg-raised); border-radius: 12px; border: 1px solid var(--border); text-align: center; display: none; }
 .quiz-score.show { display: block; }
 .quiz-score-num { font-size: 2rem; font-weight: 800; color: var(--orange); }
@@ -465,60 +469,171 @@ a:hover { text-decoration: underline; }
   </div>
 
   <section class="quiz-section" id="free-quiz">
-    <h2>Try 5 Free HAM Questions</h2>
-    <p class="quiz-intro">Test your knowledge before you buy. These sample questions are from our full 249-question practice test.</p>
-        <div class="quiz-card" id="qcard0">
-      <div class="quiz-q"><span class="quiz-q-num">1.</span>What is the primary purpose of the Hardware Asset Management (HAM) application?</div>
+    <h2>Try 15 Free HAM Questions</h2>
+    <p class="quiz-intro">Test your knowledge before you buy — including multiple-choice and multi-select, just like the real exam.</p>
+    <div class="quiz-card" id="qcard0">
+      <div class="quiz-q"><span class="quiz-q-num">1.</span>You are defining a new Hardware Model in ServiceNow. You want to ensure that every time an asset of this model is created it automatically generates a corresponding Configuration Item (CI) in the CMDB. Where is this behavior controlled?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>To manage software licenses</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>To track the lifecycle of physical hardware assets</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>To configure network devices</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>To manage employee onboarding</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>On the Hardware Model record itself</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>On the Model Category record associated with the model</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>On the Business Rule &quot;Create CI on Insert&quot;</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>On the Asset Class record</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp0">HAM tracks hardware assets through their complete lifecycle — from procurement through deployment, maintenance, and retirement/disposal.</div>
+      <div class="quiz-explain" id="qexp0">0. Correct Answer:On the Model Category record associated with the model1. Primary Source (Zurich Release)• Direct Documentation Link: Official Doc: Model Categories• Search Tip: If the link fails, search Google for: ServiceNow Zurich Model Category asset CI creation• Official Proof: &quot;Model categories provide the link between configuration management and asset management... [and] determine when to create assets from configuration items (CIs).&quot;2.</div>
     </div>
     <div class="quiz-card" id="qcard1">
-      <div class="quiz-q"><span class="quiz-q-num">2.</span>Which table stores hardware asset records in ServiceNow?</div>
+      <div class="quiz-q"><span class="quiz-q-num">2.</span>What are the three key technical steps for importing asset data into ServiceNow using Import Sets?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>cmdb_ci_hardware</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>alm_hardware</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>ast_hardware</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>cmdb_hardware</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>Load data, Consolidate data, Run transform map</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>Load data, Create transform map, Run transform map</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>Load data, Create transform map, Merge transform maps</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>Load data, Update transform map, Run transform map</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp1">The alm_hardware table is the primary table that stores hardware asset records in the ServiceNow Asset Management application.</div>
+      <div class="quiz-explain" id="qexp1">0. Correct Answer:Load data Create transform map Run transform map1. Primary Source (Zurich Release)• Direct Documentation Link: Official Doc: Import Sets• Search Tip: If the link fails, search Google for: ServiceNow Zurich import sets key steps• Official Proof: &quot;The core workflow phases for importing data via System Import Sets are Loading data (into a staging table), Creating a transform map (to map fields), and Running the transform (to insert the data into the target table).&quot;2. Detailed Expert Explanation The ServiceNow Import Set architecture is a standard, robust three-step pipeline used heavily during HAM implementations to onboard legacy data:1.</div>
     </div>
     <div class="quiz-card" id="qcard2">
-      <div class="quiz-q"><span class="quiz-q-num">3.</span>What is a Stockroom in HAM?</div>
+      <div class="quiz-q"><span class="quiz-q-num">3.</span>In the &amp;quot;Hardware Asset Workspace&amp;quot; which view provides a consolidated look at &amp;quot;Actionable&amp;quot; items such as open reclamation requests missing assets and normalization errors?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>A virtual container for software licenses</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>A physical or logical location where assets are stored</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>A type of asset report</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>A configuration item class</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>The Inventory View</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>The Asset Estate View</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>The Important Actions View</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>The Model Management View</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp2">A Stockroom represents a physical or logical location where hardware assets are stored, such as a warehouse, IT closet, or shipping dock.</div>
+      <div class="quiz-explain" id="qexp2">0. Correct Answer:The Important Actions View1. Primary Source (Zurich Release)• Direct Documentation Link: Official Doc: Hardware Asset Workspace• Search Tip: If the link fails, search Google for: ServiceNow Zurich Hardware Asset Workspace Important Actions• Official Proof: &quot;The Important Actions section highlights critical tasks such as missing assets, reclamation requests, and normalization errors that require immediate attention.&quot;2.</div>
     </div>
     <div class="quiz-card" id="qcard3">
-      <div class="quiz-q"><span class="quiz-q-num">4.</span>What is the purpose of Model Categories in HAM?</div>
+      <div class="quiz-q"><span class="quiz-q-num">4.</span>Your instance has a parent stockroom configured with several child stockrooms. When a hardware request is triggered how does the sourcing logic determine availability before creating a purchase order?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>To classify assets by manufacturer</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>To group models into categories for lifecycle management and reporting</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>To define warranty terms</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>To set depreciation rates</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>It checks the child stockrooms first then the parent stockroom</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>It checks only the local stockroom assigned to the users location</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>It checks the parent stockroom first then sequentially checks the child stockrooms</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>It skips stockroom checks and immediately creates a transfer order from the vendor</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp3">Model Categories group product models into logical categories (e.g., Computer, Printer, Server) to standardize lifecycle processes and enable category-specific reporting.</div>
+      <div class="quiz-explain" id="qexp3">Correct Answer: It checks the parent stockroom first then sequentially checks the child stockroomsPrimary Source (Zurich Release)Direct Documentation Link: Official Doc: Stockroom HierarchySearch Tip: If the link fails, search Google for: ServiceNow Zurich Stockroom sourcing logic parent childOfficial Proof: &quot;Sourcing logic evaluates the hierarchy top-down. It checks the primary (parent) stockroom for available stock first.</div>
     </div>
     <div class="quiz-card" id="qcard4">
-      <div class="quiz-q"><span class="quiz-q-num">5.</span>Which lifecycle stage indicates an asset is actively being used?</div>
+      <div class="quiz-q"><span class="quiz-q-num">5.</span>You are performing a Blind Audit using the ServiceNow Agent mobile app. What is the defining characteristic of a Blind Audit?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>On Order</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>In Stock</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>In Use</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>Retired</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>The user scans assets without knowing which assets are expected in that location</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>The user scans assets but the system does not show the &quot;Expected Assets&quot; list until the audit is submitted</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>The user manually enters serial numbers instead of scanning barcodes</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>The audit is performed by a third-party vendor</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp4">The 'In Use' lifecycle stage indicates that a hardware asset has been deployed and is actively being used by an end user or for a business function.</div>
+      <div class="quiz-explain" id="qexp4">Correct Answer: The user scans assets without knowing which assets are expected in that locationPrimary Source (Zurich Release)Direct Documentation Link: Official Doc: Audit InventorySearch Tip: If the link fails, search Google for: ServiceNow Zurich Blind Audit mobileOfficial Proof: &quot;In a blind audit, the auditor scans all assets in a location without a pre-populated list of expected assets.</div>
+    </div>
+    <div class="quiz-card" id="qcard5">
+      <div class="quiz-q"><span class="quiz-q-num">6.</span>What is the second tier of the capability blueprint?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="5"><span class="quiz-opt-letter">A</span><span>Practical management</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="5"><span class="quiz-opt-letter">B</span><span>Strategic conformance</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="5"><span class="quiz-opt-letter">C</span><span>Trustworthy data</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="5"><span class="quiz-opt-letter">D</span><span>Operational integration</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="5"><span class="quiz-opt-letter">E</span><span>Financial management</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp5">0. Correct Answer:Practical management1. Primary Source (Zurich Release)• Direct Documentation Link: Official Doc: Capability Blueprint• Search Tip: If the link fails, search Google for: ServiceNow Zurich HAM Capability Blueprint tiers• Official Proof: &quot;The tiers of the Capability Blueprint are 1. Trustworthy Data, 2. Practical Management, 3. Operational Integration, 4. Strategic Conformance.&quot;2. Detailed Expert Explanation The Capability Blueprint guides maturity:1. Trustworthy Data: Get the data right.2. Practical Management: Get the processes right (Tier 2). This focuses on controlling the influx and outflow of assets—improving management controls, stockrooms, and standardizing requests.3.</div>
+    </div>
+    <div class="quiz-card" id="qcard6">
+      <div class="quiz-q"><span class="quiz-q-num">7.</span>Populating CMDB tables using import sets can inadvertently result in duplicate configuration items (CIs). To minimize this duplication you can apply what process to the import sets?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="6"><span class="quiz-opt-letter">A</span><span>Import set prioritization</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="6"><span class="quiz-opt-letter">B</span><span>Manual reconciliation</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="6"><span class="quiz-opt-letter">C</span><span>Identification and reconciliation</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="6"><span class="quiz-opt-letter">D</span><span>Transform map consolidation</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp6">0. Correct Answer:Identification and reconciliation (often referred to as IRE)1. Primary Source (Zurich Release)• Direct Documentation Link: Official Doc: Identification and Reconciliation• Search Tip: If the link fails, search Google for: ServiceNow Zurich IRE import sets duplicates• Official Proof: &quot;Configure Identification and Reconciliation Engine (IRE) to prevent duplicates and maintain consistency in the CMDB... Use IRE instead of direct insert.&quot;,,2.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard7">
+      <div class="quiz-q"><span class="quiz-q-num">8.</span>When adding assets to a Disposal Order you notice some assets are not appearing in the selection list. Which conditions must typically be met for an asset to be eligible? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="7"><span class="quiz-opt-letter">A</span><span>Substate must be &quot;Pending Disposal&quot;</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="7"><span class="quiz-opt-letter">B</span><span>State must be &quot;Retired&quot;</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="7"><span class="quiz-opt-letter">C</span><span>Residual Value must be greater than $0</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="7"><span class="quiz-opt-letter">D</span><span>Asset must be assigned to a user</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="7" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp7">Correct Answer: Substate must be &quot;Pending Disposal&quot;State must be &quot;Retired&quot; Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Create Disposal OrderSearch Tip: If the link fails, search Google for: ServiceNow Zurich Disposal Order asset eligibilityOfficial Proof: &quot;Assets eligible for disposal must be in a state of &#x27;In Stock&#x27; or &#x27;Retired&#x27; with a substate of &#x27;Pending Disposal&#x27;.</div>
+    </div>
+    <div class="quiz-card" id="qcard8">
+      <div class="quiz-q"><span class="quiz-q-num">9.</span>Your organization has a Lease contract for 100 laptops expiring in 30 days. Which ServiceNow notification logic is critical to prevent unintentional auto-renewal?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="8"><span class="quiz-opt-letter">A</span><span>Contract Expiration Notification</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="8"><span class="quiz-opt-letter">B</span><span>Asset Retirement Workflow</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="8"><span class="quiz-opt-letter">C</span><span>Vendor Assessment Notification</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="8"><span class="quiz-opt-letter">D</span><span>True-Up Calculation</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp8">0. Correct Answer:Contract Expiration Notification1. Primary Source (Zurich Release)• Direct Documentation Link: Official Doc: Contract Notifications• Search Tip: If the link fails, search Google for: ServiceNow Zurich contract expiration notification• Official Proof: &quot;Notifications are sent to the contract administrator when a contract is approaching its expiration date... allowing time to cancel or renew before automatic terms apply.&quot;2. Detailed Expert Explanation The logic that saves money is the Expiration Notification.• The Risk: Many leases have &quot;Evergreen&quot; clauses where they auto-renew for another year if you don&#x27;t cancel 30 days prior.• The Logic: ServiceNow checks the ends date nightly.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard9">
+      <div class="quiz-q"><span class="quiz-q-num">10.</span>Which two automatic restocking actions are available in the baseline ServiceNow Stock Rules? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="9"><span class="quiz-opt-letter">A</span><span>Create a transfer order to restock from another stockroom</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="9"><span class="quiz-opt-letter">B</span><span>Create a task assigned to the stock room manage to create a purchase order</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="9"><span class="quiz-opt-letter">C</span><span>Create a transfer order to restock from a vendor</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="9"><span class="quiz-opt-letter">D</span><span>Create a task assigned to the stock room manager to contact the procurement manager</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="9" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp9">0. Correct Answer:Create a transfer order to restock from another stockroom Create a task assigned to the stock room manage to create a purchase order1. Primary Source (Zurich Release)• Direct Documentation Link: Official Doc: Stock Rules• Search Tip: If the link fails, search Google for: ServiceNow Zurich stock rules restocking actions• Official Proof: &quot;When a stock rule&#x27;s condition is met, the system can automatically create a transfer order to restock from a parent stockroom, or create a task assigned to the stockroom manager to create a purchase order from a vendor.&quot;2. Detailed Expert Explanation Stock Rules govern automated inventory replenishment.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard10">
+      <div class="quiz-q"><span class="quiz-q-num">11.</span>An event runs each night to send reminders to contract administrators about upcoming contract expiration dates. By default at what intervals does the contract administrator receive these notifications? (Choose four.) <span class="quiz-choose">(choose 4)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="10"><span class="quiz-opt-letter">A</span><span>90 days before</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="10"><span class="quiz-opt-letter">B</span><span>60 days before</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="10"><span class="quiz-opt-letter">C</span><span>45 days before</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="10"><span class="quiz-opt-letter">D</span><span>30 days before</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="10"><span class="quiz-opt-letter">E</span><span>7 days before</span></li>
+      <li class="quiz-opt" data-idx="5" data-q="10"><span class="quiz-opt-letter">F</span><span>Day of expiration</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="10" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp10">0. Correct Answer:90 days before 60 days before 30 days before Day of expiration1. Primary Source (Zurich Release)• Direct Documentation Link: Official Doc: Contract Condition Checks• Search Tip: If the link fails, search Google for: ServiceNow Zurich contract notification intervals• Official Proof: &quot;Default condition checks for contract expiration are configured for 90 days, 60 days, 30 days, and 0 days (expiration date).&quot;2. Detailed Expert Explanation ServiceNow uses Condition Checks to drive notifications. The out-of-the-box (OOTB) configuration provides a countdown cadence:1. 90 Days: Strategic Warning (Start planning).2. 60 Days: Tactical Warning (Get quotes).3. 30 Days: Urgent Warning (Sign now).4.</div>
+    </div>
+    <div class="quiz-card" id="qcard11">
+      <div class="quiz-q"><span class="quiz-q-num">12.</span>You have opted into the ServiceNow Hardware Asset Management Content Service. How frequently does your instance receive updates new models lifecycle data etc from the central ServiceNow library?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="11"><span class="quiz-opt-letter">A</span><span>Daily</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="11"><span class="quiz-opt-letter">B</span><span>Weekly</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="11"><span class="quiz-opt-letter">C</span><span>Monthly</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="11"><span class="quiz-opt-letter">D</span><span>Quarterly</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp11">Correct Answer: WeeklyPrimary Source (Zurich Release)Direct Documentation Link: Official Doc: Hardware Asset Management Content ServiceSearch Tip: If the link fails, search Google for: ServiceNow Zurich HAM Content Service frequencyOfficial Proof: &quot;The Hardware Asset Management Content Service provides weekly updates to the hardware model library, including lifecycle data and normalization rules.&quot;Detailed Expert Explanation The Content Service is a cloud-based library curated by ServiceNow. Your instance enables a scheduled job (typically named HAM - Content Download or similar) that checks for delta updates. These updates are pushed weekly.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard12">
+      <div class="quiz-q"><span class="quiz-q-num">13.</span>In addition to hardware which are types of assets? (Choose three.) <span class="quiz-choose">(choose 3)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="12"><span class="quiz-opt-letter">A</span><span>Stockroom</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="12"><span class="quiz-opt-letter">B</span><span>Facility</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="12"><span class="quiz-opt-letter">C</span><span>Configuration item</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="12"><span class="quiz-opt-letter">D</span><span>Consumable</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="12"><span class="quiz-opt-letter">E</span><span>Model</span></li>
+      <li class="quiz-opt" data-idx="5" data-q="12"><span class="quiz-opt-letter">F</span><span>Software entitlement</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="12" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp12">0. Correct Answer:Consumable Facility Software entitlement1. Primary Source (Zurich Release)• Direct Documentation Link: Official Doc: Asset Classes• Search Tip: If the link fails, search Google for: ServiceNow Zurich Asset classes list• Official Proof: &quot;The default asset classes in ServiceNow are Hardware, Software License (Entitlement), Consumable, Bundle, and Facility.&quot;2. Detailed Expert Explanation ServiceNow&#x27;s data model (alm_asset) extends to specific tables for different types of property:1. Consumables (alm_consumable): Bulk items tracked by quantity (mice, cables).2. Facilities (alm_facility): Non-IT assets like furniture, HVAC units, or badging systems.,3.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard13">
+      <div class="quiz-q"><span class="quiz-q-num">14.</span>Several hardware models in your dashboard show a normalization status of &amp;quot;Match Not Found.&amp;quot; What are the most likely causes for this status? (Choose three.) <span class="quiz-choose">(choose 3)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="13"><span class="quiz-opt-letter">A</span><span>The model name contains special characters or bad formatting that prevents matching</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="13"><span class="quiz-opt-letter">B</span><span>The Hardware Asset Management plugin is not active</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="13"><span class="quiz-opt-letter">C</span><span>The content library has not been downloaded or updated recently</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="13"><span class="quiz-opt-letter">D</span><span>The model is a new release and does not yet exist in the ServiceNow Content Service</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="13"><span class="quiz-opt-letter">E</span><span>The asset record is missing the &quot;Assigned to&quot; field</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="13" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp13">Correct Answer: The model name contains special characters or bad formatting that prevents matching The content library has not been downloaded or updated recently The model is a new release and does not yet exist in the ServiceNow Content ServicePrimary Source (Zurich Release)Direct Documentation Link: Official Doc: Hardware Model Normalization StatusesSearch Tip: If the link fails, search Google for: ServiceNow Zurich Hardware Model Normalization Match Not FoundOfficial Proof: &quot;Match Not Found: The normalization engine could not find a matching record in the Content Service.</div>
+    </div>
+    <div class="quiz-card" id="qcard14">
+      <div class="quiz-q"><span class="quiz-q-num">15.</span>What is an attribute that will remain unchanged throughout the life of the asset?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="14"><span class="quiz-opt-letter">A</span><span>Memory</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="14"><span class="quiz-opt-letter">B</span><span>Operating system</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="14"><span class="quiz-opt-letter">C</span><span>CPU type</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="14"><span class="quiz-opt-letter">D</span><span>Serial number</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp14">0. Correct Answer:Serial number1. Primary Source (Zurich Release)• Direct Documentation Link: Official Doc: Asset Attributes• Search Tip: If the link fails, search Google for: ServiceNow Zurich hardware asset serial number static• Official Proof: &quot;Attributes such as Serial Number, Cost, and Asset Tag are typically static data points tracked on the asset record.&quot;,2. Detailed Expert Explanation In the Asset Lifecycle, most fields are dynamic:• State/Substate: Changes from On Order -&gt; In Stock -&gt; In Use -&gt; Retired.• Assigned to: Changes as employees leave or swap devices.• Location: Changes as devices move. The Serial Number is a hard-coded manufacturer identifier burned into the device firmware.</div>
     </div>
     <div class="quiz-score" id="quizScore">
-      <div class="quiz-score-num" id="quizScoreNum">0/5</div>
+      <div class="quiz-score-num" id="quizScoreNum">0/15</div>
       <div class="quiz-score-label">Sample Quiz Score</div>
       <div class="quiz-score-msg" id="quizScoreMsg"></div>
       <a href="https://www.udemy.com/course/pass-servicenow-cis-hardware-asset-management-ham/?referralCode=58ECB1F51A94EC5A7F09" target="_blank" rel="noopener" class="cp-cta">
@@ -549,33 +664,83 @@ a:hover { text-decoration: underline; }
   });
 
   // Quiz logic
-  const answers = [1,1,1,1,2];
+  const answers = [1, 1, 2, 2, 0, 0, 2, [0, 1], 0, [0, 1], [0, 1, 3, 5], 1, [1, 3, 5], [0, 2, 3], 3];
   let answered = 0, score = 0;
+  const multiSelections = {};
+
   document.querySelectorAll('.quiz-opt').forEach(function(opt) {
     opt.addEventListener('click', function() {
       var qi = parseInt(this.dataset.q);
-      var idx = parseInt(this.dataset.idx);
       var card = document.getElementById('qcard' + qi);
       if (card.dataset.state) return;
-      var isCorrect = idx === answers[qi];
-      if (isCorrect) { score++; this.classList.add('correct'); card.dataset.state = 'correct'; }
-      else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
-      this.classList.add('selected');
-      card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
-      document.getElementById('qexp' + qi).classList.add('show');
-      answered++;
-      if (answered === answers.length) {
-        var el = document.getElementById('quizScore');
-        el.classList.add('show');
-        document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
-        var msg = score === 5 ? 'Perfect score! You are well prepared.' : score >= 3 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
-        document.getElementById('quizScoreMsg').textContent = msg;
-        if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: 'HAM', quiz_score: score });
+      var idx = parseInt(this.dataset.idx);
+      var isMulti = Array.isArray(answers[qi]);
+
+      if (isMulti) {
+        // Multi-select: toggle selection
+        if (!multiSelections[qi]) multiSelections[qi] = new Set();
+        if (multiSelections[qi].has(idx)) {
+          multiSelections[qi].delete(idx);
+          this.classList.remove('selected');
+        } else {
+          multiSelections[qi].add(idx);
+          this.classList.add('selected');
+        }
+        // Show/hide submit button
+        var btn = card.querySelector('.quiz-submit-btn');
+        btn.style.display = multiSelections[qi].size > 0 ? 'block' : 'none';
+      } else {
+        // Single answer: immediate check
+        var isCorrect = idx === answers[qi];
+        if (isCorrect) { score++; this.classList.add('correct'); card.dataset.state = 'correct'; }
+        else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
+        this.classList.add('selected');
+        card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
+        document.getElementById('qexp' + qi).classList.add('show');
+        answered++;
+        checkDone();
       }
     });
   });
 
-  
-</script>
+  document.querySelectorAll('.quiz-submit-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var qi = parseInt(this.dataset.q);
+      var card = document.getElementById('qcard' + qi);
+      if (card.dataset.state) return;
+      var selected = Array.from(multiSelections[qi] || []).sort();
+      var correct = answers[qi].slice().sort();
+      var isCorrect = selected.length === correct.length && selected.every(function(v, i) { return v === correct[i]; });
+      var opts = card.querySelectorAll('.quiz-opt');
+      if (isCorrect) {
+        score++;
+        card.dataset.state = 'correct';
+        selected.forEach(function(i) { opts[i].classList.add('correct'); });
+      } else {
+        card.dataset.state = 'wrong';
+        selected.forEach(function(i) {
+          if (correct.indexOf(i) === -1) opts[i].classList.add('wrong');
+          else opts[i].classList.add('correct');
+        });
+        correct.forEach(function(i) { opts[i].classList.add('correct'); });
+      }
+      opts.forEach(function(o) { o.setAttribute('disabled',''); });
+      this.style.display = 'none';
+      document.getElementById('qexp' + qi).classList.add('show');
+      answered++;
+      checkDone();
+    });
+  });
+
+  function checkDone() {
+    if (answered === answers.length) {
+      var el = document.getElementById('quizScore');
+      el.classList.add('show');
+      document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
+      var msg = score === answers.length ? 'Perfect score! You are well prepared.' : score >= 10 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
+      document.getElementById('quizScoreMsg').textContent = msg;
+      if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: 'HAM', quiz_score: score });
+    }
+  }</script>
 </body>
 </html>

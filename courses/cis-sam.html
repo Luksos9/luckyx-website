@@ -342,6 +342,10 @@ a:hover { text-decoration: underline; }
 .quiz-opt.wrong .quiz-opt-letter { background: #d73a49; color: #fff; border-color: #d73a49; }
 .quiz-explain { display: none; margin-top: 12px; padding: 12px 16px; background: var(--bg-card); border-radius: 8px; font-size: 0.9rem; color: var(--text-dim); line-height: 1.6; border-left: 3px solid var(--orange); }
 .quiz-explain.show { display: block; }
+.quiz-choose { font-weight: 400; color: var(--orange); font-size: 0.85rem; margin-left: 4px; }
+.quiz-submit-btn { margin-top: 12px; padding: 10px 24px; background: var(--orange); color: #fff; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.15s, transform 0.1s; }
+.quiz-submit-btn:hover { background: #c75400; }
+.quiz-submit-btn:active { transform: scale(0.97); }
 .quiz-score { margin-top: 24px; padding: 20px; background: var(--bg-raised); border-radius: 12px; border: 1px solid var(--border); text-align: center; display: none; }
 .quiz-score.show { display: block; }
 .quiz-score-num { font-size: 2rem; font-weight: 800; color: var(--orange); }
@@ -465,60 +469,180 @@ a:hover { text-decoration: underline; }
   </div>
 
   <section class="quiz-section" id="free-quiz">
-    <h2>Try 5 Free SAM Questions</h2>
-    <p class="quiz-intro">Test your knowledge before you buy. These sample questions are from our full 250-question practice test.</p>
-        <div class="quiz-card" id="qcard0">
-      <div class="quiz-q"><span class="quiz-q-num">1.</span>What is the primary goal of Software Asset Management (SAM)?</div>
+    <h2>Try 15 Free SAM Questions</h2>
+    <p class="quiz-intro">Test your knowledge before you buy — including multiple-choice and multi-select, just like the real exam.</p>
+    <div class="quiz-card" id="qcard0">
+      <div class="quiz-q"><span class="quiz-q-num">1.</span>Within Software Asset Management there are many key terms to understand, what is the best definition for Software Allocation ?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>Writing software code</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>Managing software licenses to ensure compliance and optimize costs</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>Designing user interfaces</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>Testing software applications</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>One or more use rights assigned to a specific device or user.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>Something acquired with use rights.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>The process of normalizing a discovered software installation to standardized values.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>Finding and recognizing software or a software feature on a device.</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp0">SAM manages the full software license lifecycle — tracking entitlements, measuring usage, ensuring compliance with vendor agreements, and optimizing license costs to avoid over/under-licensing.</div>
+      <div class="quiz-explain" id="qexp0">A user or device allocation can be added to a software entitlement to specify a user or device to which rights have been allocated.</div>
     </div>
     <div class="quiz-card" id="qcard1">
-      <div class="quiz-q"><span class="quiz-q-num">2.</span>What is a Software Entitlement?</div>
+      <div class="quiz-q"><span class="quiz-q-num">2.</span>Which consolidated dashboard in the new SAM Professional workspace enables you to organize, evaluate and view key metrics for Microsoft Office 365 and Adobe Cloud?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>A user permission</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>A record representing the rights to use software as defined by a license agreement</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>A software feature</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>A warranty document</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>Engineering license overview dashboard</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>Optimization and savings dashboard</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>Normalization and content dashboard</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>License usage dashboard</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="1"><span class="quiz-opt-letter">E</span><span>SaaS overview dashboard</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp1">A Software Entitlement records the purchased rights to use software, including the license type, quantity, metrics (per user, per device), and terms from the vendor agreement.</div>
+      <div class="quiz-explain" id="qexp1">The correct answer is SaaS overview dashboard.Explanation:According to the documentation, the SaaS Overview dashboard is described as a &quot;Single Oracle dashboard displaying key KPIs for both pure Oracle as well as Microsoft Office 365 and Adobe Cloud.&quot; This means it consolidates data for these products, making it the appropriate dashboard for organizing, evaluating, and viewing key metrics for Microsoft Office 365 and Adobe Cloud in the new SAM Professional workspace.</div>
     </div>
     <div class="quiz-card" id="qcard2">
-      <div class="quiz-q"><span class="quiz-q-num">3.</span>What is Software Normalization?</div>
+      <div class="quiz-q"><span class="quiz-q-num">3.</span>In defining a Custom License Metric, in the Reconciliation Order field, the ___________ ‘metric rank priority’ number takes precedence.</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>Code formatting</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>The process of standardizing software names and publishers from discovery data into a consistent library</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>Data encryption</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>File compression</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>Lower</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>Impact</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>Higher</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>WBS</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp2">Software Normalization maps the varied software names found by discovery (e.g., 'MS Office', 'Microsoft Office 365') to standardized publisher and product names in the software library.</div>
+      <div class="quiz-explain" id="qexp2">Correct: LowerExplanation:In ServiceNow&#x27;s Software Asset Management, when defining a Custom License Metric, the Reconciliation Order field determines the sequence in which metrics are evaluated during the reconciliation process. A lower &#x27;metric rank priority&#x27; number indicates higher precedence, meaning metrics with lower values in this field are processed before those with higher values. ​Clarification of Other Options:Impact: This term is not used in the context of reconciliation order for license metrics.​Higher: A higher &#x27;metric rank priority&#x27; number would result in lower precedence during reconciliation.​WBS: This acronym typically stands for Work Breakdown Structure and is unrelated to license metric reconciliation order.</div>
     </div>
     <div class="quiz-card" id="qcard3">
-      <div class="quiz-q"><span class="quiz-q-num">4.</span>What does License Calculation do in SAM?</div>
+      <div class="quiz-q"><span class="quiz-q-num">4.</span>By default, the license metric field is displayed on which record form within ServiceNow?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>Calculates software development time</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>Compares installed/used software against purchased entitlements to determine compliance position</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>Calculates server costs</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>Estimates project timelines</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>Software Model</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>Software Allocations</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>Software Entitlement</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>Software Product</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="3"><span class="quiz-opt-letter">E</span><span>Software publisher</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp3">License Calculation compares the number of software installations or allocations against purchased entitlements, showing whether the organization is compliant, over-licensed, or under-licensed.</div>
+      <div class="quiz-explain" id="qexp3">In ServiceNow’s Software Asset Management, the license metric field is displayed on the Software Entitlement record form by default. This field is used to indicate which license metric (e.g., Per Named User, Per Named Device) applies to that entitlement, ensuring accurate tracking of licensed rights.</div>
     </div>
     <div class="quiz-card" id="qcard4">
-      <div class="quiz-q"><span class="quiz-q-num">5.</span>What is the SAM Workspace?</div>
+      <div class="quiz-q"><span class="quiz-q-num">5.</span>Using end-of-life/end-of-support software exposes your organization to security threats. What report can you run to gain visibility to these products?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>A physical room</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>A centralized dashboard for managing software assets, compliance status, and optimization opportunities</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>A code editor</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>A testing environment</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>Software Models with deactivated discovery maps</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>License Position Report</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>Software Model Lifecycle Report</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>Software Product Lifecycle Report</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="4"><span class="quiz-opt-letter">E</span><span>License Workbench Report</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp4">The SAM Workspace provides a centralized interface with dashboards, reports, and quick actions for software asset managers to monitor compliance, track spending, and identify optimization opportunities.</div>
+      <div class="quiz-explain" id="qexp4">Answer:Software Product Lifecycle ReportExplanation:According to the SAM documentation, to gain visibility into software products that are nearing end-of-life or end-of-support (which exposes the organization to security threats), you would run the Software Product Lifecycle Report. This report leverages lifecycle data—typically provided through content updates—to help identify which products are approaching or have reached the end-of-support or end-of-life stages.</div>
+    </div>
+    <div class="quiz-card" id="qcard5">
+      <div class="quiz-q"><span class="quiz-q-num">6.</span>Where can the Software Model Results, Removal Candidates, Entitlements, and Remediation Options related lists be accessed on the Software Asset Workspace after a reconciliation is run?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="5"><span class="quiz-opt-letter">A</span><span>License usage view</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="5"><span class="quiz-opt-letter">B</span><span>Software Model Results view</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="5"><span class="quiz-opt-letter">C</span><span>Software Edition Results view</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="5"><span class="quiz-opt-letter">D</span><span>Software Management Results</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp5">Answer: License usage viewExplanation:According to the SAM documentation, the License usage view is the primary area within the Software Asset Workspace where users can access related lists such as Software Model Results, Removal Candidates, Entitlements, and Remediation Options after a reconciliation has been run.</div>
+    </div>
+    <div class="quiz-card" id="qcard6">
+      <div class="quiz-q"><span class="quiz-q-num">7.</span>Which tab of the License usage view is used to reclaim software licenses that are not being used?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="6"><span class="quiz-opt-letter">A</span><span>Reconciliation</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="6"><span class="quiz-opt-letter">B</span><span>Entitlements</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="6"><span class="quiz-opt-letter">C</span><span>Removal Candidates</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="6"><span class="quiz-opt-letter">D</span><span>Reports</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="6"><span class="quiz-opt-letter">E</span><span>Publishers</span></li>
+      <li class="quiz-opt" data-idx="5" data-q="6"><span class="quiz-opt-letter">F</span><span>Software Model Results</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp6">Source: Software Asset Management (SAM) Professional Fundamentals On DemandSummaryWithin the Software Asset Workspace’s License usage view, the Removal Candidates tab is where you identify and reclaim under-utilized (i.e., not being used) software licenses.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard7">
+      <div class="quiz-q"><span class="quiz-q-num">8.</span>When a software title is transferred between vendors, the content library download and update feature will automatically propagate those changes to which of the following? (Choose three.) <span class="quiz-choose">(choose 3)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="7"><span class="quiz-opt-letter">A</span><span>Software entitlements</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="7"><span class="quiz-opt-letter">B</span><span>Software reconciliations</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="7"><span class="quiz-opt-letter">C</span><span>Software models</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="7"><span class="quiz-opt-letter">D</span><span>Transform maps</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="7"><span class="quiz-opt-letter">E</span><span>Discovery models</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="7" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp7">Software entitlements: Changes in vendor ownership directly impact licensing and entitlements.Software models: The software model itself needs to be updated to reflect the new vendor.Discovery models: Discovery models are linked to software models, so changes to the model will propagate to discovered instances.Here&#x27;s a breakdown of why the other options are incorrect:Software reconciliations: While reconciliations will reflect the changes after the software models and entitlements are updated, they are a result of the changes, not directly propagated by the content library update.Transform maps: As you pointed out, transform maps are primarily used for importing and transforming data into ServiceNow tables.</div>
+    </div>
+    <div class="quiz-card" id="qcard8">
+      <div class="quiz-q"><span class="quiz-q-num">9.</span>An organization cannot be externally audited based on its use of what types of software</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="8"><span class="quiz-opt-letter">A</span><span>Snagit</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="8"><span class="quiz-opt-letter">B</span><span>Freeware</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="8"><span class="quiz-opt-letter">C</span><span>Browsers</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="8"><span class="quiz-opt-letter">D</span><span>Drivers</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="8"><span class="quiz-opt-letter">E</span><span>WinZip</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp8">Source: Software Asset Management (SAM) Professional Fundamentals On DemandAnswer:BrowsersExplanation:Software Asset Management focuses on tracking, reconciling, and auditing licensable software for which organizations must hold entitlements. Tools like SAM reconcile discovered installations against purchased rights to ensure compliance with vendor licenses. Browsers (e.g., Chrome, Firefox, Edge) are typically free-to-use and not subject to license entitlements, so their usage cannot form the basis of an external software audit.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard9">
+      <div class="quiz-q"><span class="quiz-q-num">10.</span>License metrics can be defined for which of the following? (Choose four.) <span class="quiz-choose">(choose 4)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="9"><span class="quiz-opt-letter">A</span><span>Publishers</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="9"><span class="quiz-opt-letter">B</span><span>Users</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="9"><span class="quiz-opt-letter">C</span><span>Cores</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="9"><span class="quiz-opt-letter">D</span><span>Devices</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="9"><span class="quiz-opt-letter">E</span><span>Metric Types</span></li>
+      <li class="quiz-opt" data-idx="5" data-q="9"><span class="quiz-opt-letter">F</span><span>Processors</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="9" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp9">Six common license metrics:- Per Core: licenses cores on a physical server or virtual machine (CPU core count)- Per Device: licenses a device for a number of installations of software- Per Named Device: licenses a specific device for a number of installations of software- Per User: licenses a user for a number of installations of software- Per Named User: licenses a specific user for a number of installations of software- Per Processor (CPU count): licenses processors on either a physical server or virtual machine</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard10">
+      <div class="quiz-q"><span class="quiz-q-num">11.</span>The goals of Software Asset Management include which of the following? (Choose three.) <span class="quiz-choose">(choose 3)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="10"><span class="quiz-opt-letter">A</span><span>Optimize spend</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="10"><span class="quiz-opt-letter">B</span><span>Rationalize business applications</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="10"><span class="quiz-opt-letter">C</span><span>Maintain compliance</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="10"><span class="quiz-opt-letter">D</span><span>Identify unauthorized usage</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="10"><span class="quiz-opt-letter">E</span><span>Support software audits</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="10" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp10">Source: Software Asset Management (SAM) Professional Fundamentals On DemandThe correct answers are:Optimize spendMaintain complianceSupport software auditsExplanation:The document explicitly outlines the goals of Software Asset Management (SAM) in the &quot;What is Software Asset Management&quot; section by Ron Kafoury. These goals are directly stated and align with the purpose of SAM as described throughout the document.</div>
+    </div>
+    <div class="quiz-card" id="qcard11">
+      <div class="quiz-q"><span class="quiz-q-num">12.</span>Software models are used to connect purchased software rights with discovered software installations via which mechanism?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="11"><span class="quiz-opt-letter">A</span><span>Transform Map</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="11"><span class="quiz-opt-letter">B</span><span>Software Discovery Model</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="11"><span class="quiz-opt-letter">C</span><span>Software Discovery Map</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="11"><span class="quiz-opt-letter">D</span><span>Reconciliation Map</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="11"><span class="quiz-opt-letter">E</span><span>Software Install Model</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp11">Source: SAM PRO FUNDAMENTALSThe correct answer is:Software Discovery MapExplanation:Source: The document, in &quot;Trustworthy Data: Module Introduction&quot; under &quot;Common Terms,&quot; defines a Software discovery map as: &quot;A predefined set of conditions that determine which software discovery models get mapped to which software models.&quot; Additionally, in &quot;Lab 5.1: Manage Software Product Lifecycles&quot; (Section 2), a discovery map (e.g., DMAP0004892) is selected to link a software model to discovery models, confirming its role in connecting purchased rights (via software models) to discovered installations (via discovery models).Exclusion:Transform Map: Used for data imports, not mapping rights to installations.Software Discovery Model: Identifies installed software but doesn’t connect it to rights.Reconciliation Map: Not a term in the document; reconciliation uses maps but isn’t the mechanism.Software Install Model: Not a defined term; &quot;Software Installation&quot; exists but isn’t the connector.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard12">
+      <div class="quiz-q"><span class="quiz-q-num">13.</span>Which of the following are valid Remediation Options on the License Workbench after reconciliation has been run? (Choose five.) <span class="quiz-choose">(choose 5)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="12"><span class="quiz-opt-letter">A</span><span>Create Entitlements</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="12"><span class="quiz-opt-letter">B</span><span>Remove Allocation</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="12"><span class="quiz-opt-letter">C</span><span>Purchase Rights</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="12"><span class="quiz-opt-letter">D</span><span>Remove Unallocated Installs</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="12"><span class="quiz-opt-letter">E</span><span>Remove Unlicensed Installs</span></li>
+      <li class="quiz-opt" data-idx="5" data-q="12"><span class="quiz-opt-letter">F</span><span>Create Allocations</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="12" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp12">The correct answers are:Create EntitlementsPurchase RightsRemove Unallocated InstallsRemove Unlicensed InstallsCreate AllocationsExplanation:According to the SAM documentation, after running reconciliation on the License Workbench, administrators have several remediation options to help resolve compliance issues.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard13">
+      <div class="quiz-q"><span class="quiz-q-num">14.</span>What are the available actions associated with the Normalization Suggestions feature? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="13"><span class="quiz-opt-letter">A</span><span>Accept – updates the discovery model with suggested values</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="13"><span class="quiz-opt-letter">B</span><span>Reject – ignores the suggestion. The next time the scheduled job is executed, it will not pick the same package or rule that was rejected previously</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="13"><span class="quiz-opt-letter">C</span><span>Save – allows you to save the suggestion to review again later</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="13"><span class="quiz-opt-letter">D</span><span>Ignore – ignores the suggestion. All fields are updated to read only until the next time the job is executed with the same package or rule that was ignored previously.</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="13"><span class="quiz-opt-letter">E</span><span>Create – creates a discovery model with suggested values</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="13" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp13">The two actions available with the Normalization Suggestions feature are:Accept – This action updates the discovery model with the suggested values. Reject – This action ignores the suggestion, and the next time the scheduled job runs, it will not pick the same package or rule that was rejected.These are the correct options as they directly impact how the discovery model handles the suggested normalization values.</div>
+    </div>
+    <div class="quiz-card" id="qcard14">
+      <div class="quiz-q"><span class="quiz-q-num">15.</span>A software model can have up to how many catalog items?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="14"><span class="quiz-opt-letter">A</span><span>1</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="14"><span class="quiz-opt-letter">B</span><span>2</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="14"><span class="quiz-opt-letter">C</span><span>6</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="14"><span class="quiz-opt-letter">D</span><span>10</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="14"><span class="quiz-opt-letter">E</span><span>Unlimited</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp14">Overall explanationFrom the course:Keep the following in mind when working with catalogs:A software catalog is part of a service catalog.A product catalog item can be linked to multiple service catalogs and vendor catalog items or to a single model.A model can only have one product catalog item.A vendor catalog item can only have a single product catalog item.</div>
     </div>
     <div class="quiz-score" id="quizScore">
-      <div class="quiz-score-num" id="quizScoreNum">0/5</div>
+      <div class="quiz-score-num" id="quizScoreNum">0/15</div>
       <div class="quiz-score-label">Sample Quiz Score</div>
       <div class="quiz-score-msg" id="quizScoreMsg"></div>
       <a href="https://www.udemy.com/course/pass-your-servicenow-cis-software-asset-mgmt-sam-exam/?referralCode=627AA3E200F1159EDF94" target="_blank" rel="noopener" class="cp-cta">
@@ -549,33 +673,83 @@ a:hover { text-decoration: underline; }
   });
 
   // Quiz logic
-  const answers = [1,1,1,1,1];
+  const answers = [0, 4, 0, 2, 3, 0, 2, [0, 2, 4], 2, [1, 2, 3, 5], [0, 2, 4], 2, [2, 3, 4, 5, 0], [1, 0], 0];
   let answered = 0, score = 0;
+  const multiSelections = {};
+
   document.querySelectorAll('.quiz-opt').forEach(function(opt) {
     opt.addEventListener('click', function() {
       var qi = parseInt(this.dataset.q);
-      var idx = parseInt(this.dataset.idx);
       var card = document.getElementById('qcard' + qi);
       if (card.dataset.state) return;
-      var isCorrect = idx === answers[qi];
-      if (isCorrect) { score++; this.classList.add('correct'); card.dataset.state = 'correct'; }
-      else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
-      this.classList.add('selected');
-      card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
-      document.getElementById('qexp' + qi).classList.add('show');
-      answered++;
-      if (answered === answers.length) {
-        var el = document.getElementById('quizScore');
-        el.classList.add('show');
-        document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
-        var msg = score === 5 ? 'Perfect score! You are well prepared.' : score >= 3 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
-        document.getElementById('quizScoreMsg').textContent = msg;
-        if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: 'SAM', quiz_score: score });
+      var idx = parseInt(this.dataset.idx);
+      var isMulti = Array.isArray(answers[qi]);
+
+      if (isMulti) {
+        // Multi-select: toggle selection
+        if (!multiSelections[qi]) multiSelections[qi] = new Set();
+        if (multiSelections[qi].has(idx)) {
+          multiSelections[qi].delete(idx);
+          this.classList.remove('selected');
+        } else {
+          multiSelections[qi].add(idx);
+          this.classList.add('selected');
+        }
+        // Show/hide submit button
+        var btn = card.querySelector('.quiz-submit-btn');
+        btn.style.display = multiSelections[qi].size > 0 ? 'block' : 'none';
+      } else {
+        // Single answer: immediate check
+        var isCorrect = idx === answers[qi];
+        if (isCorrect) { score++; this.classList.add('correct'); card.dataset.state = 'correct'; }
+        else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
+        this.classList.add('selected');
+        card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
+        document.getElementById('qexp' + qi).classList.add('show');
+        answered++;
+        checkDone();
       }
     });
   });
 
-  
-</script>
+  document.querySelectorAll('.quiz-submit-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var qi = parseInt(this.dataset.q);
+      var card = document.getElementById('qcard' + qi);
+      if (card.dataset.state) return;
+      var selected = Array.from(multiSelections[qi] || []).sort();
+      var correct = answers[qi].slice().sort();
+      var isCorrect = selected.length === correct.length && selected.every(function(v, i) { return v === correct[i]; });
+      var opts = card.querySelectorAll('.quiz-opt');
+      if (isCorrect) {
+        score++;
+        card.dataset.state = 'correct';
+        selected.forEach(function(i) { opts[i].classList.add('correct'); });
+      } else {
+        card.dataset.state = 'wrong';
+        selected.forEach(function(i) {
+          if (correct.indexOf(i) === -1) opts[i].classList.add('wrong');
+          else opts[i].classList.add('correct');
+        });
+        correct.forEach(function(i) { opts[i].classList.add('correct'); });
+      }
+      opts.forEach(function(o) { o.setAttribute('disabled',''); });
+      this.style.display = 'none';
+      document.getElementById('qexp' + qi).classList.add('show');
+      answered++;
+      checkDone();
+    });
+  });
+
+  function checkDone() {
+    if (answered === answers.length) {
+      var el = document.getElementById('quizScore');
+      el.classList.add('show');
+      document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
+      var msg = score === answers.length ? 'Perfect score! You are well prepared.' : score >= 10 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
+      document.getElementById('quizScoreMsg').textContent = msg;
+      if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: 'SAM', quiz_score: score });
+    }
+  }</script>
 </body>
 </html>

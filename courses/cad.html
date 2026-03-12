@@ -342,6 +342,14 @@ a:hover { text-decoration: underline; }
 .quiz-opt.wrong .quiz-opt-letter { background: #d73a49; color: #fff; border-color: #d73a49; }
 .quiz-explain { display: none; margin-top: 12px; padding: 12px 16px; background: var(--bg-card); border-radius: 8px; font-size: 0.9rem; color: var(--text-dim); line-height: 1.6; border-left: 3px solid var(--orange); }
 .quiz-explain.show { display: block; }
+.quiz-choose { font-weight: 400; color: var(--orange); font-size: 0.85rem; margin-left: 4px; }
+.quiz-submit-btn { margin-top: 12px; padding: 10px 24px; background: var(--orange); color: #fff; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.15s, transform 0.1s; }
+.quiz-submit-btn:hover { background: #c75400; }
+.quiz-submit-btn:active { transform: scale(0.97); }
+.quiz-choose { font-weight: 400; color: var(--orange); font-size: 0.85rem; margin-left: 4px; }
+.quiz-submit-btn { margin-top: 12px; padding: 10px 24px; background: var(--orange); color: #fff; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.15s, transform 0.1s; }
+.quiz-submit-btn:hover { background: #c75400; }
+.quiz-submit-btn:active { transform: scale(0.97); }
 .quiz-score { margin-top: 24px; padding: 20px; background: var(--bg-raised); border-radius: 12px; border: 1px solid var(--border); text-align: center; display: none; }
 .quiz-score.show { display: block; }
 .quiz-score-num { font-size: 2rem; font-weight: 800; color: var(--orange); }
@@ -465,60 +473,166 @@ a:hover { text-decoration: underline; }
   </div>
 
   <section class="quiz-section" id="free-quiz">
-    <h2>Try 5 Free CAD Questions</h2>
-    <p class="quiz-intro">Test your knowledge before you buy. These sample questions are from our full 329-question practice test.</p>
-        <div class="quiz-card" id="qcard0">
-      <div class="quiz-q"><span class="quiz-q-num">1.</span>Which scripting context runs on the client side in ServiceNow?</div>
+    <h2>Try 15 Free CAD Questions</h2>
+    <p class="quiz-intro">Test your knowledge before you buy — including multiple-choice and multi-select, just like the real exam.</p>
+    <div class="quiz-card" id="qcard0">
+      <div class="quiz-q"><span class="quiz-q-num">1.</span>When modifying a form layout using the Form Designer how must a developer add a new section to the form?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>Business Rule</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>Script Include</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>Client Script</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>Scheduled Job</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>Drag a section container from the Field Types tab.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>Drag a section container from the Fields tab.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>Click the Add Section (+) button next to an existing section label.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>Use a UI Policy to dynamically generate a new section on load.</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp0">Client Scripts execute in the user's web browser (client side) and are used to manage form behavior, field validation, and UI interactions.</div>
+      <div class="quiz-explain" id="qexp0">0. Correct Answer:Click the Add Section (+) button next to an existing section label.1. Primary Source (Zurich Release)• Direct Documentation Link: Official Doc: Form Design• Search Tip: If the link fails, search Google for: ServiceNow Zurich Form Designer add section• Official Proof: &quot;To add a section, click the Add Section button on the toolbar or right-click on the form and select Add Section.&quot; Sections are not available in the Field Types tab.2. Detailed Expert Explanation The Form Designer is a drag-and-drop UI tool allowing developers to visually construct form layouts.</div>
     </div>
     <div class="quiz-card" id="qcard1">
-      <div class="quiz-q"><span class="quiz-q-num">2.</span>What is the correct way to get a value from a form field in a Client Script?</div>
+      <div class="quiz-q"><span class="quiz-q-num">2.</span>When configuring a scoped application which setting(s) for &amp;quot;Runtime Access Tracking&amp;quot; will cause the platform to automatically create records in the Application Cross-Scope Access table when scripts request access to out-of-scope resources?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>current.field_name</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>g_form.getValue('field_name')</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>gr.getValue('field_name')</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>document.getElementById('field_name')</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>Tracking only</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>Enforcing only</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>Both Tracking and Enforcing</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp1">g_form.getValue() is the GlideForm API method used in Client Scripts to retrieve field values from the currently displayed form.</div>
+      <div class="quiz-explain" id="qexp1">0. Correct Answer:Both Tracking and Enforcing1. Primary Source (Zurich Release)• Direct Documentation Link: Official Doc: Runtime Access Tracking• Search Tip: If the link fails, search Google for: ServiceNow Zurich Runtime Access Tracking• Official Proof: Records are created in the Application Cross-scope Access table when the Runtime Access Tracking Setting is set to either Tracking or Enforcing.2. Detailed Expert Explanation Application scoping isolates application data and scripts. When a script from your scope attempts to interact with resources in a different scope, the platform evaluates the Runtime Access Tracking setting.</div>
     </div>
     <div class="quiz-card" id="qcard2">
-      <div class="quiz-q"><span class="quiz-q-num">3.</span>Which Business Rule type runs before the database operation?</div>
+      <div class="quiz-q"><span class="quiz-q-num">3.</span>As organizations scale their use of Generative AI on the Now Platform which application is specifically designed to connect strategy governance management and performance for all AI across the enterprise?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>Display</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>Before</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>After</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>Async</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>Integration Hub</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>AI Control Tower</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>Machine Learning Framework</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>Predictive Intelligence</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp2">'Before' Business Rules execute before the database operation (insert, update, delete), allowing you to modify record values before they are saved.</div>
+      <div class="quiz-explain" id="qexp2">0. Correct Answer: AI Control Tower1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: AI Control TowerSearch Tip: If the link fails, search Google for: ServiceNow Zurich AI Control Tower strategy governanceOfficial Proof: &quot;ServiceNow AI Control Tower: Connect strategy, governance, management, and performance for all your AI across the enterprise.&quot;2.</div>
     </div>
     <div class="quiz-card" id="qcard3">
-      <div class="quiz-q"><span class="quiz-q-num">4.</span>What is an Application Scope in ServiceNow?</div>
+      <div class="quiz-q"><span class="quiz-q-num">4.</span>While working on a custom application&amp;#x27;s schema a developer deletes a single custom field. Unexpectedly this results in the automatic deletion of multiple fields across several other tables. What type of field was most likely deleted?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>A user's security role</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>A logical grouping that restricts script and table access</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>A type of UI page</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>A reporting dashboard</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>A Reference field</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>A Parent field</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>A Choice field</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>A Mandatory field</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp3">Application Scope provides a namespace that protects application files and data from being modified by other applications, enabling safe multi-app development.</div>
+      <div class="quiz-explain" id="qexp3">0. Correct Answer: A Parent field1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Table Extension and InheritanceSearch Tip: If the link fails, search Google for: ServiceNow Zurich delete inherited field behaviorOfficial Proof: &quot;Fields defined on a parent table are inherited by all child tables. Deleting a field from the parent table removes that field from the parent and all its extensions.&quot;2. Detailed Expert ExplanationServiceNow uses a Table Inheritance model (similar to Object-Oriented Programming).</div>
     </div>
     <div class="quiz-card" id="qcard4">
-      <div class="quiz-q"><span class="quiz-q-num">5.</span>Which object is used to query database records in server-side scripts?</div>
+      <div class="quiz-q"><span class="quiz-q-num">5.</span>In the context of ServiceNow&amp;#x27;s Team Development hierarchy which statement accurately describes a developer&amp;#x27;s ability to push updates?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>g_form</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>GlideRecord</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>g_user</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>GlideAjax</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>Developers can push updates to any server in the team development hierarchy without restriction.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>Pushing updates requires the use of the git_admin role.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>Updates can only be pushed to child instances never to parent instances.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>Developers typically have restricted push privileges and pushes are usually limited to the parent instance within the hierarchy.</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp4">GlideRecord is the server-side JavaScript API used to perform database operations like querying, inserting, updating, and deleting records.</div>
+      <div class="quiz-explain" id="qexp4">0. Correct Answer: Developers typically have restricted push privileges and pushes are usually limited to the parent instance within the hierarchy.1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Team Development PushesSearch Tip: If the link fails, search Google for: ServiceNow Zurich Team Development push updatesOfficial Proof: &quot;In a Team Development hierarchy, developers working on a sub-production or child instance must push their local changes to the designated parent instance to consolidate development efforts. Push access is managed by specific roles and code review requirements.&quot;2.</div>
+    </div>
+    <div class="quiz-card" id="qcard5">
+      <div class="quiz-q"><span class="quiz-q-num">6.</span>Which of the below is the best practice for adding instructions to a form?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="5"><span class="quiz-opt-letter">A</span><span>Context menu or UI Action</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="5"><span class="quiz-opt-letter">B</span><span>Related links to wiki pages</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="5"><span class="quiz-opt-letter">C</span><span>Form Annotations</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="5"><span class="quiz-opt-letter">D</span><span>Populated read only field</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp5">0. Correct Answer: Form Annotations1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Form AnnotationsSearch Tip: If the link fails, search Google for: ServiceNow Zurich Form Annotations best practiceOfficial Proof: &quot;Form Annotations are designed to provide on-screen instructions to users directly within a form. They are visually distinct and placed strategically to guide users through the process.&quot;2. Detailed Expert ExplanationWhen designing the User Experience (UX) in Zurich, providing clear guidance is essential for data quality.</div>
+    </div>
+    <div class="quiz-card" id="qcard6">
+      <div class="quiz-q"><span class="quiz-q-num">7.</span>A developer is working inside a Developer Sandbox and modifies the schema of a shared data table by adding a new custom column. What is the immediate consequence of this action regarding data isolation?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="6"><span class="quiz-opt-letter">A</span><span>The column is immediately pushed to the base instance via a synchronous background script.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="6"><span class="quiz-opt-letter">B</span><span>The schema change forces the table to become isolated within the sandbox; any records added subsequently are isolated from the base instance.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="6"><span class="quiz-opt-letter">C</span><span>The sandbox is immediately flagged for retirement due to a base-instance collision.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="6"><span class="quiz-opt-letter">D</span><span>The base instance locks the table preventing any other sandboxes from accessing it until the changes are merged.</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp6">0. Correct Answer: The schema change forces the table to become isolated within the sandbox; any records added subsequently are isolated from the base instance.1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Sandbox Data IsolationSearch Tip: If the link fails, search Google for: ServiceNow Zurich sandbox schema modification isolationOfficial Proof: &quot;When a structural schema change (such as adding a dictionary entry) occurs within a shared table inside a Developer Sandbox, the platform immediately forks the table state, isolating it and all subsequent records from the controller base instance to prevent data corruption.&quot;2.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard7">
+      <div class="quiz-q"><span class="quiz-q-num">8.</span>When creating a Script Include that needs to be called directly from a Client Script using GlideAjax which two steps must be taken during configuration? (Choose two) <span class="quiz-choose">(choose 2)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="7"><span class="quiz-opt-letter">A</span><span>Check the &quot;Client callable&quot; checkbox on the Script Include record.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="7"><span class="quiz-opt-letter">B</span><span>Set the &quot;Accessible from&quot; field to &quot;All application scopes&quot;.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="7"><span class="quiz-opt-letter">C</span><span>Extend the AbstractAjaxProcessor class in the script.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="7"><span class="quiz-opt-letter">D</span><span>Use the gs.include() method inside the Client Script.</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="7" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp7">0. Correct Answer:Check the &quot;Client callable&quot; checkbox on the Script Include record. Extend the AbstractAjaxProcessor class in the script.1. Primary Source (Zurich Release)• Direct Documentation Link: Official Doc: Script Includes• Search Tip: If the link fails, search Google for: ServiceNow Zurich Client Callable Script Include AbstractAjaxProcessor• Official Proof: To enable an asynchronous call from a client script, you must select the Client callable check box, which automatically injects the code to extend the AbstractAjaxProcessor class.2.</div>
+    </div>
+    <div class="quiz-card" id="qcard8">
+      <div class="quiz-q"><span class="quiz-q-num">9.</span>How does the GlideQuery API resolve the logical filtering flaw inherent in the legacy GlideRecord API?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="8"><span class="quiz-opt-letter">A</span><span>By automatically translating all queries into SQL stored procedures.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="8"><span class="quiz-opt-letter">B</span><span>By enforcing standard programming logic where logical AND takes precedence over logical OR preventing improper data filtering.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="8"><span class="quiz-opt-letter">C</span><span>By requiring developers to execute raw SQL directly against the MariaDB database.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="8"><span class="quiz-opt-letter">D</span><span>By restricting all database calls to a maximum return of 100 records per transaction.</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp8">0. Correct Answer:By enforcing standard programming logic where logical AND takes precedence over logical OR preventing improper data filtering.1. Primary Source (Zurich Release)• Direct Documentation Link: Official Doc: GlideQuery API• Search Tip: If the link fails, search Google for: ServiceNow Zurich GlideQuery logical AND precedence• Official Proof: &quot;It’s always annoyed me that in GlideRecord logical OR takes precedence over logical AND, which is backward from every other programming language and query language I know... GlideQuery... fixes a handful of additional issues with GlideRecord...&quot;2.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard9">
+      <div class="quiz-q"><span class="quiz-q-num">10.</span>Which of the following is an available feature in Studio? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="9"><span class="quiz-opt-letter">A</span><span>Push to update set</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="9"><span class="quiz-opt-letter">B</span><span>Merge branches</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="9"><span class="quiz-opt-letter">C</span><span>Search code</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="9"><span class="quiz-opt-letter">D</span><span>Push to external source control</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="9" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp9">0. Correct Answer:Search code ; Push to external source control1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: ServiceNow Studio FeaturesSearch Tip: If link fails, search Google for: ServiceNow Zurich Studio IDE featuresOfficial Proof: &quot;ServiceNow Studio provides an integrated development environment with features like &#x27;Code Search&#x27; and &#x27;Source Control Integration&#x27; for linking to Git repositories.&quot;2.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard10">
+      <div class="quiz-q"><span class="quiz-q-num">11.</span>What does Application Scoping provide? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="10"><span class="quiz-opt-letter">A</span><span>A method to track users involved in developing the application.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="10"><span class="quiz-opt-letter">B</span><span>A namespace (prefix and scope name) to prevent cross-application name collisions.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="10"><span class="quiz-opt-letter">C</span><span>A means to control which roles can view the application and its related modules.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="10"><span class="quiz-opt-letter">D</span><span>A means to control how scripts from other scopes can alter tables in a scoped application.</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="10" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp10">0. Correct Answer:A namespace (prefix and scope name) to prevent cross-application name collisions.A means to control how scripts from other scopes can alter tables in a scoped application.1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Application ScopeSearch Tip: If the link fails, search Google for: ServiceNow Zurich Application Scoping featuresOfficial Proof: &quot;Application scoping protects applications by identifying and restricting access to application files and data. It provides a unique namespace (e.g., x_namespace) and enforces Application Access rules to control cross-scope scripting.&quot;2.</div>
+    </div>
+    <div class="quiz-card" id="qcard11">
+      <div class="quiz-q"><span class="quiz-q-num">12.</span>Which platform feature is expressly designed to parse incoming emails and then create or update database records based on the specific contents of that email?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="11"><span class="quiz-opt-letter">A</span><span>Email Notifications</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="11"><span class="quiz-opt-letter">B</span><span>Flow Designer Email Triggers</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="11"><span class="quiz-opt-letter">C</span><span>Inbound Email Actions</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="11"><span class="quiz-opt-letter">D</span><span>Notification Mail Scripts</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp11">0. Correct Answer: Inbound Email Actions1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Inbound Email ActionsSearch Tip: If the link fails, search Google for: ServiceNow Zurich Inbound Email Actions parsingOfficial Proof: &quot;Inbound email actions enable an administrator to define the actions ServiceNow takes when receiving an email, such as creating an incident or updating a record.&quot;2. Detailed Expert ExplanationWhen an email hits the ServiceNow instance (e.g., dev123@service-now.com), the Inbound Email Action engine triggers. It works similarly to a Business Rule but for emails.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard12">
+      <div class="quiz-q"><span class="quiz-q-num">13.</span>In a Business Rule certain global variables are natively passed to the execution environment. Which of the following variables are strictly NOT available universally across all Business Rule types? (Choose 2) <span class="quiz-choose">(choose 2)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="12"><span class="quiz-opt-letter">A</span><span>current</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="12"><span class="quiz-opt-letter">B</span><span>previous</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="12"><span class="quiz-opt-letter">C</span><span>GlideSystem (gs)</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="12"><span class="quiz-opt-letter">D</span><span>g_scratchpad</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="12" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp12">0. Correct Answer:previous and g_scratchpad1. Primary Source (Zurich Release)• Direct Documentation Link: Official Doc: Business Rules API• Search Tip: If the link fails, search Google for: ServiceNow Zurich Business Rules previous object g_scratchpad• Official Proof: A display business rule utilizes the g_scratchpad object... but it does not have access to the previous object. Conversely, Before/After rules have access to previous but do not utilize g_scratchpad.2. Detailed Expert Explanation Business Rules execute at four primary timings: Display, Before, After, and Async. Global variables injected into these environments vary based on the timing.1.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard13">
+      <div class="quiz-q"><span class="quiz-q-num">14.</span>Which business requirements and process(es) should be documented as part of the application development plan? (Choose four.) <span class="quiz-choose">(choose 3)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="13"><span class="quiz-opt-letter">A</span><span>Available licenses</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="13"><span class="quiz-opt-letter">B</span><span>Business problem</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="13"><span class="quiz-opt-letter">C</span><span>Process steps</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="13"><span class="quiz-opt-letter">D</span><span>Users/stakeholders</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="13"><span class="quiz-opt-letter">E</span><span>Database capacity</span></li>
+      <li class="quiz-opt" data-idx="5" data-q="13"><span class="quiz-opt-letter">F</span><span>Project schedule G. Data input/output</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="13" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp13">0. Correct Answer:Business problemData input/outputProcess stepsUsers/stakeholders1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Application Development PlanningSearch Tip: If the link fails, search Google for: ServiceNow Zurich Application Development Plan considerationsOfficial Proof: &quot;A comprehensive development plan identifies the business problem, defines the data inputs and outputs, maps out the specific process steps, and identifies all relevant stakeholders and user personas.&quot;2. Detailed Expert ExplanationThis is a foundational concept in the App Engine lifecycle.</div>
+    </div>
+    <div class="quiz-card" id="qcard14">
+      <div class="quiz-q"><span class="quiz-q-num">15.</span>Which of the following statements correctly identifies a core limitation of the Flow Debugger when contrasted with the Automated Test Framework (ATF)?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="14"><span class="quiz-opt-letter">A</span><span>The Flow Debugger cannot execute logic against a custom scoped application.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="14"><span class="quiz-opt-letter">B</span><span>The Flow Debugger does not provide native database rollback functionality to revert test records.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="14"><span class="quiz-opt-letter">C</span><span>The Flow Debugger is incapable of inspecting data pills nested within a subflow.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="14"><span class="quiz-opt-letter">D</span><span>The Flow Debugger requires the user to possess the security_admin role.</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp14">0. Correct Answer:The Flow Debugger does not provide native database rollback functionality to revert test records.1. Primary Source (Zurich Release)• Direct Documentation Link: Official Doc: Flow Designer Testing• Search Tip: If the link fails, search Google for: ServiceNow Zurich Flow Designer Test Rollback• Official Proof: Unlike the Automated Test Framework (ATF), Flow Designer does not support testing a flow with rollback. If a developer clicks &quot;Test&quot; and the flow executes an action to update a record, that database transaction is permanently committed.2.</div>
     </div>
     <div class="quiz-score" id="quizScore">
-      <div class="quiz-score-num" id="quizScoreNum">0/5</div>
+      <div class="quiz-score-num" id="quizScoreNum">0/15</div>
       <div class="quiz-score-label">Sample Quiz Score</div>
       <div class="quiz-score-msg" id="quizScoreMsg"></div>
       <a href="https://www.udemy.com/course/pass-your-servicenow-cad-exam/?referralCode=CF61F2B36C7F02F40EFB" target="_blank" rel="noopener" class="cp-cta">
@@ -549,33 +663,83 @@ a:hover { text-decoration: underline; }
   });
 
   // Quiz logic
-  const answers = [2,1,1,1,1];
+  const answers = [2, 2, 1, 1, 3, 2, 1, [0, 2], 1, [2, 3], [1, 3], 2, [1, 3], [1, 2, 3], 1];
   let answered = 0, score = 0;
+  const multiSelections = {};
+
   document.querySelectorAll('.quiz-opt').forEach(function(opt) {
     opt.addEventListener('click', function() {
       var qi = parseInt(this.dataset.q);
-      var idx = parseInt(this.dataset.idx);
       var card = document.getElementById('qcard' + qi);
       if (card.dataset.state) return;
-      var isCorrect = idx === answers[qi];
-      if (isCorrect) { score++; this.classList.add('correct'); card.dataset.state = 'correct'; }
-      else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
-      this.classList.add('selected');
-      card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
-      document.getElementById('qexp' + qi).classList.add('show');
-      answered++;
-      if (answered === answers.length) {
-        var el = document.getElementById('quizScore');
-        el.classList.add('show');
-        document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
-        var msg = score === 5 ? 'Perfect score! You are well prepared.' : score >= 3 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
-        document.getElementById('quizScoreMsg').textContent = msg;
-        if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: 'CAD', quiz_score: score });
+      var idx = parseInt(this.dataset.idx);
+      var isMulti = Array.isArray(answers[qi]);
+
+      if (isMulti) {
+        // Multi-select: toggle selection
+        if (!multiSelections[qi]) multiSelections[qi] = new Set();
+        if (multiSelections[qi].has(idx)) {
+          multiSelections[qi].delete(idx);
+          this.classList.remove('selected');
+        } else {
+          multiSelections[qi].add(idx);
+          this.classList.add('selected');
+        }
+        // Show/hide submit button
+        var btn = card.querySelector('.quiz-submit-btn');
+        btn.style.display = multiSelections[qi].size > 0 ? 'block' : 'none';
+      } else {
+        // Single answer: immediate check
+        var isCorrect = idx === answers[qi];
+        if (isCorrect) { score++; this.classList.add('correct'); card.dataset.state = 'correct'; }
+        else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
+        this.classList.add('selected');
+        card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
+        document.getElementById('qexp' + qi).classList.add('show');
+        answered++;
+        checkDone();
       }
     });
   });
 
-  
-</script>
+  document.querySelectorAll('.quiz-submit-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var qi = parseInt(this.dataset.q);
+      var card = document.getElementById('qcard' + qi);
+      if (card.dataset.state) return;
+      var selected = Array.from(multiSelections[qi] || []).sort();
+      var correct = answers[qi].slice().sort();
+      var isCorrect = selected.length === correct.length && selected.every(function(v, i) { return v === correct[i]; });
+      var opts = card.querySelectorAll('.quiz-opt');
+      if (isCorrect) {
+        score++;
+        card.dataset.state = 'correct';
+        selected.forEach(function(i) { opts[i].classList.add('correct'); });
+      } else {
+        card.dataset.state = 'wrong';
+        selected.forEach(function(i) {
+          if (correct.indexOf(i) === -1) opts[i].classList.add('wrong');
+          else opts[i].classList.add('correct');
+        });
+        correct.forEach(function(i) { opts[i].classList.add('correct'); });
+      }
+      opts.forEach(function(o) { o.setAttribute('disabled',''); });
+      this.style.display = 'none';
+      document.getElementById('qexp' + qi).classList.add('show');
+      answered++;
+      checkDone();
+    });
+  });
+
+  function checkDone() {
+    if (answered === answers.length) {
+      var el = document.getElementById('quizScore');
+      el.classList.add('show');
+      document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
+      var msg = score === answers.length ? 'Perfect score! You are well prepared.' : score >= 10 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
+      document.getElementById('quizScoreMsg').textContent = msg;
+      if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: 'CAD', quiz_score: score });
+    }
+  }</script>
 </body>
 </html>

@@ -342,6 +342,10 @@ a:hover { text-decoration: underline; }
 .quiz-opt.wrong .quiz-opt-letter { background: #d73a49; color: #fff; border-color: #d73a49; }
 .quiz-explain { display: none; margin-top: 12px; padding: 12px 16px; background: var(--bg-card); border-radius: 8px; font-size: 0.9rem; color: var(--text-dim); line-height: 1.6; border-left: 3px solid var(--orange); }
 .quiz-explain.show { display: block; }
+.quiz-choose { font-weight: 400; color: var(--orange); font-size: 0.85rem; margin-left: 4px; }
+.quiz-submit-btn { margin-top: 12px; padding: 10px 24px; background: var(--orange); color: #fff; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.15s, transform 0.1s; }
+.quiz-submit-btn:hover { background: #c75400; }
+.quiz-submit-btn:active { transform: scale(0.97); }
 .quiz-score { margin-top: 24px; padding: 20px; background: var(--bg-raised); border-radius: 12px; border: 1px solid var(--border); text-align: center; display: none; }
 .quiz-score.show { display: block; }
 .quiz-score-num { font-size: 2rem; font-weight: 800; color: var(--orange); }
@@ -465,60 +469,170 @@ a:hover { text-decoration: underline; }
   </div>
 
   <section class="quiz-section" id="free-quiz">
-    <h2>Try 5 Free VR Questions</h2>
-    <p class="quiz-intro">Test your knowledge before you buy. These sample questions are from our full 213-question practice test.</p>
-        <div class="quiz-card" id="qcard0">
-      <div class="quiz-q"><span class="quiz-q-num">1.</span>What is a Vulnerability Group in ServiceNow VR?</div>
+    <h2>Try 15 Free VR Questions</h2>
+    <p class="quiz-intro">Test your knowledge before you buy — including multiple-choice and multi-select, just like the real exam.</p>
+    <div class="quiz-card" id="qcard0">
+      <div class="quiz-q"><span class="quiz-q-num">1.</span>To facilitate &amp;quot;Exception Management&amp;quot;, a user requests an exception for a Vulnerability. If the Risk Score of the item is below a certain threshold, the system can be configured to:</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>A user security role</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>A collection of related vulnerabilities grouped for efficient management and remediation</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>A type of firewall rule</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>A CI category</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>Reject the request immediately.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>Auto-approve the exception without human intervention.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>Escalate to the CISO.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>Create a Problem record.</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp0">Vulnerability Groups aggregate related vulnerabilities together based on shared characteristics, enabling security teams to manage and remediate them more efficiently as a batch.</div>
+      <div class="quiz-explain" id="qexp0">0) SourceServiceNow Documentation: Vulnerability Response exception managementhttps://docs.servicenow.com/bundle/washingtondc-security-management/page/product/vulnerability-response/concept/vulnerability-exception-management.html(The documentation describes the configuration of approval workflows, noting that rules can be established to automatically approve low-risk items to reduce administrative overhead.)1) Correct AnswerAuto-approve the exception without human intervention.2) Explanation of why it is correctException Management can be a high-volume task for security teams.</div>
     </div>
     <div class="quiz-card" id="qcard1">
-      <div class="quiz-q"><span class="quiz-q-num">2.</span>What is a Remediation Task?</div>
+      <div class="quiz-q"><span class="quiz-q-num">2.</span>sn_vul.itsm_popup is the property that is set to True or False based on the customer desire for a popup when creating a Problem or Change record from a Vulnerability or VI record.</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>A change request</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>An actionable task assigned to resolve identified vulnerabilities</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>A knowledge article</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>A service catalog item</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>True</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>False</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp1">A Remediation Task is created from a vulnerability record and assigned to the appropriate team or individual to fix the identified security vulnerability within a specified timeframe.</div>
+      <div class="quiz-explain" id="qexp1">0. Correct Answer: True1. Primary Source (Zurich Release)Direct Documentation Link: Official Doc: Vulnerability Response system propertiesSearch Tip: If the link fails, search Google for: ServiceNow Zurich sn_vul.itsm_popup system propertyOfficial Proof: &quot;The sn_vul.itsm_popup system property determines if a popup modal appears for user input when creating an ITSM record (Problem or Change) from a Vulnerability or Vulnerable Item&quot;.2.</div>
     </div>
     <div class="quiz-card" id="qcard2">
-      <div class="quiz-q"><span class="quiz-q-num">3.</span>What is the purpose of Exception Management in VR?</div>
+      <div class="quiz-q"><span class="quiz-q-num">3.</span>In the Vulnerability Manager Workspace, you want to create a static list of vulnerabilities to present to the Board of Directors regarding a specific campaign (e.g., &amp;quot;Q4 Clean-up&amp;quot;). Which object should you create?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>To handle code errors</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>To manage approved exceptions where vulnerabilities are accepted rather than remediated</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>To process refund requests</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>To track server downtime</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>A Watch Topic</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>A Remediation Effort</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>A Remediation Task</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>A Dashboard Tab</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp2">Exception Management handles cases where vulnerabilities cannot or should not be remediated immediately, providing a formal process to document, approve, and track accepted risk.</div>
+      <div class="quiz-explain" id="qexp2">0) SourceServiceNow Documentation: Create a remediation effort in the Vulnerability Manager Workspace(The documentation clarifies that a Remediation Effort serves as a high-level container used by managers to track specific remediation goals or &quot;campaigns&quot; independently of day-to-day task assignments.)1) Correct AnswerA Remediation Effort2) Explanation of why it is correctA Remediation Effort is specifically designed for management-level oversight and &quot;campaign-style&quot; tracking.While Remediation Tasks are operational (assigned to IT to do the work), a Remediation Effort allows a Vulnerability Manager to group many tasks and Vulnerable Items into one static or dynamic &quot;folder.&quot; This is the perfect object for a &quot;Q4 Clean-up&quot; because it provides a single dashboard view of the total risk, the number of items resolved, and the overall progress of that specific initiative.</div>
     </div>
     <div class="quiz-card" id="qcard3">
-      <div class="quiz-q"><span class="quiz-q-num">4.</span>How does scanner integration work in VR?</div>
+      <div class="quiz-q"><span class="quiz-q-num">4.</span>CWE&amp;#x27;s are downloaded by a scheduled job into Vulnerability Response from which of the following sources?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>It scans physical documents</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>It imports vulnerability scan results from third-party tools into ServiceNow</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>It scans barcodes</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>It monitors network traffic</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>Mitre</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>Microsoft Security Response Center</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>Threat Intelligence</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>Splunk</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="3"><span class="quiz-opt-letter">E</span><span>NVD</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp3">Scanner integration imports vulnerability scan data from third-party tools (like Qualys, Tenable, Rapid7) into ServiceNow VR, automatically creating and updating vulnerability records.</div>
+      <div class="quiz-explain" id="qexp3">0) SourceServiceNow Documentation: Vulnerability Response Integrationshttps://docs.servicenow.com/bundle/zurich-security-management/page/product/vulnerability-response/concept/c_VulnerabilityResponseIntegrations.html(Note: The documentation confirms that while the NVD is used for CVEs, the Common Weakness Enumeration (CWE) data is downloaded specifically from the MITRE Corporation.)1) Correct AnswerMitre2) Explanation of why it is correctThe CWE (Common Weakness Enumeration) list is a dictionary of software weakness types (e.g., &quot;SQL Injection&quot; or &quot;Buffer Overflow&quot;).</div>
     </div>
     <div class="quiz-card" id="qcard4">
-      <div class="quiz-q"><span class="quiz-q-num">5.</span>What is the VR Dashboard used for?</div>
+      <div class="quiz-q"><span class="quiz-q-num">5.</span>In the Vulnerability Response Exception Process selecting the Request Exception button (UI Action) opens which UI Page (as a popup)?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>Managing user profiles</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>Providing a visual overview of vulnerability status, trends, and remediation progress</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>Configuring email settings</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>Designing forms</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>review_request</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>notification_preview</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>preview_exception</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>block_request</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="4"><span class="quiz-opt-letter">E</span><span>request_exception</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp4">The VR Dashboard provides security leaders with a visual overview of the organization's vulnerability posture, including open vulnerabilities, remediation progress, aging trends, and SLA compliance.</div>
+      <div class="quiz-explain" id="qexp4">0) SourceServiceNow Documentation: Request an exception for a vulnerable itemhttps://docs.servicenow.com/bundle/zurich-security-management/page/product/vulnerability-response/task/request-exception-vi.html(Note: When a user clicks the &quot;Request Exception&quot; UI Action, the system renders a modal dialog.</div>
+    </div>
+    <div class="quiz-card" id="qcard5">
+      <div class="quiz-q"><span class="quiz-q-num">6.</span>What is the specific table name where Discovered Items are stored?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="5"><span class="quiz-opt-letter">A</span><span>sn_vul_discovered_item</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="5"><span class="quiz-opt-letter">B</span><span>sn_sec_cmn_src_ci</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="5"><span class="quiz-opt-letter">C</span><span>sn_vul_source_ci</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="5"><span class="quiz-opt-letter">D</span><span>cmdb_ci_discovered</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp5">0) SourceServiceNow Documentation: Discovered Items in Vulnerability Response ServiceNow Docs - Discovered Items (Note: Discovered Items act as the &quot;bridge&quot; between raw scanner data and the CMDB. Because this functionality is shared across Security Operations—including Vulnerability Response and Security Incident Response—it resides in the Security Operations Common [sn_sec_cmn] scope.)1) Correct Answersn_sec_cmn_src_ci2) Explanation of why it is correctThe table name sn_sec_cmn_src_ci follows ServiceNow&#x27;s naming convention for shared security components:sn_sec_cmn: Security Operations Common.</div>
+    </div>
+    <div class="quiz-card" id="qcard6">
+      <div class="quiz-q"><span class="quiz-q-num">7.</span>What is the primary function of the &amp;quot;Reapply&amp;quot; button on a Remediation Target Rule?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="6"><span class="quiz-opt-letter">A</span><span>It forces the rule to run against all historical Closed records.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="6"><span class="quiz-opt-letter">B</span><span>It recalculates the target date for active Vulnerable Items that match the rule&#x27;s condition.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="6"><span class="quiz-opt-letter">C</span><span>It resets the SLAs for all items.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="6"><span class="quiz-opt-letter">D</span><span>It creates a new rule with the same criteria.</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp6">0) SourceServiceNow Documentation: Remediation target rules https://docs.servicenow.com/bundle/zurich-security-management/page/product/vulnerability-response/task/remediation-target-rule.html (The documentation notes that clicking &quot;Reapply&quot; evaluates the rule against all existing vulnerable items that are not in a terminal state.)1) Correct AnswerIt recalculates the target date for active Vulnerable Items that match the rule&#x27;s condition.2) Explanation of why it is correctRemediation Target Rules establish the deadline for fixing a vulnerability. Under normal circumstances, these rules run when a record is created or updated.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard7">
+      <div class="quiz-q"><span class="quiz-q-num">8.</span>Which is a common integration point between Vulnerability Response and Governance, Risk, and Compliance (GRC)? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="7"><span class="quiz-opt-letter">A</span><span>Risk indicators</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="7"><span class="quiz-opt-letter">B</span><span>Security incidents</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="7"><span class="quiz-opt-letter">C</span><span>Problem Records</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="7"><span class="quiz-opt-letter">D</span><span>Change Requests</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="7"><span class="quiz-opt-letter">E</span><span>Policy Exceptions</span></li>
+      <li class="quiz-opt" data-idx="5" data-q="7"><span class="quiz-opt-letter">F</span><span>Risk Events</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="7" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp7">0) SourceServiceNow Documentation: Integration with Governance, Risk, and Compliance (GRC)https://docs.servicenow.com/bundle/zurich-governance-risk-compliance/page/product/grc-common/concept/c_SecOpsGRCIntegration.html(Note: The integration focuses on measuring risk posture.</div>
+    </div>
+    <div class="quiz-card" id="qcard8">
+      <div class="quiz-q"><span class="quiz-q-num">9.</span>In the context of Vulnerability Response Workspaces, what is a &amp;quot;Remediation Effort&amp;quot;?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="8"><span class="quiz-opt-letter">A</span><span>A calculation of how much money a fix will cost.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="8"><span class="quiz-opt-letter">B</span><span>A container for managing multiple Remediation Tasks and VIs toward a specific goal or campaign.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="8"><span class="quiz-opt-letter">C</span><span>A rename of the &quot;Change Request&quot; table.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="8"><span class="quiz-opt-letter">D</span><span>A metric used by Performance Analytics.</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp8">0) SourceServiceNow Documentation: Create a remediation effort in the Vulnerability Manager Workspace https://docs.servicenow.com/bundle/washingtondc-security-management/page/product/vulnerability-response/task/create-remediation-effort-vmw.html (The documentation describes the Remediation Effort as a way for vulnerability managers to group and track the progress of specific remediation tasks toward a larger goal.)1) Correct AnswerA container for managing multiple Remediation Tasks and VIs toward a specific goal or campaign.2) Explanation of why it is correctIn the Vulnerability Manager Workspace, a Remediation Effort functions as a high-level &quot;umbrella&quot; or project folder.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard9">
+      <div class="quiz-q"><span class="quiz-q-num">10.</span>The following integration methods are available to bring vulnerability and Cl data into the ServiceNow platform: (Choose three.) <span class="quiz-choose">(choose 3)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="9"><span class="quiz-opt-letter">A</span><span>SNMP</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="9"><span class="quiz-opt-letter">B</span><span>Service Graph</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="9"><span class="quiz-opt-letter">C</span><span>SOAP</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="9"><span class="quiz-opt-letter">D</span><span>Import Set</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="9"><span class="quiz-opt-letter">E</span><span>Splunk</span></li>
+      <li class="quiz-opt" data-idx="5" data-q="9"><span class="quiz-opt-letter">F</span><span>REST</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="9" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp9">0) SourceServiceNow Documentation: Integration methods https://docs.servicenow.com/bundle/washingtondc-platform-administration/page/administer/import-sets/concept/c_ImportSets.html (Note: ServiceNow uses a layered approach for integrations. REST is the standard transport protocol for modern APIs. Import Sets are the fundamental engine used to stage and transform incoming data.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard10">
+      <div class="quiz-q"><span class="quiz-q-num">11.</span>Which data do Risk Score Calculators typically combine to compute a Risk Score? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="10"><span class="quiz-opt-letter">A</span><span>Vulnerability severity or CVSS-related scoring</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="10"><span class="quiz-opt-letter">B</span><span>Asset criticality or business impact of the CI</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="10"><span class="quiz-opt-letter">C</span><span>The user’s theme settings</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="10"><span class="quiz-opt-letter">D</span><span>The number of update sets in the instance</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="10" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp10">0) SourceServiceNow Documentation: Vulnerability Response risk calculatorshttps://docs.servicenow.com/bundle/washingtondc-security-management/page/product/vulnerability-response/concept/vulnerability-response-risk-calculators.html1) Correct AnswersVulnerability severity or CVSS-related scoringAsset criticality or business impact of the CI2) Explanation of why they are correctServiceNow uses Risk Score Calculators to move beyond simple &quot;High/Medium/Low&quot; ratings. The goal is to determine the true risk to your specific organization by combining two distinct data dimensions:Technical Severity (The &quot;What&quot;): This is the raw danger of the vulnerability itself.</div>
+    </div>
+    <div class="quiz-card" id="qcard11">
+      <div class="quiz-q"><span class="quiz-q-num">12.</span>Vulnerability Solution Management correlates vulnerabilities with solutions. Which of the following is considered a &amp;quot;Solution&amp;quot; in this context?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="11"><span class="quiz-opt-letter">A</span><span>A change request</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="11"><span class="quiz-opt-letter">B</span><span>A software patch or configuration change (e.g., Microsoft KB)</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="11"><span class="quiz-opt-letter">C</span><span>A security policy exception</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="11"><span class="quiz-opt-letter">D</span><span>A firewall rule</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp11">0) SourceServiceNow Documentation: Vulnerability Solution Management https://docs.servicenow.com/bundle/washingtondc-security-management/page/product/vulnerability-response/concept/c_VulnerabilitySolutionManagement.html (Note: Solution Management is a feature that maps vulnerabilities (CVEs) to the specific patches or remediation steps provided by vendors like Microsoft (KBs), Red Hat, or Adobe.)1) Correct AnswerA software patch or configuration change (e.g., Microsoft KB)2) Explanation of why it is correctIn the context of the Vulnerability Solution Management application, a &quot;Solution&quot; is the technical fix prescribed by a software vendor to resolve a vulnerability.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard12">
+      <div class="quiz-q"><span class="quiz-q-num">13.</span>When the Qualys Integration imports host detection results, which of the following actions can it perform on the Configuration Item table? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="12"><span class="quiz-opt-letter">A</span><span>Update</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="12"><span class="quiz-opt-letter">B</span><span>Re-parent</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="12"><span class="quiz-opt-letter">C</span><span>Delete</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="12"><span class="quiz-opt-letter">D</span><span>Insert</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="12"><span class="quiz-opt-letter">E</span><span>Re-classify</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="12" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp12">0) SourceServiceNow Documentation: Qualys Host Detection Integrationhttps://docs.servicenow.com/bundle/zurich-security-management/page/product/vulnerability-response/concept/c_QualysHostDetectionIntegration.html(Note: The documentation confirms the integration uses the Identification and Reconciliation Engine (IRE). If a match is found, it Updates the CI. If no match is found (and the property is enabled), it Inserts (creates) a new CI.)1) Correct AnswersUpdate, Insert2) Explanation of why they are correctThe primary function of the Qualys Host Detection integration is to synchronize the reality of the network with the CMDB.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard13">
+      <div class="quiz-q"><span class="quiz-q-num">14.</span>Select the three components of a Filter Condition: (Choose three.) <span class="quiz-choose">(choose 3)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="13"><span class="quiz-opt-letter">A</span><span>Field</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="13"><span class="quiz-opt-letter">B</span><span>Sum</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="13"><span class="quiz-opt-letter">C</span><span>Operator</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="13"><span class="quiz-opt-letter">D</span><span>Value</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="13" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp13">0) SourceServiceNow Documentation: Condition Builderhttps://docs.servicenow.com/bundle/washingtondc-platform-user-interface/page/use/common-ui-elements/concept/c_ConditionBuilder.html(Note: The documentation defines a condition as &quot;A field, an operator, and a value.&quot;)1) Correct AnswersField, Operator, Value2) Explanation of why they are correctIn ServiceNow, the Condition Builder (the tool used to filter lists, create reports, or define business rules) constructs a query using a strict logical triplet.</div>
+    </div>
+    <div class="quiz-card" id="qcard14">
+      <div class="quiz-q"><span class="quiz-q-num">15.</span>Which ServiceNow application is often installed alongside Vulnerability Response to check if CIs meet specific configuration standards (e.g., CIS Benchmarks)?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="14"><span class="quiz-opt-letter">A</span><span>Configuration Compliance</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="14"><span class="quiz-opt-letter">B</span><span>Trusted Security Circles</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="14"><span class="quiz-opt-letter">C</span><span>Threat Intelligence</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="14"><span class="quiz-opt-letter">D</span><span>Security Incident Response</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp14">0) SourceServiceNow Documentation: Configuration Compliance overviewhttps://docs.servicenow.com/bundle/zurich-security-management/page/product/configuration-compliance/concept/c_ConfigurationCompliance.html(Note: The documentation defines Configuration Compliance as the application responsible for aggregating and prioritizing configuration assessment data from third-party scanners, specifically focusing on benchmarks like CIS or DISA STIGs.)1) Correct AnswerConfiguration Compliance2) Explanation of why it is correctWhile Vulnerability Response (VR) focuses on software flaws (like missing patches or bugs), Configuration Compliance (CC) focuses on how a system is set up.It ingests data from scanners (like Qualys Policy Compliance or Tenable.io) to see if your servers follow &quot;Hardening&quot; standards such as CIS Benchmarks or DISA STIGs.</div>
     </div>
     <div class="quiz-score" id="quizScore">
-      <div class="quiz-score-num" id="quizScoreNum">0/5</div>
+      <div class="quiz-score-num" id="quizScoreNum">0/15</div>
       <div class="quiz-score-label">Sample Quiz Score</div>
       <div class="quiz-score-msg" id="quizScoreMsg"></div>
       <a href="https://www.udemy.com/course/pass-your-servicenow-cis-vulnerability-response-vr-exam/?referralCode=EE503A8EA58C23039100" target="_blank" rel="noopener" class="cp-cta">
@@ -549,33 +663,83 @@ a:hover { text-decoration: underline; }
   });
 
   // Quiz logic
-  const answers = [1,1,1,1,1];
+  const answers = [1, 0, 1, 0, 4, 1, 1, [0, 5], 1, [1, 3, 5], [0, 1], 1, [0, 3], [0, 2, 3], 0];
   let answered = 0, score = 0;
+  const multiSelections = {};
+
   document.querySelectorAll('.quiz-opt').forEach(function(opt) {
     opt.addEventListener('click', function() {
       var qi = parseInt(this.dataset.q);
-      var idx = parseInt(this.dataset.idx);
       var card = document.getElementById('qcard' + qi);
       if (card.dataset.state) return;
-      var isCorrect = idx === answers[qi];
-      if (isCorrect) { score++; this.classList.add('correct'); card.dataset.state = 'correct'; }
-      else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
-      this.classList.add('selected');
-      card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
-      document.getElementById('qexp' + qi).classList.add('show');
-      answered++;
-      if (answered === answers.length) {
-        var el = document.getElementById('quizScore');
-        el.classList.add('show');
-        document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
-        var msg = score === 5 ? 'Perfect score! You are well prepared.' : score >= 3 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
-        document.getElementById('quizScoreMsg').textContent = msg;
-        if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: 'VR', quiz_score: score });
+      var idx = parseInt(this.dataset.idx);
+      var isMulti = Array.isArray(answers[qi]);
+
+      if (isMulti) {
+        // Multi-select: toggle selection
+        if (!multiSelections[qi]) multiSelections[qi] = new Set();
+        if (multiSelections[qi].has(idx)) {
+          multiSelections[qi].delete(idx);
+          this.classList.remove('selected');
+        } else {
+          multiSelections[qi].add(idx);
+          this.classList.add('selected');
+        }
+        // Show/hide submit button
+        var btn = card.querySelector('.quiz-submit-btn');
+        btn.style.display = multiSelections[qi].size > 0 ? 'block' : 'none';
+      } else {
+        // Single answer: immediate check
+        var isCorrect = idx === answers[qi];
+        if (isCorrect) { score++; this.classList.add('correct'); card.dataset.state = 'correct'; }
+        else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
+        this.classList.add('selected');
+        card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
+        document.getElementById('qexp' + qi).classList.add('show');
+        answered++;
+        checkDone();
       }
     });
   });
 
-  
-</script>
+  document.querySelectorAll('.quiz-submit-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var qi = parseInt(this.dataset.q);
+      var card = document.getElementById('qcard' + qi);
+      if (card.dataset.state) return;
+      var selected = Array.from(multiSelections[qi] || []).sort();
+      var correct = answers[qi].slice().sort();
+      var isCorrect = selected.length === correct.length && selected.every(function(v, i) { return v === correct[i]; });
+      var opts = card.querySelectorAll('.quiz-opt');
+      if (isCorrect) {
+        score++;
+        card.dataset.state = 'correct';
+        selected.forEach(function(i) { opts[i].classList.add('correct'); });
+      } else {
+        card.dataset.state = 'wrong';
+        selected.forEach(function(i) {
+          if (correct.indexOf(i) === -1) opts[i].classList.add('wrong');
+          else opts[i].classList.add('correct');
+        });
+        correct.forEach(function(i) { opts[i].classList.add('correct'); });
+      }
+      opts.forEach(function(o) { o.setAttribute('disabled',''); });
+      this.style.display = 'none';
+      document.getElementById('qexp' + qi).classList.add('show');
+      answered++;
+      checkDone();
+    });
+  });
+
+  function checkDone() {
+    if (answered === answers.length) {
+      var el = document.getElementById('quizScore');
+      el.classList.add('show');
+      document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
+      var msg = score === answers.length ? 'Perfect score! You are well prepared.' : score >= 10 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
+      document.getElementById('quizScoreMsg').textContent = msg;
+      if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: 'VR', quiz_score: score });
+    }
+  }</script>
 </body>
 </html>

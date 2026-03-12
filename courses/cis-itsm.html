@@ -342,6 +342,10 @@ a:hover { text-decoration: underline; }
 .quiz-opt.wrong .quiz-opt-letter { background: #d73a49; color: #fff; border-color: #d73a49; }
 .quiz-explain { display: none; margin-top: 12px; padding: 12px 16px; background: var(--bg-card); border-radius: 8px; font-size: 0.9rem; color: var(--text-dim); line-height: 1.6; border-left: 3px solid var(--orange); }
 .quiz-explain.show { display: block; }
+.quiz-choose { font-weight: 400; color: var(--orange); font-size: 0.85rem; margin-left: 4px; }
+.quiz-submit-btn { margin-top: 12px; padding: 10px 24px; background: var(--orange); color: #fff; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.15s, transform 0.1s; }
+.quiz-submit-btn:hover { background: #c75400; }
+.quiz-submit-btn:active { transform: scale(0.97); }
 .quiz-score { margin-top: 24px; padding: 20px; background: var(--bg-raised); border-radius: 12px; border: 1px solid var(--border); text-align: center; display: none; }
 .quiz-score.show { display: block; }
 .quiz-score-num { font-size: 2rem; font-weight: 800; color: var(--orange); }
@@ -465,60 +469,279 @@ a:hover { text-decoration: underline; }
   </div>
 
   <section class="quiz-section" id="free-quiz">
-    <h2>Try 5 Free ITSM Questions</h2>
-    <p class="quiz-intro">Test your knowledge before you buy. These sample questions are from our full 100-question practice test.</p>
-        <div class="quiz-card" id="qcard0">
-      <div class="quiz-q"><span class="quiz-q-num">1.</span>What is Incident Management in ServiceNow?</div>
+    <h2>Try 15 Free ITSM Questions</h2>
+    <p class="quiz-intro">Test your knowledge before you buy — including multiple-choice and multi-select, just like the real exam.</p>
+    <div class="quiz-card" id="qcard0">
+      <div class="quiz-q"><span class="quiz-q-num">1.</span>Customer wants to give secure access to business users to view problem records and reports for the products they support.What additional problem role is installed to support this requirement, when you install the ITSM roles plugin ?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>Project planning</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>The process of restoring normal service operation as quickly as possible after an unplanned interruption</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>Software development</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>Asset tracking</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>sn_business_user</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>sn_problem_read</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>sn_service_owner</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>sn_problem_business_user</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="0"><span class="quiz-opt-letter">E</span><span>problem_write</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp0">Incident Management focuses on restoring normal service operation as quickly as possible after an unplanned interruption or reduction in quality, minimizing business impact.</div>
+      <div class="quiz-explain" id="qexp0">Correct Answer: sn_problem_read
+
+Source
+Official Doc: Problem Management rolesIf the link fails, search Google for: ServiceNow Zurich sn_problem_read role read access problem records
+
+Expert Explanation
+ServiceNow follows a consistent naming convention for granular ITSM roles: sn_[module]_[access_level]. For Problem Management, sn_problem_read grants read-only access to the Problem Management application and all related records. This role is part of the ITSM Roles plugin and pairs with sn_problem_write for write access.</div>
     </div>
     <div class="quiz-card" id="qcard1">
-      <div class="quiz-q"><span class="quiz-q-num">2.</span>What is the difference between an Incident and a Problem?</div>
+      <div class="quiz-q"><span class="quiz-q-num">2.</span>What would be the next step for this problem:&amp;quot;Problem investigation had been previously closed, because the risk was accepted, in favor of using the workaround, instead of applying the fix.After a couple of weeks, the issue starts to occur more frequently, so management wants to re-visit the root cause analysis.&amp;quot;</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>They are the same</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>An Incident is an unplanned interruption; a Problem is the underlying root cause of one or more incidents</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>Incidents are for hardware; Problems are for software</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>Problems are more urgent than Incidents</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>If 7 days has passed, since the Problem was closed, it cannot be re-opened</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>Problem Manager clicks Re-Analyze on the Problem record</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>Problem Assignee clicks Re-Open on the Problem record</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>Administrator clicks Re-Open on the Problem Record</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp1">An Incident is an unplanned interruption to a service. A Problem is the unknown root cause of one or more incidents. Problem Management aims to prevent incidents by finding and fixing root causes.</div>
+      <div class="quiz-explain" id="qexp1">Correct Answer: Problem Manager clicks Re-Analyze on the Problem record
+Source
+
+Problem management lifecycle - ServiceNow Docs
+If the link fails, search Google for: ServiceNow Zurich Re-Analyze problem reopen Risk Accepted Closed state
+
+Expert Explanation
+In ServiceNow Problem Management Best Practice lifecycle, the Re-Analyze UI action is the only mechanism to reopen a problem. It is available on problems in both Resolved (Risk Accepted) and Closed states. Clicking Re-Analyze transitions the problem back to Root Cause Analysis, enabling the team to reinvestigate. There is no &quot;Re-Open&quot; button, no time-based restriction, and admin access is not required.</div>
     </div>
     <div class="quiz-card" id="qcard2">
-      <div class="quiz-q"><span class="quiz-q-num">3.</span>What is a Change Request?</div>
+      <div class="quiz-q"><span class="quiz-q-num">3.</span>Where are defined the timeframe conditions for sending an SLA breach warning notification ?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>A feature request from customers</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>A formal proposal to modify an IT service, system, or infrastructure component</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>A bug report</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>A service catalog item</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>SLA definition record</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>Default SLA flow</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>SLA Properties application</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>SLA trigger conditions</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp2">A Change Request is a formal record proposing a modification to the IT environment (hardware, software, configuration, process), managed through a controlled approval and implementation process.</div>
+      <div class="quiz-explain" id="qexp2">Correct Answer: Default SLA flow
+Source
+
+ServiceNow Docs: SLA Flow
+If the link fails, search Google for: ServiceNow Zurich Default SLA flow breach warning notification timeframe percentage
+
+Expert Explanation
+The Default SLA Flow (Flow Designer) is where breach warning notification timeframes are defined. The flow contains &quot;Wait until X% of SLA Duration&quot; steps at various thresholds (commonly 50%, 75%, 100%), each followed by a notification action. When the SLA clock reaches each threshold, the flow sends the configured warning notification.</div>
     </div>
     <div class="quiz-card" id="qcard3">
-      <div class="quiz-q"><span class="quiz-q-num">4.</span>What are the types of Changes in ITSM?</div>
+      <div class="quiz-q"><span class="quiz-q-num">4.</span>What is a characteristic of Major Incidents in the ServiceNow platform?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>Small, Medium, Large</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>Normal, Standard, Emergency</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>Critical, High, Medium, Low</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>Planned, Unplanned</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>They are resolved exclusively through manual processes.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>They only affect a single user.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>They are incidents of high impact and urgency affecting a large number of users.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>They can only be created manually.</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp3">The three change types are: Normal (requires full assessment and CAB approval), Standard (pre-approved, low-risk, follows a template), and Emergency (urgent, expedited approval for critical fixes).</div>
+      <div class="quiz-explain" id="qexp3">Correct Answer: They are incidents of high impact and urgency affecting a large number of users or critical services
+Source
+
+Official Doc: Major Incident Management - ServiceNow Xanadu
+If the link fails, search Google for: ServiceNow Major Incident Management definition high impact urgency
+
+Expert Explanation
+A Major Incident in ServiceNow is characterized by high Impact and high Urgency, typically affecting a large number of users, a critical business service, or multiple systems simultaneously. ServiceNow provides a dedicated Major Incident Management workspace that enables coordinated response through a communication bridge, stakeholder notifications, and dedicated task tracking.</div>
     </div>
     <div class="quiz-card" id="qcard4">
-      <div class="quiz-q"><span class="quiz-q-num">5.</span>What is a Knowledge Article in ITSM?</div>
+      <div class="quiz-q"><span class="quiz-q-num">5.</span>What is the name of Business Rule that triggers automatic group assignment on Incident, Problem or Change requests?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>A blog post</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>A documented solution or information that helps resolve issues and reduce ticket volume</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>A database schema</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>A training video</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>Populate Assignment Group based on CI/SO</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>Auto-populate ITSM Assignment Groups</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>ITSM Assignment Lookup Rule</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>Automatic Assignment for ITSM</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp4">Knowledge Articles document solutions, workarounds, FAQs, and procedures that help both end users (self-service) and support agents resolve issues faster, reducing repeat tickets.</div>
+      <div class="quiz-explain" id="qexp4">Correct Answer: Populate Assignment Group based on CI/SO
+Source
+
+ServiceNow Community: Auto-populate Assignment Group using CI
+If the link fails, search Google for: ServiceNow Zurich Populate Assignment Group based on CI SO business rule
+
+Expert Explanation
+The OOTB business rule &quot;Populate Assignment Group based on CI/SO&quot; runs on the task table and applies to Incident, Problem, and Change records. When a CI is selected on a record, the rule checks the CI&#x27;s Support group (for incidents/problems) or Change group (for changes) and writes it to the Assignment group field.</div>
+    </div>
+    <div class="quiz-card" id="qcard5">
+      <div class="quiz-q"><span class="quiz-q-num">6.</span>What allows customers to define condition based flows for a fit for purpose model in Change Management ?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="5"><span class="quiz-opt-letter">A</span><span>State Transition Models</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="5"><span class="quiz-opt-letter">B</span><span>State Flows</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="5"><span class="quiz-opt-letter">C</span><span>Workflows 2.0</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="5"><span class="quiz-opt-letter">D</span><span>Conditional Change Models</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp5">Correct Answer: State Transition Models
+
+Source
+
+Official Doc: State transition models - ServiceNow Xanadu
+If the link fails, search Google for: ServiceNow State Transition Models condition-based flow Change Management fit for purpose
+
+
+Expert Explanation
+State Transition Models in ServiceNow Change Management allow administrators to define which state transitions are valid for a given Change model, along with the conditions that must be met for each transition to be permitted. This enables &quot;fit for purpose&quot; Change models where the governance rules, required fields, and approval conditions are specific to each change type.</div>
+    </div>
+    <div class="quiz-card" id="qcard6">
+      <div class="quiz-q"><span class="quiz-q-num">7.</span>If Assignment group is empty on an incident record, what will happen when an agent that is a member of a single user group clicks the &amp;quot;Assign to me&amp;quot; UI action?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="6"><span class="quiz-opt-letter">A</span><span>The agent is prompted to select the Assignment group</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="6"><span class="quiz-opt-letter">B</span><span>The Assignment group field is populated with agent’s user group</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="6"><span class="quiz-opt-letter">C</span><span>An error is displayed indicating the Assignment group field must be populated before executing the Assign to me UI action</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="6"><span class="quiz-opt-letter">D</span><span>The Assignment group field remains empty</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp6">Correct Answer: The Assignment group field is populated with the agent&#x27;s user group
+Source
+
+ServiceNow Community: Assign to Me changes San Diego
+If the link fails, search Google for: ServiceNow Zurich Assign to Me single group empty assignment group auto-populate San Diego
+
+Expert Explanation
+The &quot;Assign to Me&quot; UI action behavior in San Diego and later releases: when the Assignment group field is empty and the agent belongs to exactly one group, clicking Assign to Me automatically populates the Assignment group with that group AND assigns the record to the agent. If the agent belongs to multiple groups, they are prompted to select which group.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard7">
+      <div class="quiz-q"><span class="quiz-q-num">8.</span>What are the main stages in the Incident Management lifecycle within ServiceNow? (Choose 3) <span class="quiz-choose">(choose 3)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="7"><span class="quiz-opt-letter">A</span><span>Creation and Classification</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="7"><span class="quiz-opt-letter">B</span><span>Investigation and Diagnosis</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="7"><span class="quiz-opt-letter">C</span><span>Resolution and Closure</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="7"><span class="quiz-opt-letter">D</span><span>Prioritization and Scheduling</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="7"><span class="quiz-opt-letter">E</span><span>Feedback and Improvement</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="7" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp7">Correct Answers: Creation and Classification; Investigation and Diagnosis; Resolution and Closure
+Source
+
+Incident Management - Now Learning
+If the link fails, search Google for: ServiceNow Zurich incident management lifecycle stages creation classification investigation resolution closure
+
+Expert Explanation
+ServiceNow&#x27;s official training defines three stages in the Incident Management lifecycle. Creation and Classification: the incident is created, categorized, prioritized, and routed. Investigation and Diagnosis: agents investigate the incident, apply workarounds if available, and work toward a permanent fix.</div>
+    </div>
+    <div class="quiz-card" id="qcard8">
+      <div class="quiz-q"><span class="quiz-q-num">9.</span>Customer wants to use the Service Catalog to generate task-based records for end-user inquiries.Which Service Catalog capability can you use to generate these records?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="8"><span class="quiz-opt-letter">A</span><span>Execution Plans</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="8"><span class="quiz-opt-letter">B</span><span>Content Items</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="8"><span class="quiz-opt-letter">C</span><span>Catalog Items</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="8"><span class="quiz-opt-letter">D</span><span>Record Producers</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp8">Correct Answer: Record Producers
+Source
+
+Record producers - ServiceNow Docs
+If the link fails, search Google for: ServiceNow Zurich Record Producer catalog item type task records target table
+
+Expert Explanation
+A Record Producer is a type of catalog item that creates a record on any specified target table when submitted. Unlike standard catalog items (which create sc_request, sc_req_item, and sc_task records), a Record Producer can create an incident, a change request, a problem, or any other table record directly. This makes Record Producers ideal for giving end users a friendly Service Portal interface to submit records that belong to ITSM modules without exposing those modules&#x27; native forms.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard9">
+      <div class="quiz-q"><span class="quiz-q-num">10.</span>What are some best practices for guiding customers about use of Notifications? (Choose 3) <span class="quiz-choose">(choose 3)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="9"><span class="quiz-opt-letter">A</span><span>Make sure Notification requirements and test plans are in the project scope from the start</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="9"><span class="quiz-opt-letter">B</span><span>Get input from Marketing department, regarding format of customer/caller facing notifications</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="9"><span class="quiz-opt-letter">C</span><span>Use templates to ensure consistency and ease of configuration</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="9"><span class="quiz-opt-letter">D</span><span>Use incident.itil.role template as the master template to build all other ITSM templates</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="9"><span class="quiz-opt-letter">E</span><span>When possible, maximize the quantity of email updates to customers</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="9" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp9">Correct Answers: Include notifications in project scope; Get Marketing input on format; Use templates for consistency
+Source
+
+CIS-ITSM Notification Best Practices Discussion - ExamTopics
+If the link fails, search Google for: ServiceNow CIS-ITSM notification best practices Now Create methodology
+
+Expert Explanation
+ServiceNow&#x27;s Now Create implementation methodology emphasizes treating notifications as a formal workstream. Scoping notification requirements early prevents costly rework during UAT. Marketing and Communications departments frequently control brand standards for customer-facing messages, so their input is required before implementation.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard10">
+      <div class="quiz-q"><span class="quiz-q-num">11.</span>In the CAB workbench, what are ways the CAB manager can identify the Change requests to be added to a particular meeting agenda? (Choose 2) <span class="quiz-choose">(choose 2)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="10"><span class="quiz-opt-letter">A</span><span>Change requests meeting different conditions, like Risk level or Type</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="10"><span class="quiz-opt-letter">B</span><span>Change requests planned within a certain date range</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="10"><span class="quiz-opt-letter">C</span><span>Use any of the options on the Agenda Criteria Tab</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="10"><span class="quiz-opt-letter">D</span><span>Change requests for a certain Change Flow Definition</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="10" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp10">Correct Answer: Change requests meeting different conditions (like Risk level) and Change requests planned within a certain date range
+Source
+
+Official Doc: CAB Workbench configuration
+If the link fails, search Google for: ServiceNow Zurich CAB workbench agenda management change request filter conditions date range
+
+Expert Explanation
+The CAB Workbench uses an Agenda Management section (not an &quot;Agenda Criteria Tab&quot;) to identify change requests for review.</div>
+    </div>
+    <div class="quiz-card" id="qcard11">
+      <div class="quiz-q"><span class="quiz-q-num">12.</span>What is this resource called:&amp;quot;ServiceNow contains a resource with information about all services. It is used to support the sale and delivery of services to employees and customers. It includes information about deliverables, options, prices, delivery and performance targets.&amp;quot;</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="11"><span class="quiz-opt-letter">A</span><span>Service Portal</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="11"><span class="quiz-opt-letter">B</span><span>Service Dashboard</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="11"><span class="quiz-opt-letter">C</span><span>Service Map</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="11"><span class="quiz-opt-letter">D</span><span>Service One Stop Shop</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="11"><span class="quiz-opt-letter">E</span><span>Service Catalog</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp11">Correct Answer: Service Catalog
+Source
+
+Official Doc: Service Catalog Management - ServiceNow Xanadu
+If the link fails, search Google for: ServiceNow Service Catalog centralized browsable IT services users
+
+Expert Explanation
+The Service Catalog is the ServiceNow module that presents a structured, browsable interface of available IT and business services to end users. It supports multiple item types (Catalog Items, Record Producers, Content Items, Order Guides) organized into categories and subcategories.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard12">
+      <div class="quiz-q"><span class="quiz-q-num">13.</span>On the Change request, what types of Conflicts are detected automatically ? (Choose 3) <span class="quiz-choose">(choose 3)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="12"><span class="quiz-opt-letter">A</span><span>Conflict with Assignee Shift Schedule</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="12"><span class="quiz-opt-letter">B</span><span>Conflict with Blackout Schedule</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="12"><span class="quiz-opt-letter">C</span><span>Conflict with Company Holiday Schedule</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="12"><span class="quiz-opt-letter">D</span><span>Another change for the same CI, at the same time</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="12"><span class="quiz-opt-letter">E</span><span>Conflict with Maintenance Window</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="12" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp12">Correct Answers: Conflict with Blackout Schedule; Another change for the same CI at the same time; Conflict with Maintenance Window
+Source
+
+Conflict checking when scheduling a change request - ServiceNow Community
+If the link fails, search Google for: ServiceNow Zurich change conflict detection types blackout maintenance window same CI
+
+Expert Explanation
+ServiceNow Change Management automatically detects three types of conflicts when a change is scheduled. Blackout window conflict: the scheduled time falls within a defined blackout period (e.g., year-end freeze). CI Already Scheduled conflict: another change affecting the same CI is already scheduled at the same time.</div>
+    </div>
+    <div class="quiz-card quiz-multi" id="qcard13">
+      <div class="quiz-q"><span class="quiz-q-num">14.</span>In the ServiceNow native platform, the service catalog can be accessed via the Self-Service &amp;amp;gt; Service Catalog module. Your customer wants to make modifications to this home page, to add, remove and re-arrange the categories.Users with which roles can make these edits? (Choose 2) <span class="quiz-choose">(choose 2)</span></div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="13"><span class="quiz-opt-letter">A</span><span>catalog_admin</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="13"><span class="quiz-opt-letter">B</span><span>sc_catalog_admin</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="13"><span class="quiz-opt-letter">C</span><span>catalog_editor</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="13"><span class="quiz-opt-letter">D</span><span>sn_catalog_homepage_write</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="13"><span class="quiz-opt-letter">E</span><span>admin</span></li>
+      </ul>
+      <button class="quiz-submit-btn" data-q="13" style="display:none">Submit Answer</button>
+      <div class="quiz-explain" id="qexp13">Correct Answers: catalog_admin; admin
+Source
+
+Managing the homepage for a catalog - ServiceNow Docs
+If the link fails, search Google for: ServiceNow Zurich service catalog homepage catalog_admin admin role modify access
+
+Expert Explanation
+The ServiceNow documentation for Managing the Homepage for a Catalog states that &quot;Administrators and catalog administrators can control the options for catalog managers and editors.&quot; The catalog_admin role is the designated role for all Service Catalog administrative tasks including homepage management. The admin role has system-wide access and inherently includes all catalog administration capabilities.</div>
+    </div>
+    <div class="quiz-card" id="qcard14">
+      <div class="quiz-q"><span class="quiz-q-num">15.</span>Current status of a problem record is tracked in the State field. Every state has a label, value and constant. This example is for Fix in Progress state:Label: Fix in ProgressValue: 104Constant Problem State STATES.FIX IN PROGRESSCustomer wants to add a prerequisite for moving out of the Fix in Progress state. When you update the script include which value is better to use in the script?</div>
+      <ul class="quiz-opts">
+      <li class="quiz-opt" data-idx="0" data-q="14"><span class="quiz-opt-letter">A</span><span>104</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="14"><span class="quiz-opt-letter">B</span><span>&quot;Fix in Progress&quot;</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="14"><span class="quiz-opt-letter">C</span><span>ProblemState.STATES.FIX_IN_PROGRESS</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="14"><span class="quiz-opt-letter">D</span><span>104.ProblemState.STATES.FIX_IN_PROGRESS</span></li>
+      </ul>
+      <div class="quiz-explain" id="qexp14">Correct Answer: ProblemState.STATES.FIX_IN_PROGRESS
+
+Source
+
+Official Doc: ServiceNow developer best practices for state references
+If the link fails, search Google for: ServiceNow Zurich ProblemState STATES FIX_IN_PROGRESS programmatic state reference best practice
+
+
+Expert Explanation
+ServiceNow&#x27;s developer best practices recommend using constant objects like ProblemState.STATES.FIX_IN_PROGRESS when referencing problem states in scripts. This approach is preferred over hardcoded integers (104) or string literals (&#x27;Fix in Progress&#x27;) because constants are readable, maintainable, and decoupled from the underlying integer value.</div>
     </div>
     <div class="quiz-score" id="quizScore">
-      <div class="quiz-score-num" id="quizScoreNum">0/5</div>
+      <div class="quiz-score-num" id="quizScoreNum">0/15</div>
       <div class="quiz-score-label">Sample Quiz Score</div>
       <div class="quiz-score-msg" id="quizScoreMsg"></div>
       <a href="https://www.udemy.com/course/pass-your-servicenow-cis-itsm-exam/?referralCode=3D0B3C1C48CE64275156" target="_blank" rel="noopener" class="cp-cta">
@@ -549,33 +772,83 @@ a:hover { text-decoration: underline; }
   });
 
   // Quiz logic
-  const answers = [1,1,1,1,1];
+  const answers = [1, 1, 1, 2, 0, 0, 1, [0, 1, 2], 3, [0, 1, 2], [0, 1], 4, [1, 3, 4], [0, 4], 2];
   let answered = 0, score = 0;
+  const multiSelections = {};
+
   document.querySelectorAll('.quiz-opt').forEach(function(opt) {
     opt.addEventListener('click', function() {
       var qi = parseInt(this.dataset.q);
-      var idx = parseInt(this.dataset.idx);
       var card = document.getElementById('qcard' + qi);
       if (card.dataset.state) return;
-      var isCorrect = idx === answers[qi];
-      if (isCorrect) { score++; this.classList.add('correct'); card.dataset.state = 'correct'; }
-      else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
-      this.classList.add('selected');
-      card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
-      document.getElementById('qexp' + qi).classList.add('show');
-      answered++;
-      if (answered === answers.length) {
-        var el = document.getElementById('quizScore');
-        el.classList.add('show');
-        document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
-        var msg = score === 5 ? 'Perfect score! You are well prepared.' : score >= 3 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
-        document.getElementById('quizScoreMsg').textContent = msg;
-        if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: 'ITSM', quiz_score: score });
+      var idx = parseInt(this.dataset.idx);
+      var isMulti = Array.isArray(answers[qi]);
+
+      if (isMulti) {
+        // Multi-select: toggle selection
+        if (!multiSelections[qi]) multiSelections[qi] = new Set();
+        if (multiSelections[qi].has(idx)) {
+          multiSelections[qi].delete(idx);
+          this.classList.remove('selected');
+        } else {
+          multiSelections[qi].add(idx);
+          this.classList.add('selected');
+        }
+        // Show/hide submit button
+        var btn = card.querySelector('.quiz-submit-btn');
+        btn.style.display = multiSelections[qi].size > 0 ? 'block' : 'none';
+      } else {
+        // Single answer: immediate check
+        var isCorrect = idx === answers[qi];
+        if (isCorrect) { score++; this.classList.add('correct'); card.dataset.state = 'correct'; }
+        else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
+        this.classList.add('selected');
+        card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
+        document.getElementById('qexp' + qi).classList.add('show');
+        answered++;
+        checkDone();
       }
     });
   });
 
-  
-</script>
+  document.querySelectorAll('.quiz-submit-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var qi = parseInt(this.dataset.q);
+      var card = document.getElementById('qcard' + qi);
+      if (card.dataset.state) return;
+      var selected = Array.from(multiSelections[qi] || []).sort();
+      var correct = answers[qi].slice().sort();
+      var isCorrect = selected.length === correct.length && selected.every(function(v, i) { return v === correct[i]; });
+      var opts = card.querySelectorAll('.quiz-opt');
+      if (isCorrect) {
+        score++;
+        card.dataset.state = 'correct';
+        selected.forEach(function(i) { opts[i].classList.add('correct'); });
+      } else {
+        card.dataset.state = 'wrong';
+        selected.forEach(function(i) {
+          if (correct.indexOf(i) === -1) opts[i].classList.add('wrong');
+          else opts[i].classList.add('correct');
+        });
+        correct.forEach(function(i) { opts[i].classList.add('correct'); });
+      }
+      opts.forEach(function(o) { o.setAttribute('disabled',''); });
+      this.style.display = 'none';
+      document.getElementById('qexp' + qi).classList.add('show');
+      answered++;
+      checkDone();
+    });
+  });
+
+  function checkDone() {
+    if (answered === answers.length) {
+      var el = document.getElementById('quizScore');
+      el.classList.add('show');
+      document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
+      var msg = score === answers.length ? 'Perfect score! You are well prepared.' : score >= 10 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
+      document.getElementById('quizScoreMsg').textContent = msg;
+      if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: 'ITSM', quiz_score: score });
+    }
+  }</script>
 </body>
 </html>
