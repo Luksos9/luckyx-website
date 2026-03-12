@@ -584,6 +584,18 @@ body::after {
 
 .hero-sub strong { color: var(--text); font-weight: 600; }
 
+.hero-links {
+  display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
+  margin-bottom: 28px; animation: fadeUp 0.7s ease 0.2s both;
+}
+.hero-link {
+  font-size: 0.85rem; font-weight: 600; color: var(--orange);
+  padding: 8px 18px; border-radius: 8px;
+  background: rgba(221,92,12,0.08); border: 1px solid rgba(221,92,12,0.15);
+  transition: background 0.2s, transform 0.2s;
+}
+.hero-link:hover { background: rgba(221,92,12,0.14); transform: translateY(-1px); text-decoration: none; }
+
 /* Stats */
 .stats-row {
   display: flex;
@@ -1883,6 +1895,89 @@ h3.card-title,
   .nav-btn { min-width: 52px; min-height: 44px; }
   .faq-q { min-height: 48px; }
 }
+
+/* ============ CIS-DF MANDATE COUNTDOWN ============ */
+.countdown-banner {
+  max-width: 720px;
+  margin: -20px auto 40px;
+  padding: 20px 24px;
+  background: linear-gradient(135deg, rgba(221,92,12,0.08), rgba(221,92,12,0.03));
+  border: 1px solid rgba(221,92,12,0.2);
+  border-radius: 14px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.countdown-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(221,92,12,0.04), transparent);
+  animation: countdown-shimmer 3s ease-in-out infinite;
+}
+@keyframes countdown-shimmer {
+  0%, 100% { transform: translateX(-100%); }
+  50% { transform: translateX(100%); }
+}
+.countdown-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--orange);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+  position: relative;
+}
+.countdown-headline {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 12px;
+  position: relative;
+  line-height: 1.4;
+}
+.countdown-grid {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 12px;
+  position: relative;
+}
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 56px;
+}
+.countdown-num {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--orange);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.countdown-lbl {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 4px;
+}
+.countdown-sub {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  position: relative;
+  line-height: 1.5;
+}
+.countdown-sub a {
+  color: var(--orange);
+  font-weight: 600;
+}
+@media (max-width: 600px) {
+  .countdown-num { font-size: 1.4rem; }
+  .countdown-unit { min-width: 46px; }
+  .countdown-grid { gap: 10px; }
+}
 </style>
 </head>
 <body>
@@ -1953,6 +2048,10 @@ h3.card-title,
   <div class="hero-pill"><span class="pulse"></span>18 ServiceNow practice exams &bull; 4,700+ questions</div>
   <h1>Lucky <span class="x">X</span></h1>
   <p class="hero-sub">You finished the official ServiceNow learning path.<br>Now make sure you pass the certification exam.</p>
+  <div class="hero-links">
+    <a href="/quiz.html" class="hero-link">Which cert should I take first? &rarr;</a>
+    <a href="/compare.html" class="hero-link">Compare all 18 certifications &rarr;</a>
+  </div>
 
   <div class="stats-row">
     <div class="stat-item">
@@ -1977,6 +2076,19 @@ h3.card-title,
     </div>
   </div>
 </section>
+
+<!-- CIS-DF Mandate Countdown -->
+<div class="countdown-banner reveal" id="dfCountdown">
+  <div class="countdown-label">CIS-Data Foundations Mandate</div>
+  <div class="countdown-headline">Starting Jan 1, 2027 — CIS-DF becomes a prerequisite for 7 CIS certifications</div>
+  <div class="countdown-grid">
+    <div class="countdown-unit"><span class="countdown-num" id="cdDays">---</span><span class="countdown-lbl">Days</span></div>
+    <div class="countdown-unit"><span class="countdown-num" id="cdHrs">--</span><span class="countdown-lbl">Hours</span></div>
+    <div class="countdown-unit"><span class="countdown-num" id="cdMin">--</span><span class="countdown-lbl">Min</span></div>
+    <div class="countdown-unit"><span class="countdown-num" id="cdSec">--</span><span class="countdown-lbl">Sec</span></div>
+  </div>
+  <div class="countdown-sub">Pass CIS-DF now and get ahead. <a href="/courses/cis-data-foundations.html">Practice with 470 questions &rarr;</a></div>
+</div>
 
 <!-- Price comparison -->
 <div class="num-strip reveal">
@@ -2188,6 +2300,8 @@ h3.card-title,
       <a href="#courses">Practice Tests</a>
       <a href="#why">Why Lucky X</a>
       <a href="#faq">FAQ</a>
+      <a href="/quiz.html">Which Cert First?</a>
+      <a href="/compare.html">Compare Certs</a>
       <a href="#roadmap">Free Roadmap</a>
       <a href="https://www.udemy.com/user/lucky-x/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm-1.66 14.58V7.42l6.36 4.58-6.36 4.58Z"/></svg>Udemy</a>
     </nav>
@@ -2623,6 +2737,38 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     }
   });
 });
+
+/* ======== CIS-DF MANDATE COUNTDOWN ======== */
+(function() {
+  var deadline = new Date('2027-01-01T00:00:00').getTime();
+  var dEl = document.getElementById('cdDays');
+  var hEl = document.getElementById('cdHrs');
+  var mEl = document.getElementById('cdMin');
+  var sEl = document.getElementById('cdSec');
+  if (!dEl) return;
+
+  function pad(n) { return n < 10 ? '0' + n : n; }
+
+  function tick() {
+    var now = Date.now();
+    var diff = deadline - now;
+    if (diff <= 0) {
+      dEl.textContent = '0'; hEl.textContent = '00'; mEl.textContent = '00'; sEl.textContent = '00';
+      return;
+    }
+    var d = Math.floor(diff / 86400000);
+    var h = Math.floor((diff % 86400000) / 3600000);
+    var m = Math.floor((diff % 3600000) / 60000);
+    var s = Math.floor((diff % 60000) / 1000);
+    dEl.textContent = d;
+    hEl.textContent = pad(h);
+    mEl.textContent = pad(m);
+    sEl.textContent = pad(s);
+  }
+
+  tick();
+  setInterval(tick, 1000);
+})();
 </script>
 </body>
 </html>
