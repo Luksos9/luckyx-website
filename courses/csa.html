@@ -340,12 +340,30 @@ a:hover { text-decoration: underline; }
 .quiz-opt.selected .quiz-opt-letter { background: var(--orange); color: #fff; border-color: var(--orange); }
 .quiz-opt.correct .quiz-opt-letter { background: #2ea043; color: #fff; border-color: #2ea043; }
 .quiz-opt.wrong .quiz-opt-letter { background: #d73a49; color: #fff; border-color: #d73a49; }
-.quiz-explain { display: none; margin-top: 12px; padding: 12px 16px; background: var(--bg-card); border-radius: 8px; font-size: 0.9rem; color: var(--text-dim); line-height: 1.6; border-left: 3px solid var(--orange); }
-.quiz-explain.show { display: block; }
+
 .quiz-choose { font-weight: 400; color: var(--orange); font-size: 0.85rem; margin-left: 4px; }
 .quiz-submit-btn { margin-top: 12px; padding: 10px 24px; background: var(--orange); color: #fff; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.15s, transform 0.1s; }
 .quiz-submit-btn:hover { background: #c75400; }
 .quiz-submit-btn:active { transform: scale(0.97); }
+/* Per-option explanations */
+.quiz-opt-explains { margin-top: 12px; display: flex; flex-direction: column; gap: 6px; }
+.quiz-opt-exp { padding: 10px 14px; border-radius: 8px; font-size: 0.88rem; line-height: 1.5; }
+.qoe-is-correct { background: rgba(46,160,67,0.07); border-left: 3px solid #2ea043; }
+.qoe-is-wrong { background: rgba(215,58,73,0.05); border-left: 3px solid #d73a49; }
+.qoe-header { font-weight: 600; margin-bottom: 4px; font-size: 0.82rem; }
+.qoe-correct { color: #2ea043; }
+.qoe-wrong { color: #d73a49; }
+.qoe-letter { color: var(--text-dim); margin-left: 4px; font-weight: 500; }
+.qoe-text { color: var(--text-dim); }
+/* Collapsible overall explanation */
+.quiz-overall { display: none; margin-top: 10px; }
+.quiz-overall[style*="block"] { display: block; }
+.quiz-overall-toggle { cursor: pointer; font-size: 0.88rem; font-weight: 600; color: var(--orange); padding: 8px 0; list-style: none; display: flex; align-items: center; gap: 6px; }
+.quiz-overall-toggle::-webkit-details-marker { display: none; }
+.quiz-overall-toggle::before { content: ''; display: inline-block; width: 0; height: 0; border-left: 5px solid var(--orange); border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform 0.2s; }
+details.quiz-overall[open] .quiz-overall-toggle::before { transform: rotate(90deg); }
+.quiz-overall-content { padding: 12px 16px; background: var(--bg-card); border-radius: 8px; font-size: 0.88rem; color: var(--text-dim); line-height: 1.6; border-left: 3px solid var(--orange); margin-top: 6px; }
+
 .quiz-score { margin-top: 24px; padding: 20px; background: var(--bg-raised); border-radius: 12px; border: 1px solid var(--border); text-align: center; display: none; }
 .quiz-score.show { display: block; }
 .quiz-score-num { font-size: 2rem; font-weight: 800; color: var(--orange); }
@@ -474,168 +492,228 @@ a:hover { text-decoration: underline; }
     <div class="quiz-card" id="qcard0">
       <div class="quiz-q"><span class="quiz-q-num">1.</span>When importing data, what happens to imported rows if no coalesce field is specified?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>All rows are rejected; coalesce is required.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>All rows are treated as new records. No existing records are updated.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>Duplicate rows are rejected from the import.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>All rows are treated as new records, but errors will be flagged.</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="0" data-exp="INCORRECT. Imports are not rejected when no coalesce field is set. The transform runs successfully but creates all new records."><span class="quiz-opt-letter">A</span><span>All rows are rejected; coalesce is required.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="0" data-exp="CORRECT. Without a coalesce field, the transform cannot match rows to existing records, so every imported row creates a new record."><span class="quiz-opt-letter">B</span><span>All rows are treated as new records. No existing records are updated.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="0" data-exp="INCORRECT. Duplicate rows are not rejected. All rows are inserted as new records regardless of whether duplicates exist."><span class="quiz-opt-letter">C</span><span>Duplicate rows are rejected from the import.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="0" data-exp="INCORRECT. No errors are flagged for missing coalesce. The import proceeds normally and creates new records for every row."><span class="quiz-opt-letter">D</span><span>All rows are treated as new records, but errors will be flagged.</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp0">Correct Answer: All rows are treated as new records. No existing records are updated.SourceOfficial Doc: Coalesce ValuesIf the link fails, search Google for: ServiceNow Zurich coalesce field import transform no coalesce new recordsExpert ExplanationThe coalesce field tells the transform map how to match incoming rows to existing records. Without it, there is no matching logic, so the transform treats every row as new and inserts it. This means running the same import twice without coalesce creates duplicate records. The import does not fail or flag errors for missing coalesce.Why the Others Are WrongAll rows rejected: Coalesce is optional.</div>
+      <div class="quiz-opt-explains" id="qoptexp0" style="display:none"></div>
+      <details class="quiz-overall" id="qexp0">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answer: All rows are treated as new records. No existing records are updated.SourceOfficial Doc: Coalesce ValuesIf the link fails, search Google for: ServiceNow Zurich coalesce field import transform no coalesce new recordsExpert ExplanationThe coalesce field tells the transform map how to match incoming rows to existing records. Without it, there is no matching logic, so the transform treats every row as new and inserts it. This means running the same import twice without coalesce creates duplicate records. The import does not fail or flag errors for missing coalesce.<br><br><strong>Why the Others Are Wrong</strong>All rows rejected: Coalesce is optional. Without it, imports proceed and create new records.Duplicate rows rejected: No duplicate detection occurs without coalesce. All rows are inserted.New records with errors flagged: No errors or warnings are generated for missing coalesce fields.<br><br><strong>Memory Tip</strong>No coalesce = no matching = all new records. The transform has no way to find existing records to update.<br><br><strong>Real-World</strong> ExampleYou import 500 employee records without coalesce. Running the same import again creates 500 duplicates because the transform cannot identify that those employees already exist.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard1">
       <div class="quiz-q"><span class="quiz-q-num">2.</span>What is the definition of a group?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>A collection of subject matter experts</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>A department</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>An escalation pod</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>A collection of users</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="1"><span class="quiz-opt-letter">E</span><span>A collection of tasks</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="1" data-exp="INCORRECT. While groups often contain subject matter experts, the definition is broader. A group is a collection of users, regardless of expertise."><span class="quiz-opt-letter">A</span><span>A collection of subject matter experts</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="1" data-exp="INCORRECT. A department (cmn_department) is an organizational structure. Groups (sys_user_group) are separate entities used for task assignment and access."><span class="quiz-opt-letter">B</span><span>A department</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="1" data-exp="INCORRECT. Escalation pod is not a ServiceNow term. Groups can be used in escalation paths, but the definition is a collection of users."><span class="quiz-opt-letter">C</span><span>An escalation pod</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="1" data-exp="CORRECT. A group in ServiceNow is defined as a collection of users stored in the sys_user_group table. Groups enable task assignment, role inheritance, and work distribution."><span class="quiz-opt-letter">D</span><span>A collection of users</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="1" data-exp="INCORRECT. Tasks are assigned to groups, but groups themselves are collections of users, not tasks."><span class="quiz-opt-letter">E</span><span>A collection of tasks</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp1">Correct Answer: A collection of usersSourceOfficial Doc: GroupsIf the link fails, search Google for: ServiceNow Zurich group definition collection users sys_user_groupExpert ExplanationA group (sys_user_group) is a collection of users. Groups serve multiple purposes: task assignment, role inheritance, notification distribution, and approval routing. Members of a group can see tasks assigned to that group in &quot;My Groups Work.&quot;Why the Others Are WrongSME collection: Too specific. Groups contain any users, not just experts.Department: A different organizational entity (cmn_department).Escalation pod: Not a ServiceNow term.Task collection: Groups contain users; tasks are assigned TO groups.Memory TipGroup = users. Period. sys_user_group holds people, and work gets assigned to them.</div>
+      <div class="quiz-opt-explains" id="qoptexp1" style="display:none"></div>
+      <details class="quiz-overall" id="qexp1">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answer: A collection of usersSourceOfficial Doc: GroupsIf the link fails, search Google for: ServiceNow Zurich group definition collection users sys_user_groupExpert ExplanationA group (sys_user_group) is a collection of users. Groups serve multiple purposes: task assignment, role inheritance, notification distribution, and approval routing. Members of a group can see tasks assigned to that group in &quot;My Groups Work.&quot;<br><br><strong>Why the Others Are Wrong</strong>SME collection: Too specific. Groups contain any users, not just experts.Department: A different organizational entity (cmn_department).Escalation pod: Not a ServiceNow term.Task collection: Groups contain users; tasks are assigned TO groups.<br><br><strong>Memory Tip</strong>Group = users. Period. sys_user_group holds people, and work gets assigned to them.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard2">
       <div class="quiz-q"><span class="quiz-q-num">3.</span>What field contains a record’s 32-character, unique identifier?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>sn_rec_id</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>rec_id</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>u_id</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>sys_id</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="2"><span class="quiz-opt-letter">E</span><span>sn_gu_id</span></li>
-      <li class="quiz-opt" data-idx="5" data-q="2"><span class="quiz-opt-letter">F</span><span>sn_sys_id</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="2" data-exp="INCORRECT. sn_rec_id is not a real ServiceNow field name. The correct field for the unique 32-character identifier is sys_id."><span class="quiz-opt-letter">A</span><span>sn_rec_id</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="2" data-exp="INCORRECT. rec_id is not a real ServiceNow field name. Every record&#x27;s unique identifier is stored in the sys_id field."><span class="quiz-opt-letter">B</span><span>rec_id</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="2" data-exp="INCORRECT. u_id is a custom field prefix pattern, not the system identifier field. The correct answer is sys_id."><span class="quiz-opt-letter">C</span><span>u_id</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="2" data-exp="CORRECT. The sys_id field contains each record&#x27;s unique 32-character GUID. It exists on every table and is used for record identification and references."><span class="quiz-opt-letter">D</span><span>sys_id</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="2" data-exp="INCORRECT. sn_gu_id is not a real ServiceNow field name. The system uses sys_id, not sn_gu_id."><span class="quiz-opt-letter">E</span><span>sn_gu_id</span></li>
+      <li class="quiz-opt" data-idx="5" data-q="2" data-exp="INCORRECT. sn_sys_id is not a real field name. The correct field is simply sys_id without any sn_ prefix."><span class="quiz-opt-letter">F</span><span>sn_sys_id</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp2">Correct Answer: sys_idSourceOfficial Doc: System DictionaryIf the link fails, search Google for: ServiceNow Zurich sys_id field 32 character unique identifier recordExpert ExplanationThe sys_id field stores the unique 32-character GUID (Globally Unique Identifier) for every record in ServiceNow. It is a system field present on all tables, used for internal record references, relationships, URLs, and API operations. The sys_id cannot be modified after record creation.Why the Others Are Wrongsn_rec_id, rec_id, u_id, sn_gu_id, sn_sys_id: None of these are real ServiceNow system field names.</div>
+      <div class="quiz-opt-explains" id="qoptexp2" style="display:none"></div>
+      <details class="quiz-overall" id="qexp2">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answer: sys_idSourceOfficial Doc: System DictionaryIf the link fails, search Google for: ServiceNow Zurich sys_id field 32 character unique identifier recordExpert ExplanationThe sys_id field stores the unique 32-character GUID (Globally Unique Identifier) for every record in ServiceNow. It is a system field present on all tables, used for internal record references, relationships, URLs, and API operations. The sys_id cannot be modified after record creation.<br><br><strong>Why the Others Are Wrong</strong>sn_rec_id, rec_id, u_id, sn_gu_id, sn_sys_id: None of these are real ServiceNow system field names. They are all fabricated to test whether you know the correct field name: sys_id.<br><br><strong>Memory Tip</strong>sys_id is the one and only unique record identifier. 32 characters. Present on every table. No prefix variations exist.<br><br><strong>Real-World</strong> ExampleA REST API call to retrieve an incident uses the URL: /api/now/table/incident/a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6. That 32-character string in the URL is the sys_id of the specific incident record.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard3">
       <div class="quiz-q"><span class="quiz-q-num">4.</span>Which tool graphically displays an infrastructure view for a CI and its relationships to other CIs?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>Schema Map</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>Dependency View</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>Dependency Map</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>Database View</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="3" data-exp="INCORRECT. Schema Map shows table structures and relationships between tables, not CI-to-CI infrastructure dependencies."><span class="quiz-opt-letter">A</span><span>Schema Map</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="3" data-exp="CORRECT. Dependency View graphically displays a CI and its upstream and downstream relationships to other CIs in the CMDB."><span class="quiz-opt-letter">B</span><span>Dependency View</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="3" data-exp="INCORRECT. Dependency Map is not the standard name for this tool in ServiceNow. The correct feature name is Dependency View."><span class="quiz-opt-letter">C</span><span>Dependency Map</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="3" data-exp="INCORRECT. Database View is not a ServiceNow tool for CI visualization. Dependency View provides the infrastructure relationship graph."><span class="quiz-opt-letter">D</span><span>Database View</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp3">Correct Answer: Dependency ViewSourceOfficial Doc: Dependency ViewsIf the link fails, search Google for: ServiceNow Zurich Dependency View CI relationships infrastructure graphicalExpert ExplanationDependency View provides an interactive graphical display of a Configuration Item and its relationships to other CIs. It shows upstream dependencies (what this CI relies on) and downstream dependents (what relies on this CI). The view helps teams understand impact analysis and service dependencies within the CMDB.Why the Others Are WrongSchema Map: Displays table-to-table schema relationships, not CI-to-CI infrastructure dependencies.Dependency Map: Not the official ServiceNow feature name.</div>
+      <div class="quiz-opt-explains" id="qoptexp3" style="display:none"></div>
+      <details class="quiz-overall" id="qexp3">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answer: Dependency ViewSourceOfficial Doc: Dependency ViewsIf the link fails, search Google for: ServiceNow Zurich Dependency View CI relationships infrastructure graphicalExpert ExplanationDependency View provides an interactive graphical display of a Configuration Item and its relationships to other CIs. It shows upstream dependencies (what this CI relies on) and downstream dependents (what relies on this CI). The view helps teams understand impact analysis and service dependencies within the CMDB.<br><br><strong>Why the Others Are Wrong</strong>Schema Map: Displays table-to-table schema relationships, not CI-to-CI infrastructure dependencies.Dependency Map: Not the official ServiceNow feature name. The correct term is Dependency View.Database View: Not a ServiceNow CMDB visualization tool.<br><br><strong>Memory Tip</strong>Dependency View = see what depends on what. Open a CI and view its infrastructure relationship graph.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard4">
       <div class="quiz-q"><span class="quiz-q-num">5.</span>Which one of the following is NOT a type of Visual Task Board?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>Flexible</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>Freeform</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>Feature</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>Guided boards</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="4" data-exp="INCORRECT. Flexible is a valid Visual Task Board type. It provides lane-based boards where cards can be dragged between columns."><span class="quiz-opt-letter">A</span><span>Flexible</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="4" data-exp="INCORRECT. Freeform is a valid Visual Task Board type. It provides a sticky-note style canvas for organizing tasks without lanes."><span class="quiz-opt-letter">B</span><span>Freeform</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="4" data-exp="CORRECT. Feature is not a Visual Task Board type. The three valid types are Flexible, Freeform, and Guided."><span class="quiz-opt-letter">C</span><span>Feature</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="4" data-exp="INCORRECT. Guided boards is a valid Visual Task Board type. It provides structured workflow-based boards with defined progression steps."><span class="quiz-opt-letter">D</span><span>Guided boards</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp4">Correct Answer: FeatureSourceOfficial Doc: UI16 Application NavigatorIf the link fails, search Google for: ServiceNow Zurich Visual Task Board types Flexible Freeform GuidedExpert ExplanationServiceNow Visual Task Boards come in three types: Flexible (lane-based with drag-and-drop between columns), Freeform (sticky-note style canvas), and Guided (structured workflow with defined steps). &quot;Feature&quot; is not a VTB type.Why the Others Are WrongFlexible: A valid VTB type. Uses lanes (columns) where users drag cards to update record states like a Kanban board.Freeform: A valid VTB type.</div>
+      <div class="quiz-opt-explains" id="qoptexp4" style="display:none"></div>
+      <details class="quiz-overall" id="qexp4">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answer: FeatureSourceOfficial Doc: UI16 Application NavigatorIf the link fails, search Google for: ServiceNow Zurich Visual Task Board types Flexible Freeform GuidedExpert ExplanationServiceNow Visual Task Boards come in three types: Flexible (lane-based with drag-and-drop between columns), Freeform (sticky-note style canvas), and Guided (structured workflow with defined steps). &quot;Feature&quot; is not a VTB type.<br><br><strong>Why the Others Are Wrong</strong>Flexible: A valid VTB type. Uses lanes (columns) where users drag cards to update record states like a Kanban board.Freeform: A valid VTB type. Provides an open canvas for positioning task cards freely, like digital sticky notes on a whiteboard.Guided boards: A valid VTB type. Enforces a defined workflow progression, guiding users through structured steps.<br><br><strong>Memory Tip</strong>Three VTB types: Flexible, Freeform, Guided. &quot;Feature&quot; sounds like a VTB type but is the odd one out. Remember &quot;FFG&quot; for the real types.<br><br><strong>Real-World</strong> ExampleA project manager uses a Flexible VTB with lanes for &quot;To Do,&quot; &quot;In Progress,&quot; and &quot;Done&quot; to track team tasks. A brainstorming session uses a Freeform VTB for free-form idea organization. A new hire onboarding process uses a Guided VTB.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard5">
       <div class="quiz-q"><span class="quiz-q-num">6.</span>How to define an ACL to allow itil users to create incidents?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="5"><span class="quiz-opt-letter">A</span><span>Name: incident.None; Operation: create; Role: itil</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="5"><span class="quiz-opt-letter">B</span><span>Name: incident.Any; Operation: write; Permission: itil</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="5"><span class="quiz-opt-letter">C</span><span>Name: incident:*; Permission: write; Role: itil</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="5"><span class="quiz-opt-letter">D</span><span>Name: incident.None; Permission: create; Role: itil</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="5"><span class="quiz-opt-letter">E</span><span>Name: incident:*;Operation: write; Permission: itil</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="5" data-exp="CORRECT. The ACL uses Name: incident.None (table-level, no specific field), Operation: create, and requires the itil role."><span class="quiz-opt-letter">A</span><span>Name: incident.None; Operation: create; Role: itil</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="5" data-exp="INCORRECT. Uses &#x27;write&#x27; instead of &#x27;create&#x27; and &#x27;Permission&#x27; instead of &#x27;Role.&#x27; The operation must be &#x27;create&#x27; for record creation."><span class="quiz-opt-letter">B</span><span>Name: incident.Any; Operation: write; Permission: itil</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="5" data-exp="INCORRECT. Uses wildcard (*) in the name and &#x27;write&#x27; instead of &#x27;create.&#x27; Standard ACL naming uses table.field, not table:*."><span class="quiz-opt-letter">C</span><span>Name: incident:*; Permission: write; Role: itil</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="5" data-exp="INCORRECT. Uses &#x27;Permission: create&#x27; instead of &#x27;Operation: create.&#x27; The operation field defines the action; role defines who can perform it."><span class="quiz-opt-letter">D</span><span>Name: incident.None; Permission: create; Role: itil</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="5" data-exp="INCORRECT. Uses wildcard (*) in the name and incorrect field labels. Standard ACL naming is table.field with Operation and Role fields."><span class="quiz-opt-letter">E</span><span>Name: incident:*;Operation: write; Permission: itil</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp5">Correct Answer: Name: incident.None; Operation: create; Role: itilSourceOfficial Doc: Access Control RulesIf the link fails, search Google for: ServiceNow Zurich ACL incident create operation itil role table-levelExpert ExplanationTo define an ACL allowing itil users to create incidents: set Name to incident.None (table-level with no specific field), Operation to create, and add Role: itil. The &quot;None&quot; in the name indicates a table-level ACL rather than a field-level one. The Operation field specifies the permitted action.Why the Others Are Wrongincident.Any; Operation: write: &quot;write&quot; covers updates, not record creation.</div>
+      <div class="quiz-opt-explains" id="qoptexp5" style="display:none"></div>
+      <details class="quiz-overall" id="qexp5">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answer: Name: incident.None; Operation: create; Role: itilSourceOfficial Doc: Access Control RulesIf the link fails, search Google for: ServiceNow Zurich ACL incident create operation itil role table-levelExpert ExplanationTo define an ACL allowing itil users to create incidents: set Name to incident.None (table-level with no specific field), Operation to create, and add Role: itil. The &quot;None&quot; in the name indicates a table-level ACL rather than a field-level one. The Operation field specifies the permitted action.<br><br><strong>Why the Others Are Wrong</strong>incident.Any; Operation: write: &quot;write&quot; covers updates, not record creation. The operation must be &quot;create.&quot;incident:*; Permission: write: Wildcard (*) and colon (:) are not standard ACL naming. Uses &quot;Permission&quot; instead of &quot;Role.&quot;incident.None; Permission: create: Incorrectly labels the create value as &quot;Permission&quot; instead of &quot;Operation.&quot;incident:*; Operation: write: Wildcard naming is incorrect, and &quot;write&quot; is the wrong operation for creation.<br><br><strong>Memory Tip</strong>ACL format: table.field; Operation; Role. Use &quot;None&quot; for table-level, &quot;create&quot; for new records, and the required role.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard6">
       <div class="quiz-q"><span class="quiz-q-num">7.</span>What is a recommended best practice before importing data?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="6"><span class="quiz-opt-letter">A</span><span>Adjust Transform Maps after loading into target</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="6"><span class="quiz-opt-letter">B</span><span>Use one extremely large Import Set</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="6"><span class="quiz-opt-letter">C</span><span>Create a new Import Set table for each load</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="6"><span class="quiz-opt-letter">D</span><span>Plan time to remove obsolete or inaccurate source data</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="6"><span class="quiz-opt-letter">E</span><span>Use Data Scrub Workspace to clean imports</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="6" data-exp="INCORRECT. Adjusting Transform Maps after loading into the target is reactive, not proactive. Best practice is to plan data quality before importing."><span class="quiz-opt-letter">A</span><span>Adjust Transform Maps after loading into target</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="6" data-exp="INCORRECT. Using one extremely large import set is problematic. Best practice recommends breaking large imports into manageable batches to avoid timeouts."><span class="quiz-opt-letter">B</span><span>Use one extremely large Import Set</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="6" data-exp="INCORRECT. Creating a new import set table for each load clutters the system. ServiceNow reuses import set tables across loads for the same source format."><span class="quiz-opt-letter">C</span><span>Create a new Import Set table for each load</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="6" data-exp="CORRECT. Planning time to clean source data by removing obsolete or inaccurate records before importing is a key best practice to ensure data quality in the target table."><span class="quiz-opt-letter">D</span><span>Plan time to remove obsolete or inaccurate source data</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="6" data-exp="INCORRECT. Data Scrub Workspace is not a standard ServiceNow feature. Data cleansing must be done manually or through external tools before importing."><span class="quiz-opt-letter">E</span><span>Use Data Scrub Workspace to clean imports</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp6">Correct Answer: Plan time to remove obsolete or inaccurate source dataSourceOfficial Doc: Import Set Best PracticesIf the link fails, search Google for: ServiceNow Zurich import set best practices clean data before importingExpert ExplanationBefore importing data, you should plan time to review and clean the source data. Remove duplicate, obsolete, or inaccurate records from the source file before loading. Importing dirty data creates downstream problems: duplicate records, incorrect relationships, and unreliable reports.Why the Others Are WrongAdjust Transform Maps after loading: This is a corrective step, not a best practice.</div>
+      <div class="quiz-opt-explains" id="qoptexp6" style="display:none"></div>
+      <details class="quiz-overall" id="qexp6">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answer: Plan time to remove obsolete or inaccurate source dataSourceOfficial Doc: Import Set Best PracticesIf the link fails, search Google for: ServiceNow Zurich import set best practices clean data before importingExpert ExplanationBefore importing data, you should plan time to review and clean the source data. Remove duplicate, obsolete, or inaccurate records from the source file before loading. Importing dirty data creates downstream problems: duplicate records, incorrect relationships, and unreliable reports.<br><br><strong>Why the Others Are Wrong</strong>Adjust Transform Maps after loading: This is a corrective step, not a best practice. Plan mappings before loading.One extremely large Import Set: Large sets risk timeouts and performance issues. Break them into smaller batches.New Import Set table for each load: Unnecessary table proliferation. Reuse existing staging tables for the same format.Data Scrub Workspace: Does not exist as a ServiceNow feature.<br><br><strong>Memory Tip</strong>Garbage in, garbage out. Clean your data before importing to avoid polluting the target table.</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard7">
       <div class="quiz-q"><span class="quiz-q-num">8.</span>Which of the following can be customized through the Basic Configuration UI16 module? (Choose three.) <span class="quiz-choose">(choose 3)</span></div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="7"><span class="quiz-opt-letter">A</span><span>Banner Image</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="7"><span class="quiz-opt-letter">B</span><span>Record Number Format</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="7"><span class="quiz-opt-letter">C</span><span>Browser Tab Title</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="7"><span class="quiz-opt-letter">D</span><span>System Date Format</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="7"><span class="quiz-opt-letter">E</span><span>Form Header Size</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="7" data-exp="CORRECT. The Banner Image can be customized through Basic Configuration UI16 to display your company logo."><span class="quiz-opt-letter">A</span><span>Banner Image</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="7" data-exp="INCORRECT. Record Number Format is not configured through Basic Configuration UI16. It is managed per-table in System Definition."><span class="quiz-opt-letter">B</span><span>Record Number Format</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="7" data-exp="CORRECT. The Browser Tab Title can be changed in Basic Configuration UI16 to show your company name in the tab."><span class="quiz-opt-letter">C</span><span>Browser Tab Title</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="7" data-exp="CORRECT. The System Date Format can be set through Basic Configuration UI16 to match regional preferences."><span class="quiz-opt-letter">D</span><span>System Date Format</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="7" data-exp="INCORRECT. Form Header Size is not a setting available in Basic Configuration UI16."><span class="quiz-opt-letter">E</span><span>Form Header Size</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="7" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp7">Correct Answer: Banner Image; Browser Tab Title; System Date FormatSource  Official Doc: Platform User Interface  If the link fails, search Google for: ServiceNow Zurich Basic Configuration UI16 banner browser tab title date formatExpert ExplanationThe Basic Configuration UI16 module provides a centralized form for branding and display settings. The Banner Image controls the company logo in the header. The Browser Tab Title sets the text shown in the browser tab.</div>
+      <div class="quiz-opt-explains" id="qoptexp7" style="display:none"></div>
+      <details class="quiz-overall" id="qexp7">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answer: Banner Image; Browser Tab Title; System Date FormatSource  Official Doc: Platform User Interface  If the link fails, search Google for: ServiceNow Zurich Basic Configuration UI16 banner browser tab title date formatExpert ExplanationThe Basic Configuration UI16 module provides a centralized form for branding and display settings. The Banner Image controls the company logo in the header. The Browser Tab Title sets the text shown in the browser tab. The System Date Format controls how dates display platform-wide (e.g., MM/DD/YYYY vs DD-MM-YYYY).<br><br><strong>Why the Others Are Wrong</strong>  Record Number Format: Number prefixes (like INC, CHG) are configured per-table in System Definition &gt; Number Maintenance, not in Basic Configuration.  Form Header Size: Not a configurable setting in Basic Configuration UI16.<br><br><strong>Memory Tip</strong>Basic Configuration = the branding panel. Banner (what you see), Browser title (what the tab says), Date format (how dates look).UI Navigation  Path: All &gt; System Properties &gt; Basic Configuration UI16  What to look for: A form with fields for Banner image upload, Page header title, and Date/time format settings<br><br><strong>Real-World</strong> ExampleAn admin opens Basic Configuration UI16 and uploads a new company logo as the banner, sets the browser tab title to &quot;Acme ServiceNow Portal,&quot; and changes the date format to DD-MM-YYYY for European users.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard8">
       <div class="quiz-q"><span class="quiz-q-num">9.</span>What action helps to see which modules are visible to a user?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="8"><span class="quiz-opt-letter">A</span><span>Install the Bomgar plug-in</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="8"><span class="quiz-opt-letter">B</span><span>Initiate a Connect Chat session</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="8"><span class="quiz-opt-letter">C</span><span>Launch a NowChat window</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="8"><span class="quiz-opt-letter">D</span><span>Impersonate the user</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="8" data-exp="INCORRECT. Bomgar is a third-party remote support tool. Installing a plugin does not help you see which modules are visible to a specific user."><span class="quiz-opt-letter">A</span><span>Install the Bomgar plug-in</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="8" data-exp="INCORRECT. Connect Chat initiates a conversation with the user. Chatting does not show you their navigation menu or module visibility."><span class="quiz-opt-letter">B</span><span>Initiate a Connect Chat session</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="8" data-exp="INCORRECT. NowChat is not a standard method for viewing another user&#x27;s module access. It is a messaging feature, not a diagnostic tool."><span class="quiz-opt-letter">C</span><span>Launch a NowChat window</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="8" data-exp="CORRECT. Impersonating the user lets you see the platform exactly as they see it, including which modules are visible based on their roles and access."><span class="quiz-opt-letter">D</span><span>Impersonate the user</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp8">Correct Answer: Impersonate the userSourceOfficial Doc: Impersonating a UserIf the link fails, search Google for: ServiceNow Zurich impersonate user see modules visible roles navigationExpert ExplanationImpersonating a user allows an admin to assume that user&#x27;s identity and see the platform exactly as they do. This includes their application navigator, visible modules, forms, and security restrictions. It is the most effective way to diagnose what a user can and cannot see.Why the Others Are WrongBomgar plug-in: A remote desktop tool for screen sharing, not for checking module visibility within ServiceNow.Connect Chat: A messaging feature.</div>
+      <div class="quiz-opt-explains" id="qoptexp8" style="display:none"></div>
+      <details class="quiz-overall" id="qexp8">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answer: Impersonate the userSourceOfficial Doc: Impersonating a UserIf the link fails, search Google for: ServiceNow Zurich impersonate user see modules visible roles navigationExpert ExplanationImpersonating a user allows an admin to assume that user&#x27;s identity and see the platform exactly as they do. This includes their application navigator, visible modules, forms, and security restrictions. It is the most effective way to diagnose what a user can and cannot see.<br><br><strong>Why the Others Are Wrong</strong>Bomgar plug-in: A remote desktop tool for screen sharing, not for checking module visibility within ServiceNow.Connect Chat: A messaging feature. Asking the user what they see is indirect and unreliable.NowChat: Messaging does not provide the admin with a direct view of the user&#x27;s module visibility.<br><br><strong>Memory Tip</strong>Want to see what they see? Impersonate. It gives you their exact view of the platform.</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard9">
       <div class="quiz-q"><span class="quiz-q-num">10.</span>From a form, what would you click to add additional fields to the form? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="9"><span class="quiz-opt-letter">A</span><span>Context Menu &gt; Form &gt; Layout</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="9"><span class="quiz-opt-letter">B</span><span>Context Menu &gt; Configure &gt; Form Layout</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="9"><span class="quiz-opt-letter">C</span><span>Context Menu &gt; Configure &gt; Form Design</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="9"><span class="quiz-opt-letter">D</span><span>Right click on header &gt; Add &gt; Field</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="9"><span class="quiz-opt-letter">E</span><span>Context Menu &gt; Form &gt; Designer</span></li>
-      <li class="quiz-opt" data-idx="5" data-q="9"><span class="quiz-opt-letter">F</span><span>Right click on header &gt; Configure &gt; UX Dashboard</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="9" data-exp="INCORRECT. Context Menu &gt; Form &gt; Layout is not the correct menu path. The correct path is Context Menu &gt; Configure &gt; Form Layout."><span class="quiz-opt-letter">A</span><span>Context Menu &gt; Form &gt; Layout</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="9" data-exp="CORRECT. Context Menu &gt; Configure &gt; Form Layout opens the list-based layout editor where you can add, remove, and reorder fields on the form using slush buckets."><span class="quiz-opt-letter">B</span><span>Context Menu &gt; Configure &gt; Form Layout</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="9" data-exp="CORRECT. Context Menu &gt; Configure &gt; Form Design opens the visual Form Designer where you can drag and drop fields onto the form layout."><span class="quiz-opt-letter">C</span><span>Context Menu &gt; Configure &gt; Form Design</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="9" data-exp="INCORRECT. Right-clicking the header does not provide an Add &gt; Field option. Use the Configure menu to access Form Layout or Form Designer."><span class="quiz-opt-letter">D</span><span>Right click on header &gt; Add &gt; Field</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="9" data-exp="INCORRECT. Context Menu &gt; Form &gt; Designer is not the correct path. The right path is Context Menu &gt; Configure &gt; Form Design."><span class="quiz-opt-letter">E</span><span>Context Menu &gt; Form &gt; Designer</span></li>
+      <li class="quiz-opt" data-idx="5" data-q="9" data-exp="INCORRECT. UX Dashboard is not related to adding fields to forms. Form Layout and Form Designer are the correct tools."><span class="quiz-opt-letter">F</span><span>Right click on header &gt; Configure &gt; UX Dashboard</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="9" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp9">Correct Answer: Context Menu &gt; Configure &gt; Form Layout; Context Menu &gt; Configure &gt; Form DesignSourceOfficial Doc: UI16 Application NavigatorIf the link fails, search Google for: ServiceNow Zurich Configure Form Layout Form Designer add fieldsExpert ExplanationTwo tools for adding fields to a form, both under the Configure menu: Form Layout uses a list-based slush bucket interface to add/remove/reorder fields, and Form Designer provides a visual drag-and-drop interface. Both are accessed from the form&#x27;s context menu (hamburger icon) &gt; Configure.Why the Others Are WrongForm &gt; Layout / Form &gt; Designer: Wrong menu paths.</div>
+      <div class="quiz-opt-explains" id="qoptexp9" style="display:none"></div>
+      <details class="quiz-overall" id="qexp9">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answer: Context Menu &gt; Configure &gt; Form Layout; Context Menu &gt; Configure &gt; Form DesignSourceOfficial Doc: UI16 Application NavigatorIf the link fails, search Google for: ServiceNow Zurich Configure Form Layout Form Designer add fieldsExpert ExplanationTwo tools for adding fields to a form, both under the Configure menu: Form Layout uses a list-based slush bucket interface to add/remove/reorder fields, and Form Designer provides a visual drag-and-drop interface. Both are accessed from the form&#x27;s context menu (hamburger icon) &gt; Configure.<br><br><strong>Why the Others Are Wrong</strong>Form &gt; Layout / Form &gt; Designer: Wrong menu paths. Both tools are under Configure, not Form.Right click header &gt; Add &gt; Field: Not a valid ServiceNow form action.UX Dashboard: Unrelated to form field configuration.<br><br><strong>Memory Tip</strong>Configure &gt; Form Layout (list-based) and Configure &gt; Form Design (visual). Both under Configure, two different editing styles.<br><br><strong>Real-World</strong> ExampleAn admin needs to add a &quot;Business Impact&quot; field to the Incident form. They open an incident, click the context menu &gt; Configure &gt; Form Designer, and drag the Business Impact field from the available fields panel onto the form.</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard10">
       <div class="quiz-q"><span class="quiz-q-num">11.</span>Examples of UI Actions relating to forms? (Choose three.) <span class="quiz-choose">(choose 3)</span></div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="10"><span class="quiz-opt-letter">A</span><span>Form Columns</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="10"><span class="quiz-opt-letter">B</span><span>Form View</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="10"><span class="quiz-opt-letter">C</span><span>Form Buttons</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="10"><span class="quiz-opt-letter">D</span><span>Form Context Menu</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="10"><span class="quiz-opt-letter">E</span><span>Form Links</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="10" data-exp="INCORRECT. Form Columns are not UI Actions. Columns define the data structure of forms, not interactive actions."><span class="quiz-opt-letter">A</span><span>Form Columns</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="10" data-exp="INCORRECT. Form View is a display configuration, not a UI Action type. Views control which fields appear on a form."><span class="quiz-opt-letter">B</span><span>Form View</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="10" data-exp="CORRECT. Form Buttons (like Save, Update, Resolve) are UI Actions that appear as clickable buttons at the top or bottom of forms."><span class="quiz-opt-letter">C</span><span>Form Buttons</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="10" data-exp="CORRECT. Form Context Menu items are UI Actions that appear when you right-click on the form header, providing additional actions."><span class="quiz-opt-letter">D</span><span>Form Context Menu</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="10" data-exp="CORRECT. Form Links are UI Actions displayed as clickable links in the Related Links section or other areas of the form."><span class="quiz-opt-letter">E</span><span>Form Links</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="10" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp10">Correct Answers: Form Buttons; Form Context Menu; Form LinksSourceOfficial Doc: UI ActionsIf the link fails, search Google for: ServiceNow Zurich UI Actions form buttons context menu linksExpert ExplanationUI Actions create interactive elements on forms and lists. The three form-related types are: Form Buttons (clickable buttons like Save, Update), Form Context Menu items (right-click menu options on the form header), and Form Links (clickable links in form sections).</div>
+      <div class="quiz-opt-explains" id="qoptexp10" style="display:none"></div>
+      <details class="quiz-overall" id="qexp10">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answers: Form Buttons; Form Context Menu; Form LinksSourceOfficial Doc: UI ActionsIf the link fails, search Google for: ServiceNow Zurich UI Actions form buttons context menu linksExpert ExplanationUI Actions create interactive elements on forms and lists. The three form-related types are: Form Buttons (clickable buttons like Save, Update), Form Context Menu items (right-click menu options on the form header), and Form Links (clickable links in form sections). UI Actions can also appear on lists as List Buttons, List Context Menu, and List Links.<br><br><strong>Why the Others Are Wrong</strong>Form Columns: Columns define data fields on forms, not interactive actions.Form View: A display configuration that determines which fields appear. Not an interactive action.<br><br><strong>Memory Tip</strong>BCL: Buttons, Context menu, Links. Three ways UI Actions appear on forms.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard11">
       <div class="quiz-q"><span class="quiz-q-num">12.</span>Create Incident, Password Reset, and Report outage: what do these services in the Service Catalog have in common?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="11"><span class="quiz-opt-letter">A</span><span>They direct the user to a record producer</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="11"><span class="quiz-opt-letter">B</span><span>They direct the user to a catalog property</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="11"><span class="quiz-opt-letter">C</span><span>They direct the user to a catalog UI policy</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="11"><span class="quiz-opt-letter">D</span><span>They direct the user to a catalog client script</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="11" data-exp="CORRECT. These are all Record Producers in the Service Catalog that create records directly on their respective target tables."><span class="quiz-opt-letter">A</span><span>They direct the user to a record producer</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="11" data-exp="INCORRECT. Catalog properties are configuration settings for catalog items, not where these services direct users."><span class="quiz-opt-letter">B</span><span>They direct the user to a catalog property</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="11" data-exp="INCORRECT. Catalog UI policies control form field behavior on catalog items. These services are Record Producers, not UI policies."><span class="quiz-opt-letter">C</span><span>They direct the user to a catalog UI policy</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="11" data-exp="INCORRECT. Catalog client scripts run browser-side logic on catalog forms. These services are Record Producers, not client scripts."><span class="quiz-opt-letter">D</span><span>They direct the user to a catalog client script</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp11">Correct Answer: They direct the user to a record producerSource  Official Doc: Record Producers  If the link fails, search Google for: ServiceNow Zurich record producer create incident password reset report outageExpert ExplanationThese are all Record Producers in the Service Catalog. &quot;Create Incident&quot; produces an Incident record, &quot;Password Reset&quot; produces a password reset request record, and &quot;Report Outage&quot; produces an outage record. Each one uses the Record Producer mechanism to create records directly on their target tables from a catalog-style form.Why the Others Are Wrong  Catalog property: Catalog properties are configuration settings (like approval rules).</div>
+      <div class="quiz-opt-explains" id="qoptexp11" style="display:none"></div>
+      <details class="quiz-overall" id="qexp11">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answer: They direct the user to a record producerSource  Official Doc: Record Producers  If the link fails, search Google for: ServiceNow Zurich record producer create incident password reset report outageExpert ExplanationThese are all Record Producers in the Service Catalog. &quot;Create Incident&quot; produces an Incident record, &quot;Password Reset&quot; produces a password reset request record, and &quot;Report Outage&quot; produces an outage record. Each one uses the Record Producer mechanism to create records directly on their target tables from a catalog-style form.<br><br><strong>Why the Others Are Wrong</strong>  Catalog property: Catalog properties are configuration settings (like approval rules). They are not where users are directed.  Catalog UI policy: UI policies control field behavior on catalog forms (show/hide, mandatory). They are not the service type itself.  Catalog client script: Client scripts run browser-side logic. The services themselves are Record Producers, not scripts.<br><br><strong>Memory Tip</strong>If a catalog item creates a record on a specific table, it is a Record Producer. Create Incident = record on incident table. Password Reset = record on password reset table.<br><br><strong>Real-World</strong> ExampleAn employee clicks &quot;Report an Outage&quot; in the Service Catalog. Behind the scenes, this Record Producer creates a record directly on the Outage table with the details the user provided, bypassing the standard REQ/RITM process.</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard12">
       <div class="quiz-q"><span class="quiz-q-num">13.</span>When building a table extended from a base table, which fields do you need to create? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="12"><span class="quiz-opt-letter">A</span><span>The fields that are not in the base table</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="12"><span class="quiz-opt-letter">B</span><span>The mandatory fields for the base table</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="12"><span class="quiz-opt-letter">C</span><span>The fields that are specific to the extended table</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="12"><span class="quiz-opt-letter">D</span><span>The reference fields for the base table</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="12" data-exp="CORRECT. When extending a table, you only need to create fields that do not already exist in the base table. The extended table inherits all base table fields."><span class="quiz-opt-letter">A</span><span>The fields that are not in the base table</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="12" data-exp="INCORRECT. Mandatory fields from the base table are already inherited. You do not need to recreate them on the extended table."><span class="quiz-opt-letter">B</span><span>The mandatory fields for the base table</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="12" data-exp="CORRECT. You create fields that are specific to the extended table&#x27;s purpose. For example, Incident extends Task and adds fields like Category and Subcategory."><span class="quiz-opt-letter">C</span><span>The fields that are specific to the extended table</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="12" data-exp="INCORRECT. Reference fields from the base table are inherited automatically. You do not need to recreate them on the extended table."><span class="quiz-opt-letter">D</span><span>The reference fields for the base table</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="12" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp12">Correct Answers: The fields that are not in the base table; The fields that are specific to the extended tableSourceOfficial Doc: Table ExtensionIf the link fails, search Google for: ServiceNow Zurich table extension inherited fields create new fieldsExpert ExplanationExtended tables inherit all fields from their parent/base table. You only need to create fields that are new and specific to the extended table. Both correct answers express the same concept: only create what does not already exist in the base table.</div>
+      <div class="quiz-opt-explains" id="qoptexp12" style="display:none"></div>
+      <details class="quiz-overall" id="qexp12">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answers: The fields that are not in the base table; The fields that are specific to the extended tableSourceOfficial Doc: Table ExtensionIf the link fails, search Google for: ServiceNow Zurich table extension inherited fields create new fieldsExpert ExplanationExtended tables inherit all fields from their parent/base table. You only need to create fields that are new and specific to the extended table. Both correct answers express the same concept: only create what does not already exist in the base table. For example, Incident inherits Number, Short description, and State from Task, then adds its own Category field.<br><br><strong>Why the Others Are Wrong</strong>Mandatory fields for the base table: Already inherited. Recreating them would cause conflicts.Reference fields for the base table: Also inherited. All field types from the base table carry over to extensions.<br><br><strong>Memory Tip</strong>Inheritance means you get everything for free. Only build what is new and unique to your extended table.</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard13">
       <div class="quiz-q"><span class="quiz-q-num">14.</span>Benefits of Flow Designer include which of the following? (Choose three.) <span class="quiz-choose">(choose 3)</span></div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="13"><span class="quiz-opt-letter">A</span><span>Provides IDE for complicated scripting</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="13"><span class="quiz-opt-letter">B</span><span>Provides built-in libraries/APIs for complex coding</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="13"><span class="quiz-opt-letter">C</span><span>Automatically populates SLA records</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="13"><span class="quiz-opt-letter">D</span><span>Natural-language descriptions of flow logic</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="13"><span class="quiz-opt-letter">E</span><span>No-code application development</span></li>
-      <li class="quiz-opt" data-idx="5" data-q="13"><span class="quiz-opt-letter">F</span><span>Easy integration with third-party systems</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="13" data-exp="INCORRECT. Flow Designer is a no-code/low-code tool. It does not provide an IDE for complicated scripting. Its purpose is to reduce scripting needs."><span class="quiz-opt-letter">A</span><span>Provides IDE for complicated scripting</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="13" data-exp="INCORRECT. Flow Designer is not a coding platform. It does not provide libraries or APIs for complex coding. It uses visual building blocks instead."><span class="quiz-opt-letter">B</span><span>Provides built-in libraries/APIs for complex coding</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="13" data-exp="INCORRECT. SLA records are managed by the SLA engine, not Flow Designer. Flow Designer can trigger actions based on SLA conditions but does not auto-populate SLA records."><span class="quiz-opt-letter">C</span><span>Automatically populates SLA records</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="13" data-exp="CORRECT. Flow Designer includes natural-language descriptions of flow logic, making flows readable and understandable by non-technical stakeholders."><span class="quiz-opt-letter">D</span><span>Natural-language descriptions of flow logic</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="13" data-exp="CORRECT. Flow Designer enables no-code application development through a visual drag-and-drop interface, allowing citizen developers to build automations without writing scripts."><span class="quiz-opt-letter">E</span><span>No-code application development</span></li>
+      <li class="quiz-opt" data-idx="5" data-q="13" data-exp="CORRECT. Flow Designer provides easy integration with third-party systems through Integration Hub spokes, connecting to external services without custom API coding."><span class="quiz-opt-letter">F</span><span>Easy integration with third-party systems</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="13" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp13">Correct Answers: Natural-language descriptions of flow logic, No-code application development, Easy integration with third-party systemsSourceOfficial Doc: Flow DesignerIf the link fails, search Google for: ServiceNow Zurich Flow Designer benefits no-code natural language integrationExpert ExplanationFlow Designer offers three key benefits: natural-language descriptions that make flow logic readable by anyone, no-code development through a visual builder that eliminates the need for scripting, and easy third-party integration via Integration Hub spokes.</div>
+      <div class="quiz-opt-explains" id="qoptexp13" style="display:none"></div>
+      <details class="quiz-overall" id="qexp13">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answers: Natural-language descriptions of flow logic, No-code application development, Easy integration with third-party systemsSourceOfficial Doc: Flow DesignerIf the link fails, search Google for: ServiceNow Zurich Flow Designer benefits no-code natural language integrationExpert ExplanationFlow Designer offers three key benefits: natural-language descriptions that make flow logic readable by anyone, no-code development through a visual builder that eliminates the need for scripting, and easy third-party integration via Integration Hub spokes. These capabilities democratize automation for citizen developers.<br><br><strong>Why the Others Are Wrong</strong>IDE for complicated scripting: Flow Designer replaces scripting, not enhances it. Script-heavy development uses Script Includes and Business Rules.Built-in libraries/APIs for complex coding: Flow Designer is visual, not code-based. Developers who need APIs use the Scripted REST API or GlideRecord.Automatically populates SLA records: SLA management is handled by the SLA engine, independent of Flow Designer.<br><br><strong>Memory Tip</strong>Flow Designer = No code, plain English, plug-and-play integrations. Built for people who do not write code.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard14">
       <div class="quiz-q"><span class="quiz-q-num">15.</span>Which ServiceNow capability allows you to provide knowledge articles via a conversational interface?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="14"><span class="quiz-opt-letter">A</span><span>Agent Assist</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="14"><span class="quiz-opt-letter">B</span><span>Virtual Agent</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="14"><span class="quiz-opt-letter">C</span><span>Now Messenger</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="14"><span class="quiz-opt-letter">D</span><span>Connect Agent</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="14" data-exp="INCORRECT. Agent Assist provides contextual suggestions to agents working on records. It does not deliver knowledge via a conversational interface."><span class="quiz-opt-letter">A</span><span>Agent Assist</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="14" data-exp="CORRECT. Virtual Agent provides knowledge articles through a chatbot conversational interface, allowing users to self-serve."><span class="quiz-opt-letter">B</span><span>Virtual Agent</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="14" data-exp="INCORRECT. Now Messenger is not the feature that delivers knowledge articles via conversation. Virtual Agent handles this."><span class="quiz-opt-letter">C</span><span>Now Messenger</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="14" data-exp="INCORRECT. Connect Agent enables live agent-to-user chat. It does not autonomously deliver knowledge through a conversational bot."><span class="quiz-opt-letter">D</span><span>Connect Agent</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp14">Correct Answer: Virtual AgentSourceOfficial Doc: Virtual AgentIf the link fails, search Google for: ServiceNow Zurich Virtual Agent conversational knowledge articles chatbotExpert ExplanationVirtual Agent is a ServiceNow chatbot that provides knowledge articles and resolves common requests through a conversational interface.</div>
+      <div class="quiz-opt-explains" id="qoptexp14" style="display:none"></div>
+      <details class="quiz-overall" id="qexp14">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answer: Virtual AgentSourceOfficial Doc: Virtual AgentIf the link fails, search Google for: ServiceNow Zurich Virtual Agent conversational knowledge articles chatbotExpert ExplanationVirtual Agent is a ServiceNow chatbot that provides knowledge articles and resolves common requests through a conversational interface. Users type questions in natural language, and the Virtual Agent matches them to predefined topics, suggests knowledge articles, and can perform automated actions like password resets or ticket creation.<br><br><strong>Why the Others Are Wrong</strong>Agent Assist: Provides AI-powered suggestions to IT agents while they work on records, not a user-facing chatbot.Now Messenger: A communication tool, not a knowledge-delivery conversational interface.Connect Agent: Enables live human-to-human chat between agents and users, not autonomous knowledge delivery.<br><br><strong>Memory Tip</strong>Virtual Agent = virtual librarian. It serves knowledge articles through conversation without human involvement.</div>
+      </details>
     </div>
     <div class="quiz-score" id="quizScore">
       <div class="quiz-score-num" id="quizScoreNum">0/15</div>
@@ -673,6 +751,37 @@ a:hover { text-decoration: underline; }
   let answered = 0, score = 0;
   const multiSelections = {};
 
+  function showExplanations(qi, isCorrect) {
+    var card = document.getElementById('qcard' + qi);
+    var opts = card.querySelectorAll('.quiz-opt');
+    var correct = Array.isArray(answers[qi]) ? answers[qi] : [answers[qi]];
+    var expContainer = document.getElementById('qoptexp' + qi);
+    var html = '';
+
+    opts.forEach(function(opt, j) {
+      var perExp = opt.getAttribute('data-exp');
+      var isCorr = correct.indexOf(j) !== -1;
+
+      if (perExp) {
+        var label = isCorr ? '<span class="qoe-correct">Correct</span>' : '<span class="qoe-wrong">Incorrect</span>';
+        html += '<div class="quiz-opt-exp ' + (isCorr ? 'qoe-is-correct' : 'qoe-is-wrong') + '">' +
+          '<div class="qoe-header">' + label + ' <span class="qoe-letter">' + 'ABCDEF'[j] + '</span></div>' +
+          '<div class="qoe-text">' + perExp + '</div></div>';
+      }
+    });
+
+    if (html) {
+      expContainer.innerHTML = html;
+      expContainer.style.display = 'block';
+    }
+
+    // Show overall explanation toggle if it has content
+    var overall = document.getElementById('qexp' + qi);
+    if (overall && overall.querySelector('.quiz-overall-content').innerHTML.trim()) {
+      overall.style.display = 'block';
+    }
+  }
+
   document.querySelectorAll('.quiz-opt').forEach(function(opt) {
     opt.addEventListener('click', function() {
       var qi = parseInt(this.dataset.q);
@@ -701,7 +810,7 @@ a:hover { text-decoration: underline; }
         else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
         this.classList.add('selected');
         card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
-        document.getElementById('qexp' + qi).classList.add('show');
+        showExplanations(qi, isCorrect);
         answered++;
         checkDone();
       }
@@ -731,7 +840,7 @@ a:hover { text-decoration: underline; }
       }
       opts.forEach(function(o) { o.setAttribute('disabled',''); });
       this.style.display = 'none';
-      document.getElementById('qexp' + qi).classList.add('show');
+      showExplanations(qi, isCorrect);
       answered++;
       checkDone();
     });

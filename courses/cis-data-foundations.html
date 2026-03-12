@@ -340,12 +340,30 @@ a:hover { text-decoration: underline; }
 .quiz-opt.selected .quiz-opt-letter { background: var(--orange); color: #fff; border-color: var(--orange); }
 .quiz-opt.correct .quiz-opt-letter { background: #2ea043; color: #fff; border-color: #2ea043; }
 .quiz-opt.wrong .quiz-opt-letter { background: #d73a49; color: #fff; border-color: #d73a49; }
-.quiz-explain { display: none; margin-top: 12px; padding: 12px 16px; background: var(--bg-card); border-radius: 8px; font-size: 0.9rem; color: var(--text-dim); line-height: 1.6; border-left: 3px solid var(--orange); }
-.quiz-explain.show { display: block; }
+
 .quiz-choose { font-weight: 400; color: var(--orange); font-size: 0.85rem; margin-left: 4px; }
 .quiz-submit-btn { margin-top: 12px; padding: 10px 24px; background: var(--orange); color: #fff; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.15s, transform 0.1s; }
 .quiz-submit-btn:hover { background: #c75400; }
 .quiz-submit-btn:active { transform: scale(0.97); }
+/* Per-option explanations */
+.quiz-opt-explains { margin-top: 12px; display: flex; flex-direction: column; gap: 6px; }
+.quiz-opt-exp { padding: 10px 14px; border-radius: 8px; font-size: 0.88rem; line-height: 1.5; }
+.qoe-is-correct { background: rgba(46,160,67,0.07); border-left: 3px solid #2ea043; }
+.qoe-is-wrong { background: rgba(215,58,73,0.05); border-left: 3px solid #d73a49; }
+.qoe-header { font-weight: 600; margin-bottom: 4px; font-size: 0.82rem; }
+.qoe-correct { color: #2ea043; }
+.qoe-wrong { color: #d73a49; }
+.qoe-letter { color: var(--text-dim); margin-left: 4px; font-weight: 500; }
+.qoe-text { color: var(--text-dim); }
+/* Collapsible overall explanation */
+.quiz-overall { display: none; margin-top: 10px; }
+.quiz-overall[style*="block"] { display: block; }
+.quiz-overall-toggle { cursor: pointer; font-size: 0.88rem; font-weight: 600; color: var(--orange); padding: 8px 0; list-style: none; display: flex; align-items: center; gap: 6px; }
+.quiz-overall-toggle::-webkit-details-marker { display: none; }
+.quiz-overall-toggle::before { content: ''; display: inline-block; width: 0; height: 0; border-left: 5px solid var(--orange); border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform 0.2s; }
+details.quiz-overall[open] .quiz-overall-toggle::before { transform: rotate(90deg); }
+.quiz-overall-content { padding: 12px 16px; background: var(--bg-card); border-radius: 8px; font-size: 0.88rem; color: var(--text-dim); line-height: 1.6; border-left: 3px solid var(--orange); margin-top: 6px; }
+
 .quiz-score { margin-top: 24px; padding: 20px; background: var(--bg-raised); border-radius: 12px; border: 1px solid var(--border); text-align: center; display: none; }
 .quiz-score.show { display: block; }
 .quiz-score-num { font-size: 2rem; font-weight: 800; color: var(--orange); }
@@ -482,178 +500,268 @@ a:hover { text-decoration: underline; }
     <h2>Try 15 Free DF Questions</h2>
     <p class="quiz-intro">Test your knowledge before you buy — including multiple-choice and multi-select, just like the real exam.</p>
     <div class="quiz-card" id="qcard0">
-      <div class="quiz-q"><span class="quiz-q-num">1.</span>Which CSDM domain represents deployed service instances and their related, discoverable, components?</div>
+      <div class="quiz-q"><span class="quiz-q-num">1.</span>Which results in a reclassification task being generated?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>Service Delivery</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>Ideation &amp; Strategy</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>Service Consumption</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>Build &amp; Integration</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="0"><span class="quiz-opt-letter">E</span><span>Design &amp; Planning</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>glide.class.upgrade.enabled set to false and during discovery a Server is classified as a Windows server.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>glide.class.switch.enabled set to true and during discovery a Windows server is classified as a Linux server.</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp0">The CSDM domain that represents deployed service instances and their related, discoverable components is Service Delivery.The correct choice is Service Delivery.ExplanationThe sources describe the Service Delivery domain as focusing on the operational aspects of services and their underlying technology:Focus and Purpose: The Service Delivery domain (formerly referred to as Manage Technical Services) is the CSDM domain that puts services into action and keeps them running smoothly.Contained Components: This domain represents tables historically used by IT Operations Management (ITOM), such as Service Mapping and ServiceNow Discovery.Operational Tables: The Service Delivery tables are considered &quot;operational&quot; and are available to select for ITSM processes such as Incident, Problem, and Change.Service Instances: The Service Instance (formerly Application Service) is a key component within this domain.</div>
+      <div class="quiz-opt-explains" id="qoptexp0" style="display:none"></div>
+      <details class="quiz-overall" id="qexp0">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">The correct option is:glide.class.upgrade.enabled set to false and during discovery a Server is classified as a Windows server.ExplanationA reclassification task is generated when an automatic reclassification is BLOCKED (set to false).Scenario 1: Server classified as Windows Server (Upgrade)Reclassifying a Configuration Item (CI) from the general Server [cmdb_ci_server] class to the more specific Windows Server [cmdb_ci_win_server] class is defined as a class Upgrade.The system property governing this automation is glide.class.upgrade.enabled.When this property is set to false, the reclassification cannot take place automatically, and instead, the system generates a reclassification task for manual review.Scenario 2: Windows Server classified as Linux Server (Switch)Reclassifying a CI from the Windows Server class to the Linux Server class is defined as a class Switch, as they are in different branches of the hierarchy.The scenario states glide.class.switch.enabled is set to true. When automatic reclassification properties (glide.class.upgrade.enabled, glide.class.downgrade.enabled, glide.class.switch.enabled) are set to true, reclassification happens automatically, and no reclassification task is created.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard1">
-      <div class="quiz-q"><span class="quiz-q-num">2.</span>From the Get Well Playbook “Technical Service Offerings with Support Group or Change Group Populated”, which is a potential benefit to the business if this metric is properly governed?</div>
+      <div class="quiz-q"><span class="quiz-q-num">2.</span>Which CSDM domain are business applications, information objects, and capabilities part of?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>Simplicity in identifying owners and support groups for configuration items</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>Complex reporting process for security incidents</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>Reduced accuracy in business decision-making</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>Decreased efficiency in managing manual meta data on configuration items</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>Service Delivery</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>Service Consumption</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>Build &amp; Integration</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>Design &amp; Planning</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp1">Overall explanation:The potential benefit to the business if the metric &quot;Technical Service Offerings with Support Group or Change Group Populated&quot; is properly governed is Simplicity in identifying owners and support groups for configuration items.This metric, found on the CSDM Data Foundations Dashboard, monitors whether Technical Management Offerings (TMOs) have the necessary non-discoverable group fields populated.</div>
+      <div class="quiz-opt-explains" id="qoptexp1" style="display:none"></div>
+      <details class="quiz-overall" id="qexp1">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">The Common Service Data Model (CSDM) domain that includes Business Applications, Information Objects, and Capabilities is the Design &amp; Planning domain.ExplanationThe Design &amp; Planning domain encompasses the tables currently used by Enterprise Architecture (EA), formerly known as Application Portfolio Management (APM).The purpose of the tables within this domain is for design and planning, and they represent the logical design of the enterprise applications meant to be deployed and used by the business. Consequently, records in these tables are NOT the direct targets of ITSM processes, such as Incident, Problem, and Change management.The sources explicitly place the following elements in this domain:Business Application: Represents the inventory/portfolio of applications and their meta data. It is explicitly stated that a Business Application is NOT an Operational CI and should NOT be used in Incident, Problem or Change.Business Capability: Defined as a high-level capability required by an organization to execute its business model or fulfill its mission, used to rationalize and prioritize spend on applications and services.Information Object: A conceptual representation of business-relevant data or digital content that is used or managed by an application or service.The key personas involved in this domain include Enterprise Architects and Digital Product Owners.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard2">
-      <div class="quiz-q"><span class="quiz-q-num">3.</span>The Staleness metric calculation is based on which of the following fields?</div>
+      <div class="quiz-q"><span class="quiz-q-num">3.</span>Which CSDM domain represents deployed service instances and their related, discoverable, components?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>Most recent discovery &lt;last_discovered&gt;</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>Created &lt;sys_created_on&gt;</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>Updated &lt;sys_update_on&gt;</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>First Discovered &lt;first_discovered&gt;</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="2"><span class="quiz-opt-letter">E</span><span>Discovery Source &lt;discovery_source&gt;</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>Service Delivery</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>Ideation &amp; Strategy</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>Service Consumption</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>Build &amp; Integration</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="2"><span class="quiz-opt-letter">E</span><span>Design &amp; Planning</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp2">Overall explanation:The Staleness metric calculation is based on the Updated &lt;sys_update_on&gt; field.A Configuration Item (CI) is considered stale if it has not been updated in the CMDB for a specified period of time. The CMDB calculates this period by checking the value of the sys_updated_on field. This field reflects the timestamp of the last modification made to the CI record. Importantly, even if an automated tool like ServiceNow Discovery scans a CI and finds no attribute changes, the act of that scan updates the sys_updated_on timestamp, thereby keeping the CI from being flagged as stale.</div>
+      <div class="quiz-opt-explains" id="qoptexp2" style="display:none"></div>
+      <details class="quiz-overall" id="qexp2">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">The CSDM domain that represents deployed service instances and their related, discoverable components is Service Delivery.The correct choice is Service Delivery.ExplanationThe sources describe the Service Delivery domain as focusing on the operational aspects of services and their underlying technology:Focus and Purpose: The Service Delivery domain (formerly referred to as Manage Technical Services) is the CSDM domain that puts services into action and keeps them running smoothly.Contained Components: This domain represents tables historically used by IT Operations Management (ITOM), such as Service Mapping and ServiceNow Discovery.Operational Tables: The Service Delivery tables are considered &quot;operational&quot; and are available to select for ITSM processes such as Incident, Problem, and Change.Service Instances: The Service Instance (formerly Application Service) is a key component within this domain. An Application Service is defined as an operational CI that logically represents a deployed system, application, or product stack. Service Mapping, which discovers underlying components, supports this domain.Key Persona: Personas in this domain include Service Instance Owners, Service Delivery Owners, and Service Providers.In contrast:Service Consumption represents the business portfolio of services and is used by Service Portfolio Management (SPM) and Customer Service Management (CSM). These tables are also operational.Design &amp; Planning tables represent the logical design of enterprise applications to be deployed (Application Portfolio Management/Enterprise Architecture) and are NOT the direct targets of ITSM processes.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard3">
-      <div class="quiz-q"><span class="quiz-q-num">4.</span>The CMDB team needs a scalable method to automate the deletion and archiving of CIs that meet specific criteria (e.g., Install Status is Retired and Life Cycle Stage is End of Life). They want to minimize manual effort and manage these operations for entire CI classes. Which CMDB Workspace feature should the administrator use for this bulk lifecycle management?</div>
+      <div class="quiz-q"><span class="quiz-q-num">4.</span>An operations team wants a health dashboard that focuses only on:Windows Server and Linux Server CIsThat are OperationalThey do not want other classes included, and they want this filtered view to be available as a standard dashboard, not a one-off ad hoc filter.Which configuration best meets this goal?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>Duplicate CI Remediator wizard.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>CMDB Query Builder scheduled reports.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>CI Class Manager Reconciliation Rules.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>CMDB Data Manager policies.</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>Create a CMDB Group of type Health with encoded queries for Windows and Linux servers, then use the Group Health Dashboard</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>Filter the main CMDB Health Dashboard manually each time by class and operational status</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>Build a CMDB Query Builder saved query and export results to a BI tool</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>Create a separate CMDB Health dashboard clone limited only to server classes</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="3"><span class="quiz-opt-letter">E</span><span>Adjust CMDB Health inclusion rules to remove all other classes from the health system</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp3">Overall explanation:The CMDB Data Manager is the centralized, governance-focused tool within the CMDB Workspace designed specifically to manage the entire CI lifecycle (creation, update, retirement, deletion, and archival).Policies created within the Data Manager (such as Archive Policies or Delete Policies) allow the administrator to define filters based on CI attributes (e.g., Install Status or Life Cycle Stage) and schedule these actions to run automatically against entire CI classes.The Data Manager ensures that these destructive operations are auditable and adhere to governance standards, often interacting with Life Cycle Rules for definition and Attestation for owner approval (though Attestation may be skipped for the final delete/archive phase).Why the other options are incorrect:(Duplicate CI Remediator wizard): This tool is designed only for the Correctness KPI and specifically for resolving duplicate CIs.</div>
+      <div class="quiz-opt-explains" id="qoptexp3" style="display:none"></div>
+      <details class="quiz-overall" id="qexp3">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">The correct option is:Create a CMDB Group of type Health with encoded queries for Windows and Linux servers, then use the Group Health Dashboard<br><br><strong>Why this is</strong> the correct solutionServiceNow&#x27;s CMDB Groups are the standard mechanism for creating &quot;slices&quot; of the CMDB for reporting and health monitoring without altering global system settings.Targeted Scope: You can define a CMDB Group that specifically includes:Class = Windows Server AND Operational Status = OperationalORClass = Linux Server AND Operational Status = OperationalPersistent Dashboard: Once the group is created, it becomes selectable in the CMDB Group Health Dashboard. The operations team can simply select their group (&quot;Ops Servers&quot;) from the dropdown menu to see health scores (Completeness, Correctness, Compliance) calculated only for that subset of CIs.No Global Impact: This does not hide other CIs from the rest of the organization<br><br><strong>Why the other options</strong> are incorrectFilter manually each time: This violates the requirement for it to be a &quot;standard dashboard, not a one-off ad hoc filter.&quot; It is inefficient and prone to user error.Build a CMDB Query Builder... export to BI: This moves the data out of ServiceNow. The team loses the interactive ability to click into health results and remediate issues directly within the platform.Create a separate CMDB Health dashboard clone: Cloning the entire dashboard structure is complex, difficult to maintain (upgrades might break it), and unnecessary when the &quot;Group&quot; feature exists specifically for this purpose.Adjust CMDB Health inclusion rules: This is a destructive, global change. It would stop health calculations for all other teams (e.g., Network, Database, Storage), effectively breaking CMDB Health for the entire enterprise just to suit one team.Configuration StepsNavigate to Configuration &gt; CMDB Groups.Click New and name it (e.g., &quot;Ops Team Servers&quot;).Add Encoded Queries to the group:Table: cmdb_ci_win_server, Condition: Operational status is Operational.Table: cmdb_ci_linux_server, Condition: Operational status is Operational.Navigate to CMDB Dashboard &gt; Group Health.Select your new group in the picker to view the tailored metrics.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard4">
-      <div class="quiz-q"><span class="quiz-q-num">5.</span>Which feature can be used to relate an application service/service instance with a technology management offering, business service offering, and/or a business application?</div>
+      <div class="quiz-q"><span class="quiz-q-num">5.</span>Where do you go to configure a rule to uniquely identifies CIs?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>IntegrationHub ETL</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>Application Service Wizard</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>Service Builder</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>CI Class Manager</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="4"><span class="quiz-opt-letter">E</span><span>CMDB Workspace</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>Basic Info tab</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>Pinned Classes</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>Identification Rule tab</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>Reconciliation Rules tab</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp4">The feature that can be used to relate an application service/service instance with a technology management offering, business service offering, and/or a business application is the Application Service Wizard.ExplanationThe sources explicitly describe the use of the Application Service Wizard (also referred to as the CSDM Application Service Wizard) for creating a Service Instance and configuring its necessary relationships to other CSDM elements:The Service Instance (formerly known as an Application Service) is created using the Application Service Wizard.This wizard allows the user to provide basic details (such as name) and add foundational data (such as support, change group, and location data).Crucially, the wizard enables relationships to be easily configured between the new Service Instance and the related business application, technical service offering (Technology Management Service Offering), and business service offering.During the configuration process, under the &quot;Provide Basic Details&quot; tab of the wizard, fields are available for directly associating the new service instance with the Business Application, Technical Service Offering, and Business Service Offering.Why other options are generally incorrect:Service Builder: Service Builder is a tool designed to simplify the creation and configuration of Business Services and Technology Management Services and their corresponding Service Offerings.</div>
+      <div class="quiz-opt-explains" id="qoptexp4" style="display:none"></div>
+      <details class="quiz-overall" id="qexp4">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Overall explanation:The Configuration Item (CI) Class Manager is the centralized tool used to configure the definition and behavior of CI classes in the Configuration Management Database (CMDB), including the rules for uniquely identifying Configuration Items. This process is handled within a specific tab dedicated to these rules.The place where you go to configure a rule to uniquely identify CIs is the Identification Rule tab.Details from the sources:The CI Class Manager is the essential tool for creating and updating CI classes and managing identification and reconciliation rules.The left pane of the CI Class Manager has several tabs, including Identification Rules.Identification rules are defined under the Identification Rule tab within the CI Class Manager.These rules are used to uniquely identify CIs in the CMDB.The criteria defined under the &#x27;Identifier entries&#x27; section of the Identification Rules tab specify the unique attributes used to identify the CI, such as Name, Serial Number, or Device ID.Identification rules can also be viewed or configured from the left navigation pane under the CI Identifiers module.<br><br><strong>Why the other options</strong> are incorrect:(Basic Info tab): This tab provides essential details about a CI class, such as the Display Name, Extensible flag, Principal Class designation, and Managed By Group configuration. It is where you configure an icon for a specific class.(Pinned Classes): This feature provides a convenient way to quickly access CI classes that are frequently used, simplifying navigation.(Reconciliation Rules tab): This tab is used to configure rules that manage and prioritize updates to CI attributes from multiple data sources (Reconciliation Rules) or define data refresh intervals (Data Refresh Rules). It is also where you configure dynamic reconciliation rules.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard5">
-      <div class="quiz-q"><span class="quiz-q-num">6.</span>An administrator is configuring an identification rule for a custom hardware CI. If the Allow null attributes option is set to false for an Identifier Entry, what must be true for the IRE to attempt matching using that entry?</div>
+      <div class="quiz-q"><span class="quiz-q-num">6.</span>What is the default threshold value that the IRE uses to determine when it should stop updating the oldest duplicate CI record, thereby skipping updates on all records when that threshold is exceeded?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="5"><span class="quiz-opt-letter">A</span><span>The CI must have been updated within the last 7 days.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="5"><span class="quiz-opt-letter">B</span><span>The CI must be flagged as a Principal Class.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="5"><span class="quiz-opt-letter">C</span><span>All criterion attributes defined in that identifier entry must have values.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="5"><span class="quiz-opt-letter">D</span><span>The CI must have relationships to its parent CI.</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="5"><span class="quiz-opt-letter">A</span><span>2</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="5"><span class="quiz-opt-letter">B</span><span>3</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="5"><span class="quiz-opt-letter">C</span><span>5</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="5"><span class="quiz-opt-letter">D</span><span>10</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp5">Correct Answer: All criterion attributes defined in that identifier entry must have values.Explanation: In the context of the Identification and Reconciliation Engine (IRE), the Allow null attributes setting controls the strictness of the matching process for a specific identifier entry.Set to False: When this option is set to false (or unchecked), the IRE enforces a strict rule: all criterion attributes defined in that specific identifier entry must have values present in the incoming payload.</div>
+      <div class="quiz-opt-explains" id="qoptexp5" style="display:none"></div>
+      <details class="quiz-overall" id="qexp5">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">The default threshold value that the Identification and Reconciliation Engine (IRE) uses to determine when it should stop updating the oldest duplicate CI record is 5.ExplanationThis threshold is controlled by a specific system property designed to manage the behavior of the IRE when encountering multiple duplicate Configuration Items (CIs) in the CMDB.The system property responsible for this threshold is glide.identification_engine.skip_duplicates.threshold.This property is set to 5 by default.When the property glide.identification_engine.skip_duplicates is set to true (the default state), and the number of duplicate CIs is less than the threshold (5), the IRE selects the oldest CI record (based on creation date) as a match and updates it. The other duplicate CIs are tagged using the Duplicate of field.However, if the number of duplicate CIs exceeds this threshold (e.g., if 6 duplicate CIs exist and the threshold is 5), the IRE will not update any of the records. The IRE prevents the update, and if new data comes in, a new de-duplication task is created, but none of the existing duplicate records are updated.The sources provide an example illustrating this: if the threshold is set to 3, and a 4th duplicate CI is added, the update behavior is stopped, and none of the records are updated.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard6">
-      <div class="quiz-q"><span class="quiz-q-num">7.</span>Which is a service instance type that is a logical representation of a deployed application stack and its dependencies?</div>
+      <div class="quiz-q"><span class="quiz-q-num">7.</span>Which components are displayed on the CMDB and CSDM Data Foundations Dashboards?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="6"><span class="quiz-opt-letter">A</span><span>Application Service [cmdb_ci_service_auto]</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="6"><span class="quiz-opt-letter">B</span><span>Technology Management Service [cmdb_ci_service_technical]</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="6"><span class="quiz-opt-letter">C</span><span>Business Application [cmdb_ci_business_app]</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="6"><span class="quiz-opt-letter">D</span><span>Application [cmdb_ci_appl]</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="6"><span class="quiz-opt-letter">A</span><span>Incident Management, Change Management, and Problem Management</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="6"><span class="quiz-opt-letter">B</span><span>Configuration Items, Relationships, and Business Services</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="6"><span class="quiz-opt-letter">C</span><span>Knowledge Articles, Service Catalog Items, and Catalog Categories</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="6"><span class="quiz-opt-letter">D</span><span>Foundational Metric Results, Priorities, and Remediation Playbook URLs</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp6">The service instance type that is a logical representation of a deployed application stack and its dependencies is the Application Service [cmdb_ci_service_auto].ExplanationThe sources clearly define the characteristics and purpose of this specific Configuration Item (CI) type:Application Service Definition: The Application Service (also referred to as Service Instance) is defined as a service type that logically represents a deployed system, application, or product stack.Operational CI: It is explicitly categorized as an operational CI that is used in ITSM and ITOM Health best practices.Unique Instance: It represents a unique instance and/or version of an application or product in your ecosystem, and may be created per Environment (e.g., Dev, Test, QA, Prod) or per Geographic region.Storage Location: It is stored in the Application Service parent class [cmdb_ci_service_auto] or one of its subclasses.The structure and relationships that make up the deployed application stack are modeled automatically using Service Mapping, where the map created represents the nearest real-time configuration of the Application Service.</div>
+      <div class="quiz-opt-explains" id="qoptexp6" style="display:none"></div>
+      <details class="quiz-overall" id="qexp6">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Based on the provided sources, the components displayed on the CMDB and CSDM Data Foundations Dashboards include Foundational Metric Results, Priorities, and Remediation Playbook URLs.Components Displayed on the Data Foundations Dashboards:The CMDB and CSDM Data Foundations Dashboards provide a set of fixed, heuristic metrics that offer prescriptive insights into the CMDB and CSDM data quality.Foundational Metric Results (Indicators and Scores): The dashboards display scan results for Configuration Items (CIs) within the scope of an indicator, represented as a percentage of compliant CIs. They feature 35+ metrics providing insights into CMDB and CSDM data, relationships, and risks.Priorities / Non-Compliant CIs: The dashboards identify gaps and risks in the implementation. The top section shows compliant results, while the bottom section displays non-compliant CIs in corresponding tiles. Any non-compliant CIs for an indicator are displayed in the corresponding tiles, helping prioritize areas needing attention.Remediation Playbook URLs: Each indicator tile includes a link to an associated remediation playbook on the ServiceNow Support site. These playbooks provide structured guidance, including a summary of the indicator, an overview of the problem, and a thorough explanation on how to fix or improve the score for the indicator.Distinctions from other options:CMDB Health Dashboard vs. Data Foundations Dashboard: While the CMDB Health Dashboard tracks core data quality using three scorecards (Completeness, Correctness, and Compliance) with customizable metrics, the Data Foundations Dashboards have fixed metrics and are more prescriptive. The Data Foundations Dashboards highlight many critical indicators typically found in a standard HealthScan and provide immediate visibility into areas needing attention.The playbooks provided by the Data Foundations Dashboards are essential tools for managing and improving data health. For example, when viewing the CSDM Data Foundations Dashboard, a playbook is provided next to each metric, explaining its importance and offering remediation plays.</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard7">
-      <div class="quiz-q"><span class="quiz-q-num">8.</span>Which of the following are true with respect to the Multisource CMDB? (Choose 2) <span class="quiz-choose">(choose 2)</span></div>
+      <div class="quiz-q"><span class="quiz-q-num">8.</span>From which of the following can the Managed by group be configured and synchronised to the underlying group or class of Configuration Items (CIs)? (Choose 2) <span class="quiz-choose">(choose 2)</span></div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="7"><span class="quiz-opt-letter">A</span><span>Is active by default on base systems</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="7"><span class="quiz-opt-letter">B</span><span>Activate the Multisource CMDB by setting the property, glide.identification_engine.multisource_enabled, to true and installing the ITOM Discovery License plugin</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="7"><span class="quiz-opt-letter">C</span><span>De-activate the Multisource CMDB by installing the CMDB CI Class Models plugin</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="7"><span class="quiz-opt-letter">D</span><span>Must be activated on base systems</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="7"><span class="quiz-opt-letter">A</span><span>Technology Management Offerings</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="7"><span class="quiz-opt-letter">B</span><span>Business Service Offerings</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="7"><span class="quiz-opt-letter">C</span><span>Technology Management Services</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="7"><span class="quiz-opt-letter">D</span><span>Business Services</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="7"><span class="quiz-opt-letter">E</span><span>CI Class Manager</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="7" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp7">Overall explanation:
-Multisource CMDB must be explicitly activated by setting `glide.identification_engine.multisource_enabled` to true and requires the ITOM Discovery License. It is NOT active by default on base systems.
-
-Why the other options are incorrect:
-(Active by default): False, it incurs overhead so it&#x27;s opt-in.
-(De-activate by plugin): Incorrect.
-
-Sources:
-ServiceNow Multisource CMDB setup.</div>
+      <div class="quiz-opt-explains" id="qoptexp7" style="display:none"></div>
+      <details class="quiz-overall" id="qexp7">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">The Managed by Group attribute can be configured and synchronized to the underlying Configuration Items (CIs) from the following two places, as supported by the sources:1. CI Class Manager2. Technology Management Offerings (also referred to as Technical Service Offerings)Detailed ExplanationThe sources describe two primary methods for automatically populating and synchronizing foundational group data, such as the Managed by Group, to CIs:1. CI Class ManagerYou can configure the Managed By Group field for a specific CI class within the CI Class Manager.• If this field is populated in the CI Class Manager, the value is propagated to all CIs within that class.• This method is an easy way to populate the field data for a specific class.• This configuration is applied to CIs that are not associated with a technical service offering.• A scheduled job, CSDM Data Sync, synchronizes the Managed By Group from CI Class Manager to all CIs in the class.2. Technology Management Offerings (Technical Service Offerings)The Managed By Group (along with Support Group and Change Group) can be set directly in a technical service offering.• This setting is applied to CIs that are part of the associated dynamic CI group, which is linked to the technical service offering.• When a CI is managed by a technical service offering, the value configured in the offering takes precedence (Priority 1) over the value configured in the CI Class Manager (Priority 2) for that CI&#x27;s class.• Group attributes defined in a technical service offering are automatically synchronized to the underlying CIs that are part of the associated dynamic CI group.• The Managed By Group is used to streamline the assignment of Data Manager tasks for attestation, life cycle, and certification policies.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard8">
-      <div class="quiz-q"><span class="quiz-q-num">9.</span>A global company wants to be sure that critical application servers really exist in the data center.At the same time, they already have staleness rules configured in CMDB Health Correctness to flag servers that have not been updated recently.What is the primary purpose of using an Attestation policy in CMDB Data Manager in this context?</div>
+      <div class="quiz-q"><span class="quiz-q-num">9.</span>When configuring an Identification Rule entry, what is the impact of checking the Allow fallback to parent&#x27;s rules option?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="8"><span class="quiz-opt-letter">A</span><span>To replace staleness rules so that CMDB Health Correctness no longer needs them</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="8"><span class="quiz-opt-letter">B</span><span>To automatically change the lifecycle state of stale servers to Retired</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="8"><span class="quiz-opt-letter">C</span><span>To create tasks asking local contacts to physically verify specific CIs</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="8"><span class="quiz-opt-letter">D</span><span>To compress CMDB Health scores into a higher overall percentage</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="8"><span class="quiz-opt-letter">E</span><span>To remove duplicate servers from the CMDB without manual review</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="8"><span class="quiz-opt-letter">A</span><span>It allows null attribute values for that identifier entry.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="8"><span class="quiz-opt-letter">B</span><span>The system uses the parent&#x27;s reconciliation rule priority if the child rule fails.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="8"><span class="quiz-opt-letter">C</span><span>If the current CI&#x27;s identifier entry fails to find a match, the IRE attempts matching using the criterion attributes of the parent class.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="8"><span class="quiz-opt-letter">D</span><span>It prevents the CI from being reclassified.</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp8">The correct option is:To create tasks asking local contacts to physically verify specific CIsWhy this is the correct solutionAttestation Policies in CMDB Data Manager (which rely on the Data Certification feature) are designed to bridge the gap between &quot;what the system detects&quot; and &quot;physical reality.&quot;Human Verification: While discovery tools can tell you a server responds to a ping, they cannot always confirm physical location, ownership, or if a powered-off device is still in the rack.</div>
+      <div class="quiz-opt-explains" id="qoptexp8" style="display:none"></div>
+      <details class="quiz-overall" id="qexp8">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">The correct impact of checking the Allow fallback to parent&#x27;s rules option when configuring an Identification Rule entry is:If the current CI&#x27;s identifier entry fails to find a match, the IRE attempts matching using the criterion attributes of the parent class.ExplanationThe Identification and Reconciliation Engine (IRE) uses Identification Rules to uniquely identify Configuration Items (CIs). These rules are defined by one or more identifier entries, which specify a unique set of criterion attributes.The sources specifically describe the function of the Allow fallback to parent&#x27;s rules option:The Allow fallback to parent&#x27;s rules checkbox is an option within the identifier entry configuration.When this option is checked, if the Identification Rule associated with the current CI class fails to find a match using its configured identifier entry criteria, the IRE will then proceed to the parent CI class identification rule and attempt to find a match there. This ensures a match is attempted using the broader criteria defined by the parent class if the child class&#x27;s specialized rule fails.In contrast:Allow null attributes is a separate checkbox option. When checked, it allows matching to be attempted even if some criterion attributes are null, provided at least one attribute is not null. If unchecked, all criterion attributes must have values to attempt matching with the identifier entry.Reconciliation rules (and their priorities) are used for resolving updates from multiple data sources after a CI is identified, not for the initial identification phase.</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard9">
-      <div class="quiz-q"><span class="quiz-q-num">10.</span>In Common Service Data Model (CSDM) in ServiceNow, which of the following are potential consequences of not aligning with the model? (Choose 2) <span class="quiz-choose">(choose 2)</span></div>
+      <div class="quiz-q"><span class="quiz-q-num">10.</span>The Unified Map combines many of the features from which of the following maps? (Choose 2) <span class="quiz-choose">(choose 2)</span></div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="9"><span class="quiz-opt-letter">A</span><span>Incompatibility with future ServiceNow products</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="9"><span class="quiz-opt-letter">B</span><span>Inability to install ServiceNow store applications</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="9"><span class="quiz-opt-letter">C</span><span>Increased technical debt</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="9"><span class="quiz-opt-letter">D</span><span>Potential loss of data</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="9"><span class="quiz-opt-letter">A</span><span>Application Service</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="9"><span class="quiz-opt-letter">B</span><span>Dependency View</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="9"><span class="quiz-opt-letter">C</span><span>Geolocation</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="9"><span class="quiz-opt-letter">D</span><span>Transform</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="9"><span class="quiz-opt-letter">E</span><span>Dynamic</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="9" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp9">The potential consequences of not aligning with the Common Service Data Model (CSDM) are:Incompatibility with future ServiceNow productsIncreased technical debtExplanation of ConsequencesAdopting the CSDM is critical because it provides the mandatory data structure and guidance for the entire ServiceNow platform. Failure to follow this standardized approach leads to difficulties in maintenance and limits the return on investment from the platform:1.</div>
+      <div class="quiz-opt-explains" id="qoptexp9" style="display:none"></div>
+      <details class="quiz-overall" id="qexp9">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct AnswersApplication ServiceDependency ViewDetailed ExplanationThe Unified Map (introduced in the Vancouver release) is designed to consolidate the visualization capabilities of ServiceNow into a single, modern interface. It combines the features of:Dependency Views: The traditional hierarchical view that shows all upstream and downstream CI relationships (infrastructure view).Service Maps (Application Services): The view generated by Service Mapping that shows the specific IT components and connections supporting a business service (service-aware view).Prior to the Unified Map, users had to toggle between the &quot;Dependency View&quot; (to see raw relationships) and the &quot;Service Map&quot; (to see the service flow). The Unified Map merges these so you can see the service context (Application Service) layered over the physical dependencies in one place.<br><br><strong>Why the other options</strong> are incorrectGeolocation: While ServiceNow has map views for location (e.g., Google Maps integration), the Unified Map&#x27;s primary goal is topological (CI relationships), not geographical.Transform: &quot;Transform&quot; maps are data import tools (Import Sets), not visualization maps.Dynamic: While &quot;Dynamic CI Groups&quot; exist, &quot;Dynamic&quot; itself is not a standalone map view type being consolidated here.</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard10">
-      <div class="quiz-q"><span class="quiz-q-num">11.</span>The CMDB and CSDM Data Foundations Dashboards provide remediation guidance via Playbooks. Which three types of guidance are consistently available via the Remediation Playbook URLs? (Select 3) <span class="quiz-choose">(choose 3)</span></div>
+      <div class="quiz-q"><span class="quiz-q-num">11.</span>A CMDB Administrator has built a number of Technology Management Service Offerings (Technical Service Offerings) based on Dynamic CI Groups to better maintain group alignment for the member CIs.
+
+Which Groups are synced to CIs from the offering that has a relationship to a Dynamic CI Group? (Choose 2) <span class="quiz-choose">(choose 2)</span></div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="10"><span class="quiz-opt-letter">A</span><span>Upstream Causes</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="10"><span class="quiz-opt-letter">B</span><span>Discovery Debug Logs</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="10"><span class="quiz-opt-letter">C</span><span>Downstream Consequences</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="10"><span class="quiz-opt-letter">D</span><span>Certification Template structure</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="10"><span class="quiz-opt-letter">E</span><span>Remediation Plays (Fix or Improve)</span></li>
-      <li class="quiz-opt" data-idx="5" data-q="10"><span class="quiz-opt-letter">F</span><span>Transform Map Scripts</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="10" data-exp="INCORRECT. Approval Group is not synced by the TSO Dynamic CI Group mechanism. Approval groups are managed through separate workflow configurations."><span class="quiz-opt-letter">A</span><span>Approval Group</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="10" data-exp="CORRECT. Managed by Group is one of three fields synced via the OOTB business rule &#x27;CSDM - Sync Group Attributes&#x27; from Technical Service Offerings."><span class="quiz-opt-letter">B</span><span>Managed by Group</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="10" data-exp="CORRECT. Support Group is one of three fields synced via the TSO Dynamic CI Group mechanism alongside Managed by Group and Change Group."><span class="quiz-opt-letter">C</span><span>Support Group</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="10" data-exp="INCORRECT. Owned by Group is not part of the TSO sync mechanism. The three synced fields are Managed by Group, Support Group, and Change Group."><span class="quiz-opt-letter">D</span><span>Owned by Group</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="10" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp10">The three types of guidance consistently available via the Remediation Playbook URLs provided by the CMDB and CSDM Data Foundations Dashboards are:Upstream CausesDownstream ConsequencesRemediation Plays (Fix or Improve)ExplanationThe CMDB and CSDM Data Foundations Dashboards provide metrics (indicators), and each indicator includes a link to a remediation playbook on the ServiceNow support site.These remediation playbooks are knowledge articles that provide detailed context for the respective issue:Each playbook includes a summary of the indicator and an overview of the problem.The playbooks specifically explain the importance of maintaining the metric, its upstream and downstream impacts.This includes Upstream Causes and Downstream Consequences.Finally, a thorough explanation is provided on how to fix or improve the score for the indicator, which is referred to as Remediation Plays.Although one source provides a general sequential structure for playbooks listing &quot;Fix or Improve&quot; as the fourth step, the more detailed description explicitly includes the concepts of upstream impacts, downstream consequences, and remediation plays.Playbook Structure ComponentSource ConfirmationUpstream CausesIncluded in explanation of upstream and downstream impacts.Downstream ConsequencesIncluded in explanation of upstream and downstream impacts.Remediation Plays (Fix or Improve)Included as a thorough explanation on how to fix or improve the score.</div>
+      <div class="quiz-opt-explains" id="qoptexp10" style="display:none"></div>
+      <details class="quiz-overall" id="qexp10">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answer: Managed by Group, Support Group
+
+Source
+
+Official Doc: Sync Service Offering Fields to Individual CIs
+If the link fails, search Google for: ServiceNow technical service offering dynamic CI group sync &quot;managed by group&quot; &quot;support group&quot; &quot;change group&quot;
+
+Expert Explanation
+When Technical Service Offerings (TSOs) use Dynamic CI Groups, the OOTB business rule &quot;CSDM - Sync Group Attributes&quot; copies three specific group fields from the TSO to each member CI: Managed by Group, Support Group, and Change Group. This ensures that all CIs in a Dynamic CI Group inherit consistent group assignments from their parent service offering. Owned by Group is a separate field that is not part of this synchronization mechanism.
+
+<br><br><strong>Why the Others Are Wrong</strong>
+
+Approval Group: Approval groups are configured through approval workflows and change management rules, not through TSO Dynamic CI Group synchronization.
+Owned by Group: Despite being a group field on CI records, Owned by Group is not included in the CSDM Sync Group Attributes business rule. The three synced fields are exclusively Managed by, Support, and Change.
+
+<br><br><strong>Memory Tip</strong>
+&quot;MSC: Managed, Support, Change.&quot; These three group fields sync from TSOs via Dynamic CI Groups. Owned by Group and Approval Group are managed elsewhere.
+
+<br><br><strong>Real-World</strong> Example
+An organization creates a TSO called &quot;Windows Server Management&quot; with Support Group = &quot;Windows Ops Team&quot; and Managed by Group = &quot;Server Admins.&quot; They attach a Dynamic CI Group containing 500 Windows servers. The sync business rule automatically populates both fields on all 500 CI records, eliminating manual group assignment.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard11">
-      <div class="quiz-q"><span class="quiz-q-num">12.</span>Business Services, Technology Management Services, Business Service Offerings, and Technology Management Offerings can be created using forms and lists or in a more streamlined manner using which of the following?</div>
+      <div class="quiz-q"><span class="quiz-q-num">12.</span>Which of the following can be configured to prevent inserts into the CMDB from an unwanted data source?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="11"><span class="quiz-opt-letter">A</span><span>Service Builder</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="11"><span class="quiz-opt-letter">B</span><span>Application Service Wizard</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="11"><span class="quiz-opt-letter">C</span><span>CMDB Workspace</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="11"><span class="quiz-opt-letter">D</span><span>CI Class Manager</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="11"><span class="quiz-opt-letter">E</span><span>Service Mapping</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="11"><span class="quiz-opt-letter">A</span><span>Identification Rule</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="11"><span class="quiz-opt-letter">B</span><span>Reconciliation Rule</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="11"><span class="quiz-opt-letter">C</span><span>Dynamic Reconciliation Rule</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="11"><span class="quiz-opt-letter">D</span><span>Data Refresh Rule</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="11"><span class="quiz-opt-letter">E</span><span>IRE Data Source Rule</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp11">The correct tool for creating Business Services, Technology Management Services, Business Service Offerings, and Technology Management Offerings in a streamlined manner, besides using traditional forms and lists, is Service Builder.ExplanationService Builder is a user-friendly tool provided by ServiceNow designed to simplify the creation and configuration of CSDM services and offerings.Service Builder Function: It is used to create technical services and their corresponding offerings quickly and easily in a guided, step-by-step flow.Services/Offerings Created: This tool supports the creation of records in the Service Consumption domain (Business Services and Business Service Offerings) and the Service Delivery domain (Technology Management Services and Technology Management Offerings).User Experience: Service Builder provides helpful hints and descriptions that explain the critical fields, values, and their purposes during the guided setup.</div>
+      <div class="quiz-opt-explains" id="qoptexp11" style="display:none"></div>
+      <details class="quiz-overall" id="qexp11">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">The correct configuration used to prevent inserts into the Configuration Management Database (CMDB) from an unwanted data source is the IRE Data Source Rule.Overall Explanation:The overall process of bringing data into the CMDB is governed by the Identification and Reconciliation Engine (IRE). While many rules focus on managing updates (reconciliation) or preventing duplicates (identification) of existing records, a specific rule is required to block the creation of new records (inserts) entirely from a designated source.IRE Data Source Rules are specifically configured to block inserts from a specific data source into a specified class in the CMDB. They can be configured by navigating to Configuration &gt; Identification/Reconciliation &gt; IRE Data Source Rules.<br><br><strong>Why the other options</strong> are incorrect (focusing on updates/matches, not inserts):Identification Rule: Identification rules are crucial for ensuring data integrity by uniquely identifying CIs and preventing the creation of duplicate records. They determine if an incoming CI is new (leading to an insert) or existing (leading to an update). They do not function to block the insert action based on the source itself.Reconciliation Rule (Static Reconciliation Rule): These rules are designed to manage and prioritize updates to existing CIs by specifying which data sources are authorized to modify CI attributes and resolve conflicts between sources. The reconciliation process is generally not part of the creation (insert) process of a CI; it follows identification.Dynamic Reconciliation Rule: These rules handle complex data reconciliation scenarios for updates to existing CIs by leveraging Multisource CMDB data to select values (e.g., Largest Value, Most Reported). Like static rules, they primarily govern how existing records are updated, not whether a new record (insert) is permitted.Data Refresh Rule: These rules are configured under the Reconciliation Rules tab and manage how and when CI data can be refreshed if a higher-priority data source has failed to update the record within a specified time frame (staleness). They manage updates and data staleness, not inserts.</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard12">
-      <div class="quiz-q"><span class="quiz-q-num">13.</span>Aligning to the Common Service Data Model (CSDM) allows for auto-population of the assignment group field on new incident and change request records. Which of the following are true when creating a new Incident or Change Request in ServiceNow? (Choose 2) <span class="quiz-choose">(choose 2)</span></div>
+      <div class="quiz-q"><span class="quiz-q-num">13.</span>To update the CMDB Data Foundations Dashboard health metrics and reports immediately, versus waiting for them to update automatically, which scheduled jobs need to be executed? (Select 2) <span class="quiz-choose">(choose 2)</span></div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="12"><span class="quiz-opt-letter">A</span><span>Change group on the selected CI auto-populates the assignment group field on the change request form.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="12"><span class="quiz-opt-letter">B</span><span>Approval group on the selected CI auto-populates the assignment group field on the change request form.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="12"><span class="quiz-opt-letter">C</span><span>Support group on the selected CI auto-populates the assignment group field on the incident form.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="12"><span class="quiz-opt-letter">D</span><span>Managed by group on the selected CI auto-populates the assignment group field on the incident form.</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="12"><span class="quiz-opt-letter">A</span><span>CMDB Data Foundations PA metric Collection</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="12"><span class="quiz-opt-letter">B</span><span>CSDM Data Foundations PA metric Collection</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="12"><span class="quiz-opt-letter">C</span><span>CSDM Get Well Metric Collection</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="12"><span class="quiz-opt-letter">D</span><span>CMDB Get Well Metric Collection</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="12" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp12">The correct statements regarding the auto-population of the Assignment Group field on Incident and Change Request records when aligning with the Common Service Data Model (CSDM) are:Change group on the selected CI auto-populates the assignment group field on the change request form.Support group on the selected CI auto-populates the assignment group field on the incident form.ExplanationAligning Configuration Items (CIs) with CSDM and populating key non-discoverable group fields enables the automation of ITSM processes, particularly routing Incidents and Changes.Incident Routing (Support Group):The Support Group attribute configured on a CI record (or a service offering) is used to determine Incident routing.A CI, when selected from the incident form, has its support group value auto-populate the assignment group field on the incident form to help streamline incident routing.In a lab scenario, selecting a Service Offering configured with a Support Group caused the Assignment Group field on the incident record to auto populate.Change Routing (Change Group):The Change Group attribute configured on a CI record (or a service offering) maps to the Change Assignment Group.The Change group on the selected CI auto-populates the assignment group field on the change request form.This auto-population streamlines the change process by dynamically routing change requests to the appropriate group.Note on Precedence: The system checks for the appropriate group assignment in a specific order:If a group attribute (like Support Group or Change Group) is assigned directly to the Configuration Item (CI), that value is used.If the CI level field is not populated, the system takes the assignment group defined at the corresponding Offering level.The Managed by Group is primarily used to streamline the assignment of Data Manager tasks for attestation, life cycle, and certification policies, not the primary assignment group for general Incidents or Changes.</div>
+      <div class="quiz-opt-explains" id="qoptexp12" style="display:none"></div>
+      <details class="quiz-overall" id="qexp12">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">The Correct AnswersAnswer  CMDB Data Foundations PA metric CollectionAnswer  CMDB Get Well Metric CollectionWhy these are the correct jobsTo see immediate changes on the dashboard, a two-step process must occur in a specific order. Selecting both jobs covers this requirement:CMDB Get Well Metric Collection:Purpose: This job executes the actual queries against your CMDB to identify Configuration Items (CIs) that violate the &quot;health&quot; rules (e.g., CIs without owners, duplicate CIs).Result: It populates the &quot;Get Well&quot; tables with the raw data. If you do not run this, the PA job will simply collect the old data again.CMDB Data Foundations PA Metric Collection:Purpose: This is the Performance Analytics (PA) job. It takes the data generated by the &quot;Get Well&quot; job and aggregates it into scores (indicators).Result: This updates the actual widgets and trend lines on the dashboard.Why the others are incorrectAnswers (CSDM ...): These jobs are for the CSDM (Common Service Data Model) Data Foundations Dashboard. While CSDM and CMDB are tightly linked, the dashboards are separate entities in ServiceNow with distinct scheduled jobs.</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard13">
-      <div class="quiz-q"><span class="quiz-q-num">14.</span>Which two fields are automatically synchronized on the associated CI record when the State field is updated on an Asset record? (Select 2) <span class="quiz-choose">(choose 2)</span></div>
+      <div class="quiz-q"><span class="quiz-q-num">14.</span>The following Reconciliation Rules were configured for ServiceNow, Altiris, and SCCM for the Windows Server (cmdb_ci_win_server) class:
+
+ServiceNow: Priority 100
+Altiris: Priority 200
+SCCM: Priority 300
+
+Which statements are true? (Choose 2) <span class="quiz-choose">(choose 2)</span></div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="13"><span class="quiz-opt-letter">A</span><span>Operational status</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="13"><span class="quiz-opt-letter">B</span><span>Install Status</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="13"><span class="quiz-opt-letter">C</span><span>Hardware Status</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="13"><span class="quiz-opt-letter">D</span><span>Asset tag</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="13" data-exp="CORRECT. Altiris (Priority 200) has higher authority than SCCM (Priority 300). Higher-priority sources can update records inserted by lower-priority sources."><span class="quiz-opt-letter">A</span><span>Data collected with a discovery source of Altiris can update records inserted by SCCM into the Windows Server table.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="13" data-exp="INCORRECT. ServiceNow (Priority 100) has the highest priority and can both insert and update any record in the Windows Server table."><span class="quiz-opt-letter">B</span><span>Data collected with a discovery source of ServiceNow can insert new records into the Windows Server table, but cannot update records created by Altiris or SCCM.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="13" data-exp="CORRECT. Any authorized data source can insert new records regardless of its priority level. SCCM at Priority 300 can insert new CIs it discovers."><span class="quiz-opt-letter">C</span><span>Data collected with a discovery source of SCCM can be inserted as new records in the Windows Server table.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="13" data-exp="INCORRECT. SCCM (Priority 300) has the lowest priority and cannot update records from higher-priority sources (ServiceNow at 100, Altiris at 200). It can only insert new records."><span class="quiz-opt-letter">D</span><span>Data collected with a discovery source of SCCM can update any record in the Windows Server table because it has the highest priority number.</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="13" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp13">Based on the sources, the two fields that are automatically synchronized on the associated Configuration Item (CI) record when the State field is updated on an Asset record are Install Status and Hardware Status.The correct choices are:Install StatusHardware StatusExplanationThe synchronization of life cycle fields ensures that the status of assets and CIs remain aligned.Legacy Life Cycle Fields: The State field on the Asset record, along with the Install Status and Hardware Status fields on the CI record, are referred to as legacy life cycle fields that the base system includes automation to keep synchronized.Synchronization Mechanism: The asset State field, when updated, is synchronized with the CI Install Status field.Confirmed Synchronization: The source material confirms that when the State field is updated on an Asset record, both the Install Status and Hardware Status fields are automatically synchronized on the associated CI record.It is worth noting that this synchronization is often directional; for example, if the CI Install Status field is changed, it is generally not synchronized back to the Asset State field.The specific field that updates depends on the CI class.</div>
+      <div class="quiz-opt-explains" id="qoptexp13" style="display:none"></div>
+      <details class="quiz-overall" id="qexp13">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answer: Data collected with a discovery source of Altiris can update records inserted by SCCM into the Windows Server table; Data collected with a discovery source of SCCM can be inserted as new records in the Windows Server table
+
+Source
+
+  Official Doc: Understanding IRE Reconciliation Rules
+  If the link fails, search Google for: ServiceNow CMDB reconciliation rules priority data source precedence update insert
+
+Expert Explanation
+In ServiceNow reconciliation, lower priority number = higher authority (Priority 100 outranks Priority 200). Two key rules govern data source behavior: (a) a higher-priority source can update records from a lower-priority source, and (b) any authorized source can insert new records regardless of its priority. With ServiceNow at 100, Altiris at 200, and SCCM at 300: Altiris (200) can update SCCM records (300) because 200 outranks 300. SCCM (300) can insert new records because insertion is unrestricted by priority. SCCM cannot update records from ServiceNow or Altiris because it has the lowest priority.
+
+<br><br><strong>Why the Others Are Wrong</strong>
+
+  ServiceNow can insert but cannot update: ServiceNow has Priority 100 (highest authority). It can both insert new records and update any existing record from any source. There is no restriction on the highest-priority source.
+  SCCM can update any record because it has the highest priority number: Higher priority number means lower authority. SCCM at 300 has the lowest authority and can only update its own records, not those from ServiceNow (100) or Altiris (200).
+
+<br><br><strong>Memory Tip</strong>
+Lower number = higher boss. Any source can hire (insert), but only a higher boss can overwrite (update) a lower one&#x27;s work.
+
+<br><br><strong>Real-World</strong> Example
+Altiris discovers a Windows Server and sets its location to &quot;Building A.&quot; SCCM later discovers the same server and tries to set location to &quot;Building B.&quot; Since SCCM (300) has lower priority than Altiris (200), the update is rejected and &quot;Building A&quot; remains. But when SCCM discovers a brand-new server not in the CMDB, it inserts the record successfully because insertions are unrestricted.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard14">
-      <div class="quiz-q"><span class="quiz-q-num">15.</span>How many Orphan rules are provided in a base system?</div>
+      <div class="quiz-q"><span class="quiz-q-num">15.</span>A CMDB Admin is reviewing the CMDB Data Foundations Dashboard and notices that the score for &quot;CIs with Relationships&quot; is critically low. The admin understands the metric but is unsure of the specific organizational process required to fix the root cause. They click the Remediation Playbook URL associated with the metric. What does this action provide to the admin?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="14"><span class="quiz-opt-letter">A</span><span>0</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="14"><span class="quiz-opt-letter">B</span><span>1</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="14"><span class="quiz-opt-letter">C</span><span>Depends on the plugins enabled</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="14"><span class="quiz-opt-letter">D</span><span>Depends on the CIs discovered</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="14"><span class="quiz-opt-letter">A</span><span>It immediately opens the &quot;Duplicate CI Remediator&quot; wizard to merge records.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="14"><span class="quiz-opt-letter">B</span><span>It triggers a background script to auto-generate relationships based on identifying attributes.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="14"><span class="quiz-opt-letter">C</span><span>It opens a Knowledge Base article/guide explaining &quot;What is this?&quot;, &quot;Why it matters?&quot;, and &quot;How to fix it?&quot;.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="14"><span class="quiz-opt-letter">D</span><span>It opens the &quot;Get Well&quot; scheduled job to re-calculate the score immediately.</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp14">Overall explanation:
-In the base system, there are &quot;0&quot; Orphan rules defined by default. Administrators must define what constitutes an orphan (e.g., &quot;A Server without a Network Adapter&quot;) based on their specific needs. *Note: Some specific dependent classes have system rules, but generally for the health dashboard &#x27;Orphan Rules&#x27;, you define them.*
-
-Sources:
-ServiceNow CMDB Health configuration.</div>
+      <div class="quiz-opt-explains" id="qoptexp14" style="display:none"></div>
+      <details class="quiz-overall" id="qexp14">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answer: It opens a Knowledge Base article or guide explaining “What is this?”, “Why it matters?”, and “How to fix it?”Explanation:In the CMDB Data Foundations Dashboard, the Remediation Playbook URL is a governance and guidance tool, not an automation trigger. When the admin clicks the link for a low-scoring metric such as “CIs with Relationships”, it opens a Playbook, which is delivered as a Knowledge Base–style guide. This guide explains:What the metric meansWhy the metric is important for the businessHow to fix the issue using recommended processes and toolsThis is exactly aligned with how Data Foundations Playbooks are designed: to provide organizational and process guidance, not to directly execute technical remediation.How it works:Admin opens the CMDB Data Foundations DashboardSelects a low-scoring metricClicks the Remediation Playbook URLThe system opens a structured guidance article, not a wizard or scriptExplanations for Incorrect OptionsIt immediately opens the “Duplicate CI Remediator” wizard to merge recordsWhy it is incorrect:The Duplicate CI Remediator is part of CMDB Health Correctness, not Data Foundations. Data Foundations Playbooks do not launch remediation wizards.It triggers a background script to auto-generate relationships based on identifying attributesWhy it is incorrect:Playbooks do not execute background scripts or make data changes. They only provide guidance and recommended actions.It opens the “Get Well” scheduled job to re-calculate the score immediatelyWhy it is incorrect:Scheduled jobs are run from the Jobs tab, not from Playbook links. A Playbook explains how to improve the metric; it does not recalculate it.</div>
+      </details>
     </div>
     <div class="quiz-score" id="quizScore">
       <div class="quiz-score-num" id="quizScoreNum">0/15</div>
@@ -687,9 +795,40 @@ ServiceNow CMDB Health configuration.</div>
   });
 
   // Quiz logic
-  const answers = [0, 0, 2, 3, 1, 2, 0, [1, 3], 2, [0, 2], [0, 2, 4], 0, [0, 2], [1, 2], 0];
+  const answers = [0, 3, 0, 0, 2, 2, 3, [0, 4], 2, [0, 1], [1, 2], 4, [0, 3], [0, 2], 2];
   let answered = 0, score = 0;
   const multiSelections = {};
+
+  function showExplanations(qi, isCorrect) {
+    var card = document.getElementById('qcard' + qi);
+    var opts = card.querySelectorAll('.quiz-opt');
+    var correct = Array.isArray(answers[qi]) ? answers[qi] : [answers[qi]];
+    var expContainer = document.getElementById('qoptexp' + qi);
+    var html = '';
+
+    opts.forEach(function(opt, j) {
+      var perExp = opt.getAttribute('data-exp');
+      var isCorr = correct.indexOf(j) !== -1;
+
+      if (perExp) {
+        var label = isCorr ? '<span class="qoe-correct">Correct</span>' : '<span class="qoe-wrong">Incorrect</span>';
+        html += '<div class="quiz-opt-exp ' + (isCorr ? 'qoe-is-correct' : 'qoe-is-wrong') + '">' +
+          '<div class="qoe-header">' + label + ' <span class="qoe-letter">' + 'ABCDEF'[j] + '</span></div>' +
+          '<div class="qoe-text">' + perExp + '</div></div>';
+      }
+    });
+
+    if (html) {
+      expContainer.innerHTML = html;
+      expContainer.style.display = 'block';
+    }
+
+    // Show overall explanation toggle if it has content
+    var overall = document.getElementById('qexp' + qi);
+    if (overall && overall.querySelector('.quiz-overall-content').innerHTML.trim()) {
+      overall.style.display = 'block';
+    }
+  }
 
   document.querySelectorAll('.quiz-opt').forEach(function(opt) {
     opt.addEventListener('click', function() {
@@ -719,7 +858,7 @@ ServiceNow CMDB Health configuration.</div>
         else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
         this.classList.add('selected');
         card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
-        document.getElementById('qexp' + qi).classList.add('show');
+        showExplanations(qi, isCorrect);
         answered++;
         checkDone();
       }
@@ -749,7 +888,7 @@ ServiceNow CMDB Health configuration.</div>
       }
       opts.forEach(function(o) { o.setAttribute('disabled',''); });
       this.style.display = 'none';
-      document.getElementById('qexp' + qi).classList.add('show');
+      showExplanations(qi, isCorrect);
       answered++;
       checkDone();
     });

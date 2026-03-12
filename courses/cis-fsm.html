@@ -340,12 +340,30 @@ a:hover { text-decoration: underline; }
 .quiz-opt.selected .quiz-opt-letter { background: var(--orange); color: #fff; border-color: var(--orange); }
 .quiz-opt.correct .quiz-opt-letter { background: #2ea043; color: #fff; border-color: #2ea043; }
 .quiz-opt.wrong .quiz-opt-letter { background: #d73a49; color: #fff; border-color: #d73a49; }
-.quiz-explain { display: none; margin-top: 12px; padding: 12px 16px; background: var(--bg-card); border-radius: 8px; font-size: 0.9rem; color: var(--text-dim); line-height: 1.6; border-left: 3px solid var(--orange); }
-.quiz-explain.show { display: block; }
+
 .quiz-choose { font-weight: 400; color: var(--orange); font-size: 0.85rem; margin-left: 4px; }
 .quiz-submit-btn { margin-top: 12px; padding: 10px 24px; background: var(--orange); color: #fff; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.15s, transform 0.1s; }
 .quiz-submit-btn:hover { background: #c75400; }
 .quiz-submit-btn:active { transform: scale(0.97); }
+/* Per-option explanations */
+.quiz-opt-explains { margin-top: 12px; display: flex; flex-direction: column; gap: 6px; }
+.quiz-opt-exp { padding: 10px 14px; border-radius: 8px; font-size: 0.88rem; line-height: 1.5; }
+.qoe-is-correct { background: rgba(46,160,67,0.07); border-left: 3px solid #2ea043; }
+.qoe-is-wrong { background: rgba(215,58,73,0.05); border-left: 3px solid #d73a49; }
+.qoe-header { font-weight: 600; margin-bottom: 4px; font-size: 0.82rem; }
+.qoe-correct { color: #2ea043; }
+.qoe-wrong { color: #d73a49; }
+.qoe-letter { color: var(--text-dim); margin-left: 4px; font-weight: 500; }
+.qoe-text { color: var(--text-dim); }
+/* Collapsible overall explanation */
+.quiz-overall { display: none; margin-top: 10px; }
+.quiz-overall[style*="block"] { display: block; }
+.quiz-overall-toggle { cursor: pointer; font-size: 0.88rem; font-weight: 600; color: var(--orange); padding: 8px 0; list-style: none; display: flex; align-items: center; gap: 6px; }
+.quiz-overall-toggle::-webkit-details-marker { display: none; }
+.quiz-overall-toggle::before { content: ''; display: inline-block; width: 0; height: 0; border-left: 5px solid var(--orange); border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform 0.2s; }
+details.quiz-overall[open] .quiz-overall-toggle::before { transform: rotate(90deg); }
+.quiz-overall-content { padding: 12px 16px; background: var(--bg-card); border-radius: 8px; font-size: 0.88rem; color: var(--text-dim); line-height: 1.6; border-left: 3px solid var(--orange); margin-top: 6px; }
+
 .quiz-score { margin-top: 24px; padding: 20px; background: var(--bg-raised); border-radius: 12px; border: 1px solid var(--border); text-align: center; display: none; }
 .quiz-score.show { display: block; }
 .quiz-score-num { font-size: 2rem; font-weight: 800; color: var(--orange); }
@@ -479,7 +497,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>Determine when maintenance occurs</span></li>
       <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>Create plans using selection criteria</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp0">0) Source ServiceNow Product Documentation: Planned Maintenance Process Note: The logical starting point is defining the &quot;What&quot; (Assets) before the &quot;How&quot; or &quot;When.&quot;1) Correct Answer Identify assets that require regular maintenance2) Detailed Expert Explanation Before you can build a schedule or a template, you must define the scope. The foundational step in Planned Maintenance is to query the database to find the target population.&quot;Do we maintain all printers?&quot;Do we maintain only the MRI machines in New York?&quot;Once you have Identified the Assets (often by creating a filtered list or Model category), then you can move on to creating the Maintenance Plans that apply to them.</div>
+      <div class="quiz-opt-explains" id="qoptexp0" style="display:none"></div>
+      <details class="quiz-overall" id="qexp0">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) Source ServiceNow Product Documentation: Planned Maintenance Process <br><br><strong>Note:</strong> The logical starting point is defining the &quot;What&quot; (Assets) before the &quot;How&quot; or &quot;When.&quot;1) Correct Answer Identify assets that require regular maintenance2) Detailed Expert Explanation Before you can build a schedule or a template, you must define the scope. The foundational step in Planned Maintenance is to query the database to find the target population.&quot;Do we maintain all printers?&quot;Do we maintain only the MRI machines in New York?&quot;Once you have Identified the Assets (often by creating a filtered list or Model category), then you can move on to creating the Maintenance Plans that apply to them. You can&#x27;t plan maintenance for &quot;nothing.&quot;3) Comparative Analysis (Why others are wrong)Design templates: This is the &quot;How&quot; (Instruction set), which comes after you know what you are maintaining.Determine when: This is the Schedule (Step 3).Create plans: This links the Asset to the Schedule (Step 2).4) The &quot;Click&quot; Mnemonic &quot;The Patient List&quot;: Before the doctor writes prescriptions (Templates) or sets appointments (Schedule), they need a list of Patients (Assets).</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard1">
       <div class="quiz-q"><span class="quiz-q-num">2.</span>What ensures continual success with ServiceNow FSM Implementation?</div>
@@ -489,7 +511,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>Avoiding adjustments</span></li>
       <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>A static approach</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp1">0) Source ServiceNow Success: Continual Improvement Management Note: The platform is designed for iterative growth.1) Correct Answer A process improvement loop2) Detailed Expert Explanation Go-Live is not the finish line; it is the starting line. Continual Service Improvement (CSI) is a core ITIL/ServiceNow concept.Deploy the solution.Measure the results (using Performance Analytics).Identify bottlenecks (e.g., &quot;Agents take too long to sync&quot;).Improve the process (e.g., &quot;Optimize the offline cache&quot;).Repeat.3) Comparative AnalysisStatic approach / Avoiding adjustments: The business world changes. A static tool becomes obsolete.Over-engineering: This leads to complexity and technical debt, hindering success.4) The &quot;Click&quot; Mnemonic &quot;Loop to Improve.&quot;</div>
+      <div class="quiz-opt-explains" id="qoptexp1" style="display:none"></div>
+      <details class="quiz-overall" id="qexp1">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) Source ServiceNow Success: Continual Improvement Management <br><br><strong>Note:</strong> The platform is designed for iterative growth.1) Correct Answer A process improvement loop2) Detailed Expert Explanation Go-Live is not the finish line; it is the starting line. Continual Service Improvement (CSI) is a core ITIL/ServiceNow concept.Deploy the solution.Measure the results (using Performance Analytics).Identify bottlenecks (e.g., &quot;Agents take too long to sync&quot;).Improve the process (e.g., &quot;Optimize the offline cache&quot;).Repeat.3) Comparative AnalysisStatic approach / Avoiding adjustments: The business world changes. A static tool becomes obsolete.Over-engineering: This leads to complexity and technical debt, hindering success.4) The &quot;Click&quot; Mnemonic &quot;Loop to Improve.&quot;</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard2">
       <div class="quiz-q"><span class="quiz-q-num">3.</span>What is the operational logic of Route Optimization?</div>
@@ -499,7 +525,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>Policy-based</span></li>
       <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>Proactive and holistic</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp2">0) Source ServiceNow Product Documentation: Route Optimization Note: Route optimization focuses on a single agent&#x27;s daily route.1) Correct Answer Agent-centric2) Detailed Expert Explanation Route Optimization is distinct from Global Scheduling.Global Scheduling (RSO): Looks at the whole team (&quot;Holistic&quot;).Route Optimization: Looks at One Agent at a time. It takes Agent Smith&#x27;s bucket of 10 tasks and solves the &quot;Traveling Salesman Problem&quot; specifically for him. It essentially asks: &quot;What is the best way for Agent Smith to drive today?&quot; It does not look at Agent Jones.</div>
+      <div class="quiz-opt-explains" id="qoptexp2" style="display:none"></div>
+      <details class="quiz-overall" id="qexp2">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) Source ServiceNow Product Documentation: Route Optimization <br><br><strong>Note:</strong> Route optimization focuses on a single agent&#x27;s daily route.1) Correct Answer Agent-centric2) Detailed Expert Explanation Route Optimization is distinct from Global Scheduling.Global Scheduling (RSO): Looks at the whole team (&quot;Holistic&quot;).Route Optimization: Looks at One Agent at a time. It takes Agent Smith&#x27;s bucket of 10 tasks and solves the &quot;Traveling Salesman Problem&quot; specifically for him. It essentially asks: &quot;What is the best way for Agent Smith to drive today?&quot; It does not look at Agent Jones. Therefore, it is Agent-centric.3) Comparative Analysis (Why others are wrong)Proactive and holistic: This describes Resourcing &amp; Schedule Optimization (RSO).Task-by-task: This describes manual dispatching.4) The &quot;Click&quot; Mnemonic &quot;My GPS&quot;: Route optimization is like setting My GPS. It doesn&#x27;t care about the other cars; it just fixes My route.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard3">
       <div class="quiz-q"><span class="quiz-q-num">4.</span>What do you need to configure for dispatcher workspace to consider mandatory parts or mandatory skills when recommending agents for assignment?</div>
@@ -508,17 +538,25 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>Matching criteria</span></li>
       <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>Task panel sort criteria</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp3">0) Source ServiceNow Product Documentation: Intelligent Task Recommendation and Recommendation Criteria Note: Recommendation logic uses &quot;Criteria&quot; to rank agents. Confusingly, &quot;Matching criteria&quot; often refers to hard filters in Dynamic Scheduling, while &quot;Agent recommendation sort criteria&quot; (or Recommendation Criteria) drives the specific &quot;Recommended&quot; list ranking in the Workspace UI.1) Correct Answer Agent recommendation sort criteria2) Detailed Expert Explanation When a dispatcher clicks &quot;Get Recommendations&quot; for a task, the system presents a ranked list of agents.</div>
+      <div class="quiz-opt-explains" id="qoptexp3" style="display:none"></div>
+      <details class="quiz-overall" id="qexp3">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) Source ServiceNow Product Documentation: Intelligent Task Recommendation and Recommendation Criteria <br><br><strong>Note:</strong> Recommendation logic uses &quot;Criteria&quot; to rank agents. Confusingly, &quot;Matching criteria&quot; often refers to hard filters in Dynamic Scheduling, while &quot;Agent recommendation sort criteria&quot; (or Recommendation Criteria) drives the specific &quot;Recommended&quot; list ranking in the Workspace UI.1) Correct Answer Agent recommendation sort criteria2) Detailed Expert Explanation When a dispatcher clicks &quot;Get Recommendations&quot; for a task, the system presents a ranked list of agents. To ensure this list respects &quot;Mandatory Skills&quot; or &quot;Mandatory Parts&quot; (meaning agents without them are pushed to the bottom or excluded), you must configure the Agent Recommendation Sort Criteria. This configuration tells the recommendation engine: &quot;Rank &#x27;Has Skills&#x27; higher than &#x27;Distance&#x27;.&quot; If Mandatory Skills is a criterion, agents failing it drop out or score zero.<br><br><strong>Note:</strong> While &quot;Matching Criteria&quot; is the engine under the hood for Dynamic Scheduling, the specific configuration for the Workspace recommendation UI is often labeled &quot;Recommendation Criteria&quot; or sort criteria in the exam context.3) Comparative Analysis (Why others are wrong)Matching criteria: Usually refers to the lower-level rules for the Auto-Assignment engine (Dynamic Scheduling), whereas the question asks about the Dispatcher Workspace Recommendation feature specifically. (Nuanced difference, but &quot;Recommendation&quot; is the key word).Task panel sort criteria: Sorts the Tasks, not the Agents recommended for a task.4) The &quot;Click&quot; Mnemonic &quot;The Top 10 List&quot;: When the system gives you a &quot;Top 10 Agents&quot; list, the rules for who is #1 are the Recommendation Criteria.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard4">
-      <div class="quiz-q"><span class="quiz-q-num">5.</span>What happens if the skills configuration option is set to &amp;quot;all&amp;quot; and no agents possess all the required skills for a task?</div>
+      <div class="quiz-q"><span class="quiz-q-num">5.</span>What happens if the skills configuration option is set to &quot;all&quot; and no agents possess all the required skills for a task?</div>
       <ul class="quiz-opts">
       <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>None are auto-assigned</span></li>
       <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>The task is assigned to the first available agent</span></li>
       <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>Auto-assignment occurs without considering skills match</span></li>
       <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>The agent with the closest skills match is auto-assigned</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp4">0) Source ServiceNow Product Documentation: Work order task assignment skills Note: The &quot;All&quot; setting acts as a strict &quot;AND&quot; operator.1) Correct Answer None are auto-assigned2) Detailed Expert Explanation This is a strict logic gate in the assignment engine. If a Task requires Skills A, B, and C, and the configuration is set to &quot;All&quot; (Mandatory), the query effectively says: SELECT Agent WHERE Skills CONTAINS (A AND B AND C)If Agent 1 has A and B (but not C), they fail the check. If no agent has all three, the result set is Empty. Consequently, None are auto-assigned.</div>
+      <div class="quiz-opt-explains" id="qoptexp4" style="display:none"></div>
+      <details class="quiz-overall" id="qexp4">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) Source ServiceNow Product Documentation: Work order task assignment skills <br><br><strong>Note:</strong> The &quot;All&quot; setting acts as a strict &quot;AND&quot; operator.1) Correct Answer None are auto-assigned2) Detailed Expert Explanation This is a strict logic gate in the assignment engine. If a Task requires Skills A, B, and C, and the configuration is set to &quot;All&quot; (Mandatory), the query effectively says: SELECT Agent WHERE Skills CONTAINS (A AND B AND C)If Agent 1 has A and B (but not C), they fail the check. If no agent has all three, the result set is Empty. Consequently, None are auto-assigned. The task remains in &quot;Pending Dispatch&quot; until a manager manually intervenes (perhaps by removing a skill requirement or finding a contractor).3) Comparative Analysis (Why others are wrong)Closest match / First available: The system does not &quot;guess&quot; or &quot;compromise&quot; when the rule is set to Strict/All. That would risk sending an unqualified tech to a dangerous job.4) The &quot;Click&quot; Mnemonic &quot;The Perfect Match&quot;: If you ask for a &quot;Vegan, Gluten-Free, Nut-Free Cake&quot; and the bakery doesn&#x27;t have one, they sell you Nothing. They don&#x27;t just give you a bagel.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard5">
       <div class="quiz-q"><span class="quiz-q-num">6.</span>As it pertains to time recording what allows field agents to record beyond the standard 40 hours of time per week?</div>
@@ -528,7 +566,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="2" data-q="5"><span class="quiz-opt-letter">C</span><span>Configure the time sheet portal widget</span></li>
       <li class="quiz-opt" data-idx="3" data-q="5"><span class="quiz-opt-letter">D</span><span>Activate the FSM with Time Recording plugin</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp5">0) Source ServiceNow Product Documentation: Time Sheet Policies Note: Time Sheet Policies control validation rules, including maximum hours allowed per week.1) Correct Answer Create a new time sheet policy for the specified field agents2) Detailed Expert Explanation ServiceNow Time Card Management uses Time Sheet Policies to enforce rules on time recording. The &quot;Default Time Sheet Policy&quot; typically sets the standard work week (e.g., 40 hours) and may flag or block submissions that exceed this.To allow a specific group of agents (e.g., &quot;On-call Technicians&quot; or &quot;Overtime Eligible&quot;) to record more than the standard amount, you must create a specific Time Sheet Policy for that group.</div>
+      <div class="quiz-opt-explains" id="qoptexp5" style="display:none"></div>
+      <details class="quiz-overall" id="qexp5">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) Source ServiceNow Product Documentation: Time Sheet Policies <br><br><strong>Note:</strong> Time Sheet Policies control validation rules, including maximum hours allowed per week.1) Correct Answer Create a new time sheet policy for the specified field agents2) Detailed Expert Explanation ServiceNow Time Card Management uses Time Sheet Policies to enforce rules on time recording. The &quot;Default Time Sheet Policy&quot; typically sets the standard work week (e.g., 40 hours) and may flag or block submissions that exceed this.To allow a specific group of agents (e.g., &quot;On-call Technicians&quot; or &quot;Overtime Eligible&quot;) to record more than the standard amount, you must create a specific Time Sheet Policy for that group. In this policy, you can adjust the &quot;Maximum hours&quot; setting or disable the hard validation that blocks submission, effectively authorizing the overtime recording.3) Comparative Analysis (Why others are wrong)Configure time sheet notifications: Notifications just send emails; they do not control the validation logic that prevents a user from submitting data.Configure the time sheet portal widget: The widget is just the UI; the logic is enforced by the backend policy.Activate the FSM with Time Recording plugin: This plugin enables the feature generally, but the specific rule about how many hours are allowed is defined in the Policy, not the plugin activation.4) The &quot;Click&quot; Mnemonic &quot;The Rulebook&quot;: If the rule says &quot;Stop at 40,&quot; you need a New Rulebook (Policy) for the people allowed to go to 50.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard6">
       <div class="quiz-q"><span class="quiz-q-num">7.</span>How is the skills rating of an agent calculated when a task is qualified or ready for dispatch?</div>
@@ -538,7 +580,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="2" data-q="6"><span class="quiz-opt-letter">C</span><span>Skills_task/Skills_agent</span></li>
       <li class="quiz-opt" data-idx="3" data-q="6"><span class="quiz-opt-letter">D</span><span>Skills_task - Skills_agent</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp6">0) Source ServiceNow Product Documentation: Dynamic Scheduling Ranking Note: This formula calculates the &quot;Skill Gap&quot; or &quot;Match Score.&quot;1) Correct Answer Skills_agent/Skills_task2) Detailed Expert Explanation When the system ranks agents, it calculates a Skill Match Score.</div>
+      <div class="quiz-opt-explains" id="qoptexp6" style="display:none"></div>
+      <details class="quiz-overall" id="qexp6">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) Source ServiceNow Product Documentation: Dynamic Scheduling Ranking <br><br><strong>Note:</strong> This formula calculates the &quot;Skill Gap&quot; or &quot;Match Score.&quot;1) Correct Answer Skills_agent/Skills_task2) Detailed Expert Explanation When the system ranks agents, it calculates a Skill Match Score. The logic is: &quot;What percentage of the Required skills does the agent possess?&quot;Formula: (Number of Matching Skills the Agent Has) / (Total Number of Skills the Task Requires)Example:Task needs: A, B, C, D (4 Skills).Agent has: A, B, C (3 Skills).Calculation: 3 / 4 = 0.75 (75% Match).This score is used (often alongside &quot;Mandatory&quot; checks) to rank who is the &quot;Best Fit.&quot; If the setting allows partial matches, the agent with the highest ratio (closest to 1.0) wins.3) Comparative Analysis (Why others are wrong)Skills_task/Skills_agent: This would be 4/3 = 1.33. This implies the task is &quot;bigger&quot; than the agent, which isn&#x27;t a standard normalized scoring metric (0-100%).Subtraction/Multiplication: These don&#x27;t produce a useful ranking percentage.4) The &quot;Click&quot; Mnemonic &quot;The Test Score&quot;: You got 3 questions right out of 4 on the test. Your score is 3 / 4. (Agent / Task).</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard7">
       <div class="quiz-q"><span class="quiz-q-num">8.</span>When data cleansing is required, what two preferred methods should be used to clean the data? Select two. <span class="quiz-choose">(choose 2)</span></div>
@@ -548,7 +594,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="2" data-q="7"><span class="quiz-opt-letter">C</span><span>Code</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="7" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp7">0) Source ServiceNow Product Documentation: Field Normalization and Data Import Note: ServiceNow best practices always prioritize Low/No code (Configuration) over Pro Code (Scripting) for maintainability.1) Correct Answer No Code, Low Code2) Detailed Expert Explanation ServiceNow&#x27;s design philosophy is &quot;Configuration over Customization.&quot; When cleaning data (e.g., standardizing &quot;NYC&quot; to &quot;New York City&quot;):No Code: Use Field Normalization Rules. This is a simple mapping interface. It is the safest and easiest method.Low Code: Use Transform Maps during import.</div>
+      <div class="quiz-opt-explains" id="qoptexp7" style="display:none"></div>
+      <details class="quiz-overall" id="qexp7">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) Source ServiceNow Product Documentation: Field Normalization and Data Import <br><br><strong>Note:</strong> ServiceNow best practices always prioritize Low/No code (Configuration) over Pro Code (Scripting) for maintainability.1) Correct Answer No Code, Low Code2) Detailed Expert Explanation ServiceNow&#x27;s design philosophy is &quot;Configuration over Customization.&quot; When cleaning data (e.g., standardizing &quot;NYC&quot; to &quot;New York City&quot;):No Code: Use Field Normalization Rules. This is a simple mapping interface. It is the safest and easiest method.Low Code: Use Transform Maps during import. You might write a tiny snippet or use the drag-and-drop field mapping tools.Code (Writing complex Fix Scripts or Business Rules) is considered a last resort because it creates &quot;Technical Debt&quot;—it&#x27;s harder to upgrade and harder for non-developers to maintain.3) Comparative Analysis (Why others are wrong)Code: While possible, it is not the preferred method due to the maintenance burden.4) The &quot;Click&quot; Mnemonic &quot;Easy Does It&quot;: Don&#x27;t build a robot (Code) to sweep the floor if you can just buy a broom (No/Low Code).</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard8">
       <div class="quiz-q"><span class="quiz-q-num">9.</span>Which setting should be activated to schedule the offline cache download?</div>
@@ -558,7 +608,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="2" data-q="8"><span class="quiz-opt-letter">C</span><span>Suspend checkbox</span></li>
       <li class="quiz-opt" data-idx="3" data-q="8"><span class="quiz-opt-letter">D</span><span>None of the above</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp8">0) Source ServiceNow Product Documentation: Configure scheduled offline caching Note: This refers to the Scheduled Job configuration.1) Correct Answer Active checkbox2) Detailed Expert Explanation Scheduled Offline Caching relies on a Scheduled Job in the ServiceNow platform (specifically Populate Agents Daily Schedule Table or specific offline sync jobs). Like any Scheduled Job in ServiceNow, it only runs if the Active checkbox is checked.</div>
+      <div class="quiz-opt-explains" id="qoptexp8" style="display:none"></div>
+      <details class="quiz-overall" id="qexp8">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) Source ServiceNow Product Documentation: Configure scheduled offline caching <br><br><strong>Note:</strong> This refers to the Scheduled Job configuration.1) Correct Answer Active checkbox2) Detailed Expert Explanation Scheduled Offline Caching relies on a Scheduled Job in the ServiceNow platform (specifically Populate Agents Daily Schedule Table or specific offline sync jobs). Like any Scheduled Job in ServiceNow, it only runs if the Active checkbox is checked. If this is unchecked, the automated background process that prepares the data for the agents will not trigger, and their devices won&#x27;t receive the scheduled updates.3) Comparative Analysis (Why others are wrong)Deactive/Suspend: These would turn it off.None of the above: &quot;Active&quot; is the standard platform field for enabling jobs.4) The &quot;Click&quot; Mnemonic &quot;The Light Switch&quot;: If the switch isn&#x27;t Active (On), the light won&#x27;t turn on.</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard9">
       <div class="quiz-q"><span class="quiz-q-num">10.</span>Which criteria are used in assignment of tasks when using dynamic scheduling? Select three. <span class="quiz-choose">(choose 3)</span></div>
@@ -569,7 +623,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="3" data-q="9"><span class="quiz-opt-letter">D</span><span>Outlook calendar</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="9" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp9">0) Source ServiceNow Docs: Dynamic Scheduling matching criteria Note: The native engine optimizes for Location, Parts, Skills, and Availability.1) Correct Answer Location, Parts, Skills2) Detailed Expert Explanation Dynamic Scheduling makes decisions based on the &quot;Triangle of Truth&quot;:Skills: Can they fix it? (Mandatory requirement).Location: Can they get there? (Travel time calculation).Parts: Do they have the tool? (Inventory check).</div>
+      <div class="quiz-opt-explains" id="qoptexp9" style="display:none"></div>
+      <details class="quiz-overall" id="qexp9">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) Source ServiceNow Docs: Dynamic Scheduling matching criteria <br><br><strong>Note:</strong> The native engine optimizes for Location, Parts, Skills, and Availability.1) Correct Answer Location, Parts, Skills2) Detailed Expert Explanation Dynamic Scheduling makes decisions based on the &quot;Triangle of Truth&quot;:Skills: Can they fix it? (Mandatory requirement).Location: Can they get there? (Travel time calculation).Parts: Do they have the tool? (Inventory check). If an agent fails any of these (and they are set as mandatory), the agent is disqualified.3) Comparative AnalysisOutlook calendar: While ServiceNow can integrate with Outlook (Microsoft 365), Dynamic Scheduling primarily looks at the ServiceNow Schedule (cmn_schedule) and Time Off requests within the platform. It does not perform a live API call to Outlook for every single millisecond calculation during the optimization run.4) The &quot;Click&quot; Mnemonic &quot;Where, What, How.&quot; (Where=Location, What=Part, How=Skill).</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard10">
       <div class="quiz-q"><span class="quiz-q-num">11.</span>Which of the following are examples of Internal field services? (Choose three.) <span class="quiz-choose">(choose 3)</span></div>
@@ -581,7 +639,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="4" data-q="10"><span class="quiz-opt-letter">E</span><span>Installing a customer&#x27;s gas filter for their range.</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="10" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp10">0) Source ServiceNow Docs: Internal vs External Field Service Note: Internal service focuses on maintaining the organization&#x27;s own assets.1) Correct Answer A bank replacing receipt paper for its own ATMs, A university repairing a computer at one of their campus offices, Installation of a service provider owned cable modem at a customer&#x27;s residence.2) Detailed Expert Explanation Internal Field Service is characterized by the organization servicing its own assets.The Bank ATM: The bank owns it. (Internal)The University Computer: The university owns it. (Internal)The Provider Modem: The Service Provider owns it (even if it sits in your house).</div>
+      <div class="quiz-opt-explains" id="qoptexp10" style="display:none"></div>
+      <details class="quiz-overall" id="qexp10">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) Source ServiceNow Docs: Internal vs External Field Service <br><br><strong>Note:</strong> Internal service focuses on maintaining the organization&#x27;s own assets.1) Correct Answer A bank replacing receipt paper for its own ATMs, A university repairing a computer at one of their campus offices, Installation of a service provider owned cable modem at a customer&#x27;s residence.2) Detailed Expert Explanation Internal Field Service is characterized by the organization servicing its own assets.The Bank ATM: The bank owns it. (Internal)The University Computer: The university owns it. (Internal)The Provider Modem: The Service Provider owns it (even if it sits in your house). Because the asset belongs to the company, the maintenance of that asset is an &quot;Internal&quot; concern regarding inventory and lifecycle, whereas external service is purely about the service delivered to the client&#x27;s asset.3) Comparative AnalysisTree removal at a customer residence: The tree belongs to the customer. This is a service rendered on customer property/assets (External).Installing a customer&#x27;s gas filter for their range: The range belongs to the customer. The technician is servicing the client&#x27;s asset (External).4) The &quot;Click&quot; Mnemonic &quot;Internal = My Stuff.&quot; (Even if my stuff is at your house, it&#x27;s still my asset to fix).</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard11">
       <div class="quiz-q"><span class="quiz-q-num">12.</span>How can the system assist with optimizing parts inventory and ensuring the correct parts are available for field agents?</div>
@@ -591,7 +653,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="2" data-q="11"><span class="quiz-opt-letter">C</span><span>By enabling &#x27;Reserve Parts in Agent Stockroom&#x27; to automatically reserve parts upon scheduling</span></li>
       <li class="quiz-opt" data-idx="3" data-q="11"><span class="quiz-opt-letter">D</span><span>By enabling &#x27;Cancel Open Transfer Orders&#x27; to release the reservation of parts when unscheduling tasks</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp11">0) Source ServiceNow Docs: Field Service Configuration Note: These three settings (Requirement, Reservation, Cleanup) form the triad of Inventory Automation.1) Correct Answer All of the above2) Detailed Expert Explanation Effective inventory management in FSM requires a full lifecycle approach:Identify Need: You must know what is needed (Part Requirements).Secure Supply: You must lock the part for the specific job so it isn&#x27;t stolen for another job (Reserve Parts).Release Supply: If the job is cancelled or moved, you must unlock the part so it can be used elsewhere (Cancel/Release).Enabling all these configurations creates a closed-loop system where inventory availability is always accurate and tied to the schedule.3) Comparative AnalysisThe options are individual components of the solution.</div>
+      <div class="quiz-opt-explains" id="qoptexp11" style="display:none"></div>
+      <details class="quiz-overall" id="qexp11">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) Source ServiceNow Docs: Field Service Configuration <br><br><strong>Note:</strong> These three settings (Requirement, Reservation, Cleanup) form the triad of Inventory Automation.1) Correct Answer All of the above2) Detailed Expert Explanation Effective inventory management in FSM requires a full lifecycle approach:Identify Need: You must know what is needed (Part Requirements).Secure Supply: You must lock the part for the specific job so it isn&#x27;t stolen for another job (Reserve Parts).Release Supply: If the job is cancelled or moved, you must unlock the part so it can be used elsewhere (Cancel/Release).Enabling all these configurations creates a closed-loop system where inventory availability is always accurate and tied to the schedule.3) Comparative AnalysisThe options are individual components of the solution. Selecting just one would yield an incomplete inventory strategy.4) The &quot;Click&quot; Mnemonic &quot;Need, Lock, Release.&quot; (The three stages of inventory management).</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard12">
       <div class="quiz-q"><span class="quiz-q-num">13.</span>What does a maintenance plan utilize to create one or more work order requests? Select two. <span class="quiz-choose">(choose 2)</span></div>
@@ -602,7 +668,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="3" data-q="12"><span class="quiz-opt-letter">D</span><span>Appointment Booking Service</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="12" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp12">0) Source ServiceNow Docs: Planned Maintenance Note: A plan needs a trigger (Schedule) and a payload (Template).1) Correct Answer Maintenance Schedules, Work Order Templates2) Detailed Expert Explanation Planned Maintenance is a machine that generates work orders automatically. To run, it needs two inputs:When? (The Trigger): This is the Maintenance Schedule (e.g., &quot;Every 3 months&quot; or &quot;Every 500 hours&quot;).What? (The Content): This is the Work Order Template.</div>
+      <div class="quiz-opt-explains" id="qoptexp12" style="display:none"></div>
+      <details class="quiz-overall" id="qexp12">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) Source ServiceNow Docs: Planned Maintenance <br><br><strong>Note:</strong> A plan needs a trigger (Schedule) and a payload (Template).1) Correct Answer Maintenance Schedules, Work Order Templates2) Detailed Expert Explanation Planned Maintenance is a machine that generates work orders automatically. To run, it needs two inputs:When? (The Trigger): This is the Maintenance Schedule (e.g., &quot;Every 3 months&quot; or &quot;Every 500 hours&quot;).What? (The Content): This is the Work Order Template. It defines what the generated Work Order will look like (Short Description: &quot;Quarterly Service&quot;, Tasks: &quot;Check Oil, Check Filter&quot;).3) Comparative AnalysisPart sourcing and transfer: This is a logistical process that happens after the work order is created, not a configuration record used to create it.Appointment Booking Service: This allows customers to pick a time manually, whereas Planned Maintenance is automatic/system-generated.4) The &quot;Click&quot; Mnemonic &quot;When and What.&quot; (Schedule = When, Template = What).</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard13">
       <div class="quiz-q"><span class="quiz-q-num">14.</span>What are the three key elements of field service management? Select three. <span class="quiz-choose">(choose 3)</span></div>
@@ -614,7 +684,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="4" data-q="13"><span class="quiz-opt-letter">E</span><span>Maintenance</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="13" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp13">0) Source ServiceNow Product Documentation: Field Service Management Overview Note: The core optimization triangle of FSM is consistently defined as Time, Location, and Skills.1) Correct Answer Time, Location, Skill2) Detailed Expert Explanation To successfully close a field service ticket, the system must solve a logic puzzle with three pieces:Skill: Does the person know how to do it?Location: Can the person get there?Time: Is the person free now?If you remove any one of these, the service fails.</div>
+      <div class="quiz-opt-explains" id="qoptexp13" style="display:none"></div>
+      <details class="quiz-overall" id="qexp13">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) Source ServiceNow Product Documentation: Field Service Management Overview <br><br><strong>Note:</strong> The core optimization triangle of FSM is consistently defined as Time, Location, and Skills.1) Correct Answer Time, Location, Skill2) Detailed Expert Explanation To successfully close a field service ticket, the system must solve a logic puzzle with three pieces:Skill: Does the person know how to do it?Location: Can the person get there?Time: Is the person free now?If you remove any one of these, the service fails. (e.g., They have the skill and time, but are in the wrong country = Fail).3) Comparative Analysis (Why others are wrong)Groups: Groups are containers for skills/location, not the elemental constraint itself.Maintenance: This is a type of work, not a fundamental resource element.4) The &quot;Click&quot; Mnemonic &quot;The Golden Triangle&quot;: Where (Location), When (Time), and How (Skill).</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard14">
       <div class="quiz-q"><span class="quiz-q-num">15.</span>In which phase of the work order process lifecycle would one or more tasks be assigned to a field agent?</div>
@@ -625,7 +699,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="3" data-q="14"><span class="quiz-opt-letter">D</span><span>Initiation</span></li>
       <li class="quiz-opt" data-idx="4" data-q="14"><span class="quiz-opt-letter">E</span><span>Analyze and Improve</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp14">0) Source ServiceNow Product Documentation: Field Service Management Lifecycle Note: The documentation explicitly lists &quot;Scheduling and dispatch&quot; as the phase where tasks are assigned to agents.1) Correct Answer Scheduling and Dispatch2) Detailed Expert Explanation The ServiceNow FSM lifecycle is a linear progression:Initiation: Request is created (Draft).Qualification: Technical requirements are defined (Tasks/Parts).Scheduling and Dispatch: This is the critical matching phase. The &quot;Supply&quot; (Agents) is matched to the &quot;Demand&quot; (Tasks).</div>
+      <div class="quiz-opt-explains" id="qoptexp14" style="display:none"></div>
+      <details class="quiz-overall" id="qexp14">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) Source ServiceNow Product Documentation: Field Service Management Lifecycle <br><br><strong>Note:</strong> The documentation explicitly lists &quot;Scheduling and dispatch&quot; as the phase where tasks are assigned to agents.1) Correct Answer Scheduling and Dispatch2) Detailed Expert Explanation The ServiceNow FSM lifecycle is a linear progression:Initiation: Request is created (Draft).Qualification: Technical requirements are defined (Tasks/Parts).Scheduling and Dispatch: This is the critical matching phase. The &quot;Supply&quot; (Agents) is matched to the &quot;Demand&quot; (Tasks). This is where the assigned_to field is populated, either manually by a dispatcher or automatically by the engine.Delivery: The agent performs the work.3) Comparative Analysis (Why others are wrong)Delivery and Confirmation: This happens after assignment; the agent is already working.Qualification: This is for defining the work, not assigning the person.Initiation: The work is just being identified; no one knows who will do it yet.4) The &quot;Click&quot; Mnemonic &quot;The Handover&quot;: The Dispatch phase is when the baton passes from the office to the runner (Agent).</div>
+      </details>
     </div>
     <div class="quiz-score" id="quizScore">
       <div class="quiz-score-num" id="quizScoreNum">0/15</div>
@@ -663,6 +741,37 @@ a:hover { text-decoration: underline; }
   let answered = 0, score = 0;
   const multiSelections = {};
 
+  function showExplanations(qi, isCorrect) {
+    var card = document.getElementById('qcard' + qi);
+    var opts = card.querySelectorAll('.quiz-opt');
+    var correct = Array.isArray(answers[qi]) ? answers[qi] : [answers[qi]];
+    var expContainer = document.getElementById('qoptexp' + qi);
+    var html = '';
+
+    opts.forEach(function(opt, j) {
+      var perExp = opt.getAttribute('data-exp');
+      var isCorr = correct.indexOf(j) !== -1;
+
+      if (perExp) {
+        var label = isCorr ? '<span class="qoe-correct">Correct</span>' : '<span class="qoe-wrong">Incorrect</span>';
+        html += '<div class="quiz-opt-exp ' + (isCorr ? 'qoe-is-correct' : 'qoe-is-wrong') + '">' +
+          '<div class="qoe-header">' + label + ' <span class="qoe-letter">' + 'ABCDEF'[j] + '</span></div>' +
+          '<div class="qoe-text">' + perExp + '</div></div>';
+      }
+    });
+
+    if (html) {
+      expContainer.innerHTML = html;
+      expContainer.style.display = 'block';
+    }
+
+    // Show overall explanation toggle if it has content
+    var overall = document.getElementById('qexp' + qi);
+    if (overall && overall.querySelector('.quiz-overall-content').innerHTML.trim()) {
+      overall.style.display = 'block';
+    }
+  }
+
   document.querySelectorAll('.quiz-opt').forEach(function(opt) {
     opt.addEventListener('click', function() {
       var qi = parseInt(this.dataset.q);
@@ -691,7 +800,7 @@ a:hover { text-decoration: underline; }
         else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
         this.classList.add('selected');
         card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
-        document.getElementById('qexp' + qi).classList.add('show');
+        showExplanations(qi, isCorrect);
         answered++;
         checkDone();
       }
@@ -721,7 +830,7 @@ a:hover { text-decoration: underline; }
       }
       opts.forEach(function(o) { o.setAttribute('disabled',''); });
       this.style.display = 'none';
-      document.getElementById('qexp' + qi).classList.add('show');
+      showExplanations(qi, isCorrect);
       answered++;
       checkDone();
     });

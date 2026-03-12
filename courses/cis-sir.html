@@ -340,12 +340,30 @@ a:hover { text-decoration: underline; }
 .quiz-opt.selected .quiz-opt-letter { background: var(--orange); color: #fff; border-color: var(--orange); }
 .quiz-opt.correct .quiz-opt-letter { background: #2ea043; color: #fff; border-color: #2ea043; }
 .quiz-opt.wrong .quiz-opt-letter { background: #d73a49; color: #fff; border-color: #d73a49; }
-.quiz-explain { display: none; margin-top: 12px; padding: 12px 16px; background: var(--bg-card); border-radius: 8px; font-size: 0.9rem; color: var(--text-dim); line-height: 1.6; border-left: 3px solid var(--orange); }
-.quiz-explain.show { display: block; }
+
 .quiz-choose { font-weight: 400; color: var(--orange); font-size: 0.85rem; margin-left: 4px; }
 .quiz-submit-btn { margin-top: 12px; padding: 10px 24px; background: var(--orange); color: #fff; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.15s, transform 0.1s; }
 .quiz-submit-btn:hover { background: #c75400; }
 .quiz-submit-btn:active { transform: scale(0.97); }
+/* Per-option explanations */
+.quiz-opt-explains { margin-top: 12px; display: flex; flex-direction: column; gap: 6px; }
+.quiz-opt-exp { padding: 10px 14px; border-radius: 8px; font-size: 0.88rem; line-height: 1.5; }
+.qoe-is-correct { background: rgba(46,160,67,0.07); border-left: 3px solid #2ea043; }
+.qoe-is-wrong { background: rgba(215,58,73,0.05); border-left: 3px solid #d73a49; }
+.qoe-header { font-weight: 600; margin-bottom: 4px; font-size: 0.82rem; }
+.qoe-correct { color: #2ea043; }
+.qoe-wrong { color: #d73a49; }
+.qoe-letter { color: var(--text-dim); margin-left: 4px; font-weight: 500; }
+.qoe-text { color: var(--text-dim); }
+/* Collapsible overall explanation */
+.quiz-overall { display: none; margin-top: 10px; }
+.quiz-overall[style*="block"] { display: block; }
+.quiz-overall-toggle { cursor: pointer; font-size: 0.88rem; font-weight: 600; color: var(--orange); padding: 8px 0; list-style: none; display: flex; align-items: center; gap: 6px; }
+.quiz-overall-toggle::-webkit-details-marker { display: none; }
+.quiz-overall-toggle::before { content: ''; display: inline-block; width: 0; height: 0; border-left: 5px solid var(--orange); border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform 0.2s; }
+details.quiz-overall[open] .quiz-overall-toggle::before { transform: rotate(90deg); }
+.quiz-overall-content { padding: 12px 16px; background: var(--bg-card); border-radius: 8px; font-size: 0.88rem; color: var(--text-dim); line-height: 1.6; border-left: 3px solid var(--orange); margin-top: 6px; }
+
 .quiz-score { margin-top: 24px; padding: 20px; background: var(--bg-raised); border-radius: 12px; border: 1px solid var(--border); text-align: center; display: none; }
 .quiz-score.show { display: block; }
 .quiz-score-num { font-size: 2rem; font-weight: 800; color: var(--orange); }
@@ -472,14 +490,18 @@ a:hover { text-decoration: underline; }
     <h2>Try 15 Free SIR Questions</h2>
     <p class="quiz-intro">Test your knowledge before you buy — including multiple-choice and multi-select, just like the real exam.</p>
     <div class="quiz-card" id="qcard0">
-      <div class="quiz-q"><span class="quiz-q-num">1.</span>When configuring a Security Tag what does the &amp;quot;Enrichment whitelist/blacklist&amp;quot; classification control?</div>
+      <div class="quiz-q"><span class="quiz-q-num">1.</span>When configuring a Security Tag what does the &quot;Enrichment whitelist/blacklist&quot; classification control?</div>
       <ul class="quiz-opts">
       <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>Whether the tag can be seen by external users.</span></li>
       <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>Whether Observables associated with the tagged incident are automatically sent for Threat Intelligence enrichment.</span></li>
       <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>Which analysts are allowed to remove the tag.</span></li>
       <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>The color of the tag in the UI.</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp0">0) SourceServiceNow Documentation: Security Tag Classifications The Enrichment whitelist/blacklist classification is a functional trigger used to automate or suppress the Threat Intelligence lookup process.1) Correct AnswerWhether Observables associated with the tagged incident are automatically sent for Threat Intelligence enrichment.2) Detailed Expert ExplanationAutomation can be expensive (API credits) or noisy.Whitelist Tag: If you tag an incident as &quot;Whitelisted for Enrichment,&quot; it tells the system: &quot;I don&#x27;t care if this is a low-priority incident; run every Threat Lookup and Sightings Search automatically.&quot;Blacklist Tag: If you tag something as &quot;Blacklisted,&quot; it stops all automation.</div>
+      <div class="quiz-opt-explains" id="qoptexp0" style="display:none"></div>
+      <details class="quiz-overall" id="qexp0">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) SourceServiceNow Documentation: Security Tag Classifications The Enrichment whitelist/blacklist classification is a functional trigger used to automate or suppress the Threat Intelligence lookup process.1) Correct AnswerWhether Observables associated with the tagged incident are automatically sent for Threat Intelligence enrichment.2) Detailed Expert ExplanationAutomation can be expensive (API credits) or noisy.Whitelist Tag: If you tag an incident as &quot;Whitelisted for Enrichment,&quot; it tells the system: &quot;I don&#x27;t care if this is a low-priority incident; run every Threat Lookup and Sightings Search automatically.&quot;Blacklist Tag: If you tag something as &quot;Blacklisted,&quot; it stops all automation. This is useful for &quot;Authorized Pen-Testing.&quot; You don&#x27;t want your SOC tools wasting resources and triggering alerts for an IP address you already know is being used by your own security team for a test.3) Comparative Analysis (Why others are wrong)Visibility to external users: This is handled by the &quot;Traffic Light Protocol&quot; (TLP) or &quot;Block from Sharing&quot; tags, not the enrichment tag.Removing the tag: This is controlled by ACLs and Roles, not the tag classification itself.Color of the tag: While tags have colors, the &quot;Classification&quot; defines the behavior of the system, not the aesthetic.4) The &quot;Click&quot; Mnemonic&quot;Tag the Trigger.&quot; This tag acts as a &quot;Green Light&quot; (Whitelist) or &quot;Red Light&quot; (Blacklist) for the enrichment engines.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard1">
       <div class="quiz-q"><span class="quiz-q-num">2.</span>You are configuring the Threat Intelligence Service Center TISC Which feature allows a security analyst to receive notifications about specific threat actors or campaigns they are personally tracking?</div>
@@ -489,7 +511,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>Threat Feed RSS</span></li>
       <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>Campaign Monitor</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp1">0) SourceServiceNow Documentation: Threat Intelligence Service Center (TISC) TISC provides personalized workspaces, including watchlists, to help analysts monitor specific emerging threats.1) Correct AnswerPersonal Threat Watchlist2) Detailed Expert ExplanationThe Threat Intelligence Service Center (TISC) is a specialized workbench for intel analysts. Because there are thousands of threats, an analyst might be assigned specifically to track &quot;Ransomware-as-a-Service&quot; or &quot;APT28.&quot; The Personal Threat Watchlist allows the analyst to &quot;pin&quot; specific actors, campaigns, or indicators to their dashboard.</div>
+      <div class="quiz-opt-explains" id="qoptexp1" style="display:none"></div>
+      <details class="quiz-overall" id="qexp1">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) SourceServiceNow Documentation: Threat Intelligence Service Center (TISC) TISC provides personalized workspaces, including watchlists, to help analysts monitor specific emerging threats.1) Correct AnswerPersonal Threat Watchlist2) Detailed Expert ExplanationThe Threat Intelligence Service Center (TISC) is a specialized workbench for intel analysts. Because there are thousands of threats, an analyst might be assigned specifically to track &quot;Ransomware-as-a-Service&quot; or &quot;APT28.&quot; The Personal Threat Watchlist allows the analyst to &quot;pin&quot; specific actors, campaigns, or indicators to their dashboard. When new information (like a new blog post from a threat feed or a new sighting in the environment) relates to an item on their watchlist, the system notifies them immediately.3) Comparative Analysis (Why others are wrong)Analyst Subscription Service: This is not a standard feature name in ServiceNow TISC.Threat Feed RSS: This is a source of information, not the feature used to track it personally within the platform.Campaign Monitor: While TISC monitors campaigns, the &quot;personal tracking and notification&quot; aspect is specifically the Watchlist.4) The &quot;Click&quot; Mnemonic&quot;Watching the Watchlist.&quot; If you want to follow a threat like a social media account, you put it on your Personal Watchlist.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard2">
       <div class="quiz-q"><span class="quiz-q-num">3.</span>What is the function of the Capability Framework Abstract Actions when dealing with integrations?</div>
@@ -499,7 +525,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>It prevents integrations from running simultaneously.</span></li>
       <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>It forces the analyst to manually select the integration script every time.</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp2">0) SourceServiceNow Documentation: Security Operations Integration Capabilities The capability framework abstracts the &quot;What&quot; from the &quot;How,&quot; making workflows vendor-agnostic.1) Correct AnswerIt provides a generic action (e.g., &quot;Isolate Host&quot;) that automatically selects the correct tool (e.g., CrowdStrike, Defender) based on the specific CI involved.2) Detailed Expert ExplanationIn a complex environment, you might have different EDR tools (e.g., Carbon Black on servers, Microsoft Defender on laptops). The Capability Framework allows you to build a single Playbook with an &quot;Isolate Host&quot; step. When that step runs, the framework looks at the affected Configuration Item (CI).</div>
+      <div class="quiz-opt-explains" id="qoptexp2" style="display:none"></div>
+      <details class="quiz-overall" id="qexp2">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) SourceServiceNow Documentation: Security Operations Integration Capabilities The capability framework abstracts the &quot;What&quot; from the &quot;How,&quot; making workflows vendor-agnostic.1) Correct AnswerIt provides a generic action (e.g., &quot;Isolate Host&quot;) that automatically selects the correct tool (e.g., CrowdStrike, Defender) based on the specific CI involved.2) Detailed Expert ExplanationIn a complex environment, you might have different EDR tools (e.g., Carbon Black on servers, Microsoft Defender on laptops). The Capability Framework allows you to build a single Playbook with an &quot;Isolate Host&quot; step. When that step runs, the framework looks at the affected Configuration Item (CI). If it&#x27;s a server, it triggers the Carbon Black integration. If it&#x27;s a laptop, it triggers Defender. This &quot;abstraction layer&quot; means you don&#x27;t have to build ten different playbooks for ten different tools. You build the process once, and the framework handles the tool selection.3) Comparative Analysis (Why others are wrong)Write code in any language: This framework is built within ServiceNow&#x27;s IntegrationHub/JavaScript environment.Prevents simultaneous runs: It doesn&#x27;t prevent them; in fact, you can configure it to run multiple tools for a single capability if desired.Forces manual selection: The goal of the framework is the exact opposite—to automate the tool selection so the analyst doesn&#x27;t have to know which tool is installed on which machine.4) The &quot;Click&quot; Mnemonic&quot;Universal Remote.&quot; The Capability is the button on the universal remote; ServiceNow knows which &quot;TV&quot; (Tool) to talk to.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard3">
       <div class="quiz-q"><span class="quiz-q-num">4.</span>The Executive Status Report in Major Security Incident Management is primarily designed to:</div>
@@ -509,7 +539,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>Assign tasks to junior analysts.</span></li>
       <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>Replace the Post Incident Review.</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp3">0) SourceServiceNow Documentation: Executive Status Reports for MSI Executive reports bridge the gap between technical response and business leadership by summarizing status and risk.1) Correct AnswerGenerate a non-technical, high-level summary of the incident&#x27;s impact, status, and financial cost for stakeholders.2) Detailed Expert ExplanationDuring a Major Security Incident, the C-Suite (CEO, CISO, Board) needs updates. They don&#x27;t need to see &quot;Malware hashes&quot; or &quot;Firewall rules.&quot; The Executive Status Report provides:Current Status: (e.g., &quot;75% of systems recovered&quot;).Business Impact: (e.g., &quot;The finance portal is down&quot;).Estimated Cost: (Calculated based on duration and asset value).</div>
+      <div class="quiz-opt-explains" id="qoptexp3" style="display:none"></div>
+      <details class="quiz-overall" id="qexp3">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) SourceServiceNow Documentation: Executive Status Reports for MSI Executive reports bridge the gap between technical response and business leadership by summarizing status and risk.1) Correct AnswerGenerate a non-technical, high-level summary of the incident&#x27;s impact, status, and financial cost for stakeholders.2) Detailed Expert ExplanationDuring a Major Security Incident, the C-Suite (CEO, CISO, Board) needs updates. They don&#x27;t need to see &quot;Malware hashes&quot; or &quot;Firewall rules.&quot; The Executive Status Report provides:Current Status: (e.g., &quot;75% of systems recovered&quot;).Business Impact: (e.g., &quot;The finance portal is down&quot;).Estimated Cost: (Calculated based on duration and asset value). This allows leadership to make business decisions (like notifying the press or insurance carriers) without needing to understand the technical SOC work.3) Comparative Analysis (Why others are wrong)Technical log: This is for the SOC and Forensics team, not the Executives.Assign tasks: Tasks are assigned in the Workplan or Task tab of the MSI Workspace.Replace the PIR: The Status Report happens during the incident; the Post-Incident Review happens after it is closed.4) The &quot;Click&quot; Mnemonic&quot;Business, not Bytes.&quot; The Executive report is about the Business impact, not the technical Bytes.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard4">
       <div class="quiz-q"><span class="quiz-q-num">5.</span>In the Security Incident Response Workspace which tab allows an analyst to view and execute automated playbooks and workflows associated with the incident?</div>
@@ -519,7 +553,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>The Related Lists tab</span></li>
       <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>The Business Intelligence tab</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp4">0) SourceServiceNow Documentation: Security Analyst Workspace Playbooks The Playbook interface is integrated into the workspace, usually as a dedicated tab or part of the contextual sidebar.1) Correct AnswerThe Playbook tab / Contextual Side Panel2) Detailed Expert ExplanationServiceNow moved away from the &quot;Workflows&quot; tab in the old UI. In the Workspace, the Playbook tab is the interactive home for incident response.It shows the analyst exactly what step they are on (e.g., &quot;Identify Affected Users&quot;).It provides buttons to &quot;Execute&quot; automation (e.g., &quot;Reset Passwords&quot;).It marks steps as &quot;Complete&quot; as the analyst moves through the SOP.</div>
+      <div class="quiz-opt-explains" id="qoptexp4" style="display:none"></div>
+      <details class="quiz-overall" id="qexp4">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) SourceServiceNow Documentation: Security Analyst Workspace Playbooks The Playbook interface is integrated into the workspace, usually as a dedicated tab or part of the contextual sidebar.1) Correct AnswerThe Playbook tab / Contextual Side Panel2) Detailed Expert ExplanationServiceNow moved away from the &quot;Workflows&quot; tab in the old UI. In the Workspace, the Playbook tab is the interactive home for incident response.It shows the analyst exactly what step they are on (e.g., &quot;Identify Affected Users&quot;).It provides buttons to &quot;Execute&quot; automation (e.g., &quot;Reset Passwords&quot;).It marks steps as &quot;Complete&quot; as the analyst moves through the SOP. This keeps the analyst focused on the process without having to search through Related Lists or Activity Streams.3) Comparative Analysis (Why others are wrong)Activity Stream: This is a chronological history of notes and emails, not a place to &quot;execute&quot; steps.Related Lists: These show data (Observables, Tasks), but they are static lists, not interactive &quot;play-by-play&quot; guides.Business Intelligence: This is not a standard tab in the SIR workspace.4) The &quot;Click&quot; Mnemonic&quot;Playbook for the Plan.&quot; If you want to follow the Plan and run automation, go to the Playbook tab.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard5">
       <div class="quiz-q"><span class="quiz-q-num">6.</span>If a Security Incident is created from a Security Alert which feature ensures that subsequent updates to the Alert (such as additional evidence) are automatically reflected in the existing Security Incident rather than creating a duplicate?</div>
@@ -529,7 +567,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="2" data-q="5"><span class="quiz-opt-letter">C</span><span>Incident Deduplication</span></li>
       <li class="quiz-opt" data-idx="3" data-q="5"><span class="quiz-opt-letter">D</span><span>Alert Management Rule (Updates on Open Alert)</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp5">0) SourceServiceNow Documentation: Alert Management Rules The &quot;Alert Management Rule&quot; contains the logic to check if an alert already has an associated incident and determines whether to update that record or create a new one.1) Correct AnswerAlert Management Rule (Updates on Open Alert)2) Detailed Expert ExplanationWhen an external tool sends a &quot;Security Event,&quot; ServiceNow turns it into an Alert. If an Alert Management Rule is triggered, it creates a Security Incident. Crucially, these rules have a setting to handle &quot;re-occurrence.&quot; If the external tool sends a second event for the same issue (e.g., more infected files on the same host), ServiceNow updates the existing Alert.</div>
+      <div class="quiz-opt-explains" id="qoptexp5" style="display:none"></div>
+      <details class="quiz-overall" id="qexp5">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) SourceServiceNow Documentation: Alert Management Rules The &quot;Alert Management Rule&quot; contains the logic to check if an alert already has an associated incident and determines whether to update that record or create a new one.1) Correct AnswerAlert Management Rule (Updates on Open Alert)2) Detailed Expert ExplanationWhen an external tool sends a &quot;Security Event,&quot; ServiceNow turns it into an Alert. If an Alert Management Rule is triggered, it creates a Security Incident. Crucially, these rules have a setting to handle &quot;re-occurrence.&quot; If the external tool sends a second event for the same issue (e.g., more infected files on the same host), ServiceNow updates the existing Alert. The Alert Management Rule then sees that an incident is already open and &quot;syncs&quot; the new data into the existing incident. This prevents an analyst from coming into work to find 50 separate tickets for the same single virus.3) Comparative AnalysisAlert Aggregation Rule: This is used to group multiple different alerts into a single &quot;parent alert&quot; based on patterns (e.g., all alerts from one switch), but it isn&#x27;t the primary driver for updating an incident.Incident Deduplication: This is a broader platform concept, but in the context of Alerts-to-Incidents, the specific engine used is the Alert Management Rule.4) The &quot;Click&quot; MnemonicThe &quot;Concierge&quot; Analogy: The Alert Management Rule is like a Hotel Concierge. If you call down for more towels (Alert update), they check your Room Number (Incident link) and bring them to your room instead of checking you into a new room.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard6">
       <div class="quiz-q"><span class="quiz-q-num">7.</span>Which dashboard is specifically designed to give the CISO a high-level view of the organizations security posture including Mean Time to Detect MTTD and Mean Time to Contain MTTC trends?</div>
@@ -539,7 +581,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="2" data-q="6"><span class="quiz-opt-letter">C</span><span>Security Operations Efficiency</span></li>
       <li class="quiz-opt" data-idx="3" data-q="6"><span class="quiz-opt-letter">D</span><span>Vulnerability Remediation Dashboard</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp6">0) SourceServiceNow Documentation: CISO Dashboard The CISO Dashboard uses Performance Analytics to provide executive-level metrics, focusing on risk, financial impact, and operational efficiency trends like MTTD and MTTC.1) Correct AnswerCISO Dashboard2) Detailed Expert ExplanationThe CISO Dashboard is the strategic reporting hub for security leadership. Unlike operational dashboards that show &quot;what is happening right now,&quot; this dashboard tracks performance over time.MTTD (Mean Time to Detect): Measures how long a threat exists before the SOC identifies it.MTTC (Mean Time to Contain): Measures how quickly the team stops the threat once found.</div>
+      <div class="quiz-opt-explains" id="qoptexp6" style="display:none"></div>
+      <details class="quiz-overall" id="qexp6">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) SourceServiceNow Documentation: CISO Dashboard The CISO Dashboard uses Performance Analytics to provide executive-level metrics, focusing on risk, financial impact, and operational efficiency trends like MTTD and MTTC.1) Correct AnswerCISO Dashboard2) Detailed Expert ExplanationThe CISO Dashboard is the strategic reporting hub for security leadership. Unlike operational dashboards that show &quot;what is happening right now,&quot; this dashboard tracks performance over time.MTTD (Mean Time to Detect): Measures how long a threat exists before the SOC identifies it.MTTC (Mean Time to Contain): Measures how quickly the team stops the threat once found. By visualizing these as trends, a CISO can determine if investments in automation (like ServiceNow SIR) are actually making the company faster and safer. It translates technical SOC activity into business risk and efficiency metrics.3) Comparative Analysis (Why others are wrong)Security Analyst Overview: This is an operational view for the SOC team to manage their daily queue; it does not focus on long-term executive trend analysis.Security Operations Efficiency: While similar, this dashboard is usually aimed at SOC Managers to track analyst performance rather than the high-level posture and financial impact required by a CISO.Vulnerability Remediation Dashboard: This is specific to the Vulnerability Response module and focuses on patching &quot;holes,&quot; not on the response to active security incidents.4) The &quot;Click&quot; Mnemonic&quot;CISO = Strategy &amp; Speed.&quot; If you see MTTD/MTTC trends or Executive views, the answer is the CISO Dashboard.</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard7">
       <div class="quiz-q"><span class="quiz-q-num">8.</span>A Post Incident Review can contain which of the following? (Choose three.) <span class="quiz-choose">(choose 3)</span></div>
@@ -551,7 +597,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="4" data-q="7"><span class="quiz-opt-letter">E</span><span>Performance Analytics reports</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="7" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp7">0) SourceServiceNow Documentation: Post-Incident Review (PIR) The PIR document is a generated summary that focuses on data captured during the incident lifecycle.1) Correct AnswerPost incident questionnaires, An audit trail, and Key incident fields.2) Detailed Expert ExplanationThe Post-Incident Review (PIR) is the final phase of the NIST/SANS lifecycle (Lessons Learned).</div>
+      <div class="quiz-opt-explains" id="qoptexp7" style="display:none"></div>
+      <details class="quiz-overall" id="qexp7">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) SourceServiceNow Documentation: Post-Incident Review (PIR) The PIR document is a generated summary that focuses on data captured during the incident lifecycle.1) Correct AnswerPost incident questionnaires, An audit trail, and Key incident fields.2) Detailed Expert ExplanationThe Post-Incident Review (PIR) is the final phase of the NIST/SANS lifecycle (Lessons Learned). In ServiceNow, the PIR is a dedicated tab/report that aggregates:Key incident fields: Dates, times, priority, and categorization.Audit trail: A chronological list of who did what and when (crucial for legal compliance).Questionnaires: Feedback from the analysts involved regarding what went well and what didn&#x27;t.3) Comparative Analysis (Why others are wrong)Attachments associated with the security incident: While attachments exist on the incident record, they are not automatically embedded within the generated PIR document summary.Performance Analytics reports: Performance Analytics is used for aggregate trend data across many incidents, whereas a PIR is focused exclusively on the details of one specific incident.4) The &quot;Click&quot; Mnemonic&quot;The 3 Q&#x27;s of PIR.&quot; Questionnaires, Quick Facts (Fields), and Quiet Proof (Audit Trail).</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard8">
       <div class="quiz-q"><span class="quiz-q-num">9.</span>In a Security Incident Playbook what is the function of a User Form activity?</div>
@@ -561,10 +611,14 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="2" data-q="8"><span class="quiz-opt-letter">C</span><span>To create a new user account in sys_user.</span></li>
       <li class="quiz-opt" data-idx="3" data-q="8"><span class="quiz-opt-letter">D</span><span>To send an email to the affected user.</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp8">0) SourceServiceNow Documentation: Interactive Playbook Activities Interactive activities (User Forms) bridge the gap between automated background tasks and human-in-the-loop requirements in the analyst workspace.1) Correct AnswerTo pause the automation and require the analyst to input specific data or make a decision before the playbook proceeds.2) Detailed Expert ExplanationNot every part of a security response can be automated. Sometimes, a human must provide missing context—such as &quot;Did the user authorize this change?&quot;A User Form activity creates a &quot;stop&quot; in the visual playbook.</div>
+      <div class="quiz-opt-explains" id="qoptexp8" style="display:none"></div>
+      <details class="quiz-overall" id="qexp8">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) SourceServiceNow Documentation: Interactive Playbook Activities Interactive activities (User Forms) bridge the gap between automated background tasks and human-in-the-loop requirements in the analyst workspace.1) Correct AnswerTo pause the automation and require the analyst to input specific data or make a decision before the playbook proceeds.2) Detailed Expert ExplanationNot every part of a security response can be automated. Sometimes, a human must provide missing context—such as &quot;Did the user authorize this change?&quot;A User Form activity creates a &quot;stop&quot; in the visual playbook. The flow waits for the analyst to fill out the form and hit &quot;Submit.&quot; Once the analyst provides the input, the automation continues. This is crucial for Decision-Based Playbooks where the next automated step (like &quot;Isolate Host&quot;) depends on the analyst&#x27;s manual confirmation in the form.3) Comparative AnalysisTo display a read-only message: This is the role of an Instruction activity.To create a new user account: This is an Automated Action that doesn&#x27;t require a manual form.To send an email: While a form could trigger an email, the primary function of the &quot;User Form&quot; component is the Interaction/Data Entry itself.4) The &quot;Click&quot; MnemonicThe &quot;Tax Software&quot; Analogy: Most of your taxes are calculated automatically, but the software occasionally shows you a Form (User Form) and says, &quot;I need You to type in your address before I can continue.&quot;</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard9">
-      <div class="quiz-q"><span class="quiz-q-num">10.</span>For Customers who don&amp;#x27;t use 3rd-party systems what ways can security incidents be created? (Choose three.) <span class="quiz-choose">(choose 3)</span></div>
+      <div class="quiz-q"><span class="quiz-q-num">10.</span>For Customers who don&#x27;t use 3rd-party systems what ways can security incidents be created? (Choose three.) <span class="quiz-choose">(choose 3)</span></div>
       <ul class="quiz-opts">
       <li class="quiz-opt" data-idx="0" data-q="9"><span class="quiz-opt-letter">A</span><span>Security Service Catalog</span></li>
       <li class="quiz-opt" data-idx="1" data-q="9"><span class="quiz-opt-letter">B</span><span>Security Incident Form</span></li>
@@ -573,7 +627,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="4" data-q="9"><span class="quiz-opt-letter">E</span><span>Alert Management</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="9" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp9">0) Source ServiceNow Docs: Security Incident Creation Focuses on internal &quot;Native&quot; creation methods.1) Correct Answer Security Service Catalog, Security Incident Form, &amp; Inbound Email Parsing Rules2) Detailed Expert Explanation If a customer has no SIEM/external tools, they must rely on native ServiceNow entry points:Form: Analysts type data directly into sn_si_incident.Catalog: Employees report issues (e.g., &quot;I lost my laptop&quot;) via the Service Portal.Email Parsing: The system converts incoming emails sent to a specific address (e.g., security@company.com) into incidents.3) Comparative Analysis (Why others are wrong)Leveraging an Integration: This requires a 3rd-party system (which the question excludes).Alert Management: While technically &quot;native&quot; to ITOM, in the context of SIR, &quot;Alerts&quot; almost always refer to external monitoring signals being integrated into the platform.4) The &quot;Click&quot; Mnemonic Internal creation = Form, Portal (Catalog), or Email.</div>
+      <div class="quiz-opt-explains" id="qoptexp9" style="display:none"></div>
+      <details class="quiz-overall" id="qexp9">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) Source ServiceNow Docs: Security Incident Creation Focuses on internal &quot;Native&quot; creation methods.1) Correct Answer Security Service Catalog, Security Incident Form, &amp; Inbound Email Parsing Rules2) Detailed Expert Explanation If a customer has no SIEM/external tools, they must rely on native ServiceNow entry points:Form: Analysts type data directly into sn_si_incident.Catalog: Employees report issues (e.g., &quot;I lost my laptop&quot;) via the Service Portal.Email Parsing: The system converts incoming emails sent to a specific address (e.g., security@company.com) into incidents.3) Comparative Analysis (Why others are wrong)Leveraging an Integration: This requires a 3rd-party system (which the question excludes).Alert Management: While technically &quot;native&quot; to ITOM, in the context of SIR, &quot;Alerts&quot; almost always refer to external monitoring signals being integrated into the platform.4) The &quot;Click&quot; Mnemonic Internal creation = Form, Portal (Catalog), or Email.</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard10">
       <div class="quiz-q"><span class="quiz-q-num">11.</span>Runbooks are used to create a relationship between what components? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
@@ -586,20 +644,28 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="5" data-q="10"><span class="quiz-opt-letter">F</span><span>Knowledge article</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="10" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp10">0) SourceServiceNow Documentation: Security Incident Runbooks Runbooks in ServiceNow SIR are traditionally defined as the association of instructional Knowledge Articles to specific Security Incident Tasks.1) Correct AnswerSecurity Incident Response Task and Knowledge article.2) Detailed Expert ExplanationA Runbook is essentially the &quot;Instruction Manual&quot; for a specific unit of work. In ServiceNow:The Security Incident Response Task (sn_si_task) represents the &quot;What&quot; needs to be done.The Knowledge Article (kb_knowledge) represents the &quot;How&quot; it should be done.</div>
+      <div class="quiz-opt-explains" id="qoptexp10" style="display:none"></div>
+      <details class="quiz-overall" id="qexp10">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) SourceServiceNow Documentation: Security Incident Runbooks Runbooks in ServiceNow SIR are traditionally defined as the association of instructional Knowledge Articles to specific Security Incident Tasks.1) Correct AnswerSecurity Incident Response Task and Knowledge article.2) Detailed Expert ExplanationA Runbook is essentially the &quot;Instruction Manual&quot; for a specific unit of work. In ServiceNow:The Security Incident Response Task (sn_si_task) represents the &quot;What&quot; needs to be done.The Knowledge Article (kb_knowledge) represents the &quot;How&quot; it should be done. By linking a Knowledge Article to a Task type, the system ensures that when an analyst is assigned a task (e.g., &quot;Perform Memory Dump&quot;), the relevant SOP (Standard Operating Procedure) is automatically displayed in the side pane, ensuring consistency and speed.3) Comparative Analysis (Why others are wrong)Events and Alerts: These are entry-point data records from monitoring systems; they are not the components that form a &quot;Runbook.&quot;Playbook Task: While related, Playbooks are a newer, more interactive orchestration method. Runbooks specifically refer to the Task-to-Knowledge relationship.Workflow Trigger: This is the logic that starts a process, not a component of the documentation relationship.4) The &quot;Click&quot; Mnemonic&quot;Tasks need Knowledge.&quot; A Runbook is just a Task with a Knowledge Article attached so you don&#x27;t have to guess the steps.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard11">
-      <div class="quiz-q"><span class="quiz-q-num">12.</span>Regarding the &amp;quot;Analyze&amp;quot; phase of a Security Incident which feature allows an analyst to automatically check an observable (like a file hash) against multiple Threat Intelligence feeds (like VirusTotal and Palo Alto) simultaneously?</div>
+      <div class="quiz-q"><span class="quiz-q-num">12.</span>Regarding the &quot;Analyze&quot; phase of a Security Incident which feature allows an analyst to automatically check an observable (like a file hash) against multiple Threat Intelligence feeds (like VirusTotal and Palo Alto) simultaneously?</div>
       <ul class="quiz-opts">
       <li class="quiz-opt" data-idx="0" data-q="11"><span class="quiz-opt-letter">A</span><span>Observable Enforcement</span></li>
       <li class="quiz-opt" data-idx="1" data-q="11"><span class="quiz-opt-letter">B</span><span>Threat Lookup</span></li>
       <li class="quiz-opt" data-idx="2" data-q="11"><span class="quiz-opt-letter">C</span><span>Trusted Security Circles</span></li>
       <li class="quiz-opt" data-idx="3" data-q="11"><span class="quiz-opt-letter">D</span><span>Vulnerability Scanners</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp11">0) SourceServiceNow Documentation: Threat Lookups Threat Lookup is the specific orchestration capability that queries external intelligence sources to determine the reputation of an observable.1) Correct AnswerThreat Lookup2) Detailed Expert ExplanationThreat Lookup is one of the most powerful automation features in SIR. When an observable (like an IP address or file hash) is added to an incident, the analyst can trigger a &quot;Threat Lookup.&quot; Behind the scenes, ServiceNow uses IntegrationHub to send that observable to every configured feed (VirusTotal, CrowdStrike, Shodan, etc.) at the same time. The results are then aggregated in ServiceNow.</div>
+      <div class="quiz-opt-explains" id="qoptexp11" style="display:none"></div>
+      <details class="quiz-overall" id="qexp11">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) SourceServiceNow Documentation: Threat Lookups Threat Lookup is the specific orchestration capability that queries external intelligence sources to determine the reputation of an observable.1) Correct AnswerThreat Lookup2) Detailed Expert ExplanationThreat Lookup is one of the most powerful automation features in SIR. When an observable (like an IP address or file hash) is added to an incident, the analyst can trigger a &quot;Threat Lookup.&quot; Behind the scenes, ServiceNow uses IntegrationHub to send that observable to every configured feed (VirusTotal, CrowdStrike, Shodan, etc.) at the same time. The results are then aggregated in ServiceNow. Instead of the analyst visiting 5 different websites and copy-pasting results, they simply wait a few seconds and see a &quot;Malicious&quot; or &quot;Clean&quot; verdict directly on the incident record.3) Comparative AnalysisObservable Enforcement: Not a standard term. Enrichment and Lookups are the standard terms for data gathering.Trusted Security Circles: This is for sharing threat data with human peers in other companies, not for automated API-based reputation checks.Vulnerability Scanners: These look for &quot;Weaknesses&quot; (like missing patches) in your own systems, not for &quot;Threats&quot; (like malware hashes) in the outside world.4) The &quot;Click&quot; MnemonicThe &quot;Background Check&quot; Analogy: Threat Lookup is like a Background Check. Instead of calling every past employer yourself, you use a service that checks All Databases at once to tell you if the person is a risk.</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard12">
-      <div class="quiz-q"><span class="quiz-q-num">13.</span>When mapping MITRE ATT&amp;amp;CK data to a Security Incident which two fields are primarily populated to describe the adversary&amp;#x27;s behavior? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
+      <div class="quiz-q"><span class="quiz-q-num">13.</span>When mapping MITRE ATT&amp;CK data to a Security Incident which two fields are primarily populated to describe the adversary&#x27;s behavior? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
       <ul class="quiz-opts">
       <li class="quiz-opt" data-idx="0" data-q="12"><span class="quiz-opt-letter">A</span><span>Tactic</span></li>
       <li class="quiz-opt" data-idx="1" data-q="12"><span class="quiz-opt-letter">B</span><span>Severity</span></li>
@@ -607,7 +673,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="3" data-q="12"><span class="quiz-opt-letter">D</span><span>Vector</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="12" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp12">0) SourceServiceNow Documentation: MITRE ATT&amp;CK Framework integration The ATT&amp;CK framework is structurally built on the relationship between Tactics (the goal) and Techniques (the method).1) Correct AnswerTactic and Technique.2) Detailed Expert ExplanationThe MITRE ATT&amp;CK framework is a matrix:Tactic: This is the &quot;Why.&quot; (e.g., &quot;Initial Access&quot; or &quot;Exfiltration&quot;). It describes the attacker&#x27;s objective.Technique: This is the &quot;How.&quot; (e.g., &quot;Phishing&quot; or &quot;Drive-by Compromise&quot;). It describes the specific action taken to achieve the tactic. ServiceNow populates these two fields to give the SOC a standardized language.</div>
+      <div class="quiz-opt-explains" id="qoptexp12" style="display:none"></div>
+      <details class="quiz-overall" id="qexp12">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) SourceServiceNow Documentation: MITRE ATT&amp;CK Framework integration The ATT&amp;CK framework is structurally built on the relationship between Tactics (the goal) and Techniques (the method).1) Correct AnswerTactic and Technique.2) Detailed Expert ExplanationThe MITRE ATT&amp;CK framework is a matrix:Tactic: This is the &quot;Why.&quot; (e.g., &quot;Initial Access&quot; or &quot;Exfiltration&quot;). It describes the attacker&#x27;s objective.Technique: This is the &quot;How.&quot; (e.g., &quot;Phishing&quot; or &quot;Drive-by Compromise&quot;). It describes the specific action taken to achieve the tactic. ServiceNow populates these two fields to give the SOC a standardized language. If everyone knows the attacker is using &quot;Tactic: Persistence&quot; via &quot;Technique: Scheduled Task,&quot; the response is much more efficient.3) Comparative Analysis (Why others are wrong)Severity: This is a ServiceNow field for priority/impact, not a MITRE behavioral descriptor.Vector: While related to &quot;Initial Access,&quot; Technique is the specific terminology used in the MITRE framework that ServiceNow maps.4) The &quot;Click&quot; Mnemonic&quot;The T&#x27;s of MITRE.&quot; Tactics and Techniques. (Think of it as the &quot;T&amp;T&quot; of the attack).</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard13">
       <div class="quiz-q"><span class="quiz-q-num">14.</span>Why is it important that the Platform (System) Administrator and the Security Incident administrator role be separated? (Choose three.) <span class="quiz-choose">(choose 3)</span></div>
@@ -619,7 +689,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="4" data-q="13"><span class="quiz-opt-letter">E</span><span>Preserve the security image in the company</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="13" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp13">0) Source ServiceNow Docs: Security Operations Roles Note: The &quot;Security Admin&quot; (sn_si.admin) role is distinct from admin to ensure data privacy.1) Correct AnswersAccess to security incident data may need to be restrictedAllow SIR Teams to control assignment of security rolesClear separation of duty2) Detailed Expert Explanation The admin (Platform Admin) has &quot;God Mode&quot; over the entire instance except for scoped security data if restricted.Access Restriction: Security Incidents often involve HR issues or executive data that a general IT Platform Admin should not see.Role Control: Security teams need to manage who has access to their sensitive tools without waiting for IT.Separation of Duty: This is a fundamental compliance requirement (SOC2/ISO27001) to ensure no single person has total control over both the system and the sensitive security logs.3) Comparative AnalysisReduce incidents for Admin: Platform Admins don&#x27;t usually work incidents anyway; this isn&#x27;t a strategic reason for role separation.Preserve security image: This is a subjective &quot;soft&quot; reason, not a technical or governance requirement.4) The &quot;Click&quot; Mnemonic The &quot;Need to Know&quot; principle.</div>
+      <div class="quiz-opt-explains" id="qoptexp13" style="display:none"></div>
+      <details class="quiz-overall" id="qexp13">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) Source ServiceNow Docs: Security Operations Roles <br><br><strong>Note:</strong> The &quot;Security Admin&quot; (sn_si.admin) role is distinct from admin to ensure data privacy.1) Correct AnswersAccess to security incident data may need to be restrictedAllow SIR Teams to control assignment of security rolesClear separation of duty2) Detailed Expert Explanation The admin (Platform Admin) has &quot;God Mode&quot; over the entire instance except for scoped security data if restricted.Access Restriction: Security Incidents often involve HR issues or executive data that a general IT Platform Admin should not see.Role Control: Security teams need to manage who has access to their sensitive tools without waiting for IT.Separation of Duty: This is a fundamental compliance requirement (SOC2/ISO27001) to ensure no single person has total control over both the system and the sensitive security logs.3) Comparative AnalysisReduce incidents for Admin: Platform Admins don&#x27;t usually work incidents anyway; this isn&#x27;t a strategic reason for role separation.Preserve security image: This is a subjective &quot;soft&quot; reason, not a technical or governance requirement.4) The &quot;Click&quot; Mnemonic The &quot;Need to Know&quot; principle. Just because you fix the plumbing (Platform) doesn&#x27;t mean you should see what&#x27;s in the safe (Security Incidents).</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard14">
       <div class="quiz-q"><span class="quiz-q-num">15.</span>What is the purpose of Security Tag Categories?</div>
@@ -629,7 +703,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="2" data-q="14"><span class="quiz-opt-letter">C</span><span>To determine the weight of the tag in the Risk Score.</span></li>
       <li class="quiz-opt" data-idx="3" data-q="14"><span class="quiz-opt-letter">D</span><span>To auto-close incidents.</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp14">0) SourceServiceNow Documentation: Security Tag Categories Categories provide a logical and permission-based grouping for security tags.1) Correct AnswerTo restrict which roles can see or apply specific groups of tags (e.g., separating &quot;Compliance&quot; tags from &quot;Investigation&quot; tags).2) Detailed Expert ExplanationNot all tags are created equal. You might have:Category: Traffic Light Protocol (TLP): All analysts need to see these.Category: Legal Hold: You might only want &quot;Security Admins&quot; or &quot;Legal&quot; roles to see or apply these. By creating Security Tag Categories, you can define which roles are allowed to view or interact with the tags within that category.</div>
+      <div class="quiz-opt-explains" id="qoptexp14" style="display:none"></div>
+      <details class="quiz-overall" id="qexp14">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) SourceServiceNow Documentation: Security Tag Categories Categories provide a logical and permission-based grouping for security tags.1) Correct AnswerTo restrict which roles can see or apply specific groups of tags (e.g., separating &quot;Compliance&quot; tags from &quot;Investigation&quot; tags).2) Detailed Expert ExplanationNot all tags are created equal. You might have:Category: Traffic Light Protocol (TLP): All analysts need to see these.Category: Legal Hold: You might only want &quot;Security Admins&quot; or &quot;Legal&quot; roles to see or apply these. By creating Security Tag Categories, you can define which roles are allowed to view or interact with the tags within that category. This prevents junior analysts from accidentally applying sensitive tags and keeps the UI organized.3) Comparative Analysis (Why others are wrong)Color-code: While tags are colored, the category is about the &quot;Who and Why,&quot; not the aesthetics.Risk Score Weight: Individual tags (like &quot;Critical Asset&quot;) can influence the risk score, but the category itself is a management container.Auto-close: Tags are metadata; they don&#x27;t trigger state changes unless a separate Business Rule or Flow is built to watch for them.4) The &quot;Click&quot; Mnemonic&quot;Tag the Role.&quot; Use Categories to decide which Roles get to use which Tags.</div>
+      </details>
     </div>
     <div class="quiz-score" id="quizScore">
       <div class="quiz-score-num" id="quizScoreNum">0/15</div>
@@ -667,6 +745,37 @@ a:hover { text-decoration: underline; }
   let answered = 0, score = 0;
   const multiSelections = {};
 
+  function showExplanations(qi, isCorrect) {
+    var card = document.getElementById('qcard' + qi);
+    var opts = card.querySelectorAll('.quiz-opt');
+    var correct = Array.isArray(answers[qi]) ? answers[qi] : [answers[qi]];
+    var expContainer = document.getElementById('qoptexp' + qi);
+    var html = '';
+
+    opts.forEach(function(opt, j) {
+      var perExp = opt.getAttribute('data-exp');
+      var isCorr = correct.indexOf(j) !== -1;
+
+      if (perExp) {
+        var label = isCorr ? '<span class="qoe-correct">Correct</span>' : '<span class="qoe-wrong">Incorrect</span>';
+        html += '<div class="quiz-opt-exp ' + (isCorr ? 'qoe-is-correct' : 'qoe-is-wrong') + '">' +
+          '<div class="qoe-header">' + label + ' <span class="qoe-letter">' + 'ABCDEF'[j] + '</span></div>' +
+          '<div class="qoe-text">' + perExp + '</div></div>';
+      }
+    });
+
+    if (html) {
+      expContainer.innerHTML = html;
+      expContainer.style.display = 'block';
+    }
+
+    // Show overall explanation toggle if it has content
+    var overall = document.getElementById('qexp' + qi);
+    if (overall && overall.querySelector('.quiz-overall-content').innerHTML.trim()) {
+      overall.style.display = 'block';
+    }
+  }
+
   document.querySelectorAll('.quiz-opt').forEach(function(opt) {
     opt.addEventListener('click', function() {
       var qi = parseInt(this.dataset.q);
@@ -695,7 +804,7 @@ a:hover { text-decoration: underline; }
         else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
         this.classList.add('selected');
         card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
-        document.getElementById('qexp' + qi).classList.add('show');
+        showExplanations(qi, isCorrect);
         answered++;
         checkDone();
       }
@@ -725,7 +834,7 @@ a:hover { text-decoration: underline; }
       }
       opts.forEach(function(o) { o.setAttribute('disabled',''); });
       this.style.display = 'none';
-      document.getElementById('qexp' + qi).classList.add('show');
+      showExplanations(qi, isCorrect);
       answered++;
       checkDone();
     });

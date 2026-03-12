@@ -340,12 +340,30 @@ a:hover { text-decoration: underline; }
 .quiz-opt.selected .quiz-opt-letter { background: var(--orange); color: #fff; border-color: var(--orange); }
 .quiz-opt.correct .quiz-opt-letter { background: #2ea043; color: #fff; border-color: #2ea043; }
 .quiz-opt.wrong .quiz-opt-letter { background: #d73a49; color: #fff; border-color: #d73a49; }
-.quiz-explain { display: none; margin-top: 12px; padding: 12px 16px; background: var(--bg-card); border-radius: 8px; font-size: 0.9rem; color: var(--text-dim); line-height: 1.6; border-left: 3px solid var(--orange); }
-.quiz-explain.show { display: block; }
+
 .quiz-choose { font-weight: 400; color: var(--orange); font-size: 0.85rem; margin-left: 4px; }
 .quiz-submit-btn { margin-top: 12px; padding: 10px 24px; background: var(--orange); color: #fff; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.15s, transform 0.1s; }
 .quiz-submit-btn:hover { background: #c75400; }
 .quiz-submit-btn:active { transform: scale(0.97); }
+/* Per-option explanations */
+.quiz-opt-explains { margin-top: 12px; display: flex; flex-direction: column; gap: 6px; }
+.quiz-opt-exp { padding: 10px 14px; border-radius: 8px; font-size: 0.88rem; line-height: 1.5; }
+.qoe-is-correct { background: rgba(46,160,67,0.07); border-left: 3px solid #2ea043; }
+.qoe-is-wrong { background: rgba(215,58,73,0.05); border-left: 3px solid #d73a49; }
+.qoe-header { font-weight: 600; margin-bottom: 4px; font-size: 0.82rem; }
+.qoe-correct { color: #2ea043; }
+.qoe-wrong { color: #d73a49; }
+.qoe-letter { color: var(--text-dim); margin-left: 4px; font-weight: 500; }
+.qoe-text { color: var(--text-dim); }
+/* Collapsible overall explanation */
+.quiz-overall { display: none; margin-top: 10px; }
+.quiz-overall[style*="block"] { display: block; }
+.quiz-overall-toggle { cursor: pointer; font-size: 0.88rem; font-weight: 600; color: var(--orange); padding: 8px 0; list-style: none; display: flex; align-items: center; gap: 6px; }
+.quiz-overall-toggle::-webkit-details-marker { display: none; }
+.quiz-overall-toggle::before { content: ''; display: inline-block; width: 0; height: 0; border-left: 5px solid var(--orange); border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform 0.2s; }
+details.quiz-overall[open] .quiz-overall-toggle::before { transform: rotate(90deg); }
+.quiz-overall-content { padding: 12px 16px; background: var(--bg-card); border-radius: 8px; font-size: 0.88rem; color: var(--text-dim); line-height: 1.6; border-left: 3px solid var(--orange); margin-top: 6px; }
+
 .quiz-score { margin-top: 24px; padding: 20px; background: var(--bg-raised); border-radius: 12px; border: 1px solid var(--border); text-align: center; display: none; }
 .quiz-score.show { display: block; }
 .quiz-score-num { font-size: 2rem; font-weight: 800; color: var(--orange); }
@@ -479,7 +497,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>Software.</span></li>
       <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>Fixed Assets.</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp0">0) Source ServiceNow Documentation: Expense Lines https://docs.servicenow.com/bundle/washingtondc-it-business-management/page/product/project-portfolio-suite-with-financials/concept/c_ExpenseLines.html1) Correct Answers Program.2) Explanation of why they are correct Expense Lines represent actual costs incurred. They are always associated with a source that generated the cost (The &quot;Check&quot; you wrote). Valid sources include:Assets/Fixed Assets: You bought a server.User/Resource: You paid a salary.CI (Software): You paid a license fee. Program is a container for projects.</div>
+      <div class="quiz-opt-explains" id="qoptexp0" style="display:none"></div>
+      <details class="quiz-overall" id="qexp0">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) Source ServiceNow Documentation: Expense Lines https://docs.servicenow.com/bundle/washingtondc-it-business-management/page/product/project-portfolio-suite-with-financials/concept/c_ExpenseLines.html1) Correct Answers Program.2) <br><br><strong>Explanation of</strong> why they are correct Expense Lines represent actual costs incurred. They are always associated with a source that generated the cost (The &quot;Check&quot; you wrote). Valid sources include:Assets/Fixed Assets: You bought a server.User/Resource: You paid a salary.CI (Software): You paid a license fee. Program is a container for projects. It aggregates costs from its child projects, but the Program itself is rarely the direct source of a specific expense line (you don&#x27;t write a check to &quot;The Program,&quot; you write it for the resources inside the program).3) <br><br><strong>Explanation of</strong> why others are incorrectResource / Software / Fixed Assets: These are tangible things that cost money and generate direct expense lines.4) How to remember that more easily You pay a Person (Resource), you buy Software, you buy a Laptop (Asset). You don&#x27;t buy a Program (that&#x27;s just a folder).</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard1">
       <div class="quiz-q"><span class="quiz-q-num">2.</span>What is used to define the planning attribute values such as primary Group, Role, and Skill?</div>
@@ -489,17 +511,25 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>Resource group</span></li>
       <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>Capacity</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp1">0) SourceServiceNow Documentation: Strategic Planning - Associate planning attributes with an employeeThis source confirms that the sn_employee_profile table is used to store planning-specific attributes like primary group and skills to facilitate resource planning.1) Correct AnswerEmployee profile2) Detailed Expert ExplanationIn the context of Strategic Planning and Resource Management, ServiceNow needs a way to bridge the gap between a standard User record (sys_user) and the attributes required for capacity planning. The Employee Profile (sn_employee_profile) serves as this bridge.</div>
+      <div class="quiz-opt-explains" id="qoptexp1" style="display:none"></div>
+      <details class="quiz-overall" id="qexp1">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) SourceServiceNow Documentation: Strategic Planning - Associate planning attributes with an employeeThis source confirms that the sn_employee_profile table is used to store planning-specific attributes like primary group and skills to facilitate resource planning.1) Correct AnswerEmployee profile2) Detailed Expert ExplanationIn the context of Strategic Planning and Resource Management, ServiceNow needs a way to bridge the gap between a standard User record (sys_user) and the attributes required for capacity planning. The Employee Profile (sn_employee_profile) serves as this bridge. It allows organizations to define metadata about an individual—specifically their Primary Group, Primary Role, and Skills—without cluttering the core user table. When a Resource Manager looks at capacity, the system queries these profiles to determine how many &quot;Architects&quot; or &quot;Java Developers&quot; are available based on the attributes defined here.3) Comparative AnalysisScheduled job: These are used for automation (like recalculating capacity) but do not store attribute definitions.Resource group: While users belong to groups, the &quot;Planning Attributes&quot; specifically refers to the record that defines the individual&#x27;s characteristics for the planning engine.Capacity: This is the result of having attributes and schedules; it is a calculated value, not the place where attributes are defined.4) The &quot;Click&quot; MnemonicThe Profile defines the Pro. To know what a professional can do (their Role/Skill), you check their Employee Profile.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard2">
-      <div class="quiz-q"><span class="quiz-q-num">3.</span>A user creates a Resource Plan for 100 hours. The &amp;#x27;Members Preference&amp;#x27; is set to &amp;#x27;Specific Members&amp;#x27; but no members are selected yet. The State is &amp;#x27;Requested&amp;#x27;. When the Resource Manager opens the Allocation Workbench under which category will they see these hours?</div>
+      <div class="quiz-q"><span class="quiz-q-num">3.</span>A user creates a Resource Plan for 100 hours. The &#x27;Members Preference&#x27; is set to &#x27;Specific Members&#x27; but no members are selected yet. The State is &#x27;Requested&#x27;. When the Resource Manager opens the Allocation Workbench under which category will they see these hours?</div>
       <ul class="quiz-opts">
       <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>Unallocated (Role based)</span></li>
       <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>Soft Allocations</span></li>
       <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>Hard Allocations</span></li>
       <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>Capacity</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp2">0) Source ServiceNow Docs: Allocation Workbench Requested hours that have not been assigned to a specific user or group are treated as &quot;Unallocated&quot; or &quot;Generic&quot; demand.1) Correct Answer Unallocated (Role based)2) Detailed Expert Explanation When a Resource Plan is in the Requested state, it represents &quot;Demand&quot; that has not yet been satisfied. Because no specific members have been chosen and no allocation records (resource_allocation) have been created, the Allocation Workbench cannot show them as &quot;Soft&quot; or &quot;Hard&quot; (which requires a link to a specific resource).</div>
+      <div class="quiz-opt-explains" id="qoptexp2" style="display:none"></div>
+      <details class="quiz-overall" id="qexp2">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) Source ServiceNow Docs: Allocation Workbench Requested hours that have not been assigned to a specific user or group are treated as &quot;Unallocated&quot; or &quot;Generic&quot; demand.1) Correct Answer Unallocated (Role based)2) Detailed Expert Explanation When a Resource Plan is in the Requested state, it represents &quot;Demand&quot; that has not yet been satisfied. Because no specific members have been chosen and no allocation records (resource_allocation) have been created, the Allocation Workbench cannot show them as &quot;Soft&quot; or &quot;Hard&quot; (which requires a link to a specific resource). It shows them in the &quot;Unallocated&quot; bucket—usually grouped by the Role or Group requested—to signal to the Resource Manager that work is waiting to be assigned.3) Comparative AnalysisSoft/Hard Allocations: These only exist once a Resource Manager has performed an &quot;Allocate&quot; action, which creates records in the allocation table.Capacity: This represents the supply (the total hours available), not the demand (the requested hours).4) The &quot;Click&quot; Mnemonic If it&#x27;s Requested but has no Name, it&#x27;s just a &quot;To-Do&quot; (Unallocated), not a &quot;Booking&quot; (Allocation).</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard3">
       <div class="quiz-q"><span class="quiz-q-num">4.</span>True or false? It is important to ask stakeholders which SPM dashboards should be active.</div>
@@ -507,7 +537,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>True</span></li>
       <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>False</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp3">0) Source ServiceNow Implementation Methodology (SIM) Stakeholder alignment is a core pillar of SPM implementation. Activating unnecessary dashboards leads to &quot;Information Overload&quot; and poor user adoption.1) Correct Answer True2) Detailed Expert Explanation This is more of a consultative/process question than a technical one. SPM (Strategic Portfolio Management) comes with dozens of &quot;Content Pack&quot; dashboards (e.g., PMO, Resource, Demand). If an implementer turns them all on, users get lost in a sea of irrelevant data. Different stakeholders have different needs: A CFO wants a Financial view, while a Resource Manager wants a Capacity view.</div>
+      <div class="quiz-opt-explains" id="qoptexp3" style="display:none"></div>
+      <details class="quiz-overall" id="qexp3">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) Source ServiceNow Implementation Methodology (SIM) Stakeholder alignment is a core pillar of SPM implementation. Activating unnecessary dashboards leads to &quot;Information Overload&quot; and poor user adoption.1) Correct Answer True2) Detailed Expert Explanation This is more of a consultative/process question than a technical one. SPM (Strategic Portfolio Management) comes with dozens of &quot;Content Pack&quot; dashboards (e.g., PMO, Resource, Demand). If an implementer turns them all on, users get lost in a sea of irrelevant data. Different stakeholders have different needs: A CFO wants a Financial view, while a Resource Manager wants a Capacity view. Asking which should be active ensures the &quot;Signal-to-Noise&quot; ratio remains high.3) Comparative Analysis (Why others are wrong)False: Assuming you know what the customer needs without asking leads to a &quot;Shelfware&quot; implementation where no one uses the tools because they are too cluttered.4) The &quot;Click&quot; Mnemonic Ask before you Activate.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard4">
       <div class="quiz-q"><span class="quiz-q-num">5.</span>A Program Manager wants to see the total &#x27;Actual Cost&#x27; for the entire Program. How is this calculated?</div>
@@ -517,7 +551,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>It is derived from the &#x27;Budget&#x27; field on the Program.</span></li>
       <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>It is calculated only from &#x27;Program Tasks&#x27;.</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp4">Question 60 - Multiple ChoiceQuestion A Program Manager wants to see the total &#x27;Actual Cost&#x27; for the entire Program. How is this calculated?Answer OptionsAnswer (Correct): It is a rollup of the &#x27;Actual Cost&#x27; of all Projects and Demands linked to the Program.Answer: It is manually entered on the Program form.Answer: It is derived from the &#x27;Budget&#x27; field on the Program.Answer: It is calculated only from &#x27;Program Tasks&#x27;.0) SourceServiceNow Documentation - Program Management The documentation confirms that programs act as containers where financials from child entities (Projects and Demands) are aggregated to provide a consolidated view of costs and benefits.1) Correct AnswerIt is a rollup of the &#x27;Actual Cost&#x27; of all Projects and Demands linked to the Program.2) Detailed Expert ExplanationIn ServiceNow’s Strategic Portfolio Management (SPM), a Program is essentially a strategic bucket used to group related Projects and Demands to achieve a common goal.</div>
+      <div class="quiz-opt-explains" id="qoptexp4" style="display:none"></div>
+      <details class="quiz-overall" id="qexp4">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Question 60 - Multiple ChoiceQuestion A Program Manager wants to see the total &#x27;Actual Cost&#x27; for the entire Program. How is this calculated?Answer OptionsAnswer (Correct): It is a rollup of the &#x27;Actual Cost&#x27; of all Projects and Demands linked to the Program.Answer: It is manually entered on the Program form.Answer: It is derived from the &#x27;Budget&#x27; field on the Program.Answer: It is calculated only from &#x27;Program Tasks&#x27;.0) SourceServiceNow Documentation - Program Management The documentation confirms that programs act as containers where financials from child entities (Projects and Demands) are aggregated to provide a consolidated view of costs and benefits.1) Correct AnswerIt is a rollup of the &#x27;Actual Cost&#x27; of all Projects and Demands linked to the Program.2) Detailed Expert ExplanationIn ServiceNow’s Strategic Portfolio Management (SPM), a Program is essentially a strategic bucket used to group related Projects and Demands to achieve a common goal. Because the Program itself doesn&#x27;t typically &quot;execute&quot; work (that happens at the project level), its financial health is a reflection of its constituents.The Actual Cost field on the Program form is a read-only, calculated field. ServiceNow utilizes a &quot;rollup&quot; logic (often triggered by business rules like Recalculate Program Finances) that monitors changes in the underlying records. When a Project records an actual cost—whether through processed expense lines, time cards, or manual updates—that value propagates upward.Technically, the system sums the actual_cost field from all records in the pm_project and dmn_demand tables that have their primary_program field set to that specific Program. This ensures the Program Manager sees a real-time, holistic view of the total spend without having to manually aggregate data from dozens of individual initiatives.3) Comparative Analysis (Why others are wrong)Manual Entry: This is incorrect because ServiceNow prioritizes data integrity through automation. Manual entry would lead to &quot;stale&quot; data and constant human error. In SPM, financials are designed to flow from the bottom (execution) to the top (strategy).Derived from &#x27;Budget&#x27;: Budget and Actual Cost are two different financial dimensions. The Budget is the allocated amount (what you are allowed to spend), while the Actual Cost is the realized spend (what you have actually paid). One does not calculate the other; rather, they are compared to show variance.Calculated only from &#x27;Program Tasks&#x27;: Program Tasks are usually administrative actions (like &quot;Organize Steering Committee Meeting&quot;) and often do not carry the bulk of the project&#x27;s operational costs. Ignoring Projects and Demands would miss 99% of the Program&#x27;s actual financial footprint.4) The &quot;Click&quot; Mnemonic&quot;The Program is the Piggy Bank.&quot; The Piggy Bank doesn&#x27;t make money itself; it only holds the coins (Projects and Demands) you put inside it. To know how much is in the bank, you just sum up the value of every coin inside.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard5">
       <div class="quiz-q"><span class="quiz-q-num">6.</span>Which role should be assigned to a user so they can read and retrieve data from any table of the Release Management application to generate reports?</div>
@@ -527,7 +565,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="2" data-q="5"><span class="quiz-opt-letter">C</span><span>Release admin</span></li>
       <li class="quiz-opt" data-idx="3" data-q="5"><span class="quiz-opt-letter">D</span><span>Release user</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp5">0) Source ServiceNow Documentation: Business stakeholder role https://docs.servicenow.com/bundle/washingtondc-it-business-management/page/product/project-portfolio-suite-with-financials/reference/business-stakeholder-role.html1) Correct Answers Business stakeholder2) Explanation of why they are correct The business_stakeholder role is a cross-product role in ServiceNow. It grants read-only access to data across almost all ITSM and SPM (PPM, Agile, Release) tables. It is specifically designed for users who need to view reports, dashboards, and records to make decisions but do not need to edit records or perform tasks.</div>
+      <div class="quiz-opt-explains" id="qoptexp5" style="display:none"></div>
+      <details class="quiz-overall" id="qexp5">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) Source ServiceNow Documentation: Business stakeholder role https://docs.servicenow.com/bundle/washingtondc-it-business-management/page/product/project-portfolio-suite-with-financials/reference/business-stakeholder-role.html1) Correct Answers Business stakeholder2) <br><br><strong>Explanation of</strong> why they are correct The business_stakeholder role is a cross-product role in ServiceNow. It grants read-only access to data across almost all ITSM and SPM (PPM, Agile, Release) tables. It is specifically designed for users who need to view reports, dashboards, and records to make decisions but do not need to edit records or perform tasks. It covers Release Management read access.3) <br><br><strong>Explanation of</strong> why others are incorrectProject manager: This role (it_project_manager) contains edit rights for projects. While it has some visibility, it is a &quot;fulfiller&quot; role (costs a license) and is not the specific role for just reading/reporting on Release Management.Release admin: This grants full administrative (Edit/Delete/Configure) rights to Release Management, which violates the principle of least privilege if the user only needs to &quot;read and retrieve data.&quot;Release user: This assumes the user is working on releases. It implies edit capabilities for tasks assigned to them.4) How to remember that more easily If the user&#x27;s job is to Watch (Read) but not Touch (Edit), they are a Stakeholder.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard6">
       <div class="quiz-q"><span class="quiz-q-num">7.</span>What activities can the it_project_manger role perform regarding financials?</div>
@@ -537,7 +579,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="2" data-q="6"><span class="quiz-opt-letter">C</span><span>Use and create cost plans, financial baselines, etc., for a demand.</span></li>
       <li class="quiz-opt" data-idx="3" data-q="6"><span class="quiz-opt-letter">D</span><span>Can configure everything.</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp6">0) SourceServiceNow Docs - Project Manager RoleThe documentation specifies that the Project Manager can manage financials for their assigned projects.1) Correct AnswerUse and create cost plans, financial baselines, etc., for a project.2) Detailed Expert ExplanationThe it_project_manager role is scoped to the Project level. They are responsible for the budget of their specific initiative. This includes creating Cost Plans (how we intend to spend), Monetary Requirements, and taking Financial Baselines (snapshots of the budget at a point in time).</div>
+      <div class="quiz-opt-explains" id="qoptexp6" style="display:none"></div>
+      <details class="quiz-overall" id="qexp6">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) SourceServiceNow Docs - Project Manager RoleThe documentation specifies that the Project Manager can manage financials for their assigned projects.1) Correct AnswerUse and create cost plans, financial baselines, etc., for a project.2) Detailed Expert ExplanationThe it_project_manager role is scoped to the Project level. They are responsible for the budget of their specific initiative. This includes creating Cost Plans (how we intend to spend), Monetary Requirements, and taking Financial Baselines (snapshots of the budget at a point in time). While they can see related demands, their primary &quot;write&quot; authority for financials is centered on the pm_project table.3) Comparative AnalysisPortfolio Option: A Project Manager does not have the authority to manage the budget for an entire Portfolio (that requires portfolio_manager).Demand Option: While they might see it, the it_demand_manager is the primary persona for demand-level financials. (<br><br><strong>Note:</strong> Due to role inheritance, they might have access, but their primary activity is project-focused).Configure everything: This is the domain of the it_pps_admin or admin.4) The &quot;Click&quot; MnemonicThe Project Manager is the &quot;Captain of a Ship.&quot; They manage the supplies and gold on their ship, but they don&#x27;t manage the whole Admiral&#x27;s fleet (Portfolio) or the shipyards (Configuration).</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard7">
       <div class="quiz-q"><span class="quiz-q-num">8.</span>How does SPM interact with Enterprise Architecture? (Choose four.) <span class="quiz-choose">(choose 4)</span></div>
@@ -550,7 +596,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="5" data-q="7"><span class="quiz-opt-letter">F</span><span>Store maintenance</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="7" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp7">0) Source ServiceNow Documentation - APM and SPM Integration The Application Portfolio Management (APM) and SPM integration focuses on using project execution to achieve architectural goals.1) Correct Answer Capability planning; App rationalization; Cloud migration; Technology risk2) Detailed Expert Explanation Enterprise Architects use SPM to execute their long-term visions:Capability Planning: Identifying a business gap and starting a Project to build that capability.App Rationalization: Deciding to retire 5 redundant apps and using a Project to manage the decommissioning.Cloud Migration: A massive strategic shift managed as a Program or Portfolio in SPM.Technology Risk: If a version of Java is going end-of-life, the EA team uses SPM to track the project that upgrades all corporate systems.3) Comparative Analysis (Why others are wrong)Risk library: While SPM has a Risk table, the &quot;Risk Library&quot; is usually a GRC (Governance, Risk, and Compliance) function.Store maintenance: This refers to physical retail or the ServiceNow Store, neither of which are core EA functions in this context.4) The &quot;Click&quot; Mnemonic EAs Plan the &quot;What&quot; (Apps/Capabilities), and SPM Executes the &quot;How&quot; (Projects/Migrate).</div>
+      <div class="quiz-opt-explains" id="qoptexp7" style="display:none"></div>
+      <details class="quiz-overall" id="qexp7">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) Source ServiceNow Documentation - APM and SPM Integration The Application Portfolio Management (APM) and SPM integration focuses on using project execution to achieve architectural goals.1) Correct Answer Capability planning; App rationalization; Cloud migration; Technology risk2) Detailed Expert Explanation Enterprise Architects use SPM to execute their long-term visions:Capability Planning: Identifying a business gap and starting a Project to build that capability.App Rationalization: Deciding to retire 5 redundant apps and using a Project to manage the decommissioning.Cloud Migration: A massive strategic shift managed as a Program or Portfolio in SPM.Technology Risk: If a version of Java is going end-of-life, the EA team uses SPM to track the project that upgrades all corporate systems.3) Comparative Analysis (Why others are wrong)Risk library: While SPM has a Risk table, the &quot;Risk Library&quot; is usually a GRC (Governance, Risk, and Compliance) function.Store maintenance: This refers to physical retail or the ServiceNow Store, neither of which are core EA functions in this context.4) The &quot;Click&quot; Mnemonic EAs Plan the &quot;What&quot; (Apps/Capabilities), and SPM Executes the &quot;How&quot; (Projects/Migrate).</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard8">
       <div class="quiz-q"><span class="quiz-q-num">9.</span>True or false? Roles can be nested within one another, and any access granted to a role is extended to any role it encompasses.</div>
@@ -558,7 +608,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="0" data-q="8"><span class="quiz-opt-letter">A</span><span>TRUE</span></li>
       <li class="quiz-opt" data-idx="1" data-q="8"><span class="quiz-opt-letter">B</span><span>FALSE</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp8">0) SourceServiceNow Docs - User RolesDocumentation on role inheritance confirms that a role can contain other roles, creating a hierarchy.1) Correct AnswerTrue2) Detailed Expert ExplanationThis concept is known as Role Inheritance. In ServiceNow, if Role A &quot;contains&quot; Role B, any user assigned Role A automatically receives all the permissions of Role B. For example, the it_project_manager role contains the it_demand_manager and it_pps_admin roles.</div>
+      <div class="quiz-opt-explains" id="qoptexp8" style="display:none"></div>
+      <details class="quiz-overall" id="qexp8">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) SourceServiceNow Docs - User RolesDocumentation on role inheritance confirms that a role can contain other roles, creating a hierarchy.1) Correct AnswerTrue2) Detailed Expert ExplanationThis concept is known as Role Inheritance. In ServiceNow, if Role A &quot;contains&quot; Role B, any user assigned Role A automatically receives all the permissions of Role B. For example, the it_project_manager role contains the it_demand_manager and it_pps_admin roles. This simplifies administration; you don&#x27;t have to assign 50 individual roles to a user; you just assign one &quot;Parent&quot; role that encompasses the others.3) Comparative AnalysisFalse: This would imply that roles are flat and isolated, which would make ServiceNow administration a nightmare of manual entry. The platform is built specifically on a hierarchical permission model.4) The &quot;Click&quot; MnemonicRoles are like Russian Nesting Dolls. The big doll (Parent Role) has all the smaller dolls (Contained Roles) inside it. If you hold the big doll, you have everything inside it too.</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard9">
       <div class="quiz-q"><span class="quiz-q-num">10.</span>Which plugins/apps are needed to fully utilize the capabilities in Resource Management? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
@@ -569,7 +623,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="3" data-q="9"><span class="quiz-opt-letter">D</span><span>Resource Management Workspace</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="9" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp9">0) SourceServiceNow Store: Resource Management WorkspaceThe modern resource management experience requires the core PPM logic (PPM Standard) and the modern UI layer (Resource Management Workspace).1) Correct AnswerPPM StandardResource Management Workspace2) Detailed Expert ExplanationPPM Standard (com.snc.financial_planning and related): This provides the backend tables (Resource Plans, Cost Plans) and the traditional logic.Resource Management Workspace: This is the modern, &quot;Next Experience&quot; app (available via the ServiceNow Store) that provides the capacity planning grid, heatmaps, and the intuitive interface PMs use today.</div>
+      <div class="quiz-opt-explains" id="qoptexp9" style="display:none"></div>
+      <details class="quiz-overall" id="qexp9">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) SourceServiceNow Store: Resource Management WorkspaceThe modern resource management experience requires the core PPM logic (PPM Standard) and the modern UI layer (Resource Management Workspace).1) Correct AnswerPPM StandardResource Management Workspace2) Detailed Expert ExplanationPPM Standard (com.snc.financial_planning and related): This provides the backend tables (Resource Plans, Cost Plans) and the traditional logic.Resource Management Workspace: This is the modern, &quot;Next Experience&quot; app (available via the ServiceNow Store) that provides the capacity planning grid, heatmaps, and the intuitive interface PMs use today. Without both, you either have a powerful engine with no steering wheel (PPM Standard only) or a pretty steering wheel with no engine (Workspace only).3) Comparative Analysis (Why others are wrong)Innovation Management: This is for capturing ideas. While it can lead to projects, it&#x27;s not a &quot;capability&quot; plugin for Resource Management itself.Collaborative Work Management: This is for lightweight, non-PPM task management (like Trello/Asana style). It does not handle heavy resource capacity planning.4) The &quot;Click&quot; Mnemonic&quot;Standard for the Data, Workspace for the View.&quot; You need the standard PPM base and the modern Workspace UI.</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard10">
       <div class="quiz-q"><span class="quiz-q-num">11.</span>How can cost plans be generated from resource assignments? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
@@ -580,17 +638,25 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="3" data-q="10"><span class="quiz-opt-letter">D</span><span>Select the &#x27;Generate cost&#x27; button in Resource Management Workspace</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="10" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp10">0) Source ServiceNow Documentation: Generate Labor Costs1) Correct Answers Select the &#x27;Generate labor costs&#x27; button on Project Workspace; Run a scheduled job to automatically generate labor costs from resource assignments.2) Explanation of why they are correct&#x27;Generate labor costs&#x27; button: In the new Project Workspace, PMs can manually trigger the creation/update of cost plans based on the latest resource assignments and rate models.Scheduled job: To keep financial data accurate without manual intervention, ServiceNow provides a background job that periodically scans resource assignments and generates or updates the corresponding labor cost plans.3) Explanation of why others are incorrectResource Management property: Properties configure how costs are calculated, but they do not generate the cost plan records themselves.Resource Management Workspace: While you manage assignments here, the generation of the financial cost plans associated with a project is typically initiated from the project-centric UI or the system job.4) How to remember that more easily You can do it Manually (Push the button in the Workspace) or Automatically (Let the Scheduled Job do it).</div>
+      <div class="quiz-opt-explains" id="qoptexp10" style="display:none"></div>
+      <details class="quiz-overall" id="qexp10">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) Source ServiceNow Documentation: Generate Labor Costs1) Correct Answers Select the &#x27;Generate labor costs&#x27; button on Project Workspace; Run a scheduled job to automatically generate labor costs from resource assignments.2) <br><br><strong>Explanation of</strong> why they are correct&#x27;Generate labor costs&#x27; button: In the new Project Workspace, PMs can manually trigger the creation/update of cost plans based on the latest resource assignments and rate models.Scheduled job: To keep financial data accurate without manual intervention, ServiceNow provides a background job that periodically scans resource assignments and generates or updates the corresponding labor cost plans.3) <br><br><strong>Explanation of</strong> why others are incorrectResource Management property: Properties configure how costs are calculated, but they do not generate the cost plan records themselves.Resource Management Workspace: While you manage assignments here, the generation of the financial cost plans associated with a project is typically initiated from the project-centric UI or the system job.4) How to remember that more easily You can do it Manually (Push the button in the Workspace) or Automatically (Let the Scheduled Job do it).</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard11">
-      <div class="quiz-q"><span class="quiz-q-num">12.</span>A Portfolio Manager is using the Portfolio Planning Workspace. They want to set a &amp;#x27;Target&amp;#x27; for a Strategic Goal that measures &amp;#x27;Customer Satisfaction&amp;#x27;. They want the target to track a specific currency value. When configuring the Target which table must they select in the &amp;#x27;Source Table&amp;#x27; field to ensure financial data is pulled correctly?</div>
+      <div class="quiz-q"><span class="quiz-q-num">12.</span>A Portfolio Manager is using the Portfolio Planning Workspace. They want to set a &#x27;Target&#x27; for a Strategic Goal that measures &#x27;Customer Satisfaction&#x27;. They want the target to track a specific currency value. When configuring the Target which table must they select in the &#x27;Source Table&#x27; field to ensure financial data is pulled correctly?</div>
       <ul class="quiz-opts">
       <li class="quiz-opt" data-idx="0" data-q="11"><span class="quiz-opt-letter">A</span><span>Target [sn_align_core_target]</span></li>
       <li class="quiz-opt" data-idx="1" data-q="11"><span class="quiz-opt-letter">B</span><span>Benefit Plan [benefit_plan]</span></li>
       <li class="quiz-opt" data-idx="2" data-q="11"><span class="quiz-opt-letter">C</span><span>Cost Plan [cost_plan]</span></li>
       <li class="quiz-opt" data-idx="3" data-q="11"><span class="quiz-opt-letter">D</span><span>Goal [sn_align_core_goal]</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp11">0) Source ServiceNow Docs: Strategic Planning - Set up goals The sn_align_core_target table is the base table for targets in the Goal Framework and Strategic Planning. While targets can pull from &quot;External&quot; tables, the Target record itself is the container for measurement.1) Correct Answer Target [sn_align_core_target]2) Detailed Expert Explanation In the Goal Framework (used by the Portfolio Planning Workspace), &quot;Goals&quot; are high-level outcomes, while &quot;Targets&quot; are the measurable metrics. When you define a Target, you must define where the data comes from. The Source Table field determines the origin of the actual value.</div>
+      <div class="quiz-opt-explains" id="qoptexp11" style="display:none"></div>
+      <details class="quiz-overall" id="qexp11">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) Source ServiceNow Docs: Strategic Planning - Set up goals The sn_align_core_target table is the base table for targets in the Goal Framework and Strategic Planning. While targets can pull from &quot;External&quot; tables, the Target record itself is the container for measurement.1) Correct Answer Target [sn_align_core_target]2) Detailed Expert Explanation In the Goal Framework (used by the Portfolio Planning Workspace), &quot;Goals&quot; are high-level outcomes, while &quot;Targets&quot; are the measurable metrics. When you define a Target, you must define where the data comes from. The Source Table field determines the origin of the actual value. While you can point to external tables like cost_plan if you are tracking financials, the question asks which table must be selected to configure the Target properly to track values. In the context of the Goal Framework&#x27;s internal tracking, the Target record itself holds the definition and value mapping.3) Comparative AnalysisBenefit Plan / Cost Plan: These are sub-components of a project or demand. While they hold financial data, they are not the &quot;Source Table&quot; for a Strategic Goal&#x27;s target by default unless specialized integration is built; they are data providers, not the Target configuration table.Goal: The Goal table is the parent record. It defines the &quot;What&quot; (e.g., Increase Satisfaction) but not the specific &quot;How much&quot; (the target value).4) The &quot;Click&quot; Mnemonic The Goal is the &quot;Destination,&quot; but the Target is the &quot;Speedometer.&quot; You check the speedometer to see if you&#x27;re hitting the number.</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard12">
       <div class="quiz-q"><span class="quiz-q-num">13.</span>Which two plugins must be installed to enable project security settings on a project? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
@@ -601,7 +667,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="3" data-q="12"><span class="quiz-opt-letter">D</span><span>ITSM Enhanced Security Features</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="12" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp12">0) Source ServiceNow Documentation - Project Security To use the &quot;Project Security&quot; tab on the project form (which allows restricting access to specific users/groups), the com.snc.project_management_v2 (PPM Standard) and the com.sncl.ppm_adv_security (Project Advanced Security) plugins are required.1) Correct Answer PPM Standard AND Project Advanced Security2) Detailed Expert Explanation Standard ServiceNow security is role-based (ACLs).</div>
+      <div class="quiz-opt-explains" id="qoptexp12" style="display:none"></div>
+      <details class="quiz-overall" id="qexp12">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) Source ServiceNow Documentation - Project Security To use the &quot;Project Security&quot; tab on the project form (which allows restricting access to specific users/groups), the com.snc.project_management_v2 (PPM Standard) and the com.sncl.ppm_adv_security (Project Advanced Security) plugins are required.1) Correct Answer PPM Standard AND Project Advanced Security2) Detailed Expert Explanation Standard ServiceNow security is role-based (ACLs). However, many organizations need Record-Level Security, where only certain people can see &quot;Project Alpha&quot; even if they have the it_project_user role.PPM Standard provides the base Project framework.Project Advanced Security introduces the &quot;Security&quot; tab and the underlying logic that checks the &quot;Collaborators&quot; or &quot;Project Specific&quot; permissions before allowing a user to view the record.3) Comparative Analysis (Why others are wrong)Test Management 2.0: This is for QA/Testing activities. While it integrates with PPM, it has nothing to do with Project record-level access control.ITSM Enhanced Security Features: This is a generic term; ServiceNow security for PPM is handled within the Business Management (SPM) suite, not the ITSM suite.4) The &quot;Click&quot; Mnemonic For &quot;Lock and Key&quot; on a project, you need the Standard door and the Advanced lock.</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard13">
       <div class="quiz-q"><span class="quiz-q-num">14.</span>Project score is calculated based on the individual scores of the following attributes (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
@@ -612,7 +682,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="3" data-q="13"><span class="quiz-opt-letter">D</span><span>Strategy Score</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="13" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp13">0) Source ServiceNow Documentation: Project Scorecard https://docs.servicenow.com/bundle/washingtondc-it-business-management/page/product/project-management/concept/c_ProjectScorecard.html1) Correct Answers Value Score, Risk Score2) Explanation of why they are correct In ServiceNow SPM, the project score is a weighted average used to rank and prioritize initiatives. The system specifically looks at two primary dimensions:Value Score: Derived from the financial and non-financial benefits defined in the business case or demand.Risk Score: Derived from the risk assessment conducted during the planning phase.</div>
+      <div class="quiz-opt-explains" id="qoptexp13" style="display:none"></div>
+      <details class="quiz-overall" id="qexp13">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) Source ServiceNow Documentation: Project Scorecard https://docs.servicenow.com/bundle/washingtondc-it-business-management/page/product/project-management/concept/c_ProjectScorecard.html1) Correct Answers Value Score, Risk Score2) <br><br><strong>Explanation of</strong> why they are correct In ServiceNow SPM, the project score is a weighted average used to rank and prioritize initiatives. The system specifically looks at two primary dimensions:Value Score: Derived from the financial and non-financial benefits defined in the business case or demand.Risk Score: Derived from the risk assessment conducted during the planning phase. The combination of these two allows the system to calculate an overall &quot;Score&quot; which is then used in the Portfolio Workbench to compare projects (e.g., High Value/Low Risk vs. Low Value/High Risk).3) <br><br><strong>Explanation of</strong> why others are incorrectAlignment Score: While &quot;Alignment&quot; is a critical metric in the Demand workbench (often visualized on a bubble chart), it is typically treated as a separate planning attribute rather than a hard component of the calculated &quot;Project Score&quot; field formula.Strategy Score: Strategy is usually a categorization or a target (Strategic Alignment) but is not a standalone scoring attribute used in the standard pm_project score calculation.4) How to remember that more easily Think of the &quot;Two-Sided Coin&quot; of Investment:What do I get? (Value)What could go wrong? (Risk) These two define the worth of the project.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard14">
       <div class="quiz-q"><span class="quiz-q-num">15.</span>True or false? You can define a scheduled job to automatically create financial baselines for planning items.</div>
@@ -620,7 +694,11 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="0" data-q="14"><span class="quiz-opt-letter">A</span><span>True</span></li>
       <li class="quiz-opt" data-idx="1" data-q="14"><span class="quiz-opt-letter">B</span><span>False</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp14">0) Source ServiceNow Documentation - Financial Baselines The platform allows for the automation of baseline creation via Scheduled Jobs (sys_scheduled_job) to capture &quot;snapshots&quot; of financial data at specific intervals (e.g., month-end).1) Correct Answer True2) Detailed Expert Explanation A Financial Baseline captures a snapshot of the estimated and actual costs/revenues at a specific point in time. While Project Managers often create these manually at major milestones, &quot;True&quot; is the correct answer because ServiceNow is a platform built on a workflow engine. You can easily configure a Scheduled Script Execution to trigger the FinancialBaseline API.</div>
+      <div class="quiz-opt-explains" id="qoptexp14" style="display:none"></div>
+      <details class="quiz-overall" id="qexp14">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">0) Source ServiceNow Documentation - Financial Baselines The platform allows for the automation of baseline creation via Scheduled Jobs (sys_scheduled_job) to capture &quot;snapshots&quot; of financial data at specific intervals (e.g., month-end).1) Correct Answer True2) Detailed Expert Explanation A Financial Baseline captures a snapshot of the estimated and actual costs/revenues at a specific point in time. While Project Managers often create these manually at major milestones, &quot;True&quot; is the correct answer because ServiceNow is a platform built on a workflow engine. You can easily configure a Scheduled Script Execution to trigger the FinancialBaseline API. This is common in mature PMOs that want a &quot;Month-End&quot; snapshot of every active project&#x27;s finances for historical trend analysis without relying on human memory.3) Comparative Analysis (Why others are wrong)False: This would imply the system is restricted to manual intervention only. Since the financial baseline is just a record in a table (fm_financial_baseline), it can be generated by any system-level trigger, including scheduled jobs.4) The &quot;Click&quot; Mnemonic If it&#x27;s a table in ServiceNow, a Job can automate it.</div>
+      </details>
     </div>
     <div class="quiz-score" id="quizScore">
       <div class="quiz-score-num" id="quizScoreNum">0/15</div>
@@ -658,6 +736,37 @@ a:hover { text-decoration: underline; }
   let answered = 0, score = 0;
   const multiSelections = {};
 
+  function showExplanations(qi, isCorrect) {
+    var card = document.getElementById('qcard' + qi);
+    var opts = card.querySelectorAll('.quiz-opt');
+    var correct = Array.isArray(answers[qi]) ? answers[qi] : [answers[qi]];
+    var expContainer = document.getElementById('qoptexp' + qi);
+    var html = '';
+
+    opts.forEach(function(opt, j) {
+      var perExp = opt.getAttribute('data-exp');
+      var isCorr = correct.indexOf(j) !== -1;
+
+      if (perExp) {
+        var label = isCorr ? '<span class="qoe-correct">Correct</span>' : '<span class="qoe-wrong">Incorrect</span>';
+        html += '<div class="quiz-opt-exp ' + (isCorr ? 'qoe-is-correct' : 'qoe-is-wrong') + '">' +
+          '<div class="qoe-header">' + label + ' <span class="qoe-letter">' + 'ABCDEF'[j] + '</span></div>' +
+          '<div class="qoe-text">' + perExp + '</div></div>';
+      }
+    });
+
+    if (html) {
+      expContainer.innerHTML = html;
+      expContainer.style.display = 'block';
+    }
+
+    // Show overall explanation toggle if it has content
+    var overall = document.getElementById('qexp' + qi);
+    if (overall && overall.querySelector('.quiz-overall-content').innerHTML.trim()) {
+      overall.style.display = 'block';
+    }
+  }
+
   document.querySelectorAll('.quiz-opt').forEach(function(opt) {
     opt.addEventListener('click', function() {
       var qi = parseInt(this.dataset.q);
@@ -686,7 +795,7 @@ a:hover { text-decoration: underline; }
         else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
         this.classList.add('selected');
         card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
-        document.getElementById('qexp' + qi).classList.add('show');
+        showExplanations(qi, isCorrect);
         answered++;
         checkDone();
       }
@@ -716,7 +825,7 @@ a:hover { text-decoration: underline; }
       }
       opts.forEach(function(o) { o.setAttribute('disabled',''); });
       this.style.display = 'none';
-      document.getElementById('qexp' + qi).classList.add('show');
+      showExplanations(qi, isCorrect);
       answered++;
       checkDone();
     });

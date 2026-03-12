@@ -340,12 +340,30 @@ a:hover { text-decoration: underline; }
 .quiz-opt.selected .quiz-opt-letter { background: var(--orange); color: #fff; border-color: var(--orange); }
 .quiz-opt.correct .quiz-opt-letter { background: #2ea043; color: #fff; border-color: #2ea043; }
 .quiz-opt.wrong .quiz-opt-letter { background: #d73a49; color: #fff; border-color: #d73a49; }
-.quiz-explain { display: none; margin-top: 12px; padding: 12px 16px; background: var(--bg-card); border-radius: 8px; font-size: 0.9rem; color: var(--text-dim); line-height: 1.6; border-left: 3px solid var(--orange); }
-.quiz-explain.show { display: block; }
+
 .quiz-choose { font-weight: 400; color: var(--orange); font-size: 0.85rem; margin-left: 4px; }
 .quiz-submit-btn { margin-top: 12px; padding: 10px 24px; background: var(--orange); color: #fff; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.15s, transform 0.1s; }
 .quiz-submit-btn:hover { background: #c75400; }
 .quiz-submit-btn:active { transform: scale(0.97); }
+/* Per-option explanations */
+.quiz-opt-explains { margin-top: 12px; display: flex; flex-direction: column; gap: 6px; }
+.quiz-opt-exp { padding: 10px 14px; border-radius: 8px; font-size: 0.88rem; line-height: 1.5; }
+.qoe-is-correct { background: rgba(46,160,67,0.07); border-left: 3px solid #2ea043; }
+.qoe-is-wrong { background: rgba(215,58,73,0.05); border-left: 3px solid #d73a49; }
+.qoe-header { font-weight: 600; margin-bottom: 4px; font-size: 0.82rem; }
+.qoe-correct { color: #2ea043; }
+.qoe-wrong { color: #d73a49; }
+.qoe-letter { color: var(--text-dim); margin-left: 4px; font-weight: 500; }
+.qoe-text { color: var(--text-dim); }
+/* Collapsible overall explanation */
+.quiz-overall { display: none; margin-top: 10px; }
+.quiz-overall[style*="block"] { display: block; }
+.quiz-overall-toggle { cursor: pointer; font-size: 0.88rem; font-weight: 600; color: var(--orange); padding: 8px 0; list-style: none; display: flex; align-items: center; gap: 6px; }
+.quiz-overall-toggle::-webkit-details-marker { display: none; }
+.quiz-overall-toggle::before { content: ''; display: inline-block; width: 0; height: 0; border-left: 5px solid var(--orange); border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform 0.2s; }
+details.quiz-overall[open] .quiz-overall-toggle::before { transform: rotate(90deg); }
+.quiz-overall-content { padding: 12px 16px; background: var(--bg-card); border-radius: 8px; font-size: 0.88rem; color: var(--text-dim); line-height: 1.6; border-left: 3px solid var(--orange); margin-top: 6px; }
+
 .quiz-score { margin-top: 24px; padding: 20px; background: var(--bg-raised); border-radius: 12px; border: 1px solid var(--border); text-align: center; display: none; }
 .quiz-score.show { display: block; }
 .quiz-score-num { font-size: 2rem; font-weight: 800; color: var(--orange); }
@@ -472,109 +490,150 @@ a:hover { text-decoration: underline; }
     <h2>Try 15 Free HRSD Questions</h2>
     <p class="quiz-intro">Test your knowledge before you buy — including multiple-choice and multi-select, just like the real exam.</p>
     <div class="quiz-card" id="qcard0">
-      <div class="quiz-q"><span class="quiz-q-num">1.</span>What are the different methods for an HR professional to create a new HR Case in ServiceNow, and what are some features of these methods?</div>
+      <div class="quiz-q"><span class="quiz-q-num">1.</span>What constitutes an HR Case in ServiceNow and what are some of the tasks that HR professionals can perform with it?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>HR Cases can only be created via the HR Case List View, with no direct creation from the HR Profile or Agent Workspace.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>New HR Cases must be created outside ServiceNow and imported through data integration processes.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>HR professionals can create a new HR Case using the Create New Case module, from the HR Profile, through the HR Case List View, or via the Agent Workspace, with specific features like auto-population of search fields and transfer of interaction transcripts.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>Creating a new HR Case requires HR professionals to manually type in all employee information every time, with no auto-population of fields from the HR Profile.</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>HR Cases are only for storing confidential employee information and cannot be used to track HR requests or tasks.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>An HR Case is a record of an IT issue and is unrelated to HR requests or employee interactions.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>HR Cases are for time tracking and payroll processing exclusively, without involving any other HR services or tasks.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>An HR Case is used to record and interact with employee HR requests, and can include tasks like creating cases for HR processes, automating onboarding/offboarding, and managing HR workload.</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp0">Source: HR Fundamentals Ebook -&gt; Module 3 -&gt; HR Case -&gt; HR Professional Creates HR CaseCorrect Answer:HR professionals can create a new HR Case using the Create New Case module, from the HR Profile, through the HR Case List View, or via the Agent Workspace, with specific features like auto-population of search fields and transfer of interaction transcripts.</div>
+      <div class="quiz-opt-explains" id="qoptexp0" style="display:none"></div>
+      <details class="quiz-overall" id="qexp0">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content"><br><br><strong>Source:</strong> HR Fundamentals Ebook -&gt; Module 3 -&gt; HR Case -&gt; What is an HR Case ?Correct Answer:An HR Case is used to record and interact with employee HR requests, and can include tasks like creating cases for HR processes, automating onboarding/offboarding, and managing HR workload. This answer is correct as it aligns with the source&#x27;s description of HR Cases and the activities that HR professionals can perform within them.Incorrect Answers:HR Cases are only for storing confidential employee information and cannot be used to track HR requests or tasks. This is incorrect because, according to the source, HR Cases are used for interacting with employee HR requests and include additional components like fulfillment instructions and checklists.An HR Case is a record of an IT issue and is unrelated to HR requests or employee interactions. This is incorrect as HR Cases pertain to HR requests and not IT issues.HR Cases are for time tracking and payroll processing exclusively, without involving any other HR services or tasks. This is incorrect as the source indicates that HR Cases encompass a broader range of HR tasks.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard1">
-      <div class="quiz-q"><span class="quiz-q-num">2.</span>Which scoped Admin role would they need, If you wanted someone to administer the Employee Service Center without granting them the HR Admin role ?</div>
+      <div class="quiz-q"><span class="quiz-q-num">2.</span>On the New Case Creation page, how can fields for a specific HR Service be displayed ?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>Service Portal Admin [sn_hr_sp.admin]</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>Widget Admin [sn_hr_widget.admin]</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>Employee Files Admin [sn_hr_ef.admin]</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>Integrations Admin [sn_hr_integrations.admin]</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>HR Service-specific fields cannot be added to the New Case Creation page</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>Using the Case Creation Service Configurations</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>Using the Case Options field on the HR Service</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>Using the HR Criteria module</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp1">SourceCorrect Answer:Service Portal Admin [sn_hr_sp.admin]Explanation:The Service Portal Admin role is specifically designed to manage the Employee Service Center (ESC). Those with this role can edit pages, widgets, and content within the ESC. This aligns with the ServiceNow documentation on HR Service Delivery roles.Incorrect Answers:Widget Admin [sn_hr_widget.admin]: This role focuses on managing widgets across the platform, not specifically the Employee Service Center.Employee Files Admin [sn_hr_ef.admin]: This role handles the management of employee files and documents, rather than the overall ESC.Integrations Admin [sn_hr_integrations.admin]: This role deals with integrations into the HR application, not the administration of the ESC.</div>
+      <div class="quiz-opt-explains" id="qoptexp1" style="display:none"></div>
+      <details class="quiz-overall" id="qexp1">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">SourceFields for a specific HR Service can be displayed on the New Case Creation page through the use of Case Creation Service Configurations. These configurations allow the customization of the form that appears when an HR agent selects an HR service from the Create New Case module. Here, additional fields can be included on the HR case creation form, enabling HR agents to collect relevant information at the onset of a case.So the correct option is:Using the Case Creation Service Configurations.Correct:Using the Case Creation Service Configurations - The Case Creation Service Configuration records associated with an HR Service are specifically designed to customize the new case form. These records define which additional fields are displayed when an HR agent is creating a new case, ensuring all pertinent information is captured upfront.Incorrect:HR Service-specific fields cannot be added to the New Case Creation page - This option is incorrect because the ServiceNow platform does allow for customization of the case creation page specific to HR Services via Case Creation Service Configurations.Using the Case Options field on the HR Service - While the HR Service record contains many configurations, the Case Options field is not the mechanism by which fields are added to the new case creation page.Using the HR Criteria module - The HR Criteria module is used to control access to HR Services based on certain conditions or employee attributes. It does not directly determine the fields displayed on the new case creation page.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard2">
-      <div class="quiz-q"><span class="quiz-q-num">3.</span>What are the three methods of generating HR documents in ServiceNow, and how do they differ?</div>
+      <div class="quiz-q"><span class="quiz-q-num">3.</span>What is the function of the &#x27;Showcase to Subject Person&#x27; field in the context of HR Cases in ServiceNow, and how does it impact information access?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>Documents are only generated manually by HR after all participant approvals are collected, with no automated or multi-signature processes.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>HR documents can be generated automatically for simple acknowledgments, through a multi-signature process for documents requiring several approvals, or with a preview and sign option for HR review before sending.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>All HR documents in ServiceNow require multiple signatures, and there are no automatic or preview options available.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>ServiceNow generates HR documents exclusively through an automated process, without the need for signatures or HR professional intervention.</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>The &#x27;Showcase to Subject Person&#x27; field is designed to display the HR case to all employees in the organization for transparency purposes.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>When the &#x27;Showcase to Subject Person&#x27; field is checked, it enables HR cases to be visible in company-wide reports and dashboards.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>The &#x27;Showcase to Subject Person&#x27; field, when checked, makes the HR Case visible to the Subject Person, allowing them to see case details they are involved in, enhancing transparency and communication.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>Checking the &#x27;Showcase to Subject Person&#x27; field hides the HR case from everyone except the HR team to maintain confidentiality.</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp2">Source: HR Fundamentals Ebook -&gt; Module 3 -&gt; HR Case -&gt; HR Document GenerationCorrect Answer:HR documents can be generated automatically for simple acknowledgments, through a multi-signature process for documents requiring several approvals, or with a preview and sign option for HR review before sending.</div>
+      <div class="quiz-opt-explains" id="qoptexp2" style="display:none"></div>
+      <details class="quiz-overall" id="qexp2">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content"><br><br><strong>Source:</strong> HR Fundamentals Ebook -&gt; Module 3 -&gt; HR Case -&gt; Opened For &amp; Subject PersonCorrect Answer:The &#x27;Showcase to Subject Person&#x27; field, when checked, makes the HR Case visible to the Subject Person, allowing them to see case details they are involved in, enhancing transparency and communication. This is correct according to the typical functionality of such a field, where checking the box would allow the individual who is the subject of the HR case to view the case details, thus being informed about the actions taken or pending in their case.Incorrect Answers:The &#x27;Showcase to Subject Person&#x27; field is designed to display the HR case to all employees in the organization for transparency purposes. This is incorrect as the field is specifically about visibility to the Subject Person, not to the entire organization.When the &#x27;Showcase to Subject Person&#x27; field is checked, it enables HR cases to be visible in company-wide reports and dashboards. This is incorrect because the field relates to individual case visibility, not visibility in reports and dashboards.Checking the &#x27;Showcase to Subject Person&#x27; field hides the HR case from everyone except the HR team to maintain confidentiality. This is the opposite of the field&#x27;s purpose, which is to provide visibility to the Subject Person.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard3">
-      <div class="quiz-q"><span class="quiz-q-num">4.</span>What field must be completed on the HR Service, if HR Services needs to be accessible to employees on the Employee Service Center ?</div>
+      <div class="quiz-q"><span class="quiz-q-num">4.</span>How is HR application called in ServiceNow currently?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>Checklist</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>Fulfiller Instructions</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>Lifecycle Event type</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>Record Producer</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>HRDS - HR Deliver Service</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>HRSM - HR Service Management</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>HRMS - HR Management System</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>HRSD - HR Service Delivery</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="3"><span class="quiz-opt-letter">E</span><span>SNOW</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp3">Source: eBook for Human Resources Service Delivery (HRSD) Fundamentals On Demand Module 3 -&gt; HR Services -&gt; Create an HR ServiceCorrect answer:Record ProducerExplanation:HR Services that are meant to be available to employees as self-service options on the Employee Service Center require a Record Producer. A Record Producer is a form that, when submitted, creates a record in a table, in this case, an HR Service record.The Record Producer essentially serves as the interface for the employee to interact with the HR Service catalog, providing them with the necessary fields to submit their request or case. This is the element that translates a form submission into an actionable item within the ServiceNow system.</div>
+      <div class="quiz-opt-explains" id="qoptexp3" style="display:none"></div>
+      <details class="quiz-overall" id="qexp3">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">SourceThe correct answer is HRSD - HR Service DeliveryWhile the other options might seem plausible, ServiceNow consistently uses the term HRSD (HR Service Delivery) to refer to its suite of HR applications and services.Here&#x27;s why the other options aren&#x27;t the official name:HRDS - HR Deliver Service: This is close but doesn&#x27;t align with ServiceNow&#x27;s terminology.HRSM - HR Service Management: This term could be used more broadly to describe the concept of managing HR services, but it&#x27;s not the specific name of ServiceNow&#x27;s application.HRMS - HR Management System: This is a generic term that could apply to various HR software, not just ServiceNow&#x27;s offering.SNOW - SERVICENOW is not SNOW. Everyone confuse ServiceNow and SNOW, even tho those are different technologies :D</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard4">
-      <div class="quiz-q"><span class="quiz-q-num">5.</span>How is HR application called in ServiceNow currently?</div>
+      <div class="quiz-q"><span class="quiz-q-num">5.</span>What determines the conditions a Case must meet before it can be assigned to an agent in the base instance ?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>HRDS - HR Deliver Service</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>HRSM - HR Service Management</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>HRMS - HR Management System</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>HRSD - HR Service Delivery</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="4"><span class="quiz-opt-letter">E</span><span>SNOW</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>Matching Rules</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>Client Rules</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>ACLs</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>Escalation Rules</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp4">SourceThe correct answer is HRSD - HR Service DeliveryWhile the other options might seem plausible, ServiceNow consistently uses the term HRSD (HR Service Delivery) to refer to its suite of HR applications and services.Here&#x27;s why the other options aren&#x27;t the official name:HRDS - HR Deliver Service: This is close but doesn&#x27;t align with ServiceNow&#x27;s terminology.HRSM - HR Service Management: This term could be used more broadly to describe the concept of managing HR services, but it&#x27;s not the specific name of ServiceNow&#x27;s application.HRMS - HR Management System: This is a generic term that could apply to various HR software, not just ServiceNow&#x27;s offering.SNOW - SERVICENOW is not SNOW. Everyone confuse ServiceNow and SNOW, even tho those are different technologies :D</div>
+      <div class="quiz-opt-explains" id="qoptexp4" style="display:none"></div>
+      <details class="quiz-overall" id="qexp4">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">SourceThe correct answer is Matching Rules.Here&#x27;s why:Matching Rules in Case Assignment: Matching Rules define the criteria used to determine which agents are eligible and best suited to be assigned a particular case. They consider factors like:Agent Availability: Are they currently working their shift?Skills: Do they have the skills required for the case?Workload: How many open cases do they already have?Other Options:Client Rules: These are used in ServiceNow but generally control what clients (external users) can see or do within Service Portals, not HR case assignment.ACLs (Access Control Lists): ACLs are fundamental to security, but they determine broader read/write access, not the specifics of case assignment logic.Escalation Rules: These come into play when cases haven&#x27;t been resolved within a certain timeframe and actions need to be triggered (reassignment, notifications, etc.).Key Point: Matching rules allow for fine-grained control over how cases are matched to the most appropriate HR agents.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard5">
-      <div class="quiz-q"><span class="quiz-q-num">6.</span>How are Client Roles utilized in ServiceNow for different types of employees, and what is their significance?</div>
+      <div class="quiz-q"><span class="quiz-q-num">6.</span>What is the purpose of the &#x27;Assignable by&#x27; attribute in ServiceNow role management, and how does it affect the assignment of roles?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="5"><span class="quiz-opt-letter">A</span><span>Client Roles are manually assigned by HR administrators to provide employees access to the Employee Portal.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="5"><span class="quiz-opt-letter">B</span><span>All employees receive the same Client Role for access to the HR application regardless of their employment type.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="5"><span class="quiz-opt-letter">C</span><span>Client Roles are automatically assigned by the system based on the HR Profile, with specific roles for access to the Service Portal or HR applications, designated for different employment types.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="5"><span class="quiz-opt-letter">D</span><span>Client Roles are only assigned to HR Professionals and not to other employee types like contractors or contingent workers.</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="5"><span class="quiz-opt-letter">A</span><span>The &#x27;Assignable by&#x27; attribute allows any user to add roles to other users indiscriminately.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="5"><span class="quiz-opt-letter">B</span><span>It restricts role assignment such that only users with an HR role can assign roles to others within the HR application.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="5"><span class="quiz-opt-letter">C</span><span>&#x27;Assignable by&#x27; is a feature that automatically assigns roles to users when they are added to a group, with no restrictions.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="5"><span class="quiz-opt-letter">D</span><span>The &#x27;Assignable by&#x27; attribute ensures that only users with a specific role can assign that role to others, thereby enforcing HR privacy rules.</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp5">Source: HR Fundamentals Ebook -&gt; Module 2 -&gt; HR Groups and Roles -&gt; Client Roles are Automatically Assigned by the SystemCorrect Answer:Client Roles are automatically assigned by the system based on the HR Profile, with specific roles for access to the Service Portal or HR applications, designated for different employment types. Client roles are automatically assigned based on HR Profile information, and the roles differ for access to various parts of the system depending on the employee&#x27;s type and role.Incorrect Answers:Client Roles are manually assigned by HR administrators to provide employees access to the Employee Portal.</div>
+      <div class="quiz-opt-explains" id="qoptexp5" style="display:none"></div>
+      <details class="quiz-overall" id="qexp5">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content"><br><br><strong>Source:</strong> HR Fundamentals Ebook -&gt; Module 2 -&gt; HR Groups and Roles -&gt; Assign Users and Roles to GroupsCorrect Answer:The &#x27;Assignable by&#x27; attribute ensures that only users with a specific role can assign that role to others, thereby enforcing HR privacy rules. This is correct according to the screenshot, which states that to enforce HR privacy rules, the &#x27;Assignable by&#x27; attribute allows only users in that role to add the role to others.Incorrect Answers:The &#x27;Assignable by&#x27; attribute allows any user to add roles to other users indiscriminately. This is incorrect because the &#x27;Assignable by&#x27; attribute is specifically designed to restrict who can assign roles.It restricts role assignment such that only users with an HR role can assign roles to others within the HR application. This statement is too broad as the &#x27;Assignable by&#x27; attribute is role-specific, not generally applicable to anyone with an HR role.&#x27;Assignable by&#x27; is a feature that automatically assigns roles to users when they are added to a group, with no restrictions. This is incorrect because &#x27;Assignable by&#x27; does not automate role assignments; it restricts who can assign roles.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard6">
-      <div class="quiz-q"><span class="quiz-q-num">7.</span>With an HR Service how many COEs can be associated ?</div>
+      <div class="quiz-q"><span class="quiz-q-num">7.</span>Imagine you have little coding experience and were tasked with adding new pages to the customer’s Employee Service Center.In that case which Service Portal Configuration option would be best to complete the task?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="6"><span class="quiz-opt-letter">A</span><span>3</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="6"><span class="quiz-opt-letter">B</span><span>1</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="6"><span class="quiz-opt-letter">C</span><span>unlimited</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="6"><span class="quiz-opt-letter">D</span><span>10</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="6"><span class="quiz-opt-letter">A</span><span>Page Editor</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="6"><span class="quiz-opt-letter">B</span><span>Designer</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="6"><span class="quiz-opt-letter">C</span><span>Widget Editor</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="6"><span class="quiz-opt-letter">D</span><span>Branding Editor</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp6">Source: eBook for Human Resources Service Delivery (HRSD) Fundamentals On Demand Module 3 -&gt; HR Case -&gt; HR Table StructureThe correct answer is 1.In ServiceNow&#x27;s HR Service Delivery application, there&#x27;s a one-to-one relationship between HR Services and Centers of Excellence (COEs). Here&#x27;s why:COE Purpose: COEs represent specific areas of expertise within HR (Benefits, Payroll, Talent Management, etc.).HR Service Focus: Each HR Service is designed to represent a distinct type of HR request or process.Clear Ownership: Associating a single COE with an HR Service ensures clarity of responsibility for configuration, workflows, and knowledge related to that service.</div>
+      <div class="quiz-opt-explains" id="qoptexp6" style="display:none"></div>
+      <details class="quiz-overall" id="qexp6">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">SourceSummary of RecommendationWhen you have minimal coding experience and need to add new pages to an Employee Service Center portal, the Service Portal Designer is the optimal tool. It provides a low‑code, drag‑and‑drop interface where you can click Add a new page, choose layouts, and assemble widgets without writing Angular or server‑side scriptsService Portal Configuration OptionsService Portal DesignerFrom the Service Portal Designer, you can select an existing page to customize or click Add a new page to create a fresh page record, set its title and ID, then drag containers and widgets onto the layout. This tool abstracts coding details and gives you visual controls for page structure, styling, and content.Page EditorThe Page Editor offers a tree‑view of all page components—sections, containers, and widgets—so you can drill into each element’s settings. While it’s useful for detailed tweaks, it does not include the “Add a new page” wizard, making it less ideal for creating new pages when you lack coding skills.Widget EditorThe Widget Editor is the dedicated code‑editing environment for writing HTML, CSS, client‑script, and server‑script to render custom widgets. It assumes proficiency with AngularJS and ServiceNow’s scripting APIs, so it’s not suited to users with little coding experience.Branding EditorThe Branding Editor is strictly for portal theming—logos, colors, fonts, and page templates—across the portal. It does not let you add or arrange pages or widgets, so it does not address page creation requirements.Why Designer Is Best for Non‑CodersLow‑code page creation: The Designer’s “Add a new page” button streamlines page setup without scripting.Visual layout tools: Drag containers and widgets directly onto the canvas, with real‑time previews Built‑in templates: Quickly apply baseline templates and adjust sections, reducing manual configuration.In contrast, the Page Editor focuses on component hierarchies, and the Widget Editor requires custom code. The Branding Editor only handles look‑and‑feel settings.Final AnswerUse the Service Portal Designer. It’s the lowest‑code, most direct way to add new pages to an Employee Service Center portal without deep scripting knowledge.</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard7">
-      <div class="quiz-q"><span class="quiz-q-num">8.</span>Configuration View displays which of the following for a Category in the HR Guided Setup Module? (Choose 3) <span class="quiz-choose">(choose 3)</span></div>
+      <div class="quiz-q"><span class="quiz-q-num">8.</span>Which of the following methods can be used to create HR Profiles in ServiceNow? (Choose 4) <span class="quiz-choose">(choose 4)</span></div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="7"><span class="quiz-opt-letter">A</span><span>Properties</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="7"><span class="quiz-opt-letter">B</span><span>Gauges</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="7"><span class="quiz-opt-letter">C</span><span>Dashboards</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="7"><span class="quiz-opt-letter">D</span><span>Lists</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="7"><span class="quiz-opt-letter">E</span><span>Overviews</span></li>
-      <li class="quiz-opt" data-idx="5" data-q="7"><span class="quiz-opt-letter">F</span><span>Forms</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="7"><span class="quiz-opt-letter">A</span><span>Generate Individual HR Profile</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="7"><span class="quiz-opt-letter">B</span><span>Generate Multiple HR Profiles</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="7"><span class="quiz-opt-letter">C</span><span>Import from a spreadsheet</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="7"><span class="quiz-opt-letter">D</span><span>Third-party Integration</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="7"><span class="quiz-opt-letter">E</span><span>Manual entry by each employee</span></li>
+      <li class="quiz-opt" data-idx="5" data-q="7"><span class="quiz-opt-letter">F</span><span>Automated script in the System Policy module</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="7" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp7">Source: eBook for Human Resources Service Delivery (HRSD) Implementation On Demand Module 2 -&gt; Core HRSD Configuration -&gt; Guided SetupIn the HR Guided Setup Module of ServiceNow, the Configuration View is designed to help configure various categories by displaying forms, lists, or properties of tasks for a category.</div>
+      <div class="quiz-opt-explains" id="qoptexp7" style="display:none"></div>
+      <details class="quiz-overall" id="qexp7">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content"><br><br><strong>Source:</strong> eBook for Human Resources Service Delivery (HRSD) Fundamentals On Demand Module 2 -&gt; HR Profiles -&gt; How are HR Profiles Created ?Correct Answers:Generate Individual HR Profile - HR Profiles can be created for individual employees directly from their User record by using the Create Human Resources Profile related link.Generate Multiple HR Profiles - The system allows for the creation of multiple HR Profiles at once using the Generate HR Profiles module, suitable for batch processing of employee data.Import from a spreadsheet - Only a system administrator or delegated developer may import HR Profile information from a spreadsheet, allowing for bulk updates and creation.Third-party Integration - HR Profiles can be populated through an integration with external HR systems, managed by a system administrator or delegated developer.Incorrect Answers:Manual entry by each employee - Individual employees typically do not create their own HR Profiles manually; this is managed by HR professionals.Automated script in the System Policy module - This method is not mentioned as a standard way to create HR Profiles within the provided screen or common practice in ServiceNow.HR Case Management - While HR cases may be related to HR Profiles, they are not a method for creating HR Profiles. Cases typically handle specific inquiries or issues related to employees.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard8">
-      <div class="quiz-q"><span class="quiz-q-num">9.</span>Document revision field must be completed when creating a PDF Document template.How does the system determine which documents are available to be selected for this field?</div>
+      <div class="quiz-q"><span class="quiz-q-num">9.</span>Users with only which role, at minimum, can view the confidential data on the HR Profiles table?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="8"><span class="quiz-opt-letter">A</span><span>You must be a member of the Owning Group for the Managed Document</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="8"><span class="quiz-opt-letter">B</span><span>All Documents are visible</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="8"><span class="quiz-opt-letter">C</span><span>Your group memberships and the Document owner field on the Managed Document record</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="8"><span class="quiz-opt-letter">D</span><span>You must have created the Managed Document record</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="8"><span class="quiz-opt-letter">A</span><span>Profile Writer [sn_hr_core.profile_writer]</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="8"><span class="quiz-opt-letter">B</span><span>Profile Reader [sn_hr_core.profile_reader]</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="8"><span class="quiz-opt-letter">C</span><span>HR Case Writer [sn_hr_le.case_writer]</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="8"><span class="quiz-opt-letter">D</span><span>HR Case Reader [sn_hr_le.case_reader]</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp8">SourceThe correct answer is Your group memberships and the Document owner field on the Managed Document record.Here&#x27;s a breakdown of why:Visibility in the Document Revision Field: When selecting the Document Revision in a PDF Document Template, the system limits the available options to ensure you only see documents you have permission to access.Factors Determining Visibility:Your Group Memberships: If you belong to groups that have been granted access to the Managed Document record, you&#x27;ll be able to see its revisions.Document Owner: If the Managed Document record has an Owner field populated, and you match the owner or belong to the same group as the owner, you&#x27;ll see the revisions.Why Other Options Are Incorrect:You must be a member of the Owning Group for the Managed Document: While the Owning Group does play a role in Managed Documents access, it&#x27;s not the sole determining factor.</div>
+      <div class="quiz-opt-explains" id="qoptexp8" style="display:none"></div>
+      <details class="quiz-overall" id="qexp8">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content"><br><br><strong>Source:</strong> eBook for Human Resources Service Delivery (HRSD) Fundamentals On Demand Module 2 -&gt; HR Profiles -&gt; Access to Confidential Information is RestrictedCorrect answer:Profile Reader [sn_hr_core.profile_reader].By default, the HR Profile record stores confidential or personal employee data and that Profile Reader [sn_hr_core.profile_reader] is the minimum role required to view this confidential data.Here&#x27;s a breakdown of why the other options are incorrect:Profile Writer [sn_hr_core.profile_writer]: While Profile Writers can modify HR Profile data, the question specifically asks about viewing confidential data. Reader access might be sufficient.HR Case Writer [sn_hr_core.case_writer] and HR Case Reader [sn_hr_le.case_reader]: These roles are primarily associated with managing HR Cases, not directly viewing confidential HR Profile information.</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard9">
-      <div class="quiz-q"><span class="quiz-q-num">10.</span>What determines the availability of specific Response Templates on an HR Case form? (Choose 2) <span class="quiz-choose">(choose 2)</span></div>
+      <div class="quiz-q"><span class="quiz-q-num">10.</span>Choose banefits of HR application being scoped. (Choose 3) <span class="quiz-choose">(choose 3)</span></div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="9"><span class="quiz-opt-letter">A</span><span>The conditions set on the Response Template itself.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="9"><span class="quiz-opt-letter">B</span><span>The HR Service linked to the HR Case.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="9"><span class="quiz-opt-letter">C</span><span>The HR Criteria associated with the employee submitting the case.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="9"><span class="quiz-opt-letter">D</span><span>The group visibility settings on the Response Template.</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="9"><span class="quiz-opt-letter">A</span><span>Provides an additional layer of control over HR data.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="9"><span class="quiz-opt-letter">B</span><span>Allows HR Admins to configure the HR application.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="9"><span class="quiz-opt-letter">C</span><span>HR department has more autonomy to manage all aspects of HRSD.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="9"><span class="quiz-opt-letter">D</span><span>Allows the System Administrator complete control.</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="9"><span class="quiz-opt-letter">E</span><span>HR department has full control of the global application.</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="9" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp9">Source: eBook for Human Resources Service Delivery (HRSD) Fundamentals On Demand Module 3 -&gt; HR Case -&gt; Response TemplatesCorrect:The conditions set on the Response Template itself. - The table and conditions set on the Response Template record dictate which Response Templates are presented for use on an HR Case, ensuring that only relevant templates are displayed based on the specifics of the case.The group visibility settings on the Response Template.</div>
+      <div class="quiz-opt-explains" id="qoptexp9" style="display:none"></div>
+      <details class="quiz-overall" id="qexp9">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content"><br><br><strong>Source:</strong> eBook for Human Resources Service Delivery (HRSD) Fundamentals On Demand Module 1 -&gt; ServiceNow HR Service Delivery (HRSD) Overview -&gt; Human Resource Applications are ScopedCorrect:Provides an additional layer of control over HR data: Scoping the HR application ensures that HR data is encapsulated within its own domain, thereby preventing unauthorized access or changes by other parts of the ServiceNow platform.Allows HR Admins to configure the HR application: Within a scoped application, HR administrators have the capability to manage and configure HR services according to the needs of the HR department, without necessarily requiring intervention from IT.HR department has more autonomy to manage all aspects of HRSD: Scoping provides the HR department with autonomy over its application, allowing HR to make decisions and changes within HRSD independently of IT or other departments.Incorrect:Allows the System Administrator complete control: This is incorrect because, in a scoped application, the System Administrator&#x27;s access to modify HR data is restricted to ensure data integrity and privacy.HR department has full control of the global application: This is incorrect as the scoping specifically limits control to the HR application and does not grant the HR department control over the global application. It isolates the HR application from other global applications and allows for managing within the scoped boundaries.</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard10">
       <div class="quiz-q"><span class="quiz-q-num">11.</span>Which of the following describes ServiceNow’s Encryption process when data is in transit? (Choose 3) <span class="quiz-choose">(choose 3)</span></div>
@@ -587,17 +646,25 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="5" data-q="10"><span class="quiz-opt-letter">F</span><span>Prevents users from entering personal information in an HR case</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="10" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp10">SourceCorrect Answers:Scrambles information to prevent its decoding or use - This is the core function of encryption, which is essential for data in transit. ServiceNow uses industry-standard encryption protocols like TLS (Transport Layer Security) to protect data moving between client devices and servers.Requires an administrator to grant an encryption context to a role - ServiceNow&#x27;s encryption involves encryption contexts, which are like administrative &quot;containers&quot; that define what data gets encrypted and who has the keys to decrypt it.</div>
+      <div class="quiz-opt-explains" id="qoptexp10" style="display:none"></div>
+      <details class="quiz-overall" id="qexp10">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">SourceCorrect Answers:Scrambles information to prevent its decoding or use - This is the core function of encryption, which is essential for data in transit. ServiceNow uses industry-standard encryption protocols like TLS (Transport Layer Security) to protect data moving between client devices and servers.Requires an administrator to grant an encryption context to a role - ServiceNow&#x27;s encryption involves encryption contexts, which are like administrative &quot;containers&quot; that define what data gets encrypted and who has the keys to decrypt it. Roles need to be assigned to an encryption context for its members to be able to work with encrypted data.Prevents text fields and attachments from being indexed - Encrypted fields and attachments lose their searchability once encrypted. This is a trade-off between security and convenience, as you usually can&#x27;t search the content of encrypted data.Incorrect AnswersExcludes HR tables from system cloning - While you might choose to exclude sensitive HR data when cloning a ServiceNow instance, this is not directly part of the intrinsic encryption process.Prevents access to specific tables - Encryption can make data unreadable, helping to enforce access restrictions if a breach happens. However, table-level access is based on roles and permissions, not encryption itself.Prevents users from entering personal information in an HR case - This could be a policy enforced through field-level configurations or user training, but not a direct capability of encryption.Key Points about ServiceNow Encryption:Data at Rest: ServiceNow also offers strong encryption options for data at rest (stored in the database), such as Edge Encryption and database encryption.TLS: TLS is the standard protocol for protecting web communication (like when you&#x27;re using the ServiceNow web interface) and is used to secure data in transit.Trade-offs: Encryption always involves trade-offs. Encrypting more data increases security but can impact performance and make it harder to search and work with that data.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard11">
-      <div class="quiz-q"><span class="quiz-q-num">12.</span>In HR Integrations application what role is required to access the modules?</div>
+      <div class="quiz-q"><span class="quiz-q-num">12.</span>What must first be done if you have both Admin and HR Admin roles and you wanted to configure an Access Control for the Employee Relations Cases table ?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="11"><span class="quiz-opt-letter">A</span><span>HR Lifecycle Event Case Writer [sn_hr_le.case_writer]</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="11"><span class="quiz-opt-letter">B</span><span>HR Core Profile Reader [sn_hr_core.profile_reader]</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="11"><span class="quiz-opt-letter">C</span><span>Admin [admin]</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="11"><span class="quiz-opt-letter">D</span><span>HR Integrations Admin [sn_hr_integrations.admin]</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="11"><span class="quiz-opt-letter">A</span><span>Add the Delegated Developer role to your User record</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="11"><span class="quiz-opt-letter">B</span><span>From the User dropdown in the banner, elevate your role to security_admin</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="11"><span class="quiz-opt-letter">C</span><span>Manually add the security_admin role to your User record</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="11"><span class="quiz-opt-letter">D</span><span>Nothing would need to be done</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp11">Source: eBook for Human Resources Service Delivery (HRSD) Implementation On Demand Module 5 -&gt; Delegated Development -&gt; Role Security: RolesThe correct answer is HR Integrations Admin [sn_hr_integrations.admin].Here&#x27;s why:HR Integrations Specificity: The HR Integrations application is designed to manage integrations between ServiceNow HRSD and external systems.</div>
+      <div class="quiz-opt-explains" id="qoptexp11" style="display:none"></div>
+      <details class="quiz-overall" id="qexp11">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">SourceCorrect answer:From the User dropdown in the banner, elevate your role to security_admin.Explanation:In ServiceNow, the security_admin role is specifically required to create or modify Access Controls (ACLs). This role provides the necessary permissions to manage the security rules that define access to data and operations within the system.Even if a user has the Admin and HR Admin roles, these roles alone do not automatically grant the permissions needed to configure ACLs. The security_admin role is distinct and encompasses the authority to control access at a granular level.The process of &quot;elevating your role&quot; involves temporarily activating higher-level permissions (such as security_admin) for your session without the need to permanently assign the role to your user record. This is a security feature in ServiceNow designed to minimize the risk associated with having powerful permissions active at all times.Elevating to the security_admin role is done through the User dropdown in the banner, a mechanism provided by ServiceNow to enhance security by ensuring that sensitive permissions are only used when necessary and are not always &#x27;on&#x27; for a user session.Why not &quot;Manually add the security_admin role to your User record&#x27; ?Because only Security Admin can give security_admin role, in question it is stated you have Admin and HR Admin. There is nothing about You being elevated to security_admin.On the other hand you have to elevate yourself to security_admin in order to configure ACL therefore &quot;From the User dropdown in the banner, elevate your role to security_admin.&quot; is correct.</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard12">
       <div class="quiz-q"><span class="quiz-q-num">13.</span>How should roles be managed for scoped HR applications in ServiceNow? (Choose 2) <span class="quiz-choose">(choose 2)</span></div>
@@ -609,30 +676,43 @@ a:hover { text-decoration: underline; }
       <li class="quiz-opt" data-idx="4" data-q="12"><span class="quiz-opt-letter">E</span><span>The Employee Center Pro Admin requires only the sn_hr_sp_admin role for proper access.</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="12" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp12">Source: HR Fundamentals Ebook -&gt; Module 1 -&gt; SeviceNow HR Service Delivery (HRSD) Overview -&gt; Human Resource Applications are ScopedCorrect Answers:Each scoped HR application should have unique roles that are not shared with other applications. This is correct as per the best practices for scoped applications; each application should have its set of roles to control access specifically.The HR Basic role should be inherited by all HR professionals to access HR applications.</div>
+      <div class="quiz-opt-explains" id="qoptexp12" style="display:none"></div>
+      <details class="quiz-overall" id="qexp12">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content"><br><br><strong>Source:</strong> HR Fundamentals Ebook -&gt; Module 1 -&gt; SeviceNow HR Service Delivery (HRSD) Overview -&gt; Human Resource Applications are ScopedCorrect Answers:Each scoped HR application should have unique roles that are not shared with other applications. This is correct as per the best practices for scoped applications; each application should have its set of roles to control access specifically.The HR Basic role should be inherited by all HR professionals to access HR applications. HR Basic role is a minimum requirement for HR professionals to access HR applications, which suggests a correct approach for role inheritance.Incorrect Answers:System Administrators do not require any additional roles to configure HR applications. This is incorrect; System Administrators with the Admin and the HR Admin roles are needed for configuring HR applications.Scoped groups should be parent groups of the HR group to ensure proper role inheritance. The text specifies that scoped groups should be child groups of the HR group, not parent groups.The Employee Center Pro Admin requires only the sn_hr_sp_admin role for proper access. Employee Center Pro Admin needs both the sn_hr_sp_admin and sp_admin roles for access, not just one.</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard13">
-      <div class="quiz-q"><span class="quiz-q-num">14.</span>What are major HR Service Catalog components ? (Choose 4) <span class="quiz-choose">(choose 4)</span></div>
+      <div class="quiz-q"><span class="quiz-q-num">14.</span>What purpose do Campaigns serve in ServiceNow&#x27;s Employee Center Pro, and how is the audience for campaigns determined? (Choose 2) <span class="quiz-choose">(choose 2)</span></div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="13"><span class="quiz-opt-letter">A</span><span>HR Template</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="13"><span class="quiz-opt-letter">B</span><span>Assignment Group</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="13"><span class="quiz-opt-letter">C</span><span>HR Catalog Item</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="13"><span class="quiz-opt-letter">D</span><span>Matching Rule</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="13"><span class="quiz-opt-letter">E</span><span>Record Producer</span></li>
-      <li class="quiz-opt" data-idx="5" data-q="13"><span class="quiz-opt-letter">F</span><span>HR Service</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="13"><span class="quiz-opt-letter">A</span><span>Campaigns are designed to distribute company-wide announcements without targeting specific employees.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="13"><span class="quiz-opt-letter">B</span><span>Campaigns in Service Center Pro are used to publish targeted content to selected employees using criteria such as User Profile or HR Criteria.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="13"><span class="quiz-opt-letter">C</span><span>Audience targeting for campaigns is randomly selected to ensure unbiased content delivery.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="13"><span class="quiz-opt-letter">D</span><span>Campaigns are exclusive for IT-related content and cannot be used for HR purposes like open enrollment.</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="13"><span class="quiz-opt-letter">E</span><span>The audience for campaigns is determined by position level only and not by other criteria.</span></li>
+      <li class="quiz-opt" data-idx="5" data-q="13"><span class="quiz-opt-letter">F</span><span>Content publishing for campaigns can include various media such as emails, videos, and banners, with audience targeting based on User table, User Criteria, HR Profile, or file upload.</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="13" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp13">SourceCorrect answers:HR Catalog Item - HR catalog items are essentially the services available in the HR service catalog for employees to request. Each catalog item can represent a specific HR service or request that an employee might need, such as a leave of absence request, equipment order, or an inquiry about benefits.Record Producer - A record producer in ServiceNow is a form that creates a ServiceNow record of a specific type, such as an HR case or incident, from the service catalog.</div>
+      <div class="quiz-opt-explains" id="qoptexp13" style="display:none"></div>
+      <details class="quiz-overall" id="qexp13">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content"><br><br><strong>Source:</strong> HR Fundamentals Ebook -&gt; Module 1 -&gt; Key Features -&gt; CampaignsCorrect Answers:Campaigns in Service Center Pro are used to publish targeted content to selected employees using criteria such as User Profile or HR Criteria. This is correct as campaigns allow HR to publish targeted content and the audience can be refined based on specific criteria mentioned in the application notes.Content publishing for campaigns can include various media such as emails, videos, and banners, with audience targeting based on User table, User Criteria, HR Profile, or file upload. This is accurate as per the campaign features mentioned in the screenshot, which include a variety of content types and targeting methods.Incorrect Answers:Campaigns are designed to distribute company-wide announcements without targeting specific employees. This is incorrect because campaigns are specifically mentioned to target selected employees based on certain criteria.Audience targeting for campaigns is randomly selected to ensure unbiased content delivery. This is incorrect as the targeting is based on defined criteria, not random selection.Campaigns are exclusive for IT-related content and cannot be used for HR purposes like open enrollment. This is incorrect as the example given for campaigns includes HR-related activities like open enrollment.The audience for campaigns is determined by position level only and not by other criteria. This statement is incorrect as the screenshot suggests that multiple criteria can be used for audience targeting, not just position level.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard14">
-      <div class="quiz-q"><span class="quiz-q-num">15.</span>How does the system know when a task or approval should be triggered, if the Workflow editor is utilized for a Lifecycle Event&amp;nbsp; ?</div>
+      <div class="quiz-q"><span class="quiz-q-num">15.</span>Incidents can be created and managed in the workspace, using UI layouts that are tailored to different personas, processes, and interfaces. Some of examples include:• Major incidents• Self Service• Default• MobileWhat are these UI layouts called in the Now Platform ?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="14"><span class="quiz-opt-letter">A</span><span>Activities are manually triggered</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="14"><span class="quiz-opt-letter">B</span><span>The Activity set trigger condition determines when it is triggered</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="14"><span class="quiz-opt-letter">C</span><span>Activities are automatically triggered on specific dates</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="14"><span class="quiz-opt-letter">D</span><span>The Activity trigger condition determines when it is triggered</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="14"><span class="quiz-opt-letter">A</span><span>Form Layouts</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="14"><span class="quiz-opt-letter">B</span><span>Workspaces</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="14"><span class="quiz-opt-letter">C</span><span>Forms</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="14"><span class="quiz-opt-letter">D</span><span>Form Designs</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="14"><span class="quiz-opt-letter">E</span><span>Views</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp14">Source: eBook for Human Resources Service Delivery (HRSD) Implementation On Demand Module 3 -&gt; Employee Journey Management -&gt; Activity Set TriggersCorrect answer:The activity set trigger condition determines when it is triggered.In the context of Lifecycle Events in ServiceNow, the system uses the conditions defined in the activity set triggers to determine when a task or approval should be initiated within a workflow. These triggers control the behavior of the activity sets based on various conditions such as immediate triggers, date calculations, dependencies on other activity sets, specific conditions, or a combination thereof.</div>
+      <div class="quiz-opt-explains" id="qoptexp14" style="display:none"></div>
+      <details class="quiz-overall" id="qexp14">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">SourceCorrect Answer:ViewsExplanation:In ServiceNow, &quot;Views&quot; provide different layouts and field arrangements for the same form, tailored to various use cases and personas. This aligns exactly with the described scenario (incidents using layouts like Default, Major incidents, etc.).Incorrect Answers:Form Layouts: While related, this is a broader term encompassing the general organization of fields on a form. Views are more specific configurations within a form layout.Workspaces: Workspaces offer a larger work area with configurable widgets, analytics and multiple record views. Views are components used within workspaces.Forms: Forms are the fundamental way to display and interact with data in a ServiceNow record. Views define different presentations of the same form.Form Designs: This term doesn&#x27;t seem to correspond to a standard ServiceNow feature.</div>
+      </details>
     </div>
     <div class="quiz-score" id="quizScore">
       <div class="quiz-score-num" id="quizScoreNum">0/15</div>
@@ -666,9 +746,40 @@ a:hover { text-decoration: underline; }
   });
 
   // Quiz logic
-  const answers = [2, 0, 1, 3, 3, 2, 1, [0, 3, 5], 2, [0, 3], [0, 1, 4], 3, [0, 1], [0, 2, 4, 5], 1];
+  const answers = [3, 1, 2, 3, 0, 3, 1, [0, 1, 2, 3], 1, [0, 1, 2], [0, 1, 4], 1, [0, 1], [1, 5], 4];
   let answered = 0, score = 0;
   const multiSelections = {};
+
+  function showExplanations(qi, isCorrect) {
+    var card = document.getElementById('qcard' + qi);
+    var opts = card.querySelectorAll('.quiz-opt');
+    var correct = Array.isArray(answers[qi]) ? answers[qi] : [answers[qi]];
+    var expContainer = document.getElementById('qoptexp' + qi);
+    var html = '';
+
+    opts.forEach(function(opt, j) {
+      var perExp = opt.getAttribute('data-exp');
+      var isCorr = correct.indexOf(j) !== -1;
+
+      if (perExp) {
+        var label = isCorr ? '<span class="qoe-correct">Correct</span>' : '<span class="qoe-wrong">Incorrect</span>';
+        html += '<div class="quiz-opt-exp ' + (isCorr ? 'qoe-is-correct' : 'qoe-is-wrong') + '">' +
+          '<div class="qoe-header">' + label + ' <span class="qoe-letter">' + 'ABCDEF'[j] + '</span></div>' +
+          '<div class="qoe-text">' + perExp + '</div></div>';
+      }
+    });
+
+    if (html) {
+      expContainer.innerHTML = html;
+      expContainer.style.display = 'block';
+    }
+
+    // Show overall explanation toggle if it has content
+    var overall = document.getElementById('qexp' + qi);
+    if (overall && overall.querySelector('.quiz-overall-content').innerHTML.trim()) {
+      overall.style.display = 'block';
+    }
+  }
 
   document.querySelectorAll('.quiz-opt').forEach(function(opt) {
     opt.addEventListener('click', function() {
@@ -698,7 +809,7 @@ a:hover { text-decoration: underline; }
         else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
         this.classList.add('selected');
         card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
-        document.getElementById('qexp' + qi).classList.add('show');
+        showExplanations(qi, isCorrect);
         answered++;
         checkDone();
       }
@@ -728,7 +839,7 @@ a:hover { text-decoration: underline; }
       }
       opts.forEach(function(o) { o.setAttribute('disabled',''); });
       this.style.display = 'none';
-      document.getElementById('qexp' + qi).classList.add('show');
+      showExplanations(qi, isCorrect);
       answered++;
       checkDone();
     });

@@ -340,12 +340,30 @@ a:hover { text-decoration: underline; }
 .quiz-opt.selected .quiz-opt-letter { background: var(--orange); color: #fff; border-color: var(--orange); }
 .quiz-opt.correct .quiz-opt-letter { background: #2ea043; color: #fff; border-color: #2ea043; }
 .quiz-opt.wrong .quiz-opt-letter { background: #d73a49; color: #fff; border-color: #d73a49; }
-.quiz-explain { display: none; margin-top: 12px; padding: 12px 16px; background: var(--bg-card); border-radius: 8px; font-size: 0.9rem; color: var(--text-dim); line-height: 1.6; border-left: 3px solid var(--orange); }
-.quiz-explain.show { display: block; }
+
 .quiz-choose { font-weight: 400; color: var(--orange); font-size: 0.85rem; margin-left: 4px; }
 .quiz-submit-btn { margin-top: 12px; padding: 10px 24px; background: var(--orange); color: #fff; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.15s, transform 0.1s; }
 .quiz-submit-btn:hover { background: #c75400; }
 .quiz-submit-btn:active { transform: scale(0.97); }
+/* Per-option explanations */
+.quiz-opt-explains { margin-top: 12px; display: flex; flex-direction: column; gap: 6px; }
+.quiz-opt-exp { padding: 10px 14px; border-radius: 8px; font-size: 0.88rem; line-height: 1.5; }
+.qoe-is-correct { background: rgba(46,160,67,0.07); border-left: 3px solid #2ea043; }
+.qoe-is-wrong { background: rgba(215,58,73,0.05); border-left: 3px solid #d73a49; }
+.qoe-header { font-weight: 600; margin-bottom: 4px; font-size: 0.82rem; }
+.qoe-correct { color: #2ea043; }
+.qoe-wrong { color: #d73a49; }
+.qoe-letter { color: var(--text-dim); margin-left: 4px; font-weight: 500; }
+.qoe-text { color: var(--text-dim); }
+/* Collapsible overall explanation */
+.quiz-overall { display: none; margin-top: 10px; }
+.quiz-overall[style*="block"] { display: block; }
+.quiz-overall-toggle { cursor: pointer; font-size: 0.88rem; font-weight: 600; color: var(--orange); padding: 8px 0; list-style: none; display: flex; align-items: center; gap: 6px; }
+.quiz-overall-toggle::-webkit-details-marker { display: none; }
+.quiz-overall-toggle::before { content: ''; display: inline-block; width: 0; height: 0; border-left: 5px solid var(--orange); border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform 0.2s; }
+details.quiz-overall[open] .quiz-overall-toggle::before { transform: rotate(90deg); }
+.quiz-overall-content { padding: 12px 16px; background: var(--bg-card); border-radius: 8px; font-size: 0.88rem; color: var(--text-dim); line-height: 1.6; border-left: 3px solid var(--orange); margin-top: 6px; }
+
 .quiz-score { margin-top: 24px; padding: 20px; background: var(--bg-raised); border-radius: 12px; border: 1px solid var(--border); text-align: center; display: none; }
 .quiz-score.show { display: block; }
 .quiz-score-num { font-size: 2rem; font-weight: 800; color: var(--orange); }
@@ -474,271 +492,494 @@ a:hover { text-decoration: underline; }
     <div class="quiz-card" id="qcard0">
       <div class="quiz-q"><span class="quiz-q-num">1.</span>Customer wants to give secure access to business users to view problem records and reports for the products they support.What additional problem role is installed to support this requirement, when you install the ITSM roles plugin ?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>sn_business_user</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>sn_problem_read</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>sn_service_owner</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>sn_problem_business_user</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="0"><span class="quiz-opt-letter">E</span><span>problem_write</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="0" data-exp="INCORRECT. sn_business_user is not a recognized OOB Problem Management role in ServiceNow."><span class="quiz-opt-letter">A</span><span>sn_business_user</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="0" data-exp="CORRECT. sn_problem_read grants read-only access to the Problem Management application, following the standard sn_[module]_read naming pattern."><span class="quiz-opt-letter">B</span><span>sn_problem_read</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="0" data-exp="INCORRECT. sn_service_owner relates to service ownership accountability, not Problem record access."><span class="quiz-opt-letter">C</span><span>sn_service_owner</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="0" data-exp="INCORRECT. sn_problem_business_user is not a standard OOB role name."><span class="quiz-opt-letter">D</span><span>sn_problem_business_user</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="0" data-exp="INCORRECT. problem_write is not the correct role name; the write role is sn_problem_write, following the same naming convention."><span class="quiz-opt-letter">E</span><span>problem_write</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp0">Correct Answer: sn_problem_read
+      <div class="quiz-opt-explains" id="qoptexp0" style="display:none"></div>
+      <details class="quiz-overall" id="qexp0">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answer: sn_problem_read
 
 Source
 Official Doc: Problem Management rolesIf the link fails, search Google for: ServiceNow Zurich sn_problem_read role read access problem records
 
 Expert Explanation
-ServiceNow follows a consistent naming convention for granular ITSM roles: sn_[module]_[access_level]. For Problem Management, sn_problem_read grants read-only access to the Problem Management application and all related records. This role is part of the ITSM Roles plugin and pairs with sn_problem_write for write access.</div>
+ServiceNow follows a consistent naming convention for granular ITSM roles: sn_[module]_[access_level]. For Problem Management, sn_problem_read grants read-only access to the Problem Management application and all related records. This role is part of the ITSM Roles plugin and pairs with sn_problem_write for write access. Assigning sn_problem_read allows business users to view problem records without being able to modify them.
+
+<br><br><strong>Why the Others Are Wrong</strong>
+sn_business_user: Not a real OOB Problem Management role.sn_service_owner: Related to service ownership in the CSDM framework, not problem record viewing.sn_problem_business_user: Not a standard OOB role name in any ServiceNow release.problem_write: Incorrect format; the proper OOB write role is sn_problem_write.
+
+<br><br><strong>Memory Tip</strong>
+sn_problem_read = &quot;see but don&#x27;t touch.&quot; All ITSM read-only roles follow: sn_incident_read, sn_change_read, sn_problem_read.
+
+<br><br><strong>Real-World</strong> Example
+A service owner needs visibility into active problems affecting their service but should not be able to update records. The admin assigns sn_problem_read. The service owner can view all problem records, related CIs, and workarounds but cannot edit any fields or add work notes.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard1">
-      <div class="quiz-q"><span class="quiz-q-num">2.</span>What would be the next step for this problem:&amp;quot;Problem investigation had been previously closed, because the risk was accepted, in favor of using the workaround, instead of applying the fix.After a couple of weeks, the issue starts to occur more frequently, so management wants to re-visit the root cause analysis.&amp;quot;</div>
+      <div class="quiz-q"><span class="quiz-q-num">2.</span>What would be the next step for this problem:&quot;Problem investigation had been previously closed, because the risk was accepted, in favor of using the workaround, instead of applying the fix.After a couple of weeks, the issue starts to occur more frequently, so management wants to re-visit the root cause analysis.&quot;</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>If 7 days has passed, since the Problem was closed, it cannot be re-opened</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>Problem Manager clicks Re-Analyze on the Problem record</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>Problem Assignee clicks Re-Open on the Problem record</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>Administrator clicks Re-Open on the Problem Record</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="1" data-exp="INCORRECT. There is no 7-day time restriction on Re-Analyze. The action is available regardless of when the problem was closed."><span class="quiz-opt-letter">A</span><span>If 7 days has passed, since the Problem was closed, it cannot be re-opened</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="1" data-exp="CORRECT. The Problem Manager clicks Re-Analyze on the Problem record. This moves the state from Closed (or Resolved Risk Accepted) back to Root Cause Analysis."><span class="quiz-opt-letter">B</span><span>Problem Manager clicks Re-Analyze on the Problem record</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="1" data-exp="INCORRECT. There is no Re-Open button on problem records. The correct action is Re-Analyze, not Re-Open."><span class="quiz-opt-letter">C</span><span>Problem Assignee clicks Re-Open on the Problem record</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="1" data-exp="INCORRECT. There is no Re-Open button on problem records. Administrator access is not required; problem_coordinator and above can use Re-Analyze."><span class="quiz-opt-letter">D</span><span>Administrator clicks Re-Open on the Problem Record</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp1">Correct Answer: Problem Manager clicks Re-Analyze on the Problem record
+      <div class="quiz-opt-explains" id="qoptexp1" style="display:none"></div>
+      <details class="quiz-overall" id="qexp1">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answer: Problem Manager clicks Re-Analyze on the Problem record
 Source
 
 Problem management lifecycle - ServiceNow Docs
 If the link fails, search Google for: ServiceNow Zurich Re-Analyze problem reopen Risk Accepted Closed state
 
 Expert Explanation
-In ServiceNow Problem Management Best Practice lifecycle, the Re-Analyze UI action is the only mechanism to reopen a problem. It is available on problems in both Resolved (Risk Accepted) and Closed states. Clicking Re-Analyze transitions the problem back to Root Cause Analysis, enabling the team to reinvestigate. There is no &quot;Re-Open&quot; button, no time-based restriction, and admin access is not required.</div>
+In ServiceNow Problem Management Best Practice lifecycle, the Re-Analyze UI action is the only mechanism to reopen a problem. It is available on problems in both Resolved (Risk Accepted) and Closed states. Clicking Re-Analyze transitions the problem back to Root Cause Analysis, enabling the team to reinvestigate. There is no &quot;Re-Open&quot; button, no time-based restriction, and admin access is not required. The Re-Analyze action is available to problem_coordinator, problem_manager, and problem_admin roles.
+<br><br><strong>Why the Others Are Wrong</strong>
+
+If 7 days has passed, it cannot be re-opened: No time restriction exists. Re-Analyze is always available on closed or resolved (risk accepted) problems.
+Problem Assignee clicks Re-Open on the Problem record: Two errors: the button is called Re-Analyze, not Re-Open. And problem_task_analyst (assignee role) cannot perform this action.
+Administrator clicks Re-Open on the Problem Record: The button is called Re-Analyze and admin access is not required. problem_manager can perform this action.
+
+<br><br><strong>Memory Tip</strong>
+No &quot;Re-Open&quot; exists on problems. The word is &quot;Re-Analyze.&quot; No time limit. Anyone manager-level or above can do it.
+<br><br><strong>Real-World</strong> Example
+A recurring network instability was marked Risk Accepted three months ago because a permanent fix was cost-prohibitive. The same issue returns with greater severity. The problem manager opens the closed record and clicks Re-Analyze. The problem moves to Root Cause Analysis. The team creates a new problem task and escalates for a permanent infrastructure fix this time.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard2">
       <div class="quiz-q"><span class="quiz-q-num">3.</span>Where are defined the timeframe conditions for sending an SLA breach warning notification ?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>SLA definition record</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>Default SLA flow</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>SLA Properties application</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>SLA trigger conditions</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="2" data-exp="INCORRECT. The SLA definition record holds the SLA duration, schedule, start/stop conditions, and pause conditions. It does not define notification timeframe percentages."><span class="quiz-opt-letter">A</span><span>SLA definition record</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="2" data-exp="CORRECT. The Default SLA Flow (Flow Designer) contains the wait steps at percentage thresholds (e.g., 50%, 75% of SLA duration) followed by notification actions that send breach warning alerts."><span class="quiz-opt-letter">B</span><span>Default SLA flow</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="2" data-exp="INCORRECT. SLA Properties application stores global SLA configuration settings. It does not contain the specific timeframe conditions for breach warning notifications."><span class="quiz-opt-letter">C</span><span>SLA Properties application</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="2" data-exp="INCORRECT. SLA trigger conditions define when an SLA should start or stop running. They do not define the notification timing for breach warnings."><span class="quiz-opt-letter">D</span><span>SLA trigger conditions</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp2">Correct Answer: Default SLA flow
+      <div class="quiz-opt-explains" id="qoptexp2" style="display:none"></div>
+      <details class="quiz-overall" id="qexp2">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answer: Default SLA flow
 Source
 
 ServiceNow Docs: SLA Flow
 If the link fails, search Google for: ServiceNow Zurich Default SLA flow breach warning notification timeframe percentage
 
 Expert Explanation
-The Default SLA Flow (Flow Designer) is where breach warning notification timeframes are defined. The flow contains &quot;Wait until X% of SLA Duration&quot; steps at various thresholds (commonly 50%, 75%, 100%), each followed by a notification action. When the SLA clock reaches each threshold, the flow sends the configured warning notification.</div>
+The Default SLA Flow (Flow Designer) is where breach warning notification timeframes are defined. The flow contains &quot;Wait until X% of SLA Duration&quot; steps at various thresholds (commonly 50%, 75%, 100%), each followed by a notification action. When the SLA clock reaches each threshold, the flow sends the configured warning notification. The SLA definition record holds the total duration and start/stop conditions but delegates the notification timing logic entirely to the Default SLA Flow.
+<br><br><strong>Why the Others Are Wrong</strong>
+
+SLA definition record: Defines duration, schedule, start/stop conditions. Does not contain notification timing percentages.
+SLA Properties application: Stores global configuration like &quot;Use business calendar&quot; or &quot;Enable SLA.&quot; Not notification timeframes.
+SLA trigger conditions: Define when an SLA starts and stops (e.g., start when state changes to New, stop when Resolved). Not related to notification timing during an active SLA.
+
+<br><br><strong>Memory Tip</strong>
+SLA definition = what and when to start. Default SLA Flow = what happens while it runs. The flow manages the SLA lifecycle notifications, not the definition record.
+UI Navigation
+
+Path: All &gt; Process Automation &gt; Flow Designer then search for &quot;Default SLA flow&quot;
+What to look for: &quot;Wait for SLA Duration Percentage&quot; action steps at various thresholds (50%, 75%, 100%) followed by notification steps.
+
+<br><br><strong>Real-World</strong> Example
+The default SLA flow is configured with: wait until 50% of SLA duration (no action), wait until 75% (send email to assigned agent), wait until 100% (send email to agent + manager). A P2 incident with an 8-hour SLA gets a warning email to the agent after 6 hours. If still open at 8 hours, the manager is also notified. Both timeframes are configured directly in the Default SLA Flow, not in the SLA definition record.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard3">
       <div class="quiz-q"><span class="quiz-q-num">4.</span>What is a characteristic of Major Incidents in the ServiceNow platform?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>They are resolved exclusively through manual processes.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>They only affect a single user.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>They are incidents of high impact and urgency affecting a large number of users.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>They can only be created manually.</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="3" data-exp="INCORRECT. Major Incidents in ServiceNow can leverage automation including automated notifications and task creation. They are not exclusively manual."><span class="quiz-opt-letter">A</span><span>They are resolved exclusively through manual processes.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="3" data-exp="INCORRECT. Major Incidents by definition affect multiple users or critical services. Single-user impact is not a characteristic of a Major Incident."><span class="quiz-opt-letter">B</span><span>They only affect a single user.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="3" data-exp="CORRECT. Major Incidents are defined by high impact and urgency, typically affecting a large number of users or critical business services."><span class="quiz-opt-letter">C</span><span>They are incidents of high impact and urgency affecting a large number of users.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="3" data-exp="INCORRECT. Major Incidents can be created automatically through rules and triggers, not only manually."><span class="quiz-opt-letter">D</span><span>They can only be created manually.</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp3">Correct Answer: They are incidents of high impact and urgency affecting a large number of users or critical services
+      <div class="quiz-opt-explains" id="qoptexp3" style="display:none"></div>
+      <details class="quiz-overall" id="qexp3">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answer: They are incidents of high impact and urgency affecting a large number of users or critical services
 Source
 
 Official Doc: Major Incident Management - ServiceNow Xanadu
 If the link fails, search Google for: ServiceNow Major Incident Management definition high impact urgency
 
 Expert Explanation
-A Major Incident in ServiceNow is characterized by high Impact and high Urgency, typically affecting a large number of users, a critical business service, or multiple systems simultaneously. ServiceNow provides a dedicated Major Incident Management workspace that enables coordinated response through a communication bridge, stakeholder notifications, and dedicated task tracking.</div>
+A Major Incident in ServiceNow is characterized by high Impact and high Urgency, typically affecting a large number of users, a critical business service, or multiple systems simultaneously. ServiceNow provides a dedicated Major Incident Management workspace that enables coordinated response through a communication bridge, stakeholder notifications, and dedicated task tracking. Major Incidents are differentiated from standard incidents by their Priority (typically P1 or P2) and the business-level attention they require.
+<br><br><strong>Why the Others Are Wrong</strong>
+
+Resolved exclusively through manual processes: ServiceNow Major Incident Management includes automation features such as automated notifications, Slack/Teams bridge creation, and stakeholder updates. Manual-only resolution is not a characteristic.
+Only affect a single user: Single-user impact is a characteristic of a low-priority standard incident, the opposite of a Major Incident.
+Can only be created manually: Major Incidents can be promoted automatically from existing incidents based on priority thresholds or via business rules, not only through manual intervention.
+
+<br><br><strong>Memory Tip</strong>
+Major = Many users + Maximum urgency. P1 affecting 1 person is not Major. P1 affecting 1,000 people is.
+<br><br><strong>Real-World</strong> Example
+At 9:05 AM, an email server outage is reported. Within 2 minutes, 600 incident tickets are auto-created from monitoring alerts. The system automatically promotes the incident to Major Incident status based on the volume trigger rule. The Major Incident Manager is paged, a communications bridge is opened in Microsoft Teams, and stakeholder notifications are sent every 30 minutes until resolution.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard4">
       <div class="quiz-q"><span class="quiz-q-num">5.</span>What is the name of Business Rule that triggers automatic group assignment on Incident, Problem or Change requests?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>Populate Assignment Group based on CI/SO</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>Auto-populate ITSM Assignment Groups</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>ITSM Assignment Lookup Rule</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>Automatic Assignment for ITSM</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="4" data-exp="CORRECT. &#x27;Populate Assignment Group based on CI/SO&#x27; is the exact OOTB business rule name that uses the CI&#x27;s Support group to populate the Assignment group on task records."><span class="quiz-opt-letter">A</span><span>Populate Assignment Group based on CI/SO</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="4" data-exp="INCORRECT. &#x27;Auto-populate ITSM Assignment Groups&#x27; is a fabricated name. The actual OOTB rule is &#x27;Populate Assignment Group based on CI/SO&#x27;."><span class="quiz-opt-letter">B</span><span>Auto-populate ITSM Assignment Groups</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="4" data-exp="INCORRECT. &#x27;ITSM Assignment Lookup Rule&#x27; does not exist as an OOTB business rule in ServiceNow."><span class="quiz-opt-letter">C</span><span>ITSM Assignment Lookup Rule</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="4" data-exp="INCORRECT. &#x27;Automatic Assignment for ITSM&#x27; is a fabricated name. No such OOTB business rule exists."><span class="quiz-opt-letter">D</span><span>Automatic Assignment for ITSM</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp4">Correct Answer: Populate Assignment Group based on CI/SO
+      <div class="quiz-opt-explains" id="qoptexp4" style="display:none"></div>
+      <details class="quiz-overall" id="qexp4">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answer: Populate Assignment Group based on CI/SO
 Source
 
 ServiceNow Community: Auto-populate Assignment Group using CI
 If the link fails, search Google for: ServiceNow Zurich Populate Assignment Group based on CI SO business rule
 
 Expert Explanation
-The OOTB business rule &quot;Populate Assignment Group based on CI/SO&quot; runs on the task table and applies to Incident, Problem, and Change records. When a CI is selected on a record, the rule checks the CI&#x27;s Support group (for incidents/problems) or Change group (for changes) and writes it to the Assignment group field.</div>
+The OOTB business rule &quot;Populate Assignment Group based on CI/SO&quot; runs on the task table and applies to Incident, Problem, and Change records. When a CI is selected on a record, the rule checks the CI&#x27;s Support group (for incidents/problems) or Change group (for changes) and writes it to the Assignment group field. If the CI has no Support/Change group, it falls back to the same field on the associated Service Offering (SO).
+<br><br><strong>Why the Others Are Wrong</strong>
+
+Auto-populate ITSM Assignment Groups: A fabricated name. The exact OOTB rule name matters for exam purposes.
+ITSM Assignment Lookup Rule: Fabricated. Does not exist as an OOTB ServiceNow business rule.
+Automatic Assignment for ITSM: Fabricated. Does not exist.
+
+<br><br><strong>Memory Tip</strong>
+CI/SO = Configuration Item / Service Offering. The rule name literally tells you its logic: use the CI first, then fall back to the Service Offering.
+UI Navigation
+
+Path: All &gt; System Definition &gt; Business Rules then filter by name &quot;Populate Assignment Group&quot;
+What to look for: The rule on the task table with condition checking for CI field changes.
+
+<br><br><strong>Real-World</strong> Example
+An agent logs an incident and selects CI &quot;Web Server PROD-01.&quot; The business rule immediately fires, reads the Support group on that CI record (&quot;Web Infrastructure Team&quot;), and populates the Assignment group field automatically. The agent never has to know which team owns which server.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard5">
       <div class="quiz-q"><span class="quiz-q-num">6.</span>What allows customers to define condition based flows for a fit for purpose model in Change Management ?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="5"><span class="quiz-opt-letter">A</span><span>State Transition Models</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="5"><span class="quiz-opt-letter">B</span><span>State Flows</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="5"><span class="quiz-opt-letter">C</span><span>Workflows 2.0</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="5"><span class="quiz-opt-letter">D</span><span>Conditional Change Models</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="5" data-exp="CORRECT. State Transition Models allow customers to define condition-based flows and state governance for fit-for-purpose change models."><span class="quiz-opt-letter">A</span><span>State Transition Models</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="5" data-exp="INCORRECT. State Flows is not a standard ServiceNow module name for the described capability."><span class="quiz-opt-letter">B</span><span>State Flows</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="5" data-exp="INCORRECT. Workflows 2.0 is not a current ServiceNow product name. The modern flow engine is Flow Designer."><span class="quiz-opt-letter">C</span><span>Workflows 2.0</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="5" data-exp="INCORRECT. Conditional Change Models is not a standard ServiceNow module or feature name."><span class="quiz-opt-letter">D</span><span>Conditional Change Models</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp5">Correct Answer: State Transition Models
+      <div class="quiz-opt-explains" id="qoptexp5" style="display:none"></div>
+      <details class="quiz-overall" id="qexp5">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answer: State Transition Models
 
 Source
 
 Official Doc: State transition models - ServiceNow Xanadu
 If the link fails, search Google for: ServiceNow State Transition Models condition-based flow Change Management fit for purpose
 
-
 Expert Explanation
-State Transition Models in ServiceNow Change Management allow administrators to define which state transitions are valid for a given Change model, along with the conditions that must be met for each transition to be permitted. This enables &quot;fit for purpose&quot; Change models where the governance rules, required fields, and approval conditions are specific to each change type.</div>
+State Transition Models in ServiceNow Change Management allow administrators to define which state transitions are valid for a given Change model, along with the conditions that must be met for each transition to be permitted. This enables &quot;fit for purpose&quot; Change models where the governance rules, required fields, and approval conditions are specific to each change type. For example, a Standard Change model might allow Authorize to skip directly to Implement (no approval needed), while a Normal Change model requires Assess and CAB Authorize states with specific conditions.
+
+<br><br><strong>Why the Others Are Wrong</strong>
+
+State Flows: Not a recognized ServiceNow module or feature name for the described functionality.
+Workflows 2.0: Not a current ServiceNow product or module name. The modern process automation tool is Flow Designer.
+Conditional Change Models: Not a ServiceNow module or feature name. The correct feature is State Transition Models.
+
+<br><br><strong>Memory Tip</strong>
+State Transition Models = rules for how change states move. Which transitions are allowed and under what conditions.
+
+<br><br><strong>Real-World</strong> Example
+Globex IT needs their Emergency Change model to allow immediate transition from Authorize directly to Implement without requiring a Review state. Their Standard Change model must go through Review before Closing. Using State Transition Models, the admin configures each model&#x27;s allowed transitions independently, giving each change type its own governance path without affecting the others.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard6">
-      <div class="quiz-q"><span class="quiz-q-num">7.</span>If Assignment group is empty on an incident record, what will happen when an agent that is a member of a single user group clicks the &amp;quot;Assign to me&amp;quot; UI action?</div>
+      <div class="quiz-q"><span class="quiz-q-num">7.</span>If Assignment group is empty on an incident record, what will happen when an agent that is a member of a single user group clicks the &quot;Assign to me&quot; UI action?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="6"><span class="quiz-opt-letter">A</span><span>The agent is prompted to select the Assignment group</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="6"><span class="quiz-opt-letter">B</span><span>The Assignment group field is populated with agent’s user group</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="6"><span class="quiz-opt-letter">C</span><span>An error is displayed indicating the Assignment group field must be populated before executing the Assign to me UI action</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="6"><span class="quiz-opt-letter">D</span><span>The Assignment group field remains empty</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="6" data-exp="INCORRECT. The agent is only prompted to select a group when they belong to multiple groups and the Assignment group field is empty. Single group membership triggers auto-population."><span class="quiz-opt-letter">A</span><span>The agent is prompted to select the Assignment group</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="6" data-exp="CORRECT. In San Diego and later releases, when the Assignment group is empty and the agent belongs to only one group, clicking Assign to Me auto-populates the group and assigns the record."><span class="quiz-opt-letter">B</span><span>The Assignment group field is populated with agent’s user group</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="6" data-exp="INCORRECT. An error is displayed when the Assignment group is already filled with a group the agent does not belong to, not when the group is empty."><span class="quiz-opt-letter">C</span><span>An error is displayed indicating the Assignment group field must be populated before executing the Assign to me UI action</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="6" data-exp="INCORRECT. Leaving the Assignment group empty was the pre-San Diego (Rome) behavior. In San Diego+, single-group agents get their group auto-populated."><span class="quiz-opt-letter">D</span><span>The Assignment group field remains empty</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp6">Correct Answer: The Assignment group field is populated with the agent&#x27;s user group
+      <div class="quiz-opt-explains" id="qoptexp6" style="display:none"></div>
+      <details class="quiz-overall" id="qexp6">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answer: The Assignment group field is populated with the agent&#x27;s user group
 Source
 
 ServiceNow Community: Assign to Me changes San Diego
 If the link fails, search Google for: ServiceNow Zurich Assign to Me single group empty assignment group auto-populate San Diego
 
 Expert Explanation
-The &quot;Assign to Me&quot; UI action behavior in San Diego and later releases: when the Assignment group field is empty and the agent belongs to exactly one group, clicking Assign to Me automatically populates the Assignment group with that group AND assigns the record to the agent. If the agent belongs to multiple groups, they are prompted to select which group.</div>
+The &quot;Assign to Me&quot; UI action behavior in San Diego and later releases: when the Assignment group field is empty and the agent belongs to exactly one group, clicking Assign to Me automatically populates the Assignment group with that group AND assigns the record to the agent. If the agent belongs to multiple groups, they are prompted to select which group. If the Assignment group is already filled with a group the agent is not in, an error is displayed.
+<br><br><strong>Why the Others Are Wrong</strong>
+
+Prompted to select group: Only triggered when the agent is a member of multiple groups and the Assignment group is empty.
+Error displayed: Only occurs when the Assignment group is already populated with a group the agent is not a member of.
+Assignment group remains empty: This was the pre-San Diego (Rome release) behavior. It no longer applies in current releases.
+
+<br><br><strong>Memory Tip</strong>
+One group = auto-fill. Many groups = pick one. Wrong group = error. The system resolves ambiguity: only one option means no choice needed.
+<br><br><strong>Real-World</strong> Example
+A new agent on the &quot;Desktop Support&quot; team opens an unassigned incident. They click &quot;Assign to Me.&quot; Because they belong to only one group (Desktop Support) and the Assignment group is empty, the system auto-populates Assignment group = &quot;Desktop Support&quot; and Assigned to = the agent&#x27;s name in a single action. The agent does not need to manually set the group first.</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard7">
       <div class="quiz-q"><span class="quiz-q-num">8.</span>What are the main stages in the Incident Management lifecycle within ServiceNow? (Choose 3) <span class="quiz-choose">(choose 3)</span></div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="7"><span class="quiz-opt-letter">A</span><span>Creation and Classification</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="7"><span class="quiz-opt-letter">B</span><span>Investigation and Diagnosis</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="7"><span class="quiz-opt-letter">C</span><span>Resolution and Closure</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="7"><span class="quiz-opt-letter">D</span><span>Prioritization and Scheduling</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="7"><span class="quiz-opt-letter">E</span><span>Feedback and Improvement</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="7" data-exp="CORRECT. Creation and Classification is the first stage, where the incident is logged, categorized, prioritized, and initially assigned."><span class="quiz-opt-letter">A</span><span>Creation and Classification</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="7" data-exp="CORRECT. Investigation and Diagnosis is the second stage, where agents investigate the root cause and work toward resolution."><span class="quiz-opt-letter">B</span><span>Investigation and Diagnosis</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="7" data-exp="CORRECT. Resolution and Closure is the final stage, where the fix is applied, the user confirms resolution, and the incident is closed."><span class="quiz-opt-letter">C</span><span>Resolution and Closure</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="7" data-exp="INCORRECT. Prioritization happens within the Creation and Classification stage. It is not a separate lifecycle stage."><span class="quiz-opt-letter">D</span><span>Prioritization and Scheduling</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="7" data-exp="INCORRECT. Feedback and Improvement is an ITIL practice concept, not a stage within the Incident Management lifecycle in ServiceNow."><span class="quiz-opt-letter">E</span><span>Feedback and Improvement</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="7" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp7">Correct Answers: Creation and Classification; Investigation and Diagnosis; Resolution and Closure
+      <div class="quiz-opt-explains" id="qoptexp7" style="display:none"></div>
+      <details class="quiz-overall" id="qexp7">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answers: Creation and Classification; Investigation and Diagnosis; Resolution and Closure
 Source
 
 Incident Management - Now Learning
 If the link fails, search Google for: ServiceNow Zurich incident management lifecycle stages creation classification investigation resolution closure
 
 Expert Explanation
-ServiceNow&#x27;s official training defines three stages in the Incident Management lifecycle. Creation and Classification: the incident is created, categorized, prioritized, and routed. Investigation and Diagnosis: agents investigate the incident, apply workarounds if available, and work toward a permanent fix.</div>
+ServiceNow&#x27;s official training defines three stages in the Incident Management lifecycle. Creation and Classification: the incident is created, categorized, prioritized, and routed. Investigation and Diagnosis: agents investigate the incident, apply workarounds if available, and work toward a permanent fix. Resolution and Closure: the fix is applied, the caller confirms resolution (or auto-closure timer fires), and the incident moves to Closed state. Prioritization is a task within Creation, not a separate stage. Feedback loops are post-process activities.
+<br><br><strong>Why the Others Are Wrong</strong>
+
+Prioritization and Scheduling: Prioritization is part of Creation and Classification. Scheduling is not a defined incident lifecycle stage.
+Feedback and Improvement: A separate ITIL continuous improvement practice. Not a stage in the ServiceNow Incident Management lifecycle.
+
+<br><br><strong>Memory Tip</strong>
+Create it, Investigate it, Resolve it. CIR: three stages, one per action type.
+<br><br><strong>Real-World</strong> Example
+A user reports they cannot access the VPN. Stage 1 Creation and Classification: incident created, categorized as Network, priority P2. Stage 2 Investigation and Diagnosis: agent pings the VPN server, checks logs, identifies a certificate expiry. Stage 3 Resolution and Closure: certificate renewed, VPN restored, user confirms access, incident resolved and closed after 4 hours.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard8">
       <div class="quiz-q"><span class="quiz-q-num">9.</span>Customer wants to use the Service Catalog to generate task-based records for end-user inquiries.Which Service Catalog capability can you use to generate these records?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="8"><span class="quiz-opt-letter">A</span><span>Execution Plans</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="8"><span class="quiz-opt-letter">B</span><span>Content Items</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="8"><span class="quiz-opt-letter">C</span><span>Catalog Items</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="8"><span class="quiz-opt-letter">D</span><span>Record Producers</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="8" data-exp="INCORRECT. Execution Plans define the tasks and approval steps for fulfilling catalog requests. They are a component of fulfillment, not a catalog item type."><span class="quiz-opt-letter">A</span><span>Execution Plans</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="8" data-exp="INCORRECT. Content Items display informational or static content in the catalog (e.g., policies, announcements). They do not generate any records."><span class="quiz-opt-letter">B</span><span>Content Items</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="8" data-exp="INCORRECT. Standard Catalog Items create request-based records (sc_request, sc_req_item, sc_task). They do not create records on arbitrary target tables."><span class="quiz-opt-letter">C</span><span>Catalog Items</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="8" data-exp="CORRECT. Record Producers create records directly on a specified target table (incident, change_request, etc.) from the Service Catalog interface."><span class="quiz-opt-letter">D</span><span>Record Producers</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp8">Correct Answer: Record Producers
+      <div class="quiz-opt-explains" id="qoptexp8" style="display:none"></div>
+      <details class="quiz-overall" id="qexp8">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answer: Record Producers
 Source
 
 Record producers - ServiceNow Docs
 If the link fails, search Google for: ServiceNow Zurich Record Producer catalog item type task records target table
 
 Expert Explanation
-A Record Producer is a type of catalog item that creates a record on any specified target table when submitted. Unlike standard catalog items (which create sc_request, sc_req_item, and sc_task records), a Record Producer can create an incident, a change request, a problem, or any other table record directly. This makes Record Producers ideal for giving end users a friendly Service Portal interface to submit records that belong to ITSM modules without exposing those modules&#x27; native forms.</div>
+A Record Producer is a type of catalog item that creates a record on any specified target table when submitted. Unlike standard catalog items (which create sc_request, sc_req_item, and sc_task records), a Record Producer can create an incident, a change request, a problem, or any other table record directly. This makes Record Producers ideal for giving end users a friendly Service Portal interface to submit records that belong to ITSM modules without exposing those modules&#x27; native forms. The catalog variables are mapped to fields on the target table record.
+<br><br><strong>Why the Others Are Wrong</strong>
+
+Execution Plans: Define fulfillment tasks and approval steps for catalog items. They are a fulfillment configuration component, not a catalog item type.
+Content Items: Display static information or announcements in the catalog. They generate no records of any kind.
+Catalog Items: Create sc_request and sc_req_item records through the request chain. They do not create records on arbitrary tables like incident or change_request.
+
+<br><br><strong>Memory Tip</strong>
+Record Producer = produces records on any table. The name is the definition.
+<br><br><strong>Real-World</strong> Example
+The service desk wants employees to submit incident reports through the Service Portal without seeing the incident form directly. A Record Producer called &quot;Report an IT Issue&quot; is configured with target table set to incident. When an employee submits it, ServiceNow creates an incident record with fields populated from the catalog variables (Description, Location, Category). The employee sees a friendly form; the agent sees a proper incident record.</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard9">
       <div class="quiz-q"><span class="quiz-q-num">10.</span>What are some best practices for guiding customers about use of Notifications? (Choose 3) <span class="quiz-choose">(choose 3)</span></div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="9"><span class="quiz-opt-letter">A</span><span>Make sure Notification requirements and test plans are in the project scope from the start</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="9"><span class="quiz-opt-letter">B</span><span>Get input from Marketing department, regarding format of customer/caller facing notifications</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="9"><span class="quiz-opt-letter">C</span><span>Use templates to ensure consistency and ease of configuration</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="9"><span class="quiz-opt-letter">D</span><span>Use incident.itil.role template as the master template to build all other ITSM templates</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="9"><span class="quiz-opt-letter">E</span><span>When possible, maximize the quantity of email updates to customers</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="9" data-exp="CORRECT. Including notification requirements and test plans in project scope from the start prevents late-stage rework and missed stakeholder expectations."><span class="quiz-opt-letter">A</span><span>Make sure Notification requirements and test plans are in the project scope from the start</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="9" data-exp="CORRECT. Marketing or Communications departments often own brand voice and must approve customer-facing notification wording and formatting."><span class="quiz-opt-letter">B</span><span>Get input from Marketing department, regarding format of customer/caller facing notifications</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="9" data-exp="CORRECT. Using templates ensures consistency in layout and reduces configuration effort across multiple notifications."><span class="quiz-opt-letter">C</span><span>Use templates to ensure consistency and ease of configuration</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="9" data-exp="INCORRECT. There is no ServiceNow recommendation to use incident.itil.role as a master template for all ITSM notifications."><span class="quiz-opt-letter">D</span><span>Use incident.itil.role template as the master template to build all other ITSM templates</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="9" data-exp="INCORRECT. Best practice is under-notification over over-notification. Maximizing email volume creates alert fatigue and is explicitly discouraged."><span class="quiz-opt-letter">E</span><span>When possible, maximize the quantity of email updates to customers</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="9" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp9">Correct Answers: Include notifications in project scope; Get Marketing input on format; Use templates for consistency
+      <div class="quiz-opt-explains" id="qoptexp9" style="display:none"></div>
+      <details class="quiz-overall" id="qexp9">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answers: Include notifications in project scope; Get Marketing input on format; Use templates for consistency
 Source
 
 CIS-ITSM Notification Best Practices Discussion - ExamTopics
 If the link fails, search Google for: ServiceNow CIS-ITSM notification best practices Now Create methodology
 
 Expert Explanation
-ServiceNow&#x27;s Now Create implementation methodology emphasizes treating notifications as a formal workstream. Scoping notification requirements early prevents costly rework during UAT. Marketing and Communications departments frequently control brand standards for customer-facing messages, so their input is required before implementation.</div>
+ServiceNow&#x27;s Now Create implementation methodology emphasizes treating notifications as a formal workstream. Scoping notification requirements early prevents costly rework during UAT. Marketing and Communications departments frequently control brand standards for customer-facing messages, so their input is required before implementation. Using notification templates (stored in the sysevent_email_template table) ensures that message formatting, branding, and variable substitution remain consistent across all modules. The overriding principle is under-notification over over-notification: too many emails trains users to ignore them.
+<br><br><strong>Why the Others Are Wrong</strong>
+
+Use incident.itil.role template as the master template: No such recommendation exists in ServiceNow documentation or Now Create methodology.
+Maximize the quantity of email updates to customers: Directly contradicts the under-notification principle. High email volume creates notification fatigue and reduces the value of critical alerts.
+
+<br><br><strong>Memory Tip</strong>
+Scope it, approve it, template it. Less is more. Three steps in, one anti-pattern out.
+<br><br><strong>Real-World</strong> Example
+During an ITSM implementation, the project team discovers late in the UAT phase that all customer-facing notifications use informal language that violates the company&#x27;s brand guidelines. This could have been avoided by involving the Communications team in the notification design workshop during the Configure phase and building all customer notifications from an approved template in the first sprint.</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard10">
       <div class="quiz-q"><span class="quiz-q-num">11.</span>In the CAB workbench, what are ways the CAB manager can identify the Change requests to be added to a particular meeting agenda? (Choose 2) <span class="quiz-choose">(choose 2)</span></div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="10"><span class="quiz-opt-letter">A</span><span>Change requests meeting different conditions, like Risk level or Type</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="10"><span class="quiz-opt-letter">B</span><span>Change requests planned within a certain date range</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="10"><span class="quiz-opt-letter">C</span><span>Use any of the options on the Agenda Criteria Tab</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="10"><span class="quiz-opt-letter">D</span><span>Change requests for a certain Change Flow Definition</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="10" data-exp="CORRECT. The CAB workbench Agenda Management section allows filtering changes by conditions such as Risk level to identify candidates for the meeting."><span class="quiz-opt-letter">A</span><span>Change requests meeting different conditions, like Risk level or Type</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="10" data-exp="CORRECT. Changes can be identified by their planned date range using &#x27;Change Requests starting after&#x27; and &#x27;starting on or before&#x27; fields in the Agenda Management section."><span class="quiz-opt-letter">B</span><span>Change requests planned within a certain date range</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="10" data-exp="INCORRECT. There is no &#x27;Agenda Criteria Tab&#x27; in the CAB meeting form; this is a deliberate distractor."><span class="quiz-opt-letter">C</span><span>Use any of the options on the Agenda Criteria Tab</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="10" data-exp="INCORRECT. The CAB workbench does not filter change requests by Change Flow Definition."><span class="quiz-opt-letter">D</span><span>Change requests for a certain Change Flow Definition</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="10" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp10">Correct Answer: Change requests meeting different conditions (like Risk level) and Change requests planned within a certain date range
+      <div class="quiz-opt-explains" id="qoptexp10" style="display:none"></div>
+      <details class="quiz-overall" id="qexp10">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answer: Change requests meeting different conditions (like Risk level) and Change requests planned within a certain date range
 Source
 
 Official Doc: CAB Workbench configuration
 If the link fails, search Google for: ServiceNow Zurich CAB workbench agenda management change request filter conditions date range
 
 Expert Explanation
-The CAB Workbench uses an Agenda Management section (not an &quot;Agenda Criteria Tab&quot;) to identify change requests for review.</div>
+The CAB Workbench uses an Agenda Management section (not an &quot;Agenda Criteria Tab&quot;) to identify change requests for review. Two mechanisms are available: (1) Filter criteria/conditions that match change requests based on field values like Risk, Type, or assignment group; and (2) Date range fields (&quot;Change Requests starting after&quot; and &quot;starting on or before&quot;) that include changes scheduled within a specific window. The &quot;Refresh Agenda Items&quot; action then builds the meeting agenda from these criteria.
+<br><br><strong>Why the Others Are Wrong</strong>
+
+Use any of the options on the Agenda Criteria Tab: No such tab exists in the CAB meeting form. This is a confirmed distractor used in the CIS-ITSM exam.
+Change requests for a certain Change Flow Definition: The CAB workbench does not filter by Change Flow Definition.
+
+<br><br><strong>Memory Tip</strong>
+&quot;Conditions + Dates&quot; = CAB agenda. Filter by what the change is (conditions) and when it&#x27;s planned (date range). No Agenda Criteria Tab exists.
+UI Navigation
+
+Path: All &gt; Change &gt; CAB Workbench
+What to look for: The Agenda Management section with filter condition builder and date range fields, plus the Refresh Agenda Items button.
+
+<br><br><strong>Real-World</strong> Example
+A CAB manager sets up a weekly CAB meeting. They configure conditions to show all changes with Risk = High or Risk = Medium, and set the date range to next week. After clicking Refresh Agenda Items, the meeting agenda populates with 12 change requests meeting those criteria, ready for CAB review.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard11">
-      <div class="quiz-q"><span class="quiz-q-num">12.</span>What is this resource called:&amp;quot;ServiceNow contains a resource with information about all services. It is used to support the sale and delivery of services to employees and customers. It includes information about deliverables, options, prices, delivery and performance targets.&amp;quot;</div>
+      <div class="quiz-q"><span class="quiz-q-num">12.</span>What is this resource called:&quot;ServiceNow contains a resource with information about all services. It is used to support the sale and delivery of services to employees and customers. It includes information about deliverables, options, prices, delivery and performance targets.&quot;</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="11"><span class="quiz-opt-letter">A</span><span>Service Portal</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="11"><span class="quiz-opt-letter">B</span><span>Service Dashboard</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="11"><span class="quiz-opt-letter">C</span><span>Service Map</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="11"><span class="quiz-opt-letter">D</span><span>Service One Stop Shop</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="11"><span class="quiz-opt-letter">E</span><span>Service Catalog</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="11" data-exp="INCORRECT. Service Portal is the web portal framework in ServiceNow, not the specific resource described."><span class="quiz-opt-letter">A</span><span>Service Portal</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="11" data-exp="INCORRECT. Service Dashboard is not a standard ServiceNow resource name for the described catalog resource."><span class="quiz-opt-letter">B</span><span>Service Dashboard</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="11" data-exp="INCORRECT. Service Map is a CMDB visualization tool showing service dependencies, not a catalog of services."><span class="quiz-opt-letter">C</span><span>Service Map</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="11" data-exp="INCORRECT. Service One Stop Shop is not a standard ServiceNow term or module name."><span class="quiz-opt-letter">D</span><span>Service One Stop Shop</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="11" data-exp="CORRECT. The Service Catalog is the ServiceNow resource that provides users a centralized, browsable catalog of available IT and business services."><span class="quiz-opt-letter">E</span><span>Service Catalog</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp11">Correct Answer: Service Catalog
+      <div class="quiz-opt-explains" id="qoptexp11" style="display:none"></div>
+      <details class="quiz-overall" id="qexp11">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answer: Service Catalog
 Source
 
 Official Doc: Service Catalog Management - ServiceNow Xanadu
 If the link fails, search Google for: ServiceNow Service Catalog centralized browsable IT services users
 
 Expert Explanation
-The Service Catalog is the ServiceNow module that presents a structured, browsable interface of available IT and business services to end users. It supports multiple item types (Catalog Items, Record Producers, Content Items, Order Guides) organized into categories and subcategories.</div>
+The Service Catalog is the ServiceNow module that presents a structured, browsable interface of available IT and business services to end users. It supports multiple item types (Catalog Items, Record Producers, Content Items, Order Guides) organized into categories and subcategories. Users can search, browse, and request services directly from the catalog, which is accessible through the Service Portal or the Classic UI.
+<br><br><strong>Why the Others Are Wrong</strong>
+
+Service Portal: The Service Portal is the web framework that can host the Service Catalog, but the catalog itself is a distinct module. The portal is the container; the catalog is the content.
+Service Dashboard: Dashboards in ServiceNow display performance data and KPIs. They are not catalogs of requestable services.
+Service Map: Service Maps are CMDB visualizations showing how services depend on infrastructure. They are read-only views, not request portals.
+Service One Stop Shop: This is not a standard ServiceNow module or product name.
+
+<br><br><strong>Memory Tip</strong>
+If you can order it, it is in the Service Catalog. If you are just viewing it, it is something else.
+<br><br><strong>Real-World</strong> Example
+A new employee at Globex Corp opens the company intranet and sees a tile called &quot;IT Services.&quot; Clicking it opens the Service Catalog, where they find categories: Hardware Requests, Software Access, HR Services, and Facilities. They submit a request for a laptop via the &quot;New Hire Equipment&quot; Catalog Item without calling IT. The Service Catalog handled the entire structured request.</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard12">
       <div class="quiz-q"><span class="quiz-q-num">13.</span>On the Change request, what types of Conflicts are detected automatically ? (Choose 3) <span class="quiz-choose">(choose 3)</span></div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="12"><span class="quiz-opt-letter">A</span><span>Conflict with Assignee Shift Schedule</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="12"><span class="quiz-opt-letter">B</span><span>Conflict with Blackout Schedule</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="12"><span class="quiz-opt-letter">C</span><span>Conflict with Company Holiday Schedule</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="12"><span class="quiz-opt-letter">D</span><span>Another change for the same CI, at the same time</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="12"><span class="quiz-opt-letter">E</span><span>Conflict with Maintenance Window</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="12" data-exp="INCORRECT. Assignee Shift Schedule conflicts are not part of baseline ServiceNow change conflict detection. Shift schedules are not evaluated during conflict checking."><span class="quiz-opt-letter">A</span><span>Conflict with Assignee Shift Schedule</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="12" data-exp="CORRECT. Blackout Schedule conflict is detected automatically when a change is scheduled during a defined blackout period where changes are prohibited."><span class="quiz-opt-letter">B</span><span>Conflict with Blackout Schedule</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="12" data-exp="INCORRECT. Company Holiday Schedule conflicts are not part of baseline change conflict detection. Holiday calendars are separate from change blackout schedules."><span class="quiz-opt-letter">C</span><span>Conflict with Company Holiday Schedule</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="12" data-exp="CORRECT. A conflict is detected when another change for the same CI is scheduled at the same time, preventing overlapping changes to the same component."><span class="quiz-opt-letter">D</span><span>Another change for the same CI, at the same time</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="12" data-exp="CORRECT. A conflict is detected when a change is scheduled outside an applicable maintenance window, flagging it for review or rescheduling."><span class="quiz-opt-letter">E</span><span>Conflict with Maintenance Window</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="12" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp12">Correct Answers: Conflict with Blackout Schedule; Another change for the same CI at the same time; Conflict with Maintenance Window
+      <div class="quiz-opt-explains" id="qoptexp12" style="display:none"></div>
+      <details class="quiz-overall" id="qexp12">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answers: Conflict with Blackout Schedule; Another change for the same CI at the same time; Conflict with Maintenance Window
 Source
 
 Conflict checking when scheduling a change request - ServiceNow Community
 If the link fails, search Google for: ServiceNow Zurich change conflict detection types blackout maintenance window same CI
 
 Expert Explanation
-ServiceNow Change Management automatically detects three types of conflicts when a change is scheduled. Blackout window conflict: the scheduled time falls within a defined blackout period (e.g., year-end freeze). CI Already Scheduled conflict: another change affecting the same CI is already scheduled at the same time.</div>
+ServiceNow Change Management automatically detects three types of conflicts when a change is scheduled. Blackout window conflict: the scheduled time falls within a defined blackout period (e.g., year-end freeze). CI Already Scheduled conflict: another change affecting the same CI is already scheduled at the same time. Maintenance Window conflict: the change is scheduled outside the applicable maintenance window for that CI or environment. Conflict detection operates in Basic or Advanced mode; Advanced also evaluates CIs in the Affected CIs related list in addition to the main CI field.
+<br><br><strong>Why the Others Are Wrong</strong>
+
+Conflict with Assignee Shift Schedule: Not part of baseline conflict detection. Personnel scheduling is not evaluated automatically by the conflict checking mechanism.
+Conflict with Company Holiday Schedule: Holiday calendars are not part of the baseline change conflict detection engine. Blackout schedules are separate and must be explicitly configured.
+
+<br><br><strong>Memory Tip</strong>
+Three automatic conflicts: Black out (forbidden time), Double book (same CI same time), Out of window (wrong time slot).
+<br><br><strong>Real-World</strong> Example
+A change coordinator schedules a network switch firmware upgrade for Friday at 9 PM. The conflict checker runs and finds three issues: (1) a blackout is in effect until Monday due to a quarterly business close, (2) another change is already scheduled for the same switch at 9 PM Friday, and (3) the applicable maintenance window for network devices is Saturday 2-6 AM. All three conflicts appear on the change record as warnings for the coordinator and CAB to review.</div>
+      </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard13">
-      <div class="quiz-q"><span class="quiz-q-num">14.</span>In the ServiceNow native platform, the service catalog can be accessed via the Self-Service &amp;amp;gt; Service Catalog module. Your customer wants to make modifications to this home page, to add, remove and re-arrange the categories.Users with which roles can make these edits? (Choose 2) <span class="quiz-choose">(choose 2)</span></div>
+      <div class="quiz-q"><span class="quiz-q-num">14.</span>In the ServiceNow native platform, the service catalog can be accessed via the Self-Service &amp;gt; Service Catalog module. Your customer wants to make modifications to this home page, to add, remove and re-arrange the categories.Users with which roles can make these edits? (Choose 2) <span class="quiz-choose">(choose 2)</span></div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="13"><span class="quiz-opt-letter">A</span><span>catalog_admin</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="13"><span class="quiz-opt-letter">B</span><span>sc_catalog_admin</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="13"><span class="quiz-opt-letter">C</span><span>catalog_editor</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="13"><span class="quiz-opt-letter">D</span><span>sn_catalog_homepage_write</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="13"><span class="quiz-opt-letter">E</span><span>admin</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="13" data-exp="CORRECT. catalog_admin is the primary role for Service Catalog administration, including full access to configure the catalog homepage."><span class="quiz-opt-letter">A</span><span>catalog_admin</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="13" data-exp="INCORRECT. sc_catalog_admin is not a standard ServiceNow role name. The correct role name is catalog_admin without the sc_ prefix."><span class="quiz-opt-letter">B</span><span>sc_catalog_admin</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="13" data-exp="INCORRECT. catalog_editor can edit catalog item content but does not have the ability to modify the catalog homepage configuration."><span class="quiz-opt-letter">C</span><span>catalog_editor</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="13" data-exp="INCORRECT. sn_catalog_homepage_write is not a standard out-of-the-box ServiceNow role."><span class="quiz-opt-letter">D</span><span>sn_catalog_homepage_write</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="13" data-exp="CORRECT. admin has full system access and can modify all platform configurations including the Service Catalog homepage."><span class="quiz-opt-letter">E</span><span>admin</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="13" style="display:none">Submit Answer</button>
-      <div class="quiz-explain" id="qexp13">Correct Answers: catalog_admin; admin
+      <div class="quiz-opt-explains" id="qoptexp13" style="display:none"></div>
+      <details class="quiz-overall" id="qexp13">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answers: catalog_admin; admin
 Source
 
 Managing the homepage for a catalog - ServiceNow Docs
 If the link fails, search Google for: ServiceNow Zurich service catalog homepage catalog_admin admin role modify access
 
 Expert Explanation
-The ServiceNow documentation for Managing the Homepage for a Catalog states that &quot;Administrators and catalog administrators can control the options for catalog managers and editors.&quot; The catalog_admin role is the designated role for all Service Catalog administrative tasks including homepage management. The admin role has system-wide access and inherently includes all catalog administration capabilities.</div>
+The ServiceNow documentation for Managing the Homepage for a Catalog states that &quot;Administrators and catalog administrators can control the options for catalog managers and editors.&quot; The catalog_admin role is the designated role for all Service Catalog administrative tasks including homepage management. The admin role has system-wide access and inherently includes all catalog administration capabilities. Roles like catalog_editor have content editing rights but not homepage configuration rights. The role names sc_catalog_admin and sn_catalog_homepage_write do not exist in the baseline.
+<br><br><strong>Why the Others Are Wrong</strong>
+
+sc_catalog_admin: Not a valid role name. The correct name is catalog_admin (no sc_ prefix).
+catalog_editor: Can create and modify catalog items but cannot configure the catalog homepage.
+sn_catalog_homepage_write: Not a standard baseline ServiceNow role.
+
+<br><br><strong>Memory Tip</strong>
+Homepage = administration level. Only catalog_admin and admin touch the homepage.
+<br><br><strong>Real-World</strong> Example
+A company rebrands and wants to update the Service Catalog homepage banner and featured items section. The catalog_editor on the team cannot make these changes. The catalog_admin logs in, opens the catalog homepage configuration, updates the banner image and rearranges the featured categories. The change goes live immediately without requiring a system admin.</div>
+      </details>
     </div>
     <div class="quiz-card" id="qcard14">
       <div class="quiz-q"><span class="quiz-q-num">15.</span>Current status of a problem record is tracked in the State field. Every state has a label, value and constant. This example is for Fix in Progress state:Label: Fix in ProgressValue: 104Constant Problem State STATES.FIX IN PROGRESSCustomer wants to add a prerequisite for moving out of the Fix in Progress state. When you update the script include which value is better to use in the script?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="14"><span class="quiz-opt-letter">A</span><span>104</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="14"><span class="quiz-opt-letter">B</span><span>&quot;Fix in Progress&quot;</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="14"><span class="quiz-opt-letter">C</span><span>ProblemState.STATES.FIX_IN_PROGRESS</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="14"><span class="quiz-opt-letter">D</span><span>104.ProblemState.STATES.FIX_IN_PROGRESS</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="14" data-exp="INCORRECT. Using raw integer 104 is valid but is discouraged best practice; hardcoded integers break readability and create maintenance risk."><span class="quiz-opt-letter">A</span><span>104</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="14" data-exp="INCORRECT. String literals like &#x27;Fix in Progress&#x27; are fragile, locale-dependent, and may break if the label changes."><span class="quiz-opt-letter">B</span><span>&quot;Fix in Progress&quot;</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="14" data-exp="CORRECT. ProblemState.STATES.FIX_IN_PROGRESS is the best practice constant for programmatic state references in ServiceNow scripting."><span class="quiz-opt-letter">C</span><span>ProblemState.STATES.FIX_IN_PROGRESS</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="14" data-exp="INCORRECT. This syntax is invalid JavaScript. Combining an integer with dot notation to access a constant object does not work."><span class="quiz-opt-letter">D</span><span>104.ProblemState.STATES.FIX_IN_PROGRESS</span></li>
       </ul>
-      <div class="quiz-explain" id="qexp14">Correct Answer: ProblemState.STATES.FIX_IN_PROGRESS
+      <div class="quiz-opt-explains" id="qoptexp14" style="display:none"></div>
+      <details class="quiz-overall" id="qexp14">
+        <summary class="quiz-overall-toggle">Show full explanation</summary>
+        <div class="quiz-overall-content">Correct Answer: ProblemState.STATES.FIX_IN_PROGRESS
 
 Source
 
 Official Doc: ServiceNow developer best practices for state references
 If the link fails, search Google for: ServiceNow Zurich ProblemState STATES FIX_IN_PROGRESS programmatic state reference best practice
 
-
 Expert Explanation
-ServiceNow&#x27;s developer best practices recommend using constant objects like ProblemState.STATES.FIX_IN_PROGRESS when referencing problem states in scripts. This approach is preferred over hardcoded integers (104) or string literals (&#x27;Fix in Progress&#x27;) because constants are readable, maintainable, and decoupled from the underlying integer value.</div>
+ServiceNow&#x27;s developer best practices recommend using constant objects like ProblemState.STATES.FIX_IN_PROGRESS when referencing problem states in scripts. This approach is preferred over hardcoded integers (104) or string literals (&#x27;Fix in Progress&#x27;) because constants are readable, maintainable, and decoupled from the underlying integer value. If the integer value changes in a future upgrade, scripts using the constant object will continue to work without modification.
+
+<br><br><strong>Why the Others Are Wrong</strong>
+
+104: The correct underlying integer, but raw integers in scripts are an anti-pattern. They reduce readability and create hidden dependencies on specific implementation details.
+&quot;Fix in Progress&quot;: String literals depend on the exact label text, which can change with localization or customization, making scripts brittle.
+104.ProblemState.STATES.FIX_IN_PROGRESS: Syntactically invalid JavaScript. You cannot use dot notation to access a property on an integer literal.
+
+<br><br><strong>Memory Tip</strong>
+Constants over integers: &quot;Name it, don&#x27;t number it.&quot; ProblemState.STATES.FIX_IN_PROGRESS tells you exactly what state you mean, no lookup required.
+
+<br><br><strong>Real-World</strong> Example
+A developer writes a business rule to auto-notify stakeholders when a problem reaches Fix in Progress. Using ProblemState.STATES.FIX_IN_PROGRESS instead of 104 means another developer reading the code 6 months later immediately understands the condition without checking the choice list values.</div>
+      </details>
     </div>
     <div class="quiz-score" id="quizScore">
       <div class="quiz-score-num" id="quizScoreNum">0/15</div>
@@ -776,6 +1017,37 @@ ServiceNow&#x27;s developer best practices recommend using constant objects like
   let answered = 0, score = 0;
   const multiSelections = {};
 
+  function showExplanations(qi, isCorrect) {
+    var card = document.getElementById('qcard' + qi);
+    var opts = card.querySelectorAll('.quiz-opt');
+    var correct = Array.isArray(answers[qi]) ? answers[qi] : [answers[qi]];
+    var expContainer = document.getElementById('qoptexp' + qi);
+    var html = '';
+
+    opts.forEach(function(opt, j) {
+      var perExp = opt.getAttribute('data-exp');
+      var isCorr = correct.indexOf(j) !== -1;
+
+      if (perExp) {
+        var label = isCorr ? '<span class="qoe-correct">Correct</span>' : '<span class="qoe-wrong">Incorrect</span>';
+        html += '<div class="quiz-opt-exp ' + (isCorr ? 'qoe-is-correct' : 'qoe-is-wrong') + '">' +
+          '<div class="qoe-header">' + label + ' <span class="qoe-letter">' + 'ABCDEF'[j] + '</span></div>' +
+          '<div class="qoe-text">' + perExp + '</div></div>';
+      }
+    });
+
+    if (html) {
+      expContainer.innerHTML = html;
+      expContainer.style.display = 'block';
+    }
+
+    // Show overall explanation toggle if it has content
+    var overall = document.getElementById('qexp' + qi);
+    if (overall && overall.querySelector('.quiz-overall-content').innerHTML.trim()) {
+      overall.style.display = 'block';
+    }
+  }
+
   document.querySelectorAll('.quiz-opt').forEach(function(opt) {
     opt.addEventListener('click', function() {
       var qi = parseInt(this.dataset.q);
@@ -804,7 +1076,7 @@ ServiceNow&#x27;s developer best practices recommend using constant objects like
         else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
         this.classList.add('selected');
         card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
-        document.getElementById('qexp' + qi).classList.add('show');
+        showExplanations(qi, isCorrect);
         answered++;
         checkDone();
       }
@@ -834,7 +1106,7 @@ ServiceNow&#x27;s developer best practices recommend using constant objects like
       }
       opts.forEach(function(o) { o.setAttribute('disabled',''); });
       this.style.display = 'none';
-      document.getElementById('qexp' + qi).classList.add('show');
+      showExplanations(qi, isCorrect);
       answered++;
       checkDone();
     });
