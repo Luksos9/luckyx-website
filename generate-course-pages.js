@@ -454,6 +454,18 @@ a:hover { text-decoration: underline; }
 .quiz-score-msg { margin-top: 12px; font-size: 0.95rem; color: var(--text-dim); }
 .quiz-score .cp-cta { margin-top: 16px; font-size: 1rem; padding: 12px 32px; display: inline-flex; }
 
+/* Countdown banner */
+.countdown-banner { max-width: 100%; margin: 0 0 24px; padding: 20px 24px; background: linear-gradient(135deg, rgba(221,92,12,0.08), rgba(221,92,12,0.03)); border: 1px solid rgba(221,92,12,0.2); border-radius: 14px; text-align: center; position: relative; overflow: hidden; }
+.countdown-banner::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(221,92,12,0.04), transparent); animation: cd-shimmer 3s ease-in-out infinite; }
+@keyframes cd-shimmer { 0%, 100% { transform: translateX(-100%); } 50% { transform: translateX(100%); } }
+.countdown-label { font-size: 0.85rem; font-weight: 600; color: var(--orange); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; position: relative; }
+.countdown-headline { font-size: 1.05rem; font-weight: 600; color: var(--text); margin-bottom: 12px; position: relative; line-height: 1.4; }
+.countdown-grid { display: flex; justify-content: center; gap: 16px; margin-bottom: 12px; position: relative; }
+.countdown-unit { display: flex; flex-direction: column; align-items: center; min-width: 56px; }
+.countdown-num { font-size: 1.8rem; font-weight: 800; color: var(--orange); line-height: 1; font-variant-numeric: tabular-nums; }
+.countdown-lbl { font-size: 0.7rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 4px; }
+.countdown-sub { font-size: 0.85rem; color: var(--text-dim); position: relative; line-height: 1.5; }
+
 @media (max-width: 600px) {
   .cp-title { font-size: 1.5rem; }
   .cp-price { font-size: 1.5rem; }
@@ -509,6 +521,18 @@ a:hover { text-decoration: underline; }
       Lifetime access
     </div>
   </div>
+
+  ${course.code === 'DF' ? `<div class="countdown-banner" id="dfCountdown">
+    <div class="countdown-label">CIS-Data Foundations Mandate</div>
+    <div class="countdown-headline">Starting Jan 1, 2027 — CIS-DF becomes a prerequisite for 7 CIS certifications</div>
+    <div class="countdown-grid">
+      <div class="countdown-unit"><span class="countdown-num" id="cdDays">---</span><span class="countdown-lbl">Days</span></div>
+      <div class="countdown-unit"><span class="countdown-num" id="cdHrs">--</span><span class="countdown-lbl">Hours</span></div>
+      <div class="countdown-unit"><span class="countdown-num" id="cdMin">--</span><span class="countdown-lbl">Min</span></div>
+      <div class="countdown-unit"><span class="countdown-num" id="cdSec">--</span><span class="countdown-lbl">Sec</span></div>
+    </div>
+    <div class="countdown-sub">Pass CIS-DF now and get ahead of the deadline.</div>
+  </div>` : ''}
 
   <div class="cp-price-row">
     <span class="cp-price">$${course.price.toFixed(2)}</span>
@@ -616,6 +640,28 @@ a:hover { text-decoration: underline; }
       }
     });
   });
+
+  ${course.code === 'DF' ? `// CIS-DF Mandate Countdown
+  (function() {
+    var deadline = new Date('2027-01-01T00:00:00').getTime();
+    var dEl = document.getElementById('cdDays');
+    var hEl = document.getElementById('cdHrs');
+    var mEl = document.getElementById('cdMin');
+    var sEl = document.getElementById('cdSec');
+    if (!dEl) return;
+    function pad(n) { return n < 10 ? '0' + n : n; }
+    function tick() {
+      var now = Date.now();
+      var diff = deadline - now;
+      if (diff <= 0) { dEl.textContent = '0'; hEl.textContent = '00'; mEl.textContent = '00'; sEl.textContent = '00'; return; }
+      dEl.textContent = Math.floor(diff / 86400000);
+      hEl.textContent = pad(Math.floor((diff % 86400000) / 3600000));
+      mEl.textContent = pad(Math.floor((diff % 3600000) / 60000));
+      sEl.textContent = pad(Math.floor((diff % 60000) / 1000));
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();` : ''}
 </script>
 </body>
 </html>`;
@@ -634,7 +680,9 @@ courses.forEach(course => {
 
 // Generate sitemap
 const sitemapEntries = [
-  `  <url>\n    <loc>https://luckyx.dev/</loc>\n    <lastmod>2026-03-11</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>1.0</priority>\n  </url>`
+  `  <url>\n    <loc>https://luckyx.dev/</loc>\n    <lastmod>2026-03-12</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>1.0</priority>\n  </url>`,
+  `  <url>\n    <loc>https://luckyx.dev/quiz.html</loc>\n    <lastmod>2026-03-12</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.9</priority>\n  </url>`,
+  `  <url>\n    <loc>https://luckyx.dev/compare.html</loc>\n    <lastmod>2026-03-12</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.9</priority>\n  </url>`
 ];
 
 courses.forEach(course => {
