@@ -54,6 +54,9 @@ QUIZ_CSS = """/* Quiz section */
 .preview-kicker{display:inline-flex;align-items:center;gap:8px;margin-bottom:14px;padding:6px 12px;border-radius:999px;background:rgba(221,92,12,.08);border:1px solid rgba(221,92,12,.18);color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
 .preview-copy-row{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:18px}
 .preview-step-note{color:var(--text-dim);font-size:.9rem;line-height:1.55;max-width:32ch}
+.preview-page-status{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px}
+.preview-status-pill{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--border);font-size:.84rem;color:var(--text-dim)}
+.preview-status-pill strong{color:var(--text)}
 .preview-index{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;list-style:none;margin:0 0 20px;padding:0}
 .preview-slot{min-height:58px;padding:10px 6px;border-radius:12px;border:1px solid var(--border);background:var(--bg-raised);text-align:center}
 .preview-slot-num{display:block;font-size:.96rem;font-weight:700;color:var(--text);line-height:1.1}
@@ -62,6 +65,7 @@ QUIZ_CSS = """/* Quiz section */
 .preview-slot.is-done{border-color:rgba(46,160,67,.35);background:rgba(46,160,67,.08)}
 .preview-slot.is-done .preview-slot-num,.preview-slot.is-done .preview-slot-label{color:#2ea043}
 .preview-slot.is-prior{border-style:dashed;background:rgba(255,255,255,.02)}
+.quiz-card[hidden]{display:none!important}
 .quiz-card{background:var(--bg-raised);border:1px solid var(--border);border-radius:14px;padding:20px 20px 18px;margin-bottom:14px;transition:border-color .2s}
 .quiz-card[data-state="correct"]{border-color:#2ea043}
 .quiz-card[data-state="wrong"]{border-color:#d73a49}
@@ -126,12 +130,20 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
 .preview-offer-list{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:8px}
 .preview-offer-list li{display:flex;gap:10px;align-items:flex-start;color:var(--text-dim)}
 .preview-offer-bullet{width:22px;height:22px;flex:0 0 22px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(221,92,12,.1);color:var(--orange);font-size:.8rem;font-weight:700;margin-top:1px}
+.preview-question-nav{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0}
+.preview-nav-btn{min-width:180px}
+.preview-nav-btn.is-primary{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:12px;border:none;background:var(--orange);color:#fff;font-family:var(--font);font-size:.98rem;font-weight:700;cursor:pointer}
+.preview-nav-btn.is-primary:hover{background:#c75400}
+.preview-nav-btn.is-primary[disabled]{opacity:.46;cursor:not-allowed;background:#8c4e27}
 .preview-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
 .preview-secondary-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 22px;border-radius:12px;border:1px solid var(--border-hover);background:transparent;color:var(--text);font-family:var(--font);font-size:.98rem;font-weight:700;cursor:pointer}
 .preview-secondary-btn:hover{background:rgba(221,92,12,.06);border-color:var(--orange)}
+.preview-secondary-btn[disabled]{opacity:.46;cursor:not-allowed;border-color:var(--border)}
+.preview-secondary-btn[disabled]:hover{background:transparent;border-color:var(--border)}
 .preview-text-link{display:inline-flex;align-items:center;gap:8px;margin-top:14px;border:none;background:none;color:var(--text-dim);font-family:var(--font);font-size:.9rem;font-weight:700;cursor:pointer;padding:0}
 .preview-text-link:hover{color:var(--orange);text-decoration:none}
 .preview-helper{margin-top:14px;color:var(--text-dim);font-size:.88rem;line-height:1.6}
+.preview-nav-note{margin-top:10px;color:var(--text-faint);font-size:.83rem;line-height:1.5}
 .preview-email-wrap{display:none;margin-top:18px;padding-top:16px;border-top:1px solid var(--border)}
 .preview-email-wrap.show{display:block}
 .preview-email-wrap h3{font-size:1.02rem;margin-bottom:6px}
@@ -152,7 +164,7 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
 .preview-exit-copy{margin-top:10px;color:var(--text-dim);line-height:1.6}
 .preview-exit-link{margin-top:14px;display:inline-flex;align-items:center;gap:8px;font-weight:700}
 @media (min-width:720px){.preview-index{grid-template-columns:repeat(10,minmax(0,1fr))}}
-@media (min-width:1040px){.quiz-section{width:min(960px,calc(100vw - 72px));max-width:none;position:relative;left:50%;transform:translateX(-50%)}.preview-copy-row{align-items:flex-end}.quiz-card{padding:22px 24px 20px}}
+@media (min-width:1040px){.cp-wrap{max-width:960px;padding-left:32px;padding-right:32px}.preview-copy-row{align-items:flex-end}.quiz-card{padding:22px 24px 20px}}
 @media (max-width:600px){.cp-title,.cp-price{font-size:1.5rem}.cp-cta,.preview-secondary-btn{width:100%;justify-content:center}.quiz-card{padding:16px}.preview-exit-card{padding:22px 18px}.preview-lead-form{flex-direction:column}.preview-lead-form button{width:100%}}
 """
 
@@ -198,6 +210,9 @@ def replace_last_script(raw: str, new_script: str) -> str:
 def clone_card(card, local_idx: int, display_number: int) -> str:
     new_card = copy.deepcopy(card)
     new_card["id"] = f"qcard{local_idx}"
+    new_card["data-local-index"] = str(local_idx)
+    if local_idx != 0:
+        new_card["hidden"] = ""
     q_num = new_card.select_one(".quiz-q-num")
     if q_num:
         q_num.string = f"{display_number}."
@@ -245,11 +260,15 @@ const STATE = 'luckyx-preview:' + PREVIEW.slug;
 const EXIT = 'luckyx-exit-shown:' + PREVIEW.slug;
 const themeToggle = document.getElementById('themeToggle');
 const quizSection = document.getElementById('free-quiz');
-const sel = {};
-const done = new Set();
+const cards = Array.from(document.querySelectorAll('.quiz-card'));
 const pageStartedAt = Date.now();
-let answered = 0;
-let score = 0;
+const pageKey = PREVIEW.step === 1 ? 'page1' : 'page2';
+const responseKey = pageKey + 'Responses';
+const draftKey = pageKey + 'Drafts';
+const currentIndexKey = pageKey + 'CurrentIndex';
+const answeredKey = pageKey + 'Answered';
+const scoreKey = pageKey + 'Score';
+const resultShownKey = pageKey + 'ResultShown';
 let exitReady = false;
 let emailCaptured = false;
 let completeSent = false;
@@ -285,6 +304,12 @@ function saveState(payload) {
   sessionStorage.setItem(STATE, JSON.stringify(payload));
 }
 
+function updateState(patch) {
+  const next = Object.assign({}, readState() || {}, patch || {}, { savedAt: Date.now() });
+  saveState(next);
+  return next;
+}
+
 function clearState() {
   sessionStorage.removeItem(STATE);
   sessionStorage.removeItem(EXIT);
@@ -300,6 +325,80 @@ function touchInteraction() {
   lastInteractionAt = Date.now();
   markExitReady();
 }
+
+function emptyStateArray() {
+  return Array.from({ length: PREVIEW.questionCount }, () => null);
+}
+
+function toIndexArray(value) {
+  if (!Array.isArray(value)) return [];
+  return Array.from(new Set(value.map((item) => parseInt(item, 10)).filter((item) => Number.isInteger(item) && item >= 0))).sort((a, b) => a - b);
+}
+
+function normalizeStoredResponses(value) {
+  const out = emptyStateArray();
+  if (!Array.isArray(value)) return out;
+  value.slice(0, PREVIEW.questionCount).forEach((item, index) => {
+    if (!item || typeof item !== 'object') return;
+    const selected = toIndexArray(item.selected);
+    if (!selected.length || typeof item.isCorrect !== 'boolean') return;
+    out[index] = { selected, isCorrect: item.isCorrect };
+  });
+  return out;
+}
+
+function normalizeStoredDrafts(value) {
+  const out = emptyStateArray();
+  if (!Array.isArray(value)) return out;
+  value.slice(0, PREVIEW.questionCount).forEach((item, index) => {
+    const selected = toIndexArray(item);
+    out[index] = selected.length ? selected : null;
+  });
+  return out;
+}
+
+function calcAnswered(list) {
+  return list.reduce((sum, item) => sum + (item ? 1 : 0), 0);
+}
+
+function calcScore(list) {
+  return list.reduce((sum, item) => sum + (item && item.isCorrect ? 1 : 0), 0);
+}
+
+function unlockCount() {
+  return Math.min(answered + 1, PREVIEW.questionCount);
+}
+
+function correctIndicesFor(qi) {
+  return (Array.isArray(answers[qi]) ? answers[qi].slice() : [answers[qi]]).sort((a, b) => a - b);
+}
+
+function pageSummaryFromState(state, prefix) {
+  const storedResponses = normalizeStoredResponses(state && state[prefix + 'Responses']);
+  const storedAnswered = calcAnswered(storedResponses);
+  if (storedAnswered) {
+    return { answered: storedAnswered, score: calcScore(storedResponses) };
+  }
+  return {
+    answered: Number(state && state[prefix + 'Answered']) || 0,
+    score: Number(state && state[prefix + 'Score']) || 0
+  };
+}
+
+function clampCurrentIndex(index) {
+  const maxUnlocked = Math.max(unlockCount() - 1, 0);
+  const max = Math.min(PREVIEW.questionCount - 1, maxUnlocked);
+  return Math.min(Math.max(parseInt(index, 10) || 0, 0), max);
+}
+
+const initialState = readState() || {};
+let responses = normalizeStoredResponses(initialState[responseKey]);
+let drafts = normalizeStoredDrafts(initialState[draftKey]);
+let answered = calcAnswered(responses);
+let score = calcScore(responses);
+let currentIndex = clampCurrentIndex(initialState[currentIndexKey]);
+let resultShown = Boolean(initialState[resultShownKey]) && answered === PREVIEW.questionCount;
+completeSent = PREVIEW.step === 2 && resultShown;
 
 if ('IntersectionObserver' in window && quizSection) {
   const obs = new IntersectionObserver((entries) => {
@@ -331,7 +430,7 @@ document.querySelectorAll('a.cp-cta[href*="udemy.com"],a.preview-exit-link[href*
   });
 });
 
-document.querySelectorAll('.quiz-card').forEach((card) => {
+cards.forEach((card) => {
   if (card.querySelector('.quiz-submit-btn')) return;
   const qi = parseInt(card.id.replace('qcard', ''), 10);
   const btn = document.createElement('button');
@@ -371,17 +470,19 @@ function processSections(container) {
 }
 
 function updateSlots() {
-  const prior = readState();
+  const state = readState() || {};
+  const priorPage = pageSummaryFromState(state, 'page1');
   document.querySelectorAll('.preview-slot').forEach((slot) => {
     const globalIndex = parseInt(slot.dataset.slot, 10);
     slot.classList.remove('is-done', 'is-active', 'is-prior');
     if (PREVIEW.step === 2 && globalIndex <= PREVIEW.questionCount) {
-      slot.classList.add(prior && prior.page1Answered === PREVIEW.questionCount ? 'is-done' : 'is-prior');
+      slot.classList.add(priorPage.answered === PREVIEW.questionCount ? 'is-done' : 'is-prior');
       return;
     }
     if (globalIndex >= PREVIEW.questionStart && globalIndex <= PREVIEW.questionEnd) {
       const local = globalIndex - PREVIEW.questionStart;
-      slot.classList.add(done.has(local) ? 'is-done' : 'is-active');
+      if (responses[local]) slot.classList.add('is-done');
+      else if (local === currentIndex) slot.classList.add('is-active');
     }
   });
 }
@@ -389,7 +490,7 @@ function updateSlots() {
 function showExplanations(qi) {
   const card = document.getElementById('qcard' + qi);
   const opts = card.querySelectorAll('.quiz-opt');
-  const correct = Array.isArray(answers[qi]) ? answers[qi] : [answers[qi]];
+  const correct = correctIndicesFor(qi);
   opts.forEach((opt, index) => {
     const per = opt.getAttribute('data-exp');
     if (!per || opt.querySelector('.quiz-opt-exp-inline')) return;
@@ -422,32 +523,96 @@ document.querySelectorAll('.quiz-overall').forEach((detail) => {
   });
 });
 
-document.querySelectorAll('.quiz-opt').forEach((opt) => {
-  opt.addEventListener('click', function () {
-    touchInteraction();
-    const qi = parseInt(this.dataset.q, 10);
-    const card = document.getElementById('qcard' + qi);
-    if (card.dataset.state) return;
-    const idx = parseInt(this.dataset.idx, 10);
-    const multi = Array.isArray(answers[qi]);
-    if (!sel[qi]) sel[qi] = new Set();
-    if (multi) {
-      if (sel[qi].has(idx)) {
-        sel[qi].delete(idx);
-        this.classList.remove('selected');
-      } else {
-        sel[qi].add(idx);
-        this.classList.add('selected');
-      }
-    } else {
-      card.querySelectorAll('.quiz-opt').forEach((other) => other.classList.remove('selected'));
-      sel[qi] = new Set([idx]);
-      this.classList.add('selected');
-    }
-    const btn = card.querySelector('.quiz-submit-btn');
-    if (btn) btn.style.display = sel[qi].size > 0 ? 'block' : 'none';
+function persistPageState() {
+  updateState({
+    [responseKey]: responses,
+    [draftKey]: drafts,
+    [currentIndexKey]: currentIndex,
+    [answeredKey]: answered,
+    [scoreKey]: score,
+    [resultShownKey]: resultShown
   });
-});
+}
+
+function clearOptionState(opt) {
+  opt.classList.remove('selected', 'correct', 'wrong');
+  opt.removeAttribute('disabled');
+}
+
+function resetPendingCard(qi) {
+  const card = document.getElementById('qcard' + qi);
+  if (!card) return;
+  card.removeAttribute('data-state');
+  card.querySelectorAll('.quiz-opt').forEach((opt) => clearOptionState(opt));
+  const selected = drafts[qi] || [];
+  card.querySelectorAll('.quiz-opt').forEach((opt, index) => {
+    if (selected.indexOf(index) !== -1) opt.classList.add('selected');
+  });
+  const btn = card.querySelector('.quiz-submit-btn');
+  if (btn) btn.style.display = selected.length ? 'block' : 'none';
+  const overall = card.querySelector('.quiz-overall');
+  if (overall) {
+    overall.open = false;
+    overall.removeAttribute('open');
+    overall.style.display = '';
+  }
+}
+
+function applyResponse(qi, response) {
+  const card = document.getElementById('qcard' + qi);
+  if (!card || !response) return;
+  const correct = correctIndicesFor(qi);
+  const opts = card.querySelectorAll('.quiz-opt');
+  card.dataset.state = response.isCorrect ? 'correct' : 'wrong';
+  opts.forEach((opt) => clearOptionState(opt));
+  if (response.isCorrect) {
+    response.selected.forEach((index) => {
+      if (opts[index]) opts[index].classList.add('correct');
+    });
+  } else {
+    response.selected.forEach((index) => {
+      if (!opts[index]) return;
+      if (correct.indexOf(index) === -1) opts[index].classList.add('wrong');
+      else opts[index].classList.add('correct');
+    });
+    correct.forEach((index) => {
+      if (opts[index]) opts[index].classList.add('correct');
+    });
+  }
+  opts.forEach((opt) => opt.setAttribute('disabled', ''));
+  const btn = card.querySelector('.quiz-submit-btn');
+  if (btn) btn.style.display = 'none';
+  showExplanations(qi);
+}
+
+function updateStatus() {
+  const currentLabel = document.getElementById('previewCurrentQuestion');
+  const scoreLabel = document.getElementById('previewCorrectCount');
+  if (currentLabel) currentLabel.textContent = 'Question ' + (currentIndex + 1) + ' of ' + PREVIEW.questionCount;
+  if (scoreLabel) scoreLabel.textContent = score + ' correct so far';
+}
+
+function updateNav() {
+  const prevBtn = document.getElementById('previewPrevBtn');
+  const nextBtn = document.getElementById('previewNextBtn');
+  const note = document.getElementById('previewNavNote');
+  if (!prevBtn || !nextBtn || !note) return;
+  const currentAnswered = Boolean(responses[currentIndex]);
+  const onLastQuestion = currentIndex === PREVIEW.questionCount - 1;
+  prevBtn.disabled = currentIndex === 0;
+  if (onLastQuestion) {
+    nextBtn.textContent = resultShown ? 'See results' : 'Finish page';
+    nextBtn.disabled = !currentAnswered;
+    if (resultShown) note.textContent = 'Your page result is ready below. You can still review earlier answers before moving on.';
+    else note.textContent = PREVIEW.step === 1 ? 'Finish page 1 to unlock questions 6-10.' : 'Finish page 2 to see your full 10-question preview result.';
+    return;
+  }
+  nextBtn.textContent = 'Next question';
+  nextBtn.disabled = currentIndex + 1 >= unlockCount();
+  note.textContent = currentAnswered
+    ? 'You can move forward or go back to review answered questions.'
+    : 'Submit this question to unlock the next one.';
+}
 
 function pageOneCopy(s) {
   if (s === PREVIEW.questionCount) return 'Perfect page 1. Continue to questions 6-10, then decide if you want the full ' + PREVIEW.totalQuestionCount + '-question bank.';
@@ -461,8 +626,14 @@ function finalCopy(s) {
   return 'The free preview exposed real gaps. The full course is built to fix them with more exam-style repetition and richer explanations.';
 }
 
-function showResult() {
+function renderResult(options) {
+  const opts = options || {};
   const box = document.getElementById('previewResult');
+  if (!box) return;
+  if (!resultShown) {
+    box.classList.remove('show');
+    return;
+  }
   const scoreValue = document.getElementById('previewScoreValue');
   const scoreLabel = document.getElementById('previewScoreLabel');
   const copyEl = document.getElementById('previewResultCopy');
@@ -471,9 +642,7 @@ function showResult() {
   const continueBtn = document.getElementById('previewContinueBtn');
   const backLink = document.getElementById('previewBackLink');
   box.classList.add('show');
-  box.scrollIntoView({ behavior: 'smooth', block: 'start' });
   if (PREVIEW.step === 1) {
-    saveState({ page1Answered: answered, page1Score: score, savedAt: Date.now() });
     scoreValue.textContent = score + '/' + PREVIEW.questionCount;
     scoreLabel.textContent = 'Page 1 of 2 complete';
     copyEl.textContent = pageOneCopy(score);
@@ -481,69 +650,136 @@ function showResult() {
     if (continueBtn) continueBtn.hidden = false;
     if (emailWrap) emailWrap.classList.remove('show');
     if (backLink) backLink.hidden = true;
-    return;
-  }
-  const prior = readState();
-  if (prior && prior.page1Answered === PREVIEW.questionCount) {
-    const total = prior.page1Score + score;
-    scoreValue.textContent = total + '/' + PREVIEW.totalPreviewQuestions;
-    scoreLabel.textContent = '10-question free preview complete';
-    copyEl.textContent = finalCopy(total);
-    helper.textContent = 'You have now seen 10 free questions. The full course keeps the same answer breakdown style across the rest of the bank.';
   } else {
-    scoreValue.textContent = score + '/' + PREVIEW.questionCount;
-    scoreLabel.textContent = 'Page 2 complete';
-    copyEl.textContent = 'You completed questions 6-10 only. Start from page 1 if you want the full 10-question preview before deciding.';
-    helper.textContent = 'Page 1 contains questions 1-5 and sets up the full 10-question score.';
-    if (backLink) backLink.hidden = false;
+    const prior = pageSummaryFromState(readState() || {}, 'page1');
+    if (prior.answered === PREVIEW.questionCount) {
+      const total = prior.score + score;
+      scoreValue.textContent = total + '/' + PREVIEW.totalPreviewQuestions;
+      scoreLabel.textContent = '10-question free preview complete';
+      copyEl.textContent = finalCopy(total);
+      helper.textContent = 'You have now seen 10 free questions. The full course keeps the same answer breakdown style across the rest of the bank.';
+      if (backLink) backLink.hidden = true;
+      if (!opts.silent && !completeSent) {
+        completeSent = true;
+        evt('preview_complete', { page_score: score, combined_score: total });
+      }
+    } else {
+      scoreValue.textContent = score + '/' + PREVIEW.questionCount;
+      scoreLabel.textContent = 'Page 2 complete';
+      copyEl.textContent = 'You completed questions 6-10 only. Start from page 1 if you want the full 10-question preview before deciding.';
+      helper.textContent = 'Page 1 contains questions 1-5 and sets up the full 10-question score.';
+      if (backLink) backLink.hidden = false;
+      if (!opts.silent && !completeSent) {
+        completeSent = true;
+        evt('preview_complete', { page_score: score, combined_score: null });
+      }
+    }
+    if (emailWrap) emailWrap.classList.add('show');
   }
-  if (emailWrap) emailWrap.classList.add('show');
-  if (!completeSent) {
-    completeSent = true;
-    evt('preview_complete', {
-      page_score: score,
-      combined_score: prior && prior.page1Answered === PREVIEW.questionCount ? prior.page1Score + score : null
-    });
-  }
+  if (opts.scroll !== false) box.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
+
+function renderPageState(options) {
+  const opts = options || {};
+  answered = calcAnswered(responses);
+  score = calcScore(responses);
+  resultShown = resultShown && answered === PREVIEW.questionCount;
+  currentIndex = clampCurrentIndex(currentIndex);
+  cards.forEach((card, index) => {
+    card.hidden = index !== currentIndex;
+    if (responses[index]) applyResponse(index, responses[index]);
+    else resetPendingCard(index);
+  });
+  updateStatus();
+  updateSlots();
+  updateNav();
+  renderResult({ scroll: false, silent: true });
+  if (opts.persist !== false) persistPageState();
+}
+
+function showResult(options) {
+  resultShown = true;
+  persistPageState();
+  renderResult(options);
+}
+
+function goToQuestion(nextIndex) {
+  const maxIndex = Math.max(unlockCount() - 1, 0);
+  currentIndex = Math.min(Math.max(nextIndex, 0), maxIndex);
+  renderPageState();
+  const activeCard = cards[currentIndex];
+  if (activeCard) activeCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+document.querySelectorAll('.quiz-opt').forEach((opt) => {
+  opt.addEventListener('click', function () {
+    touchInteraction();
+    const qi = parseInt(this.dataset.q, 10);
+    if (qi !== currentIndex || responses[qi]) return;
+    const idx = parseInt(this.dataset.idx, 10);
+    const multi = Array.isArray(answers[qi]);
+    const current = drafts[qi] ? drafts[qi].slice() : [];
+    if (multi) {
+      const pos = current.indexOf(idx);
+      if (pos === -1) current.push(idx);
+      else current.splice(pos, 1);
+    } else {
+      current.length = 0;
+      current.push(idx);
+    }
+    drafts[qi] = toIndexArray(current);
+    renderPageState();
+  });
+});
 
 function submitAnswer() {
   touchInteraction();
   submitCount += 1;
   const qi = parseInt(this.dataset.q, 10);
-  const card = document.getElementById('qcard' + qi);
-  if (card.dataset.state) return;
-  const selected = Array.from(sel[qi] || []).sort((a, b) => a - b);
-  const correct = (Array.isArray(answers[qi]) ? answers[qi].slice() : [answers[qi]]).sort((a, b) => a - b);
-  const opts = card.querySelectorAll('.quiz-opt');
+  if (qi !== currentIndex || responses[qi]) return;
+  const selected = toIndexArray(drafts[qi]);
+  if (!selected.length) return;
+  const correct = correctIndicesFor(qi);
   const ok = selected.length === correct.length && selected.every((value, index) => value === correct[index]);
-  if (ok) {
-    score += 1;
-    card.dataset.state = 'correct';
-    selected.forEach((index) => opts[index].classList.add('correct'));
-  } else {
-    card.dataset.state = 'wrong';
-    selected.forEach((index) => {
-      if (correct.indexOf(index) === -1) opts[index].classList.add('wrong');
-      else opts[index].classList.add('correct');
-    });
-    correct.forEach((index) => opts[index].classList.add('correct'));
-  }
-  opts.forEach((opt) => opt.setAttribute('disabled', ''));
-  this.style.display = 'none';
-  answered += 1;
-  done.add(qi);
-  updateSlots();
-  showExplanations(qi);
-  if (answered === answers.length) showResult();
+  responses[qi] = { selected, isCorrect: ok };
+  drafts[qi] = null;
+  renderPageState();
 }
 
 document.querySelectorAll('.quiz-submit-btn').forEach((btn) => btn.addEventListener('click', submitAnswer));
 
+const prevBtn = document.getElementById('previewPrevBtn');
+if (prevBtn) {
+  prevBtn.addEventListener('click', () => {
+    touchInteraction();
+    if (currentIndex === 0) return;
+    goToQuestion(currentIndex - 1);
+  });
+}
+
+const nextBtn = document.getElementById('previewNextBtn');
+if (nextBtn) {
+  nextBtn.addEventListener('click', () => {
+    touchInteraction();
+    const currentAnswered = Boolean(responses[currentIndex]);
+    if (currentIndex === PREVIEW.questionCount - 1) {
+      if (!currentAnswered) return;
+      if (!resultShown) showResult();
+      else {
+        const box = document.getElementById('previewResult');
+        if (box) box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      return;
+    }
+    if (!currentAnswered) return;
+    goToQuestion(currentIndex + 1);
+  });
+}
+
 const continueBtn = document.getElementById('previewContinueBtn');
 if (continueBtn) {
   continueBtn.addEventListener('click', () => {
-    saveState({ page1Answered: answered, page1Score: score, savedAt: Date.now() });
+    persistPageState();
     evt('preview_continue', { page_score: score });
     window.location.href = PREVIEW.page2Url + '#free-quiz';
   });
@@ -622,13 +858,12 @@ function handleLead(form) {
 
   function canShow() {
     const now = Date.now();
-    const engaged = submitCount >= 1 || answered >= 1 || interactionCount >= 4;
-    return exitReady &&
-      engaged &&
+    return PREVIEW.step === 2 &&
+      exitReady &&
+      submitCount >= 2 &&
       !emailCaptured &&
       !sessionStorage.getItem(EXIT) &&
-      now - pageStartedAt > 30000 &&
-      now - (quizSeenAt || pageStartedAt) > 15000 &&
+      now - pageStartedAt > 45000 &&
       now - lastInteractionAt > 10000;
   }
 
@@ -652,7 +887,7 @@ function handleLead(form) {
   });
 })();
 
-updateSlots();
+renderPageState({ persist: false });
 __EXTRA__
 </script>"""
 
@@ -773,11 +1008,20 @@ def quiz_section(title: str, total_q: int, udemy: str, slug: str, step: int, car
         <p class="quiz-intro">{intro}</p>
         <p class="preview-step-note">{note}</p>
       </div>
+      <div class="preview-page-status" id="previewPageStatus">
+        <span class="preview-status-pill">On this page <strong id="previewCurrentQuestion">Question 1 of 5</strong></span>
+        <span class="preview-status-pill">Progress <strong id="previewCorrectCount">0 correct so far</strong></span>
+      </div>
       <ol class="preview-index" id="previewIndex">
 {progress_slots(step)}
       </ol>
     </div>
 {chr(10).join(cards_html)}
+    <div class="preview-question-nav" id="previewQuestionNav">
+      <button type="button" class="preview-secondary-btn preview-nav-btn" id="previewPrevBtn">Previous question</button>
+      <button type="button" class="preview-nav-btn is-primary" id="previewNextBtn">Next question</button>
+    </div>
+    <p class="preview-nav-note" id="previewNavNote">Submit this question to unlock the next one.</p>
 {result_block(total_q, udemy, step, f"/courses/{slug}.html")}
   </section>"""
 
@@ -884,8 +1128,9 @@ def render_page(raw: str, slug: str, title: str, code: str, udemy: str, total_q:
         output = re.sub(r"<title>(.*?)</title>", r"<title>\1 | Free Preview Page 2</title>", output, count=1)
         output = re.sub(r'<meta name="description" content="([^"]*)">', lambda m: f'<meta name="description" content="{m.group(1)} Page 2 of the 10-question free preview.">', output, count=1)
         output = re.sub(r'<meta name="robots" content="[^"]+">', '<meta name="robots" content="noindex, follow">', output, count=1)
-    insert_at = output.rfind("<script>")
-    output = output[:insert_at] + exit_popup(title, total_q, udemy) + output[insert_at:]
+    if step == 2:
+        insert_at = output.rfind("<script>")
+        output = output[:insert_at] + exit_popup(title, total_q, udemy) + output[insert_at:]
     return replace_last_script(output, script_block(page_config(slug, title, total_q, step), answers, countdown))
 
 
@@ -904,9 +1149,13 @@ def validate(path: Path, step: int) -> None:
     quiz = soup.select_one("#free-quiz")
     if not quiz or quiz.get("data-preview-step") != str(step):
         raise ValueError(f"{path.name}: preview step marker is incorrect.")
+    if not soup.select_one("#previewPageStatus") or not soup.select_one("#previewQuestionNav"):
+        raise ValueError(f"{path.name}: guided preview status or nav is missing.")
     if step == 1:
         if "Page 1 of 2: questions 1-5." not in raw:
             raise ValueError(f"{path.name}: page 1 intro copy missing.")
+        if 'id="exitPopup"' in raw:
+            raise ValueError(f"{path.name}: exit popup should not render on page 1.")
     else:
         if "Page 2 of 2: questions 6-10." not in raw:
             raise ValueError(f"{path.name}: page 2 intro copy missing.")
@@ -917,6 +1166,8 @@ def validate(path: Path, step: int) -> None:
             raise ValueError(f"{path.name}: preview page is missing noindex, follow.")
         if not canonical or canonical.get("href") != expected_canonical:
             raise ValueError(f"{path.name}: preview canonical is incorrect.")
+        if 'id="exitPopup"' not in raw:
+            raise ValueError(f"{path.name}: exit popup is missing on page 2.")
     if any(marker in raw for marker in MOJIBAKE_MARKERS):
         raise ValueError(f"{path.name}: mojibake remains in output.")
 
