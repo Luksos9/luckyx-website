@@ -75,8 +75,8 @@
 {
   "@context": "https://schema.org",
   "@type": "Quiz",
-  "name": "Free CIS IT Service Management Sample Questions",
-  "description": "Try 5 free sample questions from the CIS IT Service Management practice test",
+  "name": "10 Free CIS IT Service Management \u2014 ServiceNow Practice Test 2026 Preview Questions",
+  "description": "Start page 1 of a 10-question free preview for the CIS IT Service Management \u2014 ServiceNow Practice Test 2026 practice test.",
   "url": "https://luckyx.dev/courses/cis-itsm.html#free-quiz",
   "educationalAlignment": {
     "@type": "AlignmentObject",
@@ -86,111 +86,115 @@
   "hasPart": [
     {
       "@type": "Question",
-      "name": "What is Incident Management in ServiceNow?",
+      "name": "Customer wants to give secure access to business users to view problem records and reports for the products they support.What additional problem role is installed to support this requirement, when you install the ITSM roles plugin ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The process of restoring normal service operation as quickly as possible after an unplanned interruption"
+        "text": "sn_problem_read"
       },
       "suggestedAnswer": [
         {
           "@type": "Answer",
-          "text": "Project planning"
+          "text": "sn_business_user"
         },
         {
           "@type": "Answer",
-          "text": "Software development"
+          "text": "sn_service_owner"
         },
         {
           "@type": "Answer",
-          "text": "Asset tracking"
+          "text": "sn_problem_business_user"
+        },
+        {
+          "@type": "Answer",
+          "text": "problem_write"
         }
       ]
     },
     {
       "@type": "Question",
-      "name": "What is the difference between an Incident and a Problem?",
+      "name": "What would be the next step for this problem:\"Problem investigation had been previously closed, because the risk was accepted, in favor of using the workaround, instead of applying the fix.After a couple of weeks, the issue starts to occur more frequently, so management wants to re-visit the root cause analysis.\"",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "An Incident is an unplanned interruption; a Problem is the underlying root cause of one or more incidents"
+        "text": "Problem Manager clicks Re-Analyze on the Problem record"
       },
       "suggestedAnswer": [
         {
           "@type": "Answer",
-          "text": "They are the same"
+          "text": "If 7 days has passed, since the Problem was closed, it cannot be re-opened"
         },
         {
           "@type": "Answer",
-          "text": "Incidents are for hardware; Problems are for software"
+          "text": "Problem Assignee clicks Re-Open on the Problem record"
         },
         {
           "@type": "Answer",
-          "text": "Problems are more urgent than Incidents"
+          "text": "Administrator clicks Re-Open on the Problem Record"
         }
       ]
     },
     {
       "@type": "Question",
-      "name": "What is a Change Request?",
+      "name": "Where are defined the timeframe conditions for sending an SLA breach warning notification ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A formal proposal to modify an IT service, system, or infrastructure component"
+        "text": "Default SLA flow"
       },
       "suggestedAnswer": [
         {
           "@type": "Answer",
-          "text": "A feature request from customers"
+          "text": "SLA definition record"
         },
         {
           "@type": "Answer",
-          "text": "A bug report"
+          "text": "SLA Properties application"
         },
         {
           "@type": "Answer",
-          "text": "A service catalog item"
+          "text": "SLA trigger conditions"
         }
       ]
     },
     {
       "@type": "Question",
-      "name": "What are the types of Changes in ITSM?",
+      "name": "What is a characteristic of Major Incidents in the ServiceNow platform?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Normal, Standard, Emergency"
+        "text": "They are incidents of high impact and urgency affecting a large number of users."
       },
       "suggestedAnswer": [
         {
           "@type": "Answer",
-          "text": "Small, Medium, Large"
+          "text": "They are resolved exclusively through manual processes."
         },
         {
           "@type": "Answer",
-          "text": "Critical, High, Medium, Low"
+          "text": "They only affect a single user."
         },
         {
           "@type": "Answer",
-          "text": "Planned, Unplanned"
+          "text": "They can only be created manually."
         }
       ]
     },
     {
       "@type": "Question",
-      "name": "What is a Knowledge Article in ITSM?",
+      "name": "What is the name of Business Rule that triggers automatic group assignment on Incident, Problem or Change requests?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A documented solution or information that helps resolve issues and reduce ticket volume"
+        "text": "Populate Assignment Group based on CI/SO"
       },
       "suggestedAnswer": [
         {
           "@type": "Answer",
-          "text": "A blog post"
+          "text": "Auto-populate ITSM Assignment Groups"
         },
         {
           "@type": "Answer",
-          "text": "A database schema"
+          "text": "ITSM Assignment Lookup Rule"
         },
         {
           "@type": "Answer",
-          "text": "A training video"
+          "text": "Automatic Assignment for ITSM"
         }
       ]
     }
@@ -321,77 +325,21 @@ a:hover { text-decoration: underline; }
 .theme-toggle svg { width: 18px; height: 18px; stroke: var(--text-dim); stroke-width: 2; fill: none; }
 
 /* Quiz section */
-.quiz-section { margin-top: 48px; }
-.quiz-section h2 { font-size: 1.3rem; font-weight: 600; margin-bottom: 8px; }
-.quiz-intro { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 24px; }
-.quiz-card { background: var(--bg-raised); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 16px; transition: border-color 0.2s; }
-.quiz-card[data-state="correct"] { border-color: #2ea043; }
-.quiz-card[data-state="wrong"] { border-color: #d73a49; }
-.quiz-q { font-weight: 600; font-size: 1rem; margin-bottom: 16px; line-height: 1.5; }
-.quiz-q-num { color: var(--orange); font-weight: 700; margin-right: 6px; }
-.quiz-opts { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-.quiz-opt { display: flex; align-items: flex-start; gap: 10px; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border); cursor: pointer; transition: background 0.15s, border-color 0.15s; color: var(--text-dim); font-size: 0.95rem; line-height: 1.5; flex-wrap: wrap; }
-.quiz-opt:hover { background: rgba(221,92,12,0.06); border-color: var(--border-hover); }
-.quiz-opt.selected { background: rgba(221,92,12,0.1); border-color: var(--orange); color: var(--text); }
-.quiz-opt.correct { background: rgba(46,160,67,0.1); border-color: #2ea043; color: var(--text); }
-.quiz-opt.wrong { background: rgba(215,58,73,0.1); border-color: #d73a49; }
-.quiz-opt[disabled] { pointer-events: none; cursor: default; }
-.quiz-opt-letter { width: 22px; height: 22px; border-radius: 50%; background: var(--bg-card); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 600; flex-shrink: 0; color: var(--text-dim); }
-.quiz-opt.selected .quiz-opt-letter { background: var(--orange); color: #fff; border-color: var(--orange); }
-.quiz-opt.correct .quiz-opt-letter { background: #2ea043; color: #fff; border-color: #2ea043; }
-.quiz-opt.wrong .quiz-opt-letter { background: #d73a49; color: #fff; border-color: #d73a49; }
-.quiz-choose { font-weight: 400; color: var(--orange); font-size: 0.85rem; margin-left: 4px; }
-.quiz-submit-btn { display: none; margin-top: 14px; padding: 11px 28px; background: var(--orange); color: #fff; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.15s, transform 0.1s; }
-.quiz-submit-btn:hover { background: #c75400; }
-.quiz-submit-btn:active { transform: scale(0.97); }
-/* Per-option inline explanation (under each option) */
-.quiz-opt-exp-inline { flex-basis: 100%; padding: 10px 14px; border-radius: 8px; font-size: 0.88rem; line-height: 1.5; margin-top: 6px; animation: fadeInExp 0.3s ease; }
-@keyframes fadeInExp { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
-.quiz-opt-exp-inline.qoe-is-correct { background: rgba(46,160,67,0.08); border-left: 3px solid #2ea043; }
-.quiz-opt-exp-inline.qoe-is-wrong { background: rgba(215,58,73,0.06); border-left: 3px solid #d73a49; }
-.qoe-header { font-weight: 600; margin-bottom: 4px; font-size: 0.82rem; display: flex; align-items: center; gap: 6px; }
-.qoe-correct { color: #2ea043; }
-.qoe-wrong { color: #d73a49; }
-.qoe-letter { color: var(--text-dim); font-weight: 500; }
-.qoe-text { color: var(--text-dim); }
-/* Legacy grouped explanation container - hidden */
-.quiz-opt-explains { display: none !important; }
-/* Collapsible overall explanation */
-.quiz-overall { display: none; margin-top: 14px; }
-.quiz-overall[style*="block"] { display: block; }
-.quiz-overall-toggle { cursor: pointer; font-size: 0.9rem; font-weight: 600; color: var(--orange); padding: 10px 0; list-style: none; display: flex; align-items: center; gap: 6px; }
-.quiz-overall-toggle::-webkit-details-marker { display: none; }
-.quiz-overall-toggle::before { content: ''; display: inline-block; width: 0; height: 0; border-left: 5px solid var(--orange); border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform 0.2s; }
-details.quiz-overall[open] .quiz-overall-toggle::before { transform: rotate(90deg); }
-.quiz-overall-content { padding: 4px 0; background: transparent; border-radius: 0; font-size: 0.9rem; color: var(--text-dim); line-height: 1.7; margin-top: 8px; border-left: none; }
-/* Section-specific styling for overall explanation */
-.exp-section { margin-bottom: 14px; padding: 14px 18px; border-radius: 10px; border-left: 3px solid; }
-.exp-section:last-child { margin-bottom: 0; }
-.exp-section h5 { margin: 0 0 8px 0; font-size: 0.92rem; font-weight: 700; }
-.exp-section p { margin-bottom: 6px; }
-.exp-section p:last-child { margin-bottom: 0; }
-.exp-section ul { padding-left: 20px; margin-bottom: 6px; }
-.exp-section ul:last-child { margin-bottom: 0; }
-.exp-section li { margin-bottom: 4px; }
-.exp-correct-answer { background: rgba(46,160,67,0.05); border-left-color: #2ea043; }
-.exp-correct-answer h5 { color: #2ea043; }
-.exp-source { background: rgba(59,130,246,0.05); border-left-color: #3b82f6; }
-.exp-source h5 { color: #3b82f6; }
-.exp-source a { color: #3b82f6; }
-.exp-expert { background: rgba(139,92,246,0.05); border-left-color: #8b5cf6; }
-.exp-expert h5 { color: #8b5cf6; }
-.exp-wrong { background: rgba(215,58,73,0.04); border-left-color: #d73a49; }
-.exp-wrong h5 { color: #d73a49; }
-.exp-memory { background: rgba(217,119,6,0.05); border-left-color: #d97706; }
-.exp-memory h5 { color: #d97706; }
-.exp-realworld { background: rgba(16,185,129,0.05); border-left-color: #10b981; }
-.exp-realworld h5 { color: #10b981; }
-.quiz-score { margin-top: 24px; padding: 20px; background: var(--bg-raised); border-radius: 12px; border: 1px solid var(--border); text-align: center; display: none; }
-.quiz-score.show { display: block; }
-.quiz-score-num { font-size: 2rem; font-weight: 800; color: var(--orange); }
-.quiz-score-label { color: var(--text-dim); font-size: 0.95rem; margin-top: 4px; }
-.quiz-score-msg { margin-top: 12px; font-size: 0.95rem; color: var(--text-dim); }
-.quiz-score .cp-cta { margin-top: 16px; font-size: 1rem; padding: 12px 32px; display: inline-flex; }
+.quiz-section{margin-top:48px}.quiz-section h2{font-size:1.35rem;font-weight:700;margin-bottom:10px;line-height:1.3}.quiz-intro{color:var(--text-dim);font-size:.96rem;margin:0;max-width:64ch}
+.preview-shell{margin-bottom:24px}.preview-kicker{display:inline-flex;align-items:center;gap:8px;margin-bottom:14px;padding:6px 12px;border-radius:999px;background:rgba(221,92,12,.08);border:1px solid rgba(221,92,12,.18);color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.preview-copy-row{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px}.preview-step-note{color:var(--text-dim);font-size:.9rem;line-height:1.6;max-width:34ch}
+.preview-index{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;list-style:none;margin:0 0 24px;padding:0}.preview-slot{min-height:64px;padding:12px 8px;border-radius:12px;border:1px solid var(--border);background:var(--bg-raised);text-align:center}.preview-slot-num{display:block;font-size:1rem;font-weight:700;color:var(--text);line-height:1.1}.preview-slot-label{display:block;margin-top:6px;font-size:.72rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--text-dim)}.preview-slot.is-active{border-color:rgba(221,92,12,.35);background:rgba(221,92,12,.08)}.preview-slot.is-done{border-color:rgba(46,160,67,.35);background:rgba(46,160,67,.08)}.preview-slot.is-done .preview-slot-num,.preview-slot.is-done .preview-slot-label{color:#2ea043}.preview-slot.is-prior{border-style:dashed;background:rgba(255,255,255,.02)}
+.quiz-card{background:var(--bg-raised);border:1px solid var(--border);border-radius:14px;padding:24px;margin-bottom:16px;transition:border-color .2s}.quiz-card[data-state="correct"]{border-color:#2ea043}.quiz-card[data-state="wrong"]{border-color:#d73a49}.quiz-q{font-weight:600;font-size:1rem;margin-bottom:16px;line-height:1.55}.quiz-q-num{color:var(--orange);font-weight:700;margin-right:6px}.quiz-opts{list-style:none;display:flex;flex-direction:column;gap:8px}.quiz-opt{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border-radius:10px;border:1px solid var(--border);cursor:pointer;transition:background .15s,border-color .15s;color:var(--text-dim);font-size:.95rem;line-height:1.55;flex-wrap:wrap}.quiz-opt:hover{background:rgba(221,92,12,.06);border-color:var(--border-hover)}.quiz-opt.selected{background:rgba(221,92,12,.1);border-color:var(--orange);color:var(--text)}.quiz-opt.correct{background:rgba(46,160,67,.1);border-color:#2ea043;color:var(--text)}.quiz-opt.wrong{background:rgba(215,58,73,.1);border-color:#d73a49}.quiz-opt[disabled]{pointer-events:none;cursor:default}
+.quiz-opt-letter{width:22px;height:22px;border-radius:50%;background:var(--bg-card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:600;flex-shrink:0;color:var(--text-dim)}.quiz-opt.selected .quiz-opt-letter{background:var(--orange);color:#fff;border-color:var(--orange)}.quiz-opt.correct .quiz-opt-letter{background:#2ea043;color:#fff;border-color:#2ea043}.quiz-opt.wrong .quiz-opt-letter{background:#d73a49;color:#fff;border-color:#d73a49}.quiz-choose{font-weight:500;color:var(--orange);font-size:.85rem;margin-left:4px}
+.quiz-submit-btn{display:none;margin-top:14px;padding:11px 28px;background:var(--orange);color:#fff;border:none;border-radius:10px;font-size:.92rem;font-weight:700;cursor:pointer}.quiz-submit-btn:hover{background:#c75400}
+.quiz-opt-exp-inline{flex-basis:100%;padding:10px 14px;border-radius:10px;font-size:.88rem;line-height:1.55;margin-top:6px}.quiz-opt-exp-inline.qoe-is-correct{background:rgba(46,160,67,.08);border-left:3px solid #2ea043}.quiz-opt-exp-inline.qoe-is-wrong{background:rgba(215,58,73,.06);border-left:3px solid #d73a49}.qoe-header{font-weight:700;margin-bottom:4px;font-size:.82rem;display:flex;align-items:center;gap:6px}.qoe-correct{color:#2ea043}.qoe-wrong{color:#d73a49}.qoe-letter,.qoe-text{color:var(--text-dim)}.quiz-opt-explains{display:none!important}
+.quiz-overall{display:none;margin-top:14px}.quiz-overall[style*="block"]{display:block}.quiz-overall-toggle{cursor:pointer;font-size:.9rem;font-weight:700;color:var(--orange);padding:10px 0;list-style:none;display:flex;align-items:center;gap:6px}.quiz-overall-toggle::-webkit-details-marker{display:none}.quiz-overall-toggle::before{content:'';display:inline-block;width:0;height:0;border-left:5px solid var(--orange);border-top:4px solid transparent;border-bottom:4px solid transparent;transition:transform .2s}details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}.quiz-overall-content{padding:4px 0;background:transparent;border-radius:0;font-size:.9rem;color:var(--text-dim);line-height:1.7;margin-top:8px;border-left:none}
+.exp-section{margin-bottom:14px;padding:14px 18px;border-radius:12px;border-left:3px solid}.exp-section:last-child,.exp-section p:last-child,.exp-section ul:last-child{margin-bottom:0}.exp-section h5{margin:0 0 8px;font-size:.92rem;font-weight:700}.exp-section p{margin-bottom:6px}.exp-section ul{padding-left:20px;margin-bottom:6px}.exp-section li{margin-bottom:4px}.exp-correct-answer{background:rgba(46,160,67,.05);border-left-color:#2ea043}.exp-correct-answer h5{color:#2ea043}.exp-source{background:rgba(59,130,246,.05);border-left-color:#3b82f6}.exp-source h5,.exp-source a{color:#3b82f6}.exp-expert{background:rgba(139,92,246,.05);border-left-color:#8b5cf6}.exp-expert h5{color:#8b5cf6}.exp-wrong{background:rgba(215,58,73,.04);border-left-color:#d73a49}.exp-wrong h5{color:#d73a49}.exp-memory{background:rgba(217,119,6,.05);border-left-color:#d97706}.exp-memory h5{color:#d97706}.exp-realworld{background:rgba(16,185,129,.05);border-left-color:#10b981}.exp-realworld h5{color:#10b981}
+.preview-result{display:none;margin-top:28px;padding:24px;border-radius:18px;border:1px solid rgba(221,92,12,.22);background:radial-gradient(circle at top right,rgba(221,92,12,.12),transparent 42%),linear-gradient(180deg,rgba(255,255,255,.015),rgba(255,255,255,0))}.preview-result.show{display:block}.preview-result-kicker{color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}.preview-result-head{margin-top:10px;font-size:1.5rem;line-height:1.25;font-weight:700}.preview-score-row{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:18px 0 8px}.preview-score-value{font-size:2.2rem;font-weight:800;color:var(--text);line-height:1}.preview-score-label{color:var(--text-dim);font-size:.92rem}.preview-result-copy{color:var(--text-dim);margin-top:8px;max-width:62ch}.preview-offer-list{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px}.preview-offer-list li{display:flex;gap:10px;align-items:flex-start;color:var(--text-dim)}.preview-offer-bullet{width:22px;height:22px;flex:0 0 22px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(221,92,12,.1);color:var(--orange);font-size:.8rem;font-weight:700;margin-top:1px}.preview-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}.preview-secondary-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 22px;border-radius:12px;border:1px solid var(--border-hover);background:transparent;color:var(--text);font-family:var(--font);font-size:.98rem;font-weight:700;cursor:pointer}.preview-secondary-btn:hover{background:rgba(221,92,12,.06);border-color:var(--orange)}.preview-text-link{display:inline-flex;align-items:center;gap:8px;margin-top:16px;border:none;background:none;color:var(--text-dim);font-family:var(--font);font-size:.9rem;font-weight:700;cursor:pointer;padding:0}.preview-text-link:hover{color:var(--orange);text-decoration:none}.preview-helper{margin-top:16px;color:var(--text-dim);font-size:.9rem;line-height:1.6}
+.preview-email-wrap{display:none;margin-top:22px;padding-top:20px;border-top:1px solid var(--border)}.preview-email-wrap.show{display:block}.preview-email-wrap h3{font-size:1.02rem;margin-bottom:6px}.preview-email-wrap p{color:var(--text-dim);font-size:.92rem}.preview-lead-form{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.preview-lead-form input[type="email"]{flex:1 1 240px;min-height:48px;border-radius:12px;border:1px solid var(--border);background:var(--bg-card);color:var(--text);padding:0 14px;font-family:var(--font);font-size:.95rem}.preview-lead-form input[type="email"]::placeholder{color:var(--text-faint)}.preview-lead-form input[type="email"]:focus{outline:none;border-color:rgba(221,92,12,.45);box-shadow:0 0 0 3px rgba(221,92,12,.12)}.preview-lead-form button{min-height:48px;padding:0 18px;border-radius:12px;border:none;background:var(--orange);color:#fff;font-family:var(--font);font-size:.94rem;font-weight:700;cursor:pointer}.preview-lead-form button:disabled{opacity:.72;cursor:wait}.preview-lead-note{margin-top:10px;color:var(--text-dim);font-size:.82rem;line-height:1.5}
+.preview-exit{position:fixed;inset:0;z-index:1200;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(5,5,7,.74)}.preview-exit.active{display:flex}.preview-exit-card{position:relative;width:min(520px,100%);padding:26px;border-radius:20px;border:1px solid var(--border);background:radial-gradient(circle at top right,rgba(221,92,12,.14),transparent 38%),var(--bg-raised);box-shadow:0 24px 70px rgba(0,0,0,.35)}.preview-exit-close{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--text-dim);cursor:pointer;font-size:1.2rem}.preview-exit-kicker{color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}.preview-exit-title{margin-top:10px;font-size:1.45rem;line-height:1.25}.preview-exit-copy{margin-top:10px;color:var(--text-dim);line-height:1.65}.preview-exit-link{margin-top:14px;display:inline-flex;align-items:center;gap:8px;font-weight:700}
+@media (min-width:720px){.preview-index{grid-template-columns:repeat(10,minmax(0,1fr))}}@media (max-width:600px){.cp-title,.cp-price{font-size:1.5rem}.cp-cta,.preview-secondary-btn{width:100%;justify-content:center}.quiz-card{padding:16px}.preview-exit-card{padding:22px 18px}.preview-lead-form{flex-direction:column}.preview-lead-form button{width:100%}}
+
 /* Countdown banner */
 .countdown-banner { max-width: 100%; margin: 0 0 24px; padding: 20px 24px; background: linear-gradient(135deg, rgba(221,92,12,0.08), rgba(221,92,12,0.03)); border: 1px solid rgba(221,92,12,0.2); border-radius: 14px; text-align: center; position: relative; overflow: hidden; }
 .countdown-banner::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(221,92,12,0.04), transparent); animation: cd-shimmer 3s ease-in-out infinite; }
@@ -507,268 +455,130 @@ details.quiz-overall[open] .quiz-overall-toggle::before { transform: rotate(90de
     </ul>
   </div>
 
-  <section class="quiz-section" id="free-quiz">
-    <h2>Try 15 Free ITSM Questions</h2>
-    <p class="quiz-intro">Test your knowledge before you buy — including multiple-choice and multi-select, just like the real exam.</p>
-    <div class="quiz-card" id="qcard0">
-      <div class="quiz-q"><span class="quiz-q-num">1.</span>Customer wants to give secure access to business users to view problem records and reports for the products they support.What additional problem role is installed to support this requirement, when you install the ITSM roles plugin ?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="0" data-exp="INCORRECT: sn_business_user is a generic platform role that grants basic access to business applications. It does not provide the scoped read access to problem records that business stakeholders need."><span class="quiz-opt-letter">A</span><span>sn_business_user</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="0" data-exp="CORRECT: sn_problem_read is the role installed by the ITSM roles plugin specifically to give business users secure, read-only access to problem records and related reports. It restricts them from modifying data while still letting them monitor product-related problems."><span class="quiz-opt-letter">B</span><span>sn_problem_read</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="0" data-exp="INCORRECT: sn_service_owner is a role tied to service ownership responsibilities, not to viewing problem records. It provides access to service-related configuration, not problem management."><span class="quiz-opt-letter">C</span><span>sn_service_owner</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="0" data-exp="INCORRECT: sn_problem_business_user is not a valid out-of-box role installed by the ITSM roles plugin. The correct role for read access to problems is sn_problem_read."><span class="quiz-opt-letter">D</span><span>sn_problem_business_user</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="0" data-exp="INCORRECT: problem_write would grant write/edit permissions to problem records, which contradicts the requirement of providing secure view-only access to business users."><span class="quiz-opt-letter">E</span><span>problem_write</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp0" style="display:none"></div>
-      <details class="quiz-overall" id="qexp0">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
+  <section class="quiz-section" id="free-quiz" data-preview-step="1">
+    <div class="preview-shell">
+      <div class="preview-kicker">10-question free preview</div>
+      <h2>10 Free CIS IT Service Management — ServiceNow Practice Test 2026 Preview Questions</h2>
+      <div class="preview-copy-row">
+        <p class="quiz-intro">Page 1 of 2: questions 1-5. Rich explanations, multiple-choice, and multi-select - just like the real exam.</p>
+        <p class="preview-step-note">You are seeing the first half of a 10-question preview before the full 100-question course.</p>
+      </div>
+      <ol class="preview-index" id="previewIndex">
+      <li class="preview-slot" data-slot="1"><span class="preview-slot-num">1</span><span class="preview-slot-label">Live now</span></li>
+      <li class="preview-slot" data-slot="2"><span class="preview-slot-num">2</span><span class="preview-slot-label">Live now</span></li>
+      <li class="preview-slot" data-slot="3"><span class="preview-slot-num">3</span><span class="preview-slot-label">Live now</span></li>
+      <li class="preview-slot" data-slot="4"><span class="preview-slot-num">4</span><span class="preview-slot-label">Live now</span></li>
+      <li class="preview-slot" data-slot="5"><span class="preview-slot-num">5</span><span class="preview-slot-label">Live now</span></li>
+      <li class="preview-slot" data-slot="6"><span class="preview-slot-num">6</span><span class="preview-slot-label">Page 2</span></li>
+      <li class="preview-slot" data-slot="7"><span class="preview-slot-num">7</span><span class="preview-slot-label">Page 2</span></li>
+      <li class="preview-slot" data-slot="8"><span class="preview-slot-num">8</span><span class="preview-slot-label">Page 2</span></li>
+      <li class="preview-slot" data-slot="9"><span class="preview-slot-num">9</span><span class="preview-slot-label">Page 2</span></li>
+      <li class="preview-slot" data-slot="10"><span class="preview-slot-num">10</span><span class="preview-slot-label">Page 2</span></li>
+      </ol>
+    </div>
+<div class="quiz-card" id="qcard0">
+<div class="quiz-q"><span class="quiz-q-num">1.</span>Customer wants to give secure access to business users to view problem records and reports for the products they support.What additional problem role is installed to support this requirement, when you install the ITSM roles plugin ?</div>
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="INCORRECT: sn_business_user is a generic platform role that grants basic access to business applications. It does not provide the scoped read access to problem records that business stakeholders need." data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>sn_business_user</span></li>
+<li class="quiz-opt" data-exp="CORRECT: sn_problem_read is the role installed by the ITSM roles plugin specifically to give business users secure, read-only access to problem records and related reports. It restricts them from modifying data while still letting them monitor product-related problems." data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>sn_problem_read</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: sn_service_owner is a role tied to service ownership responsibilities, not to viewing problem records. It provides access to service-related configuration, not problem management." data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>sn_service_owner</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: sn_problem_business_user is not a valid out-of-box role installed by the ITSM roles plugin. The correct role for read access to problems is sn_problem_read." data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>sn_problem_business_user</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: problem_write would grant write/edit permissions to problem records, which contradicts the requirement of providing secure view-only access to business users." data-idx="4" data-q="0"><span class="quiz-opt-letter">E</span><span>problem_write</span></li>
+</ul>
+<div class="quiz-opt-explains" id="qoptexp0" style="display:none"></div>
+<details class="quiz-overall" id="qexp0">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
 <h5>Correct Answer</h5><p>B - sn_problem_read</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-it-service-management/page/product/problem-management/concept/problem-management-roles.html" target="_blank">ServiceNow Zurich Documentation - Problem Management Roles</a></p><h5>Expert Explanation</h5><p>The ITSM roles plugin installs several granular roles for each ITSM process. For Problem Management, the sn_problem_read role grants read-only access to problem records, tasks, and related lists. This is the right fit when business users need visibility into problems affecting their products without the ability to modify investigation data.</p><h5>Why the Others Are Wrong</h5><p>sn_business_user is too generic and not problem-specific. sn_service_owner relates to service ownership, not problem viewing. sn_problem_business_user is not a valid out-of-box role. problem_write grants edit access, which exceeds the stated requirement of view-only access.</p><h5>Memory Tip</h5><p>Think "read" in the role name - the customer wants to "read" (view) problem records, so the role is sn_problem_read.</p><h5>Real-World Example</h5><p>A product manager needs to check which open problems affect the CRM application. With sn_problem_read, they can view problem records and run reports but cannot accidentally change the state or reassign the problem to a different group.</p>
 </div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard1">
-      <div class="quiz-q"><span class="quiz-q-num">2.</span>What would be the next step for this problem:&quot;Problem investigation had been previously closed, because the risk was accepted, in favor of using the workaround, instead of applying the fix.After a couple of weeks, the issue starts to occur more frequently, so management wants to re-visit the root cause analysis.&quot;</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="1" data-exp="INCORRECT: There is no 7-day restriction preventing a problem from being re-opened in ServiceNow. The platform provides built-in mechanisms to revisit closed problems regardless of how long ago they were closed."><span class="quiz-opt-letter">A</span><span>If 7 days has passed, since the Problem was closed, it cannot be re-opened</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="1" data-exp="CORRECT: When a problem was closed with an accepted risk but needs to be revisited, the Problem Manager uses the Re-Analyze UI action on the problem record. This transitions the problem back to an active investigation state so the root cause analysis can continue."><span class="quiz-opt-letter">B</span><span>Problem Manager clicks Re-Analyze on the Problem record</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="1" data-exp="INCORRECT: The Re-Open action is not the correct approach here. Re-Analyze is specifically designed for scenarios where a previously closed investigation needs to be revisited, and it is available to the Problem Manager role."><span class="quiz-opt-letter">C</span><span>Problem Assignee clicks Re-Open on the Problem record</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="1" data-exp="INCORRECT: An Administrator clicking Re-Open is not the standard workflow. The Re-Analyze action is purpose-built for this scenario and is available to the Problem Manager, not limited to administrators."><span class="quiz-opt-letter">D</span><span>Administrator clicks Re-Open on the Problem Record</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp1" style="display:none"></div>
-      <details class="quiz-overall" id="qexp1">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
+</details>
+</div>
+<div class="quiz-card" id="qcard1">
+<div class="quiz-q"><span class="quiz-q-num">2.</span>What would be the next step for this problem:"Problem investigation had been previously closed, because the risk was accepted, in favor of using the workaround, instead of applying the fix.After a couple of weeks, the issue starts to occur more frequently, so management wants to re-visit the root cause analysis."</div>
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="INCORRECT: There is no 7-day restriction preventing a problem from being re-opened in ServiceNow. The platform provides built-in mechanisms to revisit closed problems regardless of how long ago they were closed." data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>If 7 days has passed, since the Problem was closed, it cannot be re-opened</span></li>
+<li class="quiz-opt" data-exp="CORRECT: When a problem was closed with an accepted risk but needs to be revisited, the Problem Manager uses the Re-Analyze UI action on the problem record. This transitions the problem back to an active investigation state so the root cause analysis can continue." data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>Problem Manager clicks Re-Analyze on the Problem record</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: The Re-Open action is not the correct approach here. Re-Analyze is specifically designed for scenarios where a previously closed investigation needs to be revisited, and it is available to the Problem Manager role." data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>Problem Assignee clicks Re-Open on the Problem record</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: An Administrator clicking Re-Open is not the standard workflow. The Re-Analyze action is purpose-built for this scenario and is available to the Problem Manager, not limited to administrators." data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>Administrator clicks Re-Open on the Problem Record</span></li>
+</ul>
+<div class="quiz-opt-explains" id="qoptexp1" style="display:none"></div>
+<details class="quiz-overall" id="qexp1">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
 <h5>Correct Answer</h5><p>B - Problem Manager clicks Re-Analyze on the Problem record</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-it-service-management/page/product/problem-management/concept/problem-management-process.html" target="_blank">ServiceNow Zurich Documentation - Problem Management Process</a></p><h5>Expert Explanation</h5><p>ServiceNow Problem Management includes a Re-Analyze UI action that allows the Problem Manager to reopen a closed investigation. This is distinct from a simple Re-Open because it specifically signals that a new round of root cause analysis is needed. The action transitions the problem back to an appropriate investigation state.</p><h5>Why the Others Are Wrong</h5><p>There is no 7-day lockout on closed problems. Re-Open is not the designated action for revisiting a closed investigation - Re-Analyze is the purpose-built action. The workflow does not require an Administrator; the Problem Manager role has the authority to trigger Re-Analyze.</p><h5>Memory Tip</h5><p>The scenario says "re-visit the root cause analysis" - the key word is "analysis." Match it to the Re-Analyze action. Re-Analyze = resume the analysis.</p><h5>Real-World Example</h5><p>A known error for intermittent VPN drops was closed because the team accepted the risk of using a workaround. Two weeks later, the issue frequency triples. The Problem Manager clicks Re-Analyze to reopen the investigation and pursue a permanent fix.</p>
 </div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard2">
-      <div class="quiz-q"><span class="quiz-q-num">3.</span>Where are defined the timeframe conditions for sending an SLA breach warning notification ?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="2" data-exp="INCORRECT: The SLA definition record defines the conditions for when an SLA applies (start, pause, stop conditions), the target duration, and the schedule. It does not define breach warning notification timing on its own."><span class="quiz-opt-letter">A</span><span>SLA definition record</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="2" data-exp="CORRECT: The default SLA flow (or SLA workflow in older versions) contains the logic that determines when breach warning notifications are sent. The flow includes stages and timers that define the percentage thresholds (such as 50% or 75% of elapsed time) at which warning notifications are triggered."><span class="quiz-opt-letter">B</span><span>Default SLA flow</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="2" data-exp="INCORRECT: The SLA Properties application contains global SLA settings but does not define the specific timeframe conditions for individual breach warning notifications. Those conditions live in the flow/workflow attached to the SLA."><span class="quiz-opt-letter">C</span><span>SLA Properties application</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="2" data-exp="INCORRECT: SLA trigger conditions is not a specific module or configuration area in ServiceNow. The trigger conditions for breach warnings are configured within the SLA flow or workflow."><span class="quiz-opt-letter">D</span><span>SLA trigger conditions</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp2" style="display:none"></div>
-      <details class="quiz-overall" id="qexp2">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
+</details>
+</div>
+<div class="quiz-card" id="qcard2">
+<div class="quiz-q"><span class="quiz-q-num">3.</span>Where are defined the timeframe conditions for sending an SLA breach warning notification ?</div>
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="INCORRECT: The SLA definition record defines the conditions for when an SLA applies (start, pause, stop conditions), the target duration, and the schedule. It does not define breach warning notification timing on its own." data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>SLA definition record</span></li>
+<li class="quiz-opt" data-exp="CORRECT: The default SLA flow (or SLA workflow in older versions) contains the logic that determines when breach warning notifications are sent. The flow includes stages and timers that define the percentage thresholds (such as 50% or 75% of elapsed time) at which warning notifications are triggered." data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>Default SLA flow</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: The SLA Properties application contains global SLA settings but does not define the specific timeframe conditions for individual breach warning notifications. Those conditions live in the flow/workflow attached to the SLA." data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>SLA Properties application</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: SLA trigger conditions is not a specific module or configuration area in ServiceNow. The trigger conditions for breach warnings are configured within the SLA flow or workflow." data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>SLA trigger conditions</span></li>
+</ul>
+<div class="quiz-opt-explains" id="qoptexp2" style="display:none"></div>
+<details class="quiz-overall" id="qexp2">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
 <h5>Correct Answer</h5><p>B - Default SLA flow</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-it-service-management/page/product/service-level-management/concept/sla-flow.html" target="_blank">ServiceNow Zurich Documentation - SLA Flow</a></p><h5>Expert Explanation</h5><p>In ServiceNow, SLA breach warning notifications are controlled by the SLA flow (or SLA workflow in pre-Flow Designer implementations). The flow defines percentage-based or duration-based thresholds that trigger notifications before the actual breach occurs. For example, a flow might send a warning at 50% elapsed and another at 75% elapsed.</p><h5>Why the Others Are Wrong</h5><p>The SLA definition record defines what the SLA measures and its target, but the notification timing logic lives in the attached flow. SLA Properties control global settings, not per-SLA warning timeframes. SLA trigger conditions is not a distinct configuration area for this purpose.</p><h5>Memory Tip</h5><p>Think of SLA Definition as the "what" (target, conditions) and SLA Flow as the "when" (warning timing, notification triggers). Warning notifications = Flow.</p><h5>Real-World Example</h5><p>An IT team wants a warning email when a P1 incident SLA reaches 75% of its 4-hour target. The admin opens the default SLA flow and configures the percentage threshold and notification action at the 75% stage.</p>
 </div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard3">
-      <div class="quiz-q"><span class="quiz-q-num">4.</span>What is a characteristic of Major Incidents in the ServiceNow platform?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="3" data-exp="INCORRECT: Major Incidents are not limited to manual resolution. ServiceNow supports automated workflows, communication plans, and escalation procedures to speed up resolution of major incidents."><span class="quiz-opt-letter">A</span><span>They are resolved exclusively through manual processes.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="3" data-exp="INCORRECT: By definition, a Major Incident affects a large number of users or critical business services. An issue affecting only a single user would typically be classified as a standard incident."><span class="quiz-opt-letter">B</span><span>They only affect a single user.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="3" data-exp="CORRECT: Major Incidents in ServiceNow are defined as incidents with high impact and high urgency that affect a large number of users or critical business services. They trigger a separate Major Incident Management process with dedicated communication, escalation, and resolution procedures."><span class="quiz-opt-letter">C</span><span>They are incidents of high impact and urgency affecting a large number of users.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="3" data-exp="INCORRECT: Major Incidents can be created through multiple channels - manually, through automated detection rules, or by promoting an existing incident to major incident status. They are not restricted to manual creation only."><span class="quiz-opt-letter">D</span><span>They can only be created manually.</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp3" style="display:none"></div>
-      <details class="quiz-overall" id="qexp3">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
+</details>
+</div>
+<div class="quiz-card" id="qcard3">
+<div class="quiz-q"><span class="quiz-q-num">4.</span>What is a characteristic of Major Incidents in the ServiceNow platform?</div>
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="INCORRECT: Major Incidents are not limited to manual resolution. ServiceNow supports automated workflows, communication plans, and escalation procedures to speed up resolution of major incidents." data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>They are resolved exclusively through manual processes.</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: By definition, a Major Incident affects a large number of users or critical business services. An issue affecting only a single user would typically be classified as a standard incident." data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>They only affect a single user.</span></li>
+<li class="quiz-opt" data-exp="CORRECT: Major Incidents in ServiceNow are defined as incidents with high impact and high urgency that affect a large number of users or critical business services. They trigger a separate Major Incident Management process with dedicated communication, escalation, and resolution procedures." data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>They are incidents of high impact and urgency affecting a large number of users.</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Major Incidents can be created through multiple channels - manually, through automated detection rules, or by promoting an existing incident to major incident status. They are not restricted to manual creation only." data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>They can only be created manually.</span></li>
+</ul>
+<div class="quiz-opt-explains" id="qoptexp3" style="display:none"></div>
+<details class="quiz-overall" id="qexp3">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
 <h5>Correct Answer</h5><p>C - They are incidents of high impact and urgency affecting a large number of users.</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-it-service-management/page/product/incident-management/concept/major-incident-management.html" target="_blank">ServiceNow Zurich Documentation - Major Incident Management</a></p><h5>Expert Explanation</h5><p>Major Incidents represent the most severe category of incidents in ITSM. They are characterized by high impact (affecting many users or critical services) and high urgency (requiring immediate attention). ServiceNow provides a dedicated Major Incident Management process that includes a separate communication plan, a major incident manager role, and accelerated resolution workflows.</p><h5>Why the Others Are Wrong</h5><p>Major incidents leverage automated workflows and structured processes - they are not resolved exclusively through manual effort. They by definition affect many users, not just one. They can be triggered automatically through rules or promoted from existing incidents, not only created manually.</p><h5>Memory Tip</h5><p>Major = Many users. High impact + high urgency + many affected = Major Incident. Think of a company-wide email outage - that is "major."</p><h5>Real-World Example</h5><p>The corporate email system goes down during business hours, affecting 5,000 employees. This is flagged as a Major Incident, triggering an automatic bridge call, executive notifications, and a dedicated incident commander to coordinate the response.</p>
 </div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard4">
-      <div class="quiz-q"><span class="quiz-q-num">5.</span>What is the name of Business Rule that triggers automatic group assignment on Incident, Problem or Change requests?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="4" data-exp="CORRECT: The out-of-box business rule named &quot;Populate Assignment Group based on CI/SO&quot; automatically assigns the appropriate group to Incident, Problem, or Change records. It looks at the Configuration Item (CI) and Service Offering (SO) fields to determine the correct assignment group based on the CI&#x27;s support group or the service offering&#x27;s support group."><span class="quiz-opt-letter">A</span><span>Populate Assignment Group based on CI/SO</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="4" data-exp="INCORRECT: Auto-populate ITSM Assignment Groups is not the actual name of the out-of-box business rule. The correct name references CI/SO (Configuration Item/Service Offering) because those fields drive the assignment logic."><span class="quiz-opt-letter">B</span><span>Auto-populate ITSM Assignment Groups</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="4" data-exp="INCORRECT: ITSM Assignment Lookup Rule is not the correct name. While assignment lookup rules exist as a concept, the specific business rule that handles automatic group assignment based on CI and Service Offering has a different name."><span class="quiz-opt-letter">C</span><span>ITSM Assignment Lookup Rule</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="4" data-exp="INCORRECT: Automatic Assignment for ITSM is not the real name of this business rule. The out-of-box rule explicitly references CI/SO in its name to indicate its assignment logic."><span class="quiz-opt-letter">D</span><span>Automatic Assignment for ITSM</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp4" style="display:none"></div>
-      <details class="quiz-overall" id="qexp4">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
+</details>
+</div>
+<div class="quiz-card" id="qcard4">
+<div class="quiz-q"><span class="quiz-q-num">5.</span>What is the name of Business Rule that triggers automatic group assignment on Incident, Problem or Change requests?</div>
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="CORRECT: The out-of-box business rule named &quot;Populate Assignment Group based on CI/SO&quot; automatically assigns the appropriate group to Incident, Problem, or Change records. It looks at the Configuration Item (CI) and Service Offering (SO) fields to determine the correct assignment group based on the CI's support group or the service offering's support group." data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>Populate Assignment Group based on CI/SO</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Auto-populate ITSM Assignment Groups is not the actual name of the out-of-box business rule. The correct name references CI/SO (Configuration Item/Service Offering) because those fields drive the assignment logic." data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>Auto-populate ITSM Assignment Groups</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: ITSM Assignment Lookup Rule is not the correct name. While assignment lookup rules exist as a concept, the specific business rule that handles automatic group assignment based on CI and Service Offering has a different name." data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>ITSM Assignment Lookup Rule</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Automatic Assignment for ITSM is not the real name of this business rule. The out-of-box rule explicitly references CI/SO in its name to indicate its assignment logic." data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>Automatic Assignment for ITSM</span></li>
+</ul>
+<div class="quiz-opt-explains" id="qoptexp4" style="display:none"></div>
+<details class="quiz-overall" id="qexp4">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
 <h5>Correct Answer</h5><p>A - Populate Assignment Group based on CI/SO</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-it-service-management/page/product/incident-management/reference/incident-management-business-rules.html" target="_blank">ServiceNow Zurich Documentation - Incident Management Business Rules</a></p><h5>Expert Explanation</h5><p>ServiceNow ships a business rule called "Populate Assignment Group based on CI/SO" that fires on Incident, Problem, and Change tables. When a user selects a Configuration Item or Service Offering, this rule looks up the associated support group and auto-populates the Assignment Group field. This reduces manual effort and ensures tickets are routed to the correct team.</p><h5>Why the Others Are Wrong</h5><p>The other options are plausible-sounding names but do not match the actual out-of-box business rule. ServiceNow named this rule to clearly indicate its logic: it populates the assignment group based on the Configuration Item (CI) or Service Offering (SO).</p><h5>Memory Tip</h5><p>Remember "CI/SO" in the name. The assignment is populated based on CI (Configuration Item) or SO (Service Offering). CI/SO = the key to finding the right group.</p><h5>Real-World Example</h5><p>A user logs an incident and selects the "SAP Production Server" CI. The business rule fires, looks up that CI's support group (SAP Basis Team), and automatically fills the Assignment Group field - no manual routing needed.</p>
 </div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard5">
-      <div class="quiz-q"><span class="quiz-q-num">6.</span>What allows customers to define condition based flows for a fit for purpose model in Change Management ?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="5" data-exp="CORRECT: State Transition Models in ServiceNow Change Management allow customers to define condition-based flows for change processing. They enable a fit-for-purpose model where different types of changes follow different approval and state transition paths based on configurable conditions such as risk, type, or category."><span class="quiz-opt-letter">A</span><span>State Transition Models</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="5" data-exp="INCORRECT: State Flows is not the correct term used in ServiceNow Change Management. The feature that enables condition-based processing of changes through different paths is called State Transition Models."><span class="quiz-opt-letter">B</span><span>State Flows</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="5" data-exp="INCORRECT: Workflows 2.0 is not a real ServiceNow feature name. While Flow Designer replaced legacy workflows, the specific feature for condition-based change processing paths is State Transition Models."><span class="quiz-opt-letter">C</span><span>Workflows 2.0</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="5" data-exp="INCORRECT: Conditional Change Models is not an actual ServiceNow feature. The correct terminology is State Transition Models, which provide the condition-based routing of changes through different state transitions."><span class="quiz-opt-letter">D</span><span>Conditional Change Models</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp5" style="display:none"></div>
-      <details class="quiz-overall" id="qexp5">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>A - State Transition Models</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-it-service-management/page/product/change-management/concept/change-management-state-model.html" target="_blank">ServiceNow Zurich Documentation - Change Management State Model</a></p><h5>Expert Explanation</h5><p>State Transition Models let organizations define different processing paths for different types of changes. A standard change might skip the CAB approval state, while an emergency change follows an expedited path. Each model defines which states are available, the valid transitions between them, and the conditions under which each transition is allowed. This is the "fit for purpose" approach referenced in the question.</p><h5>Why the Others Are Wrong</h5><p>State Flows, Workflows 2.0, and Conditional Change Models are not real ServiceNow feature names. The platform uses the term "State Transition Models" for this capability in Change Management.</p><h5>Memory Tip</h5><p>"Fit for purpose" = different paths for different change types. State Transition Models define those paths. Think: States + Transitions + Conditions = Model.</p><h5>Real-World Example</h5><p>A company configures three state transition models: one for standard changes (auto-approved), one for normal changes (requires CAB review), and one for emergency changes (post-implementation review only). Each model defines the allowed state transitions based on the change type and risk level.</p>
+</details>
 </div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard6">
-      <div class="quiz-q"><span class="quiz-q-num">7.</span>If Assignment group is empty on an incident record, what will happen when an agent that is a member of a single user group clicks the &quot;Assign to me&quot; UI action?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="6" data-exp="INCORRECT: The agent is not prompted to select an assignment group. The Assign to me UI action is designed to streamline assignment, and when the agent belongs to a single group, ServiceNow can determine the group automatically."><span class="quiz-opt-letter">A</span><span>The agent is prompted to select the Assignment group</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="6" data-exp="CORRECT: When an agent who is a member of exactly one user group clicks &quot;Assign to me&quot; and the Assignment Group field is empty, ServiceNow automatically populates the Assignment Group field with that agent&#x27;s user group. The platform infers the group since there is only one possibility."><span class="quiz-opt-letter">B</span><span>The Assignment group field is populated with agent’s user group</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="6" data-exp="INCORRECT: No error is displayed. The Assign to me action handles the empty Assignment Group gracefully when the agent belongs to a single group by auto-populating it."><span class="quiz-opt-letter">C</span><span>An error is displayed indicating the Assignment group field must be populated before executing the Assign to me UI action</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="6" data-exp="INCORRECT: The Assignment Group field does not remain empty. ServiceNow populates it with the agent&#x27;s single user group to maintain data integrity and proper routing."><span class="quiz-opt-letter">D</span><span>The Assignment group field remains empty</span></li>
+    <div class="preview-result" id="previewResult">
+      <div class="preview-result-kicker">Page 1 complete</div>
+      <h3 class="preview-result-head">Keep going or get the full course</h3>
+      <div class="preview-score-row">
+        <div class="preview-score-value" id="previewScoreValue">0/5</div>
+        <div class="preview-score-label" id="previewScoreLabel">Page 1 of 2</div>
+      </div>
+      <p class="preview-result-copy" id="previewResultCopy"></p>
+      <ul class="preview-offer-list">
+        <li><span class="preview-offer-bullet">1</span><span>Get all 100 exam-style questions on Udemy.</span></li>
+        <li><span class="preview-offer-bullet">2</span><span>Keep the same per-option reasoning and sourced Zurich explanations across the full bank.</span></li>
+        <li><span class="preview-offer-bullet">3</span><span>Lifetime access with free future updates.</span></li>
       </ul>
-      <div class="quiz-opt-explains" id="qoptexp6" style="display:none"></div>
-      <details class="quiz-overall" id="qexp6">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>B - The Assignment group field is populated with agent's user group</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-it-service-management/page/product/incident-management/reference/assign-to-me-incident.html" target="_blank">ServiceNow Zurich Documentation - Assign to Me</a></p><h5>Expert Explanation</h5><p>The "Assign to me" UI action sets the Assigned to field to the current user. When the Assignment Group is empty and the agent belongs to exactly one user group, ServiceNow auto-fills the Assignment Group with that group. If the agent belongs to multiple groups, the behavior differs - the agent may be prompted to choose. But with a single group, the platform resolves the assignment automatically.</p><h5>Why the Others Are Wrong</h5><p>No prompt appears because the system can determine the group unambiguously (single group membership). No error is thrown - this is expected behavior. The field does not remain empty because ServiceNow fills it to ensure proper group assignment.</p><h5>Memory Tip</h5><p>One agent, one group = auto-fill. If there is only one option, ServiceNow picks it for you. Multiple groups = prompt needed, single group = automatic.</p><h5>Real-World Example</h5><p>A help desk analyst belongs only to the "Service Desk" group. They see an unassigned incident and click "Assign to me." The Assigned to field shows their name and the Assignment Group automatically fills with "Service Desk."</p>
-</div>
-      </details>
-    </div>
-    <div class="quiz-card quiz-multi" id="qcard7">
-      <div class="quiz-q"><span class="quiz-q-num">8.</span>What are the main stages in the Incident Management lifecycle within ServiceNow? (Choose 3) <span class="quiz-choose">(choose 3)</span></div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="7" data-exp="CORRECT: Creation and Classification is the first main stage of the Incident Management lifecycle. This stage covers logging the incident, capturing initial details, and classifying it by category, subcategory, impact, and urgency to determine the correct priority."><span class="quiz-opt-letter">A</span><span>Creation and Classification</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="7" data-exp="CORRECT: Investigation and Diagnosis is the second main stage where the support team examines the incident to identify the root cause or a workaround. This includes reviewing related records, knowledge articles, and known errors."><span class="quiz-opt-letter">B</span><span>Investigation and Diagnosis</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="7" data-exp="CORRECT: Resolution and Closure is the final main stage where the fix is applied, the user confirms the resolution, and the incident is formally closed. Post-closure activities like surveys and reporting also fall into this stage."><span class="quiz-opt-letter">C</span><span>Resolution and Closure</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="7" data-exp="INCORRECT: Prioritization and Scheduling is not recognized as a distinct main stage in the ServiceNow Incident Management lifecycle. Priority is determined during the Creation and Classification stage based on impact and urgency."><span class="quiz-opt-letter">D</span><span>Prioritization and Scheduling</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="7" data-exp="INCORRECT: Feedback and Improvement is not one of the main stages of the Incident lifecycle. While feedback may be collected post-closure, it is not a formal stage in the incident management process flow."><span class="quiz-opt-letter">E</span><span>Feedback and Improvement</span></li>
-      </ul>
-      <button class="quiz-submit-btn" data-q="7" style="display:none">Submit Answer</button>
-      <div class="quiz-opt-explains" id="qoptexp7" style="display:none"></div>
-      <details class="quiz-overall" id="qexp7">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>A - Creation and Classification, B - Investigation and Diagnosis, C - Resolution and Closure</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-it-service-management/page/product/incident-management/concept/incident-management-process.html" target="_blank">ServiceNow Zurich Documentation - Incident Management Process</a></p><h5>Expert Explanation</h5><p>The Incident Management lifecycle in ServiceNow follows three main stages: Creation and Classification (logging and categorizing), Investigation and Diagnosis (finding the cause or workaround), and Resolution and Closure (applying the fix and closing the ticket). These stages map to the ITIL incident management process and align with the incident state model in the platform.</p><h5>Why the Others Are Wrong</h5><p>Prioritization and Scheduling is not a standalone stage - prioritization happens during Creation and Classification. Feedback and Improvement is a continual improvement activity, not a defined stage in the incident lifecycle.</p><h5>Memory Tip</h5><p>Think of the three C's in order: Create it, Check it (investigate), Close it. C-C-C = Creation, (Investigation as) Checking, Closure.</p><h5>Real-World Example</h5><p>A user reports a broken printer. Stage 1 (Creation and Classification): the ticket is logged as a Hardware/Printer issue with medium impact. Stage 2 (Investigation and Diagnosis): the technician discovers a firmware bug. Stage 3 (Resolution and Closure): the firmware is updated, the user confirms it works, and the incident is closed.</p>
-</div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard8">
-      <div class="quiz-q"><span class="quiz-q-num">9.</span>Customer wants to use the Service Catalog to generate task-based records for end-user inquiries.Which Service Catalog capability can you use to generate these records?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="8" data-exp="INCORRECT: Execution Plans define the tasks and approvals required to fulfill a catalog request after it is submitted. They do not generate the initial task-based records from end-user inquiries."><span class="quiz-opt-letter">A</span><span>Execution Plans</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="8" data-exp="INCORRECT: Content Items are informational entries in the Service Catalog (like links or descriptions). They do not generate task records - they provide static information to users."><span class="quiz-opt-letter">B</span><span>Content Items</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="8" data-exp="INCORRECT: Catalog Items generate Requested Items (RITMs) and catalog tasks. While they do create records, they are designed for ordering goods and services, not for generating task-based records from end-user inquiries."><span class="quiz-opt-letter">C</span><span>Catalog Items</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="8" data-exp="CORRECT: Record Producers are Service Catalog items specifically designed to generate task-based records (such as incidents, problems, or custom table records) directly from end-user input. They look like catalog items to the user but create records on target tables instead of generating RITMs."><span class="quiz-opt-letter">D</span><span>Record Producers</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp8" style="display:none"></div>
-      <details class="quiz-overall" id="qexp8">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>D - Record Producers</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-it-service-management/page/product/service-catalog-management/concept/c_RecordProducer.html" target="_blank">ServiceNow Zurich Documentation - Record Producers</a></p><h5>Expert Explanation</h5><p>Record Producers are a Service Catalog capability that generates records on any target table based on user input. Unlike standard Catalog Items (which create RITMs), Record Producers create records directly on tables like Incident, Problem, or custom tables. This makes them ideal for end-user inquiries that should result in task-based records rather than service requests.</p><h5>Why the Others Are Wrong</h5><p>Execution Plans handle post-submission fulfillment tasks. Content Items are informational only and produce no records. Catalog Items create RITMs and catalog tasks, not direct task-based records on other tables.</p><h5>Memory Tip</h5><p>Record Producers "produce records" on target tables. The name tells you exactly what they do. Inquiry from user = record produced on a task table.</p><h5>Real-World Example</h5><p>An IT department wants end users to report network issues through the Service Catalog. They create a Record Producer that collects the user's location, symptoms, and urgency, then generates an Incident record on the Incident table with those details pre-filled.</p>
-</div>
-      </details>
-    </div>
-    <div class="quiz-card quiz-multi" id="qcard9">
-      <div class="quiz-q"><span class="quiz-q-num">10.</span>What are some best practices for guiding customers about use of Notifications? (Choose 3) <span class="quiz-choose">(choose 3)</span></div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="9" data-exp="CORRECT: Including notification requirements and test plans in the project scope from the start ensures that notification behavior is planned, documented, and validated before go-live. This prevents last-minute surprises and missed communications."><span class="quiz-opt-letter">A</span><span>Make sure Notification requirements and test plans are in the project scope from the start</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="9" data-exp="CORRECT: Getting input from the Marketing department for customer-facing notifications ensures brand consistency and professional communication. Marketing can provide guidance on tone, formatting, and messaging standards."><span class="quiz-opt-letter">B</span><span>Get input from Marketing department, regarding format of customer/caller facing notifications</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="9" data-exp="CORRECT: Using templates ensures consistency across notifications and simplifies configuration. Templates allow administrators to define a standard format once and reuse it across multiple notification types, reducing errors and maintenance effort."><span class="quiz-opt-letter">C</span><span>Use templates to ensure consistency and ease of configuration</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="9" data-exp="INCORRECT: incident.itil.role is not a recognized master template in ServiceNow. Notifications use email notification records with layout and content templates, but there is no standard template by this name to serve as a master for all ITSM notifications."><span class="quiz-opt-letter">D</span><span>Use incident.itil.role template as the master template to build all other ITSM templates</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="9" data-exp="INCORRECT: Maximizing the quantity of email updates is the opposite of a best practice. Over-notifying customers leads to notification fatigue, where users start ignoring emails - including critical ones. Best practice is to send only meaningful, actionable notifications."><span class="quiz-opt-letter">E</span><span>When possible, maximize the quantity of email updates to customers</span></li>
-      </ul>
-      <button class="quiz-submit-btn" data-q="9" style="display:none">Submit Answer</button>
-      <div class="quiz-opt-explains" id="qoptexp9" style="display:none"></div>
-      <details class="quiz-overall" id="qexp9">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>A - Make sure Notification requirements and test plans are in the project scope from the start, B - Get input from Marketing department, regarding format of customer/caller facing notifications, C - Use templates to ensure consistency and ease of configuration</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-it-service-management/page/product/incident-management/reference/incident-management-notifications.html" target="_blank">ServiceNow Zurich Documentation - ITSM Notifications</a></p><h5>Expert Explanation</h5><p>Notification best practices in ServiceNow implementations include scoping requirements early, involving stakeholders like Marketing for brand-consistent messaging, and using templates for maintainability. These practices ensure notifications are professional, tested, and sustainable. Over-notifying users should be avoided as it causes notification fatigue.</p><h5>Why the Others Are Wrong</h5><p>incident.itil.role is not a valid notification template name in ServiceNow. Maximizing notification quantity contradicts best practices - the goal is to send the right notifications to the right people, not to flood inboxes.</p><h5>Memory Tip</h5><p>Good notifications follow the "P-M-T" approach: Plan them in scope (P), get Marketing input (M), and use Templates (T). Avoid flooding inboxes.</p><h5>Real-World Example</h5><p>During a ServiceNow implementation, the project team includes notification requirements in the design phase, works with Marketing to create branded email templates, and tests all notifications in a sub-production instance before deploying to production.</p>
-</div>
-      </details>
-    </div>
-    <div class="quiz-card quiz-multi" id="qcard10">
-      <div class="quiz-q"><span class="quiz-q-num">11.</span>In the CAB workbench, what are ways the CAB manager can identify the Change requests to be added to a particular meeting agenda? (Choose 2) <span class="quiz-choose">(choose 2)</span></div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="10" data-exp="CORRECT: In the CAB workbench, the CAB manager can filter change requests by conditions such as Risk level, Type (Normal, Standard, Emergency), Category, or other field values. This allows them to select specific changes that need CAB review for a particular meeting."><span class="quiz-opt-letter">A</span><span>Change requests meeting different conditions, like Risk level or Type</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="10" data-exp="CORRECT: The CAB workbench allows filtering change requests by their planned start and end dates. This date range filter helps the CAB manager identify which changes are scheduled during the period covered by the meeting agenda."><span class="quiz-opt-letter">B</span><span>Change requests planned within a certain date range</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="10" data-exp="INCORRECT: While the Agenda Criteria tab exists, not every option on it is a valid way to identify changes. The question asks for specific methods, and the two primary approaches are condition-based filtering and date range filtering."><span class="quiz-opt-letter">C</span><span>Use any of the options on the Agenda Criteria Tab</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="10" data-exp="INCORRECT: Change Flow Definition is not a filter criterion available in the CAB workbench for identifying change requests. The workbench uses field-based conditions and date ranges as its primary filtering mechanisms."><span class="quiz-opt-letter">D</span><span>Change requests for a certain Change Flow Definition</span></li>
-      </ul>
-      <button class="quiz-submit-btn" data-q="10" style="display:none">Submit Answer</button>
-      <div class="quiz-opt-explains" id="qoptexp10" style="display:none"></div>
-      <details class="quiz-overall" id="qexp10">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>A - Change requests meeting different conditions, like Risk level or Type, B - Change requests planned within a certain date range</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-it-service-management/page/product/change-management/concept/cab-workbench.html" target="_blank">ServiceNow Zurich Documentation - CAB Workbench</a></p><h5>Expert Explanation</h5><p>The CAB (Change Advisory Board) workbench provides two main ways to identify changes for a meeting agenda. First, condition-based filtering lets the CAB manager select changes based on attributes like risk level, change type, or category. Second, date range filtering identifies changes planned within a specific timeframe. Together, these filters help the CAB manager build a focused meeting agenda.</p><h5>Why the Others Are Wrong</h5><p>"Use any of the options on the Agenda Criteria Tab" is too vague and not entirely accurate. Change Flow Definition is not a standard filter criterion in the CAB workbench.</p><h5>Memory Tip</h5><p>CAB meetings care about two things: "What kind of change?" (conditions like risk/type) and "When is it happening?" (date range). Conditions + Dates = CAB agenda criteria.</p><h5>Real-World Example</h5><p>The CAB manager prepares for next week's meeting by filtering for all Normal changes with High risk planned between Monday and Friday. This surfaces 12 changes that need board discussion, while low-risk standard changes are excluded.</p>
-</div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard11">
-      <div class="quiz-q"><span class="quiz-q-num">12.</span>What is this resource called:&quot;ServiceNow contains a resource with information about all services. It is used to support the sale and delivery of services to employees and customers. It includes information about deliverables, options, prices, delivery and performance targets.&quot;</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="11" data-exp="INCORRECT: The Service Portal is a user-facing web interface for self-service interactions. While it can display the service catalog, it is the portal framework itself, not the resource containing service information, pricing, and delivery details."><span class="quiz-opt-letter">A</span><span>Service Portal</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="11" data-exp="INCORRECT: A Service Dashboard is a reporting and analytics view that displays metrics and KPIs. It does not contain the structured information about services, deliverables, prices, and performance targets described in the question."><span class="quiz-opt-letter">B</span><span>Service Dashboard</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="11" data-exp="INCORRECT: A Service Map is a visual representation of service dependencies and relationships between CIs. It shows infrastructure topology, not service offerings, pricing, or delivery information."><span class="quiz-opt-letter">C</span><span>Service Map</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="11" data-exp="INCORRECT: Service One Stop Shop is not a standard ServiceNow term or module. The resource described in the question - containing service deliverables, options, prices, and targets - is the Service Catalog."><span class="quiz-opt-letter">D</span><span>Service One Stop Shop</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="11" data-exp="CORRECT: The Service Catalog is the resource in ServiceNow that contains information about all services available to employees and customers. It includes details about deliverables, options, prices, delivery expectations, and performance targets. It supports both the sale and delivery of services."><span class="quiz-opt-letter">E</span><span>Service Catalog</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp11" style="display:none"></div>
-      <details class="quiz-overall" id="qexp11">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>E - Service Catalog</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-it-service-management/page/product/service-catalog-management/concept/c_ServiceCatalogManagement.html" target="_blank">ServiceNow Zurich Documentation - Service Catalog Management</a></p><h5>Expert Explanation</h5><p>The Service Catalog is the centralized repository of all services an organization offers. It contains structured information about each service including what is delivered, available options, pricing, expected delivery timelines, and performance targets (SLAs). It serves both internal employees and external customers as the single source of truth for available services.</p><h5>Why the Others Are Wrong</h5><p>Service Portal is the delivery channel, not the content repository. Service Dashboard shows analytics, not service details. Service Map shows CI relationships. Service One Stop Shop is not a standard ServiceNow concept.</p><h5>Memory Tip</h5><p>Think of a shopping catalog - it lists products (services), their options, and prices. The Service Catalog does exactly that for IT and business services.</p><h5>Real-World Example</h5><p>An employee browses the Service Catalog and finds "New Laptop Request" with options for standard or high-performance models, prices for each, expected delivery in 3 business days, and a description of what is included (setup, software, accessories).</p>
-</div>
-      </details>
-    </div>
-    <div class="quiz-card quiz-multi" id="qcard12">
-      <div class="quiz-q"><span class="quiz-q-num">13.</span>On the Change request, what types of Conflicts are detected automatically ? (Choose 3) <span class="quiz-choose">(choose 3)</span></div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="12" data-exp="INCORRECT: Assignee Shift Schedule conflicts are not automatically detected by the out-of-box change conflict detection. The system checks for scheduling conflicts with maintenance windows, blackouts, and CI-based overlaps, but not individual assignee shift schedules."><span class="quiz-opt-letter">A</span><span>Conflict with Assignee Shift Schedule</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="12" data-exp="CORRECT: Blackout Schedule conflicts are automatically detected. When a change is planned during a blackout window (a period when no changes should occur), the system flags this as a conflict to prevent changes during restricted periods."><span class="quiz-opt-letter">B</span><span>Conflict with Blackout Schedule</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="12" data-exp="INCORRECT: Company Holiday Schedule conflicts are not part of the automatic conflict detection in Change Management. While holidays may be relevant for planning, the system does not automatically check for holiday conflicts on change requests."><span class="quiz-opt-letter">C</span><span>Conflict with Company Holiday Schedule</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="12" data-exp="CORRECT: When another change is planned for the same Configuration Item (CI) at the same time, the system automatically detects this overlap. This prevents two teams from making conflicting changes to the same infrastructure component simultaneously."><span class="quiz-opt-letter">D</span><span>Another change for the same CI, at the same time</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="12" data-exp="CORRECT: Maintenance Window conflicts are automatically detected. If a change is scheduled outside of its CI&#x27;s defined maintenance window, or conflicts with maintenance windows, the system raises a conflict alert."><span class="quiz-opt-letter">E</span><span>Conflict with Maintenance Window</span></li>
-      </ul>
-      <button class="quiz-submit-btn" data-q="12" style="display:none">Submit Answer</button>
-      <div class="quiz-opt-explains" id="qoptexp12" style="display:none"></div>
-      <details class="quiz-overall" id="qexp12">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>B - Conflict with Blackout Schedule, D - Another change for the same CI, at the same time, E - Conflict with Maintenance Window</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-it-service-management/page/product/change-management/concept/change-conflict-detection.html" target="_blank">ServiceNow Zurich Documentation - Change Conflict Detection</a></p><h5>Expert Explanation</h5><p>ServiceNow Change Management automatically detects three types of scheduling conflicts: blackout schedules (periods when changes are prohibited), overlapping changes for the same CI (two changes targeting the same component at the same time), and maintenance window conflicts (changes scheduled outside approved maintenance periods). These checks help prevent unplanned outages and change collisions.</p><h5>Why the Others Are Wrong</h5><p>Assignee Shift Schedule is not part of automatic conflict detection - the system does not cross-reference individual work schedules. Company Holiday Schedule is also not checked automatically by the change conflict engine.</p><h5>Memory Tip</h5><p>Remember "B-C-M" - Blackout, CI overlap, Maintenance window. These are the three automatic conflict checks. Shift schedules and holidays are HR concerns, not change conflicts.</p><h5>Real-World Example</h5><p>A network engineer schedules a router firmware upgrade during a blackout window (month-end freeze). The system flags a blackout conflict. They also discover another team has a change planned for the same router - a CI overlap conflict. Both must be resolved before the change can proceed.</p>
-</div>
-      </details>
-    </div>
-    <div class="quiz-card quiz-multi" id="qcard13">
-      <div class="quiz-q"><span class="quiz-q-num">14.</span>In the ServiceNow native platform, the service catalog can be accessed via the Self-Service &amp;gt; Service Catalog module. Your customer wants to make modifications to this home page, to add, remove and re-arrange the categories.Users with which roles can make these edits? (Choose 2) <span class="quiz-choose">(choose 2)</span></div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="13" data-exp="CORRECT: The catalog_admin role has full administrative access to the Service Catalog, including the ability to modify the catalog home page layout - adding, removing, and rearranging categories."><span class="quiz-opt-letter">A</span><span>catalog_admin</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="13" data-exp="INCORRECT: sc_catalog_admin is not a standard out-of-box ServiceNow role. The correct catalog administration role is catalog_admin."><span class="quiz-opt-letter">B</span><span>sc_catalog_admin</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="13" data-exp="INCORRECT: catalog_editor provides the ability to edit catalog items and categories but does not grant access to modify the Service Catalog home page layout and category arrangement."><span class="quiz-opt-letter">C</span><span>catalog_editor</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="13" data-exp="INCORRECT: sn_catalog_homepage_write is not a standard out-of-box ServiceNow role. Home page editing for the Service Catalog is controlled by the catalog_admin and admin roles."><span class="quiz-opt-letter">D</span><span>sn_catalog_homepage_write</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="13" data-exp="CORRECT: The admin role has full system access, which includes the ability to modify the Service Catalog home page. Administrators can add, remove, and rearrange categories on the catalog landing page."><span class="quiz-opt-letter">E</span><span>admin</span></li>
-      </ul>
-      <button class="quiz-submit-btn" data-q="13" style="display:none">Submit Answer</button>
-      <div class="quiz-opt-explains" id="qoptexp13" style="display:none"></div>
-      <details class="quiz-overall" id="qexp13">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>A - catalog_admin, E - admin</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-it-service-management/page/product/service-catalog-management/reference/r_ServiceCatalogRoles.html" target="_blank">ServiceNow Zurich Documentation - Service Catalog Roles</a></p><h5>Expert Explanation</h5><p>Modifying the Service Catalog home page - adding, removing, and rearranging categories - requires either the catalog_admin role or the admin role. catalog_admin provides full catalog administration capabilities, while admin has unrestricted platform access. Other roles like catalog_editor can manage items but cannot restructure the catalog home page layout.</p><h5>Why the Others Are Wrong</h5><p>sc_catalog_admin and sn_catalog_homepage_write are not valid out-of-box roles. catalog_editor can edit catalog content but lacks permission to modify the home page layout and category arrangement.</p><h5>Memory Tip</h5><p>For catalog home page changes, you need "admin" in the role name - either catalog_admin (specific) or admin (global). catalog_editor can edit items but not the home page structure.</p><h5>Real-World Example</h5><p>The IT service manager wants to reorganize the Service Catalog to feature "Hardware Requests" prominently. A user with the catalog_admin role opens the catalog home page editor, moves the Hardware category to the top, and removes an outdated "Legacy Systems" category.</p>
-</div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard14">
-      <div class="quiz-q"><span class="quiz-q-num">15.</span>Current status of a problem record is tracked in the State field. Every state has a label, value and constant. This example is for Fix in Progress state:Label: Fix in ProgressValue: 104Constant Problem State STATES.FIX IN PROGRESSCustomer wants to add a prerequisite for moving out of the Fix in Progress state. When you update the script include which value is better to use in the script?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="14" data-exp="INCORRECT: Using the numeric value 104 directly in scripts is fragile. If ServiceNow changes the numeric value in a future release, the script breaks. Hard-coded numeric values make code difficult to read and maintain."><span class="quiz-opt-letter">A</span><span>104</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="14" data-exp="INCORRECT: Using the string label &quot;Fix in Progress&quot; is even more fragile than using the numeric value. Labels can be changed by administrators for localization or customization, which would break any script referencing them."><span class="quiz-opt-letter">B</span><span>&quot;Fix in Progress&quot;</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="14" data-exp="CORRECT: ProblemState.STATES.FIX_IN_PROGRESS is the constant reference and is the best practice for scripting. Constants are maintained by ServiceNow across upgrades, making scripts resilient to changes in underlying numeric values or display labels. They are also self-documenting - anyone reading the code understands the intent."><span class="quiz-opt-letter">C</span><span>ProblemState.STATES.FIX_IN_PROGRESS</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="14" data-exp="INCORRECT: 104.ProblemState.STATES.FIX_IN_PROGRESS is not valid syntax. You cannot combine a numeric value with a constant reference. The constant alone (ProblemState.STATES.FIX_IN_PROGRESS) is the correct approach."><span class="quiz-opt-letter">D</span><span>104.ProblemState.STATES.FIX_IN_PROGRESS</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp14" style="display:none"></div>
-      <details class="quiz-overall" id="qexp14">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>C - ProblemState.STATES.FIX_IN_PROGRESS</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-it-service-management/page/product/problem-management/reference/problem-management-states.html" target="_blank">ServiceNow Zurich Documentation - Problem Management States</a></p><h5>Expert Explanation</h5><p>When scripting state transitions in ServiceNow, best practice is to use state constants rather than numeric values or string labels. Constants like ProblemState.STATES.FIX_IN_PROGRESS are upgrade-safe, self-documenting, and maintained by the platform. If the underlying numeric value changes in a future release, scripts using constants continue to work without modification.</p><h5>Why the Others Are Wrong</h5><p>The numeric value 104 is fragile and can change between releases. The label "Fix in Progress" can be customized or localized, breaking scripts that depend on it. The combined format 104.ProblemState.STATES.FIX_IN_PROGRESS is invalid JavaScript/GlideScript syntax.</p><h5>Memory Tip</h5><p>Constants are "constant" - they do not change across upgrades. Always use the CONSTANT over numbers or labels. Think: Constants = Consistent = Correct choice for scripts.</p><h5>Real-World Example</h5><p>A developer writes a script to require a "Fix Group" field before moving out of Fix in Progress. Using ProblemState.STATES.FIX_IN_PROGRESS ensures the script survives platform upgrades, unlike hard-coding 104, which could silently break if ServiceNow remaps the value.</p>
-</div>
-      </details>
-    </div>
-    <div class="quiz-score" id="quizScore">
-      <div class="quiz-score-num" id="quizScoreNum">0/15</div>
-      <div class="quiz-score-label">Sample Quiz Score</div>
-      <div class="quiz-score-msg" id="quizScoreMsg"></div>
-      <a href="https://www.udemy.com/course/pass-your-servicenow-cis-itsm-exam/?referralCode=3D0B3C1C48CE64275156" target="_blank" rel="noopener" class="cp-cta">
-        Get all 100 questions
-        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+      <div class="preview-actions">
+        <a href="https://www.udemy.com/course/pass-your-servicenow-cis-itsm-exam/?referralCode=3D0B3C1C48CE64275156" target="_blank" rel="noopener" class="cp-cta">Get all 100 questions
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      <button type="button" class="preview-secondary-btn" id="previewContinueBtn">Continue to questions 6-10</button>
+      </div>
+      <p class="preview-helper" id="previewHelper"></p>
+
+      <button type="button" class="preview-text-link" id="previewRetakeBtn">Retake free preview</button>
     </div>
   </section>
 
@@ -783,156 +593,52 @@ details.quiz-overall[open] .quiz-overall-toggle::before { transform: rotate(90de
   <p>&copy; 2026 Lucky X &middot; <a href="/">luckyx.dev</a></p>
 </footer>
 
+
+<!-- Preview Exit Popup -->
+<div class="preview-exit" id="exitPopup" aria-hidden="true">
+  <div class="preview-exit-card" role="dialog" aria-modal="true" aria-labelledby="exitPopupTitle">
+    <button type="button" class="preview-exit-close" id="exitPopupClose" aria-label="Close popup">&times;</button>
+    <div class="preview-exit-kicker">Before you go</div>
+    <h3 class="preview-exit-title" id="exitPopupTitle">Get CIS IT Service Management — ServiceNow Practice Test 2026 updates and new question drops</h3>
+    <p class="preview-exit-copy">I will send blueprint changes, new sample questions, and exam roadmap tips for this cert. Or skip the inbox and get the full 100-question course now.</p>
+    <form class="preview-lead-form" id="exitLeadForm" data-source="exit">
+      <input type="email" name="email" placeholder="you@email.com" autocomplete="email" required>
+      <button type="submit" data-default-text="Send me updates">Send me updates</button>
+    </form>
+    <p class="preview-lead-note">No spam. Unsubscribe anytime.</p>
+    <a href="https://www.udemy.com/course/pass-your-servicenow-cis-itsm-exam/?referralCode=3D0B3C1C48CE64275156" target="_blank" rel="noopener" class="preview-exit-link">Go straight to the full course on Udemy</a>
+  </div>
+</div>
+<!-- /Preview Exit Popup -->
 <script>
-  const themeToggle = document.getElementById('themeToggle');
-  themeToggle.addEventListener('click', () => {
-    const current = document.documentElement.getAttribute('data-theme');
-    const next = current === 'light' ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('luckyx-theme', next);
-  });
+const PREVIEW={"slug": "cis-itsm", "courseTitle": "CIS IT Service Management \u2014 ServiceNow Practice Test 2026", "step": 1, "questionCount": 5, "questionStart": 1, "questionEnd": 5, "page1Url": "/courses/cis-itsm.html", "page2Url": "/courses/cis-itsm-preview-2.html", "totalPreviewQuestions": 10, "totalQuestionCount": 100, "convertKitFormId": "9183962"};
+const answers=[1, 1, 1, 2, 0];
+const STATE='luckyx-preview:'+PREVIEW.slug,EXIT='luckyx-exit-shown:'+PREVIEW.slug,themeToggle=document.getElementById('themeToggle'),sel={},done=new Set();let answered=0,score=0,exitReady=false,emailCaptured=false,completeSent=false;
+themeToggle.addEventListener('click',()=>{const c=document.documentElement.getAttribute('data-theme'),n=c==='light'?'dark':'light';document.documentElement.setAttribute('data-theme',n);localStorage.setItem('luckyx-theme',n)});
+function evt(name,extra){if(typeof gtag!=='function')return;gtag('event',name,Object.assign({course_slug:PREVIEW.slug,preview_step:PREVIEW.step},extra||{}))}
+function readState(){try{const raw=sessionStorage.getItem(STATE);return raw?JSON.parse(raw):null}catch(err){return null}}
+function saveState(payload){sessionStorage.setItem(STATE,JSON.stringify(payload))}
+function clearState(){sessionStorage.removeItem(STATE);sessionStorage.removeItem(EXIT)}
+function markExitReady(){exitReady=true}
+const quizSection=document.getElementById('free-quiz');if('IntersectionObserver'in window&&quizSection){const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){markExitReady();obs.disconnect()}})},{threshold:.25});obs.observe(quizSection)}evt('preview_page_view');
+document.querySelectorAll('a.cp-cta[href*="udemy.com"],a.preview-exit-link[href*="udemy.com"]').forEach(link=>link.addEventListener('click',()=>{let source='hero';if(link.closest('.preview-result'))source=PREVIEW.step===1?'step_one_result':'final_result';else if(link.closest('.preview-exit-card'))source='exit_popup';evt('preview_buy_click',{cta_source:source})}));
+document.querySelectorAll('.quiz-card').forEach(card=>{if(!card.querySelector('.quiz-submit-btn')){const qi=parseInt(card.id.replace('qcard',''),10),btn=document.createElement('button');btn.className='quiz-submit-btn';btn.dataset.q=qi;btn.textContent='Submit Answer';const opts=card.querySelector('.quiz-opts');opts.parentNode.insertBefore(btn,opts.nextSibling)}});
+function processSections(container){if(container.dataset.processed)return;container.dataset.processed='1';const h5s=Array.from(container.querySelectorAll('h5'));if(!h5s.length)return;const secs=[];h5s.forEach(h5=>{const t=h5.textContent.toLowerCase();let cls='exp-section';if(t.includes('correct answer'))cls+=' exp-correct-answer';else if(t.includes('source'))cls+=' exp-source';else if(t.includes('expert'))cls+=' exp-expert';else if(t.includes('why')||t.includes('wrong'))cls+=' exp-wrong';else if(t.includes('memory'))cls+=' exp-memory';else if(t.includes('real-world')||t.includes('example'))cls+=' exp-realworld';secs.push({cls,h5})});for(let i=0;i<secs.length;i++){const sec=secs[i],div=document.createElement('div'),next=i<secs.length-1?secs[i+1].h5:null;div.className=sec.cls;sec.h5.parentNode.insertBefore(div,sec.h5);div.appendChild(sec.h5);while(div.nextSibling&&div.nextSibling!==next)div.appendChild(div.nextSibling)}}
+function updateSlots(){const prior=readState();document.querySelectorAll('.preview-slot').forEach(slot=>{const gi=parseInt(slot.dataset.slot,10);slot.classList.remove('is-done','is-active','is-prior');if(PREVIEW.step===2&&gi<=PREVIEW.questionCount){slot.classList.add(prior&&prior.page1Answered===PREVIEW.questionCount?'is-done':'is-prior');return}if(gi>=PREVIEW.questionStart&&gi<=PREVIEW.questionEnd){const local=gi-PREVIEW.questionStart;if(done.has(local))slot.classList.add('is-done');else slot.classList.add('is-active')}})}
+function showExplanations(qi){const card=document.getElementById('qcard'+qi),opts=card.querySelectorAll('.quiz-opt'),correct=Array.isArray(answers[qi])?answers[qi]:[answers[qi]];opts.forEach((opt,j)=>{const per=opt.getAttribute('data-exp');if(!per||opt.querySelector('.quiz-opt-exp-inline'))return;const ok=correct.indexOf(j)!==-1,txt=per.replace(/^(CORRECT|INCORRECT):\s*/i,''),div=document.createElement('div'),icon=ok?'\u2713':'\u2717';div.className='quiz-opt-exp-inline '+(ok?'qoe-is-correct':'qoe-is-wrong');div.innerHTML='<div class="qoe-header">'+(ok?'<span class="qoe-correct">'+icon+' Correct</span>':'<span class="qoe-wrong">'+icon+' Incorrect</span>')+' <span class="qoe-letter">Option '+'ABCDEFG'[j]+'</span></div><div class="qoe-text">'+txt+'</div>';opt.appendChild(div)});const overall=document.getElementById('qexp'+qi);if(overall){const content=overall.querySelector('.quiz-overall-content');if(content&&content.innerHTML.trim()){processSections(content);overall.style.display='block'}}}
+document.querySelectorAll('.quiz-opt').forEach(opt=>opt.addEventListener('click',function(){markExitReady();const qi=parseInt(this.dataset.q,10),card=document.getElementById('qcard'+qi);if(card.dataset.state)return;const idx=parseInt(this.dataset.idx,10),multi=Array.isArray(answers[qi]);if(!sel[qi])sel[qi]=new Set();if(multi){if(sel[qi].has(idx)){sel[qi].delete(idx);this.classList.remove('selected')}else{sel[qi].add(idx);this.classList.add('selected')}}else{card.querySelectorAll('.quiz-opt').forEach(o=>o.classList.remove('selected'));sel[qi]=new Set([idx]);this.classList.add('selected')}const btn=card.querySelector('.quiz-submit-btn');if(btn)btn.style.display=sel[qi].size>0?'block':'none'}));
+function pageOneCopy(s){if(s===PREVIEW.questionCount)return'Perfect page 1. Continue to questions 6-10, then decide if you want the full '+PREVIEW.totalQuestionCount+'-question bank.';if(s>=3)return'Solid start. Finish questions 6-10 to see a fuller slice of the exam before you buy.';return'This is exactly where the full course helps: more reps, more sourced explanations, and less guessing under pressure.'}
+function finalCopy(s){if(s===PREVIEW.totalPreviewQuestions)return'Perfect free preview. The full course is still the fastest way to stress-test the rest of the blueprint before exam day.';if(s>=7)return'Strong free preview. The full course helps close the last gaps before you sit the exam.';return'The free preview exposed real gaps. The full course is built to fix them with more exam-style repetition and richer explanations.'}
+function showResult(){const box=document.getElementById('previewResult'),scoreValue=document.getElementById('previewScoreValue'),scoreLabel=document.getElementById('previewScoreLabel'),copyEl=document.getElementById('previewResultCopy'),helper=document.getElementById('previewHelper'),emailWrap=document.getElementById('previewEmailWrap'),continueBtn=document.getElementById('previewContinueBtn'),backLink=document.getElementById('previewBackLink');box.classList.add('show');box.scrollIntoView({behavior:'smooth',block:'start'});if(PREVIEW.step===1){saveState({page1Answered:answered,page1Score:score,savedAt:Date.now()});scoreValue.textContent=score+'/'+PREVIEW.questionCount;scoreLabel.textContent='Page 1 of 2 complete';copyEl.textContent=pageOneCopy(score);helper.textContent='You have finished questions 1-5. Questions 6-10 are next.';if(continueBtn)continueBtn.hidden=false;if(emailWrap)emailWrap.classList.remove('show');if(backLink)backLink.hidden=true;return}const prior=readState();if(prior&&prior.page1Answered===PREVIEW.questionCount){const total=prior.page1Score+score;scoreValue.textContent=total+'/'+PREVIEW.totalPreviewQuestions;scoreLabel.textContent='10-question free preview complete';copyEl.textContent=finalCopy(total);helper.textContent='You have now seen 10 free questions. The full course keeps the same answer breakdown style across the rest of the bank.'}else{scoreValue.textContent=score+'/'+PREVIEW.questionCount;scoreLabel.textContent='Page 2 complete';copyEl.textContent='You completed questions 6-10 only. Start from page 1 if you want the full 10-question preview before deciding.';helper.textContent='Page 1 contains questions 1-5 and sets up the full 10-question score.';if(backLink)backLink.hidden=false}if(emailWrap)emailWrap.classList.add('show');if(!completeSent){completeSent=true;evt('preview_complete',{page_score:score,combined_score:prior&&prior.page1Answered===PREVIEW.questionCount?prior.page1Score+score:null})}}
+function submitAnswer(){const qi=parseInt(this.dataset.q,10),card=document.getElementById('qcard'+qi);if(card.dataset.state)return;const selected=Array.from(sel[qi]||[]).sort((a,b)=>a-b),correct=(Array.isArray(answers[qi])?answers[qi].slice():[answers[qi]]).sort((a,b)=>a-b),opts=card.querySelectorAll('.quiz-opt'),ok=selected.length===correct.length&&selected.every((v,i)=>v===correct[i]);if(ok){score+=1;card.dataset.state='correct';selected.forEach(i=>opts[i].classList.add('correct'))}else{card.dataset.state='wrong';selected.forEach(i=>{if(correct.indexOf(i)===-1)opts[i].classList.add('wrong');else opts[i].classList.add('correct')});correct.forEach(i=>opts[i].classList.add('correct'))}opts.forEach(o=>o.setAttribute('disabled',''));this.style.display='none';answered+=1;done.add(qi);updateSlots();showExplanations(qi);if(answered===answers.length)showResult()}
+document.querySelectorAll('.quiz-submit-btn').forEach(btn=>btn.addEventListener('click',submitAnswer));
+const continueBtn=document.getElementById('previewContinueBtn');if(continueBtn)continueBtn.addEventListener('click',()=>{saveState({page1Answered:answered,page1Score:score,savedAt:Date.now()});evt('preview_continue',{page_score:score});window.location.href=PREVIEW.page2Url+'#free-quiz'});
+const retakeBtn=document.getElementById('previewRetakeBtn');if(retakeBtn)retakeBtn.addEventListener('click',()=>{clearState();window.location.href=PREVIEW.page1Url+'#free-quiz'});
+function handleLead(form){const input=form.querySelector('input[type="email"]'),btn=form.querySelector('button'),email=input.value.trim().toLowerCase(),ok=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)&&email.length<=254,defaultText=btn.dataset.defaultText||btn.textContent;if(!ok){btn.textContent='Use a valid email';btn.style.background='#c43030';setTimeout(()=>{btn.textContent=defaultText;btn.style.background=''},2500);return}btn.textContent='Sending...';btn.disabled=true;fetch('https://app.convertkit.com/forms/'+PREVIEW.convertKitFormId+'/subscriptions',{method:'POST',headers:{'Content-Type':'application/json; charset=utf-8'},body:JSON.stringify({email_address:email})}).then(r=>{if(r.ok||r.status===200||r.status===201){emailCaptured=true;input.disabled=true;btn.textContent='Check your inbox';btn.style.background='#1f7a50';evt('preview_email_submit',{email_source:form.dataset.source||form.id||'unknown'})}else throw new Error('lead fail')}).catch(()=>{btn.textContent='Try again';btn.style.background='#c43030';btn.disabled=false;setTimeout(()=>{btn.textContent=defaultText;btn.style.background=''},2500)})}
+['previewLeadForm','exitLeadForm'].forEach(id=>{const form=document.getElementById(id);if(form)form.addEventListener('submit',e=>{e.preventDefault();handleLead(form)})});
+(function(){const overlay=document.getElementById('exitPopup'),closeBtn=document.getElementById('exitPopupClose');if(!overlay||!closeBtn)return;function hide(){overlay.classList.remove('active');overlay.setAttribute('aria-hidden','true')}function show(){if(!exitReady||emailCaptured||sessionStorage.getItem(EXIT))return;sessionStorage.setItem(EXIT,'1');overlay.classList.add('active');overlay.setAttribute('aria-hidden','false');evt('preview_exit_popup_shown')}document.addEventListener('mouseout',e=>{if(e.clientY<5&&e.relatedTarget===null)show()});closeBtn.addEventListener('click',hide);overlay.addEventListener('click',e=>{if(e.target===overlay)hide()});document.addEventListener('keydown',e=>{if(e.key==='Escape')hide()})})();
+updateSlots();
 
-  // Quiz logic
-  const answers = [1, 1, 1, 2, 0, 0, 1, [0, 1, 2], 3, [0, 1, 2], [0, 1], 4, [1, 3, 4], [0, 4], 2];
-  let answered = 0, score = 0;
-  const selections = {};
-
-  // Create submit buttons for all questions
-  document.querySelectorAll('.quiz-card').forEach(function(card) {
-    if (!card.querySelector('.quiz-submit-btn')) {
-      var qi = parseInt(card.id.replace('qcard', ''));
-      var btn = document.createElement('button');
-      btn.className = 'quiz-submit-btn';
-      btn.dataset.q = qi;
-      btn.textContent = 'Submit Answer';
-      var opts = card.querySelector('.quiz-opts');
-      opts.parentNode.insertBefore(btn, opts.nextSibling);
-    }
-  });
-
-  function processOverallSections(container) {
-    if (container.dataset.processed) return;
-    container.dataset.processed = '1';
-    var h5s = Array.from(container.querySelectorAll('h5'));
-    if (!h5s.length) return;
-    var sections = [];
-    h5s.forEach(function(h5) {
-      var text = h5.textContent.toLowerCase();
-      var cls = 'exp-section';
-      if (text.indexOf('correct answer') !== -1) cls += ' exp-correct-answer';
-      else if (text.indexOf('source') !== -1) cls += ' exp-source';
-      else if (text.indexOf('expert') !== -1) cls += ' exp-expert';
-      else if (text.indexOf('why') !== -1 || text.indexOf('wrong') !== -1) cls += ' exp-wrong';
-      else if (text.indexOf('memory') !== -1) cls += ' exp-memory';
-      else if (text.indexOf('real-world') !== -1 || text.indexOf('example') !== -1) cls += ' exp-realworld';
-      sections.push({ cls: cls, h5: h5 });
-    });
-    for (var i = 0; i < sections.length; i++) {
-      var sec = sections[i];
-      var div = document.createElement('div');
-      div.className = sec.cls;
-      var nextH5 = i < sections.length - 1 ? sections[i + 1].h5 : null;
-      sec.h5.parentNode.insertBefore(div, sec.h5);
-      div.appendChild(sec.h5);
-      while (div.nextSibling && div.nextSibling !== nextH5) {
-        div.appendChild(div.nextSibling);
-      }
-    }
-  }
-
-  function showExplanations(qi) {
-    var card = document.getElementById('qcard' + qi);
-    var opts = card.querySelectorAll('.quiz-opt');
-    var correct = Array.isArray(answers[qi]) ? answers[qi] : [answers[qi]];
-    opts.forEach(function(opt, j) {
-      var perExp = opt.getAttribute('data-exp');
-      var isCorr = correct.indexOf(j) !== -1;
-      if (perExp) {
-        var expDiv = document.createElement('div');
-        expDiv.className = 'quiz-opt-exp-inline ' + (isCorr ? 'qoe-is-correct' : 'qoe-is-wrong');
-        var icon = isCorr ? '\u2713' : '\u2717';
-        var label = isCorr
-          ? '<span class="qoe-correct">' + icon + ' Correct</span>'
-          : '<span class="qoe-wrong">' + icon + ' Incorrect</span>';
-        expDiv.innerHTML = '<div class="qoe-header">' + label + ' <span class="qoe-letter">Option ' + 'ABCDEF'[j] + '</span></div>' +
-          '<div class="qoe-text">' + perExp + '</div>';
-        opt.appendChild(expDiv);
-      }
-    });
-    var overall = document.getElementById('qexp' + qi);
-    if (overall) {
-      var content = overall.querySelector('.quiz-overall-content');
-      if (content && content.innerHTML.trim()) {
-        processOverallSections(content);
-        overall.style.display = 'block';
-      }
-    }
-  }
-
-  // Click: select option (all questions use submit button flow)
-  document.querySelectorAll('.quiz-opt').forEach(function(opt) {
-    opt.addEventListener('click', function() {
-      var qi = parseInt(this.dataset.q);
-      var card = document.getElementById('qcard' + qi);
-      if (card.dataset.state) return;
-      var idx = parseInt(this.dataset.idx);
-      var isMulti = Array.isArray(answers[qi]);
-      if (!selections[qi]) selections[qi] = new Set();
-      if (isMulti) {
-        if (selections[qi].has(idx)) { selections[qi].delete(idx); this.classList.remove('selected'); }
-        else { selections[qi].add(idx); this.classList.add('selected'); }
-      } else {
-        card.querySelectorAll('.quiz-opt').forEach(function(o) { o.classList.remove('selected'); });
-        selections[qi] = new Set([idx]);
-        this.classList.add('selected');
-      }
-      var btn = card.querySelector('.quiz-submit-btn');
-      if (btn) btn.style.display = selections[qi].size > 0 ? 'block' : 'none';
-    });
-  });
-
-  function submitAnswer() {
-    var qi = parseInt(this.dataset.q);
-    var card = document.getElementById('qcard' + qi);
-    if (card.dataset.state) return;
-    var selected = Array.from(selections[qi] || []).sort();
-    var correct = Array.isArray(answers[qi]) ? answers[qi].slice().sort() : [answers[qi]];
-    var isCorrect = selected.length === correct.length && selected.every(function(v, i) { return v === correct[i]; });
-    var opts = card.querySelectorAll('.quiz-opt');
-    if (isCorrect) {
-      score++;
-      card.dataset.state = 'correct';
-      selected.forEach(function(i) { opts[i].classList.add('correct'); });
-    } else {
-      card.dataset.state = 'wrong';
-      selected.forEach(function(i) {
-        if (correct.indexOf(i) === -1) opts[i].classList.add('wrong');
-        else opts[i].classList.add('correct');
-      });
-      correct.forEach(function(i) { opts[i].classList.add('correct'); });
-    }
-    opts.forEach(function(o) { o.setAttribute('disabled', ''); });
-    this.style.display = 'none';
-    showExplanations(qi);
-    answered++;
-    checkDone();
-  }
-
-  // Submit handlers (covers both existing HTML buttons and dynamically created ones)
-  document.querySelectorAll('.quiz-submit-btn').forEach(function(btn) {
-    btn.addEventListener('click', submitAnswer);
-  });
-
-  function checkDone() {
-    if (answered === answers.length) {
-      var el = document.getElementById('quizScore');
-      el.classList.add('show');
-      document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
-      var msg = score === answers.length ? 'Perfect score! You are well prepared.' : score >= 10 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
-      document.getElementById('quizScoreMsg').textContent = msg;
-      var code = document.querySelector('.cp-code');
-      if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: code ? code.textContent : 'quiz', quiz_score: score });
-    }
-  }</script>
+</script>
 </body>
 </html>
