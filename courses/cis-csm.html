@@ -492,464 +492,253 @@ details.quiz-overall[open] .quiz-overall-toggle::before { transform: rotate(90de
     <div class="quiz-card" id="qcard0">
       <div class="quiz-q"><span class="quiz-q-num">1.</span>Your organization (a Service Provider) uses ServiceNow CSM to support a corporate client who also uses their own ServiceNow instance. You want to configure a seamless integration where a request created in the client&amp;#x27;s instance automatically creates a Case in your instance, and updates are synced bi-directionally. Which application is specifically designed to facilitate this instance-to-instance workflow?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="0" data-exp="INCORRECT. Remote Process Sync is not a named ServiceNow feature or product."><span class="quiz-opt-letter">A</span><span>Remote Process Sync</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="0" data-exp="CORRECT. Service Bridge provides native bidirectional integration between two ServiceNow instances, enabling the provider to receive and work cases from a consumer instance."><span class="quiz-opt-letter">B</span><span>Service Bridge</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="0" data-exp="INCORRECT. IntegrationHub ETL is a data transformation tool for batch data movement, not a real-time bidirectional case synchronization solution."><span class="quiz-opt-letter">C</span><span>IntegrationHub ETL</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="0" data-exp="INCORRECT. REST Message V2 is a low-level API framework for custom integrations. It would require significant custom development and does not provide the native case synchronization Service Bridge offers."><span class="quiz-opt-letter">D</span><span>REST Message V2</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="0" data-exp="INCORRECT. External Case Import is not a documented ServiceNow product name."><span class="quiz-opt-letter">E</span><span>External Case Import</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="0" data-exp="INCORRECT: Remote Process Sync is not a ServiceNow application. This is a fabricated term."><span class="quiz-opt-letter">A</span><span>Remote Process Sync</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="0" data-exp="CORRECT: Service Bridge enables seamless ServiceNow-to-ServiceNow integration between a service provider and their client, with bi-directional case synchronization across instances."><span class="quiz-opt-letter">B</span><span>Service Bridge</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="0" data-exp="INCORRECT: IntegrationHub ETL handles data extraction and loading, not bi-directional case sync between ServiceNow instances."><span class="quiz-opt-letter">C</span><span>IntegrationHub ETL</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="0" data-exp="INCORRECT: REST Message V2 is a generic integration method, not a purpose-built cross-instance case synchronization application."><span class="quiz-opt-letter">D</span><span>REST Message V2</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="0" data-exp="INCORRECT: External Case Import is not a standard ServiceNow CSM application name."><span class="quiz-opt-letter">E</span><span>External Case Import</span></li>
       </ul>
       <div class="quiz-opt-explains" id="qoptexp0" style="display:none"></div>
       <details class="quiz-overall" id="qexp0">
         <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">Correct Answer: Service Bridge
-Source
-
-Official Doc: Service Bridge (Zurich)
-If the link fails, search Google for: ServiceNow Zurich Service Bridge instance-to-instance CSM provider consumer
-
-Expert Explanation
-Service Bridge is a native ServiceNow capability for connecting a consumer instance (the client organization) to a provider instance (the service provider). When a consumer creates a case or request, Service Bridge automatically creates a corresponding Provider Task or Case in the provider&#x27;s instance. Updates flow bidirectionally: resolution notes, state changes, and comments sync between instances without custom API development. This is the only OOB solution for ServiceNow-to-ServiceNow instance integration at the case level.
-<br><br><strong>Why the Others Are Wrong</strong>
-
-Remote Process Sync: Not a recognized ServiceNow product or feature.
-IntegrationHub ETL: Designed for batch data import and transformation between ServiceNow and external systems. Not built for real-time bidirectional case sync between two ServiceNow instances.
-REST Message V2: A framework for building custom REST integrations. Would work technically, but requires extensive custom development and is not the purpose-built solution for this scenario.
-External Case Import: Not a documented ServiceNow feature.
-
-<br><br><strong>Memory Tip</strong>
-Service Bridge = a bridge between two ServiceNow castles. The consumer is on one side, the provider on the other, and work crosses the bridge automatically in both directions.
-<br><br><strong>Real-World</strong> Example
-A managed security provider uses ServiceNow as their operational platform. Their enterprise client also runs ServiceNow internally. With Service Bridge configured, when the client&#x27;s security team opens a Priority 1 incident in their instance, it automatically creates a High Priority Case in the provider&#x27;s instance. The provider&#x27;s agent resolves it and adds a resolution note, which instantly syncs back to the client&#x27;s incident record, visible to their team.</div>
+        <div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>B) Service Bridge</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-customer-service-management/page/product/customer-service-management/concept/service-bridge.html" target="_blank">ServiceNow Zurich Docs: Service Bridge</a><br>(If the link fails, search Google for: ServiceNow Zurich Service Bridge CSM)</p><h5>Expert Explanation</h5><p>Service Bridge enables seamless connection between a service provider and customer ServiceNow instances. Customer requests automatically create corresponding Cases in the provider CSM instance with bi-directional updates.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>Remote Process Sync</strong> is not a real ServiceNow feature</li><li><strong>IntegrationHub ETL</strong> handles data pipelines, not live case sync</li><li><strong>REST Message V2</strong> requires custom development</li><li><strong>External Case Import</strong> is a fabricated term</li></ul><h5>Memory Tip</h5><p>Service Bridge = a bridge connecting two ServiceNow islands. Cases walk across in both directions.</p><h5>Real-World Example</h5><p>A managed IT company uses CSM. Their enterprise client also runs ServiceNow. With Service Bridge, when the client reports an issue, a Case automatically appears in the provider workspace with bi-directional updates.</p>
+</div>
       </details>
     </div>
     <div class="quiz-card" id="qcard1">
       <div class="quiz-q"><span class="quiz-q-num">2.</span>In the CSM Configurable Workspace, a supervisor wants to monitor live chat interactions to detect when a customer is becoming frustrated or angry. Which Predictive Intelligence capability analyzes the tone of the conversation in real-time and displays a score (e.g., Positive, Neutral, Negative) to the agent and supervisor?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="1" data-exp="INCORRECT. Intent Detection is an NLU capability that identifies what a user wants to accomplish in a Virtual Agent conversation. It does not analyze emotional tone in live chats."><span class="quiz-opt-letter">A</span><span>Intent Detection</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="1" data-exp="CORRECT. Sentiment Analysis monitors live chat interactions in real time, classifying customer messages as positive, negative, or neutral to alert supervisors and help agents adjust their approach."><span class="quiz-opt-letter">B</span><span>Sentiment Analysis</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="1" data-exp="INCORRECT. Cluster Analysis (Clustering) groups similar historical cases together to identify trends. It operates on historical data, not live interaction tone."><span class="quiz-opt-letter">C</span><span>Cluster Analysis</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="1" data-exp="INCORRECT. Interaction Trending is not a recognized ServiceNow feature name for analyzing customer sentiment."><span class="quiz-opt-letter">D</span><span>Interaction Trending</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="1" data-exp="INCORRECT. Emotional Intelligence Plugin is a fabricated name. It does not exist in ServiceNow&#x27;s documented product catalog."><span class="quiz-opt-letter">E</span><span>Emotional Intelligence Plugin</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="1" data-exp="INCORRECT: Intent Detection identifies what the customer wants to accomplish, not the emotional tone."><span class="quiz-opt-letter">A</span><span>Intent Detection</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="1" data-exp="CORRECT: Sentiment Analysis evaluates tone and emotion of customer messages in real time, flagging negative sentiment so supervisors can intervene during live chat."><span class="quiz-opt-letter">B</span><span>Sentiment Analysis</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="1" data-exp="INCORRECT: Cluster Analysis groups similar cases to identify trends, not emotional tone of individual conversations."><span class="quiz-opt-letter">C</span><span>Cluster Analysis</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="1" data-exp="INCORRECT: Interaction Trending is not a standard Predictive Intelligence capability in ServiceNow CSM."><span class="quiz-opt-letter">D</span><span>Interaction Trending</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="1" data-exp="INCORRECT: Emotional Intelligence Plugin does not exist in the ServiceNow platform."><span class="quiz-opt-letter">E</span><span>Emotional Intelligence Plugin</span></li>
       </ul>
       <div class="quiz-opt-explains" id="qoptexp1" style="display:none"></div>
       <details class="quiz-overall" id="qexp1">
         <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">Correct Answer: Sentiment Analysis
-Source
-
-Official Doc: Case Sentiment Analysis (Zurich)
-If the link fails, search Google for: ServiceNow Zurich Sentiment Analysis CSM live chat supervisor monitoring
-
-Expert Explanation
-Sentiment Analysis in CSM applies machine learning to evaluate the emotional tone of customer messages in real time. The workspace displays a sentiment indicator (positive, neutral, negative) that updates as the conversation progresses. Supervisors can monitor the sentiment across all active chats from their workspace view and intervene when a customer&#x27;s sentiment turns sharply negative. The feature is configured through the Predictive Intelligence framework and requires enabling the CSM Sentiment Analysis plugin.
-<br><br><strong>Why the Others Are Wrong</strong>
-
-Intent Detection: A Natural Language Understanding function that maps a user&#x27;s message to a predefined intent (for example, &quot;Reset Password&quot;). It classifies purpose, not emotional state.
-Cluster Analysis: A Predictive Intelligence capability that groups past cases by similarity. It works on historical records, not live conversations.
-Interaction Trending: Not a documented ServiceNow feature name. Likely a distractor designed to sound plausible.
-Emotional Intelligence Plugin: Does not exist in any ServiceNow product documentation or the ServiceNow Store.
-
-<br><br><strong>Memory Tip</strong>
-Sentiment = feeling. Sentiment Analysis = measuring the customer&#x27;s feeling during the conversation. Supervisors see the emotional temperature in real time and can act before the conversation becomes a complaint.
-<br><br><strong>Real-World</strong> Example
-A supervisor monitors 12 active chats in the CSM Workspace. One chat shows a rapidly declining sentiment from neutral to strongly negative as the customer becomes frustrated with a delayed shipment. The supervisor sees the red indicator, jumps into the chat to assist the agent, and offers an immediate discount to de-escalate. Without Sentiment Analysis, the supervisor would have no visibility into which chats were deteriorating.</div>
+        <div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>B) Sentiment Analysis</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-customer-service-management/page/product/customer-service-management/concept/csm-predictive-intelligence.html" target="_blank">ServiceNow Zurich Docs: Predictive Intelligence for CSM</a><br>(If the link fails, search Google for: ServiceNow Zurich Sentiment Analysis CSM)</p><h5>Expert Explanation</h5><p>Sentiment Analysis evaluates the emotional tone of customer messages during chat interactions. The system assigns a sentiment score (positive, neutral, or negative) using NLP. Supervisors see indicators in real time and can step in when sentiment drops.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>Intent Detection</strong> classifies what the customer wants, not how they feel</li><li><strong>Cluster Analysis</strong> groups records for patterns, not real-time emotions</li><li><strong>Interaction Trending</strong> is not a recognized ServiceNow capability</li><li><strong>Emotional Intelligence Plugin</strong> does not exist</li></ul><h5>Memory Tip</h5><p>Sentiment = feelings. For frustrated customers in live chat, you need Sentiment Analysis.</p><h5>Real-World Example</h5><p>A supervisor sees a red sentiment indicator on one chat after the customer typed "this is unacceptable." The supervisor joins to offer a retention discount before escalation.</p>
+</div>
       </details>
     </div>
     <div class="quiz-card" id="qcard2">
       <div class="quiz-q"><span class="quiz-q-num">3.</span>Your organization uses the Technology Provider Service Management (TPSM) application. Instead of using the generic &amp;quot;Case&amp;quot; table for everything, TPSM introduces a specialized table designed to handle product support inquiries with specific fields and workflows. What is this concept known as in the CSM architecture?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="2" data-exp="INCORRECT. Case Categories are standard classification labels within the existing Case record. TPSM introduces a structurally separate extension of the case table, not just new categories on the existing one."><span class="quiz-opt-letter">A</span><span>Case Categories</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="2" data-exp="INCORRECT. Service Definitions link Sold Products to Catalog Items in the CSM Request Management integration. They are not the TPSM-specific extension of the case structure."><span class="quiz-opt-letter">B</span><span>Service Definitions</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="2" data-exp="CORRECT. TPSM introduces industry-specific Case Types that extend the base Case table with specialized fields, states, workflows, and workspace experiences purpose-built for technology product support."><span class="quiz-opt-letter">C</span><span>Case Types</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="2" data-exp="INCORRECT. Task Extension is not a documented TPSM concept name. Case Types, not task extensions, are what TPSM introduces to specialize the case record."><span class="quiz-opt-letter">D</span><span>Task Extension</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="2" data-exp="INCORRECT: Case Categories classify cases within the same table. They do not create separate table structures."><span class="quiz-opt-letter">A</span><span>Case Categories</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="2" data-exp="INCORRECT: Service Definitions define offered services, not data model structures for support cases."><span class="quiz-opt-letter">B</span><span>Service Definitions</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="2" data-exp="CORRECT: Case Types in TPSM create specialized case tables extending the base Case table for different product support scenarios."><span class="quiz-opt-letter">C</span><span>Case Types</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="2" data-exp="INCORRECT: Task Extension is a generic platform concept. The TPSM-specific concept is called Case Types."><span class="quiz-opt-letter">D</span><span>Task Extension</span></li>
       </ul>
       <div class="quiz-opt-explains" id="qoptexp2" style="display:none"></div>
       <details class="quiz-overall" id="qexp2">
         <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">Correct Answer: Case Types
-Source
-
-Official Doc: Technology Provider Service Management (Zurich)
-If the link fails, search Google for: ServiceNow Zurich TPSM Technology Provider Service Management Case Types industry vertical
-
-Expert Explanation
-Technology Provider Service Management (TPSM) is a CSM industry vertical for technology companies that manufacture and sell products requiring specialized post-sale support (hardware defects, firmware issues, RMA processing). TPSM introduces Case Types that extend the base sn_customerservice_case table with fields, states, and workflows specific to technology product support scenarios. Each Case Type can have its own form layout, workspace experience, and SLA definitions, allowing drastically different support processes to coexist within one platform without polluting a single monolithic case table.
-<br><br><strong>Why the Others Are Wrong</strong>
-
-Case Categories: Standard taxonomy labels (Hardware, Software, Billing) applied to the existing base case record. They classify cases but do not create structurally distinct record types with unique fields and workflows.
-Service Definitions: The CSM Request Management integration object linking Sold Products to Catalog Items. Not a TPSM concept.
-Task Extension: Not a documented TPSM term or configuration object in ServiceNow documentation.
-
-<br><br><strong>Memory Tip</strong>
-TPSM = technology product support. Case Types = the different types of support cases that tech products need. A billing dispute and a hardware defect cannot reasonably share the same form and workflow, so TPSM gives each its own Case Type.
-<br><br><strong>Real-World</strong> Example
-A networking hardware company implements TPSM and creates three Case Types: &quot;Hardware Defect&quot; (with RMA fields, defect code, and return shipping tracking), &quot;Firmware Issue&quot; (with firmware version fields and patch deployment tracking), and &quot;License Activation&quot; (with license key and activation status fields). Each type has its own SLA, workspace view, and resolution workflow. Agents handling hardware returns never see the license activation fields, and vice versa.</div>
+        <div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>C) Case Types</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-customer-service-management/page/product/customer-service-management/concept/tpsm-overview.html" target="_blank">ServiceNow Zurich Docs: TPSM Overview</a><br>(If the link fails, search Google for: ServiceNow Zurich TPSM Case Types)</p><h5>Expert Explanation</h5><p>TPSM introduces Case Types to handle product-centric support. Each Case Type creates a specialized table with its own fields, business rules, and workflows for specific product support scenarios.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>Case Categories</strong> classify within the same table, no new tables</li><li><strong>Service Definitions</strong> define services, not case structures</li><li><strong>Task Extension</strong> is a generic mechanism, not the TPSM concept</li></ul><h5>Memory Tip</h5><p>TPSM Case Types = hospital departments. Each specializes in a specific kind of product issue.</p><h5>Real-World Example</h5><p>A telecom provider uses TPSM with separate Case Types for Mobile Device Support, Broadband Installation, and Billing Disputes, each with unique relevant fields.</p>
+</div>
       </details>
     </div>
     <div class="quiz-card" id="qcard3">
       <div class="quiz-q"><span class="quiz-q-num">4.</span>You need to send a product alert (Publication) to all customers who have purchased a specific &amp;quot;Router Model X&amp;quot;. You want the list of recipients to automatically update if new customers purchase this router tomorrow. Which type of Recipient List should you create?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="3" data-exp="INCORRECT. Static Recipient List requires manual management. The members must be added and removed by hand as product ownership changes, which is not scalable for automatic product-based targeting."><span class="quiz-opt-letter">A</span><span>Static Recipient List</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="3" data-exp="CORRECT. Dynamic Recipient List uses a condition builder to automatically identify customers who own the specified product model and updates itself via a scheduled job as ownership data changes."><span class="quiz-opt-letter">B</span><span>Dynamic Recipient List</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="3" data-exp="INCORRECT. Import Set List is a data import mechanism for bulk loading records from external files. It is not a recipient management tool for Targeted Communications publications."><span class="quiz-opt-letter">C</span><span>Import Set List</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="3" data-exp="INCORRECT. Entitlement List defines what support services a customer is entitled to. It is not a recipient identification mechanism for product alert publications."><span class="quiz-opt-letter">D</span><span>Entitlement List</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="3" data-exp="INCORRECT: Static Recipient Lists require manual updates and would not auto-update as new customers purchase."><span class="quiz-opt-letter">A</span><span>Static Recipient List</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="3" data-exp="CORRECT: Dynamic Recipient Lists automatically update membership based on defined criteria, including new customers without manual intervention."><span class="quiz-opt-letter">B</span><span>Dynamic Recipient List</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="3" data-exp="INCORRECT: Import Set List is not a standard CSM feature for recipient management."><span class="quiz-opt-letter">C</span><span>Import Set List</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="3" data-exp="INCORRECT: Entitlement List manages support eligibility, not communication recipients."><span class="quiz-opt-letter">D</span><span>Entitlement List</span></li>
       </ul>
       <div class="quiz-opt-explains" id="qoptexp3" style="display:none"></div>
       <details class="quiz-overall" id="qexp3">
         <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">Correct Answer: Dynamic Recipient List
-Source
-
-Official Doc: Targeted Communications (Zurich)
-If the link fails, search Google for: ServiceNow Zurich Dynamic Recipient List Targeted Communications product model ownership auto-refresh
-
-Expert Explanation
-Dynamic Recipient Lists in CSM Targeted Communications automatically maintain their membership by evaluating a condition against customer and product records. For a product alert, the condition would be &quot;Install Base Item Product Model = [vulnerable model name].&quot; The &quot;Targeted Communications Recipients Refresh&quot; scheduled job runs daily to add new customers who acquired the product and remove customers who no longer own it. When a Publication is sent, the Dynamic Recipient List is evaluated at send time, ensuring every owner of the affected product receives the alert with no manual list maintenance.
-<br><br><strong>Why the Others Are Wrong</strong>
-
-Static Recipient List: A manually curated list. Every time a new customer acquires the product or an existing owner disposes of it, someone must manually update the list. Not feasible for large, ongoing product populations.
-Import Set List: A data loading mechanism for importing external data into ServiceNow tables. Not related to Targeted Communications recipient management.
-Entitlement List: Defines the scope of support a customer has purchased (which products, which SLA tier, which support hours). It governs case handling rules, not who receives a publication.
-
-<br><br><strong>Memory Tip</strong>
-Dynamic = the list maintains itself. You write the rule once; the system finds the people forever. New owner buys the product: added automatically. Old owner sells it: removed automatically. You never touch the list again.
-<br><br><strong>Real-World</strong> Example
-A network equipment vendor discovers a critical security vulnerability in their CX-7000 switch model. The security team creates a Dynamic Recipient List with condition &quot;Product Model = CX-7000.&quot; The list immediately populates 1,847 customers. A Publication titled &quot;Critical Security Patch Required: CX-7000&quot; is sent within 30 minutes. Over the next week, 23 new customers activate CX-7000 units. When a follow-up bulletin is sent, the Dynamic Recipient List automatically includes those 23 new owners without any manual update.</div>
+        <div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>B) Dynamic Recipient List</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-customer-service-management/page/product/customer-service-management/concept/csm-proactive-customer-service.html" target="_blank">ServiceNow Zurich Docs: Proactive Customer Service</a><br>(If the link fails, search Google for: ServiceNow Zurich Dynamic Recipient List CSM)</p><h5>Expert Explanation</h5><p>Dynamic Recipient Lists use filter conditions to automatically determine which customers receive a communication. The list continuously updates as new records match the criteria.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>Static Recipient List</strong> requires manual updates each time</li><li><strong>Import Set List</strong> is not a recognized CSM recipient feature</li><li><strong>Entitlement List</strong> manages support eligibility, not notifications</li></ul><h5>Memory Tip</h5><p>Dynamic = automatically changes. For auto-updating lists, use the Dynamic version.</p><h5>Real-World Example</h5><p>A vendor discovers a firmware vulnerability. Their Dynamic Recipient List immediately includes all 2,000 owners. New purchasers next week automatically receive the same advisory.</p>
+</div>
       </details>
     </div>
     <div class="quiz-card" id="qcard4">
       <div class="quiz-q"><span class="quiz-q-num">5.</span>In the CSM Configurable Workspace, which specific feature provides agents with a consolidated, 360-degree view of a customer—including a timeline of recent interactions, key touchpoints, and KPIs—without requiring the agent to navigate away from the current interaction?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="4" data-exp="INCORRECT. Agent Assist surfaces relevant Knowledge Articles and similar records to help agents resolve cases. It is not a 360-degree customer view."><span class="quiz-opt-letter">A</span><span>Agent Assist</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="4" data-exp="CORRECT. Customer Central is the CSM plugin that adds the Customer Information and Customer Activity tabs, providing a consolidated 360-degree view of the customer directly in the workspace."><span class="quiz-opt-letter">B</span><span>Customer Central</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="4" data-exp="INCORRECT. Contextual Side Panel is a UI container on the right side of the workspace that can host various components. It is not the specific 360-degree customer feature."><span class="quiz-opt-letter">C</span><span>Contextual Side Panel</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="4" data-exp="INCORRECT. Interaction Record is a record type capturing a single customer interaction (chat, phone). It is not a consolidated customer view feature."><span class="quiz-opt-letter">D</span><span>Interaction Record</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="4" data-exp="INCORRECT. &#x27;360 Customer Dashboard&#x27; is not a ServiceNow product name. It does not exist in official documentation."><span class="quiz-opt-letter">E</span><span>360 Customer Dashboard</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="4" data-exp="INCORRECT: Agent Assist provides real-time AI recommendations during case handling, not a consolidated customer view."><span class="quiz-opt-letter">A</span><span>Agent Assist</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="4" data-exp="CORRECT: Customer Central provides a unified 360-degree view including timeline, KPIs, cases, assets, contracts, and entitlements without navigating away."><span class="quiz-opt-letter">B</span><span>Customer Central</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="4" data-exp="INCORRECT: Contextual Side Panel supplements the main view but is not the primary 360-degree customer feature."><span class="quiz-opt-letter">C</span><span>Contextual Side Panel</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="4" data-exp="INCORRECT: Interaction Record logs individual touchpoints but does not provide a consolidated overview."><span class="quiz-opt-letter">D</span><span>Interaction Record</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="4" data-exp="INCORRECT: 360 Customer Dashboard is not the actual ServiceNow feature name. It is called Customer Central."><span class="quiz-opt-letter">E</span><span>360 Customer Dashboard</span></li>
       </ul>
       <div class="quiz-opt-explains" id="qoptexp4" style="display:none"></div>
       <details class="quiz-overall" id="qexp4">
         <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">Correct Answer: Customer Central
-Source
-
-Official Doc: Customer Central (Zurich)
-If the link fails, search Google for: ServiceNow Zurich Customer Central CSM Configurable Workspace 360
-
-Expert Explanation
-Customer Central is an optional plugin that adds two tabs to the CSM Configurable Workspace sidebar: Customer Information (a consolidated view of account details, owned products, entitlements, and related records) and Customer Activity (a holistic timeline of all past interactions and cases). Together, these give agents the full context of who the customer is and what history exists without navigating away from the active case.
-<br><br><strong>Why the Others Are Wrong</strong>
-
-Agent Assist: Surfaces contextually relevant KB articles and similar past cases to help resolve the current case. It assists with resolution content, not customer history.
-Contextual Side Panel: The right-side panel in the workspace that can host multiple components including Customer Central. It is the container, not the feature itself.
-Interaction Record: A transactional record (table: interaction) for a single contact event. It captures one conversation, not the full customer picture.
-360 Customer Dashboard: This name does not appear in any ServiceNow documentation. It is a fabricated distractor.
-
-<br><br><strong>Memory Tip</strong>
-Customer Central = Central command for everything about this customer. Two tabs: who they are (Information) and what they have done (Activity).
-<br><br><strong>Real-World</strong> Example
-An agent receives a chat from an angry enterprise customer. Before responding, the agent glances at the Customer Central panel and sees the customer owns three enterprise licenses, has had seven cases in the last 30 days, and had a billing dispute closed just last week. The agent can immediately acknowledge the history and escalate appropriately, all without opening a separate browser tab.</div>
+        <div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>B) Customer Central</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-customer-service-management/page/product/customer-service-management/concept/csm-configurable-workspace.html" target="_blank">ServiceNow Zurich Docs: CSM Configurable Workspace</a><br>(If the link fails, search Google for: ServiceNow Zurich Customer Central CSM)</p><h5>Expert Explanation</h5><p>Customer Central aggregates all customer information: profile, cases, assets, entitlements, contracts, SLA status, and interaction timeline. Agents never need to navigate away from the workspace.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>Agent Assist</strong> provides AI suggestions, not a customer overview</li><li><strong>Contextual Side Panel</strong> is supplementary</li><li><strong>Interaction Record</strong> captures individual touchpoints only</li><li><strong>360 Customer Dashboard</strong> is not the actual feature name</li></ul><h5>Memory Tip</h5><p>Customer Central = Central hub for everything about the customer. One place, all information.</p><h5>Real-World Example</h5><p>An insurance agent receives a call. Customer Central shows three policies, two claims, payment history, satisfaction score, and a timeline of recent interactions. Full context before speaking.</p>
+</div>
       </details>
     </div>
     <div class="quiz-card" id="qcard5">
       <div class="quiz-q"><span class="quiz-q-num">6.</span>A Service Desk Manager wants to identify &amp;quot;hot topics&amp;quot; or emerging issues that do not yet have a specific category, such as a sudden spike in users reporting &amp;quot;VPN slowness&amp;quot; after a patch. Which Predictive Intelligence capability groups similar historical cases together to help visualize these trends?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="5" data-exp="INCORRECT. Classification is a supervised machine learning model that predicts a predefined category label for a record (such as Category or Priority). It requires predefined categories and labeled training data."><span class="quiz-opt-letter">A</span><span>Classification</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="5" data-exp="INCORRECT. Similarity finds cases that are similar to one specific target case, used for features like &#x27;similar incidents.&#x27; It is a record-to-record comparison, not a volume-based topic discovery tool."><span class="quiz-opt-letter">B</span><span>Similarity</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="5" data-exp="CORRECT. Clustering is an unsupervised machine learning model that automatically groups large volumes of cases by shared text or attributes, revealing emerging topic trends without requiring predefined categories."><span class="quiz-opt-letter">C</span><span>Clustering</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="5" data-exp="INCORRECT. Regression predicts a continuous numeric value (such as predicted resolution time in hours). It is not used for grouping cases by topic."><span class="quiz-opt-letter">D</span><span>Regression</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="5" data-exp="INCORRECT: Classification requires predefined categories and cannot discover unknown groupings."><span class="quiz-opt-letter">A</span><span>Classification</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="5" data-exp="INCORRECT: Similarity identifies cases similar to a given case at the individual record level, not macro trends."><span class="quiz-opt-letter">B</span><span>Similarity</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="5" data-exp="CORRECT: Clustering uses unsupervised ML to automatically group similar cases without predefined categories, revealing emerging hot topics."><span class="quiz-opt-letter">C</span><span>Clustering</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="5" data-exp="INCORRECT: Regression predicts numerical values and is not used for grouping similar cases."><span class="quiz-opt-letter">D</span><span>Regression</span></li>
       </ul>
       <div class="quiz-opt-explains" id="qoptexp5" style="display:none"></div>
       <details class="quiz-overall" id="qexp5">
         <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">Correct Answer: Clustering
-Source
-
-Official Doc: Clustering (Zurich Predictive Intelligence)
-If the link fails, search Google for: ServiceNow Zurich Predictive Intelligence Clustering trending case topics CSM unsupervised
-
-Expert Explanation
-Clustering is an unsupervised Predictive Intelligence model that groups cases (or other records) based on the similarity of their text fields and shared attributes, without requiring a predefined taxonomy. The CSM &quot;Trending Case Topics&quot; feature uses Clustering to automatically discover emerging issue clusters: when a new firmware version ships and 50 cases mention similar error codes, Clustering surfaces this as a new cluster before any category exists for it. The manager sees the cluster name, volume, and representative cases, enabling proactive response before it becomes a major issue.
-<br><br><strong>Why the Others Are Wrong</strong>
-
-Classification: A supervised model trained to predict a field value from a predefined set (category, priority, assignment group). It requires you to know the categories in advance and provide training examples for each.
-Similarity: A model that compares a specific record against historical records to find the most similar ones. Used for &quot;Similar Incidents&quot; or &quot;Related Cases&quot; suggestions, not for bulk topic trend discovery.
-Regression: Predicts a continuous numeric output (hours to resolution, predicted cost). Not applicable for grouping cases by topic.
-
-<br><br><strong>Memory Tip</strong>
-Clustering = the system notices a crowd gathering before you do. You did not define what the crowd is about; the algorithm found it in the data by looking at what cases have in common.
-<br><br><strong>Real-World</strong> Example
-A software company releases a new version of their mobile app. Within 48 hours, Clustering detects a new cluster of 73 cases, all containing language related to &quot;login loop,&quot; &quot;can&#x27;t sign in,&quot; and &quot;authentication error.&quot; No one defined &quot;login loop&quot; as a category. The Trending Topics dashboard flags the cluster. The manager immediately creates a Known Error article, shares it with all agents, and adds it to Agent Assist, deflecting the next 200 cases that would have come in about the same issue.</div>
+        <div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>C) Clustering</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-now-intelligence/page/administer/predictive-intelligence/concept/clustering.html" target="_blank">ServiceNow Zurich Docs: Clustering</a><br>(If the link fails, search Google for: ServiceNow Zurich Predictive Intelligence Clustering)</p><h5>Expert Explanation</h5><p>Clustering discovers patterns using unsupervised ML. It identifies groups even when no predefined category exists, letting managers spot emerging issues like VPN slowness spikes after a patch.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>Classification</strong> requires predefined categories</li><li><strong>Similarity</strong> works at individual record level</li><li><strong>Regression</strong> predicts numerical outcomes</li></ul><h5>Memory Tip</h5><p>Clustering = discovering clusters you did not know existed. No labels needed.</p><h5>Real-World Example</h5><p>After maintenance, 150 cases arrive. Clustering groups 87 as VPN-related, 34 as email sync, and 29 as printing. The manager coordinates with the network team immediately.</p>
+</div>
       </details>
     </div>
     <div class="quiz-card" id="qcard6">
       <div class="quiz-q"><span class="quiz-q-num">7.</span>When the CSM Extension for Request Management is active, if a customer submits a Service Catalog Request (REQ) directly via the portal (without starting from an existing Case), what does the system automatically generate to ensure the support team tracks this interaction?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="6" data-exp="INCORRECT. A Shadow Incident is not a ServiceNow concept. No such record type exists in CSM or ITSM documentation."><span class="quiz-opt-letter">A</span><span>It creates a &quot;Shadow&quot; Incident.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="6" data-exp="CORRECT. When the CSM Extension for Request Management is active, a standalone Service Catalog Request triggers a business rule that automatically creates a linked parent Case, establishing the Case &gt; REQ &gt; RITM &gt; SCTASK hierarchy."><span class="quiz-opt-letter">B</span><span>It creates a Parent Case and links the Request to it.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="6" data-exp="INCORRECT. The entire purpose of the CSM Request Management integration is to ensure a Case is created alongside the Request. Saying no Case is involved contradicts the feature&#x27;s documented behavior."><span class="quiz-opt-letter">C</span><span>It only creates the Request; no Case is involved.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="6" data-exp="INCORRECT. Universal Task is not a record type automatically created from a Service Catalog Request in this integration. The integration creates Cases, not Universal Tasks."><span class="quiz-opt-letter">D</span><span>It creates a Universal Task.</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="6" data-exp="INCORRECT: The system does not create a Shadow Incident. CSM Extension bridges Cases and Requests, not Incidents."><span class="quiz-opt-letter">A</span><span>It creates a &quot;Shadow&quot; Incident.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="6" data-exp="CORRECT: When CSM Extension for Request Management is active, submitting a catalog request without an existing Case automatically creates a parent Case and links the Request to it."><span class="quiz-opt-letter">B</span><span>It creates a Parent Case and links the Request to it.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="6" data-exp="INCORRECT: Creating only a Request contradicts the extension purpose, which ensures Case-level tracking for all interactions."><span class="quiz-opt-letter">C</span><span>It only creates the Request; no Case is involved.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="6" data-exp="INCORRECT: Universal Tasks are for cross-functional task management, not catalog request handling."><span class="quiz-opt-letter">D</span><span>It creates a Universal Task.</span></li>
       </ul>
       <div class="quiz-opt-explains" id="qoptexp6" style="display:none"></div>
       <details class="quiz-overall" id="qexp6">
         <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">Correct Answer: It creates a Parent Case and links the Request to it.
-Source
-
-Official Doc: CSM integration with Request Management (Zurich)
-If the link fails, search Google for: ServiceNow Zurich CSM Request Management extension parent Case auto-created catalog request
-
-Expert Explanation
-The CSM Extension for Request Management (plugin: com.sn_cs_sm_request) installs a business rule called &quot;Create Case For Request.&quot; When a customer submits a Service Catalog Request (REQ) directly through the portal without already being in the context of an open case, this rule fires and automatically creates a parent Case linked to the Request. The resulting hierarchy is Case (parent) &gt; Request (REQ) &gt; Requested Item (RITM) &gt; Service Catalog Task (SCTASK). This ensures every service request has a CSM case as its customer-visible tracking record. <br><br><strong>Note:</strong> the auto-creation does not occur when the submitting user has the admin role.
-<br><br><strong>Why the Others Are Wrong</strong>
-
-Shadow Incident: Not a ServiceNow record type. This is a fabricated distractor.
-Only creates the Request; no Case is involved: Directly contradicts the documented behavior of the CSM Request Management extension. The plugin&#x27;s primary function is creating the Case.
-Universal Task: A general-purpose task record type in ServiceNow. Not created automatically from a catalog request in this integration.
-
-<br><br><strong>Memory Tip</strong>
-Every Request needs a CSM parent: Case &gt; REQ &gt; RITM &gt; SCTASK. The Case is the customer&#x27;s window into what is happening with their request, even if the work is tracked in RITM and SCTASK.
-<br><br><strong>Real-World</strong> Example
-A customer logs into the portal and submits a Service Catalog request for &quot;Upgrade to Premium Support Tier.&quot; The CSM Request Management plugin fires its business rule. Within seconds, a Case is created titled &quot;Support Tier Upgrade Request,&quot; linked to the REQ, which contains an RITM for &quot;Premium Support Activation&quot; and an SCTASK assigned to the account management team. The customer sees one Case in their portal; the fulfillment team works the SCTASK behind the scenes.</div>
+        <div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>B) It creates a Parent Case and links the Request to it</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-customer-service-management/page/product/customer-service-management/concept/csm-request-management.html" target="_blank">ServiceNow Zurich Docs: CSM Extension for Request Management</a><br>(If the link fails, search Google for: ServiceNow Zurich CSM Extension Request Management)</p><h5>Expert Explanation</h5><p>The extension ensures all customer interactions are captured under a Case. When a customer submits a catalog request with no existing Case, the system generates a parent Case and associates the Request for full visibility and SLA enforcement.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>Shadow Incident</strong> is not a CSM concept</li><li><strong>Only creating a Request</strong> contradicts the extension purpose</li><li><strong>Universal Task</strong> is a separate cross-functional feature</li></ul><h5>Memory Tip</h5><p>CSM Extension = every Request gets a Case parent. No orphan Requests allowed.</p><h5>Real-World Example</h5><p>A bank customer orders a new debit card through the portal. The CSM Extension creates a Case and links the Request to it. The agent sees the request alongside other cases in Customer Central.</p>
+</div>
       </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard7">
       <div class="quiz-q"><span class="quiz-q-num">8.</span>Advanced Work Assignment (AWA) routes work items to agents based on availability and skills. Which of the following are valid, out-of-the-box Service Channels that AWA can route in the CSM application? (Choose three.) <span class="quiz-choose">(choose 3)</span></div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="7" data-exp="CORRECT. Case is an OOB AWA service channel. AWA routes case work items to agents based on availability, capacity, and skills."><span class="quiz-opt-letter">A</span><span>Case</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="7" data-exp="INCORRECT. Knowledge Articles are reference content created and consumed by agents and customers. They are not work items routed through AWA service channels."><span class="quiz-opt-letter">B</span><span>Knowledge Article</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="7" data-exp="CORRECT. Walk-up is an OOB AWA service channel for routing in-person walk-up interactions to available agents at physical service centers."><span class="quiz-opt-letter">C</span><span>Walk-up</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="7" data-exp="CORRECT. Chat is an OOB AWA service channel for routing live customer chat interactions to qualified available agents."><span class="quiz-opt-letter">D</span><span>Chat</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="7" data-exp="INCORRECT. Email creates cases when received, and those cases are then routed by AWA. Email itself is not a direct AWA service channel. The work item is the Case, not the email."><span class="quiz-opt-letter">E</span><span>Email</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="7" data-exp="CORRECT: Case is a valid out-of-the-box AWA Service Channel. Cases can be routed to agents based on skills and availability."><span class="quiz-opt-letter">A</span><span>Case</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="7" data-exp="INCORRECT: Knowledge Articles are reference content, not actionable work items that need agent assignment through AWA."><span class="quiz-opt-letter">B</span><span>Knowledge Article</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="7" data-exp="CORRECT: Walk-up is a valid AWA Service Channel. Walk-up interactions can be routed to available agents."><span class="quiz-opt-letter">C</span><span>Walk-up</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="7" data-exp="CORRECT: Chat is a valid AWA Service Channel. Live chat conversations are routed to agents through AWA based on capacity and skills."><span class="quiz-opt-letter">D</span><span>Chat</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="7" data-exp="INCORRECT: Email is not an out-of-the-box AWA Service Channel. Emails create cases, and the Case becomes the routable work item."><span class="quiz-opt-letter">E</span><span>Email</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="7" style="display:none">Submit Answer</button>
       <div class="quiz-opt-explains" id="qoptexp7" style="display:none"></div>
       <details class="quiz-overall" id="qexp7">
         <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">Correct Answers: Case, Walk-up, and Chat
-Source
-
-Official Doc: Advanced Work Assignment overview (Zurich)
-If the link fails, search Google for: ServiceNow Zurich AWA service channels Case Chat Walk-up Incident OOB
-
-Expert Explanation
-Out-of-the-box, Advanced Work Assignment includes these base system service channels: Case, Chat, Walk-up, and Incident. Each represents a distinct type of work item that AWA routes to agents based on capacity, skill match, and availability. Email is not a service channel: when a customer sends an email, the platform creates a Case from it, and that Case is then routed by the Case service channel. Knowledge Articles are not work items; they are reference documents consumed during case resolution, not assigned to agents for routing.
-<br><br><strong>Why the Others Are Wrong</strong>
-
-Knowledge Article: A documentation record for capturing solutions and procedures. Agents create and consume KB articles; they are not routed to agents as work assignments.
-Email: Inbound email creates a Case record via email parsing. The Case is then routed by AWA. The email itself never enters the AWA routing pipeline as a work item type.
-
-<br><br><strong>Memory Tip</strong>
-AWA routes work items that require an agent to actively respond: Cases, Chats, Walk-ups, Incidents. Email converts to a Case first. Knowledge Articles are never assigned to agents by AWA.
-<br><br><strong>Real-World</strong> Example
-A company configures four AWA service channels: Chat (max 3 concurrent), Case (max 5 concurrent), Walk-up (max 1 concurrent), and Incident (max 4 concurrent). An agent logs in and sets their status to Available. Over the next hour, AWA automatically routes 2 chats, 4 cases, and 1 walk-up to this agent based on the configured capacity buckets, never exceeding their limits. An inbound email during this period creates a new Case record, which joins the Case queue and gets routed when the agent has Case capacity.</div>
+        <div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>A) Case, C) Walk-up, D) Chat</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-customer-service-management/page/product/customer-service-management/concept/csm-awa.html" target="_blank">ServiceNow Zurich Docs: AWA for CSM</a><br>(If the link fails, search Google for: ServiceNow Zurich AWA Service Channels CSM)</p><h5>Expert Explanation</h5><p>AWA uses Service Channels to define routable work item types. In CSM, out-of-the-box channels include Case, Chat, and Walk-up, each with its own routing rules and capacity weights.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>Knowledge Article</strong> is informational content, not routable work</li><li><strong>Email</strong> creates cases but is not itself a distinct Service Channel</li></ul><h5>Memory Tip</h5><p>AWA routes work, not content. Cases, Chats, and Walk-ups are things agents actively work on.</p><h5>Real-World Example</h5><p>An agent starts their shift. AWA assigns 2 pending Cases and routes an incoming Chat. Later, a Walk-up customer is routed to the next available desk agent.</p>
+</div>
       </details>
     </div>
     <div class="quiz-card" id="qcard8">
       <div class="quiz-q"><span class="quiz-q-num">9.</span>In a Business-to-Consumer (B2C) implementation, you need to model a family structure where a &amp;quot;Head of Household&amp;quot; can manage cases and view products for other family members. How is this relationship primarily defined in the data model?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="8" data-exp="INCORRECT. Creating a parent-child relationship between two Contact records describes the B2B contact hierarchy model. In B2C, consumers belong to households, not to parent contacts."><span class="quiz-opt-letter">A</span><span>By creating a parent-child relationship between two Contact records.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="8" data-exp="CORRECT. The csm_consumer table has a Household reference field that links each consumer to their shared household record, enabling shared product visibility and household-level management."><span class="quiz-opt-letter">B</span><span>By populating the Household reference field on the Consumer record.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="8" data-exp="INCORRECT. A Partner account is a business entity in B2B scenarios. A family in a B2C model is not a partner account."><span class="quiz-opt-letter">C</span><span>By creating a Partner account for the family.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="8" data-exp="INCORRECT. The cmn_relationship table provides generic relationship linking between any records. It is not the standard B2C mechanism for household modeling. The dedicated Household reference field on the Consumer table is the correct approach."><span class="quiz-opt-letter">D</span><span>By using the Relationship [cmn_relationship] table to link Consumers.</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="8" data-exp="INCORRECT: Parent-child Contact relationships model B2B organizational hierarchies, not B2C family structures."><span class="quiz-opt-letter">A</span><span>By creating a parent-child relationship between two Contact records.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="8" data-exp="CORRECT: The Household reference field on the Consumer record defines family membership. One Consumer is Head of Household, and others reference the same Household record."><span class="quiz-opt-letter">B</span><span>By populating the Household reference field on the Consumer record.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="8" data-exp="INCORRECT: Partner accounts are for B2B channel partner relationships, not B2C family modeling."><span class="quiz-opt-letter">C</span><span>By creating a Partner account for the family.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="8" data-exp="INCORRECT: While the Relationship table can link records, the primary mechanism for B2C household modeling is the Household reference field on Consumer."><span class="quiz-opt-letter">D</span><span>By using the Relationship [cmn_relationship] table to link Consumers.</span></li>
       </ul>
       <div class="quiz-opt-explains" id="qoptexp8" style="display:none"></div>
       <details class="quiz-overall" id="qexp8">
         <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">Correct Answer: By populating the Household reference field on the Consumer record.
-Source
-
-Official Doc: B2C Customer Data Model (Zurich)
-If the link fails, search Google for: ServiceNow Zurich CSM B2C Household Consumer record family model
-
-Expert Explanation
-In ServiceNow&#x27;s B2C data model, a Household (csm_household) is the grouping entity for a family unit. Each family member is a Consumer (csm_consumer), and their record includes a Household reference field pointing to the shared household record. This model allows one consumer to be designated the &quot;Head of Household,&quot; granting them administrative control over shared products, service entitlements, and cases. The household structure is purpose-built for B2C and is distinct from the B2B account-contact hierarchy.
-<br><br><strong>Why the Others Are Wrong</strong>
-
-Parent-child relationship between Contact records: Contact records are B2B entities (corporate contacts). The B2C model uses Consumer records and the Household table, not Contact-to-Contact parent-child links.
-Partner account for the family: Partner accounts represent external vendor or reseller organizations in B2B CSM. They are not applicable for modeling a family unit in B2C.
-cmn_relationship table: A generic many-to-many relationship table used for custom linking. The platform provides a dedicated, structured Household reference field on the Consumer table specifically for this purpose, making the generic table the wrong choice.
-
-<br><br><strong>Memory Tip</strong>
-B2B uses Accounts with Contacts. B2C uses Households with Consumers. The Household is the B2C equivalent of the Account, and the Consumer is the equivalent of the Contact.
-<br><br><strong>Real-World</strong> Example
-A home internet provider serves families, not businesses. When the Smith family signs up, the admin creates a Household record for &quot;The Smith Household.&quot; Each family member (John, Mary, teenager Alex) is created as a Consumer with their Household field pointing to &quot;The Smith Household.&quot; John is marked Head of Household. When John calls support about the shared router, the agent sees all three family members, their shared service plan, and all past cases from any member of the household.</div>
+        <div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>B) By populating the Household reference field on the Consumer record</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-customer-service-management/page/product/customer-service-management/concept/csm-b2c-operations.html" target="_blank">ServiceNow Zurich Docs: B2C Customer Operations</a><br>(If the link fails, search Google for: ServiceNow Zurich CSM B2C Household Consumer)</p><h5>Expert Explanation</h5><p>CSM supports B2C through the Consumer table. Each Consumer has a Household reference field. One Consumer is designated Head of Household, managing cases and services for all family members linked to the same Household.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>Parent-child Contacts</strong> model B2B hierarchies</li><li><strong>Partner accounts</strong> are for B2B channel partners</li><li><strong>Relationship table</strong> is generic, not structured for household management</li></ul><h5>Memory Tip</h5><p>B2C families live in a Household. Each Consumer references the same Household record.</p><h5>Real-World Example</h5><p>A home internet provider family plan: the parent (Head of Household) can see cases for their account plus children mobile accounts, all linked via the same Household record.</p>
+</div>
       </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard9">
       <div class="quiz-q"><span class="quiz-q-num">10.</span>Which Business Rules are part of the Customer Service Management baseline configuration Choose two. <span class="quiz-choose">(choose 2)</span></div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="9" data-exp="INCORRECT. Apply Role by Customer is not a documented baseline business rule in the CSM configuration."><span class="quiz-opt-letter">A</span><span>Apply Role by Customer</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="9" data-exp="CORRECT. Auto Assessment is an out-of-the-box business rule that automatically evaluates case assessment criteria."><span class="quiz-opt-letter">B</span><span>Auto Assessment</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="9" data-exp="INCORRECT. Change Update to Close belongs to ITSM Change Management, not the CSM baseline configuration."><span class="quiz-opt-letter">C</span><span>Change Update to Close</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="9" data-exp="CORRECT. Update Case Entitlement automatically recalculates entitlement counters when cases close."><span class="quiz-opt-letter">D</span><span>Update Case Entitlement</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="9" data-exp="INCORRECT: Apply Role by Customer is not a standard baseline CSM Business Rule."><span class="quiz-opt-letter">A</span><span>Apply Role by Customer</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="9" data-exp="CORRECT: Auto Assessment automatically triggers customer satisfaction assessments when cases reach certain states like Resolved."><span class="quiz-opt-letter">B</span><span>Auto Assessment</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="9" data-exp="INCORRECT: Change Update to Close is not a standard CSM baseline Business Rule name."><span class="quiz-opt-letter">C</span><span>Change Update to Close</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="9" data-exp="CORRECT: Update Case Entitlement automatically evaluates and updates the entitlement based on customer service agreements and contracts."><span class="quiz-opt-letter">D</span><span>Update Case Entitlement</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="9" style="display:none">Submit Answer</button>
       <div class="quiz-opt-explains" id="qoptexp9" style="display:none"></div>
       <details class="quiz-overall" id="qexp9">
         <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">Correct Answers: Auto Assessment and Update Case Entitlement
-Source
-
-Official Doc: Business Rules Installed with Customer Service Management
-If the link fails, search Google for: ServiceNow CSM baseline business rules auto assessment update case entitlement
-
-Expert Explanation
-The CSM baseline configuration ships with specific business rules to automate common operational tasks. Auto Assessment triggers automatic evaluation of case quality or satisfaction assessment criteria when defined conditions are met. Update Case Entitlement fires when a case closes, automatically deducting from the customer&#x27;s active entitlement counters. Both are listed on the official &quot;Business rules installed with Customer Service Management&quot; documentation page.
-<br><br><strong>Why the Others Are Wrong</strong>
-
-Apply Role by Customer: Not a documented CSM baseline business rule. Roles are managed through user records and group memberships, not through case-level business rules.
-Change Update to Close: This business rule belongs to the ITSM Change Management module, operating in a completely separate domain from CSM.
-
-<br><br><strong>Memory Tip</strong>
-CSM baseline rules: &quot;Auto&quot; + &quot;Update.&quot; Auto Assessment evaluates quality. Update Case Entitlement deducts from the balance.
-<br><br><strong>Real-World</strong> Example
-TechSupport Inc. uses CSM with entitlement tracking. A customer purchased a 100-case support contract. When agent Sarah resolves case CS0089001 and sets it to Closed, the Update Case Entitlement business rule fires and decrements the customer&#x27;s remaining case count from 47 to 46. Simultaneously, Auto Assessment triggers a CSAT survey based on the configured assessment criteria.</div>
+        <div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>B) Auto Assessment, D) Update Case Entitlement</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-customer-service-management/page/product/customer-service-management/reference/csm-business-rules.html" target="_blank">ServiceNow Zurich Docs: CSM Business Rules</a><br>(If the link fails, search Google for: ServiceNow Zurich CSM baseline Business Rules)</p><h5>Expert Explanation</h5><p>Auto Assessment sends satisfaction surveys when cases reach certain states. Update Case Entitlement calculates which entitlement applies based on account, product, and contract for accurate SLA enforcement.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>Apply Role by Customer</strong> is not a recognized baseline rule</li><li><strong>Change Update to Close</strong> is not a standard baseline rule</li></ul><h5>Memory Tip</h5><p>Baseline CSM automates: asking how service was (Auto Assessment) and checking support eligibility (Update Case Entitlement).</p><h5>Real-World Example</h5><p>An agent resolves a case. Auto Assessment fires a CSAT survey. When the case was created, Update Case Entitlement applied the Gold support 4-hour SLA automatically.</p>
+</div>
       </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard10">
       <div class="quiz-q"><span class="quiz-q-num">11.</span>What should be emphasized when designing solutions Choose three. <span class="quiz-choose">(choose 3)</span></div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="10" data-exp="CORRECT. Minimizing customizations reduces technical debt and avoids upgrade conflicts with future ServiceNow releases."><span class="quiz-opt-letter">A</span><span>Minimize customizations</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="10" data-exp="CORRECT. Focusing on OOB functionality ensures supportability and leverages platform best practices."><span class="quiz-opt-letter">B</span><span>Focus Out-of-the-box functionality</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="10" data-exp="CORRECT. Designing for scalability ensures the architecture supports growth in case volume and user count."><span class="quiz-opt-letter">C</span><span>Design for Scalability</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="10" data-exp="INCORRECT. Mobile-friendly design is a UX consideration but not a core design emphasis for CSM solution architecture."><span class="quiz-opt-letter">D</span><span>Mobile friendly functionality</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="10" data-exp="CORRECT: Minimizing customizations reduces technical debt and simplifies upgrades."><span class="quiz-opt-letter">A</span><span>Minimize customizations</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="10" data-exp="CORRECT: Focusing on OOB functionality leverages tested, supported capabilities with ongoing improvements."><span class="quiz-opt-letter">B</span><span>Focus Out-of-the-box functionality</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="10" data-exp="CORRECT: Designing for scalability ensures the solution handles growing volumes without redesign."><span class="quiz-opt-letter">C</span><span>Design for Scalability</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="10" data-exp="INCORRECT: Mobile-friendly functionality is desirable but not specifically emphasized as a primary design principle in CSM guidance."><span class="quiz-opt-letter">D</span><span>Mobile friendly functionality</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="10" style="display:none">Submit Answer</button>
       <div class="quiz-opt-explains" id="qoptexp10" style="display:none"></div>
       <details class="quiz-overall" id="qexp10">
         <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">Correct Answers: Minimize customizations, Focus Out-of-the-box functionality, and Design for Scalability
-Source
-
-Community: Mastering CSM with ServiceNow
-If the link fails, search Google for: ServiceNow CSM design solutions minimize customizations OOB scalability
-
-Expert Explanation
-Minimizing customizations limits the risk of conflicting scripts, preserves baseline workflow integrity, and avoids &quot;skip list&quot; scenarios during upgrades. Focusing on OOB functionality ensures that solutions remain supported by ServiceNow and benefit from platform enhancements in future releases. Designing for scalability guarantees that the Common Service Data Model (CSDM) and security architecture can handle exponential growth in case volume and user count without performance degradation.
-<br><br><strong>Why the Others Are Wrong</strong>
-
-Mobile friendly functionality: While important for user experience, mobile-friendly design is a localized UI consideration. It is not one of the three core design emphases for CSM solution architecture, which focus on maintainability, supportability, and growth capacity.
-
-<br><br><strong>Memory Tip</strong>
-M-O-S: Minimize, OOB, Scale. Mobile is nice to have, not a design principle.
-<br><br><strong>Real-World</strong> Example
-A retail company considering a custom case routing engine is advised to use OOB matching rules and AWA instead. This minimizes customization, uses OOB functionality, and scales automatically as they expand from 50 to 500 agents across 12 regions.</div>
+        <div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>A) Minimize customizations, B) Focus OOB functionality, C) Design for Scalability</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-customer-service-management/page/product/customer-service-management/concept/csm-best-practices.html" target="_blank">ServiceNow Zurich Docs: CSM Best Practices</a><br>(If the link fails, search Google for: ServiceNow Zurich CSM design principles)</p><h5>Expert Explanation</h5><p>Three core principles: minimize customizations for upgrade simplicity, prioritize OOB functionality, and design for scalability as the organization grows.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>Mobile friendly</strong> is a feature consideration but not a listed primary design principle</li></ul><h5>Memory Tip</h5><p>Three pillars: Minimize (customizations), Maximize (OOB), Scale (for growth).</p><h5>Real-World Example</h5><p>A retail company maps processes to OOB workflows, configures AWA instead of custom routing, and uses the Configurable Workspace. Growing from 50 to 500 agents works without architectural changes.</p>
+</div>
       </details>
     </div>
     <div class="quiz-card" id="qcard11">
       <div class="quiz-q"><span class="quiz-q-num">12.</span>ServiceNow provides two distinct mobile applications. Which application is specifically designed for Customer Service Agents (fulfillers) to accept, update, and resolve cases while working remotely, as opposed to the application used by employees/requesters to submit issues?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="11" data-exp="INCORRECT. Now Mobile is designed for employees and requesters: submitting HR requests, IT tickets, and viewing company news. It is not purpose-built for fulfiller agents handling service cases."><span class="quiz-opt-letter">A</span><span>Now Mobile</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="11" data-exp="CORRECT. ServiceNow Mobile Agent is the native app built for fulfiller personas (IT agents, CSM agents, FSM technicians, HR case agents), providing mobile access to work items and case management."><span class="quiz-opt-letter">B</span><span>ServiceNow Mobile Agent</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="11" data-exp="INCORRECT. Mobile Classic was ServiceNow&#x27;s older mobile application, officially deprecated in September 2022 and no longer supported."><span class="quiz-opt-letter">C</span><span>Mobile Classic</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="11" data-exp="INCORRECT. Service Portal Mobile is the mobile web view of the ServiceNow Service Portal accessed via a browser, not a native mobile application."><span class="quiz-opt-letter">D</span><span>Service Portal Mobile</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="11" data-exp="INCORRECT: Now Mobile is for general users (requesters, approvers), not specifically for CSM agents."><span class="quiz-opt-letter">A</span><span>Now Mobile</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="11" data-exp="CORRECT: ServiceNow Mobile Agent is the dedicated app for agents to accept, update, and resolve cases while working remotely."><span class="quiz-opt-letter">B</span><span>ServiceNow Mobile Agent</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="11" data-exp="INCORRECT: Mobile Classic is a legacy interface, not the current recommended solution."><span class="quiz-opt-letter">C</span><span>Mobile Classic</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="11" data-exp="INCORRECT: Service Portal Mobile is browser-based, not a dedicated installable agent application."><span class="quiz-opt-letter">D</span><span>Service Portal Mobile</span></li>
       </ul>
       <div class="quiz-opt-explains" id="qoptexp11" style="display:none"></div>
       <details class="quiz-overall" id="qexp11">
         <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">Correct Answer: ServiceNow Mobile Agent
-Source
-
-Official Doc: Mobile Agent overview (Zurich)
-If the link fails, search Google for: ServiceNow Zurich Mobile Agent app fulfiller CSM IT agent native
-
-Expert Explanation
-ServiceNow maintains two core mobile applications. Now Mobile serves the employee/requester persona: submitting requests, checking approvals, and accessing company information. Mobile Agent serves the fulfiller persona: IT service agents, CSM case agents, Field Service technicians, and HR case agents. Mobile Agent provides access to work queues, case records, knowledge articles, and service management workflows optimized for mobile use. It supports offline capability, push notifications for new assignments, and native device features like camera for attaching photos to work orders.
-<br><br><strong>Why the Others Are Wrong</strong>
-
-Now Mobile: The employee-facing self-service app. Designed for people requesting services, not agents fulfilling them.
-Mobile Classic: The predecessor to both modern apps. Deprecated September 2022 and removed from app stores. Not a valid current option.
-Service Portal Mobile: The portal accessed via a mobile web browser. A browser experience, not a native app, and designed for requesters rather than fulfillers.
-
-<br><br><strong>Memory Tip</strong>
-Now Mobile = employee&#x27;s phone app. Mobile Agent = the agent&#x27;s phone app. The word &quot;Agent&quot; in the name tells you exactly which persona this is for.
-<br><br><strong>Real-World</strong> Example
-A CSM agent is working from home and receives a push notification on their phone from Mobile Agent: a Priority 1 case just opened for a key enterprise account. The agent opens Mobile Agent, reviews the case history, posts a work note acknowledging the case, and reassigns it to the on-call senior engineer, all before reaching their laptop. The customer&#x27;s SLA clock is already moving; Mobile Agent lets the agent act immediately.</div>
+        <div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>B) ServiceNow Mobile Agent</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-mobile/page/administer/mobile-agent/concept/mobile-agent-overview.html" target="_blank">ServiceNow Zurich Docs: Mobile Agent</a><br>(If the link fails, search Google for: ServiceNow Zurich Mobile Agent)</p><h5>Expert Explanation</h5><p>Two mobile apps exist: Now Mobile for end users, and Mobile Agent for fulfillers including CSM agents. Mobile Agent provides native case management, customer info, and team collaboration on mobile devices.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>Now Mobile</strong> is for requesters and approvers</li><li><strong>Mobile Classic</strong> is legacy</li><li><strong>Service Portal Mobile</strong> is browser-based</li></ul><h5>Memory Tip</h5><p>Two apps, two audiences: Now Mobile = end users, Mobile Agent = agents who do the work.</p><h5>Real-World Example</h5><p>A field engineer gets a push notification on Mobile Agent about an escalated case. While traveling, they review details, check entitlements, and update status from their phone.</p>
+</div>
       </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard12">
       <div class="quiz-q"><span class="quiz-q-num">13.</span>The Workforce Optimization for Customer Service application provides a dedicated workspace for Managers. Which of the following capabilities are primarily managed within this workspace? (Choose three.) <span class="quiz-choose">(choose 3)</span></div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="12" data-exp="CORRECT. WFO provides managers a dedicated workspace to monitor and dynamically manage channel capacity and queue volumes in real time."><span class="quiz-opt-letter">A</span><span>Managing Channel Capacity and Queues</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="12" data-exp="CORRECT. WFO enables managers to create and assign coaching assessments to measure and develop individual agent performance."><span class="quiz-opt-letter">B</span><span>Developing and assigning Coaching assessments</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="12" data-exp="INCORRECT. Creating Customer Contacts is a CRM data management task, not a workforce optimization function."><span class="quiz-opt-letter">C</span><span>Creating new Customer Contacts</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="12" data-exp="CORRECT. WFO includes schedule management capabilities, allowing managers to view, adjust, and optimize agent shifts and work schedules."><span class="quiz-opt-letter">D</span><span>Managing Agent Schedules and Shifts</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="12" data-exp="INCORRECT. Configuring Service Portals is a platform administration task handled by administrators, not a WFO managerial capability."><span class="quiz-opt-letter">E</span><span>Configuring Service Portals</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="12" data-exp="CORRECT: Managing Channel Capacity and Queues is a primary WFO workspace capability."><span class="quiz-opt-letter">A</span><span>Managing Channel Capacity and Queues</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="12" data-exp="CORRECT: Developing and assigning Coaching assessments lets managers evaluate and develop agent performance."><span class="quiz-opt-letter">B</span><span>Developing and assigning Coaching assessments</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="12" data-exp="INCORRECT: Creating Customer Contacts is handled through CSM administration, not the WFO workspace."><span class="quiz-opt-letter">C</span><span>Creating new Customer Contacts</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="12" data-exp="CORRECT: Managing Agent Schedules and Shifts is a core WFO capability."><span class="quiz-opt-letter">D</span><span>Managing Agent Schedules and Shifts</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="12" data-exp="INCORRECT: Configuring Service Portals is a platform administration task, not a WFO function."><span class="quiz-opt-letter">E</span><span>Configuring Service Portals</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="12" style="display:none">Submit Answer</button>
       <div class="quiz-opt-explains" id="qoptexp12" style="display:none"></div>
       <details class="quiz-overall" id="qexp12">
         <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">Correct Answers: Managing Channel Capacity and Queues, Developing and assigning Coaching assessments, and Managing Agent Schedules and Shifts
-Source
-
-ServiceNow Store: Workforce Optimization for Customer Service Management
-If the link fails, search Google for: ServiceNow Zurich Workforce Optimization CSM manager capabilities
-
-Expert Explanation
-Workforce Optimization (WFO) for CSM provides a manager-specific workspace with three core operational areas: real-time channel and queue capacity management (adjusting how much work flows to agents), coaching assessments (structured performance reviews assigned to agents), and agent schedule and shift management (viewing adherence, modifying shifts). These are operational manager functions. Creating contacts and configuring portals fall outside the WFO scope entirely.
-<br><br><strong>Why the Others Are Wrong</strong>
-
-Creating new Customer Contacts: Contact creation is a CRM/data function performed by agents or administrators, not a workforce management activity.
-Configuring Service Portals: Portal configuration is a platform admin task, not a capability exposed in the WFO manager workspace.
-
-<br><br><strong>Memory Tip</strong>
-WFO managers do 3 things: Watch queues, Coach agents, Schedule shifts. If the option is about data or platform config, it does not belong here.
-<br><br><strong>Real-World</strong> Example
-On a Monday morning, a CSM manager opens the WFO workspace. She sees the Chat channel is at 90% capacity and reduces the case load limit by two slots. She then assigns a coaching assessment to an agent who had low CSAT scores last week. Finally, she approves a shift swap request between two agents for Friday. All three actions happen without leaving the WFO workspace.</div>
+        <div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>A) Channel Capacity and Queues, B) Coaching assessments, D) Agent Schedules and Shifts</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-customer-service-management/page/product/customer-service-management/concept/wfo-overview.html" target="_blank">ServiceNow Zurich Docs: Workforce Optimization</a><br>(If the link fails, search Google for: ServiceNow Zurich WFO CSM)</p><h5>Expert Explanation</h5><p>WFO focuses on three areas: capacity/queue management, coaching/quality management, and schedule management. These help managers optimize team performance from one workspace.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>Creating Contacts</strong> is a CSM data admin task</li><li><strong>Configuring Portals</strong> is a platform admin function</li></ul><h5>Memory Tip</h5><p>WFO managers handle: Capacity (queues), People (coaching), Time (schedules).</p><h5>Real-World Example</h5><p>A manager opens WFO Monday morning, reviews weekend backlogs, adjusts chat capacity, assigns coaching to low-CSAT agents, and publishes next week schedule with extra launch coverage.</p>
+</div>
       </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard13">
       <div class="quiz-q"><span class="quiz-q-num">14.</span>What are available matching criteria for case assignment in Customer Service Management Choose three. <span class="quiz-choose">(choose 3)</span></div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="13" data-exp="INCORRECT. Agent Affinity is not an OOTB matching criterion for case assignment in CSM."><span class="quiz-opt-letter">A</span><span>Partner Hours</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="13" data-exp="CORRECT. Matching Skills compares agent skills against case requirements. It is one of the three default matching criteria."><span class="quiz-opt-letter">B</span><span>Matching Skills</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="13" data-exp="INCORRECT. Agent History is not an OOTB matching criterion for case assignment."><span class="quiz-opt-letter">C</span><span>Distance</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="13" data-exp="INCORRECT. Distance is an available matching criterion but is NOT included in the default Recommendation for Case Assignment rule."><span class="quiz-opt-letter">D</span><span>Certifications</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="13" data-exp="CORRECT. Assigned Cases measures agent workload and is one of the three default matching criteria."><span class="quiz-opt-letter">E</span><span>Assigned Cases</span></li>
-      <li class="quiz-opt" data-idx="5" data-q="13" data-exp="CORRECT. Availability Today checks if the agent is available for the current workday and is one of the three default criteria."><span class="quiz-opt-letter">F</span><span>Availability Today</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="13" data-exp="INCORRECT: Partner Hours is not a standard matching criterion for CSM case assignment."><span class="quiz-opt-letter">A</span><span>Partner Hours</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="13" data-exp="CORRECT: Matching Skills routes cases to agents whose skill profiles match the case requirements."><span class="quiz-opt-letter">B</span><span>Matching Skills</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="13" data-exp="INCORRECT: Distance is used in Field Service Management, not standard CSM case assignment."><span class="quiz-opt-letter">C</span><span>Distance</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="13" data-exp="INCORRECT: Certifications is not a separate OOB matching criterion. Skills serve this purpose."><span class="quiz-opt-letter">D</span><span>Certifications</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="13" data-exp="CORRECT: Assigned Cases considers how many cases an agent has to balance workload distribution."><span class="quiz-opt-letter">E</span><span>Assigned Cases</span></li>
+      <li class="quiz-opt" data-idx="5" data-q="13" data-exp="CORRECT: Availability Today checks whether agents are available during the current work schedule."><span class="quiz-opt-letter">F</span><span>Availability Today</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="13" style="display:none">Submit Answer</button>
       <div class="quiz-opt-explains" id="qoptexp13" style="display:none"></div>
       <details class="quiz-overall" id="qexp13">
         <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">Correct Answers: Matching Skills, Assigned Cases, and Availability TodaySourceOfficial Doc: Case Assignment Matching CriteriaIf the link fails, search Google for: ServiceNow case assignment matching criteria availability skills assigned cases defaultExpert ExplanationCSM case assignment uses matching rules with configurable criteria. The default Recommendation for Case Assignment rule includes three criteria: Matching Skills (does the agent have required skills?), Assigned Cases (what is the agent workload?), and Availability Today (is the agent working today?). A fourth criterion, Distance, is available in the system but not included in the default rule. Criteria like &quot;Agent Affinity&quot; and &quot;Agent History&quot; do not exist OOTB.<br><br><strong>Why the Others Are Wrong</strong>Agent Affinity: Not a recognized OOTB matching criterion.Agent History: Historical case data is not a default matching factor.Distance: While it exists as an OOTB criterion, it is not included in the default matching rule. It must be added manually.<br><br><strong>Memory Tip</strong>Default matching = SAM: Skills, Availability, (case) count. Distance exists but is not in the default lineup.<br><br><strong>Real-World</strong> ExampleA networking case arrives. The system evaluates: Agent Kim has networking skills (Skills: match), is working today (Availability: yes), and has 2 open cases (Assigned Cases: low workload). Agent Lee has the skills but is off today. Agent Park is available but lacks networking skills. Kim is the top recommendation because she matches all three default criteria.</div>
+        <div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>B) Matching Skills, E) Assigned Cases, F) Availability Today</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-customer-service-management/page/product/customer-service-management/concept/csm-assignment.html" target="_blank">ServiceNow Zurich Docs: CSM Case Assignment</a><br>(If the link fails, search Google for: ServiceNow Zurich CSM assignment matching criteria)</p><h5>Expert Explanation</h5><p>CSM assignment uses Matching Skills (right expertise), Assigned Cases (balanced workload), and Availability Today (confirmed on shift) to find the optimal agent.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>Partner Hours</strong> is not a recognized criterion</li><li><strong>Distance</strong> is a Field Service criterion</li><li><strong>Certifications</strong> is not a separate criterion (skills cover this)</li></ul><h5>Memory Tip</h5><p>Three questions: Can they do it? (Skills), Are they overloaded? (Assigned Cases), Are they here? (Availability).</p><h5>Real-World Example</h5><p>A P1 billing dispute arrives. The engine finds agents with Billing skill, fewer than 8 open cases, and currently on shift. Agent Maria qualifies on all three.</p>
+</div>
       </details>
     </div>
     <div class="quiz-card" id="qcard14">
       <div class="quiz-q"><span class="quiz-q-num">15.</span>When configuring Advanced Work Assignment to route different types of work (such as Chats, Cases, or Walk-up Requests) to agents, which record is used to define the specific source table and the conditions for work items to be created?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="14" data-exp="INCORRECT. A Queue exists within a Service Channel and holds work items waiting to be assigned. It is a subdivision of a channel, not the definition of the work type itself."><span class="quiz-opt-letter">A</span><span>Queue</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="14" data-exp="CORRECT. A Service Channel defines the type of work being routed (such as Chat, Case, or Walk-up) and sets the capacity rules and presence states for agents handling that work type."><span class="quiz-opt-letter">B</span><span>Service Channel</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="14" data-exp="INCORRECT. Assignment Rules define how work items are pushed or pulled to agents within a channel. They govern the routing logic, not the definition of the work type."><span class="quiz-opt-letter">C</span><span>Assignment Rule</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="14" data-exp="INCORRECT. Work Item Link is not a standard AWA entity name in ServiceNow documentation."><span class="quiz-opt-letter">D</span><span>Work Item Link</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="14" data-exp="INCORRECT: A Queue groups work items for team pickup but does not define source table or conditions."><span class="quiz-opt-letter">A</span><span>Queue</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="14" data-exp="CORRECT: A Service Channel defines the source table and conditions that determine which records are eligible to be routed through AWA."><span class="quiz-opt-letter">B</span><span>Service Channel</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="14" data-exp="INCORRECT: An Assignment Rule determines which agent receives work, not what qualifies as work."><span class="quiz-opt-letter">C</span><span>Assignment Rule</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="14" data-exp="INCORRECT: Work Item Link is not a standard AWA configuration record."><span class="quiz-opt-letter">D</span><span>Work Item Link</span></li>
       </ul>
       <div class="quiz-opt-explains" id="qoptexp14" style="display:none"></div>
       <details class="quiz-overall" id="qexp14">
         <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">Correct Answer: Service Channel
-Source
-
-Official Doc: AWA Service Channels (Zurich)
-If the link fails, search Google for: ServiceNow Zurich AWA Service Channel type of work routing
-
-Expert Explanation
-In Advanced Work Assignment, a Service Channel is the top-level configuration object that defines a distinct type of work. Out-of-the-box channels include Chat, Case, Walk-up, and Incident. Each channel configures agent capacity (how many concurrent items an agent can handle), utilization thresholds, and required presence states. Queues live beneath channels and subdivide work items within that type. The channel answers &quot;what kind of work is this?&quot;; the queue answers &quot;which subset of that work is this?&quot;
-<br><br><strong>Why the Others Are Wrong</strong>
-
-Queue: A Queue holds and organizes work items within a Service Channel. It cannot exist independently of a channel and does not define the work type itself.
-Assignment Rule: Determines the push or pull logic for delivering work items to agents. It operates within a channel after the type of work is already defined.
-Work Item Link: Not a documented AWA configuration entity.
-
-<br><br><strong>Memory Tip</strong>
-Channel = the TV station (Chat channel, Case channel). Queue = the waiting room at that station. You configure the station first, then set up its waiting rooms.
-UI Navigation
-
-Path: All &gt; Advanced Work Assignment &gt; Service Channels
-What to look for: The &quot;Work Item Table&quot; field (which table feeds this channel, e.g., live_chat_session) and the &quot;Capacity&quot; section defining concurrent item limits per agent.
-
-<br><br><strong>Real-World</strong> Example
-A contact center handles both live chats and long-running cases. The admin creates two Service Channels: &quot;Chat&quot; (max 3 concurrent per agent, requires &quot;Available&quot; presence) and &quot;Case&quot; (max 5 concurrent per agent, requires &quot;On Shift&quot; presence). Agents handling chat are not overwhelmed by case volume because the two channels manage capacity independently.</div>
+        <div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>B) Service Channel</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-customer-service-management/page/product/customer-service-management/concept/csm-awa.html" target="_blank">ServiceNow Zurich Docs: AWA Service Channels</a><br>(If the link fails, search Google for: ServiceNow Zurich AWA Service Channel)</p><h5>Expert Explanation</h5><p>A Service Channel specifies the source table and conditions records must meet to be eligible for AWA routing. It is the foundation of the routing pipeline.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>Queue</strong> organizes items but does not define source/eligibility</li><li><strong>Assignment Rule</strong> determines who gets work, not what qualifies</li><li><strong>Work Item Link</strong> is not a recognized AWA component</li></ul><h5>Memory Tip</h5><p>Service Channel = the definition of WHAT work looks like. Which table, which conditions.</p><h5>Real-World Example</h5><p>An admin creates a Priority Cases Service Channel with source table sn_customerservice_case and conditions Priority = 1 AND State = New. Only P1 new cases enter this routing pipeline.</p>
+</div>
       </details>
     </div>
     <div class="quiz-score" id="quizScore">

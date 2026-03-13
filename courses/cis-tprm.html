@@ -485,423 +485,250 @@ details.quiz-overall[open] .quiz-overall-toggle::before { transform: rotate(90de
     <div class="quiz-card" id="qcard0">
       <div class="quiz-q"><span class="quiz-q-num">1.</span>When the GRC: Policy and Compliance Management application is installed, what GRC related list displays on the Third-party Risk Issue record?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="0" data-exp="INCORRECT. Policies are associated at the control and entity level in GRC, not as a related list on individual Issue records."><span class="quiz-opt-letter">A</span><span>Policies</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="0" data-exp="CORRECT. Policy Exceptions appears as a related list on the Third-party Risk Issue record when GRC: Policy and Compliance Management is installed."><span class="quiz-opt-letter">B</span><span>Policy Exceptions</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="0" data-exp="INCORRECT. Configuration baseline is a CMDB/Configuration Management concept with no direct relationship to TPRM Issue records."><span class="quiz-opt-letter">C</span><span>Configuration baseline</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="0" data-exp="INCORRECT. Citations are sub-items of Authority Documents that relate to controls and policies, not to Issue records directly."><span class="quiz-opt-letter">D</span><span>Citations</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="0" data-exp="INCORRECT: Policies are part of the GRC Policy and Compliance application, but they appear on policy-related records, not on the Third-party Risk Issue record. The integration adds compliance-specific related lists instead."><span class="quiz-opt-letter">A</span><span>Policies</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="0" data-exp="CORRECT: When GRC: Policy and Compliance Management is installed, the Policy Exceptions related list appears on the Third-party Risk Issue record. This lets risk managers link policy exceptions directly to vendor-originated issues."><span class="quiz-opt-letter">B</span><span>Policy Exceptions</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="0" data-exp="INCORRECT: Configuration baselines belong to the Configuration Management Database (CMDB) and security hardening workflows. They are not surfaced on the Third-party Risk Issue record by the Policy and Compliance plugin."><span class="quiz-opt-letter">C</span><span>Configuration baseline</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="0" data-exp="INCORRECT: Citations are associated with audit and compliance evidence records. They do not appear as a related list on the Third-party Risk Issue form after installing the Policy and Compliance application."><span class="quiz-opt-letter">D</span><span>Citations</span></li>
       </ul>
       <div class="quiz-opt-explains" id="qoptexp0" style="display:none"></div>
       <details class="quiz-overall" id="qexp0">
         <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">Correct Answer: Policy Exceptions
-Source
-
-ServiceNow: TPRM Architecture and Data Model PDF (page 10)
-If the link fails, search Google for: ServiceNow Zurich TPRM issue GRC Policy Compliance related list
-
-Expert Explanation
-The Third-party Risk Issue record (sn_vdr_risk_asmt_issue) extends the base GRC Issue table (sn_grc_issue). When GRC: Policy and Compliance Management is installed, the platform adds policy exception capabilities to all GRC issue records. Because TPRM Issues inherit from the GRC Issue table, they automatically gain the Policy Exceptions related list. This lets risk assessors formally link an accepted issue to an approved policy exception, maintaining an auditable record that the known control failure has been reviewed and sanctioned.
-<br><br><strong>Why the Others Are Wrong</strong>
-
-Policies: Policies are associated at the control and entity levels, not surfaced as a related list on individual issue records.
-Configuration baseline: A CMDB concept for tracking configuration item states; unrelated to GRC issue records.
-Citations: Citations are child records of Authority Documents, tied to controls and policies, not to TPRM issue records.
-
-<br><br><strong>Memory Tip</strong>
-Issues extend GRC Issues, so they inherit GRC features. When you install Policy and Compliance, every GRC Issue (including TPRM Issues) gains the Policy Exceptions list because exceptions are how you formally accept a known control failure.
-<br><br><strong>Real-World</strong> Example
-A TPRM assessor finds that a cloud vendor lacks encryption at rest, creating a risk issue. Rather than closing the contract, the organization accepts the issue and creates a Policy Exception for 90 days while the vendor remediates. The Policy Exceptions related list on the TPRM Issue record links these two records, creating a traceable audit trail for compliance reviewers.</div>
+        <div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>B - Policy Exceptions</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-governance-risk-compliance/page/product/third-party-risk/concept/tprm-policy-compliance.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>Installing the GRC: Policy and Compliance Management application extends the Third-party Risk Issue record with a Policy Exceptions related list. This integration allows organizations to track situations where a vendor issue triggers a formal exception to an internal policy. The linkage ensures that risk and compliance teams share visibility into how vendor shortcomings affect policy adherence.</p><h5>Why the Others Are Wrong</h5><p>Policies (A) exist in GRC but are not added as a related list to vendor risk issues. Configuration baselines (C) belong to CMDB security hardening, not GRC risk records. Citations (D) relate to audit evidence tracking and do not surface on the Third-party Risk Issue form.</p><h5>Memory Tip</h5><p>Think of it this way: a vendor issue can break your policy, so you need a Policy Exception right there on the issue record to document the deviation.</p><h5>Real-World Example</h5><p>A cloud hosting vendor fails to encrypt data at rest, violating your organization's data protection policy. The risk analyst opens the Third-party Risk Issue, then creates a Policy Exception directly from the related list to formally document the temporary deviation while the vendor remediates.</p>
+</div>
       </details>
     </div>
     <div class="quiz-card" id="qcard1">
       <div class="quiz-q"><span class="quiz-q-num">2.</span>To what do third parties have direct access?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="1" data-exp="CORRECT. Third parties with portal access can directly update and respond to issues and tasks assigned to them through the Third-party Portal."><span class="quiz-opt-letter">A</span><span>Update and respond to issues and tasks.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="1" data-exp="INCORRECT. Third parties cannot view other third parties&#x27; assessment responses. Access controls enforce strict isolation between vendor accounts."><span class="quiz-opt-letter">B</span><span>View other third party&#x27;s assessment responses.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="1" data-exp="INCORRECT. Third parties can respond to issues but cannot modify the remediation workflow itself. Workflow configuration is internal."><span class="quiz-opt-letter">C</span><span>Modify issue remediation workflow.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="1" data-exp="INCORRECT. Third parties cannot view issues or tasks belonging to other vendors. Each third party sees only their own records."><span class="quiz-opt-letter">D</span><span>View other third party&#x27;s issues and tasks.</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="1" data-exp="CORRECT: Third parties have direct access to update and respond to issues and tasks assigned to them through the Third-party Portal. This self-service capability streamlines communication and reduces the back-and-forth between the organization and its vendors."><span class="quiz-opt-letter">A</span><span>Update and respond to issues and tasks.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="1" data-exp="INCORRECT: Third parties cannot view other third party&#x27;s assessment responses. The portal enforces strict data isolation so each vendor sees only their own records, protecting confidentiality across the vendor ecosystem."><span class="quiz-opt-letter">B</span><span>View other third party&#x27;s assessment responses.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="1" data-exp="INCORRECT: Third parties cannot modify the issue remediation workflow. Workflow definitions are controlled by the internal GRC administration team. Vendors can only act within the steps presented to them."><span class="quiz-opt-letter">C</span><span>Modify issue remediation workflow.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="1" data-exp="INCORRECT: Third parties are restricted from viewing other third party&#x27;s issues and tasks. Multi-tenant data separation ensures that each vendor&#x27;s information remains private and inaccessible to other vendors."><span class="quiz-opt-letter">D</span><span>View other third party&#x27;s issues and tasks.</span></li>
       </ul>
       <div class="quiz-opt-explains" id="qoptexp1" style="display:none"></div>
       <details class="quiz-overall" id="qexp1">
         <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">Correct Answer: Update and respond to issues and tasks.
-Source
-
-ServiceNow Community: TPRM Third-party Portal
-If the link fails, search Google for: ServiceNow Zurich TPRM third party portal access issues tasks
-
-Expert Explanation
-Third-party contacts access the portal using the snc_external role, which restricts their view to records explicitly scoped to their organization. Within that scope, they can view, update, and respond to issues and tasks assigned to them: submitting remediation evidence, adding comments, and updating task statuses. They cannot see assessments, issues, or tasks belonging to any other third party because the platform&#x27;s access controls enforce complete isolation between vendor accounts.
-<br><br><strong>Why the Others Are Wrong</strong>
-
-View other third party&#x27;s assessment responses: Strictly prohibited. Each vendor sees only their own data. Seeing another vendor&#x27;s responses would be a data breach.
-Modify issue remediation workflow: Third parties can respond to the workflow but cannot alter its configuration. Only internal users with admin roles can change workflow logic.
-View other third party&#x27;s issues and tasks: Access controls prevent cross-vendor visibility. This isolation is a fundamental security requirement of the portal design.
-
-<br><br><strong>Memory Tip</strong>
-Third parties can see their own issues and tasks. Nothing else. The portal is a secure, scoped window, not a shared inbox.
-UI Navigation
-
-Path: Third-party Portal &gt; Issues / Tasks
-What to look for: The Issues and Tasks sections showing only the logged-in vendor&#x27;s assigned records.
-
-<br><br><strong>Real-World</strong> Example
-A vendor&#x27;s IT security lead logs into the Third-party Portal and sees two open issues requiring remediation evidence and three tasks with upcoming deadlines. They upload a penetration test report to close the first issue and mark the data classification task as complete. They have no visibility into the 15 issues assigned to a different vendor in the same portal instance.</div>
+        <div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>A - Update and respond to issues and tasks</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-governance-risk-compliance/page/product/third-party-risk/concept/tprm-portal-overview.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>The Third-party Portal gives vendors direct access to update and respond to issues and tasks that are assigned to them. This is the primary interaction point for external parties. The portal is designed with strict data segregation so vendors can only see and act on their own records.</p><h5>Why the Others Are Wrong</h5><p>Viewing other third party's assessment responses (B) is blocked by data isolation controls. Modifying the issue remediation workflow (C) is an administrative function reserved for internal GRC teams. Viewing other third party's issues and tasks (D) would violate multi-tenant data separation principles.</p><h5>Memory Tip</h5><p>Vendors can only touch what is theirs: their own issues, their own tasks, their own responses. Think "my stuff only" from the vendor's perspective.</p><h5>Real-World Example</h5><p>Your organization sends a data security questionnaire to a software vendor. The vendor logs into the Third-party Portal, answers each question, uploads supporting documentation, and responds to any flagged issues. They never see what other vendors submitted.</p>
+</div>
       </details>
     </div>
     <div class="quiz-card" id="qcard2">
       <div class="quiz-q"><span class="quiz-q-num">3.</span>Which related list is used when relating a Third party assessment question to a Control Objective record?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="2" data-exp="INCORRECT. The Questionnaire templates related list is on the Assessment Template record, not on Control Objective records."><span class="quiz-opt-letter">A</span><span>Questionnaire templates</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="2" data-exp="INCORRECT. Category metrics is not a standard related list name on the Control Objective record for linking assessment questions."><span class="quiz-opt-letter">B</span><span>Category metrics</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="2" data-exp="INCORRECT. Third-party questions is not a standard related list name used to link metrics to Control Objectives in the GRC framework."><span class="quiz-opt-letter">C</span><span>Third-party questions</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="2" data-exp="CORRECT. The Assessment metrics related list on a Control Objective record is used to associate specific assessment metrics (questions) with that objective."><span class="quiz-opt-letter">D</span><span>Assessment metrics</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="2" data-exp="INCORRECT: Questionnaire templates define the structure of assessments at a high level. They are not used as a related list to link individual assessment questions to specific Control Objective records."><span class="quiz-opt-letter">A</span><span>Questionnaire templates</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="2" data-exp="INCORRECT: Category metrics group metrics by category for scoring purposes. They do not serve as the mechanism for relating a specific third-party assessment question to a Control Objective."><span class="quiz-opt-letter">B</span><span>Category metrics</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="2" data-exp="INCORRECT: Third-party questions is a general term but not the specific related list used on the Control Objective record to create this linkage. The correct related list uses assessment metrics to bind questions to controls."><span class="quiz-opt-letter">C</span><span>Third-party questions</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="2" data-exp="CORRECT: The Assessment Metrics related list on the Control Objective record is used to relate a Third-party assessment question to that Control Objective. This establishes the mapping between what is asked and what control is being evaluated."><span class="quiz-opt-letter">D</span><span>Assessment metrics</span></li>
       </ul>
       <div class="quiz-opt-explains" id="qoptexp2" style="display:none"></div>
       <details class="quiz-overall" id="qexp2">
         <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">Correct Answer: Assessment metrics
-Source
-
-Official Doc: How-to Third-party Risk Management (GRC KB PDF)
-If the link fails, search Google for: ServiceNow Zurich TPRM control objective related list assessment metrics question
-
-Expert Explanation
-Control Objective records in the GRC: Policy and Compliance module have an Assessment metrics related list that enables the linkage between specific questionnaire questions (asmt_metric records) and the control framework. When a metric is added to this related list on a Control Objective, the third party&#x27;s response to that question automatically drives the compliance status of Controls linked to that Control Objective. This is the technical mechanism that bridges TPRM questionnaire results and GRC control compliance reporting.
-<br><br><strong>Why the Others Are Wrong</strong>
-
-Questionnaire templates: This related list appears on Assessment Template records to show which questionnaire templates are included in the assessment. It is not on Control Objective records.
-Category metrics: Not a standard related list name in the TPRM or GRC data model. Metrics are organized by Metric Type and Metric Category, but the related list on Control Objectives is specifically named &quot;Assessment metrics.&quot;
-Third-party questions: Not a valid related list name in the ServiceNow TPRM or GRC baseline schema.
-
-<br><br><strong>Memory Tip</strong>
-Control Objective holds Assessment metrics as its bridge to the questionnaire. Find the related list named &quot;Assessment metrics&quot; on the Control Objective form to link questions to controls.
-UI Navigation
-
-Path: All &gt; GRC: Policy and Compliance &gt; Controls &gt; Control Objectives &gt; [open any record] &gt; Assessment metrics related list
-What to look for: The &quot;Assessment metrics&quot; related list tab at the bottom of the Control Objective form where asmt_metric records are linked.
-
-<br><br><strong>Real-World</strong> Example
-A GRC analyst opens the &quot;Encryption at Rest&quot; Control Objective record. She opens the Assessment metrics related list and adds the questionnaire question &quot;Does your organization encrypt all data at rest using AES-256 or equivalent?&quot; Now, when vendors answer this question in their assessment, the linked Encryption at Rest control automatically updates to Compliant or Non-Compliant.</div>
+        <div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>D - Assessment metrics</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-governance-risk-compliance/page/product/third-party-risk/task/tprm-map-questions-controls.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>To link a Third-party assessment question to a Control Objective, you use the Assessment Metrics related list on the Control Objective record. Each assessment metric maps a specific question to the control it evaluates, enabling the platform to calculate compliance scores based on vendor responses. This mapping is essential for understanding which controls are tested by which questions.</p><h5>Why the Others Are Wrong</h5><p>Questionnaire templates (A) define overall assessment structure, not per-question control mappings. Category metrics (B) organize metrics by category for scoring but are not the mechanism for linking questions to control objectives. Third-party questions (C) is not the specific related list used on the Control Objective form for this purpose.</p><h5>Memory Tip</h5><p>Assessment Metrics live on the Control Objective and act as the bridge between "what question did we ask?" and "what control does it test?"</p><h5>Real-World Example</h5><p>Your compliance team creates a Control Objective for "Data Encryption at Rest." They open that record and use the Assessment Metrics related list to link it to three vendor questionnaire questions about encryption key management, algorithm strength, and data storage practices.</p>
+</div>
       </details>
     </div>
     <div class="quiz-card" id="qcard3">
       <div class="quiz-q"><span class="quiz-q-num">4.</span>As a final step before closing the Third-party Risk Assessment, what task(s) would the Risk Assessor typically do?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="3" data-exp="INCORRECT. Flagging questions for follow-up is an intermediate review activity that occurs during the assessment, not as the final step before closing."><span class="quiz-opt-letter">A</span><span>Flag questions for follow up.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="3" data-exp="CORRECT. The final step for the Risk Assessor before closing is to review all submitted comments and formally evaluate the risk based on the third party&#x27;s responses."><span class="quiz-opt-letter">B</span><span>Review comments and evaluates the risk.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="3" data-exp="INCORRECT. Creating issues within the assessment is an intermediate action taken during the evaluation phase, not the last step before closure."><span class="quiz-opt-letter">C</span><span>Create issues within the assessment.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="3" data-exp="INCORRECT. Tiering assessments occur before or at the start of the engagement lifecycle, not at the closing stage."><span class="quiz-opt-letter">D</span><span>Perform a tiering assessment.</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="3" data-exp="INCORRECT: Flagging questions for follow up happens during the assessment review process, not as a final step before closing. It is an intermediate action, not a closing activity."><span class="quiz-opt-letter">A</span><span>Flag questions for follow up.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="3" data-exp="CORRECT: Before closing a Third-party Risk Assessment, the Risk Assessor reviews comments and evaluates the risk. This is the final quality gate where the assessor considers all gathered evidence, vendor responses, and flagged items to make a risk determination."><span class="quiz-opt-letter">B</span><span>Review comments and evaluates the risk.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="3" data-exp="INCORRECT: Creating issues within the assessment is done during or after the review when deficiencies are identified. It is part of the remediation process, not the final closing step."><span class="quiz-opt-letter">C</span><span>Create issues within the assessment.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="3" data-exp="INCORRECT: A tiering assessment is performed at the beginning of the third-party lifecycle to classify the vendor by risk tier. It is not a step performed just before closing a risk assessment."><span class="quiz-opt-letter">D</span><span>Perform a tiering assessment.</span></li>
       </ul>
       <div class="quiz-opt-explains" id="qoptexp3" style="display:none"></div>
       <details class="quiz-overall" id="qexp3">
         <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">Correct Answer: Review comments and evaluates the risk.
-Source
-
-ServiceNow Community: TPRM External Risk Assessments
-If the link fails, search Google for: ServiceNow Zurich TPRM risk assessment closing final review state
-
-Expert Explanation
-The TPRM assessment lifecycle moves through: Draft, Scheduled, In Progress, Awaiting Approval, and Closed. Before the Assessor advances the record to Awaiting Approval or Closed, their final task is to review all submitted questionnaire responses, read third-party comments, and evaluate the overall risk level. Intermediate steps like flagging questions or creating issues happen during the In Progress phase when reviewing individual answers. The final evaluation is a holistic judgment that determines whether the third party meets the organization&#x27;s risk acceptance threshold.
-<br><br><strong>Why the Others Are Wrong</strong>
-
-Flag questions for follow up: This happens mid-assessment when specific responses need clarification, not as the closing action.
-Create issues within the assessment: Issues are created during evaluation when problems are found, before the final review is complete.
-Perform a tiering assessment: Tiering happens at the start of the engagement process (IRQ/Inherent Risk Questionnaire phase), before an external assessment is even sent.
-
-<br><br><strong>Memory Tip</strong>
-Assess last, act first. All the actions (flagging, issue creation, tiering) happen before the final review. The Assessor&#x27;s closing task is always the holistic evaluation, not another action item.
-<br><br><strong>Real-World</strong> Example
-After a cloud storage vendor completes a 45-question security questionnaire, the TPRM Assessor reviews all 45 responses, reads the vendor&#x27;s comments on two flagged questions, notes that three issues were already created, and then performs a final overall risk evaluation, rating the vendor as Medium risk and closing the assessment to move it to approval.</div>
+        <div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>B - Review comments and evaluates the risk</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-governance-risk-compliance/page/product/third-party-risk/task/tprm-close-assessment.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>The final step before closing a Third-party Risk Assessment is for the Risk Assessor to review all comments and evaluate the overall risk. This ensures that every piece of evidence, vendor response, and flagged concern has been considered before the assessment moves to a closed state. It serves as the last quality check in the assessment lifecycle.</p><h5>Why the Others Are Wrong</h5><p>Flagging questions for follow up (A) is an intermediate activity during review, not the closing step. Creating issues (C) happens when deficiencies are found and feeds into remediation tracking. Performing a tiering assessment (D) occurs at the start of the vendor relationship to determine risk classification.</p><h5>Memory Tip</h5><p>Before you close the book, you read the final chapter. The Risk Assessor reviews everything and makes the risk call as the last act before closing.</p><h5>Real-World Example</h5><p>After a vendor completes their SOC 2 questionnaire, the Risk Assessor opens the assessment, reviews all vendor comments and uploaded evidence, evaluates whether the residual risk is acceptable, and then closes the assessment with a final risk rating.</p>
+</div>
       </details>
     </div>
     <div class="quiz-card" id="qcard4">
       <div class="quiz-q"><span class="quiz-q-num">5.</span>Which of the following describes the Third-party Tiering process?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="4" data-exp="INCORRECT. While questionnaire responses can inform tiering (through the IRQ process), the Tiering process itself evaluates criticality, not responses alone."><span class="quiz-opt-letter">A</span><span>A process to evaluate a third party&#x27;s risk based on their responses to a questionnaire.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="4" data-exp="INCORRECT. Performance tracking is a separate ongoing monitoring activity. Tiering evaluates inherent criticality at the time of onboarding or periodic review."><span class="quiz-opt-letter">B</span><span>A process to evaluate a third party&#x27;s risk based on their performance.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="4" data-exp="CORRECT. Third-party Tiering evaluates a vendor&#x27;s risk level based on the criticality of the services they provide and the potential impact if that service fails or is compromised."><span class="quiz-opt-letter">C</span><span>A process to evaluate a third party&#x27;s risk based on the criticality of the services they provide.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="4" data-exp="INCORRECT. Financial stability is one risk factor that may be considered during assessment, but it is not the defining basis of the Tiering process."><span class="quiz-opt-letter">D</span><span>A process to evaluate a third party&#x27;s risk based on their financial stability.</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="4" data-exp="INCORRECT: Evaluating risk based on questionnaire responses describes the risk assessment process, not the tiering process. Tiering happens before detailed assessments to determine how much scrutiny a vendor needs."><span class="quiz-opt-letter">A</span><span>A process to evaluate a third party&#x27;s risk based on their responses to a questionnaire.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="4" data-exp="INCORRECT: Evaluating a third party&#x27;s risk based on performance relates to ongoing vendor performance monitoring. Tiering is about initial classification, not ongoing performance tracking."><span class="quiz-opt-letter">B</span><span>A process to evaluate a third party&#x27;s risk based on their performance.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="4" data-exp="CORRECT: The Third-party Tiering process evaluates a third party&#x27;s risk based on the criticality of the services they provide. This classification determines the depth and frequency of assessments the vendor will undergo."><span class="quiz-opt-letter">C</span><span>A process to evaluate a third party&#x27;s risk based on the criticality of the services they provide.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="4" data-exp="INCORRECT: Evaluating financial stability is one factor that might be considered during due diligence, but it is not the definition of the tiering process. Tiering focuses on service criticality to the organization."><span class="quiz-opt-letter">D</span><span>A process to evaluate a third party&#x27;s risk based on their financial stability.</span></li>
       </ul>
       <div class="quiz-opt-explains" id="qoptexp4" style="display:none"></div>
       <details class="quiz-overall" id="qexp4">
         <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">Correct Answer: A process to evaluate a third party&#x27;s risk based on the criticality of the services they provide.
-Source
-
-ServiceNow: What is Third-party Risk Management?
-If the link fails, search Google for: ServiceNow Zurich TPRM third-party tiering criticality services definition
-
-Expert Explanation
-Third-party Tiering is the process of classifying vendors into risk tiers (e.g., Tier 1, Tier 2, or Tier 3 based on the criticality of the services they provide to the organization. Factors include: access to sensitive data, the potential business impact if the vendor fails or is compromised, regulatory exposure, and the substitutability of the vendor. A payroll processor with access to all employee PII would be Tier 1 (critical); an office supplies vendor would be Tier 3 (low). The tier then drives the depth and frequency of risk assessments sent to that vendor.
-<br><br><strong>Why the Others Are Wrong</strong>
-
-Based on their responses to a questionnaire: Questionnaire responses inform the Risk Assessment score, not the Tiering classification. Tiering occurs before assessments are sent.
-Based on their performance: Ongoing performance monitoring (KPIs, SLA tracking) is a separate activity within TPRM. Tiering focuses on inherent criticality, not observed performance.
-Based on their financial stability: Financial health is one sub-factor in some tiering frameworks but is not the primary basis. Criticality of services provided is the central criterion.
-
-<br><br><strong>Memory Tip</strong>
-Tier = how critical, not how good. Tiering measures the potential impact of the relationship, not the vendor&#x27;s track record or questionnaire scores.
-<br><br><strong>Real-World</strong> Example
-A healthcare organization tiers its 150 vendors during annual review. Its cloud EHR provider is Tier 1 because a service failure would directly impact patient care for 500,000 patients. Its coffee machine maintenance contractor is Tier 3 because a service failure has no regulatory or operational impact. Both vendors receive assessments, but the Tier 1 vendor gets a 90-question annual assessment while Tier 3 gets a 10-question biennial check.</div>
+        <div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>C - A process to evaluate a third party's risk based on the criticality of the services they provide</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-governance-risk-compliance/page/product/third-party-risk/concept/tprm-tiering.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>Third-party Tiering is the process of classifying vendors based on how critical their services are to the organization. A vendor providing mission-critical infrastructure gets a higher tier than one providing office supplies. The tier level then drives the rigor, scope, and frequency of risk assessments applied to that vendor.</p><h5>Why the Others Are Wrong</h5><p>Questionnaire-based evaluation (A) describes the risk assessment process that follows tiering. Performance-based evaluation (B) relates to vendor performance management, a separate capability. Financial stability evaluation (D) may be a component of due diligence but does not define tiering.</p><h5>Memory Tip</h5><p>Tiering = how critical is this vendor to our business? A payroll processor is tier 1, an office snack vendor is tier 3. Criticality drives the tier.</p><h5>Real-World Example</h5><p>A hospital classifies its electronic health records vendor as Tier 1 because a failure would halt patient care. Their landscaping company gets Tier 3. The EHR vendor faces annual comprehensive assessments while the landscaper gets a lightweight review every two years.</p>
+</div>
       </details>
     </div>
     <div class="quiz-card" id="qcard5">
       <div class="quiz-q"><span class="quiz-q-num">6.</span>To customize the default greeting image on the Third-Party Risk Portal, what must an administrator do?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="5" data-exp="INCORRECT. There is no documented &#x27;Portal Settings&#x27; administration menu that directly swaps the greeting image. Portal branding uses the Service Portal framework tools."><span class="quiz-opt-letter">A</span><span>Upload a replacement image via Third-party Risk Management &gt; Administration &gt; Portal Settings.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="5" data-exp="CORRECT. The default greeting image (the &#x27;spaceman&#x27; image) in the vendor portal is configured within the SVDP Greeting widget. To customize it, administrators must clone the widget to avoid modifying the base system widget, then edit the Body HTML Template field of the cloned version to reference the desired image."><span class="quiz-opt-letter">B</span><span>Clone the SVDP Greeting widget and modify the Body HTML Template field of the cloned widget.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="5" data-exp="INCORRECT. The Service Portal Branding Editor (Service Portal &gt; Service Portal Configuration &gt; Branding Editor) handles overall branding like logo and color scheme. The greeting image is a widget-level configuration, not a Branding Editor setting."><span class="quiz-opt-letter">C</span><span>Upload the replacement image in the Service Portal Branding Editor under the background image settings.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="5" data-exp="INCORRECT. Directly modifying sys_portal_page records is not the documented approach and risks breaking the base system. The correct pattern is to clone the specific widget responsible for the greeting image."><span class="quiz-opt-letter">D</span><span>Modify the sys_portal_page record for the vendor portal welcome page to reference the new image URL.</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="5" data-exp="INCORRECT: There is no Portal Settings page under Third-party Risk Management Administration that allows image uploads for the greeting. This path does not exist in the platform configuration."><span class="quiz-opt-letter">A</span><span>Upload a replacement image via Third-party Risk Management &gt; Administration &gt; Portal Settings.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="5" data-exp="CORRECT: To customize the default greeting image, an administrator must clone the SVDP Greeting widget and modify the Body HTML Template field of the cloned widget. This approach follows ServiceNow best practices of never modifying out-of-box widgets directly."><span class="quiz-opt-letter">B</span><span>Clone the SVDP Greeting widget and modify the Body HTML Template field of the cloned widget.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="5" data-exp="INCORRECT: The Service Portal Branding Editor controls general portal branding elements like logos and colors, but the specific greeting image on the Third-party Risk Portal is managed through the SVDP Greeting widget, not the branding editor."><span class="quiz-opt-letter">C</span><span>Upload the replacement image in the Service Portal Branding Editor under the background image settings.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="5" data-exp="INCORRECT: Modifying the sys_portal_page record directly is not the supported approach. The greeting image is controlled by the widget, not by portal page records."><span class="quiz-opt-letter">D</span><span>Modify the sys_portal_page record for the vendor portal welcome page to reference the new image URL.</span></li>
       </ul>
       <div class="quiz-opt-explains" id="qoptexp5" style="display:none"></div>
       <details class="quiz-overall" id="qexp5">
         <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">Correct AnswerClone the SVDP Greeting widget and modify its Body HTML Template field
-SourceServiceNow Community: TPRM Speed Learning   Portal branding
-ExplanationThe Third-Party Risk Portal (SVDP   ServiceNow Vendor Due Diligence Portal) is built on the standard Service Portal framework. Overall branding   logo and color scheme   is configured through the Service Portal Branding Editor at Service Portal &gt; Service Portal Configuration &gt; Branding Editor. However, the default greeting image is embedded within the SVDP Greeting widget and requires a different approach: clone the widget (never modify base system widgets) and then edit the Body HTML Template field in the cloned version to point to the desired image. An important note for testing: the Service Portal Designer does not easily display Vendor Portal pages, because these pages require the snc_external role to be visible in external user context.
-Why Others Are WrongThere is no Portal Settings menu for image replacement. The Branding Editor handles overall logo/color, not widget-level images. Directly modifying sys_portal_page records is not the recommended approach and risks base system changes.
-<br><br><strong>Memory Tip</strong>Greeting image = widget-level. Widget customization = clone first, then edit. Never modify base system widgets.</div>
+        <div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>B - Clone the SVDP Greeting widget and modify the Body HTML Template field of the cloned widget</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-governance-risk-compliance/page/product/third-party-risk/task/tprm-customize-portal.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>Customizing the greeting image on the Third-party Risk Portal requires cloning the SVDP Greeting widget and editing the Body HTML Template field in the cloned version. Cloning protects the original widget from being overwritten during platform upgrades. The Body HTML Template field contains the markup that references the greeting image.</p><h5>Why the Others Are Wrong</h5><p>There is no Portal Settings path (A) for this purpose in the TPRM administration module. The Service Portal Branding Editor (C) handles general branding, not the specific greeting widget. Editing sys_portal_page records (D) is not the correct mechanism since the image is rendered by the widget, not the page record.</p><h5>Memory Tip</h5><p>Clone before you customize. The SVDP Greeting widget owns the welcome image, and you never touch the original, only a clone.</p><h5>Real-World Example</h5><p>An administrator wants to replace the generic greeting image with the company logo and a welcome message. They navigate to the Service Portal widgets, clone the SVDP Greeting widget, update the Body HTML Template with the new image URL and custom HTML, then map the cloned widget to the portal page.</p>
+</div>
       </details>
     </div>
     <div class="quiz-card" id="qcard6">
       <div class="quiz-q"><span class="quiz-q-num">7.</span>When a vendor risk issue owner selects Accept during the Respond state, what happens to the control&#x27;s compliance status?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="6" data-exp="INCORRECT. The documented behavior is that the control status remains non-compliant   not a new Accepted status   until the control is re-assessed. Acceptance does not exclude the control from risk calculations; it creates an exception but the non-compliant status persists."><span class="quiz-opt-letter">A</span><span>The control status changes to Accepted and is excluded from future risk calculations until the exception expires.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="6" data-exp="CORRECT. When an issue owner accepts a control failure, an exception record is created acknowledging the known risk. However, the control status is not cleared   it remains non-compliant until the control goes through a reassessment that produces a compliant finding. Acceptance is acknowledgment, not remediation."><span class="quiz-opt-letter">B</span><span>The control status remains non-compliant until the control is re-assessed after the exception is closed.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="6" data-exp="INCORRECT. Compliance Manager approval during the Review state closes the issue, not the control&#x27;s compliance status. The control remains non-compliant   it requires actual re-assessment to change status."><span class="quiz-opt-letter">C</span><span>The control status automatically changes to Compliant when the exception is approved by the Compliance Manager.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="6" data-exp="INCORRECT. There is no documented Waived control status in TPRM&#x27;s OOTB model. Acceptance creates an exception; the control remains non-compliant in the scoring model."><span class="quiz-opt-letter">D</span><span>The control status is set to Waived and the associated assessment score is recalculated excluding that control.</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="6" data-exp="INCORRECT: There is no &quot;Accepted&quot; status for controls in TPRM. When an issue is accepted, it does not change the control to a special accepted state or exclude it from risk calculations."><span class="quiz-opt-letter">A</span><span>The control status changes to Accepted and is excluded from future risk calculations until the exception expires.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="6" data-exp="CORRECT: When a vendor risk issue owner selects Accept during the Respond state, the control status remains non-compliant until the control is re-assessed after the exception is closed. Accepting an issue acknowledges the risk but does not change the underlying compliance status."><span class="quiz-opt-letter">B</span><span>The control status remains non-compliant until the control is re-assessed after the exception is closed.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="6" data-exp="INCORRECT: The control status does not automatically change to Compliant upon exception approval. Compliance can only be restored through a new assessment that confirms the control deficiency has been resolved."><span class="quiz-opt-letter">C</span><span>The control status automatically changes to Compliant when the exception is approved by the Compliance Manager.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="6" data-exp="INCORRECT: There is no &quot;Waived&quot; status for controls in this context. The control is not waived, and assessment scores are not recalculated to exclude the control when an issue is accepted."><span class="quiz-opt-letter">D</span><span>The control status is set to Waived and the associated assessment score is recalculated excluding that control.</span></li>
       </ul>
       <div class="quiz-opt-explains" id="qoptexp6" style="display:none"></div>
       <details class="quiz-overall" id="qexp6">
         <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">Correct AnswerControl status remains non-compliant until the control is re-assessed
-SourceServiceNow Community: TPRM Speed Learning   Remediation vs acceptance
-ExplanationIn the Respond state, the issue owner has two paths: Remediate (fix the root cause and close the issue properly) or Accept (acknowledge the risk without fixing it). Selecting Accept creates an exception record that formally documents the known control failure and the business decision to accept the associated risk. However, the control status remains non-compliant throughout the exception period. The issue stays in the Respond state until the exception is closed. Only a subsequent reassessment that returns a compliant finding will update the control status. This is intentional   acceptance is a risk management decision, not a remediation action, and the compliance record should reflect the actual state of the control.
-Why Others Are WrongThere is no Accepted control status. Compliance Manager approval in Review closes the issue, not the control status. There is no Waived status in the OOTB model.
-<br><br><strong>Memory Tip</strong>Accept = exception created + control stays red. Only a passing reassessment turns it green.</div>
+        <div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>B - The control status remains non-compliant until the control is re-assessed after the exception is closed</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-governance-risk-compliance/page/product/third-party-risk/concept/tprm-issue-lifecycle.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>When a vendor risk issue owner accepts an issue during the Respond state, it signals acknowledgment of a known control failure without immediate remediation. The control remains non-compliant because the underlying deficiency still exists. Only after the exception period ends and the control is re-assessed with a passing result will the compliance status change.</p><h5>Why the Others Are Wrong</h5><p>An "Accepted" control status (A) does not exist in the TPRM data model. Automatic compliance restoration upon exception approval (C) would undermine the purpose of tracking deficiencies. A "Waived" status with score recalculation (D) is not part of the standard issue acceptance workflow.</p><h5>Memory Tip</h5><p>Accepting an issue is like accepting you have a broken window. You know about it, you documented it, but the window is still broken until someone fixes it and you verify the repair.</p><h5>Real-World Example</h5><p>A vendor's firewall configuration fails a security control during assessment. The issue owner accepts the risk with a 90-day exception while the vendor works on remediation. Throughout those 90 days, the control shows as non-compliant. After the vendor fixes the configuration and a re-assessment confirms compliance, the status updates.</p>
+</div>
       </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard7">
       <div class="quiz-q"><span class="quiz-q-num">8.</span>What are benefits of using the Third-party Portal? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="7" data-exp="CORRECT. The portal consolidates all communications, questionnaires, documents, and issue responses into a single platform, replacing scattered emails and spreadsheets."><span class="quiz-opt-letter">A</span><span>The Third-party Portal consolidates all communications and artifacts to a single system of truth.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="7" data-exp="INCORRECT. Reassigning parts of an Inherent Risk Assessment is an internal function for the risk team, not a portal benefit for external third parties."><span class="quiz-opt-letter">B</span><span>Third-party Portal allows the Third-party Risk Assessor team to reassign parts of an Inherent Risk Assessment.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="7" data-exp="INCORRECT. The portal does not match documents against requests automatically. Document requests are fulfilled by the third party uploading specific documents manually."><span class="quiz-opt-letter">C</span><span>The Third-party Portal matches a database of documents to document requests.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="7" data-exp="CORRECT. The portal reduces risk by replacing unsecured email attachments and spreadsheet sharing with a controlled, authenticated, MFA-capable communication channel."><span class="quiz-opt-letter">D</span><span>The Third-party Portal reduces risk for an organization by enabling secure communications with the third-party.</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="7" data-exp="INCORRECT. The portal is scoped to the relationship between your organization and your third parties. Third parties cannot use it to manage their own vendor relationships."><span class="quiz-opt-letter">E</span><span>The Third-party Portal can be leveraged by the third party to work with other partners.</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="7" data-exp="CORRECT: The Third-party Portal consolidates all communications and artifacts to a single system of truth. This eliminates scattered emails and spreadsheets by centralizing every document, response, and conversation in one platform."><span class="quiz-opt-letter">A</span><span>The Third-party Portal consolidates all communications and artifacts to a single system of truth.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="7" data-exp="INCORRECT: The Third-party Portal is designed for external vendor interaction, not for the internal Risk Assessor team to reassign parts of an Inherent Risk Assessment. Internal reassignment is handled through platform task management, not the portal."><span class="quiz-opt-letter">B</span><span>Third-party Portal allows the Third-party Risk Assessor team to reassign parts of an Inherent Risk Assessment.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="7" data-exp="INCORRECT: The Third-party Portal does not automatically match databases of documents to document requests. Document management in the portal requires manual upload and association by the vendor or internal team."><span class="quiz-opt-letter">C</span><span>The Third-party Portal matches a database of documents to document requests.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="7" data-exp="CORRECT: The Third-party Portal reduces risk for an organization by enabling secure communications with the third party. All data exchanged through the portal is protected by the platform&#x27;s security controls, eliminating the need for insecure email exchanges."><span class="quiz-opt-letter">D</span><span>The Third-party Portal reduces risk for an organization by enabling secure communications with the third-party.</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="7" data-exp="INCORRECT: The Third-party Portal is scoped to the relationship between the organization and its vendors. It is not designed for vendors to use as a collaboration tool with their own separate partners."><span class="quiz-opt-letter">E</span><span>The Third-party Portal can be leveraged by the third party to work with other partners.</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="7" style="display:none">Submit Answer</button>
       <div class="quiz-opt-explains" id="qoptexp7" style="display:none"></div>
       <details class="quiz-overall" id="qexp7">
         <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">Correct Answers: The Third-party Portal consolidates all communications and artifacts to a single system of truth. The Third-party Portal reduces risk for an organization by enabling secure communications with the third-party.
-Source
-
-ServiceNow Community: TPRM Third-party Portal overview
-If the link fails, search Google for: ServiceNow Zurich TPRM third-party portal benefits consolidation secure communication
-
-Expert Explanation
-The Third-party Portal solves two problems simultaneously. First, it provides a single system of truth: all questionnaire submissions, document uploads, issue responses, and task completions happen inside ServiceNow instead of scattered across email threads, SharePoint folders, and spreadsheets. Second, it is a security improvement: replacing email (which can expose attachments and lack audit trails) with an authenticated portal that supports MFA, access controls, and scoped data visibility reduces the attack surface of the due diligence process itself.
-<br><br><strong>Why the Others Are Wrong</strong>
-
-Allows the Third-party Risk Assessor team to reassign parts of an Inherent Risk Assessment: The IRQ is an internal assessment. Reassigning its components is an internal workflow action, not a portal benefit for external vendors.
-Matches a database of documents to document requests: No automatic document-matching feature exists. Third parties manually upload the requested documents.
-Can be leveraged by the third party to work with other partners: The portal is scoped strictly to the relationship between the subscribing organization and each of its third parties. It is not a B2B collaboration platform for vendors to use with their own supply chain.
-
-<br><br><strong>Memory Tip</strong>
-Portal = centralize and secure. Everything comes into one place (A) and the channel itself is safer than email (D).
-<br><br><strong>Real-World</strong> Example
-Before implementing the Third-party Portal, a manufacturer&#x27;s vendor risk team managed 80 vendors across email chains, with assessment responses arriving as Excel attachments and compliance documents sent via unsecured file shares. After portal deployment, all 80 vendors submit directly into ServiceNow with MFA enforced, creating a complete audit trail and eliminating the risk of sensitive documents sitting in unsecured inboxes.</div>
+        <div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>A and D - Consolidates communications/artifacts to a single system of truth, and enables secure communications with the third party</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-governance-risk-compliance/page/product/third-party-risk/concept/tprm-portal-overview.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>The Third-party Portal provides two key benefits: it serves as a single system of truth for all vendor communications and artifacts, and it enables secure communications between the organization and its third parties. Centralizing everything in one platform eliminates version confusion and email-based risks while ensuring all exchanges are protected by enterprise-grade security.</p><h5>Why the Others Are Wrong</h5><p>Reassigning parts of an Inherent Risk Assessment (B) is an internal workflow function, not a portal benefit. Automatic document matching (C) is not a feature of the portal. Vendor-to-partner collaboration (E) is outside the portal's designed scope, which focuses on the org-to-vendor relationship.</p><h5>Memory Tip</h5><p>The portal does two things well: one place for everything (single source of truth) and safe communication (secure channel). Think "centralize and secure."</p><h5>Real-World Example</h5><p>Before implementing the portal, your team exchanged vendor questionnaires via email, losing track of versions and exposing sensitive data. After deployment, all questionnaires, evidence uploads, and issue discussions happen inside the portal with full audit trails and encryption.</p>
+</div>
       </details>
     </div>
     <div class="quiz-card" id="qcard8">
       <div class="quiz-q"><span class="quiz-q-num">9.</span>What can be said concerning the number of third-party contacts?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="8" data-exp="INCORRECT. There is no requirement for a designated internal third-party manager per vendor in the TPRM contact model. The manager is an internal role, not a contact requirement."><span class="quiz-opt-letter">A</span><span>A third party must have one designated internal third-party manager.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="8" data-exp="CORRECT. A third party must have at least one primary contact, but more than one contact can be designated as primary. Multiple primary contacts are allowed."><span class="quiz-opt-letter">B</span><span>A third party can designate more than one contact as the primary, but must have a minimum of one primary contact.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="8" data-exp="INCORRECT. The restriction to only one primary contact is inaccurate. The platform uses a checkbox field that allows multiple contacts to be flagged as primary."><span class="quiz-opt-letter">C</span><span>A third party can only designate one contact as the primary contact, but may have multiple non-primary contacts.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="8" data-exp="INCORRECT. There is no requirement for a non-primary contact. The only contact requirement is a minimum of one primary contact."><span class="quiz-opt-letter">D</span><span>A third party can only designate one contact as the primary and must have a minimum of one non-primary contact.</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="8" data-exp="INCORRECT: Having one designated internal third-party manager is a separate concept from the contact designation rules. This option confuses the internal manager role with the vendor contact configuration."><span class="quiz-opt-letter">A</span><span>A third party must have one designated internal third-party manager.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="8" data-exp="CORRECT: A third party can designate more than one contact as the primary, but must have a minimum of one primary contact. The platform requires at least one primary contact for routing and notification purposes but allows multiple primaries when needed."><span class="quiz-opt-letter">B</span><span>A third party can designate more than one contact as the primary, but must have a minimum of one primary contact.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="8" data-exp="INCORRECT: The platform does not restrict vendors to a single primary contact. Organizations with complex vendor relationships may need multiple primary contacts across different departments or locations."><span class="quiz-opt-letter">C</span><span>A third party can only designate one contact as the primary contact, but may have multiple non-primary contacts.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="8" data-exp="INCORRECT: There is no requirement for a minimum of one non-primary contact. A vendor must have at least one primary contact, but non-primary contacts are optional."><span class="quiz-opt-letter">D</span><span>A third party can only designate one contact as the primary and must have a minimum of one non-primary contact.</span></li>
       </ul>
       <div class="quiz-opt-explains" id="qoptexp8" style="display:none"></div>
       <details class="quiz-overall" id="qexp8">
         <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">Correct Answer: A third party can designate more than one contact as the primary, but must have a minimum of one primary contact.
-Source
-
-AC3: ServiceNow TPRM Overview
-If the link fails, search Google for: ServiceNow Zurich TPRM third-party contact primary multiple minimum
-
-Expert Explanation
-Each third-party organization in TPRM must have at least one primary contact to receive assessments and act as the main liaison. The &quot;primary&quot; designation is a boolean field on the Third-party Contact form, meaning multiple contacts can have it set to true simultaneously. This design allows large vendors to have multiple primary contacts (e.g., by region or product line) without restricting oversight to a single person. Additional non-primary contacts can also exist for specific task delegation but are not required.
-<br><br><strong>Why the Others Are Wrong</strong>
-
-A third party must have one designated internal third-party manager: The internal third-party manager is an internal ServiceNow user who manages the relationship, not a third-party contact requirement.
-A third party can only designate one contact as the primary contact: The boolean/checkbox field architecture allows multiple primary contacts. The &quot;at least one&quot; phrasing in documentation confirms multiples are possible.
-A third party can only designate one contact as the primary and must have a minimum of one non-primary contact: No requirement for non-primary contacts exists in the platform.
-
-<br><br><strong>Memory Tip</strong>
-At least one primary. No cap on primaries. No non-primary requirement. The only hard rule is the minimum of one primary contact so someone can receive assessment notifications.
-<br><br><strong>Real-World</strong> Example
-A global logistics vendor has operations in Europe and Asia. The TPRM team designates both the European Security Director and the Asian Compliance Officer as primary contacts, so assessments routed to either region reach the right person. Both contacts are marked as primary in the platform.</div>
+        <div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>B - A third party can designate more than one contact as the primary, but must have a minimum of one primary contact</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-governance-risk-compliance/page/product/third-party-risk/concept/tprm-contacts.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>ServiceNow TPRM allows multiple contacts to be designated as primary for a third party, with the requirement that at least one primary contact must exist. This flexibility supports scenarios where a vendor has multiple departments or regional offices that each need a primary point of contact for risk management communications.</p><h5>Why the Others Are Wrong</h5><p>One designated internal manager (A) describes an internal role, not the vendor contact designation. Only one primary contact allowed (C) is too restrictive since the platform supports multiple primary contacts. Requiring a minimum of one non-primary contact (D) adds a constraint that does not exist in the platform.</p><h5>Memory Tip</h5><p>At least one primary is mandatory, but you can have as many primaries as you need. Think of a vendor with offices in New York and London, each needing their own primary contact.</p><h5>Real-World Example</h5><p>A global IT services vendor has separate teams handling security compliance in North America and Europe. Your organization designates both the NA security lead and the EU compliance officer as primary contacts so each receives assessment notifications for their region.</p>
+</div>
       </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard9">
       <div class="quiz-q"><span class="quiz-q-num">10.</span>Which metric data types are NOT supported in the Smart Assessment Engine (SAE) and must be converted before migration? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="9" data-exp="CORRECT. The Percentage data type is not supported in SAE. It must be converted to the Number data type before migrating templates to SAE."><span class="quiz-opt-letter">A</span><span>Percentage</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="9" data-exp="CORRECT. Image Scale is not supported in SAE. It must be converted to Radio Button before migration. SAE does not support visual/image-based rating scales."><span class="quiz-opt-letter">B</span><span>Image Scale</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="9" data-exp="INCORRECT. Choice (single-select dropdown) is fully supported in SAE. It is one of the standard data types available in SAE questionnaire templates."><span class="quiz-opt-letter">C</span><span>Choice</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="9" data-exp="INCORRECT. Multiple Selection (multi-select checkbox) is fully supported in SAE. It is used alongside the Maximum normalization input attribute in non-scored metrics."><span class="quiz-opt-letter">D</span><span>Multiple Selection</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="9" data-exp="INCORRECT. Yes/No is a supported data type in SAE. It functions as a simplified binary choice and is commonly used for compliance-style questions."><span class="quiz-opt-letter">E</span><span>Yes/No</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="9" data-exp="CORRECT: Percentage is not a supported metric data type in the Smart Assessment Engine (SAE). Percentage-type metrics from legacy assessments must be converted to a compatible format before migration to SAE."><span class="quiz-opt-letter">A</span><span>Percentage</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="9" data-exp="CORRECT: Image Scale is not a supported metric data type in the Smart Assessment Engine (SAE). Image Scale metrics use visual representations that SAE cannot process, so they require conversion before migration."><span class="quiz-opt-letter">B</span><span>Image Scale</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="9" data-exp="INCORRECT: Choice is a supported data type in the Smart Assessment Engine. Single-selection choice questions work natively in SAE without any conversion."><span class="quiz-opt-letter">C</span><span>Choice</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="9" data-exp="INCORRECT: Multiple Selection is a supported data type in the Smart Assessment Engine. Multi-select questions function properly in SAE and do not need conversion."><span class="quiz-opt-letter">D</span><span>Multiple Selection</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="9" data-exp="INCORRECT: Yes/No is a supported data type in the Smart Assessment Engine. Binary yes-or-no questions are among the most basic types SAE handles."><span class="quiz-opt-letter">E</span><span>Yes/No</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="9" style="display:none">Submit Answer</button>
       <div class="quiz-opt-explains" id="qoptexp9" style="display:none"></div>
       <details class="quiz-overall" id="qexp9">
         <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">Correct AnswerPercentage and Image Scale
-Sourcedocs.servicenow.com: SAE Migration (Zurich)
-ExplanationBefore migrating to the Smart Assessment Engine, questionnaire templates must be reviewed for unsupported data types. Four types are not supported in SAE: Percentage (convert to Number), Image Scale (convert to Radio Button), Ranking, and Custom Metric. These must be converted in the classic template designer before running the SAE migration. Failure to convert these types will block the migration process. All standard question types   Choice, Multiple Selection, Yes/No, Text, Number, Date   are fully supported in SAE.
-Why Others Are WrongChoice, Multiple Selection, and Yes/No are all supported in SAE. The exam specifically tests knowledge of the unsupported types: Percentage, Image Scale, Ranking, and Custom Metric.
-<br><br><strong>Memory Tip</strong>P-I-R-C = Percentage, Image Scale, Ranking, Custom Metric. Four types SAE won&#x27;t take. Convert them first.</div>
+        <div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>A and B - Percentage and Image Scale</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-governance-risk-compliance/page/product/third-party-risk/concept/tprm-sae-migration.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>The Smart Assessment Engine (SAE) does not support Percentage and Image Scale metric data types. When migrating from legacy assessment frameworks to SAE, these two types must be converted to compatible formats such as Choice or Numeric. SAE supports Choice, Multiple Selection, Yes/No, and other standard types natively.</p><h5>Why the Others Are Wrong</h5><p>Choice (C) is fully supported in SAE for single-selection questions. Multiple Selection (D) works in SAE for questions requiring more than one answer. Yes/No (E) is a basic binary type that SAE handles without issues.</p><h5>Memory Tip</h5><p>SAE does not like pictures or percentages. If you cannot pick it from a list or answer yes/no, SAE probably does not support it. Remember "no pictures, no percentages."</p><h5>Real-World Example</h5><p>During migration to SAE, your team discovers that 12 legacy vendor assessment questions use Image Scale (drag a slider on a visual scale) and 8 use Percentage (enter a value like 95%). All 20 must be redesigned as Choice or Multiple Selection questions before SAE can process them.</p>
+</div>
       </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard10">
       <div class="quiz-q"><span class="quiz-q-num">11.</span>If a Third-party Risk Issue is for internal use only, what states can be skipped? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="10" data-exp="INCORRECT. Analyze is an internal state where the risk team investigates and documents the issue. It applies to both internal and external issues."><span class="quiz-opt-letter">A</span><span>Analyze</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="10" data-exp="CORRECT. Finalize with Third-party is a collaborative state requiring external third-party interaction. For internal-only issues, this state is skipped."><span class="quiz-opt-letter">B</span><span>Finalize with Third-party</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="10" data-exp="INCORRECT. New is the initial creation state for every issue regardless of type. It cannot be skipped."><span class="quiz-opt-letter">C</span><span>New</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="10" data-exp="CORRECT. Submitted to Third-party is a state where the issue is sent to the vendor for remediation. For internal-only issues, this state is skipped."><span class="quiz-opt-letter">D</span><span>Submitted to Third-party</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="10" data-exp="INCORRECT: The Analyze state is an internal process step that applies whether the issue involves a third party or not. It cannot be skipped for internal-only issues."><span class="quiz-opt-letter">A</span><span>Analyze</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="10" data-exp="CORRECT: The Finalize with Third-party state can be skipped when a Third-party Risk Issue is for internal use only. This state is designed for coordinating resolution with the external vendor, which is unnecessary for purely internal matters."><span class="quiz-opt-letter">B</span><span>Finalize with Third-party</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="10" data-exp="INCORRECT: The New state is the initial state of every issue and cannot be skipped. Every issue, whether internal or external, must pass through the New state when created."><span class="quiz-opt-letter">C</span><span>New</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="10" data-exp="CORRECT: The Submitted to Third-party state can be skipped when a Third-party Risk Issue is for internal use only. Submitting to a third party is irrelevant when the issue does not involve external vendor interaction."><span class="quiz-opt-letter">D</span><span>Submitted to Third-party</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="10" style="display:none">Submit Answer</button>
       <div class="quiz-opt-explains" id="qoptexp10" style="display:none"></div>
       <details class="quiz-overall" id="qexp10">
         <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">Correct Answers: Finalize with Third-party. Submitted to Third-party.
-Source
-
-ServiceNow Community: TPRM Issue Management and Remediation
-If the link fails, search Google for: ServiceNow Zurich TPRM issue workflow internal states submitted finalize skip
-
-Expert Explanation
-The default TPRM Issue workflow includes these states: New, Analyze, Submitted to Third-party, Finalize with Third-party, Review, Closed. The states Submitted to Third-party and Finalize with Third-party exist specifically for issues that require external vendor involvement: sending the issue to the vendor for remediation and then finalizing it after their response. When an issue is marked for internal use only (an internal control failure that does not require vendor remediation), these two external-facing states are skipped. The issue moves from Analyze directly to Review and then Closed.
-<br><br><strong>Why the Others Are Wrong</strong>
-
-Analyze: This is an internal investigation state required for all issues regardless of whether third-party involvement is needed. It documents the root cause and impact assessment.
-New: Every issue starts in the New state. This is the initial creation state and is never skipped.
-
-<br><br><strong>Memory Tip</strong>
-Skip the states with &quot;Third-party&quot; in the name. If the issue is internal only, any state that explicitly mentions Third-party in its name is irrelevant and gets bypassed.
-UI Navigation
-
-Path: All &gt; Third-party Risk &gt; Issues &gt; [Open Issue]
-What to look for: The &quot;Internal only&quot; or &quot;Skip third-party&quot; toggle/checkbox on the issue form that determines which workflow path the issue follows.
-
-<br><br><strong>Real-World</strong> Example
-A TPRM assessor identifies an internal access control gap in how the organization&#x27;s own team manages vendor contracts. The issue is created as internal-only because remediation requires internal IT changes, not vendor action. The issue workflow skips &quot;Submitted to Third-party&quot; and &quot;Finalize with Third-party,&quot; going directly from Analyze to Review once the internal fix is applied.</div>
+        <div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>B and D - Finalize with Third-party and Submitted to Third-party</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-governance-risk-compliance/page/product/third-party-risk/concept/tprm-issue-workflow.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>When a Third-party Risk Issue is flagged for internal use only, the states that involve external vendor interaction can be skipped. "Submitted to Third-party" and "Finalize with Third-party" both exist to facilitate communication with the vendor. Since an internal-only issue does not require vendor involvement, these two states are bypassed in the workflow.</p><h5>Why the Others Are Wrong</h5><p>Analyze (A) is an internal evaluation step that applies to all issues regardless of whether a vendor is involved. New (C) is the mandatory initial state for every issue and cannot be bypassed.</p><h5>Memory Tip</h5><p>If the issue name contains "Third-party" in the state name, and the issue is internal only, that state gets skipped. No third party involved means no third-party states needed.</p><h5>Real-World Example</h5><p>An internal audit discovers a gap in your vendor risk assessment process itself, not caused by any specific vendor. The issue is created as internal-only. It goes from New to Analyze to Respond to Closed, skipping both "Submitted to Third-party" and "Finalize with Third-party" since no vendor action is needed.</p>
+</div>
       </details>
     </div>
     <div class="quiz-card" id="qcard11">
       <div class="quiz-q"><span class="quiz-q-num">12.</span>How can the Contract Risk state be bypassed in a Due Diligence Request?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="11" data-exp="INCORRECT. Role assignment does not control whether the Contract Risk state is entered. The DDR has a dedicated field for this purpose."><span class="quiz-opt-letter">A</span><span>By assigning the TPR Assessor role to the DDR instead of the Contract Negotiator role.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="11" data-exp="INCORRECT. No such system property exists. The skip mechanism is a field on the DDR form itself, not a global system property."><span class="quiz-opt-letter">B</span><span>By enabling the system property sn_vdr_risk_asmt.skip_contract_risk on the Properties page.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="11" data-exp="CORRECT. The DDR form includes a dedicated &#x27;Skip Contract Risk Process&#x27; checkbox. When selected, the workflow bypasses the Contract Risk state and moves directly to Closed after Pending Manager Approval."><span class="quiz-opt-letter">C</span><span>By checking the Skip Contract Risk Process checkbox on the DDR form.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="11" data-exp="INCORRECT. Priority affects urgency and display but does not control workflow state transitions. There is no automatic bypass based on priority value."><span class="quiz-opt-letter">D</span><span>By setting the DDR Priority to 5-Planning, which triggers an automatic bypass of the contract stage.</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="11" data-exp="INCORRECT: Role assignment does not control whether the Contract Risk state is used or bypassed. The TPR Assessor and Contract Negotiator roles serve different functions but neither assignment triggers a bypass."><span class="quiz-opt-letter">A</span><span>By assigning the TPR Assessor role to the DDR instead of the Contract Negotiator role.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="11" data-exp="INCORRECT: There is no system property called sn_vdr_risk_asmt.skip_contract_risk for bypassing the Contract Risk state. This is a fabricated property name that does not exist in the platform."><span class="quiz-opt-letter">B</span><span>By enabling the system property sn_vdr_risk_asmt.skip_contract_risk on the Properties page.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="11" data-exp="CORRECT: The Contract Risk state in a Due Diligence Request can be bypassed by checking the Skip Contract Risk Process checkbox on the DDR form. This allows organizations to skip the contract review stage when it is not needed for a particular engagement."><span class="quiz-opt-letter">C</span><span>By checking the Skip Contract Risk Process checkbox on the DDR form.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="11" data-exp="INCORRECT: Setting the DDR Priority to 5-Planning does not trigger an automatic bypass of the contract stage. Priority fields control task urgency, not workflow state transitions."><span class="quiz-opt-letter">D</span><span>By setting the DDR Priority to 5-Planning, which triggers an automatic bypass of the contract stage.</span></li>
       </ul>
       <div class="quiz-opt-explains" id="qoptexp11" style="display:none"></div>
       <details class="quiz-overall" id="qexp11">
         <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">Correct AnswerBy checking the Skip Contract Risk Process checkbox on the DDR form.
-Sourcedocs.servicenow.com: DDR Form Fields (Vancouver)
-ExplanationThe Due Diligence Request form includes a checkbox field called &quot;Skip Contract Risk Process.&quot; When this is checked, the DDR workflow skips the Contract Risk state entirely after the Pending Manager Approval state, moving directly to Closed. This is useful when a contract review is not needed   for example, an existing vendor reassessment where the contract terms are already in place.
-Why Others Are WrongRole assignment has no effect on state transitions. No system property named skip_contract_risk exists. Priority values (1-Critical through 5-Planning) control urgency display only and have no impact on workflow routing.
-<br><br><strong>Memory Tip</strong>Skip Contract = checkbox on the form. One field, one decision.</div>
+        <div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>C - By checking the Skip Contract Risk Process checkbox on the DDR form</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-governance-risk-compliance/page/product/third-party-risk/task/tprm-ddr-contract-risk.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>The Due Diligence Request (DDR) form includes a Skip Contract Risk Process checkbox that, when selected, bypasses the Contract Risk state entirely. This is useful when a vendor engagement does not involve contract negotiations or when the contract review has been handled outside the platform. It is a simple, intentional administrative control built into the DDR form.</p><h5>Why the Others Are Wrong</h5><p>Role assignment (A) does not control state transitions in the DDR workflow. The system property referenced in option B does not exist. Priority settings (D) affect task scheduling and urgency, not the inclusion or exclusion of workflow states.</p><h5>Memory Tip</h5><p>Skip Contract Risk? Just check the box. It is literally a checkbox on the DDR form called "Skip Contract Risk Process."</p><h5>Real-World Example</h5><p>Your organization renews a contract with an existing long-term vendor where the legal team already reviewed the contract outside of ServiceNow. The DDR creator checks "Skip Contract Risk Process" on the form so the DDR moves directly past the Contract Risk state to the next assessment phase.</p>
+</div>
       </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard12">
       <div class="quiz-q"><span class="quiz-q-num">13.</span>Which GRC roles are contained within the Third-Party Assessment Reviewer role? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="12" data-exp="CORRECT. The Assessment Reviewer role includes compliance_reader, which grants visibility into Policy and Compliance Management data. This is how TPRM integrates with P&amp;C without requiring separate role assignments."><span class="quiz-opt-letter">A</span><span>compliance_reader</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="12" data-exp="CORRECT. The Assessment Reviewer role also includes risk_reader, inheriting visibility into Risk Management application data. Both compliance_reader and risk_reader are included in Assessment Reviewer."><span class="quiz-opt-letter">B</span><span>risk_reader</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="12" data-exp="INCORRECT. The Risk Manager role from the Risk Management application is not included in TPRM&#x27;s Assessment Reviewer. Only the read-only risk_reader role is inherited."><span class="quiz-opt-letter">C</span><span>sn_risk.manager</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="12" data-exp="INCORRECT. While the Assessment Reviewer role does include task_editor for commenting on records, this is a platform task management role, not a GRC role. The question asks specifically about GRC roles."><span class="quiz-opt-letter">D</span><span>task_editor</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="12" data-exp="INCORRECT. The Compliance Admin role is not included in Assessment Reviewer. Only the read-only compliance_reader is inherited, not administrative compliance access."><span class="quiz-opt-letter">E</span><span>sn_compliance.admin</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="12" data-exp="CORRECT: The compliance_reader role is contained within the Third-Party Assessment Reviewer role. This gives reviewers read access to compliance data so they can evaluate vendor assessments in the context of organizational compliance requirements."><span class="quiz-opt-letter">A</span><span>compliance_reader</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="12" data-exp="CORRECT: The risk_reader role is contained within the Third-Party Assessment Reviewer role. This grants reviewers read access to risk data, enabling them to view risk registers and related information while reviewing third-party assessments."><span class="quiz-opt-letter">B</span><span>risk_reader</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="12" data-exp="INCORRECT: The sn_risk.manager role provides risk management capabilities beyond what a reviewer needs. Assessment reviewers only need read access to risk data, not full management permissions."><span class="quiz-opt-letter">C</span><span>sn_risk.manager</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="12" data-exp="INCORRECT: The task_editor role is not part of the Third-Party Assessment Reviewer role. Assessment reviewers evaluate and provide feedback on assessments but do not need general task editing privileges."><span class="quiz-opt-letter">D</span><span>task_editor</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="12" data-exp="INCORRECT: The sn_compliance.admin role provides full administrative access to compliance management. This level of access far exceeds what an assessment reviewer requires."><span class="quiz-opt-letter">E</span><span>sn_compliance.admin</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="12" style="display:none">Submit Answer</button>
       <div class="quiz-opt-explains" id="qoptexp12" style="display:none"></div>
       <details class="quiz-overall" id="qexp12">
         <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">Correct Answercompliance_reader and risk_reader
-Sourcedocs.servicenow.com: TPRM Roles Reference (Vancouver)
-ExplanationThe Third-Party Assessment Reviewer role (sn_vdr_risk_asmt.vendor_assessment_reviewer) contains four roles: compliance_reader, risk_reader, task_editor, and vendor_reader. The inclusion of compliance_reader and risk_reader is architecturally significant   it means anyone with the Assessment Reviewer role (and all roles that inherit from it, like Assessor and Manager) automatically gets read access to Policy and Compliance and Risk Management data without needing separate role assignments.
-Why Others Are Wrongsn_risk.manager is an elevated Risk Management role, not just reader access. task_editor is correct that it&#x27;s included in Assessment Reviewer, but the question asks for GRC roles specifically. sn_compliance.admin is admin-level compliance access, far beyond what Reviewer gets.
-<br><br><strong>Memory Tip</strong>Assessment Reviewer sees GRC data: compliance_reader + risk_reader. Read-only bridges to both GRC pillars.</div>
+        <div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>A and B - compliance_reader and risk_reader</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-governance-risk-compliance/page/product/third-party-risk/reference/tprm-roles.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>The Third-Party Assessment Reviewer role contains two GRC reader roles: compliance_reader and risk_reader. These roles follow the principle of least privilege by granting read-only access to compliance and risk data. Reviewers need to see compliance and risk context to properly evaluate vendor assessments, but they do not need to modify that data.</p><h5>Why the Others Are Wrong</h5><p>sn_risk.manager (C) provides write-level risk management access, which exceeds what reviewers need. task_editor (D) grants general task modification privileges unrelated to assessment review. sn_compliance.admin (E) provides full compliance administration access, far beyond the read-only needs of a reviewer.</p><h5>Memory Tip</h5><p>Reviewers read, they do not write. So they get reader roles: compliance_reader and risk_reader. If the role name says "manager" or "admin," it is too much for a reviewer.</p><h5>Real-World Example</h5><p>A senior risk analyst is assigned the Third-Party Assessment Reviewer role to evaluate a vendor's security assessment. With compliance_reader, she can see which policies apply. With risk_reader, she can view the risk register entries. She cannot modify any compliance or risk records, only review them.</p>
+</div>
       </details>
     </div>
     <div class="quiz-card quiz-multi" id="qcard13">
       <div class="quiz-q"><span class="quiz-q-num">14.</span>Which of the following are available out-of-the-box as third-party risk assessment types? (Choose three.) <span class="quiz-choose">(choose 3)</span></div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="13" data-exp="CORRECT. Cloud Security Alliance (CSA) CAIQ is an out-of-the-box questionnaire type available in ServiceNow TPRM for cloud vendor assessments."><span class="quiz-opt-letter">A</span><span>Cloud Security Alliance (CSA)</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="13" data-exp="CORRECT. SIG Lite (Standardized Information Gathering, Lite version) is an OOB TPRM questionnaire type provided through the Shared Assessments content partnership."><span class="quiz-opt-letter">B</span><span>SIG Lite</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="13" data-exp="INCORRECT. ISO 27001 is a security management framework and certification standard, not a pre-built TPRM assessment questionnaire type in ServiceNow."><span class="quiz-opt-letter">C</span><span>ISO 27001</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="13" data-exp="INCORRECT. NIST 800-53 is a security controls catalog used as a compliance framework, not a pre-built TPRM assessment questionnaire type available OOB."><span class="quiz-opt-letter">D</span><span>NIST 800-53</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="13" data-exp="CORRECT. VSA (Vendor Security Alliance questionnaire) is an out-of-the-box TPRM assessment type for vendor security evaluations."><span class="quiz-opt-letter">E</span><span>VSA</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="13" data-exp="CORRECT: Cloud Security Alliance (CSA) is available out-of-the-box as a third-party risk assessment type. CSA provides a standardized framework for evaluating cloud service provider security controls."><span class="quiz-opt-letter">A</span><span>Cloud Security Alliance (CSA)</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="13" data-exp="CORRECT: SIG Lite is available out-of-the-box as a third-party risk assessment type. SIG Lite is a streamlined version of the Standardized Information Gathering questionnaire commonly used for initial vendor risk evaluations."><span class="quiz-opt-letter">B</span><span>SIG Lite</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="13" data-exp="INCORRECT: ISO 27001 is a widely recognized information security standard, but it is not provided as an out-of-the-box assessment type in ServiceNow TPRM. Organizations can create custom assessments based on ISO 27001 if needed."><span class="quiz-opt-letter">C</span><span>ISO 27001</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="13" data-exp="INCORRECT: NIST 800-53 is a comprehensive security controls framework, but it is not included as an out-of-the-box assessment type in TPRM. It can be configured as a custom assessment framework."><span class="quiz-opt-letter">D</span><span>NIST 800-53</span></li>
+      <li class="quiz-opt" data-idx="4" data-q="13" data-exp="CORRECT: VSA (Vendor Security Alliance) is available out-of-the-box as a third-party risk assessment type. The VSA questionnaire provides a standardized approach to evaluating vendor security practices."><span class="quiz-opt-letter">E</span><span>VSA</span></li>
       </ul>
       <button class="quiz-submit-btn" data-q="13" style="display:none">Submit Answer</button>
       <div class="quiz-opt-explains" id="qoptexp13" style="display:none"></div>
       <details class="quiz-overall" id="qexp13">
         <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">Correct Answers: Cloud Security Alliance (CSA), SIG Lite, VSA
-Source
-
-Shared Assessments: ServiceNow TPRM Toolkit (content partner)
-If the link fails, search Google for: ServiceNow Zurich TPRM out-of-the-box questionnaire types CSA SIG Lite VSA
-
-Expert Explanation
-ServiceNow TPRM ships with pre-built assessment questionnaire content from industry-standard frameworks. The three OOB types are: CSA CAIQ (Cloud Security Alliance Consensus Assessments Initiative Questionnaire, designed for cloud vendors), SIG Lite (Standardized Information Gathering from Shared Assessments, a widely-used vendor due diligence questionnaire), and VSA (Vendor Security Alliance questionnaire for third-party security evaluations). ISO 27001 and NIST 800-53 are compliance frameworks that organizations map their controls to, not pre-packaged questionnaire types delivered as TPRM content.
-<br><br><strong>Why the Others Are Wrong</strong>
-
-ISO 27001: A certification standard that defines requirements for an ISMS. Not a pre-built TPRM assessment questionnaire available OOB in ServiceNow.
-NIST 800-53: A security controls catalog used extensively in government and enterprise risk management. Not a pre-packaged TPRM questionnaire type in the platform.
-
-<br><br><strong>Memory Tip</strong>
-CSA, SIG, VSA are questionnaires you can fill out. ISO and NIST are frameworks you comply with. The OOB types are all actionable questionnaires, not abstract compliance frameworks.
-<br><br><strong>Real-World</strong> Example
-A company onboarding a new cloud data storage vendor selects the CSA CAIQ questionnaire from the OOB library and sends it in a Risk Assessment. For a traditional IT vendor, they use SIG Lite. Both are available without any custom development, directly from the TPRM Assessment Template configuration.</div>
+        <div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>A, B, and E - Cloud Security Alliance (CSA), SIG Lite, and VSA</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-governance-risk-compliance/page/product/third-party-risk/reference/tprm-assessment-types.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>ServiceNow TPRM ships with three out-of-the-box assessment types: Cloud Security Alliance (CSA), SIG Lite, and VSA (Vendor Security Alliance). These provide ready-to-use questionnaire frameworks that organizations can deploy immediately for vendor risk evaluations without building custom assessments from scratch.</p><h5>Why the Others Are Wrong</h5><p>ISO 27001 (C) is a well-known standard but must be configured as a custom assessment in TPRM. NIST 800-53 (D) is a comprehensive controls catalog but is not included as a pre-built assessment type. Both can be implemented through custom configuration.</p><h5>Memory Tip</h5><p>The three out-of-box types spell out CSV if you take their first letters: CSA, SIG Lite, VSA. Think "CSV file" for the three built-in vendor assessments.</p><h5>Real-World Example</h5><p>A new TPRM administrator needs to launch vendor assessments quickly. She selects the SIG Lite assessment type for initial screenings of low-risk vendors, the CSA questionnaire for cloud service providers, and the VSA for software vendors, all without any custom development.</p>
+</div>
       </details>
     </div>
     <div class="quiz-card" id="qcard14">
       <div class="quiz-q"><span class="quiz-q-num">15.</span>What does accepting an Issue mark?</div>
       <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="14" data-exp="INCORRECT. Accepting an issue does not imply the failure is unimportant. The control remains non-compliant after acceptance; it is a formal acknowledgment, not a dismissal."><span class="quiz-opt-letter">A</span><span>An implication that the known control failure is unimportant.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="14" data-exp="CORRECT. Accepting an issue formally marks the organization&#x27;s intention to create an exception for a known control failure or risk, while the control remains non-compliant."><span class="quiz-opt-letter">B</span><span>An intention to create an exception for a known control failure or risk.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="14" data-exp="INCORRECT. Failed remediation would be tracked as an update to the issue&#x27;s remediation notes or a new issue state, not as an acceptance action."><span class="quiz-opt-letter">C</span><span>Attempted remediation failed.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="14" data-exp="INCORRECT. Issue acceptance is a risk decision about the control failure, not a special treatment or exemption for specific vendors."><span class="quiz-opt-letter">D</span><span>Special third parties get an exception.</span></li>
+      <li class="quiz-opt" data-idx="0" data-q="14" data-exp="INCORRECT: Accepting an issue does not mean the control failure is unimportant. It means the organization acknowledges the risk and consciously decides to tolerate it for a defined period, not that the failure is dismissed."><span class="quiz-opt-letter">A</span><span>An implication that the known control failure is unimportant.</span></li>
+      <li class="quiz-opt" data-idx="1" data-q="14" data-exp="CORRECT: Accepting an issue marks an intention to create an exception for a known control failure or risk. The organization formally acknowledges that a deficiency exists and documents the decision to accept the associated risk, typically with conditions and a time limit."><span class="quiz-opt-letter">B</span><span>An intention to create an exception for a known control failure or risk.</span></li>
+      <li class="quiz-opt" data-idx="2" data-q="14" data-exp="INCORRECT: Acceptance is not an indication that remediation failed. It is a deliberate risk management decision made regardless of whether remediation has been attempted. Failed remediation would typically result in escalation, not acceptance."><span class="quiz-opt-letter">C</span><span>Attempted remediation failed.</span></li>
+      <li class="quiz-opt" data-idx="3" data-q="14" data-exp="INCORRECT: Acceptance is not about granting special treatment to certain vendors. Any third party&#x27;s issues can be accepted based on risk evaluation, and the decision is driven by the risk profile, not the vendor&#x27;s status."><span class="quiz-opt-letter">D</span><span>Special third parties get an exception.</span></li>
       </ul>
       <div class="quiz-opt-explains" id="qoptexp14" style="display:none"></div>
       <details class="quiz-overall" id="qexp14">
         <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">Correct Answer: An intention to create an exception for a known control failure or risk.
-Source
-
-ServiceNow Elite: GRC Issue Management
-If the link fails, search Google for: ServiceNow Zurich TPRM GRC accept issue exception control failure
-
-Expert Explanation
-In ServiceNow GRC and TPRM, accepting an issue is a specific risk disposition action meaning the organization formally acknowledges a known control failure or risk and chooses not to remediate it immediately. Instead, they create a policy exception that documents the acceptance decision, its business justification, the approver, and an expiry date. Critically, the control remains non-compliant after acceptance: accepting does not fix the problem, it formally records the decision to tolerate it under defined conditions. This differs from remediation (fix the issue) or transfer (shift the risk to another party).
-<br><br><strong>Why the Others Are Wrong</strong>
-
-An implication that the known control failure is unimportant: Acceptance is a formal, documented risk decision. It implies the opposite: the risk is known, evaluated, and consciously accepted with management approval, not dismissed as unimportant.
-Attempted remediation failed: A failed remediation would be documented in the issue notes or trigger a re-evaluation. It is not what the accept action records.
-Special third parties get an exception: Acceptance is based on the risk decision about the control failure itself, not on special treatment for specific vendors. Any issue can be accepted regardless of which third party is involved.
-
-<br><br><strong>Memory Tip</strong>
-Accept = acknowledge the risk, don&#x27;t fix it. The control stays red. Accepting an issue is like signing a waiver: you know the risk exists and you agree to proceed with it documented.
-<br><br><strong>Real-World</strong> Example
-A vendor is missing multi-factor authentication on a secondary system. The risk team determines the system contains only anonymized test data with no PII exposure. Rather than requiring a 6-month MFA implementation project, the TPRM assessor accepts the issue with a 12-month exception, documents the business justification, gets the CISO&#x27;s sign-off, and links the acceptance to the Policy Exceptions related list. The control remains marked non-compliant but the risk is formally acknowledged.</div>
+        <div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>B - An intention to create an exception for a known control failure or risk</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-governance-risk-compliance/page/product/third-party-risk/concept/tprm-issue-acceptance.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>Accepting an issue in TPRM signifies a formal intention to create an exception for a known control failure or risk. It is a conscious risk management decision where the organization documents that it understands the deficiency and chooses to tolerate the risk under defined conditions. This is distinct from ignoring the problem or failing to remediate it.</p><h5>Why the Others Are Wrong</h5><p>Calling the failure unimportant (A) mischaracterizes acceptance. The risk is acknowledged as real, just tolerated. Failed remediation (C) is a different scenario that typically triggers escalation, not acceptance. Special vendor treatment (D) implies favoritism, but acceptance is a risk-based decision applied consistently regardless of vendor identity.</p><h5>Memory Tip</h5><p>Accept = Exception. When you accept an issue, you are saying "I know this is broken, I accept the risk, and I want a formal exception to document that decision."</p><h5>Real-World Example</h5><p>A payment processing vendor cannot implement multi-factor authentication on a legacy system within the required timeframe. The risk committee reviews the situation and accepts the issue, creating a formal exception valid for six months while the vendor migrates to a newer platform. The exception is documented with compensating controls in place.</p>
+</div>
       </details>
     </div>
     <div class="quiz-score" id="quizScore">
