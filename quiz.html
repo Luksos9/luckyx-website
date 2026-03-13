@@ -414,7 +414,10 @@ a:hover { text-decoration: underline; }
     FSM: { name:'CIS-Field Service Management', slug:'cis-fsm', desc:'Work order management, dispatch, dynamic scheduling, and mobile agent for field technicians.', ref:'https://www.udemy.com/course/pass-servicenow-cis-field-service-mangement-fsm/?referralCode=411E2ADCD2ACF3DE5FC7', q:334 },
     SPM: { name:'CIS-Strategic Portfolio Management', slug:'cis-spm', desc:'Demand management, project portfolios, resource management, and investment funding.', ref:'https://www.udemy.com/course/pass-your-servicenow-cis-strategic-portfolio-management-spm/?referralCode=D08240CA36DE435A8CD0', q:200 },
     SAM: { name:'CIS-Software Asset Management', slug:'cis-sam', desc:'Software license lifecycle, entitlements, normalization, and compliance tracking.', ref:'https://www.udemy.com/course/pass-your-servicenow-cis-software-asset-mgmt-sam-exam/?referralCode=627AA3E200F1159EDF94', q:250 },
-    HAM: { name:'CIS-Hardware Asset Management', slug:'cis-ham', desc:'Hardware asset lifecycle, stockrooms, model categories, and HAM workspace.', ref:'https://www.udemy.com/course/pass-servicenow-cis-hardware-asset-management-ham/?referralCode=58ECB1F51A94EC5A7F09', q:249 },
+    HAM:  { name:'CIS-Hardware Asset Management',      slug:'cis-ham',              desc:'Hardware asset lifecycle, stockrooms, model categories, and HAM workspace.', ref:'https://www.udemy.com/course/pass-servicenow-cis-hardware-asset-management-ham/?referralCode=58ECB1F51A94EC5A7F09', q:249 },
+    PA:   { name:'CAS-Performance Analytics',          slug:'cas-pa',               desc:'PA certification prep covering reports, indicators, breakdowns, and dashboards — increasingly required alongside advanced CIS certifications.', ref:'https://www.udemy.com/course/pass-your-servicenow-cas-pa-exam/?referralCode=A8ACE29CC7E537680674', q:218 },
+    EM:   { name:'CIS-Event Management',               slug:'cis-event-management', desc:'Full CIS-EM exam scope including Event Roles, Alert rules, and alert management workflows for AIOps and IT operations.', ref:'https://www.udemy.com/course/pass-servicenow-cis-event-management-cis-em/?referralCode=CA03695C46AF6880DDE1', q:200 },
+    TPRM: { name:'CIS-Third Party Risk Management',   slug:'cis-tprm',             desc:'Full TPRM coverage including vendor engagement, risk assessments, and third-party lifecycle management.', ref:'https://www.udemy.com/course/pass-servicenow-cis-third-party-risk-management-tprm/?referralCode=D6DDF7F1E21D051B5047', q:100 },
   };
 
   /* Paths based on interest area + context */
@@ -426,18 +429,18 @@ a:hover { text-decoration: underline; }
     },
     data: {
       noCSA: ['CSA', 'DF', 'DISCO'],
-      withCSA: ['DF', 'DISCO', 'SM'],
+      withCSA: ['DF', 'DISCO', 'EM'],
       dev: ['CSA', 'CAD', 'DF']
     },
     security: {
       noCSA: ['CSA', 'SIR', 'VR'],
-      withCSA: ['SIR', 'VR', 'GRC'],
+      withCSA: ['GRC', 'TPRM', 'SIR'],
       dev: ['CSA', 'CAD', 'SIR']
     },
     service: {
       noCSA: ['CSA', 'CSM', 'HRSD'],
       withCSA: ['CSM', 'HRSD', 'FSM'],
-      dev: ['CSA', 'CAD', 'CSM']
+      dev: ['CSA', 'CAD', 'PA']
     }
   };
 
