@@ -75,8 +75,8 @@
 {
   "@context": "https://schema.org",
   "@type": "Quiz",
-  "name": "Free CIS HR Service Delivery Sample Questions",
-  "description": "Try 5 free sample questions from the CIS HR Service Delivery practice test",
+  "name": "10 Free CIS HR Service Delivery \u2014 ServiceNow Practice Test 2026 Preview Questions",
+  "description": "Start page 1 of a 10-question free preview for the CIS HR Service Delivery \u2014 ServiceNow Practice Test 2026 practice test.",
   "url": "https://luckyx.dev/courses/cis-hrsd.html#free-quiz",
   "educationalAlignment": {
     "@type": "AlignmentObject",
@@ -86,111 +86,115 @@
   "hasPart": [
     {
       "@type": "Question",
-      "name": "What is the Employee Center in HRSD?",
+      "name": "What constitutes an HR Case in ServiceNow and what are some of the tasks that HR professionals can perform with it?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A unified portal where employees access HR services, knowledge, and case management"
+        "text": "An HR Case is used to record and interact with employee HR requests, and can include tasks like creating cases for HR processes, automating onboarding/offboarding, and managing HR workload."
       },
       "suggestedAnswer": [
         {
           "@type": "Answer",
-          "text": "A physical office building"
+          "text": "HR Cases are only for storing confidential employee information and cannot be used to track HR requests or tasks."
         },
         {
           "@type": "Answer",
-          "text": "A payroll system"
+          "text": "An HR Case is a record of an IT issue and is unrelated to HR requests or employee interactions."
         },
         {
           "@type": "Answer",
-          "text": "An org chart viewer"
+          "text": "HR Cases are for time tracking and payroll processing exclusively, without involving any other HR services or tasks."
         }
       ]
     },
     {
       "@type": "Question",
-      "name": "What are Lifecycle Events in HRSD?",
+      "name": "On the New Case Creation page, how can fields for a specific HR Service be displayed ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Automated workflows triggered by employee milestones like onboarding, transfers, or offboarding"
+        "text": "Using the Case Creation Service Configurations"
       },
       "suggestedAnswer": [
         {
           "@type": "Answer",
-          "text": "System logs"
+          "text": "HR Service-specific fields cannot be added to the New Case Creation page"
         },
         {
           "@type": "Answer",
-          "text": "Calendar events"
+          "text": "Using the Case Options field on the HR Service"
         },
         {
           "@type": "Answer",
-          "text": "Performance reviews"
+          "text": "Using the HR Criteria module"
         }
       ]
     },
     {
       "@type": "Question",
-      "name": "What is HR Case Management?",
+      "name": "What is the function of the 'Showcase to Subject Person' field in the context of HR Cases in ServiceNow, and how does it impact information access?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A system for employees to submit, track, and resolve HR inquiries and requests"
+        "text": "The 'Showcase to Subject Person' field, when checked, makes the HR Case visible to the Subject Person, allowing them to see case details they are involved in, enhancing transparency and communication."
       },
       "suggestedAnswer": [
         {
           "@type": "Answer",
-          "text": "A legal tool"
+          "text": "The 'Showcase to Subject Person' field is designed to display the HR case to all employees in the organization for transparency purposes."
         },
         {
           "@type": "Answer",
-          "text": "A project management tool"
+          "text": "When the 'Showcase to Subject Person' field is checked, it enables HR cases to be visible in company-wide reports and dashboards."
         },
         {
           "@type": "Answer",
-          "text": "A recruitment platform"
+          "text": "Checking the 'Showcase to Subject Person' field hides the HR case from everyone except the HR team to maintain confidentiality."
         }
       ]
     },
     {
       "@type": "Question",
-      "name": "What are Document Templates in HRSD?",
+      "name": "How is HR application called in ServiceNow currently?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Pre-configured templates that auto-generate HR documents (offer letters, separation notices) with employee data"
+        "text": "HRSD - HR Service Delivery"
       },
       "suggestedAnswer": [
         {
           "@type": "Answer",
-          "text": "Word processor files"
+          "text": "HRDS - HR Deliver Service"
         },
         {
           "@type": "Answer",
-          "text": "Email templates only"
+          "text": "HRSM - HR Service Management"
         },
         {
           "@type": "Answer",
-          "text": "Form layouts"
+          "text": "HRMS - HR Management System"
+        },
+        {
+          "@type": "Answer",
+          "text": "SNOW"
         }
       ]
     },
     {
       "@type": "Question",
-      "name": "What is Enterprise Onboarding in HRSD?",
+      "name": "What determines the conditions a Case must meet before it can be assigned to an agent in the base instance ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A cross-departmental process that coordinates all tasks needed to onboard a new employee"
+        "text": "Matching Rules"
       },
       "suggestedAnswer": [
         {
           "@type": "Answer",
-          "text": "Server installation"
+          "text": "Client Rules"
         },
         {
           "@type": "Answer",
-          "text": "A software deployment"
+          "text": "ACLs"
         },
         {
           "@type": "Answer",
-          "text": "A training course"
+          "text": "Escalation Rules"
         }
       ]
     }
@@ -321,77 +325,21 @@ a:hover { text-decoration: underline; }
 .theme-toggle svg { width: 18px; height: 18px; stroke: var(--text-dim); stroke-width: 2; fill: none; }
 
 /* Quiz section */
-.quiz-section { margin-top: 48px; }
-.quiz-section h2 { font-size: 1.3rem; font-weight: 600; margin-bottom: 8px; }
-.quiz-intro { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 24px; }
-.quiz-card { background: var(--bg-raised); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 16px; transition: border-color 0.2s; }
-.quiz-card[data-state="correct"] { border-color: #2ea043; }
-.quiz-card[data-state="wrong"] { border-color: #d73a49; }
-.quiz-q { font-weight: 600; font-size: 1rem; margin-bottom: 16px; line-height: 1.5; }
-.quiz-q-num { color: var(--orange); font-weight: 700; margin-right: 6px; }
-.quiz-opts { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-.quiz-opt { display: flex; align-items: flex-start; gap: 10px; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border); cursor: pointer; transition: background 0.15s, border-color 0.15s; color: var(--text-dim); font-size: 0.95rem; line-height: 1.5; flex-wrap: wrap; }
-.quiz-opt:hover { background: rgba(221,92,12,0.06); border-color: var(--border-hover); }
-.quiz-opt.selected { background: rgba(221,92,12,0.1); border-color: var(--orange); color: var(--text); }
-.quiz-opt.correct { background: rgba(46,160,67,0.1); border-color: #2ea043; color: var(--text); }
-.quiz-opt.wrong { background: rgba(215,58,73,0.1); border-color: #d73a49; }
-.quiz-opt[disabled] { pointer-events: none; cursor: default; }
-.quiz-opt-letter { width: 22px; height: 22px; border-radius: 50%; background: var(--bg-card); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 600; flex-shrink: 0; color: var(--text-dim); }
-.quiz-opt.selected .quiz-opt-letter { background: var(--orange); color: #fff; border-color: var(--orange); }
-.quiz-opt.correct .quiz-opt-letter { background: #2ea043; color: #fff; border-color: #2ea043; }
-.quiz-opt.wrong .quiz-opt-letter { background: #d73a49; color: #fff; border-color: #d73a49; }
-.quiz-choose { font-weight: 400; color: var(--orange); font-size: 0.85rem; margin-left: 4px; }
-.quiz-submit-btn { display: none; margin-top: 14px; padding: 11px 28px; background: var(--orange); color: #fff; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.15s, transform 0.1s; }
-.quiz-submit-btn:hover { background: #c75400; }
-.quiz-submit-btn:active { transform: scale(0.97); }
-/* Per-option inline explanation (under each option) */
-.quiz-opt-exp-inline { flex-basis: 100%; padding: 10px 14px; border-radius: 8px; font-size: 0.88rem; line-height: 1.5; margin-top: 6px; animation: fadeInExp 0.3s ease; }
-@keyframes fadeInExp { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
-.quiz-opt-exp-inline.qoe-is-correct { background: rgba(46,160,67,0.08); border-left: 3px solid #2ea043; }
-.quiz-opt-exp-inline.qoe-is-wrong { background: rgba(215,58,73,0.06); border-left: 3px solid #d73a49; }
-.qoe-header { font-weight: 600; margin-bottom: 4px; font-size: 0.82rem; display: flex; align-items: center; gap: 6px; }
-.qoe-correct { color: #2ea043; }
-.qoe-wrong { color: #d73a49; }
-.qoe-letter { color: var(--text-dim); font-weight: 500; }
-.qoe-text { color: var(--text-dim); }
-/* Legacy grouped explanation container - hidden */
-.quiz-opt-explains { display: none !important; }
-/* Collapsible overall explanation */
-.quiz-overall { display: none; margin-top: 14px; }
-.quiz-overall[style*="block"] { display: block; }
-.quiz-overall-toggle { cursor: pointer; font-size: 0.9rem; font-weight: 600; color: var(--orange); padding: 10px 0; list-style: none; display: flex; align-items: center; gap: 6px; }
-.quiz-overall-toggle::-webkit-details-marker { display: none; }
-.quiz-overall-toggle::before { content: ''; display: inline-block; width: 0; height: 0; border-left: 5px solid var(--orange); border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform 0.2s; }
-details.quiz-overall[open] .quiz-overall-toggle::before { transform: rotate(90deg); }
-.quiz-overall-content { padding: 4px 0; background: transparent; border-radius: 0; font-size: 0.9rem; color: var(--text-dim); line-height: 1.7; margin-top: 8px; border-left: none; }
-/* Section-specific styling for overall explanation */
-.exp-section { margin-bottom: 14px; padding: 14px 18px; border-radius: 10px; border-left: 3px solid; }
-.exp-section:last-child { margin-bottom: 0; }
-.exp-section h5 { margin: 0 0 8px 0; font-size: 0.92rem; font-weight: 700; }
-.exp-section p { margin-bottom: 6px; }
-.exp-section p:last-child { margin-bottom: 0; }
-.exp-section ul { padding-left: 20px; margin-bottom: 6px; }
-.exp-section ul:last-child { margin-bottom: 0; }
-.exp-section li { margin-bottom: 4px; }
-.exp-correct-answer { background: rgba(46,160,67,0.05); border-left-color: #2ea043; }
-.exp-correct-answer h5 { color: #2ea043; }
-.exp-source { background: rgba(59,130,246,0.05); border-left-color: #3b82f6; }
-.exp-source h5 { color: #3b82f6; }
-.exp-source a { color: #3b82f6; }
-.exp-expert { background: rgba(139,92,246,0.05); border-left-color: #8b5cf6; }
-.exp-expert h5 { color: #8b5cf6; }
-.exp-wrong { background: rgba(215,58,73,0.04); border-left-color: #d73a49; }
-.exp-wrong h5 { color: #d73a49; }
-.exp-memory { background: rgba(217,119,6,0.05); border-left-color: #d97706; }
-.exp-memory h5 { color: #d97706; }
-.exp-realworld { background: rgba(16,185,129,0.05); border-left-color: #10b981; }
-.exp-realworld h5 { color: #10b981; }
-.quiz-score { margin-top: 24px; padding: 20px; background: var(--bg-raised); border-radius: 12px; border: 1px solid var(--border); text-align: center; display: none; }
-.quiz-score.show { display: block; }
-.quiz-score-num { font-size: 2rem; font-weight: 800; color: var(--orange); }
-.quiz-score-label { color: var(--text-dim); font-size: 0.95rem; margin-top: 4px; }
-.quiz-score-msg { margin-top: 12px; font-size: 0.95rem; color: var(--text-dim); }
-.quiz-score .cp-cta { margin-top: 16px; font-size: 1rem; padding: 12px 32px; display: inline-flex; }
+.quiz-section{margin-top:48px}.quiz-section h2{font-size:1.35rem;font-weight:700;margin-bottom:10px;line-height:1.3}.quiz-intro{color:var(--text-dim);font-size:.96rem;margin:0;max-width:64ch}
+.preview-shell{margin-bottom:24px}.preview-kicker{display:inline-flex;align-items:center;gap:8px;margin-bottom:14px;padding:6px 12px;border-radius:999px;background:rgba(221,92,12,.08);border:1px solid rgba(221,92,12,.18);color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.preview-copy-row{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px}.preview-step-note{color:var(--text-dim);font-size:.9rem;line-height:1.6;max-width:34ch}
+.preview-index{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;list-style:none;margin:0 0 24px;padding:0}.preview-slot{min-height:64px;padding:12px 8px;border-radius:12px;border:1px solid var(--border);background:var(--bg-raised);text-align:center}.preview-slot-num{display:block;font-size:1rem;font-weight:700;color:var(--text);line-height:1.1}.preview-slot-label{display:block;margin-top:6px;font-size:.72rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--text-dim)}.preview-slot.is-active{border-color:rgba(221,92,12,.35);background:rgba(221,92,12,.08)}.preview-slot.is-done{border-color:rgba(46,160,67,.35);background:rgba(46,160,67,.08)}.preview-slot.is-done .preview-slot-num,.preview-slot.is-done .preview-slot-label{color:#2ea043}.preview-slot.is-prior{border-style:dashed;background:rgba(255,255,255,.02)}
+.quiz-card{background:var(--bg-raised);border:1px solid var(--border);border-radius:14px;padding:24px;margin-bottom:16px;transition:border-color .2s}.quiz-card[data-state="correct"]{border-color:#2ea043}.quiz-card[data-state="wrong"]{border-color:#d73a49}.quiz-q{font-weight:600;font-size:1rem;margin-bottom:16px;line-height:1.55}.quiz-q-num{color:var(--orange);font-weight:700;margin-right:6px}.quiz-opts{list-style:none;display:flex;flex-direction:column;gap:8px}.quiz-opt{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border-radius:10px;border:1px solid var(--border);cursor:pointer;transition:background .15s,border-color .15s;color:var(--text-dim);font-size:.95rem;line-height:1.55;flex-wrap:wrap}.quiz-opt:hover{background:rgba(221,92,12,.06);border-color:var(--border-hover)}.quiz-opt.selected{background:rgba(221,92,12,.1);border-color:var(--orange);color:var(--text)}.quiz-opt.correct{background:rgba(46,160,67,.1);border-color:#2ea043;color:var(--text)}.quiz-opt.wrong{background:rgba(215,58,73,.1);border-color:#d73a49}.quiz-opt[disabled]{pointer-events:none;cursor:default}
+.quiz-opt-letter{width:22px;height:22px;border-radius:50%;background:var(--bg-card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:600;flex-shrink:0;color:var(--text-dim)}.quiz-opt.selected .quiz-opt-letter{background:var(--orange);color:#fff;border-color:var(--orange)}.quiz-opt.correct .quiz-opt-letter{background:#2ea043;color:#fff;border-color:#2ea043}.quiz-opt.wrong .quiz-opt-letter{background:#d73a49;color:#fff;border-color:#d73a49}.quiz-choose{font-weight:500;color:var(--orange);font-size:.85rem;margin-left:4px}
+.quiz-submit-btn{display:none;margin-top:14px;padding:11px 28px;background:var(--orange);color:#fff;border:none;border-radius:10px;font-size:.92rem;font-weight:700;cursor:pointer}.quiz-submit-btn:hover{background:#c75400}
+.quiz-opt-exp-inline{flex-basis:100%;padding:10px 14px;border-radius:10px;font-size:.88rem;line-height:1.55;margin-top:6px}.quiz-opt-exp-inline.qoe-is-correct{background:rgba(46,160,67,.08);border-left:3px solid #2ea043}.quiz-opt-exp-inline.qoe-is-wrong{background:rgba(215,58,73,.06);border-left:3px solid #d73a49}.qoe-header{font-weight:700;margin-bottom:4px;font-size:.82rem;display:flex;align-items:center;gap:6px}.qoe-correct{color:#2ea043}.qoe-wrong{color:#d73a49}.qoe-letter,.qoe-text{color:var(--text-dim)}.quiz-opt-explains{display:none!important}
+.quiz-overall{display:none;margin-top:14px}.quiz-overall[style*="block"]{display:block}.quiz-overall-toggle{cursor:pointer;font-size:.9rem;font-weight:700;color:var(--orange);padding:10px 0;list-style:none;display:flex;align-items:center;gap:6px}.quiz-overall-toggle::-webkit-details-marker{display:none}.quiz-overall-toggle::before{content:'';display:inline-block;width:0;height:0;border-left:5px solid var(--orange);border-top:4px solid transparent;border-bottom:4px solid transparent;transition:transform .2s}details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}.quiz-overall-content{padding:4px 0;background:transparent;border-radius:0;font-size:.9rem;color:var(--text-dim);line-height:1.7;margin-top:8px;border-left:none}
+.exp-section{margin-bottom:14px;padding:14px 18px;border-radius:12px;border-left:3px solid}.exp-section:last-child,.exp-section p:last-child,.exp-section ul:last-child{margin-bottom:0}.exp-section h5{margin:0 0 8px;font-size:.92rem;font-weight:700}.exp-section p{margin-bottom:6px}.exp-section ul{padding-left:20px;margin-bottom:6px}.exp-section li{margin-bottom:4px}.exp-correct-answer{background:rgba(46,160,67,.05);border-left-color:#2ea043}.exp-correct-answer h5{color:#2ea043}.exp-source{background:rgba(59,130,246,.05);border-left-color:#3b82f6}.exp-source h5,.exp-source a{color:#3b82f6}.exp-expert{background:rgba(139,92,246,.05);border-left-color:#8b5cf6}.exp-expert h5{color:#8b5cf6}.exp-wrong{background:rgba(215,58,73,.04);border-left-color:#d73a49}.exp-wrong h5{color:#d73a49}.exp-memory{background:rgba(217,119,6,.05);border-left-color:#d97706}.exp-memory h5{color:#d97706}.exp-realworld{background:rgba(16,185,129,.05);border-left-color:#10b981}.exp-realworld h5{color:#10b981}
+.preview-result{display:none;margin-top:28px;padding:24px;border-radius:18px;border:1px solid rgba(221,92,12,.22);background:radial-gradient(circle at top right,rgba(221,92,12,.12),transparent 42%),linear-gradient(180deg,rgba(255,255,255,.015),rgba(255,255,255,0))}.preview-result.show{display:block}.preview-result-kicker{color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}.preview-result-head{margin-top:10px;font-size:1.5rem;line-height:1.25;font-weight:700}.preview-score-row{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:18px 0 8px}.preview-score-value{font-size:2.2rem;font-weight:800;color:var(--text);line-height:1}.preview-score-label{color:var(--text-dim);font-size:.92rem}.preview-result-copy{color:var(--text-dim);margin-top:8px;max-width:62ch}.preview-offer-list{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px}.preview-offer-list li{display:flex;gap:10px;align-items:flex-start;color:var(--text-dim)}.preview-offer-bullet{width:22px;height:22px;flex:0 0 22px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(221,92,12,.1);color:var(--orange);font-size:.8rem;font-weight:700;margin-top:1px}.preview-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}.preview-secondary-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 22px;border-radius:12px;border:1px solid var(--border-hover);background:transparent;color:var(--text);font-family:var(--font);font-size:.98rem;font-weight:700;cursor:pointer}.preview-secondary-btn:hover{background:rgba(221,92,12,.06);border-color:var(--orange)}.preview-text-link{display:inline-flex;align-items:center;gap:8px;margin-top:16px;border:none;background:none;color:var(--text-dim);font-family:var(--font);font-size:.9rem;font-weight:700;cursor:pointer;padding:0}.preview-text-link:hover{color:var(--orange);text-decoration:none}.preview-helper{margin-top:16px;color:var(--text-dim);font-size:.9rem;line-height:1.6}
+.preview-email-wrap{display:none;margin-top:22px;padding-top:20px;border-top:1px solid var(--border)}.preview-email-wrap.show{display:block}.preview-email-wrap h3{font-size:1.02rem;margin-bottom:6px}.preview-email-wrap p{color:var(--text-dim);font-size:.92rem}.preview-lead-form{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.preview-lead-form input[type="email"]{flex:1 1 240px;min-height:48px;border-radius:12px;border:1px solid var(--border);background:var(--bg-card);color:var(--text);padding:0 14px;font-family:var(--font);font-size:.95rem}.preview-lead-form input[type="email"]::placeholder{color:var(--text-faint)}.preview-lead-form input[type="email"]:focus{outline:none;border-color:rgba(221,92,12,.45);box-shadow:0 0 0 3px rgba(221,92,12,.12)}.preview-lead-form button{min-height:48px;padding:0 18px;border-radius:12px;border:none;background:var(--orange);color:#fff;font-family:var(--font);font-size:.94rem;font-weight:700;cursor:pointer}.preview-lead-form button:disabled{opacity:.72;cursor:wait}.preview-lead-note{margin-top:10px;color:var(--text-dim);font-size:.82rem;line-height:1.5}
+.preview-exit{position:fixed;inset:0;z-index:1200;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(5,5,7,.74)}.preview-exit.active{display:flex}.preview-exit-card{position:relative;width:min(520px,100%);padding:26px;border-radius:20px;border:1px solid var(--border);background:radial-gradient(circle at top right,rgba(221,92,12,.14),transparent 38%),var(--bg-raised);box-shadow:0 24px 70px rgba(0,0,0,.35)}.preview-exit-close{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--text-dim);cursor:pointer;font-size:1.2rem}.preview-exit-kicker{color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}.preview-exit-title{margin-top:10px;font-size:1.45rem;line-height:1.25}.preview-exit-copy{margin-top:10px;color:var(--text-dim);line-height:1.65}.preview-exit-link{margin-top:14px;display:inline-flex;align-items:center;gap:8px;font-weight:700}
+@media (min-width:720px){.preview-index{grid-template-columns:repeat(10,minmax(0,1fr))}}@media (max-width:600px){.cp-title,.cp-price{font-size:1.5rem}.cp-cta,.preview-secondary-btn{width:100%;justify-content:center}.quiz-card{padding:16px}.preview-exit-card{padding:22px 18px}.preview-lead-form{flex-direction:column}.preview-lead-form button{width:100%}}
+
 /* Countdown banner */
 .countdown-banner { max-width: 100%; margin: 0 0 24px; padding: 20px 24px; background: linear-gradient(135deg, rgba(221,92,12,0.08), rgba(221,92,12,0.03)); border: 1px solid rgba(221,92,12,0.2); border-radius: 14px; text-align: center; position: relative; overflow: hidden; }
 .countdown-banner::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(221,92,12,0.04), transparent); animation: cd-shimmer 3s ease-in-out infinite; }
@@ -507,272 +455,130 @@ details.quiz-overall[open] .quiz-overall-toggle::before { transform: rotate(90de
     </ul>
   </div>
 
-  <section class="quiz-section" id="free-quiz">
-    <h2>Try 15 Free HRSD Questions</h2>
-    <p class="quiz-intro">Test your knowledge before you buy — including multiple-choice and multi-select, just like the real exam.</p>
-    <div class="quiz-card" id="qcard0">
-      <div class="quiz-q"><span class="quiz-q-num">1.</span>What constitutes an HR Case in ServiceNow and what are some of the tasks that HR professionals can perform with it?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="0" data-exp="INCORRECT: HR Cases are not limited to storing confidential employee information. They are interactive records used to manage and track a wide range of HR requests, tasks, and employee interactions - not just data storage."><span class="quiz-opt-letter">A</span><span>HR Cases are only for storing confidential employee information and cannot be used to track HR requests or tasks.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="0" data-exp="INCORRECT: HR Cases are specific to HR Service Delivery, not IT issues. IT issues are tracked through Incident or Problem records. HR Cases handle employee-facing HR requests like benefits questions, onboarding, and leave management."><span class="quiz-opt-letter">B</span><span>An HR Case is a record of an IT issue and is unrelated to HR requests or employee interactions.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="0" data-exp="INCORRECT: HR Cases go far beyond time tracking and payroll. While payroll-related inquiries can be handled through HR Cases, the primary purpose is to manage the full lifecycle of HR service requests - including onboarding, offboarding, employee relations, and general HR inquiries."><span class="quiz-opt-letter">C</span><span>HR Cases are for time tracking and payroll processing exclusively, without involving any other HR services or tasks.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="0" data-exp="CORRECT: An HR Case is a record used to capture, track, and interact with employee HR requests. HR professionals can use it to create cases for various HR processes, automate onboarding and offboarding workflows, manage HR workload distribution, and maintain a complete history of employee interactions with HR."><span class="quiz-opt-letter">D</span><span>An HR Case is used to record and interact with employee HR requests, and can include tasks like creating cases for HR processes, automating onboarding/offboarding, and managing HR workload.</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp0" style="display:none"></div>
-      <details class="quiz-overall" id="qexp0">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
+  <section class="quiz-section" id="free-quiz" data-preview-step="1">
+    <div class="preview-shell">
+      <div class="preview-kicker">10-question free preview</div>
+      <h2>10 Free CIS HR Service Delivery — ServiceNow Practice Test 2026 Preview Questions</h2>
+      <div class="preview-copy-row">
+        <p class="quiz-intro">Page 1 of 2: questions 1-5. Rich explanations, multiple-choice, and multi-select - just like the real exam.</p>
+        <p class="preview-step-note">You are seeing the first half of a 10-question preview before the full 220-question course.</p>
+      </div>
+      <ol class="preview-index" id="previewIndex">
+      <li class="preview-slot" data-slot="1"><span class="preview-slot-num">1</span><span class="preview-slot-label">Live now</span></li>
+      <li class="preview-slot" data-slot="2"><span class="preview-slot-num">2</span><span class="preview-slot-label">Live now</span></li>
+      <li class="preview-slot" data-slot="3"><span class="preview-slot-num">3</span><span class="preview-slot-label">Live now</span></li>
+      <li class="preview-slot" data-slot="4"><span class="preview-slot-num">4</span><span class="preview-slot-label">Live now</span></li>
+      <li class="preview-slot" data-slot="5"><span class="preview-slot-num">5</span><span class="preview-slot-label">Live now</span></li>
+      <li class="preview-slot" data-slot="6"><span class="preview-slot-num">6</span><span class="preview-slot-label">Page 2</span></li>
+      <li class="preview-slot" data-slot="7"><span class="preview-slot-num">7</span><span class="preview-slot-label">Page 2</span></li>
+      <li class="preview-slot" data-slot="8"><span class="preview-slot-num">8</span><span class="preview-slot-label">Page 2</span></li>
+      <li class="preview-slot" data-slot="9"><span class="preview-slot-num">9</span><span class="preview-slot-label">Page 2</span></li>
+      <li class="preview-slot" data-slot="10"><span class="preview-slot-num">10</span><span class="preview-slot-label">Page 2</span></li>
+      </ol>
+    </div>
+<div class="quiz-card" id="qcard0">
+<div class="quiz-q"><span class="quiz-q-num">1.</span>What constitutes an HR Case in ServiceNow and what are some of the tasks that HR professionals can perform with it?</div>
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="INCORRECT: HR Cases are not limited to storing confidential employee information. They are interactive records used to manage and track a wide range of HR requests, tasks, and employee interactions - not just data storage." data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>HR Cases are only for storing confidential employee information and cannot be used to track HR requests or tasks.</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: HR Cases are specific to HR Service Delivery, not IT issues. IT issues are tracked through Incident or Problem records. HR Cases handle employee-facing HR requests like benefits questions, onboarding, and leave management." data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>An HR Case is a record of an IT issue and is unrelated to HR requests or employee interactions.</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: HR Cases go far beyond time tracking and payroll. While payroll-related inquiries can be handled through HR Cases, the primary purpose is to manage the full lifecycle of HR service requests - including onboarding, offboarding, employee relations, and general HR inquiries." data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>HR Cases are for time tracking and payroll processing exclusively, without involving any other HR services or tasks.</span></li>
+<li class="quiz-opt" data-exp="CORRECT: An HR Case is a record used to capture, track, and interact with employee HR requests. HR professionals can use it to create cases for various HR processes, automate onboarding and offboarding workflows, manage HR workload distribution, and maintain a complete history of employee interactions with HR." data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>An HR Case is used to record and interact with employee HR requests, and can include tasks like creating cases for HR processes, automating onboarding/offboarding, and managing HR workload.</span></li>
+</ul>
+<div class="quiz-opt-explains" id="qoptexp0" style="display:none"></div>
+<details class="quiz-overall" id="qexp0">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
 <h5>Correct Answer</h5><p>D - An HR Case is used to record and interact with employee HR requests, and can include tasks like creating cases for HR processes, automating onboarding/offboarding, and managing HR workload.</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-hr-service-delivery/page/product/human-resources/concept/hr-case-management.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>HR Cases are the backbone of ServiceNow HRSD. They serve as centralized records that capture every employee interaction with HR - from simple questions about PTO policies to complex multi-step processes like onboarding a new hire. Each case tracks status, assignment, related tasks, and communication history, giving HR teams full visibility into their workload.</p><h5>Why the Others Are Wrong</h5><p>Option A limits HR Cases to just data storage, ignoring their primary function as interactive service records. Option B confuses HR Cases with IT Incident records - two completely different modules. Option C restricts HR Cases to payroll and time tracking, which is only a fraction of what HRSD covers.</p><h5>Memory Tip</h5><p>Think of HR Cases like a customer service ticket - but for employees. Just as a support ticket tracks an IT issue from start to finish, an HR Case tracks an employee request through its entire lifecycle.</p><h5>Real-World Example</h5><p>A new employee joins the company. HR creates an onboarding HR Case that automatically generates tasks: provision a laptop, set up benefits enrollment, schedule orientation, assign a buddy. Each task is tracked within the case, and the new hire can see their onboarding progress through the Employee Center.</p>
 </div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard1">
-      <div class="quiz-q"><span class="quiz-q-num">2.</span>On the New Case Creation page, how can fields for a specific HR Service be displayed ?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="1" data-exp="INCORRECT: HR Service-specific fields can absolutely be added to the New Case Creation page. ServiceNow provides a dedicated configuration mechanism to control which fields appear when agents create cases for specific HR services."><span class="quiz-opt-letter">A</span><span>HR Service-specific fields cannot be added to the New Case Creation page</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="1" data-exp="CORRECT: Case Creation Service Configurations allow administrators to define which fields appear on the New Case Creation page for each HR Service. This lets you tailor the case creation form so that agents see only the relevant fields based on the selected HR Service, reducing clutter and ensuring the right data is captured upfront."><span class="quiz-opt-letter">B</span><span>Using the Case Creation Service Configurations</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="1" data-exp="INCORRECT: The Case Options field on the HR Service record is not the mechanism used to control which fields display on the case creation page. Case Options serves a different purpose in configuring HR service behavior."><span class="quiz-opt-letter">C</span><span>Using the Case Options field on the HR Service</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="1" data-exp="INCORRECT: HR Criteria is used for targeting content and controlling visibility of HR services to specific employee populations - not for configuring which fields appear on case creation forms."><span class="quiz-opt-letter">D</span><span>Using the HR Criteria module</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp1" style="display:none"></div>
-      <details class="quiz-overall" id="qexp1">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
+</details>
+</div>
+<div class="quiz-card" id="qcard1">
+<div class="quiz-q"><span class="quiz-q-num">2.</span>On the New Case Creation page, how can fields for a specific HR Service be displayed ?</div>
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="INCORRECT: HR Service-specific fields can absolutely be added to the New Case Creation page. ServiceNow provides a dedicated configuration mechanism to control which fields appear when agents create cases for specific HR services." data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>HR Service-specific fields cannot be added to the New Case Creation page</span></li>
+<li class="quiz-opt" data-exp="CORRECT: Case Creation Service Configurations allow administrators to define which fields appear on the New Case Creation page for each HR Service. This lets you tailor the case creation form so that agents see only the relevant fields based on the selected HR Service, reducing clutter and ensuring the right data is captured upfront." data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>Using the Case Creation Service Configurations</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: The Case Options field on the HR Service record is not the mechanism used to control which fields display on the case creation page. Case Options serves a different purpose in configuring HR service behavior." data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>Using the Case Options field on the HR Service</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: HR Criteria is used for targeting content and controlling visibility of HR services to specific employee populations - not for configuring which fields appear on case creation forms." data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>Using the HR Criteria module</span></li>
+</ul>
+<div class="quiz-opt-explains" id="qoptexp1" style="display:none"></div>
+<details class="quiz-overall" id="qexp1">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
 <h5>Correct Answer</h5><p>B - Using the Case Creation Service Configurations</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-hr-service-delivery/page/product/human-resources/task/configure-case-creation.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>Case Creation Service Configurations is a dedicated module in HRSD that lets administrators control exactly which fields appear when an agent creates a new HR case for a specific service. Each configuration record maps to an HR Service and defines the form layout, required fields, and field order for that service type. This ensures agents capture the right information at case creation time.</p><h5>Why the Others Are Wrong</h5><p>Option A is wrong because ServiceNow explicitly supports service-specific fields on the case creation page. Option C is wrong because Case Options controls service behavior settings, not the case creation form layout. Option D is wrong because HR Criteria controls service visibility and audience targeting, not form field display.</p><h5>Memory Tip</h5><p>The name tells you everything - "Case Creation Service Configurations" configures what you see during case creation for each service. If you need to change case creation fields, look for the module with "Case Creation" in the name.</p><h5>Real-World Example</h5><p>Your HR team handles both benefits inquiries and employee relocation requests. For benefits cases, you want fields like Plan Type and Enrollment Date. For relocation cases, you need fields like Destination City and Moving Date. Using Case Creation Service Configurations, you set up different field layouts for each HR Service so agents see only what they need.</p>
 </div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard2">
-      <div class="quiz-q"><span class="quiz-q-num">3.</span>What is the function of the &#x27;Showcase to Subject Person&#x27; field in the context of HR Cases in ServiceNow, and how does it impact information access?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="2" data-exp="INCORRECT: The Showcase to Subject Person field does not make cases visible to all employees in the organization. It specifically targets the Subject Person - the individual whom the case is about - not the entire workforce."><span class="quiz-opt-letter">A</span><span>The &#x27;Showcase to Subject Person&#x27; field is designed to display the HR case to all employees in the organization for transparency purposes.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="2" data-exp="INCORRECT: This field does not control visibility in company-wide reports or dashboards. Its purpose is narrowly focused on whether the Subject Person can view their own case details, not on broad organizational reporting."><span class="quiz-opt-letter">B</span><span>When the &#x27;Showcase to Subject Person&#x27; field is checked, it enables HR cases to be visible in company-wide reports and dashboards.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="2" data-exp="CORRECT: When the Showcase to Subject Person field is checked, the HR Case becomes visible to the Subject Person through the Employee Center or Service Portal. This allows the employee to see case details, track progress, and stay informed about cases that involve them. It balances transparency with privacy by giving controlled access only to the person directly involved."><span class="quiz-opt-letter">C</span><span>The &#x27;Showcase to Subject Person&#x27; field, when checked, makes the HR Case visible to the Subject Person, allowing them to see case details they are involved in, enhancing transparency and communication.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="2" data-exp="INCORRECT: Checking this field does the opposite of hiding the case. It exposes case information to the Subject Person rather than restricting it. Confidentiality controls in HRSD are managed through ACLs and role-based access, not through this field."><span class="quiz-opt-letter">D</span><span>Checking the &#x27;Showcase to Subject Person&#x27; field hides the HR case from everyone except the HR team to maintain confidentiality.</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp2" style="display:none"></div>
-      <details class="quiz-overall" id="qexp2">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
+</details>
+</div>
+<div class="quiz-card" id="qcard2">
+<div class="quiz-q"><span class="quiz-q-num">3.</span>What is the function of the 'Showcase to Subject Person' field in the context of HR Cases in ServiceNow, and how does it impact information access?</div>
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="INCORRECT: The Showcase to Subject Person field does not make cases visible to all employees in the organization. It specifically targets the Subject Person - the individual whom the case is about - not the entire workforce." data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>The 'Showcase to Subject Person' field is designed to display the HR case to all employees in the organization for transparency purposes.</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: This field does not control visibility in company-wide reports or dashboards. Its purpose is narrowly focused on whether the Subject Person can view their own case details, not on broad organizational reporting." data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>When the 'Showcase to Subject Person' field is checked, it enables HR cases to be visible in company-wide reports and dashboards.</span></li>
+<li class="quiz-opt" data-exp="CORRECT: When the Showcase to Subject Person field is checked, the HR Case becomes visible to the Subject Person through the Employee Center or Service Portal. This allows the employee to see case details, track progress, and stay informed about cases that involve them. It balances transparency with privacy by giving controlled access only to the person directly involved." data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>The 'Showcase to Subject Person' field, when checked, makes the HR Case visible to the Subject Person, allowing them to see case details they are involved in, enhancing transparency and communication.</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Checking this field does the opposite of hiding the case. It exposes case information to the Subject Person rather than restricting it. Confidentiality controls in HRSD are managed through ACLs and role-based access, not through this field." data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>Checking the 'Showcase to Subject Person' field hides the HR case from everyone except the HR team to maintain confidentiality.</span></li>
+</ul>
+<div class="quiz-opt-explains" id="qoptexp2" style="display:none"></div>
+<details class="quiz-overall" id="qexp2">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
 <h5>Correct Answer</h5><p>C - The Showcase to Subject Person field, when checked, makes the HR Case visible to the Subject Person, allowing them to see case details they are involved in, enhancing transparency and communication.</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-hr-service-delivery/page/product/human-resources/concept/hr-case-fields.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>The Showcase to Subject Person field is a boolean checkbox on the HR Case form. When enabled, the Subject Person (the employee the case is about) gains visibility into the case through their self-service portal. This is particularly useful for routine HR requests like benefits changes or leave requests where the employee should be able to track progress. For sensitive cases like employee relations investigations, this field would typically remain unchecked.</p><h5>Why the Others Are Wrong</h5><p>Option A wrongly suggests organization-wide visibility - this field targets only the Subject Person. Option B confuses portal visibility with reporting and dashboards - these are separate concerns. Option D describes the exact opposite behavior - the field reveals information to the Subject Person rather than hiding it.</p><h5>Memory Tip</h5><p>"Showcase" means to display or show off. So "Showcase to Subject Person" literally means "show this case to the person it is about." The name is self-explanatory once you break it down.</p><h5>Real-World Example</h5><p>An employee submits a request to change their tax withholding. HR creates a case and checks "Showcase to Subject Person." The employee can now log into the Employee Center, see the case status, and know when their request has been processed - without needing to email HR for updates.</p>
 </div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard3">
-      <div class="quiz-q"><span class="quiz-q-num">4.</span>How is HR application called in ServiceNow currently?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="3" data-exp="INCORRECT: HRDS (HR Deliver Service) is not a real ServiceNow product name. The correct abbreviation places the S before the D, reflecting &#x27;Service Delivery&#x27; not &#x27;Deliver Service.&#x27;"><span class="quiz-opt-letter">A</span><span>HRDS - HR Deliver Service</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="3" data-exp="INCORRECT: HRSM (HR Service Management) is not the current name. While the naming follows a logical pattern similar to ITSM (IT Service Management), ServiceNow chose &#x27;Service Delivery&#x27; to distinguish the HR module&#x27;s focus on delivering services to employees."><span class="quiz-opt-letter">B</span><span>HRSM - HR Service Management</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="3" data-exp="INCORRECT: HRMS (HR Management System) is a generic industry term for traditional HR software systems. ServiceNow deliberately avoids this name to distinguish its platform-based approach from legacy HRMS products."><span class="quiz-opt-letter">C</span><span>HRMS - HR Management System</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="3" data-exp="CORRECT: HRSD stands for HR Service Delivery. This is the official name of the ServiceNow HR application. The name reflects the module&#x27;s core purpose - delivering HR services to employees through a modern, digital experience built on the Now Platform."><span class="quiz-opt-letter">D</span><span>HRSD - HR Service Delivery</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="3" data-exp="INCORRECT: SNOW is a common informal abbreviation for ServiceNow used by practitioners, but it is not the name of the HR application. It refers to the entire ServiceNow platform, not a specific module."><span class="quiz-opt-letter">E</span><span>SNOW</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp3" style="display:none"></div>
-      <details class="quiz-overall" id="qexp3">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
+</details>
+</div>
+<div class="quiz-card" id="qcard3">
+<div class="quiz-q"><span class="quiz-q-num">4.</span>How is HR application called in ServiceNow currently?</div>
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="INCORRECT: HRDS (HR Deliver Service) is not a real ServiceNow product name. The correct abbreviation places the S before the D, reflecting 'Service Delivery' not 'Deliver Service.'" data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>HRDS - HR Deliver Service</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: HRSM (HR Service Management) is not the current name. While the naming follows a logical pattern similar to ITSM (IT Service Management), ServiceNow chose 'Service Delivery' to distinguish the HR module's focus on delivering services to employees." data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>HRSM - HR Service Management</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: HRMS (HR Management System) is a generic industry term for traditional HR software systems. ServiceNow deliberately avoids this name to distinguish its platform-based approach from legacy HRMS products." data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>HRMS - HR Management System</span></li>
+<li class="quiz-opt" data-exp="CORRECT: HRSD stands for HR Service Delivery. This is the official name of the ServiceNow HR application. The name reflects the module's core purpose - delivering HR services to employees through a modern, digital experience built on the Now Platform." data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>HRSD - HR Service Delivery</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: SNOW is a common informal abbreviation for ServiceNow used by practitioners, but it is not the name of the HR application. It refers to the entire ServiceNow platform, not a specific module." data-idx="4" data-q="3"><span class="quiz-opt-letter">E</span><span>SNOW</span></li>
+</ul>
+<div class="quiz-opt-explains" id="qoptexp3" style="display:none"></div>
+<details class="quiz-overall" id="qexp3">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
 <h5>Correct Answer</h5><p>D - HRSD - HR Service Delivery</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-hr-service-delivery/page/product/human-resources/concept/hr-landing-page.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>ServiceNow names its HR application "HR Service Delivery" (HRSD) to emphasize its purpose: delivering HR services to employees through a unified platform. HRSD includes case management, knowledge articles, lifecycle events, document management, and employee self-service capabilities. The "Service Delivery" terminology aligns with ServiceNow's broader vision of transforming how organizations deliver services across IT, HR, and other departments.</p><h5>Why the Others Are Wrong</h5><p>Option A reverses the word order to "Deliver Service" instead of "Service Delivery." Option B uses "Service Management" which is the naming convention for IT (ITSM), not HR. Option C uses the legacy term "Management System" which describes traditional HR software. Option E is a platform-level nickname, not an application name.</p><h5>Memory Tip</h5><p>HR-S-D: Human Resources - Service Delivery. Think of it as HR delivering services to employees, like a delivery truck bringing packages. The HR team delivers services - hence "Service Delivery."</p><h5>Real-World Example</h5><p>When pitching ServiceNow to an HR leadership team, you would say: "HRSD - HR Service Delivery - will transform how your HR department delivers services to employees. Instead of email chains and manual forms, employees get a self-service portal with automated workflows."</p>
 </div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard4">
-      <div class="quiz-q"><span class="quiz-q-num">5.</span>What determines the conditions a Case must meet before it can be assigned to an agent in the base instance ?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="4" data-exp="CORRECT: Matching Rules in HRSD determine the conditions an HR Case must meet before it can be assigned to an agent. These rules evaluate case attributes like HR Service, Category, Location, and Department to route cases to the appropriate assignment group or agent. They act as the gatekeepers that ensure cases land with the right team."><span class="quiz-opt-letter">A</span><span>Matching Rules</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="4" data-exp="INCORRECT: Client Rules run on the client side (browser) to control form behavior like field visibility and mandatory settings. They do not determine case assignment conditions."><span class="quiz-opt-letter">B</span><span>Client Rules</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="4" data-exp="INCORRECT: ACLs (Access Control Lists) control who can read, write, create, or delete records. While ACLs affect what agents can see, they do not determine the conditions for case assignment routing."><span class="quiz-opt-letter">C</span><span>ACLs</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="4" data-exp="INCORRECT: Escalation Rules define what happens when cases are not handled within expected timeframes - for example, reassigning overdue cases or sending notifications. They react to time-based conditions, not initial assignment criteria."><span class="quiz-opt-letter">D</span><span>Escalation Rules</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp4" style="display:none"></div>
-      <details class="quiz-overall" id="qexp4">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
+</details>
+</div>
+<div class="quiz-card" id="qcard4">
+<div class="quiz-q"><span class="quiz-q-num">5.</span>What determines the conditions a Case must meet before it can be assigned to an agent in the base instance ?</div>
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="CORRECT: Matching Rules in HRSD determine the conditions an HR Case must meet before it can be assigned to an agent. These rules evaluate case attributes like HR Service, Category, Location, and Department to route cases to the appropriate assignment group or agent. They act as the gatekeepers that ensure cases land with the right team." data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>Matching Rules</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Client Rules run on the client side (browser) to control form behavior like field visibility and mandatory settings. They do not determine case assignment conditions." data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>Client Rules</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: ACLs (Access Control Lists) control who can read, write, create, or delete records. While ACLs affect what agents can see, they do not determine the conditions for case assignment routing." data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>ACLs</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Escalation Rules define what happens when cases are not handled within expected timeframes - for example, reassigning overdue cases or sending notifications. They react to time-based conditions, not initial assignment criteria." data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>Escalation Rules</span></li>
+</ul>
+<div class="quiz-opt-explains" id="qoptexp4" style="display:none"></div>
+<details class="quiz-overall" id="qexp4">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
 <h5>Correct Answer</h5><p>A - Matching Rules</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-hr-service-delivery/page/product/human-resources/concept/matching-rules.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>Matching Rules in HRSD evaluate case attributes against predefined conditions to determine case assignment. When a case is created, the system checks the matching rules in order and assigns the case to the agent or group specified by the first matching rule. This automates the routing process and ensures cases reach the right HR specialist based on criteria like service type, location, or department.</p><h5>Why the Others Are Wrong</h5><p>Client Rules handle UI behavior on forms, not case routing. ACLs enforce data access security, not assignment logic. Escalation Rules handle time-based triggers for overdue cases, not initial assignment determination.</p><h5>Memory Tip</h5><p>Matching Rules "match" cases to agents - the name directly describes the function. When a case comes in, the system asks "which agent matches this case?" using Matching Rules.</p><h5>Real-World Example</h5><p>Your HR team has specialists for benefits, payroll, and employee relations across three office locations. You create Matching Rules that route benefits cases from the New York office to the NY Benefits team, payroll cases from London to the UK Payroll team, and so on. Each rule matches specific case attributes to the right assignment group.</p>
 </div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard5">
-      <div class="quiz-q"><span class="quiz-q-num">6.</span>What is the purpose of the &#x27;Assignable by&#x27; attribute in ServiceNow role management, and how does it affect the assignment of roles?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="5" data-exp="INCORRECT: The Assignable by attribute does not allow unrestricted role assignment. Its entire purpose is to limit who can assign a particular role, preventing unauthorized privilege escalation."><span class="quiz-opt-letter">A</span><span>The &#x27;Assignable by&#x27; attribute allows any user to add roles to other users indiscriminately.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="5" data-exp="INCORRECT: While this option is partially on track with the concept of restriction, it oversimplifies. The Assignable by attribute is not limited to HR roles - it specifies a particular role that must be held to assign the target role, and this mechanism works across the entire platform."><span class="quiz-opt-letter">B</span><span>It restricts role assignment such that only users with an HR role can assign roles to others within the HR application.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="5" data-exp="INCORRECT: Assignable by has nothing to do with automatic role assignment through group membership. Automatic role inheritance through groups is handled by the group&#x27;s role configuration, not the Assignable by attribute on individual roles."><span class="quiz-opt-letter">C</span><span>&#x27;Assignable by&#x27; is a feature that automatically assigns roles to users when they are added to a group, with no restrictions.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="5" data-exp="CORRECT: The Assignable by attribute on a role record specifies which role a user must hold in order to assign that role to others. In the HRSD context, this enforces HR privacy rules by ensuring that only authorized administrators (those holding a specific control role) can grant sensitive HR roles - preventing unauthorized users from assigning themselves or others access to confidential HR data."><span class="quiz-opt-letter">D</span><span>The &#x27;Assignable by&#x27; attribute ensures that only users with a specific role can assign that role to others, thereby enforcing HR privacy rules.</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp5" style="display:none"></div>
-      <details class="quiz-overall" id="qexp5">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>D - The Assignable by attribute ensures that only users with a specific role can assign that role to others, thereby enforcing HR privacy rules.</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-hr-service-delivery/page/product/human-resources/concept/hr-roles.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>The Assignable by attribute on a role record acts as a security gate for role assignment. If Role X has "Assignable by" set to Role Y, then only users who hold Role Y can grant Role X to other users. In HRSD, this is critical because HR roles provide access to sensitive employee data like salary, medical information, and disciplinary records. Without this control, any admin could grant HR data access to unauthorized users.</p><h5>Why the Others Are Wrong</h5><p>Option A describes unrestricted assignment, which is the opposite of what Assignable by does. Option B limits the concept to HR roles only, but the mechanism is platform-wide. Option C confuses Assignable by with group-based role inheritance, which is a completely different feature.</p><h5>Memory Tip</h5><p>Read it as a sentence: "This role is assignable by [specific role]." Only someone with that specific role can hand it out. It is like a VIP pass - only certain people can issue new VIP passes.</p><h5>Real-World Example</h5><p>The sn_hr_le.case_writer role grants access to Employee Relations cases containing sensitive disciplinary data. You set "Assignable by" to sn_hr_le.admin. Now only HR Lifecycle Events administrators can grant case_writer access - a regular system admin cannot accidentally give someone access to sensitive employee relations records.</p>
+</details>
 </div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard6">
-      <div class="quiz-q"><span class="quiz-q-num">7.</span>Imagine you have little coding experience and were tasked with adding new pages to the customer’s Employee Service Center.In that case which Service Portal Configuration option would be best to complete the task?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="6" data-exp="INCORRECT: The Page Editor allows you to modify existing pages by arranging widgets within containers and rows, but it requires understanding of the widget framework and is better suited for someone with at least basic technical knowledge. It is not the simplest tool for someone with little coding experience."><span class="quiz-opt-letter">A</span><span>Page Editor</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="6" data-exp="CORRECT: The Designer (Service Portal Designer) provides a visual, drag-and-drop interface for adding and arranging pages in the Employee Service Center. It is specifically built for users with little to no coding experience, allowing them to create new pages, add widgets, and configure layouts through an intuitive graphical interface without writing code."><span class="quiz-opt-letter">B</span><span>Designer</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="6" data-exp="INCORRECT: The Widget Editor is used to create and modify Service Portal widgets using HTML, CSS, client scripts, and server scripts. This requires significant coding knowledge and is the opposite of what someone with little coding experience should use."><span class="quiz-opt-letter">C</span><span>Widget Editor</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="6" data-exp="INCORRECT: The Branding Editor is used to customize the visual appearance of the portal - colors, logos, fonts, and CSS themes. It does not add new pages or manage page structure."><span class="quiz-opt-letter">D</span><span>Branding Editor</span></li>
+    <div class="preview-result" id="previewResult">
+      <div class="preview-result-kicker">Page 1 complete</div>
+      <h3 class="preview-result-head">Keep going or get the full course</h3>
+      <div class="preview-score-row">
+        <div class="preview-score-value" id="previewScoreValue">0/5</div>
+        <div class="preview-score-label" id="previewScoreLabel">Page 1 of 2</div>
+      </div>
+      <p class="preview-result-copy" id="previewResultCopy"></p>
+      <ul class="preview-offer-list">
+        <li><span class="preview-offer-bullet">1</span><span>Get all 220 exam-style questions on Udemy.</span></li>
+        <li><span class="preview-offer-bullet">2</span><span>Keep the same per-option reasoning and sourced Zurich explanations across the full bank.</span></li>
+        <li><span class="preview-offer-bullet">3</span><span>Lifetime access with free future updates.</span></li>
       </ul>
-      <div class="quiz-opt-explains" id="qoptexp6" style="display:none"></div>
-      <details class="quiz-overall" id="qexp6">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>B - Designer</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-hr-service-delivery/page/product/human-resources/concept/employee-service-center.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>The Service Portal Designer is the most user-friendly configuration tool in the Service Portal toolset. It provides a WYSIWYG (What You See Is What You Get) interface where users can visually create pages, drag widgets onto them, and configure layouts without touching code. This makes it the ideal choice for someone with little coding experience who needs to add new pages to the Employee Service Center.</p><h5>Why the Others Are Wrong</h5><p>Page Editor works on existing pages and requires more technical understanding of the widget framework. Widget Editor demands HTML, CSS, and JavaScript skills to build custom widgets from scratch. Branding Editor only handles look-and-feel customization like colors and logos - it cannot create new pages.</p><h5>Memory Tip</h5><p>Think of it like home design software: the Designer lets you lay out rooms (pages) and place furniture (widgets) visually. You do not need to be a carpenter (coder) to use a design tool.</p><h5>Real-World Example</h5><p>An HR business analyst needs to create a new "Benefits Resources" page in the Employee Service Center. Using the Designer, they open the portal in design mode, click "Add Page," drag a Knowledge Base widget and an HR Service Catalog widget onto the page, configure the titles, and publish - all without writing a single line of code.</p>
-</div>
-      </details>
-    </div>
-    <div class="quiz-card quiz-multi" id="qcard7">
-      <div class="quiz-q"><span class="quiz-q-num">8.</span>Which of the following methods can be used to create HR Profiles in ServiceNow? (Choose 4) <span class="quiz-choose">(choose 4)</span></div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="7" data-exp="CORRECT: Generate Individual HR Profile allows administrators to create a single HR Profile for a specific employee. This is useful when onboarding a single new hire or creating a profile for someone who was missed during bulk generation."><span class="quiz-opt-letter">A</span><span>Generate Individual HR Profile</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="7" data-exp="CORRECT: Generate Multiple HR Profiles enables bulk creation of HR Profiles for many employees at once. This is typically used during initial HRSD implementation or when a large group of employees needs profiles created simultaneously."><span class="quiz-opt-letter">B</span><span>Generate Multiple HR Profiles</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="7" data-exp="CORRECT: HR Profiles can be imported from a spreadsheet (CSV or Excel) using ServiceNow&#x27;s Import Set functionality. This is valuable when migrating employee data from external HR systems or when HR data exists in spreadsheet format."><span class="quiz-opt-letter">C</span><span>Import from a spreadsheet</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="7" data-exp="CORRECT: Third-party Integration allows HR Profiles to be created automatically through integrations with external HRIS systems (like Workday, SuccessFactors, or ADP) using APIs, IntegrationHub, or import sets configured for ongoing synchronization."><span class="quiz-opt-letter">D</span><span>Third-party Integration</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="7" data-exp="INCORRECT: Manual entry by each employee is not a supported method for creating HR Profiles. HR Profiles are administrative records managed by HR staff and system processes - employees do not create their own profiles. Employees interact with their profiles through the Employee Center but cannot generate them."><span class="quiz-opt-letter">E</span><span>Manual entry by each employee</span></li>
-      <li class="quiz-opt" data-idx="5" data-q="7" data-exp="INCORRECT: The System Policy module handles system-level policies like events and scheduled jobs. There is no specific automated script feature in System Policy designed to create HR Profiles. While scripts could theoretically create profiles, this is not a standard or recommended method recognized in the HRSD documentation."><span class="quiz-opt-letter">F</span><span>Automated script in the System Policy module</span></li>
-      </ul>
-      <button class="quiz-submit-btn" data-q="7" style="display:none">Submit Answer</button>
-      <div class="quiz-opt-explains" id="qoptexp7" style="display:none"></div>
-      <details class="quiz-overall" id="qexp7">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>A - Generate Individual HR Profile, B - Generate Multiple HR Profiles, C - Import from a spreadsheet, D - Third-party Integration</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-hr-service-delivery/page/product/human-resources/task/create-hr-profile.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>ServiceNow provides four documented methods for creating HR Profiles. Generate Individual and Generate Multiple handle single and bulk profile creation natively within the platform. Spreadsheet import leverages Import Sets for data migration scenarios. Third-party integration connects external HRIS systems to automatically create and synchronize HR Profile data. These four methods cover the full spectrum from manual single-record creation to automated enterprise integration.</p><h5>Why the Others Are Wrong</h5><p>Option E is wrong because employees do not self-create their HR Profiles - these are administrative records managed by HR teams and system processes. Option F is wrong because the System Policy module is not a recognized method for HR Profile creation in HRSD documentation.</p><h5>Memory Tip</h5><p>Remember "GIST" - Generate Individual, Generate Multiple (Start multiple), Import from Spreadsheet, Third-party integration. Four methods that cover one-at-a-time, bulk, file-based, and system-based creation.</p><h5>Real-World Example</h5><p>A company implementing HRSD starts by importing 5,000 existing employees from a spreadsheet exported from their legacy HRIS. They set up a Workday integration for ongoing synchronization. When a walk-in contractor needs immediate onboarding, an HR admin uses Generate Individual. When acquiring a small company of 50 employees, they use Generate Multiple.</p>
-</div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard8">
-      <div class="quiz-q"><span class="quiz-q-num">9.</span>Users with only which role, at minimum, can view the confidential data on the HR Profiles table?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="8" data-exp="INCORRECT: Profile Writer (sn_hr_core.profile_writer) grants the ability to edit HR Profile records, but the question asks about the minimum role to view confidential data. Writing implies a higher privilege than just reading."><span class="quiz-opt-letter">A</span><span>Profile Writer [sn_hr_core.profile_writer]</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="8" data-exp="CORRECT: Profile Reader (sn_hr_core.profile_reader) is the minimum role required to view confidential data on the HR Profiles table. This role grants read access to sensitive fields on HR Profile records that are otherwise hidden from users without this role. It provides view-only access without the ability to modify records."><span class="quiz-opt-letter">B</span><span>Profile Reader [sn_hr_core.profile_reader]</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="8" data-exp="INCORRECT: HR Case Writer (sn_hr_le.case_writer) is a role for the HR Lifecycle Events application and deals with HR Cases, not HR Profiles. It does not grant access to confidential data on the HR Profiles table."><span class="quiz-opt-letter">C</span><span>HR Case Writer [sn_hr_le.case_writer]</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="8" data-exp="INCORRECT: HR Case Reader (sn_hr_le.case_reader) provides read access to HR Cases, not HR Profiles. The HR Profiles table has its own set of roles (profile_reader, profile_writer) separate from case-related roles."><span class="quiz-opt-letter">D</span><span>HR Case Reader [sn_hr_le.case_reader]</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp8" style="display:none"></div>
-      <details class="quiz-overall" id="qexp8">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>B - Profile Reader [sn_hr_core.profile_reader]</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-hr-service-delivery/page/product/human-resources/reference/hr-roles.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>The sn_hr_core.profile_reader role is the minimum role needed to view confidential data on HR Profiles. ServiceNow separates HR Profile access into reader and writer roles following the principle of least privilege. The profile_reader role allows viewing sensitive fields like personal identification numbers, salary data, and other confidential information stored on the HR Profile without granting edit permissions.</p><h5>Why the Others Are Wrong</h5><p>Profile Writer is a higher-privilege role that includes read access but the question asks for the minimum. HR Case Writer and HR Case Reader belong to the Lifecycle Events scope and control access to HR Cases, not the HR Profiles table - these are completely different data domains.</p><h5>Memory Tip</h5><p>The question says "view" - that maps directly to "Reader." Profile Reader reads profiles. The role name matches the action. Minimum access to view = Reader, not Writer.</p><h5>Real-World Example</h5><p>An HR manager needs to look up an employee's emergency contact information stored on their HR Profile but should not change any records. You assign them sn_hr_core.profile_reader - they can view all confidential profile fields but cannot modify anything. A data entry specialist who needs to update profiles would need the profile_writer role instead.</p>
-</div>
-      </details>
-    </div>
-    <div class="quiz-card quiz-multi" id="qcard9">
-      <div class="quiz-q"><span class="quiz-q-num">10.</span>Choose banefits of HR application being scoped. (Choose 3) <span class="quiz-choose">(choose 3)</span></div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="9" data-exp="CORRECT: Being scoped provides an additional layer of control over HR data by isolating it from other applications on the platform. Scoped applications have their own namespace, preventing other applications from accidentally reading or modifying HR data through scripts or integrations without explicit cross-scope access grants."><span class="quiz-opt-letter">A</span><span>Provides an additional layer of control over HR data.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="9" data-exp="CORRECT: A scoped HR application allows HR Admins to configure the application independently. HR Admins can modify business rules, UI policies, and other configurations within the HR scope without needing System Administrator involvement for every change."><span class="quiz-opt-letter">B</span><span>Allows HR Admins to configure the HR application.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="9" data-exp="CORRECT: The HR department gains more autonomy to manage all aspects of HRSD when it is scoped. This means HR teams can control their application lifecycle - from configuration to testing to deployment - without depending on central IT for routine changes."><span class="quiz-opt-letter">C</span><span>HR department has more autonomy to manage all aspects of HRSD.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="9" data-exp="INCORRECT: Scoped applications actually limit the System Administrator&#x27;s direct control over the HR application. The whole point of scoping is to give the HR department autonomy and prevent system-level administrators from having unrestricted access to sensitive HR configurations and data."><span class="quiz-opt-letter">D</span><span>Allows the System Administrator complete control.</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="9" data-exp="INCORRECT: A scoped application is the opposite of having full control of the global application. Scoping creates a boundary that separates the HR application from the global scope. The HR department controls its own scope but does not control the global application."><span class="quiz-opt-letter">E</span><span>HR department has full control of the global application.</span></li>
-      </ul>
-      <button class="quiz-submit-btn" data-q="9" style="display:none">Submit Answer</button>
-      <div class="quiz-opt-explains" id="qoptexp9" style="display:none"></div>
-      <details class="quiz-overall" id="qexp9">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>A - Provides an additional layer of control over HR data, B - Allows HR Admins to configure the HR application, C - HR department has more autonomy to manage all aspects of HRSD.</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-hr-service-delivery/page/product/human-resources/concept/hr-scoped-app.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>ServiceNow HRSD is built as a scoped application, which means it runs in its own application scope rather than the global scope. This architectural decision provides three key benefits: data isolation protects sensitive HR information, HR admins can configure the application without system admin dependency, and the HR department gains operational autonomy over their service delivery platform.</p><h5>Why the Others Are Wrong</h5><p>Option D contradicts the purpose of scoping - the goal is to reduce (not increase) system admin control over HR data and configuration. Option E confuses scoped and global - scoping deliberately separates HR from the global scope rather than giving HR control over global resources.</p><h5>Memory Tip</h5><p>Think of a scoped app as HR having their own office with their own keys. They control their space (autonomy), manage their own files (configuration), and lock their door (data protection). The building manager (System Admin) cannot just walk in.</p><h5>Real-World Example</h5><p>A large enterprise runs ServiceNow for both IT and HR. By keeping HRSD scoped, the IT admin team managing ITSM cannot accidentally modify HR business rules during a platform upgrade. The HR admin team can independently update their case routing rules, modify HR service catalog items, and adjust lifecycle event configurations without filing tickets with IT.</p>
-</div>
-      </details>
-    </div>
-    <div class="quiz-card quiz-multi" id="qcard10">
-      <div class="quiz-q"><span class="quiz-q-num">11.</span>Which of the following describes ServiceNow’s Encryption process when data is in transit? (Choose 3) <span class="quiz-choose">(choose 3)</span></div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="10" data-exp="CORRECT: Encryption scrambles information so that intercepted data cannot be decoded or used by unauthorized parties. When data is in transit (moving between the user&#x27;s browser and ServiceNow servers), encryption transforms readable text into an unreadable format that requires the proper decryption key to restore."><span class="quiz-opt-letter">A</span><span>Scrambles information to prevent its decoding or use</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="10" data-exp="CORRECT: ServiceNow&#x27;s encryption framework requires an administrator to grant an encryption context to a role. Encryption contexts define which encryption keys are used and which roles have permission to encrypt or decrypt specific data. This role-based approach ensures only authorized personnel can access encrypted information."><span class="quiz-opt-letter">B</span><span>Requires an administrator to grant an encryption context to a role</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="10" data-exp="INCORRECT: Excluding HR tables from system cloning is a data protection feature related to instance cloning operations, not encryption of data in transit. Clone exclusion prevents HR data from being copied to sub-production instances but has nothing to do with transit encryption."><span class="quiz-opt-letter">C</span><span>Excludes HR tables from system cloning</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="10" data-exp="INCORRECT: Preventing access to specific tables is handled by Access Control Lists (ACLs), not encryption. ACLs control who can read, write, create, or delete records on specific tables. Encryption protects data content, not table access."><span class="quiz-opt-letter">D</span><span>Prevents access to specific tables</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="10" data-exp="CORRECT: Encryption prevents text fields and attachments from being indexed by the search engine. When fields are encrypted, their content is stored as ciphertext, which means the platform&#x27;s text indexing and search functionality cannot read or index the encrypted values. This is an inherent side effect of encryption that protects sensitive data from appearing in search results."><span class="quiz-opt-letter">E</span><span>Prevents text fields and attachments from being indexed</span></li>
-      <li class="quiz-opt" data-idx="5" data-q="10" data-exp="INCORRECT: Preventing users from entering personal information in HR cases is a process or policy control, not an encryption function. Encryption protects data that has already been entered - it does not restrict what data users can input."><span class="quiz-opt-letter">F</span><span>Prevents users from entering personal information in an HR case</span></li>
-      </ul>
-      <button class="quiz-submit-btn" data-q="10" style="display:none">Submit Answer</button>
-      <div class="quiz-opt-explains" id="qoptexp10" style="display:none"></div>
-      <details class="quiz-overall" id="qexp10">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>A - Scrambles information to prevent its decoding or use, B - Requires an administrator to grant an encryption context to a role, E - Prevents text fields and attachments from being indexed</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-hr-service-delivery/page/product/human-resources/concept/hr-data-privacy.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>ServiceNow encryption for data in transit involves three key characteristics. First, it scrambles data so intercepted transmissions are unreadable. Second, it uses encryption contexts tied to roles, requiring admin configuration to determine who can encrypt and decrypt data. Third, encrypted fields and attachments cannot be indexed by the search engine because the content is stored as ciphertext rather than plain text.</p><h5>Why the Others Are Wrong</h5><p>Option C deals with clone exclusion, a separate data protection mechanism for instance management. Option D describes ACL-based table access control, which is authorization - not encryption. Option F describes a user input restriction, which is a process control unrelated to cryptographic encryption.</p><h5>Memory Tip</h5><p>Remember "SRI" - Scramble, Role-based context, Index prevention. These three effects are the hallmarks of ServiceNow encryption for data in transit.</p><h5>Real-World Example</h5><p>An HR team stores Social Security numbers in an encrypted field on HR Profiles. The data is scrambled during transmission (users see asterisks unless they hold the right role). An admin grants the encryption context to the sn_hr_core.profile_reader role. As a side effect, SSN values do not appear in global search results because encrypted fields cannot be indexed.</p>
-</div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard11">
-      <div class="quiz-q"><span class="quiz-q-num">12.</span>What must first be done if you have both Admin and HR Admin roles and you wanted to configure an Access Control for the Employee Relations Cases table ?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="11" data-exp="INCORRECT: The Delegated Developer role allows users to develop in scoped applications, but it does not grant the ability to create or modify Access Control Lists. ACL management requires the security_admin role specifically."><span class="quiz-opt-letter">A</span><span>Add the Delegated Developer role to your User record</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="11" data-exp="CORRECT: To configure Access Controls (ACLs) in ServiceNow, you must elevate your role to security_admin using the User dropdown menu in the banner frame. This is a temporary elevation that activates the security_admin role for your current session. Even if you already have admin and HR admin roles, ACL configuration specifically requires this elevated privilege."><span class="quiz-opt-letter">B</span><span>From the User dropdown in the banner, elevate your role to security_admin</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="11" data-exp="INCORRECT: Manually adding security_admin to your user record is not the correct approach. The security_admin role is designed to be elevated (temporarily activated) through the banner menu, not permanently assigned. This temporary elevation model is a security best practice that ensures ACL modifications are intentional."><span class="quiz-opt-letter">C</span><span>Manually add the security_admin role to your User record</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="11" data-exp="INCORRECT: Having admin and HR admin roles is not sufficient for ACL configuration. ServiceNow deliberately separates security administration from general administration. The security_admin role must be explicitly elevated regardless of what other admin roles you hold."><span class="quiz-opt-letter">D</span><span>Nothing would need to be done</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp11" style="display:none"></div>
-      <details class="quiz-overall" id="qexp11">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>B - From the User dropdown in the banner, elevate your role to security_admin</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-hr-service-delivery/page/product/human-resources/concept/hr-access-controls.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>ServiceNow uses a role elevation model for security-sensitive operations. The security_admin role controls ACL management and must be temporarily elevated through the user menu in the banner frame. This elevation model prevents accidental ACL changes and creates an audit trail. The Employee Relations Cases table (sn_hr_er_case) is a scoped table requiring proper security admin privileges to modify its access controls.</p><h5>Why the Others Are Wrong</h5><p>Delegated Developer grants scoped app development access, not security administration. Manually adding security_admin bypasses the intentional elevation model and is not the recommended practice. Doing nothing would fail because admin and HR admin roles alone cannot create or modify ACLs.</p><h5>Memory Tip</h5><p>Think of security_admin elevation like putting on a hard hat before entering a construction zone. You already work at the company (admin role), but you need to explicitly gear up (elevate) before doing dangerous work (modifying ACLs). You use the banner dropdown to "put on the hard hat."</p><h5>Real-World Example</h5><p>You need to restrict access to Employee Relations cases so only the ER team can view them. You click your name in the top-right banner, select "Elevate role," check "security_admin," and confirm. Now you can navigate to System Security and create an ACL on the sn_hr_er_case table that grants read access only to users with the sn_hr_er.case_reader role.</p>
-</div>
-      </details>
-    </div>
-    <div class="quiz-card quiz-multi" id="qcard12">
-      <div class="quiz-q"><span class="quiz-q-num">13.</span>How should roles be managed for scoped HR applications in ServiceNow? (Choose 2) <span class="quiz-choose">(choose 2)</span></div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="12" data-exp="CORRECT: Each scoped HR application (like HR Core, Lifecycle Events, Employee Relations) has its own set of roles unique to that scope. These roles are prefixed with the application&#x27;s scope namespace (e.g., sn_hr_core, sn_hr_le, sn_hr_er). Roles should not be shared across scoped applications to maintain proper security boundaries."><span class="quiz-opt-letter">A</span><span>Each scoped HR application should have unique roles that are not shared with other applications.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="12" data-exp="CORRECT: The HR Basic role (sn_hr_core.basic) should be inherited by all HR professionals. It provides foundational access to HR applications and serves as the base role that grants access to common HR platform features. Other scoped HR roles build on top of this baseline access."><span class="quiz-opt-letter">B</span><span>The HR Basic role should be inherited by all HR professionals to access HR applications.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="12" data-exp="INCORRECT: System Administrators do need specific roles to configure scoped HR applications. Because HRSD is scoped, a System Administrator cannot automatically access or configure HR application settings without being granted the appropriate HR admin roles for each scope."><span class="quiz-opt-letter">C</span><span>System Administrators do not require any additional roles to configure HR applications.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="12" data-exp="INCORRECT: The relationship is inverted. HR scoped groups should be child groups of the main HR group, not parent groups. The HR group serves as the top-level group, and scoped application groups (like Employee Relations group) inherit from it - not the other way around."><span class="quiz-opt-letter">D</span><span>Scoped groups should be parent groups of the HR group to ensure proper role inheritance.</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="12" data-exp="INCORRECT: The Employee Center Pro Admin role requires more than just sn_hr_sp_admin. Proper configuration of Employee Center Pro typically requires combining this role with other roles depending on the features being administered."><span class="quiz-opt-letter">E</span><span>The Employee Center Pro Admin requires only the sn_hr_sp_admin role for proper access.</span></li>
-      </ul>
-      <button class="quiz-submit-btn" data-q="12" style="display:none">Submit Answer</button>
-      <div class="quiz-opt-explains" id="qoptexp12" style="display:none"></div>
-      <details class="quiz-overall" id="qexp12">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>A - Each scoped HR application should have unique roles that are not shared with other applications, B - The HR Basic role should be inherited by all HR professionals to access HR applications.</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-hr-service-delivery/page/product/human-resources/reference/hr-roles.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>HRSD role management follows two core principles. First, each scoped application maintains its own unique roles with scope-specific prefixes, preventing role conflicts and maintaining security isolation between HR modules. Second, the HR Basic role acts as the common foundation - every HR professional inherits it to gain baseline access to the HR platform. Scoped roles then layer on top for module-specific access.</p><h5>Why the Others Are Wrong</h5><p>Option C is wrong because scoping specifically means System Admins need HR-specific roles to manage HR apps. Option D reverses the group hierarchy - scoped groups should be children of the HR group, not parents. Option E oversimplifies Employee Center Pro admin requirements.</p><h5>Memory Tip</h5><p>Think of it as a building with floors: HR Basic is the ground floor that everyone enters through, and each scoped application is a separate floor with its own unique key card (unique roles). You need the ground floor pass (HR Basic) plus the specific floor key (scoped role).</p><h5>Real-World Example</h5><p>You are setting up roles for a new HR analyst who handles both benefits cases and employee relations investigations. You assign them sn_hr_core.basic (ground floor access), sn_hr_le.case_writer (lifecycle events scope access), and sn_hr_er.case_reader (employee relations scope access). Each role comes from its own scope and grants access only within that boundary.</p>
-</div>
-      </details>
-    </div>
-    <div class="quiz-card quiz-multi" id="qcard13">
-      <div class="quiz-q"><span class="quiz-q-num">14.</span>What purpose do Campaigns serve in ServiceNow&#x27;s Employee Center Pro, and how is the audience for campaigns determined? (Choose 2) <span class="quiz-choose">(choose 2)</span></div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="13" data-exp="INCORRECT: Campaigns are specifically designed for targeted content delivery, not company-wide blanket announcements. The whole value of campaigns is their ability to reach specific employee segments rather than broadcasting to everyone."><span class="quiz-opt-letter">A</span><span>Campaigns are designed to distribute company-wide announcements without targeting specific employees.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="13" data-exp="CORRECT: Campaigns in Employee Center Pro publish targeted content to selected employees. The audience targeting uses criteria including User Profile attributes and HR Criteria records. This lets HR teams send relevant content to specific groups - like sending open enrollment information only to benefits-eligible employees."><span class="quiz-opt-letter">B</span><span>Campaigns in Service Center Pro are used to publish targeted content to selected employees using criteria such as User Profile or HR Criteria.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="13" data-exp="INCORRECT: Audience targeting is deliberate and criteria-based, never random. HR teams carefully define audience segments using specific attributes to ensure the right employees see the right content at the right time."><span class="quiz-opt-letter">C</span><span>Audience targeting for campaigns is randomly selected to ensure unbiased content delivery.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="13" data-exp="INCORRECT: Campaigns are not limited to IT content. They are a core feature of Employee Center Pro designed primarily for HR use cases like open enrollment, policy updates, wellness programs, and organizational announcements."><span class="quiz-opt-letter">D</span><span>Campaigns are exclusive for IT-related content and cannot be used for HR purposes like open enrollment.</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="13" data-exp="INCORRECT: Position level is just one of many possible targeting criteria. Campaigns support multi-dimensional audience targeting using various attributes from the User table, HR Profile, User Criteria, and other data sources."><span class="quiz-opt-letter">E</span><span>The audience for campaigns is determined by position level only and not by other criteria.</span></li>
-      <li class="quiz-opt" data-idx="5" data-q="13" data-exp="CORRECT: Campaign content publishing supports multiple media formats including emails, videos, and banners. Audience targeting can be configured through several methods: User table attributes, User Criteria records, HR Profile fields, or direct file upload of employee lists. This flexibility allows HR teams to reach employees through the channels and criteria that work best for each campaign."><span class="quiz-opt-letter">F</span><span>Content publishing for campaigns can include various media such as emails, videos, and banners, with audience targeting based on User table, User Criteria, HR Profile, or file upload.</span></li>
-      </ul>
-      <button class="quiz-submit-btn" data-q="13" style="display:none">Submit Answer</button>
-      <div class="quiz-opt-explains" id="qoptexp13" style="display:none"></div>
-      <details class="quiz-overall" id="qexp13">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>B - Campaigns publish targeted content to selected employees using criteria such as User Profile or HR Criteria, F - Content publishing can include various media with audience targeting based on User table, User Criteria, HR Profile, or file upload.</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-hr-service-delivery/page/product/human-resources/concept/employee-center-campaigns.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>Campaigns in Employee Center Pro are a targeted content delivery system. They combine two capabilities: flexible audience targeting (using User Criteria, HR Profile attributes, User table fields, or uploaded employee lists) and multi-format content delivery (emails, banner cards, videos, and embedded content). This makes campaigns a powerful tool for HR communication strategies that need to reach specific employee populations with relevant, timely information.</p><h5>Why the Others Are Wrong</h5><p>Option A describes untargeted broadcasting, which defeats the purpose of campaigns. Option C suggests random targeting, which would be useless for HR communications. Option D wrongly limits campaigns to IT content. Option E restricts targeting to position level only, ignoring the rich multi-criteria targeting capabilities.</p><h5>Memory Tip</h5><p>Think of campaigns like a marketing email platform (Mailchimp) built into ServiceNow. You pick your audience (targeting criteria), create your content (emails, banners, videos), and deliver it to exactly the right people. Targeted, multi-channel, criteria-driven.</p><h5>Real-World Example</h5><p>It is open enrollment season. HR creates a campaign targeting all US-based, benefits-eligible employees (using HR Criteria). The campaign includes a banner on the Employee Center homepage, an email with enrollment deadlines, and a video walkthrough of the new benefits portal. Contractors and international employees never see this content because they do not match the targeting criteria.</p>
-</div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard14">
-      <div class="quiz-q"><span class="quiz-q-num">15.</span>Incidents can be created and managed in the workspace, using UI layouts that are tailored to different personas, processes, and interfaces. Some of examples include:• Major incidents• Self Service• Default• MobileWhat are these UI layouts called in the Now Platform ?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="14" data-exp="INCORRECT: Form Layouts refer to the arrangement of fields and sections on a form - which fields appear and in what order. They do not represent different UI layouts tailored for different personas or use cases like Major Incident vs. Self Service."><span class="quiz-opt-letter">A</span><span>Form Layouts</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="14" data-exp="INCORRECT: Workspaces are the configurable agent environments (like Agent Workspace or HR Workspace) that provide the overall interface for working with records. A workspace contains multiple views but is not the term for the individual UI layouts themselves."><span class="quiz-opt-letter">B</span><span>Workspaces</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="14" data-exp="INCORRECT: Forms are the general records displayed in the platform, but &#x27;Forms&#x27; alone does not describe the concept of persona-specific or process-specific UI layouts. A form is a single interface for a record type, not a named layout variant."><span class="quiz-opt-letter">C</span><span>Forms</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="14" data-exp="INCORRECT: Form Designs is not a standard ServiceNow term. While UI Builder uses design elements, &#x27;Form Designs&#x27; is not the platform terminology for persona-specific or interface-specific UI layouts."><span class="quiz-opt-letter">D</span><span>Form Designs</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="14" data-exp="CORRECT: Views in ServiceNow are named UI layouts that tailor how a form appears for different personas, processes, and interfaces. Examples include Major Incident view, Self Service view, Default view, and Mobile view. Each view can show different fields, field arrangements, and related lists depending on the context in which the record is accessed."><span class="quiz-opt-letter">E</span><span>Views</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp14" style="display:none"></div>
-      <details class="quiz-overall" id="qexp14">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>E - Views</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-hr-service-delivery/page/product/human-resources/concept/hr-workspace-overview.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>Views are a fundamental Now Platform concept that allows the same record type to be displayed differently depending on context. Each view defines which fields appear, their arrangement, and which related lists are shown. ServiceNow comes with several built-in views (Default, Self Service, Mobile, Major Incident) and administrators can create custom views. When a record opens in a workspace, portal, or mobile app, the platform selects the appropriate view automatically.</p><h5>Why the Others Are Wrong</h5><p>Form Layouts control field placement within a single view, not the concept of persona-specific layouts. Workspaces are the container applications, not the individual layouts. Forms are the records themselves. Form Designs is not a recognized ServiceNow term for this concept.</p><h5>Memory Tip</h5><p>Think of "views" like looking at the same house from different angles. The front view (Self Service) shows the welcome entrance. The blueprint view (Default) shows all technical details. The aerial view (Mobile) shows a simplified layout. Same house, different views for different needs.</p><h5>Real-World Example</h5><p>An Incident record has multiple views. When an end user opens their incident through the Service Portal, they see the Self Service view with simple fields like Description and Status. When a major incident manager opens the same record, they see the Major Incident view with priority override, communication plan, and bridge call fields. On mobile, agents see a streamlined Mobile view with only essential fields. All views show the same underlying record with different field arrangements.</p>
-</div>
-      </details>
-    </div>
-    <div class="quiz-score" id="quizScore">
-      <div class="quiz-score-num" id="quizScoreNum">0/15</div>
-      <div class="quiz-score-label">Sample Quiz Score</div>
-      <div class="quiz-score-msg" id="quizScoreMsg"></div>
-      <a href="https://www.udemy.com/course/pass-your-servicenow-cis-hrsd-exam/?referralCode=AE0D8C9891F0CAAD71D1" target="_blank" rel="noopener" class="cp-cta">
-        Get all 220 questions
-        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+      <div class="preview-actions">
+        <a href="https://www.udemy.com/course/pass-your-servicenow-cis-hrsd-exam/?referralCode=AE0D8C9891F0CAAD71D1" target="_blank" rel="noopener" class="cp-cta">Get all 220 questions
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      <button type="button" class="preview-secondary-btn" id="previewContinueBtn">Continue to questions 6-10</button>
+      </div>
+      <p class="preview-helper" id="previewHelper"></p>
+
+      <button type="button" class="preview-text-link" id="previewRetakeBtn">Retake free preview</button>
     </div>
   </section>
 
@@ -787,156 +593,52 @@ details.quiz-overall[open] .quiz-overall-toggle::before { transform: rotate(90de
   <p>&copy; 2026 Lucky X &middot; <a href="/">luckyx.dev</a></p>
 </footer>
 
+
+<!-- Preview Exit Popup -->
+<div class="preview-exit" id="exitPopup" aria-hidden="true">
+  <div class="preview-exit-card" role="dialog" aria-modal="true" aria-labelledby="exitPopupTitle">
+    <button type="button" class="preview-exit-close" id="exitPopupClose" aria-label="Close popup">&times;</button>
+    <div class="preview-exit-kicker">Before you go</div>
+    <h3 class="preview-exit-title" id="exitPopupTitle">Get CIS HR Service Delivery — ServiceNow Practice Test 2026 updates and new question drops</h3>
+    <p class="preview-exit-copy">I will send blueprint changes, new sample questions, and exam roadmap tips for this cert. Or skip the inbox and get the full 220-question course now.</p>
+    <form class="preview-lead-form" id="exitLeadForm" data-source="exit">
+      <input type="email" name="email" placeholder="you@email.com" autocomplete="email" required>
+      <button type="submit" data-default-text="Send me updates">Send me updates</button>
+    </form>
+    <p class="preview-lead-note">No spam. Unsubscribe anytime.</p>
+    <a href="https://www.udemy.com/course/pass-your-servicenow-cis-hrsd-exam/?referralCode=AE0D8C9891F0CAAD71D1" target="_blank" rel="noopener" class="preview-exit-link">Go straight to the full course on Udemy</a>
+  </div>
+</div>
+<!-- /Preview Exit Popup -->
 <script>
-  const themeToggle = document.getElementById('themeToggle');
-  themeToggle.addEventListener('click', () => {
-    const current = document.documentElement.getAttribute('data-theme');
-    const next = current === 'light' ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('luckyx-theme', next);
-  });
+const PREVIEW={"slug": "cis-hrsd", "courseTitle": "CIS HR Service Delivery \u2014 ServiceNow Practice Test 2026", "step": 1, "questionCount": 5, "questionStart": 1, "questionEnd": 5, "page1Url": "/courses/cis-hrsd.html", "page2Url": "/courses/cis-hrsd-preview-2.html", "totalPreviewQuestions": 10, "totalQuestionCount": 220, "convertKitFormId": "9183962"};
+const answers=[3, 1, 2, 3, 0];
+const STATE='luckyx-preview:'+PREVIEW.slug,EXIT='luckyx-exit-shown:'+PREVIEW.slug,themeToggle=document.getElementById('themeToggle'),sel={},done=new Set();let answered=0,score=0,exitReady=false,emailCaptured=false,completeSent=false;
+themeToggle.addEventListener('click',()=>{const c=document.documentElement.getAttribute('data-theme'),n=c==='light'?'dark':'light';document.documentElement.setAttribute('data-theme',n);localStorage.setItem('luckyx-theme',n)});
+function evt(name,extra){if(typeof gtag!=='function')return;gtag('event',name,Object.assign({course_slug:PREVIEW.slug,preview_step:PREVIEW.step},extra||{}))}
+function readState(){try{const raw=sessionStorage.getItem(STATE);return raw?JSON.parse(raw):null}catch(err){return null}}
+function saveState(payload){sessionStorage.setItem(STATE,JSON.stringify(payload))}
+function clearState(){sessionStorage.removeItem(STATE);sessionStorage.removeItem(EXIT)}
+function markExitReady(){exitReady=true}
+const quizSection=document.getElementById('free-quiz');if('IntersectionObserver'in window&&quizSection){const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){markExitReady();obs.disconnect()}})},{threshold:.25});obs.observe(quizSection)}evt('preview_page_view');
+document.querySelectorAll('a.cp-cta[href*="udemy.com"],a.preview-exit-link[href*="udemy.com"]').forEach(link=>link.addEventListener('click',()=>{let source='hero';if(link.closest('.preview-result'))source=PREVIEW.step===1?'step_one_result':'final_result';else if(link.closest('.preview-exit-card'))source='exit_popup';evt('preview_buy_click',{cta_source:source})}));
+document.querySelectorAll('.quiz-card').forEach(card=>{if(!card.querySelector('.quiz-submit-btn')){const qi=parseInt(card.id.replace('qcard',''),10),btn=document.createElement('button');btn.className='quiz-submit-btn';btn.dataset.q=qi;btn.textContent='Submit Answer';const opts=card.querySelector('.quiz-opts');opts.parentNode.insertBefore(btn,opts.nextSibling)}});
+function processSections(container){if(container.dataset.processed)return;container.dataset.processed='1';const h5s=Array.from(container.querySelectorAll('h5'));if(!h5s.length)return;const secs=[];h5s.forEach(h5=>{const t=h5.textContent.toLowerCase();let cls='exp-section';if(t.includes('correct answer'))cls+=' exp-correct-answer';else if(t.includes('source'))cls+=' exp-source';else if(t.includes('expert'))cls+=' exp-expert';else if(t.includes('why')||t.includes('wrong'))cls+=' exp-wrong';else if(t.includes('memory'))cls+=' exp-memory';else if(t.includes('real-world')||t.includes('example'))cls+=' exp-realworld';secs.push({cls,h5})});for(let i=0;i<secs.length;i++){const sec=secs[i],div=document.createElement('div'),next=i<secs.length-1?secs[i+1].h5:null;div.className=sec.cls;sec.h5.parentNode.insertBefore(div,sec.h5);div.appendChild(sec.h5);while(div.nextSibling&&div.nextSibling!==next)div.appendChild(div.nextSibling)}}
+function updateSlots(){const prior=readState();document.querySelectorAll('.preview-slot').forEach(slot=>{const gi=parseInt(slot.dataset.slot,10);slot.classList.remove('is-done','is-active','is-prior');if(PREVIEW.step===2&&gi<=PREVIEW.questionCount){slot.classList.add(prior&&prior.page1Answered===PREVIEW.questionCount?'is-done':'is-prior');return}if(gi>=PREVIEW.questionStart&&gi<=PREVIEW.questionEnd){const local=gi-PREVIEW.questionStart;if(done.has(local))slot.classList.add('is-done');else slot.classList.add('is-active')}})}
+function showExplanations(qi){const card=document.getElementById('qcard'+qi),opts=card.querySelectorAll('.quiz-opt'),correct=Array.isArray(answers[qi])?answers[qi]:[answers[qi]];opts.forEach((opt,j)=>{const per=opt.getAttribute('data-exp');if(!per||opt.querySelector('.quiz-opt-exp-inline'))return;const ok=correct.indexOf(j)!==-1,txt=per.replace(/^(CORRECT|INCORRECT):\s*/i,''),div=document.createElement('div'),icon=ok?'\u2713':'\u2717';div.className='quiz-opt-exp-inline '+(ok?'qoe-is-correct':'qoe-is-wrong');div.innerHTML='<div class="qoe-header">'+(ok?'<span class="qoe-correct">'+icon+' Correct</span>':'<span class="qoe-wrong">'+icon+' Incorrect</span>')+' <span class="qoe-letter">Option '+'ABCDEFG'[j]+'</span></div><div class="qoe-text">'+txt+'</div>';opt.appendChild(div)});const overall=document.getElementById('qexp'+qi);if(overall){const content=overall.querySelector('.quiz-overall-content');if(content&&content.innerHTML.trim()){processSections(content);overall.style.display='block'}}}
+document.querySelectorAll('.quiz-opt').forEach(opt=>opt.addEventListener('click',function(){markExitReady();const qi=parseInt(this.dataset.q,10),card=document.getElementById('qcard'+qi);if(card.dataset.state)return;const idx=parseInt(this.dataset.idx,10),multi=Array.isArray(answers[qi]);if(!sel[qi])sel[qi]=new Set();if(multi){if(sel[qi].has(idx)){sel[qi].delete(idx);this.classList.remove('selected')}else{sel[qi].add(idx);this.classList.add('selected')}}else{card.querySelectorAll('.quiz-opt').forEach(o=>o.classList.remove('selected'));sel[qi]=new Set([idx]);this.classList.add('selected')}const btn=card.querySelector('.quiz-submit-btn');if(btn)btn.style.display=sel[qi].size>0?'block':'none'}));
+function pageOneCopy(s){if(s===PREVIEW.questionCount)return'Perfect page 1. Continue to questions 6-10, then decide if you want the full '+PREVIEW.totalQuestionCount+'-question bank.';if(s>=3)return'Solid start. Finish questions 6-10 to see a fuller slice of the exam before you buy.';return'This is exactly where the full course helps: more reps, more sourced explanations, and less guessing under pressure.'}
+function finalCopy(s){if(s===PREVIEW.totalPreviewQuestions)return'Perfect free preview. The full course is still the fastest way to stress-test the rest of the blueprint before exam day.';if(s>=7)return'Strong free preview. The full course helps close the last gaps before you sit the exam.';return'The free preview exposed real gaps. The full course is built to fix them with more exam-style repetition and richer explanations.'}
+function showResult(){const box=document.getElementById('previewResult'),scoreValue=document.getElementById('previewScoreValue'),scoreLabel=document.getElementById('previewScoreLabel'),copyEl=document.getElementById('previewResultCopy'),helper=document.getElementById('previewHelper'),emailWrap=document.getElementById('previewEmailWrap'),continueBtn=document.getElementById('previewContinueBtn'),backLink=document.getElementById('previewBackLink');box.classList.add('show');box.scrollIntoView({behavior:'smooth',block:'start'});if(PREVIEW.step===1){saveState({page1Answered:answered,page1Score:score,savedAt:Date.now()});scoreValue.textContent=score+'/'+PREVIEW.questionCount;scoreLabel.textContent='Page 1 of 2 complete';copyEl.textContent=pageOneCopy(score);helper.textContent='You have finished questions 1-5. Questions 6-10 are next.';if(continueBtn)continueBtn.hidden=false;if(emailWrap)emailWrap.classList.remove('show');if(backLink)backLink.hidden=true;return}const prior=readState();if(prior&&prior.page1Answered===PREVIEW.questionCount){const total=prior.page1Score+score;scoreValue.textContent=total+'/'+PREVIEW.totalPreviewQuestions;scoreLabel.textContent='10-question free preview complete';copyEl.textContent=finalCopy(total);helper.textContent='You have now seen 10 free questions. The full course keeps the same answer breakdown style across the rest of the bank.'}else{scoreValue.textContent=score+'/'+PREVIEW.questionCount;scoreLabel.textContent='Page 2 complete';copyEl.textContent='You completed questions 6-10 only. Start from page 1 if you want the full 10-question preview before deciding.';helper.textContent='Page 1 contains questions 1-5 and sets up the full 10-question score.';if(backLink)backLink.hidden=false}if(emailWrap)emailWrap.classList.add('show');if(!completeSent){completeSent=true;evt('preview_complete',{page_score:score,combined_score:prior&&prior.page1Answered===PREVIEW.questionCount?prior.page1Score+score:null})}}
+function submitAnswer(){const qi=parseInt(this.dataset.q,10),card=document.getElementById('qcard'+qi);if(card.dataset.state)return;const selected=Array.from(sel[qi]||[]).sort((a,b)=>a-b),correct=(Array.isArray(answers[qi])?answers[qi].slice():[answers[qi]]).sort((a,b)=>a-b),opts=card.querySelectorAll('.quiz-opt'),ok=selected.length===correct.length&&selected.every((v,i)=>v===correct[i]);if(ok){score+=1;card.dataset.state='correct';selected.forEach(i=>opts[i].classList.add('correct'))}else{card.dataset.state='wrong';selected.forEach(i=>{if(correct.indexOf(i)===-1)opts[i].classList.add('wrong');else opts[i].classList.add('correct')});correct.forEach(i=>opts[i].classList.add('correct'))}opts.forEach(o=>o.setAttribute('disabled',''));this.style.display='none';answered+=1;done.add(qi);updateSlots();showExplanations(qi);if(answered===answers.length)showResult()}
+document.querySelectorAll('.quiz-submit-btn').forEach(btn=>btn.addEventListener('click',submitAnswer));
+const continueBtn=document.getElementById('previewContinueBtn');if(continueBtn)continueBtn.addEventListener('click',()=>{saveState({page1Answered:answered,page1Score:score,savedAt:Date.now()});evt('preview_continue',{page_score:score});window.location.href=PREVIEW.page2Url+'#free-quiz'});
+const retakeBtn=document.getElementById('previewRetakeBtn');if(retakeBtn)retakeBtn.addEventListener('click',()=>{clearState();window.location.href=PREVIEW.page1Url+'#free-quiz'});
+function handleLead(form){const input=form.querySelector('input[type="email"]'),btn=form.querySelector('button'),email=input.value.trim().toLowerCase(),ok=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)&&email.length<=254,defaultText=btn.dataset.defaultText||btn.textContent;if(!ok){btn.textContent='Use a valid email';btn.style.background='#c43030';setTimeout(()=>{btn.textContent=defaultText;btn.style.background=''},2500);return}btn.textContent='Sending...';btn.disabled=true;fetch('https://app.convertkit.com/forms/'+PREVIEW.convertKitFormId+'/subscriptions',{method:'POST',headers:{'Content-Type':'application/json; charset=utf-8'},body:JSON.stringify({email_address:email})}).then(r=>{if(r.ok||r.status===200||r.status===201){emailCaptured=true;input.disabled=true;btn.textContent='Check your inbox';btn.style.background='#1f7a50';evt('preview_email_submit',{email_source:form.dataset.source||form.id||'unknown'})}else throw new Error('lead fail')}).catch(()=>{btn.textContent='Try again';btn.style.background='#c43030';btn.disabled=false;setTimeout(()=>{btn.textContent=defaultText;btn.style.background=''},2500)})}
+['previewLeadForm','exitLeadForm'].forEach(id=>{const form=document.getElementById(id);if(form)form.addEventListener('submit',e=>{e.preventDefault();handleLead(form)})});
+(function(){const overlay=document.getElementById('exitPopup'),closeBtn=document.getElementById('exitPopupClose');if(!overlay||!closeBtn)return;function hide(){overlay.classList.remove('active');overlay.setAttribute('aria-hidden','true')}function show(){if(!exitReady||emailCaptured||sessionStorage.getItem(EXIT))return;sessionStorage.setItem(EXIT,'1');overlay.classList.add('active');overlay.setAttribute('aria-hidden','false');evt('preview_exit_popup_shown')}document.addEventListener('mouseout',e=>{if(e.clientY<5&&e.relatedTarget===null)show()});closeBtn.addEventListener('click',hide);overlay.addEventListener('click',e=>{if(e.target===overlay)hide()});document.addEventListener('keydown',e=>{if(e.key==='Escape')hide()})})();
+updateSlots();
 
-  // Quiz logic
-  const answers = [3, 1, 2, 3, 0, 3, 1, [0, 1, 2, 3], 1, [0, 1, 2], [0, 1, 4], 1, [0, 1], [1, 5], 4];
-  let answered = 0, score = 0;
-  const selections = {};
-
-  // Create submit buttons for all questions
-  document.querySelectorAll('.quiz-card').forEach(function(card) {
-    if (!card.querySelector('.quiz-submit-btn')) {
-      var qi = parseInt(card.id.replace('qcard', ''));
-      var btn = document.createElement('button');
-      btn.className = 'quiz-submit-btn';
-      btn.dataset.q = qi;
-      btn.textContent = 'Submit Answer';
-      var opts = card.querySelector('.quiz-opts');
-      opts.parentNode.insertBefore(btn, opts.nextSibling);
-    }
-  });
-
-  function processOverallSections(container) {
-    if (container.dataset.processed) return;
-    container.dataset.processed = '1';
-    var h5s = Array.from(container.querySelectorAll('h5'));
-    if (!h5s.length) return;
-    var sections = [];
-    h5s.forEach(function(h5) {
-      var text = h5.textContent.toLowerCase();
-      var cls = 'exp-section';
-      if (text.indexOf('correct answer') !== -1) cls += ' exp-correct-answer';
-      else if (text.indexOf('source') !== -1) cls += ' exp-source';
-      else if (text.indexOf('expert') !== -1) cls += ' exp-expert';
-      else if (text.indexOf('why') !== -1 || text.indexOf('wrong') !== -1) cls += ' exp-wrong';
-      else if (text.indexOf('memory') !== -1) cls += ' exp-memory';
-      else if (text.indexOf('real-world') !== -1 || text.indexOf('example') !== -1) cls += ' exp-realworld';
-      sections.push({ cls: cls, h5: h5 });
-    });
-    for (var i = 0; i < sections.length; i++) {
-      var sec = sections[i];
-      var div = document.createElement('div');
-      div.className = sec.cls;
-      var nextH5 = i < sections.length - 1 ? sections[i + 1].h5 : null;
-      sec.h5.parentNode.insertBefore(div, sec.h5);
-      div.appendChild(sec.h5);
-      while (div.nextSibling && div.nextSibling !== nextH5) {
-        div.appendChild(div.nextSibling);
-      }
-    }
-  }
-
-  function showExplanations(qi) {
-    var card = document.getElementById('qcard' + qi);
-    var opts = card.querySelectorAll('.quiz-opt');
-    var correct = Array.isArray(answers[qi]) ? answers[qi] : [answers[qi]];
-    opts.forEach(function(opt, j) {
-      var perExp = opt.getAttribute('data-exp');
-      var isCorr = correct.indexOf(j) !== -1;
-      if (perExp) {
-        var expDiv = document.createElement('div');
-        expDiv.className = 'quiz-opt-exp-inline ' + (isCorr ? 'qoe-is-correct' : 'qoe-is-wrong');
-        var icon = isCorr ? '\u2713' : '\u2717';
-        var label = isCorr
-          ? '<span class="qoe-correct">' + icon + ' Correct</span>'
-          : '<span class="qoe-wrong">' + icon + ' Incorrect</span>';
-        expDiv.innerHTML = '<div class="qoe-header">' + label + ' <span class="qoe-letter">Option ' + 'ABCDEF'[j] + '</span></div>' +
-          '<div class="qoe-text">' + perExp + '</div>';
-        opt.appendChild(expDiv);
-      }
-    });
-    var overall = document.getElementById('qexp' + qi);
-    if (overall) {
-      var content = overall.querySelector('.quiz-overall-content');
-      if (content && content.innerHTML.trim()) {
-        processOverallSections(content);
-        overall.style.display = 'block';
-      }
-    }
-  }
-
-  // Click: select option (all questions use submit button flow)
-  document.querySelectorAll('.quiz-opt').forEach(function(opt) {
-    opt.addEventListener('click', function() {
-      var qi = parseInt(this.dataset.q);
-      var card = document.getElementById('qcard' + qi);
-      if (card.dataset.state) return;
-      var idx = parseInt(this.dataset.idx);
-      var isMulti = Array.isArray(answers[qi]);
-      if (!selections[qi]) selections[qi] = new Set();
-      if (isMulti) {
-        if (selections[qi].has(idx)) { selections[qi].delete(idx); this.classList.remove('selected'); }
-        else { selections[qi].add(idx); this.classList.add('selected'); }
-      } else {
-        card.querySelectorAll('.quiz-opt').forEach(function(o) { o.classList.remove('selected'); });
-        selections[qi] = new Set([idx]);
-        this.classList.add('selected');
-      }
-      var btn = card.querySelector('.quiz-submit-btn');
-      if (btn) btn.style.display = selections[qi].size > 0 ? 'block' : 'none';
-    });
-  });
-
-  function submitAnswer() {
-    var qi = parseInt(this.dataset.q);
-    var card = document.getElementById('qcard' + qi);
-    if (card.dataset.state) return;
-    var selected = Array.from(selections[qi] || []).sort();
-    var correct = Array.isArray(answers[qi]) ? answers[qi].slice().sort() : [answers[qi]];
-    var isCorrect = selected.length === correct.length && selected.every(function(v, i) { return v === correct[i]; });
-    var opts = card.querySelectorAll('.quiz-opt');
-    if (isCorrect) {
-      score++;
-      card.dataset.state = 'correct';
-      selected.forEach(function(i) { opts[i].classList.add('correct'); });
-    } else {
-      card.dataset.state = 'wrong';
-      selected.forEach(function(i) {
-        if (correct.indexOf(i) === -1) opts[i].classList.add('wrong');
-        else opts[i].classList.add('correct');
-      });
-      correct.forEach(function(i) { opts[i].classList.add('correct'); });
-    }
-    opts.forEach(function(o) { o.setAttribute('disabled', ''); });
-    this.style.display = 'none';
-    showExplanations(qi);
-    answered++;
-    checkDone();
-  }
-
-  // Submit handlers (covers both existing HTML buttons and dynamically created ones)
-  document.querySelectorAll('.quiz-submit-btn').forEach(function(btn) {
-    btn.addEventListener('click', submitAnswer);
-  });
-
-  function checkDone() {
-    if (answered === answers.length) {
-      var el = document.getElementById('quizScore');
-      el.classList.add('show');
-      document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
-      var msg = score === answers.length ? 'Perfect score! You are well prepared.' : score >= 10 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
-      document.getElementById('quizScoreMsg').textContent = msg;
-      var code = document.querySelector('.cp-code');
-      if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: code ? code.textContent : 'quiz', quiz_score: score });
-    }
-  }</script>
+</script>
 </body>
 </html>

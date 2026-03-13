@@ -75,8 +75,8 @@
 {
   "@context": "https://schema.org",
   "@type": "Quiz",
-  "name": "Free CIS Security Incident Response Sample Questions",
-  "description": "Try 5 free sample questions from the CIS Security Incident Response practice test",
+  "name": "10 Free CIS Security Incident Response \u2014 ServiceNow Practice Test 2026 Preview Questions",
+  "description": "Start page 1 of a 10-question free preview for the CIS Security Incident Response \u2014 ServiceNow Practice Test 2026 practice test.",
   "url": "https://luckyx.dev/courses/cis-sir.html#free-quiz",
   "educationalAlignment": {
     "@type": "AlignmentObject",
@@ -86,111 +86,111 @@
   "hasPart": [
     {
       "@type": "Question",
-      "name": "What is a Security Incident in ServiceNow SIR?",
+      "name": "When configuring a Security Tag what does the \"Enrichment whitelist/blacklist\" classification control?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A record tracking a confirmed or suspected security breach or policy violation"
+        "text": "Whether Observables associated with the tagged incident are automatically sent for Threat Intelligence enrichment."
       },
       "suggestedAnswer": [
         {
           "@type": "Answer",
-          "text": "A routine change request"
+          "text": "Whether the tag can be seen by external users."
         },
         {
           "@type": "Answer",
-          "text": "A hardware malfunction"
+          "text": "Which analysts are allowed to remove the tag."
         },
         {
           "@type": "Answer",
-          "text": "A user access request"
+          "text": "The color of the tag in the UI."
         }
       ]
     },
     {
       "@type": "Question",
-      "name": "What are Observables in Security Incident Response?",
+      "name": "You are configuring the Threat Intelligence Service Center TISC Which feature allows a security analyst to receive notifications about specific threat actors or campaigns they are personally tracking?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Artifacts like IP addresses, URLs, or file hashes associated with a security incident"
+        "text": "Personal Threat Watchlist"
       },
       "suggestedAnswer": [
         {
           "@type": "Answer",
-          "text": "Dashboard widgets"
+          "text": "Analyst Subscription Service"
         },
         {
           "@type": "Answer",
-          "text": "User satisfaction surveys"
+          "text": "Threat Feed RSS"
         },
         {
           "@type": "Answer",
-          "text": "Performance metrics"
+          "text": "Campaign Monitor"
         }
       ]
     },
     {
       "@type": "Question",
-      "name": "What is a Security Playbook?",
+      "name": "What is the function of the Capability Framework Abstract Actions when dealing with integrations?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "An automated workflow that guides analysts through standardized incident response procedures"
+        "text": "It provides a generic action e.g. Isolate Host that automatically selects the correct tool e.g. CrowdStrike Defender based on the specific CI involved."
       },
       "suggestedAnswer": [
         {
           "@type": "Answer",
-          "text": "A user manual"
+          "text": "It allows developers to write code in any language."
         },
         {
           "@type": "Answer",
-          "text": "A backup script"
+          "text": "It prevents integrations from running simultaneously."
         },
         {
           "@type": "Answer",
-          "text": "A penetration testing tool"
+          "text": "It forces the analyst to manually select the integration script every time."
         }
       ]
     },
     {
       "@type": "Question",
-      "name": "Which integration helps enrich threat intelligence in SIR?",
+      "name": "The Executive Status Report in Major Security Incident Management is primarily designed to:",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "SIEM Integration"
+        "text": "Generate a non-technical high-level summary of the incidents impact status and financial cost for stakeholders."
       },
       "suggestedAnswer": [
         {
           "@type": "Answer",
-          "text": "LDAP"
+          "text": "Provide a technical log of all API calls."
         },
         {
           "@type": "Answer",
-          "text": "SMTP"
+          "text": "Assign tasks to junior analysts."
         },
         {
           "@type": "Answer",
-          "text": "JDBC"
+          "text": "Replace the Post Incident Review."
         }
       ]
     },
     {
       "@type": "Question",
-      "name": "What is the purpose of the Threat Intelligence module?",
+      "name": "In the Security Incident Response Workspace which tab allows an analyst to view and execute automated playbooks and workflows associated with the incident?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "To aggregate and analyze threat data from multiple sources for proactive defense"
+        "text": "The Playbook tab / Contextual Side Panel"
       },
       "suggestedAnswer": [
         {
           "@type": "Answer",
-          "text": "To manage IT budgets"
+          "text": "The Activity Stream"
         },
         {
           "@type": "Answer",
-          "text": "To schedule backups"
+          "text": "The Related Lists tab"
         },
         {
           "@type": "Answer",
-          "text": "To manage software licenses"
+          "text": "The Business Intelligence tab"
         }
       ]
     }
@@ -321,77 +321,21 @@ a:hover { text-decoration: underline; }
 .theme-toggle svg { width: 18px; height: 18px; stroke: var(--text-dim); stroke-width: 2; fill: none; }
 
 /* Quiz section */
-.quiz-section { margin-top: 48px; }
-.quiz-section h2 { font-size: 1.3rem; font-weight: 600; margin-bottom: 8px; }
-.quiz-intro { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 24px; }
-.quiz-card { background: var(--bg-raised); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 16px; transition: border-color 0.2s; }
-.quiz-card[data-state="correct"] { border-color: #2ea043; }
-.quiz-card[data-state="wrong"] { border-color: #d73a49; }
-.quiz-q { font-weight: 600; font-size: 1rem; margin-bottom: 16px; line-height: 1.5; }
-.quiz-q-num { color: var(--orange); font-weight: 700; margin-right: 6px; }
-.quiz-opts { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-.quiz-opt { display: flex; align-items: flex-start; gap: 10px; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border); cursor: pointer; transition: background 0.15s, border-color 0.15s; color: var(--text-dim); font-size: 0.95rem; line-height: 1.5; flex-wrap: wrap; }
-.quiz-opt:hover { background: rgba(221,92,12,0.06); border-color: var(--border-hover); }
-.quiz-opt.selected { background: rgba(221,92,12,0.1); border-color: var(--orange); color: var(--text); }
-.quiz-opt.correct { background: rgba(46,160,67,0.1); border-color: #2ea043; color: var(--text); }
-.quiz-opt.wrong { background: rgba(215,58,73,0.1); border-color: #d73a49; }
-.quiz-opt[disabled] { pointer-events: none; cursor: default; }
-.quiz-opt-letter { width: 22px; height: 22px; border-radius: 50%; background: var(--bg-card); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 600; flex-shrink: 0; color: var(--text-dim); }
-.quiz-opt.selected .quiz-opt-letter { background: var(--orange); color: #fff; border-color: var(--orange); }
-.quiz-opt.correct .quiz-opt-letter { background: #2ea043; color: #fff; border-color: #2ea043; }
-.quiz-opt.wrong .quiz-opt-letter { background: #d73a49; color: #fff; border-color: #d73a49; }
-.quiz-choose { font-weight: 400; color: var(--orange); font-size: 0.85rem; margin-left: 4px; }
-.quiz-submit-btn { display: none; margin-top: 14px; padding: 11px 28px; background: var(--orange); color: #fff; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.15s, transform 0.1s; }
-.quiz-submit-btn:hover { background: #c75400; }
-.quiz-submit-btn:active { transform: scale(0.97); }
-/* Per-option inline explanation (under each option) */
-.quiz-opt-exp-inline { flex-basis: 100%; padding: 10px 14px; border-radius: 8px; font-size: 0.88rem; line-height: 1.5; margin-top: 6px; animation: fadeInExp 0.3s ease; }
-@keyframes fadeInExp { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
-.quiz-opt-exp-inline.qoe-is-correct { background: rgba(46,160,67,0.08); border-left: 3px solid #2ea043; }
-.quiz-opt-exp-inline.qoe-is-wrong { background: rgba(215,58,73,0.06); border-left: 3px solid #d73a49; }
-.qoe-header { font-weight: 600; margin-bottom: 4px; font-size: 0.82rem; display: flex; align-items: center; gap: 6px; }
-.qoe-correct { color: #2ea043; }
-.qoe-wrong { color: #d73a49; }
-.qoe-letter { color: var(--text-dim); font-weight: 500; }
-.qoe-text { color: var(--text-dim); }
-/* Legacy grouped explanation container - hidden */
-.quiz-opt-explains { display: none !important; }
-/* Collapsible overall explanation */
-.quiz-overall { display: none; margin-top: 14px; }
-.quiz-overall[style*="block"] { display: block; }
-.quiz-overall-toggle { cursor: pointer; font-size: 0.9rem; font-weight: 600; color: var(--orange); padding: 10px 0; list-style: none; display: flex; align-items: center; gap: 6px; }
-.quiz-overall-toggle::-webkit-details-marker { display: none; }
-.quiz-overall-toggle::before { content: ''; display: inline-block; width: 0; height: 0; border-left: 5px solid var(--orange); border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform 0.2s; }
-details.quiz-overall[open] .quiz-overall-toggle::before { transform: rotate(90deg); }
-.quiz-overall-content { padding: 4px 0; background: transparent; border-radius: 0; font-size: 0.9rem; color: var(--text-dim); line-height: 1.7; margin-top: 8px; border-left: none; }
-/* Section-specific styling for overall explanation */
-.exp-section { margin-bottom: 14px; padding: 14px 18px; border-radius: 10px; border-left: 3px solid; }
-.exp-section:last-child { margin-bottom: 0; }
-.exp-section h5 { margin: 0 0 8px 0; font-size: 0.92rem; font-weight: 700; }
-.exp-section p { margin-bottom: 6px; }
-.exp-section p:last-child { margin-bottom: 0; }
-.exp-section ul { padding-left: 20px; margin-bottom: 6px; }
-.exp-section ul:last-child { margin-bottom: 0; }
-.exp-section li { margin-bottom: 4px; }
-.exp-correct-answer { background: rgba(46,160,67,0.05); border-left-color: #2ea043; }
-.exp-correct-answer h5 { color: #2ea043; }
-.exp-source { background: rgba(59,130,246,0.05); border-left-color: #3b82f6; }
-.exp-source h5 { color: #3b82f6; }
-.exp-source a { color: #3b82f6; }
-.exp-expert { background: rgba(139,92,246,0.05); border-left-color: #8b5cf6; }
-.exp-expert h5 { color: #8b5cf6; }
-.exp-wrong { background: rgba(215,58,73,0.04); border-left-color: #d73a49; }
-.exp-wrong h5 { color: #d73a49; }
-.exp-memory { background: rgba(217,119,6,0.05); border-left-color: #d97706; }
-.exp-memory h5 { color: #d97706; }
-.exp-realworld { background: rgba(16,185,129,0.05); border-left-color: #10b981; }
-.exp-realworld h5 { color: #10b981; }
-.quiz-score { margin-top: 24px; padding: 20px; background: var(--bg-raised); border-radius: 12px; border: 1px solid var(--border); text-align: center; display: none; }
-.quiz-score.show { display: block; }
-.quiz-score-num { font-size: 2rem; font-weight: 800; color: var(--orange); }
-.quiz-score-label { color: var(--text-dim); font-size: 0.95rem; margin-top: 4px; }
-.quiz-score-msg { margin-top: 12px; font-size: 0.95rem; color: var(--text-dim); }
-.quiz-score .cp-cta { margin-top: 16px; font-size: 1rem; padding: 12px 32px; display: inline-flex; }
+.quiz-section{margin-top:48px}.quiz-section h2{font-size:1.35rem;font-weight:700;margin-bottom:10px;line-height:1.3}.quiz-intro{color:var(--text-dim);font-size:.96rem;margin:0;max-width:64ch}
+.preview-shell{margin-bottom:24px}.preview-kicker{display:inline-flex;align-items:center;gap:8px;margin-bottom:14px;padding:6px 12px;border-radius:999px;background:rgba(221,92,12,.08);border:1px solid rgba(221,92,12,.18);color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.preview-copy-row{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px}.preview-step-note{color:var(--text-dim);font-size:.9rem;line-height:1.6;max-width:34ch}
+.preview-index{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;list-style:none;margin:0 0 24px;padding:0}.preview-slot{min-height:64px;padding:12px 8px;border-radius:12px;border:1px solid var(--border);background:var(--bg-raised);text-align:center}.preview-slot-num{display:block;font-size:1rem;font-weight:700;color:var(--text);line-height:1.1}.preview-slot-label{display:block;margin-top:6px;font-size:.72rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--text-dim)}.preview-slot.is-active{border-color:rgba(221,92,12,.35);background:rgba(221,92,12,.08)}.preview-slot.is-done{border-color:rgba(46,160,67,.35);background:rgba(46,160,67,.08)}.preview-slot.is-done .preview-slot-num,.preview-slot.is-done .preview-slot-label{color:#2ea043}.preview-slot.is-prior{border-style:dashed;background:rgba(255,255,255,.02)}
+.quiz-card{background:var(--bg-raised);border:1px solid var(--border);border-radius:14px;padding:24px;margin-bottom:16px;transition:border-color .2s}.quiz-card[data-state="correct"]{border-color:#2ea043}.quiz-card[data-state="wrong"]{border-color:#d73a49}.quiz-q{font-weight:600;font-size:1rem;margin-bottom:16px;line-height:1.55}.quiz-q-num{color:var(--orange);font-weight:700;margin-right:6px}.quiz-opts{list-style:none;display:flex;flex-direction:column;gap:8px}.quiz-opt{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border-radius:10px;border:1px solid var(--border);cursor:pointer;transition:background .15s,border-color .15s;color:var(--text-dim);font-size:.95rem;line-height:1.55;flex-wrap:wrap}.quiz-opt:hover{background:rgba(221,92,12,.06);border-color:var(--border-hover)}.quiz-opt.selected{background:rgba(221,92,12,.1);border-color:var(--orange);color:var(--text)}.quiz-opt.correct{background:rgba(46,160,67,.1);border-color:#2ea043;color:var(--text)}.quiz-opt.wrong{background:rgba(215,58,73,.1);border-color:#d73a49}.quiz-opt[disabled]{pointer-events:none;cursor:default}
+.quiz-opt-letter{width:22px;height:22px;border-radius:50%;background:var(--bg-card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:600;flex-shrink:0;color:var(--text-dim)}.quiz-opt.selected .quiz-opt-letter{background:var(--orange);color:#fff;border-color:var(--orange)}.quiz-opt.correct .quiz-opt-letter{background:#2ea043;color:#fff;border-color:#2ea043}.quiz-opt.wrong .quiz-opt-letter{background:#d73a49;color:#fff;border-color:#d73a49}.quiz-choose{font-weight:500;color:var(--orange);font-size:.85rem;margin-left:4px}
+.quiz-submit-btn{display:none;margin-top:14px;padding:11px 28px;background:var(--orange);color:#fff;border:none;border-radius:10px;font-size:.92rem;font-weight:700;cursor:pointer}.quiz-submit-btn:hover{background:#c75400}
+.quiz-opt-exp-inline{flex-basis:100%;padding:10px 14px;border-radius:10px;font-size:.88rem;line-height:1.55;margin-top:6px}.quiz-opt-exp-inline.qoe-is-correct{background:rgba(46,160,67,.08);border-left:3px solid #2ea043}.quiz-opt-exp-inline.qoe-is-wrong{background:rgba(215,58,73,.06);border-left:3px solid #d73a49}.qoe-header{font-weight:700;margin-bottom:4px;font-size:.82rem;display:flex;align-items:center;gap:6px}.qoe-correct{color:#2ea043}.qoe-wrong{color:#d73a49}.qoe-letter,.qoe-text{color:var(--text-dim)}.quiz-opt-explains{display:none!important}
+.quiz-overall{display:none;margin-top:14px}.quiz-overall[style*="block"]{display:block}.quiz-overall-toggle{cursor:pointer;font-size:.9rem;font-weight:700;color:var(--orange);padding:10px 0;list-style:none;display:flex;align-items:center;gap:6px}.quiz-overall-toggle::-webkit-details-marker{display:none}.quiz-overall-toggle::before{content:'';display:inline-block;width:0;height:0;border-left:5px solid var(--orange);border-top:4px solid transparent;border-bottom:4px solid transparent;transition:transform .2s}details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}.quiz-overall-content{padding:4px 0;background:transparent;border-radius:0;font-size:.9rem;color:var(--text-dim);line-height:1.7;margin-top:8px;border-left:none}
+.exp-section{margin-bottom:14px;padding:14px 18px;border-radius:12px;border-left:3px solid}.exp-section:last-child,.exp-section p:last-child,.exp-section ul:last-child{margin-bottom:0}.exp-section h5{margin:0 0 8px;font-size:.92rem;font-weight:700}.exp-section p{margin-bottom:6px}.exp-section ul{padding-left:20px;margin-bottom:6px}.exp-section li{margin-bottom:4px}.exp-correct-answer{background:rgba(46,160,67,.05);border-left-color:#2ea043}.exp-correct-answer h5{color:#2ea043}.exp-source{background:rgba(59,130,246,.05);border-left-color:#3b82f6}.exp-source h5,.exp-source a{color:#3b82f6}.exp-expert{background:rgba(139,92,246,.05);border-left-color:#8b5cf6}.exp-expert h5{color:#8b5cf6}.exp-wrong{background:rgba(215,58,73,.04);border-left-color:#d73a49}.exp-wrong h5{color:#d73a49}.exp-memory{background:rgba(217,119,6,.05);border-left-color:#d97706}.exp-memory h5{color:#d97706}.exp-realworld{background:rgba(16,185,129,.05);border-left-color:#10b981}.exp-realworld h5{color:#10b981}
+.preview-result{display:none;margin-top:28px;padding:24px;border-radius:18px;border:1px solid rgba(221,92,12,.22);background:radial-gradient(circle at top right,rgba(221,92,12,.12),transparent 42%),linear-gradient(180deg,rgba(255,255,255,.015),rgba(255,255,255,0))}.preview-result.show{display:block}.preview-result-kicker{color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}.preview-result-head{margin-top:10px;font-size:1.5rem;line-height:1.25;font-weight:700}.preview-score-row{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:18px 0 8px}.preview-score-value{font-size:2.2rem;font-weight:800;color:var(--text);line-height:1}.preview-score-label{color:var(--text-dim);font-size:.92rem}.preview-result-copy{color:var(--text-dim);margin-top:8px;max-width:62ch}.preview-offer-list{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px}.preview-offer-list li{display:flex;gap:10px;align-items:flex-start;color:var(--text-dim)}.preview-offer-bullet{width:22px;height:22px;flex:0 0 22px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(221,92,12,.1);color:var(--orange);font-size:.8rem;font-weight:700;margin-top:1px}.preview-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}.preview-secondary-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 22px;border-radius:12px;border:1px solid var(--border-hover);background:transparent;color:var(--text);font-family:var(--font);font-size:.98rem;font-weight:700;cursor:pointer}.preview-secondary-btn:hover{background:rgba(221,92,12,.06);border-color:var(--orange)}.preview-text-link{display:inline-flex;align-items:center;gap:8px;margin-top:16px;border:none;background:none;color:var(--text-dim);font-family:var(--font);font-size:.9rem;font-weight:700;cursor:pointer;padding:0}.preview-text-link:hover{color:var(--orange);text-decoration:none}.preview-helper{margin-top:16px;color:var(--text-dim);font-size:.9rem;line-height:1.6}
+.preview-email-wrap{display:none;margin-top:22px;padding-top:20px;border-top:1px solid var(--border)}.preview-email-wrap.show{display:block}.preview-email-wrap h3{font-size:1.02rem;margin-bottom:6px}.preview-email-wrap p{color:var(--text-dim);font-size:.92rem}.preview-lead-form{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.preview-lead-form input[type="email"]{flex:1 1 240px;min-height:48px;border-radius:12px;border:1px solid var(--border);background:var(--bg-card);color:var(--text);padding:0 14px;font-family:var(--font);font-size:.95rem}.preview-lead-form input[type="email"]::placeholder{color:var(--text-faint)}.preview-lead-form input[type="email"]:focus{outline:none;border-color:rgba(221,92,12,.45);box-shadow:0 0 0 3px rgba(221,92,12,.12)}.preview-lead-form button{min-height:48px;padding:0 18px;border-radius:12px;border:none;background:var(--orange);color:#fff;font-family:var(--font);font-size:.94rem;font-weight:700;cursor:pointer}.preview-lead-form button:disabled{opacity:.72;cursor:wait}.preview-lead-note{margin-top:10px;color:var(--text-dim);font-size:.82rem;line-height:1.5}
+.preview-exit{position:fixed;inset:0;z-index:1200;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(5,5,7,.74)}.preview-exit.active{display:flex}.preview-exit-card{position:relative;width:min(520px,100%);padding:26px;border-radius:20px;border:1px solid var(--border);background:radial-gradient(circle at top right,rgba(221,92,12,.14),transparent 38%),var(--bg-raised);box-shadow:0 24px 70px rgba(0,0,0,.35)}.preview-exit-close{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--text-dim);cursor:pointer;font-size:1.2rem}.preview-exit-kicker{color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}.preview-exit-title{margin-top:10px;font-size:1.45rem;line-height:1.25}.preview-exit-copy{margin-top:10px;color:var(--text-dim);line-height:1.65}.preview-exit-link{margin-top:14px;display:inline-flex;align-items:center;gap:8px;font-weight:700}
+@media (min-width:720px){.preview-index{grid-template-columns:repeat(10,minmax(0,1fr))}}@media (max-width:600px){.cp-title,.cp-price{font-size:1.5rem}.cp-cta,.preview-secondary-btn{width:100%;justify-content:center}.quiz-card{padding:16px}.preview-exit-card{padding:22px 18px}.preview-lead-form{flex-direction:column}.preview-lead-form button{width:100%}}
+
 /* Countdown banner */
 .countdown-banner { max-width: 100%; margin: 0 0 24px; padding: 20px 24px; background: linear-gradient(135deg, rgba(221,92,12,0.08), rgba(221,92,12,0.03)); border: 1px solid rgba(221,92,12,0.2); border-radius: 14px; text-align: center; position: relative; overflow: hidden; }
 .countdown-banner::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(221,92,12,0.04), transparent); animation: cd-shimmer 3s ease-in-out infinite; }
@@ -507,267 +451,129 @@ details.quiz-overall[open] .quiz-overall-toggle::before { transform: rotate(90de
     </ul>
   </div>
 
-  <section class="quiz-section" id="free-quiz">
-    <h2>Try 15 Free SIR Questions</h2>
-    <p class="quiz-intro">Test your knowledge before you buy — including multiple-choice and multi-select, just like the real exam.</p>
-    <div class="quiz-card" id="qcard0">
-      <div class="quiz-q"><span class="quiz-q-num">1.</span>When configuring a Security Tag what does the &quot;Enrichment whitelist/blacklist&quot; classification control?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="0" data-exp="INCORRECT: Security Tags are not related to external user visibility. Tag visibility is governed by ACLs and roles, not by the tag classification itself."><span class="quiz-opt-letter">A</span><span>Whether the tag can be seen by external users.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="0" data-exp="CORRECT: The Enrichment whitelist/blacklist classification on a Security Tag controls whether Observables linked to tagged incidents are automatically submitted to Threat Intelligence enrichment sources. When a tag is on the enrichment blacklist, observables tied to that incident are excluded from automatic enrichment lookups."><span class="quiz-opt-letter">B</span><span>Whether Observables associated with the tagged incident are automatically sent for Threat Intelligence enrichment.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="0" data-exp="INCORRECT: Removal permissions for tags are managed through roles and ACLs, not through the enrichment whitelist/blacklist classification."><span class="quiz-opt-letter">C</span><span>Which analysts are allowed to remove the tag.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="0" data-exp="INCORRECT: Tag color is configured separately in the tag record. The enrichment whitelist/blacklist classification has no effect on visual presentation."><span class="quiz-opt-letter">D</span><span>The color of the tag in the UI.</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp0" style="display:none"></div>
-      <details class="quiz-overall" id="qexp0">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
+  <section class="quiz-section" id="free-quiz" data-preview-step="1">
+    <div class="preview-shell">
+      <div class="preview-kicker">10-question free preview</div>
+      <h2>10 Free CIS Security Incident Response — ServiceNow Practice Test 2026 Preview Questions</h2>
+      <div class="preview-copy-row">
+        <p class="quiz-intro">Page 1 of 2: questions 1-5. Rich explanations, multiple-choice, and multi-select - just like the real exam.</p>
+        <p class="preview-step-note">You are seeing the first half of a 10-question preview before the full 251-question course.</p>
+      </div>
+      <ol class="preview-index" id="previewIndex">
+      <li class="preview-slot" data-slot="1"><span class="preview-slot-num">1</span><span class="preview-slot-label">Live now</span></li>
+      <li class="preview-slot" data-slot="2"><span class="preview-slot-num">2</span><span class="preview-slot-label">Live now</span></li>
+      <li class="preview-slot" data-slot="3"><span class="preview-slot-num">3</span><span class="preview-slot-label">Live now</span></li>
+      <li class="preview-slot" data-slot="4"><span class="preview-slot-num">4</span><span class="preview-slot-label">Live now</span></li>
+      <li class="preview-slot" data-slot="5"><span class="preview-slot-num">5</span><span class="preview-slot-label">Live now</span></li>
+      <li class="preview-slot" data-slot="6"><span class="preview-slot-num">6</span><span class="preview-slot-label">Page 2</span></li>
+      <li class="preview-slot" data-slot="7"><span class="preview-slot-num">7</span><span class="preview-slot-label">Page 2</span></li>
+      <li class="preview-slot" data-slot="8"><span class="preview-slot-num">8</span><span class="preview-slot-label">Page 2</span></li>
+      <li class="preview-slot" data-slot="9"><span class="preview-slot-num">9</span><span class="preview-slot-label">Page 2</span></li>
+      <li class="preview-slot" data-slot="10"><span class="preview-slot-num">10</span><span class="preview-slot-label">Page 2</span></li>
+      </ol>
+    </div>
+<div class="quiz-card" id="qcard0">
+<div class="quiz-q"><span class="quiz-q-num">1.</span>When configuring a Security Tag what does the "Enrichment whitelist/blacklist" classification control?</div>
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="INCORRECT: Security Tags are not related to external user visibility. Tag visibility is governed by ACLs and roles, not by the tag classification itself." data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>Whether the tag can be seen by external users.</span></li>
+<li class="quiz-opt" data-exp="CORRECT: The Enrichment whitelist/blacklist classification on a Security Tag controls whether Observables linked to tagged incidents are automatically submitted to Threat Intelligence enrichment sources. When a tag is on the enrichment blacklist, observables tied to that incident are excluded from automatic enrichment lookups." data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>Whether Observables associated with the tagged incident are automatically sent for Threat Intelligence enrichment.</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Removal permissions for tags are managed through roles and ACLs, not through the enrichment whitelist/blacklist classification." data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>Which analysts are allowed to remove the tag.</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Tag color is configured separately in the tag record. The enrichment whitelist/blacklist classification has no effect on visual presentation." data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>The color of the tag in the UI.</span></li>
+</ul>
+<div class="quiz-opt-explains" id="qoptexp0" style="display:none"></div>
+<details class="quiz-overall" id="qexp0">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
 <h5>Correct Answer</h5><p>B - Whether Observables associated with the tagged incident are automatically sent for Threat Intelligence enrichment.</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-security-management/page/product/security-incident-response/concept/sir-security-tags.html" target="_blank">ServiceNow Zurich Documentation - Security Tags</a></p><h5>Expert Explanation</h5><p>Security Tags can be classified to control enrichment behavior. When a tag carries an enrichment blacklist classification, any Observables attached to that tagged security incident will be skipped during automatic Threat Intelligence enrichment. This is critical for sensitive cases where you do not want hashes or IPs sent to external threat feeds.</p><h5>Why the Others Are Wrong</h5><p>A confuses tag classification with user access controls. C confuses it with role-based permissions. D confuses it with UI styling, which is a separate tag property.</p><h5>Memory Tip</h5><p>Think "Enrichment whitelist/blacklist" literally: it whitelists or blacklists observables from being enriched. The name tells you exactly what it does.</p><h5>Real-World Example</h5><p>Your SOC is investigating an insider threat. You tag the incident "Insider - Sensitive" with an enrichment blacklist classification so that file hashes from the case are never sent to VirusTotal or other external services, preventing data leakage about the investigation.</p>
 </div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard1">
-      <div class="quiz-q"><span class="quiz-q-num">2.</span>You are configuring the Threat Intelligence Service Center TISC Which feature allows a security analyst to receive notifications about specific threat actors or campaigns they are personally tracking?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="1" data-exp="CORRECT: The Personal Threat Watchlist in the Threat Intelligence Service Center (TISC) allows individual analysts to subscribe to and track specific threat actors, campaigns, or indicators. When updates occur for watched items, the analyst receives targeted notifications."><span class="quiz-opt-letter">A</span><span>Personal Threat Watchlist</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="1" data-exp="INCORRECT: Analyst Subscription Service is a fabricated feature name. TISC uses the Personal Threat Watchlist for analyst-specific tracking and notification."><span class="quiz-opt-letter">B</span><span>Analyst Subscription Service</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="1" data-exp="INCORRECT: Threat Feed RSS is not a valid TISC feature. Threat feeds in ServiceNow are consumed through integrations and the Threat Intelligence module, not via RSS."><span class="quiz-opt-letter">C</span><span>Threat Feed RSS</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="1" data-exp="INCORRECT: Campaign Monitor is not an actual TISC capability. Campaign tracking exists within the Threat Intelligence module, but personalized notifications come through the Personal Threat Watchlist."><span class="quiz-opt-letter">D</span><span>Campaign Monitor</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp1" style="display:none"></div>
-      <details class="quiz-overall" id="qexp1">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
+</details>
+</div>
+<div class="quiz-card" id="qcard1">
+<div class="quiz-q"><span class="quiz-q-num">2.</span>You are configuring the Threat Intelligence Service Center TISC Which feature allows a security analyst to receive notifications about specific threat actors or campaigns they are personally tracking?</div>
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="CORRECT: The Personal Threat Watchlist in the Threat Intelligence Service Center (TISC) allows individual analysts to subscribe to and track specific threat actors, campaigns, or indicators. When updates occur for watched items, the analyst receives targeted notifications." data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>Personal Threat Watchlist</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Analyst Subscription Service is a fabricated feature name. TISC uses the Personal Threat Watchlist for analyst-specific tracking and notification." data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>Analyst Subscription Service</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Threat Feed RSS is not a valid TISC feature. Threat feeds in ServiceNow are consumed through integrations and the Threat Intelligence module, not via RSS." data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>Threat Feed RSS</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Campaign Monitor is not an actual TISC capability. Campaign tracking exists within the Threat Intelligence module, but personalized notifications come through the Personal Threat Watchlist." data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>Campaign Monitor</span></li>
+</ul>
+<div class="quiz-opt-explains" id="qoptexp1" style="display:none"></div>
+<details class="quiz-overall" id="qexp1">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
 <h5>Correct Answer</h5><p>A - Personal Threat Watchlist</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-security-management/page/product/threat-intelligence/concept/threat-intelligence-service-center.html" target="_blank">ServiceNow Zurich Documentation - Threat Intelligence Service Center</a></p><h5>Expert Explanation</h5><p>TISC provides a centralized hub for threat intelligence operations. The Personal Threat Watchlist feature lets analysts subscribe to specific threat actors or campaigns so they receive notifications when new intelligence or updates become available. This personalizes the threat intel experience for each analyst based on their active investigations.</p><h5>Why the Others Are Wrong</h5><p>B, C, and D are all invented feature names that do not exist in the TISC module. ServiceNow uses the term "Personal Threat Watchlist" specifically for this analyst-driven notification capability.</p><h5>Memory Tip</h5><p>Think of it like a "watchlist" on a stock trading app: you pick what you want to follow, and the system alerts you when something changes. Personal Threat Watchlist works the same way for threat actors.</p><h5>Real-World Example</h5><p>An analyst investigating APT29 adds this threat group to their Personal Threat Watchlist. Two weeks later, a new threat intel feed reports updated TTPs for APT29, and the analyst gets a notification to review the fresh intelligence without having to manually check every feed.</p>
 </div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard2">
-      <div class="quiz-q"><span class="quiz-q-num">3.</span>What is the function of the Capability Framework Abstract Actions when dealing with integrations?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="2" data-exp="INCORRECT: The Capability Framework does not relate to programming language flexibility. Developers still use the standard ServiceNow scripting languages (JavaScript, Jinja)."><span class="quiz-opt-letter">A</span><span>It allows developers to write code in any language.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="2" data-exp="CORRECT: Abstract Actions in the Capability Framework provide generic, tool-agnostic actions such as &quot;Isolate Host&quot; or &quot;Block IP.&quot; When triggered, the framework automatically determines which specific integration (CrowdStrike, Microsoft Defender, etc.) should execute the action based on the Configuration Item involved. This decouples the playbook logic from specific vendor tools."><span class="quiz-opt-letter">B</span><span>It provides a generic action e.g. Isolate Host that automatically selects the correct tool e.g. CrowdStrike Defender based on the specific CI involved.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="2" data-exp="INCORRECT: The Capability Framework is designed to enable integrations to work together, not prevent them from running simultaneously. Orchestration handles execution sequencing."><span class="quiz-opt-letter">C</span><span>It prevents integrations from running simultaneously.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="2" data-exp="INCORRECT: The entire point of Abstract Actions is to eliminate the need for manual integration selection. The framework automates tool selection based on CI context."><span class="quiz-opt-letter">D</span><span>It forces the analyst to manually select the integration script every time.</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp2" style="display:none"></div>
-      <details class="quiz-overall" id="qexp2">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
+</details>
+</div>
+<div class="quiz-card" id="qcard2">
+<div class="quiz-q"><span class="quiz-q-num">3.</span>What is the function of the Capability Framework Abstract Actions when dealing with integrations?</div>
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="INCORRECT: The Capability Framework does not relate to programming language flexibility. Developers still use the standard ServiceNow scripting languages (JavaScript, Jinja)." data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>It allows developers to write code in any language.</span></li>
+<li class="quiz-opt" data-exp='CORRECT: Abstract Actions in the Capability Framework provide generic, tool-agnostic actions such as "Isolate Host" or "Block IP." When triggered, the framework automatically determines which specific integration (CrowdStrike, Microsoft Defender, etc.) should execute the action based on the Configuration Item involved. This decouples the playbook logic from specific vendor tools.' data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>It provides a generic action e.g. Isolate Host that automatically selects the correct tool e.g. CrowdStrike Defender based on the specific CI involved.</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: The Capability Framework is designed to enable integrations to work together, not prevent them from running simultaneously. Orchestration handles execution sequencing." data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>It prevents integrations from running simultaneously.</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: The entire point of Abstract Actions is to eliminate the need for manual integration selection. The framework automates tool selection based on CI context." data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>It forces the analyst to manually select the integration script every time.</span></li>
+</ul>
+<div class="quiz-opt-explains" id="qoptexp2" style="display:none"></div>
+<details class="quiz-overall" id="qexp2">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
 <h5>Correct Answer</h5><p>B - It provides a generic action (e.g., Isolate Host) that automatically selects the correct tool (e.g., CrowdStrike, Defender) based on the specific CI involved.</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-security-management/page/product/security-incident-response/concept/sir-capability-framework.html" target="_blank">ServiceNow Zurich Documentation - Capability Framework</a></p><h5>Expert Explanation</h5><p>The Capability Framework introduces an abstraction layer for security operations. Abstract Actions let playbook designers define what needs to happen (isolate a host, scan a file) without specifying which vendor tool performs the action. At runtime, the framework inspects the CI and routes the action to the appropriate integration. This makes playbooks portable and vendor-neutral.</p><h5>Why the Others Are Wrong</h5><p>A confuses the framework with a development environment feature. C inverts its purpose since the framework enables smooth integration, not restriction. D describes the manual process that Abstract Actions were specifically created to replace.</p><h5>Memory Tip</h5><p>Think "abstract" like an abstract class in programming: it defines the interface (Isolate Host) and lets the concrete implementation (CrowdStrike, Defender) handle the details at runtime.</p><h5>Real-World Example</h5><p>Your playbook has an "Isolate Host" step. A compromised laptop running CrowdStrike triggers the CrowdStrike isolation API. A compromised server running Microsoft Defender triggers the Defender isolation API. Same playbook, different tools, zero manual selection by the analyst.</p>
 </div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard3">
-      <div class="quiz-q"><span class="quiz-q-num">4.</span>The Executive Status Report in Major Security Incident Management is primarily designed to:</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="3" data-exp="INCORRECT: Technical API call logs are found in system logs and audit trails, not in the Executive Status Report. This report is specifically designed for non-technical audiences."><span class="quiz-opt-letter">A</span><span>Provide a technical log of all API calls.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="3" data-exp="CORRECT: The Executive Status Report generates a high-level, non-technical summary of a major security incident. It covers impact assessment, current status, timeline, and financial cost estimates, all packaged for executive stakeholders, board members, and non-technical leadership."><span class="quiz-opt-letter">B</span><span>Generate a non-technical high-level summary of the incidents impact status and financial cost for stakeholders.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="3" data-exp="INCORRECT: Task assignment is handled through the incident management workflow and SIR tasks, not through the Executive Status Report."><span class="quiz-opt-letter">C</span><span>Assign tasks to junior analysts.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="3" data-exp="INCORRECT: The Executive Status Report and Post Incident Review serve different purposes. The status report is produced during an active major incident for stakeholder communication, while the PIR happens after the incident is resolved."><span class="quiz-opt-letter">D</span><span>Replace the Post Incident Review.</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp3" style="display:none"></div>
-      <details class="quiz-overall" id="qexp3">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
+</details>
+</div>
+<div class="quiz-card" id="qcard3">
+<div class="quiz-q"><span class="quiz-q-num">4.</span>The Executive Status Report in Major Security Incident Management is primarily designed to:</div>
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="INCORRECT: Technical API call logs are found in system logs and audit trails, not in the Executive Status Report. This report is specifically designed for non-technical audiences." data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>Provide a technical log of all API calls.</span></li>
+<li class="quiz-opt" data-exp="CORRECT: The Executive Status Report generates a high-level, non-technical summary of a major security incident. It covers impact assessment, current status, timeline, and financial cost estimates, all packaged for executive stakeholders, board members, and non-technical leadership." data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>Generate a non-technical high-level summary of the incidents impact status and financial cost for stakeholders.</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Task assignment is handled through the incident management workflow and SIR tasks, not through the Executive Status Report." data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>Assign tasks to junior analysts.</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: The Executive Status Report and Post Incident Review serve different purposes. The status report is produced during an active major incident for stakeholder communication, while the PIR happens after the incident is resolved." data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>Replace the Post Incident Review.</span></li>
+</ul>
+<div class="quiz-opt-explains" id="qoptexp3" style="display:none"></div>
+<details class="quiz-overall" id="qexp3">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
 <h5>Correct Answer</h5><p>B - Generate a non-technical, high-level summary of the incident's impact, status, and financial cost for stakeholders.</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-security-management/page/product/security-incident-response/concept/sir-major-security-incident.html" target="_blank">ServiceNow Zurich Documentation - Major Security Incident Management</a></p><h5>Expert Explanation</h5><p>During a major security incident, leadership needs clear, concise updates without technical jargon. The Executive Status Report is purpose-built for this communication need. It pulls together impact data, current containment status, and estimated financial exposure into a format suitable for C-suite executives and board members.</p><h5>Why the Others Are Wrong</h5><p>A describes system-level logging, which is a technical function unrelated to executive communication. C describes operational workflow, not reporting. D confuses two distinct processes since the PIR is a post-closure activity while the Executive Status Report is used during active incidents.</p><h5>Memory Tip</h5><p>"Executive" is the key word. Executives want business impact and cost, not packet captures and API logs. The report matches its audience.</p><h5>Real-World Example</h5><p>A ransomware attack hits your organization. The CISO needs to brief the board in 30 minutes. The Executive Status Report provides a ready-made summary showing: 200 endpoints affected, containment at 80%, estimated recovery cost of $2.5M, and current status of law enforcement engagement.</p>
 </div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard4">
-      <div class="quiz-q"><span class="quiz-q-num">5.</span>In the Security Incident Response Workspace which tab allows an analyst to view and execute automated playbooks and workflows associated with the incident?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="4" data-exp="INCORRECT: The Activity Stream shows a chronological feed of comments, work notes, and state changes on the incident. It does not provide playbook execution capabilities."><span class="quiz-opt-letter">A</span><span>The Activity Stream</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="4" data-exp="CORRECT: The Playbook tab (and the Contextual Side Panel) in the Security Incident Response Workspace gives analysts direct access to view, launch, and monitor automated playbooks and workflows associated with the current incident. This is where orchestration and automation activities are managed."><span class="quiz-opt-letter">B</span><span>The Playbook tab / Contextual Side Panel</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="4" data-exp="INCORRECT: The Related Lists tab displays associated records like tasks, affected CIs, and observables. It does not provide playbook execution controls."><span class="quiz-opt-letter">C</span><span>The Related Lists tab</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="4" data-exp="INCORRECT: The Business Intelligence tab is not a standard component of the SIR Workspace. Analytics and dashboards are accessed through separate Performance Analytics modules."><span class="quiz-opt-letter">D</span><span>The Business Intelligence tab</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp4" style="display:none"></div>
-      <details class="quiz-overall" id="qexp4">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
+</details>
+</div>
+<div class="quiz-card" id="qcard4">
+<div class="quiz-q"><span class="quiz-q-num">5.</span>In the Security Incident Response Workspace which tab allows an analyst to view and execute automated playbooks and workflows associated with the incident?</div>
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="INCORRECT: The Activity Stream shows a chronological feed of comments, work notes, and state changes on the incident. It does not provide playbook execution capabilities." data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>The Activity Stream</span></li>
+<li class="quiz-opt" data-exp="CORRECT: The Playbook tab (and the Contextual Side Panel) in the Security Incident Response Workspace gives analysts direct access to view, launch, and monitor automated playbooks and workflows associated with the current incident. This is where orchestration and automation activities are managed." data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>The Playbook tab / Contextual Side Panel</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: The Related Lists tab displays associated records like tasks, affected CIs, and observables. It does not provide playbook execution controls." data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>The Related Lists tab</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: The Business Intelligence tab is not a standard component of the SIR Workspace. Analytics and dashboards are accessed through separate Performance Analytics modules." data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>The Business Intelligence tab</span></li>
+</ul>
+<div class="quiz-opt-explains" id="qoptexp4" style="display:none"></div>
+<details class="quiz-overall" id="qexp4">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
 <h5>Correct Answer</h5><p>B - The Playbook tab / Contextual Side Panel</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-security-management/page/product/security-incident-response/concept/sir-workspace.html" target="_blank">ServiceNow Zurich Documentation - Security Incident Response Workspace</a></p><h5>Expert Explanation</h5><p>The SIR Workspace is designed for analyst efficiency. The Playbook tab and Contextual Side Panel serve as the automation hub where analysts can view which playbooks are attached to an incident, trigger new playbook runs, monitor execution progress, and complete User Form activities that require human input. This centralizes automation control within the incident context.</p><h5>Why the Others Are Wrong</h5><p>A is for communication and history tracking, not automation. C shows related data records but has no playbook controls. D does not exist as a standard SIR Workspace tab.</p><h5>Memory Tip</h5><p>Playbooks live in the Playbook tab. The name is intentionally straightforward so analysts can find automation controls quickly during high-pressure incidents.</p><h5>Real-World Example</h5><p>An analyst opens a phishing incident in the SIR Workspace. They click the Playbook tab, see the "Phishing Triage" playbook is already running, check its progress, then launch a second playbook called "Email Header Analysis" directly from the same panel without leaving the incident record.</p>
 </div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard5">
-      <div class="quiz-q"><span class="quiz-q-num">6.</span>If a Security Incident is created from a Security Alert which feature ensures that subsequent updates to the Alert (such as additional evidence) are automatically reflected in the existing Security Incident rather than creating a duplicate?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="5" data-exp="INCORRECT: Alert Aggregation Rules group multiple related alerts into a single alert. They do not handle updates flowing from an alert to an already-created security incident."><span class="quiz-opt-letter">A</span><span>Alert Aggregation Rule</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="5" data-exp="INCORRECT: Alert Update Rule is not a standard feature name in ServiceNow SIR. The correct term for this functionality is Alert Management Rule with the &quot;Updates on Open Alert&quot; configuration."><span class="quiz-opt-letter">B</span><span>Alert Update Rule</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="5" data-exp="INCORRECT: Incident Deduplication prevents duplicate incidents from being created but does not handle the flow of updated evidence from an alert back into an existing incident."><span class="quiz-opt-letter">C</span><span>Incident Deduplication</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="5" data-exp="CORRECT: Alert Management Rules with the &quot;Updates on Open Alert&quot; configuration ensure that when an alert that already generated a security incident receives new data (updated evidence, changed severity, new observables), those updates flow automatically into the existing security incident rather than creating a duplicate."><span class="quiz-opt-letter">D</span><span>Alert Management Rule (Updates on Open Alert)</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp5" style="display:none"></div>
-      <details class="quiz-overall" id="qexp5">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>D - Alert Management Rule (Updates on Open Alert)</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-security-management/page/product/security-incident-response/concept/sir-alert-management-rules.html" target="_blank">ServiceNow Zurich Documentation - Alert Management Rules</a></p><h5>Expert Explanation</h5><p>Alert Management Rules govern the lifecycle relationship between Security Alerts and Security Incidents. The "Updates on Open Alert" variant specifically handles the scenario where a SIEM or detection tool sends updated information for an alert that has already been promoted to an incident. Instead of creating a new incident, the rule routes the fresh evidence into the existing one, keeping all context in a single place.</p><h5>Why the Others Are Wrong</h5><p>A handles alert-to-alert grouping before incident creation, not post-creation updates. B is not a real ServiceNow feature name. C prevents duplicate incidents but does not manage the update flow from alerts to incidents.</p><h5>Memory Tip</h5><p>Focus on the phrase "Updates on Open Alert" - it literally describes what happens: when an open alert gets updates, those updates propagate to the linked incident.</p><h5>Real-World Example</h5><p>Your SIEM sends an alert about a suspicious login. An incident is created. Ten minutes later, the SIEM detects the same attacker accessing a second system and updates the alert. The Alert Management Rule (Updates on Open Alert) automatically adds the new evidence to the existing incident instead of spawning a duplicate.</p>
+</details>
 </div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard6">
-      <div class="quiz-q"><span class="quiz-q-num">7.</span>Which dashboard is specifically designed to give the CISO a high-level view of the organizations security posture including Mean Time to Detect MTTD and Mean Time to Contain MTTC trends?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="6" data-exp="INCORRECT: The Security Analyst Overview dashboard is designed for individual analysts to track their own workload and assigned incidents. It does not provide the executive-level metrics a CISO needs."><span class="quiz-opt-letter">A</span><span>Security Analyst Overview</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="6" data-exp="CORRECT: The CISO Dashboard is specifically built for chief information security officers and senior security leadership. It presents high-level KPIs including Mean Time to Detect (MTTD), Mean Time to Contain (MTTC), incident volume trends, severity distributions, and overall security posture indicators."><span class="quiz-opt-letter">B</span><span>CISO Dashboard</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="6" data-exp="INCORRECT: The Security Operations Efficiency dashboard focuses on operational throughput metrics for the SOC team, such as analyst utilization and case closure rates, rather than the strategic security posture view a CISO requires."><span class="quiz-opt-letter">C</span><span>Security Operations Efficiency</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="6" data-exp="INCORRECT: The Vulnerability Remediation Dashboard tracks vulnerability scanning results and patching progress. It covers a specific domain (vulnerability management) rather than the broad security posture overview the CISO Dashboard provides."><span class="quiz-opt-letter">D</span><span>Vulnerability Remediation Dashboard</span></li>
+    <div class="preview-result" id="previewResult">
+      <div class="preview-result-kicker">Page 1 complete</div>
+      <h3 class="preview-result-head">Keep going or get the full course</h3>
+      <div class="preview-score-row">
+        <div class="preview-score-value" id="previewScoreValue">0/5</div>
+        <div class="preview-score-label" id="previewScoreLabel">Page 1 of 2</div>
+      </div>
+      <p class="preview-result-copy" id="previewResultCopy"></p>
+      <ul class="preview-offer-list">
+        <li><span class="preview-offer-bullet">1</span><span>Get all 251 exam-style questions on Udemy.</span></li>
+        <li><span class="preview-offer-bullet">2</span><span>Keep the same per-option reasoning and sourced Zurich explanations across the full bank.</span></li>
+        <li><span class="preview-offer-bullet">3</span><span>Lifetime access with free future updates.</span></li>
       </ul>
-      <div class="quiz-opt-explains" id="qoptexp6" style="display:none"></div>
-      <details class="quiz-overall" id="qexp6">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>B - CISO Dashboard</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-security-management/page/product/security-incident-response/concept/sir-dashboards.html" target="_blank">ServiceNow Zurich Documentation - SIR Dashboards</a></p><h5>Expert Explanation</h5><p>ServiceNow SIR includes role-specific dashboards. The CISO Dashboard is tailored for executive security leadership, aggregating key metrics like MTTD and MTTC trends, open incident counts by severity, and compliance posture into a single high-level view. This allows the CISO to assess organizational security health at a glance without drilling into individual cases.</p><h5>Why the Others Are Wrong</h5><p>A targets analyst-level daily operations. C focuses on SOC team efficiency metrics. D is limited to the vulnerability management domain and does not cover incident response KPIs.</p><h5>Memory Tip</h5><p>CISO wants the CISO Dashboard. The naming convention in ServiceNow SIR directly matches the target audience for each dashboard.</p><h5>Real-World Example</h5><p>Before a quarterly board meeting, the CISO opens the CISO Dashboard to see that MTTD has dropped from 4.2 hours to 2.8 hours over the past quarter, and MTTC improved by 15%. These are the exact metrics the board expects to see in the security update presentation.</p>
-</div>
-      </details>
-    </div>
-    <div class="quiz-card quiz-multi" id="qcard7">
-      <div class="quiz-q"><span class="quiz-q-num">8.</span>A Post Incident Review can contain which of the following? (Choose three.) <span class="quiz-choose">(choose 3)</span></div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="7" data-exp="CORRECT: Post Incident Reviews include configurable questionnaires that guide the review team through structured questions about incident handling, response effectiveness, and lessons learned."><span class="quiz-opt-letter">A</span><span>Post incident questionnaires</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="7" data-exp="CORRECT: The PIR captures a complete audit trail of the incident lifecycle, documenting who did what and when throughout the investigation and response process."><span class="quiz-opt-letter">B</span><span>An audit trail</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="7" data-exp="CORRECT: Key incident fields such as severity, priority, category, affected CIs, and timeline data are automatically pulled into the Post Incident Review for reference during the review process."><span class="quiz-opt-letter">C</span><span>Key incident fields</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="7" data-exp="INCORRECT: While attachments exist on the security incident record itself, they are not a primary component of the Post Incident Review structure. The PIR references the incident but is its own record type focused on review and lessons learned."><span class="quiz-opt-letter">D</span><span>Attachments associated with the security incident</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="7" data-exp="INCORRECT: Performance Analytics reports are separate analytical tools that operate independently from the Post Incident Review. PA dashboards and reports can analyze PIR data, but they are not contained within the PIR itself."><span class="quiz-opt-letter">E</span><span>Performance Analytics reports</span></li>
-      </ul>
-      <button class="quiz-submit-btn" data-q="7" style="display:none">Submit Answer</button>
-      <div class="quiz-opt-explains" id="qoptexp7" style="display:none"></div>
-      <details class="quiz-overall" id="qexp7">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>A, B, C - Post incident questionnaires, An audit trail, Key incident fields</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-security-management/page/product/security-incident-response/concept/sir-post-incident-review.html" target="_blank">ServiceNow Zurich Documentation - Post Incident Review</a></p><h5>Expert Explanation</h5><p>The Post Incident Review in SIR is a structured after-action process. It automatically pulls in key incident fields for context, preserves the audit trail showing all actions taken during the incident, and presents configurable questionnaires to guide the review team through a thorough assessment of the response. Together, these three components create a comprehensive lessons-learned document.</p><h5>Why the Others Are Wrong</h5><p>D (Attachments) belong to the security incident record, not the PIR structure. E (Performance Analytics reports) are standalone analytical tools that can consume PIR data but are not embedded within the review itself.</p><h5>Memory Tip</h5><p>PIR has three pillars: Questions (questionnaires), History (audit trail), and Facts (key fields). Q-H-F helps you remember what lives inside a Post Incident Review.</p><h5>Real-World Example</h5><p>After resolving a data breach, the security manager opens the PIR. They see the incident timeline and key fields auto-populated, review the audit trail showing each analyst action, and then work through a questionnaire asking "Was the escalation path followed?" and "Were containment SLAs met?" to produce a formal lessons-learned report.</p>
-</div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard8">
-      <div class="quiz-q"><span class="quiz-q-num">9.</span>In a Security Incident Playbook what is the function of a User Form activity?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="8" data-exp="INCORRECT: Read-only messages in playbooks are handled by notification activities or informational steps. A User Form activity is specifically designed for interactive input collection."><span class="quiz-opt-letter">A</span><span>To display a read-only message.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="8" data-exp="CORRECT: A User Form activity pauses the automated playbook execution and presents a form to the analyst. The analyst must provide specific input data or make a decision (such as approving containment or selecting a remediation path) before the playbook can proceed to the next step."><span class="quiz-opt-letter">B</span><span>To pause the automation and require the analyst to input specific data or make a decision before the playbook proceeds.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="8" data-exp="INCORRECT: Creating user accounts is handled through Identity Management or HR workflows, not through playbook User Form activities. The User Form collects input; it does not create platform records."><span class="quiz-opt-letter">C</span><span>To create a new user account in sys_user.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="8" data-exp="INCORRECT: Sending emails is handled by dedicated email notification activities within the playbook. The User Form activity is specifically for collecting analyst input, not for outbound communication."><span class="quiz-opt-letter">D</span><span>To send an email to the affected user.</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp8" style="display:none"></div>
-      <details class="quiz-overall" id="qexp8">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>B - To pause the automation and require the analyst to input specific data or make a decision before the playbook proceeds.</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-security-management/page/product/security-incident-response/concept/sir-playbooks.html" target="_blank">ServiceNow Zurich Documentation - Security Incident Playbooks</a></p><h5>Expert Explanation</h5><p>Playbooks automate security response workflows, but certain steps require human judgment. The User Form activity is the mechanism that bridges automation and human decision-making. When a playbook reaches a User Form, it pauses execution and presents a configurable form to the assigned analyst. Only after the analyst submits the required input does the playbook resume its automated flow.</p><h5>Why the Others Are Wrong</h5><p>A describes a passive display, but User Forms require active input. C describes an identity management function unrelated to playbooks. D describes an email notification activity, which is a different playbook component.</p><h5>Memory Tip</h5><p>"User Form" means the user fills out a form. It is the human-in-the-loop checkpoint where automation waits for a person to act.</p><h5>Real-World Example</h5><p>A malware containment playbook reaches the "Approve Host Isolation" step. A User Form appears asking the analyst to confirm the hostname, verify business impact, and select "Approve Isolation" or "Escalate to Manager." The playbook waits until the analyst submits this form before executing the isolation action.</p>
-</div>
-      </details>
-    </div>
-    <div class="quiz-card quiz-multi" id="qcard9">
-      <div class="quiz-q"><span class="quiz-q-num">10.</span>For Customers who don&#x27;t use 3rd-party systems what ways can security incidents be created? (Choose three.) <span class="quiz-choose">(choose 3)</span></div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="9" data-exp="CORRECT: The Security Service Catalog provides a user-facing portal where employees can report security concerns (phishing emails, suspicious activity, lost devices) which are then converted into Security Incidents."><span class="quiz-opt-letter">A</span><span>Security Service Catalog</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="9" data-exp="CORRECT: The Security Incident Form allows analysts and authorized users to manually create security incidents directly by filling out the incident record form in the SIR module."><span class="quiz-opt-letter">B</span><span>Security Incident Form</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="9" data-exp="CORRECT: Inbound Email Parsing Rules allow security incidents to be created automatically from incoming emails. When an email matches defined parsing criteria (sender, subject patterns, keywords), a security incident is generated without needing a third-party integration."><span class="quiz-opt-letter">C</span><span>Inbound Email Parsing Rules</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="9" data-exp="INCORRECT: Leveraging an Integration requires a third-party system (SIEM, EDR, etc.) to feed data into ServiceNow. The question specifically asks about methods available to customers who do not use third-party systems."><span class="quiz-opt-letter">D</span><span>Leveraging an Integration</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="9" data-exp="INCORRECT: Alert Management involves processing alerts that typically originate from third-party detection tools (SIEMs, EDR platforms). Without third-party systems generating alerts, this creation method is not applicable."><span class="quiz-opt-letter">E</span><span>Alert Management</span></li>
-      </ul>
-      <button class="quiz-submit-btn" data-q="9" style="display:none">Submit Answer</button>
-      <div class="quiz-opt-explains" id="qoptexp9" style="display:none"></div>
-      <details class="quiz-overall" id="qexp9">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>A, B, C - Security Service Catalog, Security Incident Form, Inbound Email Parsing Rules</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-security-management/page/product/security-incident-response/concept/sir-create-security-incidents.html" target="_blank">ServiceNow Zurich Documentation - Creating Security Incidents</a></p><h5>Expert Explanation</h5><p>ServiceNow SIR provides multiple native methods for creating security incidents without relying on external tools. The Service Catalog offers a self-service portal for end users. The Security Incident Form gives analysts direct record creation. Inbound Email Parsing Rules automate incident creation from email reports. All three methods operate entirely within the ServiceNow platform.</p><h5>Why the Others Are Wrong</h5><p>D explicitly requires third-party system connectivity, which contradicts the question premise. E depends on alerts from external detection tools (SIEMs, endpoint solutions), which also requires third-party systems.</p><h5>Memory Tip</h5><p>Think "no external tools" and remember the three native channels: Portal (catalog), Form (manual), and Email (parsing). P-F-E are all built into ServiceNow without needing anything else.</p><h5>Real-World Example</h5><p>A small company without a SIEM uses all three methods: employees report phishing via the Security Service Catalog, SOC analysts create incidents manually through the form when they spot something suspicious, and the team email security@company.com is configured with parsing rules to auto-generate incidents from employee reports.</p>
-</div>
-      </details>
-    </div>
-    <div class="quiz-card quiz-multi" id="qcard10">
-      <div class="quiz-q"><span class="quiz-q-num">11.</span>Runbooks are used to create a relationship between what components? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="10" data-exp="INCORRECT: Events are raw data points processed by Event Management, not components that Runbooks directly link together in the SIR context."><span class="quiz-opt-letter">A</span><span>Events</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="10" data-exp="CORRECT: Runbooks create a direct relationship with Security Incident Response Tasks. When an analyst works through a task, the linked Runbook provides step-by-step procedural guidance for completing that specific task."><span class="quiz-opt-letter">B</span><span>Security Incident Response Task</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="10" data-exp="INCORRECT: Playbook Tasks are automated activities within playbook workflows. Runbooks are separate from playbook automation and instead provide manual procedural documentation."><span class="quiz-opt-letter">C</span><span>Playbook Task</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="10" data-exp="INCORRECT: Alerts are processed through Alert Management Rules and are not directly linked by Runbooks. Alerts feed into incident creation, while Runbooks support task execution."><span class="quiz-opt-letter">D</span><span>Alerts</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="10" data-exp="INCORRECT: Workflow Triggers are part of the Flow Designer or legacy Workflow engine. They are automation components, not documentation components like Runbooks."><span class="quiz-opt-letter">E</span><span>Workflow Trigger</span></li>
-      <li class="quiz-opt" data-idx="5" data-q="10" data-exp="CORRECT: Runbooks create a relationship with Knowledge Articles. The Runbook itself is essentially a structured Knowledge Article that documents standard operating procedures, and it links to SIR Tasks to provide analysts with step-by-step instructions during incident response."><span class="quiz-opt-letter">F</span><span>Knowledge article</span></li>
-      </ul>
-      <button class="quiz-submit-btn" data-q="10" style="display:none">Submit Answer</button>
-      <div class="quiz-opt-explains" id="qoptexp10" style="display:none"></div>
-      <details class="quiz-overall" id="qexp10">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>B, F - Security Incident Response Task, Knowledge article</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-security-management/page/product/security-incident-response/concept/sir-runbooks.html" target="_blank">ServiceNow Zurich Documentation - Runbooks</a></p><h5>Expert Explanation</h5><p>Runbooks in ServiceNow SIR bridge documentation and execution. They create a relationship between Security Incident Response Tasks (the work being done) and Knowledge Articles (the procedures describing how to do it). When an analyst picks up a SIR task, the linked Runbook provides the documented procedure from the knowledge base, ensuring consistent and repeatable response actions.</p><h5>Why the Others Are Wrong</h5><p>A (Events) are raw data inputs, not task-level components. C (Playbook Tasks) belong to the automated playbook engine, not manual Runbooks. D (Alerts) feed into incident creation upstream of task execution. E (Workflow Triggers) are automation engine components unrelated to procedural documentation.</p><h5>Memory Tip</h5><p>A Runbook is a "run this book of instructions" for a task. It connects the Task (what to do) with the Knowledge Article (how to do it).</p><h5>Real-World Example</h5><p>An analyst receives a SIR task called "Contain Compromised Endpoint." They open the linked Runbook, which pulls up a Knowledge Article with step-by-step instructions: verify the hostname, check active network connections, initiate host isolation, and document findings. The Runbook ensures every analyst follows the same containment procedure.</p>
-</div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard11">
-      <div class="quiz-q"><span class="quiz-q-num">12.</span>Regarding the &quot;Analyze&quot; phase of a Security Incident which feature allows an analyst to automatically check an observable (like a file hash) against multiple Threat Intelligence feeds (like VirusTotal and Palo Alto) simultaneously?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="11" data-exp="INCORRECT: Observable Enforcement is used to take action on observables (blocking IPs, quarantining files) through integrations. It does not perform the initial lookup against threat intelligence feeds."><span class="quiz-opt-letter">A</span><span>Observable Enforcement</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="11" data-exp="CORRECT: Threat Lookup allows analysts to submit an observable (file hash, IP address, domain, URL) and simultaneously query multiple configured Threat Intelligence sources (such as VirusTotal, Palo Alto AutoFocus, and others). Results from all sources are returned in a consolidated view, streamlining the analysis phase."><span class="quiz-opt-letter">B</span><span>Threat Lookup</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="11" data-exp="INCORRECT: Trusted Security Circles are a feature for sharing threat intelligence between organizations in a trusted community. They do not perform on-demand lookups against multiple feeds for a single observable."><span class="quiz-opt-letter">C</span><span>Trusted Security Circles</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="11" data-exp="INCORRECT: Vulnerability Scanners identify system vulnerabilities and are part of Vulnerability Response, not the Threat Intelligence lookup capability used during security incident analysis."><span class="quiz-opt-letter">D</span><span>Vulnerability Scanners</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp11" style="display:none"></div>
-      <details class="quiz-overall" id="qexp11">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>B - Threat Lookup</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-security-management/page/product/security-incident-response/concept/sir-threat-lookup.html" target="_blank">ServiceNow Zurich Documentation - Threat Lookup</a></p><h5>Expert Explanation</h5><p>During the Analyze phase of a security incident, analysts need to quickly determine whether an observable is malicious. Threat Lookup provides a one-click mechanism to query multiple Threat Intelligence feeds simultaneously. An analyst submits a file hash, IP, or domain, and the system fans out requests to all configured TI sources, returning a consolidated report showing each source's verdict and enrichment data.</p><h5>Why the Others Are Wrong</h5><p>A (Observable Enforcement) takes action on observables but does not query threat feeds. C (Trusted Security Circles) is for inter-organizational threat sharing, not individual lookups. D (Vulnerability Scanners) belongs to a different security domain entirely.</p><h5>Memory Tip</h5><p>"Threat Lookup" does exactly what the name says: you look up a threat indicator across all your intelligence sources at once. When you hear "check an observable against feeds," think Threat Lookup.</p><h5>Real-World Example</h5><p>An analyst finds a suspicious file hash in a phishing email attachment. They right-click the observable and select Threat Lookup. Within seconds, VirusTotal reports 42/68 detections, Palo Alto classifies it as a known Emotet variant, and the analyst has enough evidence to escalate the incident to containment without manually checking each feed.</p>
-</div>
-      </details>
-    </div>
-    <div class="quiz-card quiz-multi" id="qcard12">
-      <div class="quiz-q"><span class="quiz-q-num">13.</span>When mapping MITRE ATT&amp;CK data to a Security Incident which two fields are primarily populated to describe the adversary&#x27;s behavior? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="12" data-exp="CORRECT: The Tactic field maps to the MITRE ATT&amp;CK Tactic, which represents the adversary&#x27;s tactical objective or the &quot;why&quot; behind their action (e.g., Initial Access, Persistence, Exfiltration)."><span class="quiz-opt-letter">A</span><span>Tactic</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="12" data-exp="INCORRECT: Severity is a standard incident field that rates the impact level of the incident. It is not part of the MITRE ATT&amp;CK mapping and does not describe adversary behavior patterns."><span class="quiz-opt-letter">B</span><span>Severity</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="12" data-exp="CORRECT: The Technique field maps to the specific MITRE ATT&amp;CK Technique, which describes &quot;how&quot; the adversary achieves their tactical objective (e.g., Spearphishing Attachment under Initial Access, or DLL Side-Loading under Defense Evasion)."><span class="quiz-opt-letter">C</span><span>Technique</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="12" data-exp="INCORRECT: Vector describes the attack vector or entry point (email, web, network) but is not one of the two primary MITRE ATT&amp;CK mapping fields. MITRE mapping specifically uses Tactic and Technique."><span class="quiz-opt-letter">D</span><span>Vector</span></li>
-      </ul>
-      <button class="quiz-submit-btn" data-q="12" style="display:none">Submit Answer</button>
-      <div class="quiz-opt-explains" id="qoptexp12" style="display:none"></div>
-      <details class="quiz-overall" id="qexp12">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>A, C - Tactic and Technique</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-security-management/page/product/security-incident-response/concept/sir-mitre-attack.html" target="_blank">ServiceNow Zurich Documentation - MITRE ATT&CK Integration</a></p><h5>Expert Explanation</h5><p>The MITRE ATT&CK framework uses a Tactic-Technique hierarchy to categorize adversary behavior. When mapping ATT&CK data to a Security Incident in ServiceNow, the two primary fields are Tactic (the strategic goal, like "Credential Access") and Technique (the specific method, like "Brute Force"). Together they describe both why the attacker is doing something and how they are doing it.</p><h5>Why the Others Are Wrong</h5><p>B (Severity) is an incident impact rating unrelated to ATT&CK behavioral classification. D (Vector) describes the attack entry point, which is a different classification concept from the ATT&CK Tactic-Technique pairing.</p><h5>Memory Tip</h5><p>MITRE ATT&CK is built on TT: Tactics and Techniques. Tactic = the goal (why), Technique = the method (how). Two T's for two fields.</p><h5>Real-World Example</h5><p>An analyst maps a credential-stealing attack: Tactic is set to "Credential Access" (the adversary wants credentials) and Technique is set to "OS Credential Dumping" (they used Mimikatz to dump LSASS). This mapping lets the SOC correlate this incident with other attacks using the same TTPs across the organization.</p>
-</div>
-      </details>
-    </div>
-    <div class="quiz-card quiz-multi" id="qcard13">
-      <div class="quiz-q"><span class="quiz-q-num">14.</span>Why is it important that the Platform (System) Administrator and the Security Incident administrator role be separated? (Choose three.) <span class="quiz-choose">(choose 3)</span></div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="13" data-exp="CORRECT: Security incident data is highly sensitive and may involve insider threats, executive investigations, or classified breach information. Restricting access to this data by separating the SIR admin role from the platform admin ensures that only authorized security personnel can view case details."><span class="quiz-opt-letter">A</span><span>Access to security incident data may need to be restricted</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="13" data-exp="CORRECT: Separating the roles allows the SIR team to independently manage who receives security-specific roles (sn_si.admin, sn_si.analyst, sn_si.manager) without depending on the platform admin team. This gives the security team autonomy over their access control."><span class="quiz-opt-letter">B</span><span>Allow SIR Teams to control assignment of security roles</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="13" data-exp="CORRECT: Role separation enforces a clear separation of duty, which is a fundamental security principle. The person administering the platform infrastructure should not automatically have access to security investigation data, and the security admin should not need platform-level system privileges."><span class="quiz-opt-letter">C</span><span>Clear separation of duty</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="13" data-exp="INCORRECT: Reducing the number of incidents assigned to the Platform Admin is an operational workload concern, not a security governance reason for role separation. Role separation is about access control and duty segregation, not task distribution."><span class="quiz-opt-letter">D</span><span>Reduce the number of incidents assigned to the Platform Admin</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="13" data-exp="INCORRECT: Preserving the security image is a vague public relations concern. Role separation is driven by concrete security governance requirements (access restriction, duty separation, role autonomy), not by organizational perception."><span class="quiz-opt-letter">E</span><span>Preserve the security image in the company</span></li>
-      </ul>
-      <button class="quiz-submit-btn" data-q="13" style="display:none">Submit Answer</button>
-      <div class="quiz-opt-explains" id="qoptexp13" style="display:none"></div>
-      <details class="quiz-overall" id="qexp13">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>A, B, C - Access restriction, SIR team role control autonomy, Clear separation of duty</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-security-management/page/product/security-incident-response/concept/sir-roles.html" target="_blank">ServiceNow Zurich Documentation - SIR Roles and Administration</a></p><h5>Expert Explanation</h5><p>Separating the Platform Administrator and SIR Administrator roles is a security governance best practice rooted in three principles. First, security incident data often contains extremely sensitive information that must be restricted. Second, the SIR team needs autonomous control over who holds security roles. Third, separation of duty prevents any single role from having both platform control and access to security investigation data.</p><h5>Why the Others Are Wrong</h5><p>D frames role separation as a workload management issue, which misses the security governance rationale entirely. E is about organizational image rather than the concrete access control and compliance requirements that drive role separation.</p><h5>Memory Tip</h5><p>Remember the three pillars: Restrict (access to sensitive data), Control (SIR team manages its own roles), and Separate (clear duty boundaries). R-C-S covers the three correct answers.</p><h5>Real-World Example</h5><p>The platform admin needs to update ServiceNow system properties and manage upgrade schedules. The SIR admin investigates a data breach involving an executive. If both roles were combined, the platform admin could view sensitive investigation details about leadership, violating least privilege and duty separation principles.</p>
-</div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard14">
-      <div class="quiz-q"><span class="quiz-q-num">15.</span>What is the purpose of Security Tag Categories?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="14" data-exp="INCORRECT: Tag color is configured on individual tag records. Security Tag Categories are not about visual styling or color-coding tags in the interface."><span class="quiz-opt-letter">A</span><span>To color-code the tags.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="14" data-exp="CORRECT: Security Tag Categories allow administrators to organize tags into logical groups (such as Compliance, Investigation, Classification) and then restrict which roles can view or apply tags within each category. This ensures that compliance officers see compliance-related tags while investigators see investigation-related tags, preventing clutter and enforcing access boundaries."><span class="quiz-opt-letter">B</span><span>To restrict which roles can see or apply specific groups of tags e.g. separating Compliance tags from Investigation tags.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="14" data-exp="INCORRECT: Risk Score weighting is managed through the Security Incident Risk Score configuration, not through tag categories. Tag categories organize and restrict tag access, not influence scoring."><span class="quiz-opt-letter">C</span><span>To determine the weight of the tag in the Risk Score.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="14" data-exp="INCORRECT: Auto-closing incidents is handled by incident workflow rules, SLA configurations, or playbooks. Tag categories have no role in incident lifecycle management or closure automation."><span class="quiz-opt-letter">D</span><span>To auto-close incidents.</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp14" style="display:none"></div>
-      <details class="quiz-overall" id="qexp14">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>B - To restrict which roles can see or apply specific groups of tags, separating them by function (e.g., Compliance tags vs. Investigation tags).</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-security-management/page/product/security-incident-response/concept/sir-security-tags.html" target="_blank">ServiceNow Zurich Documentation - Security Tags</a></p><h5>Expert Explanation</h5><p>As the number of Security Tags grows, managing them as a flat list becomes impractical. Security Tag Categories solve this by grouping tags into functional categories and controlling role-based access at the category level. For example, tags in the "Compliance" category might be visible only to compliance officers, while "Investigation" tags are restricted to SOC analysts. This keeps each team focused on relevant tags.</p><h5>Why the Others Are Wrong</h5><p>A confuses categories with visual formatting. C attributes scoring influence to categories, which is handled by a different configuration. D suggests lifecycle management capabilities that categories do not have.</p><h5>Memory Tip</h5><p>Think of Tag Categories like file folders with permissions. The category groups similar tags together (the folder) and controls who can access them (the permissions). Organization plus access control in one feature.</p><h5>Real-World Example</h5><p>Your organization has 50 security tags. The compliance team needs tags like "PCI-DSS," "HIPAA," and "SOX" but should not see investigation tags like "APT," "Insider Threat," or "Active Exploitation." By placing each set in its own Security Tag Category with role restrictions, each team sees only the tags relevant to their work.</p>
-</div>
-      </details>
-    </div>
-    <div class="quiz-score" id="quizScore">
-      <div class="quiz-score-num" id="quizScoreNum">0/15</div>
-      <div class="quiz-score-label">Sample Quiz Score</div>
-      <div class="quiz-score-msg" id="quizScoreMsg"></div>
-      <a href="https://www.udemy.com/course/pass-servicenow-cis-security-incident-response-sir/?referralCode=FF6F1DFCBBA2F3C7188D" target="_blank" rel="noopener" class="cp-cta">
-        Get all 251 questions
-        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+      <div class="preview-actions">
+        <a href="https://www.udemy.com/course/pass-servicenow-cis-security-incident-response-sir/?referralCode=FF6F1DFCBBA2F3C7188D" target="_blank" rel="noopener" class="cp-cta">Get all 251 questions
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      <button type="button" class="preview-secondary-btn" id="previewContinueBtn">Continue to questions 6-10</button>
+      </div>
+      <p class="preview-helper" id="previewHelper"></p>
+
+      <button type="button" class="preview-text-link" id="previewRetakeBtn">Retake free preview</button>
     </div>
   </section>
 
@@ -782,156 +588,52 @@ details.quiz-overall[open] .quiz-overall-toggle::before { transform: rotate(90de
   <p>&copy; 2026 Lucky X &middot; <a href="/">luckyx.dev</a></p>
 </footer>
 
+
+<!-- Preview Exit Popup -->
+<div class="preview-exit" id="exitPopup" aria-hidden="true">
+  <div class="preview-exit-card" role="dialog" aria-modal="true" aria-labelledby="exitPopupTitle">
+    <button type="button" class="preview-exit-close" id="exitPopupClose" aria-label="Close popup">&times;</button>
+    <div class="preview-exit-kicker">Before you go</div>
+    <h3 class="preview-exit-title" id="exitPopupTitle">Get CIS Security Incident Response — ServiceNow Practice Test 2026 updates and new question drops</h3>
+    <p class="preview-exit-copy">I will send blueprint changes, new sample questions, and exam roadmap tips for this cert. Or skip the inbox and get the full 251-question course now.</p>
+    <form class="preview-lead-form" id="exitLeadForm" data-source="exit">
+      <input type="email" name="email" placeholder="you@email.com" autocomplete="email" required>
+      <button type="submit" data-default-text="Send me updates">Send me updates</button>
+    </form>
+    <p class="preview-lead-note">No spam. Unsubscribe anytime.</p>
+    <a href="https://www.udemy.com/course/pass-servicenow-cis-security-incident-response-sir/?referralCode=FF6F1DFCBBA2F3C7188D" target="_blank" rel="noopener" class="preview-exit-link">Go straight to the full course on Udemy</a>
+  </div>
+</div>
+<!-- /Preview Exit Popup -->
 <script>
-  const themeToggle = document.getElementById('themeToggle');
-  themeToggle.addEventListener('click', () => {
-    const current = document.documentElement.getAttribute('data-theme');
-    const next = current === 'light' ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('luckyx-theme', next);
-  });
+const PREVIEW={"slug": "cis-sir", "courseTitle": "CIS Security Incident Response \u2014 ServiceNow Practice Test 2026", "step": 1, "questionCount": 5, "questionStart": 1, "questionEnd": 5, "page1Url": "/courses/cis-sir.html", "page2Url": "/courses/cis-sir-preview-2.html", "totalPreviewQuestions": 10, "totalQuestionCount": 251, "convertKitFormId": "9183962"};
+const answers=[1, 0, 1, 1, 1];
+const STATE='luckyx-preview:'+PREVIEW.slug,EXIT='luckyx-exit-shown:'+PREVIEW.slug,themeToggle=document.getElementById('themeToggle'),sel={},done=new Set();let answered=0,score=0,exitReady=false,emailCaptured=false,completeSent=false;
+themeToggle.addEventListener('click',()=>{const c=document.documentElement.getAttribute('data-theme'),n=c==='light'?'dark':'light';document.documentElement.setAttribute('data-theme',n);localStorage.setItem('luckyx-theme',n)});
+function evt(name,extra){if(typeof gtag!=='function')return;gtag('event',name,Object.assign({course_slug:PREVIEW.slug,preview_step:PREVIEW.step},extra||{}))}
+function readState(){try{const raw=sessionStorage.getItem(STATE);return raw?JSON.parse(raw):null}catch(err){return null}}
+function saveState(payload){sessionStorage.setItem(STATE,JSON.stringify(payload))}
+function clearState(){sessionStorage.removeItem(STATE);sessionStorage.removeItem(EXIT)}
+function markExitReady(){exitReady=true}
+const quizSection=document.getElementById('free-quiz');if('IntersectionObserver'in window&&quizSection){const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){markExitReady();obs.disconnect()}})},{threshold:.25});obs.observe(quizSection)}evt('preview_page_view');
+document.querySelectorAll('a.cp-cta[href*="udemy.com"],a.preview-exit-link[href*="udemy.com"]').forEach(link=>link.addEventListener('click',()=>{let source='hero';if(link.closest('.preview-result'))source=PREVIEW.step===1?'step_one_result':'final_result';else if(link.closest('.preview-exit-card'))source='exit_popup';evt('preview_buy_click',{cta_source:source})}));
+document.querySelectorAll('.quiz-card').forEach(card=>{if(!card.querySelector('.quiz-submit-btn')){const qi=parseInt(card.id.replace('qcard',''),10),btn=document.createElement('button');btn.className='quiz-submit-btn';btn.dataset.q=qi;btn.textContent='Submit Answer';const opts=card.querySelector('.quiz-opts');opts.parentNode.insertBefore(btn,opts.nextSibling)}});
+function processSections(container){if(container.dataset.processed)return;container.dataset.processed='1';const h5s=Array.from(container.querySelectorAll('h5'));if(!h5s.length)return;const secs=[];h5s.forEach(h5=>{const t=h5.textContent.toLowerCase();let cls='exp-section';if(t.includes('correct answer'))cls+=' exp-correct-answer';else if(t.includes('source'))cls+=' exp-source';else if(t.includes('expert'))cls+=' exp-expert';else if(t.includes('why')||t.includes('wrong'))cls+=' exp-wrong';else if(t.includes('memory'))cls+=' exp-memory';else if(t.includes('real-world')||t.includes('example'))cls+=' exp-realworld';secs.push({cls,h5})});for(let i=0;i<secs.length;i++){const sec=secs[i],div=document.createElement('div'),next=i<secs.length-1?secs[i+1].h5:null;div.className=sec.cls;sec.h5.parentNode.insertBefore(div,sec.h5);div.appendChild(sec.h5);while(div.nextSibling&&div.nextSibling!==next)div.appendChild(div.nextSibling)}}
+function updateSlots(){const prior=readState();document.querySelectorAll('.preview-slot').forEach(slot=>{const gi=parseInt(slot.dataset.slot,10);slot.classList.remove('is-done','is-active','is-prior');if(PREVIEW.step===2&&gi<=PREVIEW.questionCount){slot.classList.add(prior&&prior.page1Answered===PREVIEW.questionCount?'is-done':'is-prior');return}if(gi>=PREVIEW.questionStart&&gi<=PREVIEW.questionEnd){const local=gi-PREVIEW.questionStart;if(done.has(local))slot.classList.add('is-done');else slot.classList.add('is-active')}})}
+function showExplanations(qi){const card=document.getElementById('qcard'+qi),opts=card.querySelectorAll('.quiz-opt'),correct=Array.isArray(answers[qi])?answers[qi]:[answers[qi]];opts.forEach((opt,j)=>{const per=opt.getAttribute('data-exp');if(!per||opt.querySelector('.quiz-opt-exp-inline'))return;const ok=correct.indexOf(j)!==-1,txt=per.replace(/^(CORRECT|INCORRECT):\s*/i,''),div=document.createElement('div'),icon=ok?'\u2713':'\u2717';div.className='quiz-opt-exp-inline '+(ok?'qoe-is-correct':'qoe-is-wrong');div.innerHTML='<div class="qoe-header">'+(ok?'<span class="qoe-correct">'+icon+' Correct</span>':'<span class="qoe-wrong">'+icon+' Incorrect</span>')+' <span class="qoe-letter">Option '+'ABCDEFG'[j]+'</span></div><div class="qoe-text">'+txt+'</div>';opt.appendChild(div)});const overall=document.getElementById('qexp'+qi);if(overall){const content=overall.querySelector('.quiz-overall-content');if(content&&content.innerHTML.trim()){processSections(content);overall.style.display='block'}}}
+document.querySelectorAll('.quiz-opt').forEach(opt=>opt.addEventListener('click',function(){markExitReady();const qi=parseInt(this.dataset.q,10),card=document.getElementById('qcard'+qi);if(card.dataset.state)return;const idx=parseInt(this.dataset.idx,10),multi=Array.isArray(answers[qi]);if(!sel[qi])sel[qi]=new Set();if(multi){if(sel[qi].has(idx)){sel[qi].delete(idx);this.classList.remove('selected')}else{sel[qi].add(idx);this.classList.add('selected')}}else{card.querySelectorAll('.quiz-opt').forEach(o=>o.classList.remove('selected'));sel[qi]=new Set([idx]);this.classList.add('selected')}const btn=card.querySelector('.quiz-submit-btn');if(btn)btn.style.display=sel[qi].size>0?'block':'none'}));
+function pageOneCopy(s){if(s===PREVIEW.questionCount)return'Perfect page 1. Continue to questions 6-10, then decide if you want the full '+PREVIEW.totalQuestionCount+'-question bank.';if(s>=3)return'Solid start. Finish questions 6-10 to see a fuller slice of the exam before you buy.';return'This is exactly where the full course helps: more reps, more sourced explanations, and less guessing under pressure.'}
+function finalCopy(s){if(s===PREVIEW.totalPreviewQuestions)return'Perfect free preview. The full course is still the fastest way to stress-test the rest of the blueprint before exam day.';if(s>=7)return'Strong free preview. The full course helps close the last gaps before you sit the exam.';return'The free preview exposed real gaps. The full course is built to fix them with more exam-style repetition and richer explanations.'}
+function showResult(){const box=document.getElementById('previewResult'),scoreValue=document.getElementById('previewScoreValue'),scoreLabel=document.getElementById('previewScoreLabel'),copyEl=document.getElementById('previewResultCopy'),helper=document.getElementById('previewHelper'),emailWrap=document.getElementById('previewEmailWrap'),continueBtn=document.getElementById('previewContinueBtn'),backLink=document.getElementById('previewBackLink');box.classList.add('show');box.scrollIntoView({behavior:'smooth',block:'start'});if(PREVIEW.step===1){saveState({page1Answered:answered,page1Score:score,savedAt:Date.now()});scoreValue.textContent=score+'/'+PREVIEW.questionCount;scoreLabel.textContent='Page 1 of 2 complete';copyEl.textContent=pageOneCopy(score);helper.textContent='You have finished questions 1-5. Questions 6-10 are next.';if(continueBtn)continueBtn.hidden=false;if(emailWrap)emailWrap.classList.remove('show');if(backLink)backLink.hidden=true;return}const prior=readState();if(prior&&prior.page1Answered===PREVIEW.questionCount){const total=prior.page1Score+score;scoreValue.textContent=total+'/'+PREVIEW.totalPreviewQuestions;scoreLabel.textContent='10-question free preview complete';copyEl.textContent=finalCopy(total);helper.textContent='You have now seen 10 free questions. The full course keeps the same answer breakdown style across the rest of the bank.'}else{scoreValue.textContent=score+'/'+PREVIEW.questionCount;scoreLabel.textContent='Page 2 complete';copyEl.textContent='You completed questions 6-10 only. Start from page 1 if you want the full 10-question preview before deciding.';helper.textContent='Page 1 contains questions 1-5 and sets up the full 10-question score.';if(backLink)backLink.hidden=false}if(emailWrap)emailWrap.classList.add('show');if(!completeSent){completeSent=true;evt('preview_complete',{page_score:score,combined_score:prior&&prior.page1Answered===PREVIEW.questionCount?prior.page1Score+score:null})}}
+function submitAnswer(){const qi=parseInt(this.dataset.q,10),card=document.getElementById('qcard'+qi);if(card.dataset.state)return;const selected=Array.from(sel[qi]||[]).sort((a,b)=>a-b),correct=(Array.isArray(answers[qi])?answers[qi].slice():[answers[qi]]).sort((a,b)=>a-b),opts=card.querySelectorAll('.quiz-opt'),ok=selected.length===correct.length&&selected.every((v,i)=>v===correct[i]);if(ok){score+=1;card.dataset.state='correct';selected.forEach(i=>opts[i].classList.add('correct'))}else{card.dataset.state='wrong';selected.forEach(i=>{if(correct.indexOf(i)===-1)opts[i].classList.add('wrong');else opts[i].classList.add('correct')});correct.forEach(i=>opts[i].classList.add('correct'))}opts.forEach(o=>o.setAttribute('disabled',''));this.style.display='none';answered+=1;done.add(qi);updateSlots();showExplanations(qi);if(answered===answers.length)showResult()}
+document.querySelectorAll('.quiz-submit-btn').forEach(btn=>btn.addEventListener('click',submitAnswer));
+const continueBtn=document.getElementById('previewContinueBtn');if(continueBtn)continueBtn.addEventListener('click',()=>{saveState({page1Answered:answered,page1Score:score,savedAt:Date.now()});evt('preview_continue',{page_score:score});window.location.href=PREVIEW.page2Url+'#free-quiz'});
+const retakeBtn=document.getElementById('previewRetakeBtn');if(retakeBtn)retakeBtn.addEventListener('click',()=>{clearState();window.location.href=PREVIEW.page1Url+'#free-quiz'});
+function handleLead(form){const input=form.querySelector('input[type="email"]'),btn=form.querySelector('button'),email=input.value.trim().toLowerCase(),ok=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)&&email.length<=254,defaultText=btn.dataset.defaultText||btn.textContent;if(!ok){btn.textContent='Use a valid email';btn.style.background='#c43030';setTimeout(()=>{btn.textContent=defaultText;btn.style.background=''},2500);return}btn.textContent='Sending...';btn.disabled=true;fetch('https://app.convertkit.com/forms/'+PREVIEW.convertKitFormId+'/subscriptions',{method:'POST',headers:{'Content-Type':'application/json; charset=utf-8'},body:JSON.stringify({email_address:email})}).then(r=>{if(r.ok||r.status===200||r.status===201){emailCaptured=true;input.disabled=true;btn.textContent='Check your inbox';btn.style.background='#1f7a50';evt('preview_email_submit',{email_source:form.dataset.source||form.id||'unknown'})}else throw new Error('lead fail')}).catch(()=>{btn.textContent='Try again';btn.style.background='#c43030';btn.disabled=false;setTimeout(()=>{btn.textContent=defaultText;btn.style.background=''},2500)})}
+['previewLeadForm','exitLeadForm'].forEach(id=>{const form=document.getElementById(id);if(form)form.addEventListener('submit',e=>{e.preventDefault();handleLead(form)})});
+(function(){const overlay=document.getElementById('exitPopup'),closeBtn=document.getElementById('exitPopupClose');if(!overlay||!closeBtn)return;function hide(){overlay.classList.remove('active');overlay.setAttribute('aria-hidden','true')}function show(){if(!exitReady||emailCaptured||sessionStorage.getItem(EXIT))return;sessionStorage.setItem(EXIT,'1');overlay.classList.add('active');overlay.setAttribute('aria-hidden','false');evt('preview_exit_popup_shown')}document.addEventListener('mouseout',e=>{if(e.clientY<5&&e.relatedTarget===null)show()});closeBtn.addEventListener('click',hide);overlay.addEventListener('click',e=>{if(e.target===overlay)hide()});document.addEventListener('keydown',e=>{if(e.key==='Escape')hide()})})();
+updateSlots();
 
-  // Quiz logic
-  const answers = [1, 0, 1, 1, 1, 3, 1, [0, 1, 2], 1, [0, 1, 2], [1, 5], 1, [0, 2], [0, 1, 2], 1];
-  let answered = 0, score = 0;
-  const selections = {};
-
-  // Create submit buttons for all questions
-  document.querySelectorAll('.quiz-card').forEach(function(card) {
-    if (!card.querySelector('.quiz-submit-btn')) {
-      var qi = parseInt(card.id.replace('qcard', ''));
-      var btn = document.createElement('button');
-      btn.className = 'quiz-submit-btn';
-      btn.dataset.q = qi;
-      btn.textContent = 'Submit Answer';
-      var opts = card.querySelector('.quiz-opts');
-      opts.parentNode.insertBefore(btn, opts.nextSibling);
-    }
-  });
-
-  function processOverallSections(container) {
-    if (container.dataset.processed) return;
-    container.dataset.processed = '1';
-    var h5s = Array.from(container.querySelectorAll('h5'));
-    if (!h5s.length) return;
-    var sections = [];
-    h5s.forEach(function(h5) {
-      var text = h5.textContent.toLowerCase();
-      var cls = 'exp-section';
-      if (text.indexOf('correct answer') !== -1) cls += ' exp-correct-answer';
-      else if (text.indexOf('source') !== -1) cls += ' exp-source';
-      else if (text.indexOf('expert') !== -1) cls += ' exp-expert';
-      else if (text.indexOf('why') !== -1 || text.indexOf('wrong') !== -1) cls += ' exp-wrong';
-      else if (text.indexOf('memory') !== -1) cls += ' exp-memory';
-      else if (text.indexOf('real-world') !== -1 || text.indexOf('example') !== -1) cls += ' exp-realworld';
-      sections.push({ cls: cls, h5: h5 });
-    });
-    for (var i = 0; i < sections.length; i++) {
-      var sec = sections[i];
-      var div = document.createElement('div');
-      div.className = sec.cls;
-      var nextH5 = i < sections.length - 1 ? sections[i + 1].h5 : null;
-      sec.h5.parentNode.insertBefore(div, sec.h5);
-      div.appendChild(sec.h5);
-      while (div.nextSibling && div.nextSibling !== nextH5) {
-        div.appendChild(div.nextSibling);
-      }
-    }
-  }
-
-  function showExplanations(qi) {
-    var card = document.getElementById('qcard' + qi);
-    var opts = card.querySelectorAll('.quiz-opt');
-    var correct = Array.isArray(answers[qi]) ? answers[qi] : [answers[qi]];
-    opts.forEach(function(opt, j) {
-      var perExp = opt.getAttribute('data-exp');
-      var isCorr = correct.indexOf(j) !== -1;
-      if (perExp) {
-        var expDiv = document.createElement('div');
-        expDiv.className = 'quiz-opt-exp-inline ' + (isCorr ? 'qoe-is-correct' : 'qoe-is-wrong');
-        var icon = isCorr ? '\u2713' : '\u2717';
-        var label = isCorr
-          ? '<span class="qoe-correct">' + icon + ' Correct</span>'
-          : '<span class="qoe-wrong">' + icon + ' Incorrect</span>';
-        expDiv.innerHTML = '<div class="qoe-header">' + label + ' <span class="qoe-letter">Option ' + 'ABCDEF'[j] + '</span></div>' +
-          '<div class="qoe-text">' + perExp + '</div>';
-        opt.appendChild(expDiv);
-      }
-    });
-    var overall = document.getElementById('qexp' + qi);
-    if (overall) {
-      var content = overall.querySelector('.quiz-overall-content');
-      if (content && content.innerHTML.trim()) {
-        processOverallSections(content);
-        overall.style.display = 'block';
-      }
-    }
-  }
-
-  // Click: select option (all questions use submit button flow)
-  document.querySelectorAll('.quiz-opt').forEach(function(opt) {
-    opt.addEventListener('click', function() {
-      var qi = parseInt(this.dataset.q);
-      var card = document.getElementById('qcard' + qi);
-      if (card.dataset.state) return;
-      var idx = parseInt(this.dataset.idx);
-      var isMulti = Array.isArray(answers[qi]);
-      if (!selections[qi]) selections[qi] = new Set();
-      if (isMulti) {
-        if (selections[qi].has(idx)) { selections[qi].delete(idx); this.classList.remove('selected'); }
-        else { selections[qi].add(idx); this.classList.add('selected'); }
-      } else {
-        card.querySelectorAll('.quiz-opt').forEach(function(o) { o.classList.remove('selected'); });
-        selections[qi] = new Set([idx]);
-        this.classList.add('selected');
-      }
-      var btn = card.querySelector('.quiz-submit-btn');
-      if (btn) btn.style.display = selections[qi].size > 0 ? 'block' : 'none';
-    });
-  });
-
-  function submitAnswer() {
-    var qi = parseInt(this.dataset.q);
-    var card = document.getElementById('qcard' + qi);
-    if (card.dataset.state) return;
-    var selected = Array.from(selections[qi] || []).sort();
-    var correct = Array.isArray(answers[qi]) ? answers[qi].slice().sort() : [answers[qi]];
-    var isCorrect = selected.length === correct.length && selected.every(function(v, i) { return v === correct[i]; });
-    var opts = card.querySelectorAll('.quiz-opt');
-    if (isCorrect) {
-      score++;
-      card.dataset.state = 'correct';
-      selected.forEach(function(i) { opts[i].classList.add('correct'); });
-    } else {
-      card.dataset.state = 'wrong';
-      selected.forEach(function(i) {
-        if (correct.indexOf(i) === -1) opts[i].classList.add('wrong');
-        else opts[i].classList.add('correct');
-      });
-      correct.forEach(function(i) { opts[i].classList.add('correct'); });
-    }
-    opts.forEach(function(o) { o.setAttribute('disabled', ''); });
-    this.style.display = 'none';
-    showExplanations(qi);
-    answered++;
-    checkDone();
-  }
-
-  // Submit handlers (covers both existing HTML buttons and dynamically created ones)
-  document.querySelectorAll('.quiz-submit-btn').forEach(function(btn) {
-    btn.addEventListener('click', submitAnswer);
-  });
-
-  function checkDone() {
-    if (answered === answers.length) {
-      var el = document.getElementById('quizScore');
-      el.classList.add('show');
-      document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
-      var msg = score === answers.length ? 'Perfect score! You are well prepared.' : score >= 10 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
-      document.getElementById('quizScoreMsg').textContent = msg;
-      var code = document.querySelector('.cp-code');
-      if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: code ? code.textContent : 'quiz', quiz_score: score });
-    }
-  }</script>
+</script>
 </body>
 </html>

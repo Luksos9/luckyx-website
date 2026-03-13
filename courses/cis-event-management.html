@@ -75,8 +75,8 @@
 {
   "@context": "https://schema.org",
   "@type": "Quiz",
-  "name": "Free CIS Event Management Sample Questions",
-  "description": "Try 5 free sample questions from the CIS Event Management practice test",
+  "name": "10 Free CIS Event Management \u2014 ServiceNow Practice Test 2026 Preview Questions",
+  "description": "Start page 1 of a 10-question free preview for the CIS Event Management \u2014 ServiceNow Practice Test 2026 practice test.",
   "url": "https://luckyx.dev/courses/cis-event-management.html#free-quiz",
   "educationalAlignment": {
     "@type": "AlignmentObject",
@@ -86,111 +86,111 @@
   "hasPart": [
     {
       "@type": "Question",
-      "name": "What is the primary purpose of Event Management in ServiceNow?",
+      "name": "You have an event with a Source of 'Trap from Enterprise 111' but the alert created for this event shows a Source of 'Oracle EM'. If you want to change what this is set to where in the event rule would you do this?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "To process and correlate IT infrastructure events into actionable alerts"
+        "text": "Transform and Compose Alert Output tab"
       },
       "suggestedAnswer": [
         {
           "@type": "Answer",
-          "text": "To manage calendar events"
+          "text": "Event rule info tab"
         },
         {
           "@type": "Answer",
-          "text": "To schedule meetings"
+          "text": "CI Binding tab"
         },
         {
           "@type": "Answer",
-          "text": "To track project milestones"
+          "text": "Event Filter tab"
         }
       ]
     },
     {
       "@type": "Question",
-      "name": "What is the difference between an Event and an Alert?",
+      "name": "In default configuration using baseline connectors how often is event data collected from event sources?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Events are raw data; Alerts are processed, correlated, and actionable"
+        "text": "Every 2 minutes"
       },
       "suggestedAnswer": [
         {
           "@type": "Answer",
-          "text": "They are the same thing"
+          "text": "Once every minute"
         },
         {
           "@type": "Answer",
-          "text": "Alerts come before Events"
+          "text": "Twice every minute"
         },
         {
           "@type": "Answer",
-          "text": "Events are for hardware; Alerts are for software"
+          "text": "Every 5 minutes"
         }
       ]
     },
     {
       "@type": "Question",
-      "name": "Which component receives events from external monitoring tools?",
+      "name": "Entry Points: When using Service Mapping to build a \"Mapped Application Service\" what is the primary function of an Entry Point?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The MID Server"
+        "text": "It defines the first tier of the application connection (e.g. a URL or IP/Port) to begin discovery."
       },
       "suggestedAnswer": [
         {
           "@type": "Answer",
-          "text": "The CMDB"
+          "text": "It defines the login credentials for the service."
         },
         {
           "@type": "Answer",
-          "text": "The Service Catalog"
+          "text": "It defines the person responsible for the service."
         },
         {
           "@type": "Answer",
-          "text": "The Knowledge Base"
+          "text": "It defines the API endpoint for the Event Connector."
         }
       ]
     },
     {
       "@type": "Question",
-      "name": "What is Event Correlation in ServiceNow?",
+      "name": "Event Class Variable When writing custom JavaScript in an Event Rule which internal variable allows access to the classification object of the event?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Grouping related events together to reduce noise and identify root causes"
+        "text": "event_class"
       },
       "suggestedAnswer": [
         {
           "@type": "Answer",
-          "text": "Linking events to user profiles"
+          "text": "current"
         },
         {
           "@type": "Answer",
-          "text": "Sorting events by date"
+          "text": "evt"
         },
         {
           "@type": "Answer",
-          "text": "Assigning events to support groups"
+          "text": "binding"
         }
       ]
     },
     {
       "@type": "Question",
-      "name": "What is the function of an Alert Management Rule?",
+      "name": "What is an alert called that moves from an open to a closed state multiple times within a designated time-frame?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "To define automated actions when alerts meet certain conditions"
+        "text": "Flapping"
       },
       "suggestedAnswer": [
         {
           "@type": "Answer",
-          "text": "To delete old events"
+          "text": "Fluctuating"
         },
         {
           "@type": "Answer",
-          "text": "To create new monitoring tools"
+          "text": "Swinging"
         },
         {
           "@type": "Answer",
-          "text": "To manage user passwords"
+          "text": "Flipping"
         }
       ]
     }
@@ -321,77 +321,21 @@ a:hover { text-decoration: underline; }
 .theme-toggle svg { width: 18px; height: 18px; stroke: var(--text-dim); stroke-width: 2; fill: none; }
 
 /* Quiz section */
-.quiz-section { margin-top: 48px; }
-.quiz-section h2 { font-size: 1.3rem; font-weight: 600; margin-bottom: 8px; }
-.quiz-intro { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 24px; }
-.quiz-card { background: var(--bg-raised); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 16px; transition: border-color 0.2s; }
-.quiz-card[data-state="correct"] { border-color: #2ea043; }
-.quiz-card[data-state="wrong"] { border-color: #d73a49; }
-.quiz-q { font-weight: 600; font-size: 1rem; margin-bottom: 16px; line-height: 1.5; }
-.quiz-q-num { color: var(--orange); font-weight: 700; margin-right: 6px; }
-.quiz-opts { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-.quiz-opt { display: flex; align-items: flex-start; gap: 10px; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border); cursor: pointer; transition: background 0.15s, border-color 0.15s; color: var(--text-dim); font-size: 0.95rem; line-height: 1.5; flex-wrap: wrap; }
-.quiz-opt:hover { background: rgba(221,92,12,0.06); border-color: var(--border-hover); }
-.quiz-opt.selected { background: rgba(221,92,12,0.1); border-color: var(--orange); color: var(--text); }
-.quiz-opt.correct { background: rgba(46,160,67,0.1); border-color: #2ea043; color: var(--text); }
-.quiz-opt.wrong { background: rgba(215,58,73,0.1); border-color: #d73a49; }
-.quiz-opt[disabled] { pointer-events: none; cursor: default; }
-.quiz-opt-letter { width: 22px; height: 22px; border-radius: 50%; background: var(--bg-card); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 600; flex-shrink: 0; color: var(--text-dim); }
-.quiz-opt.selected .quiz-opt-letter { background: var(--orange); color: #fff; border-color: var(--orange); }
-.quiz-opt.correct .quiz-opt-letter { background: #2ea043; color: #fff; border-color: #2ea043; }
-.quiz-opt.wrong .quiz-opt-letter { background: #d73a49; color: #fff; border-color: #d73a49; }
-.quiz-choose { font-weight: 400; color: var(--orange); font-size: 0.85rem; margin-left: 4px; }
-.quiz-submit-btn { display: none; margin-top: 14px; padding: 11px 28px; background: var(--orange); color: #fff; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.15s, transform 0.1s; }
-.quiz-submit-btn:hover { background: #c75400; }
-.quiz-submit-btn:active { transform: scale(0.97); }
-/* Per-option inline explanation (under each option) */
-.quiz-opt-exp-inline { flex-basis: 100%; padding: 10px 14px; border-radius: 8px; font-size: 0.88rem; line-height: 1.5; margin-top: 6px; animation: fadeInExp 0.3s ease; }
-@keyframes fadeInExp { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
-.quiz-opt-exp-inline.qoe-is-correct { background: rgba(46,160,67,0.08); border-left: 3px solid #2ea043; }
-.quiz-opt-exp-inline.qoe-is-wrong { background: rgba(215,58,73,0.06); border-left: 3px solid #d73a49; }
-.qoe-header { font-weight: 600; margin-bottom: 4px; font-size: 0.82rem; display: flex; align-items: center; gap: 6px; }
-.qoe-correct { color: #2ea043; }
-.qoe-wrong { color: #d73a49; }
-.qoe-letter { color: var(--text-dim); font-weight: 500; }
-.qoe-text { color: var(--text-dim); }
-/* Legacy grouped explanation container - hidden */
-.quiz-opt-explains { display: none !important; }
-/* Collapsible overall explanation */
-.quiz-overall { display: none; margin-top: 14px; }
-.quiz-overall[style*="block"] { display: block; }
-.quiz-overall-toggle { cursor: pointer; font-size: 0.9rem; font-weight: 600; color: var(--orange); padding: 10px 0; list-style: none; display: flex; align-items: center; gap: 6px; }
-.quiz-overall-toggle::-webkit-details-marker { display: none; }
-.quiz-overall-toggle::before { content: ''; display: inline-block; width: 0; height: 0; border-left: 5px solid var(--orange); border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform 0.2s; }
-details.quiz-overall[open] .quiz-overall-toggle::before { transform: rotate(90deg); }
-.quiz-overall-content { padding: 4px 0; background: transparent; border-radius: 0; font-size: 0.9rem; color: var(--text-dim); line-height: 1.7; margin-top: 8px; border-left: none; }
-/* Section-specific styling for overall explanation */
-.exp-section { margin-bottom: 14px; padding: 14px 18px; border-radius: 10px; border-left: 3px solid; }
-.exp-section:last-child { margin-bottom: 0; }
-.exp-section h5 { margin: 0 0 8px 0; font-size: 0.92rem; font-weight: 700; }
-.exp-section p { margin-bottom: 6px; }
-.exp-section p:last-child { margin-bottom: 0; }
-.exp-section ul { padding-left: 20px; margin-bottom: 6px; }
-.exp-section ul:last-child { margin-bottom: 0; }
-.exp-section li { margin-bottom: 4px; }
-.exp-correct-answer { background: rgba(46,160,67,0.05); border-left-color: #2ea043; }
-.exp-correct-answer h5 { color: #2ea043; }
-.exp-source { background: rgba(59,130,246,0.05); border-left-color: #3b82f6; }
-.exp-source h5 { color: #3b82f6; }
-.exp-source a { color: #3b82f6; }
-.exp-expert { background: rgba(139,92,246,0.05); border-left-color: #8b5cf6; }
-.exp-expert h5 { color: #8b5cf6; }
-.exp-wrong { background: rgba(215,58,73,0.04); border-left-color: #d73a49; }
-.exp-wrong h5 { color: #d73a49; }
-.exp-memory { background: rgba(217,119,6,0.05); border-left-color: #d97706; }
-.exp-memory h5 { color: #d97706; }
-.exp-realworld { background: rgba(16,185,129,0.05); border-left-color: #10b981; }
-.exp-realworld h5 { color: #10b981; }
-.quiz-score { margin-top: 24px; padding: 20px; background: var(--bg-raised); border-radius: 12px; border: 1px solid var(--border); text-align: center; display: none; }
-.quiz-score.show { display: block; }
-.quiz-score-num { font-size: 2rem; font-weight: 800; color: var(--orange); }
-.quiz-score-label { color: var(--text-dim); font-size: 0.95rem; margin-top: 4px; }
-.quiz-score-msg { margin-top: 12px; font-size: 0.95rem; color: var(--text-dim); }
-.quiz-score .cp-cta { margin-top: 16px; font-size: 1rem; padding: 12px 32px; display: inline-flex; }
+.quiz-section{margin-top:48px}.quiz-section h2{font-size:1.35rem;font-weight:700;margin-bottom:10px;line-height:1.3}.quiz-intro{color:var(--text-dim);font-size:.96rem;margin:0;max-width:64ch}
+.preview-shell{margin-bottom:24px}.preview-kicker{display:inline-flex;align-items:center;gap:8px;margin-bottom:14px;padding:6px 12px;border-radius:999px;background:rgba(221,92,12,.08);border:1px solid rgba(221,92,12,.18);color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.preview-copy-row{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px}.preview-step-note{color:var(--text-dim);font-size:.9rem;line-height:1.6;max-width:34ch}
+.preview-index{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;list-style:none;margin:0 0 24px;padding:0}.preview-slot{min-height:64px;padding:12px 8px;border-radius:12px;border:1px solid var(--border);background:var(--bg-raised);text-align:center}.preview-slot-num{display:block;font-size:1rem;font-weight:700;color:var(--text);line-height:1.1}.preview-slot-label{display:block;margin-top:6px;font-size:.72rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--text-dim)}.preview-slot.is-active{border-color:rgba(221,92,12,.35);background:rgba(221,92,12,.08)}.preview-slot.is-done{border-color:rgba(46,160,67,.35);background:rgba(46,160,67,.08)}.preview-slot.is-done .preview-slot-num,.preview-slot.is-done .preview-slot-label{color:#2ea043}.preview-slot.is-prior{border-style:dashed;background:rgba(255,255,255,.02)}
+.quiz-card{background:var(--bg-raised);border:1px solid var(--border);border-radius:14px;padding:24px;margin-bottom:16px;transition:border-color .2s}.quiz-card[data-state="correct"]{border-color:#2ea043}.quiz-card[data-state="wrong"]{border-color:#d73a49}.quiz-q{font-weight:600;font-size:1rem;margin-bottom:16px;line-height:1.55}.quiz-q-num{color:var(--orange);font-weight:700;margin-right:6px}.quiz-opts{list-style:none;display:flex;flex-direction:column;gap:8px}.quiz-opt{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border-radius:10px;border:1px solid var(--border);cursor:pointer;transition:background .15s,border-color .15s;color:var(--text-dim);font-size:.95rem;line-height:1.55;flex-wrap:wrap}.quiz-opt:hover{background:rgba(221,92,12,.06);border-color:var(--border-hover)}.quiz-opt.selected{background:rgba(221,92,12,.1);border-color:var(--orange);color:var(--text)}.quiz-opt.correct{background:rgba(46,160,67,.1);border-color:#2ea043;color:var(--text)}.quiz-opt.wrong{background:rgba(215,58,73,.1);border-color:#d73a49}.quiz-opt[disabled]{pointer-events:none;cursor:default}
+.quiz-opt-letter{width:22px;height:22px;border-radius:50%;background:var(--bg-card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:600;flex-shrink:0;color:var(--text-dim)}.quiz-opt.selected .quiz-opt-letter{background:var(--orange);color:#fff;border-color:var(--orange)}.quiz-opt.correct .quiz-opt-letter{background:#2ea043;color:#fff;border-color:#2ea043}.quiz-opt.wrong .quiz-opt-letter{background:#d73a49;color:#fff;border-color:#d73a49}.quiz-choose{font-weight:500;color:var(--orange);font-size:.85rem;margin-left:4px}
+.quiz-submit-btn{display:none;margin-top:14px;padding:11px 28px;background:var(--orange);color:#fff;border:none;border-radius:10px;font-size:.92rem;font-weight:700;cursor:pointer}.quiz-submit-btn:hover{background:#c75400}
+.quiz-opt-exp-inline{flex-basis:100%;padding:10px 14px;border-radius:10px;font-size:.88rem;line-height:1.55;margin-top:6px}.quiz-opt-exp-inline.qoe-is-correct{background:rgba(46,160,67,.08);border-left:3px solid #2ea043}.quiz-opt-exp-inline.qoe-is-wrong{background:rgba(215,58,73,.06);border-left:3px solid #d73a49}.qoe-header{font-weight:700;margin-bottom:4px;font-size:.82rem;display:flex;align-items:center;gap:6px}.qoe-correct{color:#2ea043}.qoe-wrong{color:#d73a49}.qoe-letter,.qoe-text{color:var(--text-dim)}.quiz-opt-explains{display:none!important}
+.quiz-overall{display:none;margin-top:14px}.quiz-overall[style*="block"]{display:block}.quiz-overall-toggle{cursor:pointer;font-size:.9rem;font-weight:700;color:var(--orange);padding:10px 0;list-style:none;display:flex;align-items:center;gap:6px}.quiz-overall-toggle::-webkit-details-marker{display:none}.quiz-overall-toggle::before{content:'';display:inline-block;width:0;height:0;border-left:5px solid var(--orange);border-top:4px solid transparent;border-bottom:4px solid transparent;transition:transform .2s}details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}.quiz-overall-content{padding:4px 0;background:transparent;border-radius:0;font-size:.9rem;color:var(--text-dim);line-height:1.7;margin-top:8px;border-left:none}
+.exp-section{margin-bottom:14px;padding:14px 18px;border-radius:12px;border-left:3px solid}.exp-section:last-child,.exp-section p:last-child,.exp-section ul:last-child{margin-bottom:0}.exp-section h5{margin:0 0 8px;font-size:.92rem;font-weight:700}.exp-section p{margin-bottom:6px}.exp-section ul{padding-left:20px;margin-bottom:6px}.exp-section li{margin-bottom:4px}.exp-correct-answer{background:rgba(46,160,67,.05);border-left-color:#2ea043}.exp-correct-answer h5{color:#2ea043}.exp-source{background:rgba(59,130,246,.05);border-left-color:#3b82f6}.exp-source h5,.exp-source a{color:#3b82f6}.exp-expert{background:rgba(139,92,246,.05);border-left-color:#8b5cf6}.exp-expert h5{color:#8b5cf6}.exp-wrong{background:rgba(215,58,73,.04);border-left-color:#d73a49}.exp-wrong h5{color:#d73a49}.exp-memory{background:rgba(217,119,6,.05);border-left-color:#d97706}.exp-memory h5{color:#d97706}.exp-realworld{background:rgba(16,185,129,.05);border-left-color:#10b981}.exp-realworld h5{color:#10b981}
+.preview-result{display:none;margin-top:28px;padding:24px;border-radius:18px;border:1px solid rgba(221,92,12,.22);background:radial-gradient(circle at top right,rgba(221,92,12,.12),transparent 42%),linear-gradient(180deg,rgba(255,255,255,.015),rgba(255,255,255,0))}.preview-result.show{display:block}.preview-result-kicker{color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}.preview-result-head{margin-top:10px;font-size:1.5rem;line-height:1.25;font-weight:700}.preview-score-row{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:18px 0 8px}.preview-score-value{font-size:2.2rem;font-weight:800;color:var(--text);line-height:1}.preview-score-label{color:var(--text-dim);font-size:.92rem}.preview-result-copy{color:var(--text-dim);margin-top:8px;max-width:62ch}.preview-offer-list{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px}.preview-offer-list li{display:flex;gap:10px;align-items:flex-start;color:var(--text-dim)}.preview-offer-bullet{width:22px;height:22px;flex:0 0 22px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(221,92,12,.1);color:var(--orange);font-size:.8rem;font-weight:700;margin-top:1px}.preview-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}.preview-secondary-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 22px;border-radius:12px;border:1px solid var(--border-hover);background:transparent;color:var(--text);font-family:var(--font);font-size:.98rem;font-weight:700;cursor:pointer}.preview-secondary-btn:hover{background:rgba(221,92,12,.06);border-color:var(--orange)}.preview-text-link{display:inline-flex;align-items:center;gap:8px;margin-top:16px;border:none;background:none;color:var(--text-dim);font-family:var(--font);font-size:.9rem;font-weight:700;cursor:pointer;padding:0}.preview-text-link:hover{color:var(--orange);text-decoration:none}.preview-helper{margin-top:16px;color:var(--text-dim);font-size:.9rem;line-height:1.6}
+.preview-email-wrap{display:none;margin-top:22px;padding-top:20px;border-top:1px solid var(--border)}.preview-email-wrap.show{display:block}.preview-email-wrap h3{font-size:1.02rem;margin-bottom:6px}.preview-email-wrap p{color:var(--text-dim);font-size:.92rem}.preview-lead-form{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.preview-lead-form input[type="email"]{flex:1 1 240px;min-height:48px;border-radius:12px;border:1px solid var(--border);background:var(--bg-card);color:var(--text);padding:0 14px;font-family:var(--font);font-size:.95rem}.preview-lead-form input[type="email"]::placeholder{color:var(--text-faint)}.preview-lead-form input[type="email"]:focus{outline:none;border-color:rgba(221,92,12,.45);box-shadow:0 0 0 3px rgba(221,92,12,.12)}.preview-lead-form button{min-height:48px;padding:0 18px;border-radius:12px;border:none;background:var(--orange);color:#fff;font-family:var(--font);font-size:.94rem;font-weight:700;cursor:pointer}.preview-lead-form button:disabled{opacity:.72;cursor:wait}.preview-lead-note{margin-top:10px;color:var(--text-dim);font-size:.82rem;line-height:1.5}
+.preview-exit{position:fixed;inset:0;z-index:1200;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(5,5,7,.74)}.preview-exit.active{display:flex}.preview-exit-card{position:relative;width:min(520px,100%);padding:26px;border-radius:20px;border:1px solid var(--border);background:radial-gradient(circle at top right,rgba(221,92,12,.14),transparent 38%),var(--bg-raised);box-shadow:0 24px 70px rgba(0,0,0,.35)}.preview-exit-close{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--text-dim);cursor:pointer;font-size:1.2rem}.preview-exit-kicker{color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}.preview-exit-title{margin-top:10px;font-size:1.45rem;line-height:1.25}.preview-exit-copy{margin-top:10px;color:var(--text-dim);line-height:1.65}.preview-exit-link{margin-top:14px;display:inline-flex;align-items:center;gap:8px;font-weight:700}
+@media (min-width:720px){.preview-index{grid-template-columns:repeat(10,minmax(0,1fr))}}@media (max-width:600px){.cp-title,.cp-price{font-size:1.5rem}.cp-cta,.preview-secondary-btn{width:100%;justify-content:center}.quiz-card{padding:16px}.preview-exit-card{padding:22px 18px}.preview-lead-form{flex-direction:column}.preview-lead-form button{width:100%}}
+
 /* Countdown banner */
 .countdown-banner { max-width: 100%; margin: 0 0 24px; padding: 20px 24px; background: linear-gradient(135deg, rgba(221,92,12,0.08), rgba(221,92,12,0.03)); border: 1px solid rgba(221,92,12,0.2); border-radius: 14px; text-align: center; position: relative; overflow: hidden; }
 .countdown-banner::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(221,92,12,0.04), transparent); animation: cd-shimmer 3s ease-in-out infinite; }
@@ -507,265 +451,129 @@ details.quiz-overall[open] .quiz-overall-toggle::before { transform: rotate(90de
     </ul>
   </div>
 
-  <section class="quiz-section" id="free-quiz">
-    <h2>Try 15 Free EM Questions</h2>
-    <p class="quiz-intro">Test your knowledge before you buy — including multiple-choice and multi-select, just like the real exam.</p>
-    <div class="quiz-card" id="qcard0">
-      <div class="quiz-q"><span class="quiz-q-num">1.</span>You have an event with a Source of &#x27;Trap from Enterprise 111&#x27; but the alert created for this event shows a Source of &#x27;Oracle EM&#x27;. If you want to change what this is set to where in the event rule would you do this?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="0" data-exp="CORRECT: The Transform and Compose Alert Output tab is where you configure how event fields map to alert fields, including the Source field displayed on the alert."><span class="quiz-opt-letter">A</span><span>Transform and Compose Alert Output tab</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="0" data-exp="INCORRECT: The Event rule info tab contains general information about the event rule like name and description, not field mapping configuration."><span class="quiz-opt-letter">B</span><span>Event rule info tab</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="0" data-exp="INCORRECT: The CI Binding tab is used to configure how events are associated with Configuration Items in the CMDB."><span class="quiz-opt-letter">C</span><span>CI Binding tab</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="0" data-exp="INCORRECT: The Event Filter tab defines which events match this rule based on field conditions, not how alert fields are populated."><span class="quiz-opt-letter">D</span><span>Event Filter tab</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp0" style="display:none"></div>
-      <details class="quiz-overall" id="qexp0">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>A) Transform and Compose Alert Output tab</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-it-operations-management/page/product/event-management/task/t_EMConfigureEventRules.html" target="_blank">ServiceNow Zurich Docs: Configure Event Rules</a><br>(If the link fails, search Google for: ServiceNow Zurich Event Rule Transform Compose Alert Output)</p><h5>Expert Explanation</h5><p>The Transform and Compose Alert Output tab in an event rule controls how event fields are mapped to alert fields. When an event with Source "Trap from Enterprise 111" creates an alert showing Source "Oracle EM," the mapping on this tab is overriding the original source value. To change what appears in the alert Source field, you modify the field mapping on this tab.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>Event rule info tab</strong> contains metadata about the rule itself, not field transformations</li><li><strong>CI Binding tab</strong> handles CMDB association, not alert field values</li><li><strong>Event Filter tab</strong> determines which events match, not how alert output is composed</li></ul><h5>Memory Tip</h5><p>Transform and Compose = transforming event data into alert output. If the alert shows wrong values, check the Transform tab.</p><h5>Real-World Example</h5><p>A monitoring team notices alerts showing "Oracle EM" as the source even though events come from SNMP traps. They open the matching event rule, go to the Transform and Compose Alert Output tab, and find a hardcoded "Oracle EM" value. They change it to use the original event source field.</p>
-</div>
-      </details>
+  <section class="quiz-section" id="free-quiz" data-preview-step="1">
+    <div class="preview-shell">
+      <div class="preview-kicker">10-question free preview</div>
+      <h2>10 Free CIS Event Management — ServiceNow Practice Test 2026 Preview Questions</h2>
+      <div class="preview-copy-row">
+        <p class="quiz-intro">Page 1 of 2: questions 1-5. Rich explanations, multiple-choice, and multi-select - just like the real exam.</p>
+        <p class="preview-step-note">You are seeing the first half of a 10-question preview before the full 200-question course.</p>
+      </div>
+      <ol class="preview-index" id="previewIndex">
+      <li class="preview-slot" data-slot="1"><span class="preview-slot-num">1</span><span class="preview-slot-label">Live now</span></li>
+      <li class="preview-slot" data-slot="2"><span class="preview-slot-num">2</span><span class="preview-slot-label">Live now</span></li>
+      <li class="preview-slot" data-slot="3"><span class="preview-slot-num">3</span><span class="preview-slot-label">Live now</span></li>
+      <li class="preview-slot" data-slot="4"><span class="preview-slot-num">4</span><span class="preview-slot-label">Live now</span></li>
+      <li class="preview-slot" data-slot="5"><span class="preview-slot-num">5</span><span class="preview-slot-label">Live now</span></li>
+      <li class="preview-slot" data-slot="6"><span class="preview-slot-num">6</span><span class="preview-slot-label">Page 2</span></li>
+      <li class="preview-slot" data-slot="7"><span class="preview-slot-num">7</span><span class="preview-slot-label">Page 2</span></li>
+      <li class="preview-slot" data-slot="8"><span class="preview-slot-num">8</span><span class="preview-slot-label">Page 2</span></li>
+      <li class="preview-slot" data-slot="9"><span class="preview-slot-num">9</span><span class="preview-slot-label">Page 2</span></li>
+      <li class="preview-slot" data-slot="10"><span class="preview-slot-num">10</span><span class="preview-slot-label">Page 2</span></li>
+      </ol>
     </div>
-    <div class="quiz-card" id="qcard1">
-      <div class="quiz-q"><span class="quiz-q-num">2.</span>In default configuration using baseline connectors how often is event data collected from event sources?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="1" data-exp="INCORRECT: Once every minute is too frequent. The default collection interval for baseline connectors is not every minute."><span class="quiz-opt-letter">A</span><span>Once every minute</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="1" data-exp="CORRECT: The default configuration for baseline event connectors collects data every 2 minutes. This is the standard polling interval set by ServiceNow."><span class="quiz-opt-letter">B</span><span>Every 2 minutes</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="1" data-exp="INCORRECT: Twice every minute (30 seconds) would be too aggressive for default polling and could cause performance issues."><span class="quiz-opt-letter">C</span><span>Twice every minute</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="1" data-exp="INCORRECT: Every 5 minutes is longer than the actual default interval. The baseline uses a 2-minute polling cycle."><span class="quiz-opt-letter">D</span><span>Every 5 minutes</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp1" style="display:none"></div>
-      <details class="quiz-overall" id="qexp1">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>B) Every 2 minutes</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-it-operations-management/page/product/event-management/concept/c_EMConnectors.html" target="_blank">ServiceNow Zurich Docs: Event Management Connectors</a><br>(If the link fails, search Google for: ServiceNow Zurich Event Management connector polling interval default)</p><h5>Expert Explanation</h5><p>Baseline event connectors in ServiceNow are configured to poll event sources every 2 minutes by default. This interval balances the need for timely event detection with system performance. The polling interval can be adjusted per connector based on the criticality of the monitored source.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>Every minute</strong> is more frequent than the default setting</li><li><strong>Twice every minute</strong> (30 seconds) would cause excessive load on both the MID Server and event source</li><li><strong>Every 5 minutes</strong> is longer than the default, which could delay critical event detection</li></ul><h5>Memory Tip</h5><p>Default = 2 minutes. Think of it as the "standard heartbeat" for event collection.</p><h5>Real-World Example</h5><p>A network monitoring team deploys a new SNMP trap connector. Without changing any settings, it starts collecting events every 2 minutes. For their critical production firewall, they reduce the interval to 1 minute for faster detection.</p>
+<div class="quiz-card" id="qcard0">
+<div class="quiz-q"><span class="quiz-q-num">1.</span>You have an event with a Source of 'Trap from Enterprise 111' but the alert created for this event shows a Source of 'Oracle EM'. If you want to change what this is set to where in the event rule would you do this?</div>
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="CORRECT: The Transform and Compose Alert Output tab is where you configure how event fields map to alert fields, including the Source field displayed on the alert." data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>Transform and Compose Alert Output tab</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: The Event rule info tab contains general information about the event rule like name and description, not field mapping configuration." data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>Event rule info tab</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: The CI Binding tab is used to configure how events are associated with Configuration Items in the CMDB." data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>CI Binding tab</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: The Event Filter tab defines which events match this rule based on field conditions, not how alert fields are populated." data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>Event Filter tab</span></li>
+</ul>
+<div class="quiz-opt-explains" id="qoptexp0" style="display:none"></div>
+<details class="quiz-overall" id="qexp0">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>A) Transform and Compose Alert Output tab</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-it-operations-management/page/product/event-management/task/t_EMConfigureEventRules.html" target="_blank">ServiceNow Zurich Docs: Configure Event Rules</a><br/>(If the link fails, search Google for: ServiceNow Zurich Event Rule Transform Compose Alert Output)</p><h5>Expert Explanation</h5><p>The Transform and Compose Alert Output tab in an event rule controls how event fields are mapped to alert fields. When an event with Source "Trap from Enterprise 111" creates an alert showing Source "Oracle EM," the mapping on this tab is overriding the original source value. To change what appears in the alert Source field, you modify the field mapping on this tab.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>Event rule info tab</strong> contains metadata about the rule itself, not field transformations</li><li><strong>CI Binding tab</strong> handles CMDB association, not alert field values</li><li><strong>Event Filter tab</strong> determines which events match, not how alert output is composed</li></ul><h5>Memory Tip</h5><p>Transform and Compose = transforming event data into alert output. If the alert shows wrong values, check the Transform tab.</p><h5>Real-World Example</h5><p>A monitoring team notices alerts showing "Oracle EM" as the source even though events come from SNMP traps. They open the matching event rule, go to the Transform and Compose Alert Output tab, and find a hardcoded "Oracle EM" value. They change it to use the original event source field.</p>
 </div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard2">
-      <div class="quiz-q"><span class="quiz-q-num">3.</span>Entry Points: When using Service Mapping to build a &quot;Mapped Application Service&quot; what is the primary function of an Entry Point?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="2" data-exp="INCORRECT: Entry Points do not define login credentials. Credentials are managed separately in the Credentials table."><span class="quiz-opt-letter">A</span><span>It defines the login credentials for the service.</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="2" data-exp="CORRECT: An Entry Point defines the first tier of the application connection, such as a URL, IP address, or port, from which Service Mapping begins its top-down discovery of the application service."><span class="quiz-opt-letter">B</span><span>It defines the first tier of the application connection (e.g. a URL or IP/Port) to begin discovery.</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="2" data-exp="INCORRECT: Entry Points do not define the person responsible for the service. Service ownership is managed through the CMDB service record."><span class="quiz-opt-letter">C</span><span>It defines the person responsible for the service.</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="2" data-exp="INCORRECT: Entry Points are not related to Event Connector API endpoints. They are specific to Service Mapping discovery starting points."><span class="quiz-opt-letter">D</span><span>It defines the API endpoint for the Event Connector.</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp2" style="display:none"></div>
-      <details class="quiz-overall" id="qexp2">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>B) It defines the first tier of the application connection to begin discovery</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-it-operations-management/page/product/service-mapping/concept/entry-points.html" target="_blank">ServiceNow Zurich Docs: Service Mapping Entry Points</a><br>(If the link fails, search Google for: ServiceNow Zurich Service Mapping Entry Points)</p><h5>Expert Explanation</h5><p>In Service Mapping, an Entry Point defines the starting connection point for discovering a Mapped Application Service. It specifies how to reach the first tier of the application, typically through a URL for web applications or an IP/port combination for other services. From this starting point, Service Mapping discovers downstream dependencies automatically.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>Login credentials</strong> are managed in the Credentials table, not Entry Points</li><li><strong>Person responsible</strong> is defined on the service record in the CMDB</li><li><strong>API endpoint for Event Connector</strong> is a completely different concept unrelated to Service Mapping</li></ul><h5>Memory Tip</h5><p>Entry Point = the front door of your application. Service Mapping walks in through this door and discovers everything inside.</p><h5>Real-World Example</h5><p>To map an e-commerce application, the admin creates an Entry Point with URL https://shop.example.com:443. Service Mapping starts at this web server and discovers the load balancer, application servers, databases, and storage systems behind it.</p>
+</details>
 </div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard3">
-      <div class="quiz-q"><span class="quiz-q-num">4.</span>Event Class Variable When writing custom JavaScript in an Event Rule which internal variable allows access to the classification object of the event?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="3" data-exp="INCORRECT: The current variable represents the current GlideRecord (the event record itself), not the classification object."><span class="quiz-opt-letter">A</span><span>current</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="3" data-exp="CORRECT: The event_class variable provides access to the event classification object within custom JavaScript in an Event Rule. It allows you to read and modify classification properties."><span class="quiz-opt-letter">B</span><span>event_class</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="3" data-exp="INCORRECT: The evt variable is used in some contexts but is not the standard variable for accessing the classification object in Event Rules."><span class="quiz-opt-letter">C</span><span>evt</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="3" data-exp="INCORRECT: The binding variable is related to CI binding operations, not event classification access."><span class="quiz-opt-letter">D</span><span>binding</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp3" style="display:none"></div>
-      <details class="quiz-overall" id="qexp3">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>B) event_class</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-it-operations-management/page/product/event-management/reference/r_EMScriptingInRules.html" target="_blank">ServiceNow Zurich Docs: Scripting in Event Rules</a><br>(If the link fails, search Google for: ServiceNow Zurich Event Rule scripting variables event_class)</p><h5>Expert Explanation</h5><p>When writing custom JavaScript in an Event Rule, the event_class variable gives you access to the classification object of the event being processed. This allows you to read classification properties, modify how the event is categorized, and make decisions based on the event classification within your rule logic.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>current</strong> refers to the event GlideRecord, not the classification object specifically</li><li><strong>evt</strong> is not the standard variable name for classification access in Event Rules</li><li><strong>binding</strong> relates to CI binding, a separate concern from event classification</li></ul><h5>Memory Tip</h5><p>event_class = the class/category of the event. The variable name literally tells you what it contains.</p><h5>Real-World Example</h5><p>An Event Rule needs to set a custom severity based on the event class. The script uses event_class to check the classification and conditionally set the alert severity to Critical for production infrastructure classes.</p>
+<div class="quiz-card" id="qcard1">
+<div class="quiz-q"><span class="quiz-q-num">2.</span>In default configuration using baseline connectors how often is event data collected from event sources?</div>
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="INCORRECT: Once every minute is too frequent. The default collection interval for baseline connectors is not every minute." data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>Once every minute</span></li>
+<li class="quiz-opt" data-exp="CORRECT: The default configuration for baseline event connectors collects data every 2 minutes. This is the standard polling interval set by ServiceNow." data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>Every 2 minutes</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Twice every minute (30 seconds) would be too aggressive for default polling and could cause performance issues." data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>Twice every minute</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Every 5 minutes is longer than the actual default interval. The baseline uses a 2-minute polling cycle." data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>Every 5 minutes</span></li>
+</ul>
+<div class="quiz-opt-explains" id="qoptexp1" style="display:none"></div>
+<details class="quiz-overall" id="qexp1">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>B) Every 2 minutes</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-it-operations-management/page/product/event-management/concept/c_EMConnectors.html" target="_blank">ServiceNow Zurich Docs: Event Management Connectors</a><br/>(If the link fails, search Google for: ServiceNow Zurich Event Management connector polling interval default)</p><h5>Expert Explanation</h5><p>Baseline event connectors in ServiceNow are configured to poll event sources every 2 minutes by default. This interval balances the need for timely event detection with system performance. The polling interval can be adjusted per connector based on the criticality of the monitored source.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>Every minute</strong> is more frequent than the default setting</li><li><strong>Twice every minute</strong> (30 seconds) would cause excessive load on both the MID Server and event source</li><li><strong>Every 5 minutes</strong> is longer than the default, which could delay critical event detection</li></ul><h5>Memory Tip</h5><p>Default = 2 minutes. Think of it as the "standard heartbeat" for event collection.</p><h5>Real-World Example</h5><p>A network monitoring team deploys a new SNMP trap connector. Without changing any settings, it starts collecting events every 2 minutes. For their critical production firewall, they reduce the interval to 1 minute for faster detection.</p>
 </div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard4">
-      <div class="quiz-q"><span class="quiz-q-num">5.</span>What is an alert called that moves from an open to a closed state multiple times within a designated time-frame?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="4" data-exp="INCORRECT: Fluctuating is not the official ServiceNow term for this behavior."><span class="quiz-opt-letter">A</span><span>Fluctuating</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="4" data-exp="INCORRECT: Swinging is not the official ServiceNow term for alerts that repeatedly open and close."><span class="quiz-opt-letter">B</span><span>Swinging</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="4" data-exp="INCORRECT: Flipping is not the official ServiceNow term used in Event Management."><span class="quiz-opt-letter">C</span><span>Flipping</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="4" data-exp="CORRECT: Flapping describes an alert that moves between open and closed states multiple times within a designated time frame. ServiceNow has built-in flapping detection to prevent alert storms from intermittent issues."><span class="quiz-opt-letter">D</span><span>Flapping</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp4" style="display:none"></div>
-      <details class="quiz-overall" id="qexp4">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>D) Flapping</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-it-operations-management/page/product/event-management/concept/c_EMAlertFlapping.html" target="_blank">ServiceNow Zurich Docs: Alert Flapping</a><br>(If the link fails, search Google for: ServiceNow Zurich Event Management alert flapping)</p><h5>Expert Explanation</h5><p>Flapping occurs when an alert repeatedly transitions between open and closed states within a configured time window. This typically indicates an intermittent issue, such as a network link going up and down. ServiceNow detects flapping and can keep the alert open to prevent alert fatigue from constant open/close notifications.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>Fluctuating</strong> is a common English word but not the ServiceNow term</li><li><strong>Swinging</strong> is not used in ServiceNow Event Management terminology</li><li><strong>Flipping</strong> sounds similar but is not the correct ServiceNow term</li></ul><h5>Memory Tip</h5><p>Think of a fish flapping on a dock, going up and down rapidly. A flapping alert does the same thing between open and closed states.</p><h5>Real-World Example</h5><p>A failing network switch causes a link to drop and reconnect every 3 minutes. Without flapping detection, agents would receive dozens of open/close alert pairs per hour. With flapping detection enabled, ServiceNow keeps the alert open and marks it as flapping, sending a single notification to investigate the unstable link.</p>
+</details>
 </div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard5">
-      <div class="quiz-q"><span class="quiz-q-num">6.</span>Alert Automation vs. Management Rules: What is one of the primary benefits of using Alert Automation in Service Operations Workspace compared to legacy Alert Management Rules?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="5" data-exp="INCORRECT: Alert Automation does not use separate back-end tables. It integrates with the same Event Management framework."><span class="quiz-opt-letter">A</span><span>It uses back-end tables separate from those in event management rules</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="5" data-exp="CORRECT: Alert Automation in Service Operations Workspace offers a simplified, no-code experience for creating and managing event and alert-related rules, replacing the complexity of legacy Alert Management Rules."><span class="quiz-opt-letter">B</span><span>It offers a simplified experience for creating and managing event and alert-related rules</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="5" data-exp="INCORRECT: Centralized administration is a general benefit but not the primary differentiator between Alert Automation and legacy rules."><span class="quiz-opt-letter">C</span><span>It enables centralized administration for all alert management</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="5" data-exp="INCORRECT: Alert Automation actually reduces the need for JavaScript by providing a simplified interface. It does not enable JavaScript in all fields."><span class="quiz-opt-letter">D</span><span>It allows for the use of JavaScript in all fields</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp5" style="display:none"></div>
-      <details class="quiz-overall" id="qexp5">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>B) It offers a simplified experience for creating and managing rules</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-it-operations-management/page/product/event-management/concept/alert-automation.html" target="_blank">ServiceNow Zurich Docs: Alert Automation</a><br>(If the link fails, search Google for: ServiceNow Zurich Alert Automation Service Operations Workspace)</p><h5>Expert Explanation</h5><p>Alert Automation provides a streamlined, user-friendly interface within the Service Operations Workspace for creating and managing event and alert rules. Compared to legacy Alert Management Rules, it reduces complexity by offering guided workflows, reducing the need for scripting, and consolidating rule management into a single workspace experience.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>Separate back-end tables</strong> is incorrect; Alert Automation integrates with the Event Management framework</li><li><strong>Centralized administration</strong> is a general benefit, not the primary differentiator</li><li><strong>JavaScript in all fields</strong> is the opposite of what Alert Automation does; it simplifies by reducing script requirements</li></ul><h5>Memory Tip</h5><p>Alert Automation = making alert rules simpler. The key benefit is simplification, not more features.</p><h5>Real-World Example</h5><p>An IT operations manager who previously needed a developer to write JavaScript for alert management rules can now create suppression and grouping rules through a guided, no-code interface in the Service Operations Workspace.</p>
+<div class="quiz-card" id="qcard2">
+<div class="quiz-q"><span class="quiz-q-num">3.</span>Entry Points: When using Service Mapping to build a "Mapped Application Service" what is the primary function of an Entry Point?</div>
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="INCORRECT: Entry Points do not define login credentials. Credentials are managed separately in the Credentials table." data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>It defines the login credentials for the service.</span></li>
+<li class="quiz-opt" data-exp="CORRECT: An Entry Point defines the first tier of the application connection, such as a URL, IP address, or port, from which Service Mapping begins its top-down discovery of the application service." data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>It defines the first tier of the application connection (e.g. a URL or IP/Port) to begin discovery.</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Entry Points do not define the person responsible for the service. Service ownership is managed through the CMDB service record." data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>It defines the person responsible for the service.</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Entry Points are not related to Event Connector API endpoints. They are specific to Service Mapping discovery starting points." data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>It defines the API endpoint for the Event Connector.</span></li>
+</ul>
+<div class="quiz-opt-explains" id="qoptexp2" style="display:none"></div>
+<details class="quiz-overall" id="qexp2">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>B) It defines the first tier of the application connection to begin discovery</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-it-operations-management/page/product/service-mapping/concept/entry-points.html" target="_blank">ServiceNow Zurich Docs: Service Mapping Entry Points</a><br/>(If the link fails, search Google for: ServiceNow Zurich Service Mapping Entry Points)</p><h5>Expert Explanation</h5><p>In Service Mapping, an Entry Point defines the starting connection point for discovering a Mapped Application Service. It specifies how to reach the first tier of the application, typically through a URL for web applications or an IP/port combination for other services. From this starting point, Service Mapping discovers downstream dependencies automatically.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>Login credentials</strong> are managed in the Credentials table, not Entry Points</li><li><strong>Person responsible</strong> is defined on the service record in the CMDB</li><li><strong>API endpoint for Event Connector</strong> is a completely different concept unrelated to Service Mapping</li></ul><h5>Memory Tip</h5><p>Entry Point = the front door of your application. Service Mapping walks in through this door and discovers everything inside.</p><h5>Real-World Example</h5><p>To map an e-commerce application, the admin creates an Entry Point with URL https://shop.example.com:443. Service Mapping starts at this web server and discovers the load balancer, application servers, databases, and storage systems behind it.</p>
 </div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard6">
-      <div class="quiz-q"><span class="quiz-q-num">7.</span>Mandatory Connector Functions You are writing a custom JavaScript based Event Connector to pull events from a legacy mainframe via REST Which specific function must be defined in your script to allow the Test Connector button in the UI to validate credentials without actually pulling data</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="6" data-exp="INCORRECT: execute() is not the function used for connection testing. It may be used for general execution but not specifically for the Test Connector validation."><span class="quiz-opt-letter">A</span><span>execute()</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="6" data-exp="INCORRECT: collect() is used for the actual data collection phase, not for testing credentials without pulling data."><span class="quiz-opt-letter">B</span><span>collect()</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="6" data-exp="CORRECT: testConnection() is the mandatory function that must be defined to enable the Test Connector button in the UI. It validates credentials and connectivity without actually pulling event data."><span class="quiz-opt-letter">C</span><span>testConnection()</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="6" data-exp="INCORRECT: validateAuth() is not a recognized function in the ServiceNow Event Connector framework."><span class="quiz-opt-letter">D</span><span>validateAuth()</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp6" style="display:none"></div>
-      <details class="quiz-overall" id="qexp6">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>C) testConnection()</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-it-operations-management/page/product/event-management/task/t_EMCreateCustomConnector.html" target="_blank">ServiceNow Zurich Docs: Create Custom Event Connector</a><br>(If the link fails, search Google for: ServiceNow Zurich custom Event Connector testConnection JavaScript)</p><h5>Expert Explanation</h5><p>When building a custom JavaScript-based Event Connector, you must define the testConnection() function to enable the Test Connector button in the connector configuration UI. This function validates that the provided credentials and endpoint are correct without pulling actual event data. The collect() function handles the actual data retrieval during scheduled collection runs.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>execute()</strong> is not the designated function for connection testing in the connector framework</li><li><strong>collect()</strong> handles actual event data collection, not credential validation</li><li><strong>validateAuth()</strong> is not a function defined in the ServiceNow connector API</li></ul><h5>Memory Tip</h5><p>testConnection() = test the connection. The function name tells you exactly what it does.</p><h5>Real-World Example</h5><p>A developer builds a custom connector to pull events from a legacy mainframe REST API. They define testConnection() to make a simple GET /health call to verify the endpoint responds with 200 OK using the provided credentials. The admin clicks Test Connector in the UI, and the function executes without pulling actual events.</p>
+</details>
 </div>
-      </details>
-    </div>
-    <div class="quiz-card quiz-multi" id="qcard7">
-      <div class="quiz-q"><span class="quiz-q-num">8.</span>Synthetic Monitoring: Synthetic monitors in the ServiceNow Event Management context can be hosted from which of the following locations? (Choose three) <span class="quiz-choose">(choose 3)</span></div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="7" data-exp="CORRECT: A MID Server can host synthetic monitors to test services from behind the firewall, simulating internal user access."><span class="quiz-opt-letter">A</span><span>A MID Server</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="7" data-exp="CORRECT: A cluster of ACC (Agent Client Collector) agents can run synthetic monitoring probes from distributed endpoints across the infrastructure."><span class="quiz-opt-letter">B</span><span>A cluster of Agent Client Collector (ACC) agents</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="7" data-exp="CORRECT: A ServiceNow Glide instance can host synthetic monitors for testing public-facing endpoints that are accessible from the internet."><span class="quiz-opt-letter">C</span><span>A ServiceNow Glide instance (for public endpoints)</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="7" data-exp="INCORRECT: The end-user browser is not a hosting location for ServiceNow synthetic monitors. Browser-based monitoring uses different tools."><span class="quiz-opt-letter">D</span><span>The end-user&#x27;s browser</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="7" data-exp="INCORRECT: Third-party cloud monitoring agents are not a supported hosting location for ServiceNow native synthetic monitors."><span class="quiz-opt-letter">E</span><span>A third-party cloud monitoring agent</span></li>
-      </ul>
-      <button class="quiz-submit-btn" data-q="7" style="display:none">Submit Answer</button>
-      <div class="quiz-opt-explains" id="qoptexp7" style="display:none"></div>
-      <details class="quiz-overall" id="qexp7">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>A) MID Server, B) ACC agents, C) ServiceNow Glide instance</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-it-operations-management/page/product/event-management/concept/synthetic-monitoring.html" target="_blank">ServiceNow Zurich Docs: Synthetic Monitoring</a><br>(If the link fails, search Google for: ServiceNow Zurich Synthetic Monitoring hosting locations)</p><h5>Expert Explanation</h5><p>Synthetic monitors can be hosted from three locations: MID Servers (for internal network testing), ACC agent clusters (for distributed endpoint monitoring), and the ServiceNow Glide instance itself (for public-facing endpoints). Each location provides different visibility depending on where the monitored service is accessible from.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>End-user browser</strong> is not a native synthetic monitoring host</li><li><strong>Third-party cloud agents</strong> are not part of the ServiceNow synthetic monitoring framework</li></ul><h5>Memory Tip</h5><p>Three hosts: MID (internal), ACC (distributed), Glide (public). Think inside, across, and outside the network.</p><h5>Real-World Example</h5><p>A company monitors their internal HR portal via MID Server, tests distributed office connectivity via ACC agents, and checks their public website availability directly from the ServiceNow instance.</p>
+<div class="quiz-card" id="qcard3">
+<div class="quiz-q"><span class="quiz-q-num">4.</span>Event Class Variable When writing custom JavaScript in an Event Rule which internal variable allows access to the classification object of the event?</div>
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="INCORRECT: The current variable represents the current GlideRecord (the event record itself), not the classification object." data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>current</span></li>
+<li class="quiz-opt" data-exp="CORRECT: The event_class variable provides access to the event classification object within custom JavaScript in an Event Rule. It allows you to read and modify classification properties." data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>event_class</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: The evt variable is used in some contexts but is not the standard variable for accessing the classification object in Event Rules." data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>evt</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: The binding variable is related to CI binding operations, not event classification access." data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>binding</span></li>
+</ul>
+<div class="quiz-opt-explains" id="qoptexp3" style="display:none"></div>
+<details class="quiz-overall" id="qexp3">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>B) event_class</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-it-operations-management/page/product/event-management/reference/r_EMScriptingInRules.html" target="_blank">ServiceNow Zurich Docs: Scripting in Event Rules</a><br/>(If the link fails, search Google for: ServiceNow Zurich Event Rule scripting variables event_class)</p><h5>Expert Explanation</h5><p>When writing custom JavaScript in an Event Rule, the event_class variable gives you access to the classification object of the event being processed. This allows you to read classification properties, modify how the event is categorized, and make decisions based on the event classification within your rule logic.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>current</strong> refers to the event GlideRecord, not the classification object specifically</li><li><strong>evt</strong> is not the standard variable name for classification access in Event Rules</li><li><strong>binding</strong> relates to CI binding, a separate concern from event classification</li></ul><h5>Memory Tip</h5><p>event_class = the class/category of the event. The variable name literally tells you what it contains.</p><h5>Real-World Example</h5><p>An Event Rule needs to set a custom severity based on the event class. The script uses event_class to check the classification and conditionally set the alert severity to Critical for production infrastructure classes.</p>
 </div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard8">
-      <div class="quiz-q"><span class="quiz-q-num">9.</span>The correct regex to capture the name of the server in &quot;the server webserver3.domain.com is down&quot; would be:</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="8" data-exp="INCORRECT: This regex uses a greedy match from the start, which would not correctly isolate the server name between the space and the end."><span class="quiz-opt-letter">A</span><span>.*(\w+\.\w+\.\w+).*</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="8" data-exp="INCORRECT: This pattern starts matching from a fixed prefix and uses a greedy capture that would include extra text beyond the server name."><span class="quiz-opt-letter">B</span><span>The server (.*)\s.*</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="8" data-exp="CORRECT: This regex skips everything up to the last space before the server name, then captures the three-part domain pattern (word.word.word) correctly."><span class="quiz-opt-letter">C</span><span>.*\s(\w+\.\w+\.\w+).*</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="8" data-exp="INCORRECT: This pattern uses a case-sensitive fixed prefix and greedy capture that would match too much text."><span class="quiz-opt-letter">D</span><span>the server (.*).*</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp8" style="display:none"></div>
-      <details class="quiz-overall" id="qexp8">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>C) .*\s(\w+\.\w+\.\w+).*</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-it-operations-management/page/product/event-management/concept/c_EMRegularExpressions.html" target="_blank">ServiceNow Zurich Docs: Regular Expressions in Event Management</a><br>(If the link fails, search Google for: ServiceNow Zurich Event Management regex parsing)</p><h5>Expert Explanation</h5><p>The regex .*\s(\w+\.\w+\.\w+).* works by first consuming any characters up to a whitespace character, then capturing a three-part dotted name pattern (like webserver3.domain.com). The \w+ matches word characters and the \. matches literal dots, correctly isolating the FQDN from the surrounding text.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>Option A</strong> starts greedy matching from position zero, potentially capturing wrong text</li><li><strong>Option B</strong> uses a fixed text prefix and greedy (.*) capture that grabs too much</li><li><strong>Option D</strong> is case-sensitive to "the" and uses greedy capture that would match beyond the server name</li></ul><h5>Memory Tip</h5><p>Look for the pattern that uses \s before the capture group. The space anchors the start of the server name.</p><h5>Real-World Example</h5><p>An event rule needs to extract the server FQDN from free-text event messages. The regex captures "webserver3.domain.com" from "the server webserver3.domain.com is down" and maps it to the alert Node field for CI binding.</p>
+</details>
 </div>
-      </details>
-    </div>
-    <div class="quiz-card quiz-multi" id="qcard9">
-      <div class="quiz-q"><span class="quiz-q-num">10.</span>You have a very large networking environment and have noticed that your event notifications are either not being triggered or are delayed. What are best options to try to resolve this issue? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="9" data-exp="CORRECT: Ensuring all Event Management process events jobs are in Ready state guarantees events are being processed. Paused or stopped jobs cause processing backlogs."><span class="quiz-opt-letter">A</span><span>Ensure all Event Management - process events jobs are set to a Ready state</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="9" data-exp="INCORRECT: Setting the Bucket field to zero would not resolve processing delays. Buckets are used for parallel processing distribution."><span class="quiz-opt-letter">B</span><span>Verify that the Bucket field in the event table is set to zero (0)</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="9" data-exp="CORRECT: Adding additional event processor jobs increases parallel processing capacity, reducing the time to process large volumes of events."><span class="quiz-opt-letter">C</span><span>Add additional event processor jobs</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="9" data-exp="INCORRECT: Disabling multi-node processing would reduce processing capacity, making the delay problem worse rather than better."><span class="quiz-opt-letter">D</span><span>Ensure multi-node event processing is disabled</span></li>
-      </ul>
-      <button class="quiz-submit-btn" data-q="9" style="display:none">Submit Answer</button>
-      <div class="quiz-opt-explains" id="qoptexp9" style="display:none"></div>
-      <details class="quiz-overall" id="qexp9">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>A) Ensure process events jobs are Ready, C) Add additional event processor jobs</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-it-operations-management/page/product/event-management/concept/c_EMEventProcessing.html" target="_blank">ServiceNow Zurich Docs: Event Processing</a><br>(If the link fails, search Google for: ServiceNow Zurich Event Management processing performance large environment)</p><h5>Expert Explanation</h5><p>In large networking environments, event processing delays can be resolved by ensuring all event processing scheduled jobs are active (Ready state) and by adding more processor jobs to increase parallel throughput. Both approaches increase the rate at which events are consumed from the queue.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>Setting Bucket to zero</strong> does not address processing capacity</li><li><strong>Disabling multi-node processing</strong> would reduce capacity and worsen delays</li></ul><h5>Memory Tip</h5><p>Delayed events? Two fixes: make sure existing processors are running (Ready), and add more processors (additional jobs).</p><h5>Real-World Example</h5><p>A large enterprise with 50,000 network devices notices event notifications arriving 30 minutes late. Investigation reveals two of four event processor jobs were paused after a maintenance window. Reactivating them and adding two more jobs brings processing latency back under 2 minutes.</p>
+<div class="quiz-card" id="qcard4">
+<div class="quiz-q"><span class="quiz-q-num">5.</span>What is an alert called that moves from an open to a closed state multiple times within a designated time-frame?</div>
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="INCORRECT: Fluctuating is not the official ServiceNow term for this behavior." data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>Fluctuating</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Swinging is not the official ServiceNow term for alerts that repeatedly open and close." data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>Swinging</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Flipping is not the official ServiceNow term used in Event Management." data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>Flipping</span></li>
+<li class="quiz-opt" data-exp="CORRECT: Flapping describes an alert that moves between open and closed states multiple times within a designated time frame. ServiceNow has built-in flapping detection to prevent alert storms from intermittent issues." data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>Flapping</span></li>
+</ul>
+<div class="quiz-opt-explains" id="qoptexp4" style="display:none"></div>
+<details class="quiz-overall" id="qexp4">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>D) Flapping</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-it-operations-management/page/product/event-management/concept/c_EMAlertFlapping.html" target="_blank">ServiceNow Zurich Docs: Alert Flapping</a><br/>(If the link fails, search Google for: ServiceNow Zurich Event Management alert flapping)</p><h5>Expert Explanation</h5><p>Flapping occurs when an alert repeatedly transitions between open and closed states within a configured time window. This typically indicates an intermittent issue, such as a network link going up and down. ServiceNow detects flapping and can keep the alert open to prevent alert fatigue from constant open/close notifications.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>Fluctuating</strong> is a common English word but not the ServiceNow term</li><li><strong>Swinging</strong> is not used in ServiceNow Event Management terminology</li><li><strong>Flipping</strong> sounds similar but is not the correct ServiceNow term</li></ul><h5>Memory Tip</h5><p>Think of a fish flapping on a dock, going up and down rapidly. A flapping alert does the same thing between open and closed states.</p><h5>Real-World Example</h5><p>A failing network switch causes a link to drop and reconnect every 3 minutes. Without flapping detection, agents would receive dozens of open/close alert pairs per hour. With flapping detection enabled, ServiceNow keeps the alert open and marks it as flapping, sending a single notification to investigate the unstable link.</p>
 </div>
-      </details>
-    </div>
-    <div class="quiz-card quiz-multi" id="qcard10">
-      <div class="quiz-q"><span class="quiz-q-num">11.</span>Which two methods can be used to improve the processing of events in large network environments? (Choose two.) <span class="quiz-choose">(choose 2)</span></div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="10" data-exp="CORRECT: Enabling multi-node processing distributes event processing across multiple application nodes, significantly increasing throughput."><span class="quiz-opt-letter">A</span><span>Enable multi-node processing</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="10" data-exp="INCORRECT: Increasing the source polling interval means collecting events less frequently, which would make event detection slower, not faster."><span class="quiz-opt-letter">B</span><span>Increase the source polling interval</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="10" data-exp="INCORRECT: Ensuring the bucket value is greater than 0 is about parallel processing configuration, but is not stated as a primary method for improving processing in large environments."><span class="quiz-opt-letter">C</span><span>Ensure the bucket value in the event table is greater than 0</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="10" data-exp="CORRECT: Increasing the number of scheduled jobs processing events adds more parallel processing capacity to handle high event volumes."><span class="quiz-opt-letter">D</span><span>Increase the number of scheduled jobs processing events</span></li>
-      </ul>
-      <button class="quiz-submit-btn" data-q="10" style="display:none">Submit Answer</button>
-      <div class="quiz-opt-explains" id="qoptexp10" style="display:none"></div>
-      <details class="quiz-overall" id="qexp10">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>A) Enable multi-node processing, D) Increase scheduled jobs processing events</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-it-operations-management/page/product/event-management/concept/c_EMEventProcessing.html" target="_blank">ServiceNow Zurich Docs: Event Processing</a><br>(If the link fails, search Google for: ServiceNow Zurich Event Management multi-node processing performance)</p><h5>Expert Explanation</h5><p>Two primary methods improve event processing in large environments: enabling multi-node processing (distributes load across application nodes) and increasing the number of scheduled event processor jobs (adds parallel processing threads). Both approaches increase the total processing capacity of the system.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>Increasing polling interval</strong> makes collection slower, not processing faster</li><li><strong>Bucket value greater than 0</strong> is related to processing distribution but is not a primary optimization method listed</li></ul><h5>Memory Tip</h5><p>More capacity = more nodes + more jobs. Both multiply processing power.</p><h5>Real-World Example</h5><p>A cloud provider managing 100,000 VMs enables multi-node processing across 4 application nodes and increases event processor jobs from 2 to 8. Event processing latency drops from 15 minutes to under 1 minute.</p>
+</details>
 </div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard11">
-      <div class="quiz-q"><span class="quiz-q-num">12.</span>In Service Operations Workspace what tool shows relationships between configuration items and alerts with real time updates and detailed impact paths?</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="11" data-exp="INCORRECT: The CMDB IRE handles identification and reconciliation of CI data, not real-time alert visualization with impact paths."><span class="quiz-opt-letter">A</span><span>CMDB identification and reconciliation engine IRE</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="11" data-exp="CORRECT: The Unified Service Map in Service Operations Workspace shows relationships between CIs and alerts with real-time updates and detailed impact paths, giving operators a visual understanding of how alerts affect services."><span class="quiz-opt-letter">B</span><span>Unified service map</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="11" data-exp="INCORRECT: Dependency View Map shows CI dependencies but is not the specific tool in Service Operations Workspace for real-time alert and impact visualization."><span class="quiz-opt-letter">C</span><span>Dependency view map</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="11" data-exp="INCORRECT: CMDB Class Manager is used for managing CMDB class definitions and hierarchies, not for real-time alert visualization."><span class="quiz-opt-letter">D</span><span>CMDB class manager</span></li>
+    <div class="preview-result" id="previewResult">
+      <div class="preview-result-kicker">Page 1 complete</div>
+      <h3 class="preview-result-head">Keep going or get the full course</h3>
+      <div class="preview-score-row">
+        <div class="preview-score-value" id="previewScoreValue">0/5</div>
+        <div class="preview-score-label" id="previewScoreLabel">Page 1 of 2</div>
+      </div>
+      <p class="preview-result-copy" id="previewResultCopy"></p>
+      <ul class="preview-offer-list">
+        <li><span class="preview-offer-bullet">1</span><span>Get all 200 exam-style questions on Udemy.</span></li>
+        <li><span class="preview-offer-bullet">2</span><span>Keep the same per-option reasoning and sourced Zurich explanations across the full bank.</span></li>
+        <li><span class="preview-offer-bullet">3</span><span>Lifetime access with free future updates.</span></li>
       </ul>
-      <div class="quiz-opt-explains" id="qoptexp11" style="display:none"></div>
-      <details class="quiz-overall" id="qexp11">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>B) Unified service map</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-it-operations-management/page/product/service-operations-workspace/concept/unified-service-map.html" target="_blank">ServiceNow Zurich Docs: Unified Service Map</a><br>(If the link fails, search Google for: ServiceNow Zurich Unified Service Map Service Operations Workspace)</p><h5>Expert Explanation</h5><p>The Unified Service Map in Service Operations Workspace provides a dynamic, real-time visualization of CI relationships and active alerts. It shows how alerts on infrastructure components impact business services through detailed impact paths, helping operators quickly understand the blast radius of an issue.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>CMDB IRE</strong> processes CI data, not alert visualization</li><li><strong>Dependency View Map</strong> shows CI dependencies but lacks real-time alert integration in SOW</li><li><strong>CMDB Class Manager</strong> manages table/class definitions, not operational views</li></ul><h5>Memory Tip</h5><p>Unified = everything in one map. Service map + alerts + impact paths, all unified in real time.</p><h5>Real-World Example</h5><p>A database server triggers a critical alert. An operator opens the Unified Service Map and immediately sees the alert propagating through the application servers to three customer-facing services, with a clear impact path showing which business services are degraded.</p>
-</div>
-      </details>
-    </div>
-    <div class="quiz-card quiz-multi" id="qcard12">
-      <div class="quiz-q"><span class="quiz-q-num">13.</span>MID less ACC Deployment You are deploying Agent Client Collector in a MID less configuration for a fleet of roaming laptops Workstation Discovery that are rarely on the corporate VPN Which two specific parameters are required during installation to register these agents directly Choose two <span class="quiz-choose">(choose 2)</span></div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="12" data-exp="INCORRECT: MID Server User credentials are not required for MID-less ACC deployment. The whole point is to operate without a MID Server."><span class="quiz-opt-letter">A</span><span>A valid MID Server User credential</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="12" data-exp="CORRECT: The Agent Registration Key, generated on the ServiceNow instance, is required to authenticate and register ACC agents directly without a MID Server."><span class="quiz-opt-letter">B</span><span>The Agent Registration Key generated on the instance</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="12" data-exp="CORRECT: The public DNS name of the Cloud Services Endpoint is required so ACC agents can communicate directly with ServiceNow cloud services instead of routing through a MID Server."><span class="quiz-opt-letter">C</span><span>The public DNS name of the Cloud Services Endpoint</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="12" data-exp="INCORRECT: The internal IP of the primary MID Server is not needed in a MID-less deployment since the ACC agents bypass the MID Server entirely."><span class="quiz-opt-letter">D</span><span>The internal IP of the primary MID Server</span></li>
-      </ul>
-      <button class="quiz-submit-btn" data-q="12" style="display:none">Submit Answer</button>
-      <div class="quiz-opt-explains" id="qoptexp12" style="display:none"></div>
-      <details class="quiz-overall" id="qexp12">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>B) Agent Registration Key, C) Cloud Services Endpoint DNS name</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-it-operations-management/page/product/discovery/concept/acc-midless.html" target="_blank">ServiceNow Zurich Docs: MID-less ACC Deployment</a><br>(If the link fails, search Google for: ServiceNow Zurich ACC MID-less deployment registration)</p><h5>Expert Explanation</h5><p>In a MID-less ACC deployment for roaming laptops, two parameters are required during installation: the Agent Registration Key (to authenticate the agent with the instance) and the Cloud Services Endpoint DNS name (to establish direct communication without a MID Server). This enables discovery of devices that are rarely on the corporate network.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>MID Server User credential</strong> is not needed when deploying without a MID Server</li><li><strong>Internal IP of MID Server</strong> contradicts the MID-less architecture</li></ul><h5>Memory Tip</h5><p>MID-less needs two things: a key (Registration Key) and a door (Cloud Services Endpoint). No MID Server involved.</p><h5>Real-World Example</h5><p>IT deploys ACC agents on 500 sales laptops that rarely connect to VPN. During installation, each agent receives the Registration Key and Cloud Services Endpoint URL. Laptops are discovered and inventoried whenever they have internet access, regardless of VPN connectivity.</p>
-</div>
-      </details>
-    </div>
-    <div class="quiz-card quiz-multi" id="qcard13">
-      <div class="quiz-q"><span class="quiz-q-num">14.</span>Which customer challenges questions does Event Management help resolve? choose three <span class="quiz-choose">(choose 3)</span></div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="13" data-exp="INCORRECT: What devices are we using is an asset management question, not specifically an Event Management challenge."><span class="quiz-opt-letter">A</span><span>What devices are we using?</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="13" data-exp="INCORRECT: Deprecating assets is an asset lifecycle question, not an Event Management challenge."><span class="quiz-opt-letter">B</span><span>Did we deprecate assets we do not own?</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="13" data-exp="CORRECT: Understanding the current state of IT infrastructure is a core challenge Event Management addresses through real-time monitoring and alerting."><span class="quiz-opt-letter">C</span><span>What is the current state of our IT infrastructure?</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="13" data-exp="INCORRECT: Knowing what servers provide services is more of a Service Mapping/CMDB challenge than Event Management specifically."><span class="quiz-opt-letter">D</span><span>How do we know what servers and applications provide services?</span></li>
-      <li class="quiz-opt" data-idx="4" data-q="13" data-exp="CORRECT: Automating and prioritizing remediation tasks and notifications is a key challenge Event Management resolves through alert correlation, prioritization, and automated workflows."><span class="quiz-opt-letter">E</span><span>How can I automate and prioritize remediation tasks and notifications?</span></li>
-      <li class="quiz-opt" data-idx="5" data-q="13" data-exp="CORRECT: Consolidating monitoring tools into a single management system is a fundamental Event Management challenge, as it aggregates events from multiple monitoring sources into one platform."><span class="quiz-opt-letter">F</span><span>How can we consolidate our monitoring tools into a single management system</span></li>
-      </ul>
-      <button class="quiz-submit-btn" data-q="13" style="display:none">Submit Answer</button>
-      <div class="quiz-opt-explains" id="qoptexp13" style="display:none"></div>
-      <details class="quiz-overall" id="qexp13">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>C) Current state of IT infrastructure, E) Automate remediation, F) Consolidate monitoring tools</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-it-operations-management/page/product/event-management/concept/c_EMOverview.html" target="_blank">ServiceNow Zurich Docs: Event Management Overview</a><br>(If the link fails, search Google for: ServiceNow Zurich Event Management overview challenges)</p><h5>Expert Explanation</h5><p>Event Management addresses three key customer challenges: understanding the real-time state of IT infrastructure through event monitoring, automating and prioritizing remediation through alert workflows and correlation, and consolidating multiple monitoring tools into a single management platform to reduce tool sprawl and provide a unified operational view.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>What devices are we using</strong> is an asset management concern</li><li><strong>Deprecating assets</strong> is an asset lifecycle concern</li><li><strong>What servers provide services</strong> is a Service Mapping/CMDB concern</li></ul><h5>Memory Tip</h5><p>Event Management = See (infrastructure state), Act (automate remediation), Unify (consolidate tools).</p><h5>Real-World Example</h5><p>A bank runs 12 different monitoring tools across network, server, and application teams. Event Management consolidates all events into one platform, automatically correlates related alerts, and triggers incident creation with priority-based routing for remediation.</p>
-</div>
-      </details>
-    </div>
-    <div class="quiz-card" id="qcard14">
-      <div class="quiz-q"><span class="quiz-q-num">15.</span>Log Source Mapping In Health Log Analytics HLA raw log data must be mapped to a specific structure to extract meaningful fields like timestamp host and severity Which component is responsible for defining the Grok patterns or regular expressions used to parse this incoming text</div>
-      <ul class="quiz-opts">
-      <li class="quiz-opt" data-idx="0" data-q="14" data-exp="INCORRECT: Log Listener receives raw log data but does not define the parsing patterns used to extract fields."><span class="quiz-opt-letter">A</span><span>Log Listener</span></li>
-      <li class="quiz-opt" data-idx="1" data-q="14" data-exp="CORRECT: Source Type Structure defines the Grok patterns or regular expressions used to parse incoming log text into structured fields like timestamp, host, and severity."><span class="quiz-opt-letter">B</span><span>Source Type Structure</span></li>
-      <li class="quiz-opt" data-idx="2" data-q="14" data-exp="INCORRECT: Metric Intelligence Policy is used for analyzing metric data and thresholds, not for parsing raw log text."><span class="quiz-opt-letter">C</span><span>Metric Intelligence Policy</span></li>
-      <li class="quiz-opt" data-idx="3" data-q="14" data-exp="INCORRECT: Event Rule Transform handles event-to-alert field mapping, not raw log text parsing."><span class="quiz-opt-letter">D</span><span>Event Rule Transform</span></li>
-      </ul>
-      <div class="quiz-opt-explains" id="qoptexp14" style="display:none"></div>
-      <details class="quiz-overall" id="qexp14">
-        <summary class="quiz-overall-toggle">Show full explanation</summary>
-        <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>B) Source Type Structure</p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-it-operations-management/page/product/health-log-analytics/concept/hla-source-type.html" target="_blank">ServiceNow Zurich Docs: HLA Source Types</a><br>(If the link fails, search Google for: ServiceNow Zurich Health Log Analytics Source Type Structure Grok)</p><h5>Expert Explanation</h5><p>In Health Log Analytics (HLA), the Source Type Structure component defines how raw log text is parsed into structured data. It uses Grok patterns (built on regular expressions) to extract meaningful fields such as timestamp, hostname, severity level, and message content from unstructured log lines. Each log source can have its own Source Type Structure tailored to its specific format.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>Log Listener</strong> receives logs but does not define parsing rules</li><li><strong>Metric Intelligence Policy</strong> handles metric thresholds, not log parsing</li><li><strong>Event Rule Transform</strong> maps event fields to alert fields, unrelated to log parsing</li></ul><h5>Memory Tip</h5><p>Source Type Structure = the structure definition for a source type. It tells HLA how to break apart raw text into meaningful pieces.</p><h5>Real-World Example</h5><p>A Linux syslog feed sends raw text like "Mar 12 09:15:33 webserver01 nginx: 502 Bad Gateway." The Source Type Structure defines a Grok pattern that extracts Mar 12 09:15:33 as timestamp, webserver01 as host, nginx as application, and 502 Bad Gateway as the message.</p>
-</div>
-      </details>
-    </div>
-    <div class="quiz-score" id="quizScore">
-      <div class="quiz-score-num" id="quizScoreNum">0/15</div>
-      <div class="quiz-score-label">Sample Quiz Score</div>
-      <div class="quiz-score-msg" id="quizScoreMsg"></div>
-      <a href="https://www.udemy.com/course/pass-servicenow-cis-event-management-cis-em/?referralCode=CA03695C46AF6880DDE1" target="_blank" rel="noopener" class="cp-cta">
-        Get all 200 questions
-        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+      <div class="preview-actions">
+        <a href="https://www.udemy.com/course/pass-servicenow-cis-event-management-cis-em/?referralCode=CA03695C46AF6880DDE1" target="_blank" rel="noopener" class="cp-cta">Get all 200 questions
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      <button type="button" class="preview-secondary-btn" id="previewContinueBtn">Continue to questions 6-10</button>
+      </div>
+      <p class="preview-helper" id="previewHelper"></p>
+
+      <button type="button" class="preview-text-link" id="previewRetakeBtn">Retake free preview</button>
     </div>
   </section>
 
@@ -780,156 +588,52 @@ details.quiz-overall[open] .quiz-overall-toggle::before { transform: rotate(90de
   <p>&copy; 2026 Lucky X &middot; <a href="/">luckyx.dev</a></p>
 </footer>
 
+
+<!-- Preview Exit Popup -->
+<div class="preview-exit" id="exitPopup" aria-hidden="true">
+  <div class="preview-exit-card" role="dialog" aria-modal="true" aria-labelledby="exitPopupTitle">
+    <button type="button" class="preview-exit-close" id="exitPopupClose" aria-label="Close popup">&times;</button>
+    <div class="preview-exit-kicker">Before you go</div>
+    <h3 class="preview-exit-title" id="exitPopupTitle">Get CIS Event Management — ServiceNow Practice Test 2026 updates and new question drops</h3>
+    <p class="preview-exit-copy">I will send blueprint changes, new sample questions, and exam roadmap tips for this cert. Or skip the inbox and get the full 200-question course now.</p>
+    <form class="preview-lead-form" id="exitLeadForm" data-source="exit">
+      <input type="email" name="email" placeholder="you@email.com" autocomplete="email" required>
+      <button type="submit" data-default-text="Send me updates">Send me updates</button>
+    </form>
+    <p class="preview-lead-note">No spam. Unsubscribe anytime.</p>
+    <a href="https://www.udemy.com/course/pass-servicenow-cis-event-management-cis-em/?referralCode=CA03695C46AF6880DDE1" target="_blank" rel="noopener" class="preview-exit-link">Go straight to the full course on Udemy</a>
+  </div>
+</div>
+<!-- /Preview Exit Popup -->
 <script>
-  const themeToggle = document.getElementById('themeToggle');
-  themeToggle.addEventListener('click', () => {
-    const current = document.documentElement.getAttribute('data-theme');
-    const next = current === 'light' ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('luckyx-theme', next);
-  });
+const PREVIEW={"slug": "cis-event-management", "courseTitle": "CIS Event Management \u2014 ServiceNow Practice Test 2026", "step": 1, "questionCount": 5, "questionStart": 1, "questionEnd": 5, "page1Url": "/courses/cis-event-management.html", "page2Url": "/courses/cis-event-management-preview-2.html", "totalPreviewQuestions": 10, "totalQuestionCount": 200, "convertKitFormId": "9183962"};
+const answers=[0, 1, 1, 1, 3];
+const STATE='luckyx-preview:'+PREVIEW.slug,EXIT='luckyx-exit-shown:'+PREVIEW.slug,themeToggle=document.getElementById('themeToggle'),sel={},done=new Set();let answered=0,score=0,exitReady=false,emailCaptured=false,completeSent=false;
+themeToggle.addEventListener('click',()=>{const c=document.documentElement.getAttribute('data-theme'),n=c==='light'?'dark':'light';document.documentElement.setAttribute('data-theme',n);localStorage.setItem('luckyx-theme',n)});
+function evt(name,extra){if(typeof gtag!=='function')return;gtag('event',name,Object.assign({course_slug:PREVIEW.slug,preview_step:PREVIEW.step},extra||{}))}
+function readState(){try{const raw=sessionStorage.getItem(STATE);return raw?JSON.parse(raw):null}catch(err){return null}}
+function saveState(payload){sessionStorage.setItem(STATE,JSON.stringify(payload))}
+function clearState(){sessionStorage.removeItem(STATE);sessionStorage.removeItem(EXIT)}
+function markExitReady(){exitReady=true}
+const quizSection=document.getElementById('free-quiz');if('IntersectionObserver'in window&&quizSection){const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){markExitReady();obs.disconnect()}})},{threshold:.25});obs.observe(quizSection)}evt('preview_page_view');
+document.querySelectorAll('a.cp-cta[href*="udemy.com"],a.preview-exit-link[href*="udemy.com"]').forEach(link=>link.addEventListener('click',()=>{let source='hero';if(link.closest('.preview-result'))source=PREVIEW.step===1?'step_one_result':'final_result';else if(link.closest('.preview-exit-card'))source='exit_popup';evt('preview_buy_click',{cta_source:source})}));
+document.querySelectorAll('.quiz-card').forEach(card=>{if(!card.querySelector('.quiz-submit-btn')){const qi=parseInt(card.id.replace('qcard',''),10),btn=document.createElement('button');btn.className='quiz-submit-btn';btn.dataset.q=qi;btn.textContent='Submit Answer';const opts=card.querySelector('.quiz-opts');opts.parentNode.insertBefore(btn,opts.nextSibling)}});
+function processSections(container){if(container.dataset.processed)return;container.dataset.processed='1';const h5s=Array.from(container.querySelectorAll('h5'));if(!h5s.length)return;const secs=[];h5s.forEach(h5=>{const t=h5.textContent.toLowerCase();let cls='exp-section';if(t.includes('correct answer'))cls+=' exp-correct-answer';else if(t.includes('source'))cls+=' exp-source';else if(t.includes('expert'))cls+=' exp-expert';else if(t.includes('why')||t.includes('wrong'))cls+=' exp-wrong';else if(t.includes('memory'))cls+=' exp-memory';else if(t.includes('real-world')||t.includes('example'))cls+=' exp-realworld';secs.push({cls,h5})});for(let i=0;i<secs.length;i++){const sec=secs[i],div=document.createElement('div'),next=i<secs.length-1?secs[i+1].h5:null;div.className=sec.cls;sec.h5.parentNode.insertBefore(div,sec.h5);div.appendChild(sec.h5);while(div.nextSibling&&div.nextSibling!==next)div.appendChild(div.nextSibling)}}
+function updateSlots(){const prior=readState();document.querySelectorAll('.preview-slot').forEach(slot=>{const gi=parseInt(slot.dataset.slot,10);slot.classList.remove('is-done','is-active','is-prior');if(PREVIEW.step===2&&gi<=PREVIEW.questionCount){slot.classList.add(prior&&prior.page1Answered===PREVIEW.questionCount?'is-done':'is-prior');return}if(gi>=PREVIEW.questionStart&&gi<=PREVIEW.questionEnd){const local=gi-PREVIEW.questionStart;if(done.has(local))slot.classList.add('is-done');else slot.classList.add('is-active')}})}
+function showExplanations(qi){const card=document.getElementById('qcard'+qi),opts=card.querySelectorAll('.quiz-opt'),correct=Array.isArray(answers[qi])?answers[qi]:[answers[qi]];opts.forEach((opt,j)=>{const per=opt.getAttribute('data-exp');if(!per||opt.querySelector('.quiz-opt-exp-inline'))return;const ok=correct.indexOf(j)!==-1,txt=per.replace(/^(CORRECT|INCORRECT):\s*/i,''),div=document.createElement('div'),icon=ok?'\u2713':'\u2717';div.className='quiz-opt-exp-inline '+(ok?'qoe-is-correct':'qoe-is-wrong');div.innerHTML='<div class="qoe-header">'+(ok?'<span class="qoe-correct">'+icon+' Correct</span>':'<span class="qoe-wrong">'+icon+' Incorrect</span>')+' <span class="qoe-letter">Option '+'ABCDEFG'[j]+'</span></div><div class="qoe-text">'+txt+'</div>';opt.appendChild(div)});const overall=document.getElementById('qexp'+qi);if(overall){const content=overall.querySelector('.quiz-overall-content');if(content&&content.innerHTML.trim()){processSections(content);overall.style.display='block'}}}
+document.querySelectorAll('.quiz-opt').forEach(opt=>opt.addEventListener('click',function(){markExitReady();const qi=parseInt(this.dataset.q,10),card=document.getElementById('qcard'+qi);if(card.dataset.state)return;const idx=parseInt(this.dataset.idx,10),multi=Array.isArray(answers[qi]);if(!sel[qi])sel[qi]=new Set();if(multi){if(sel[qi].has(idx)){sel[qi].delete(idx);this.classList.remove('selected')}else{sel[qi].add(idx);this.classList.add('selected')}}else{card.querySelectorAll('.quiz-opt').forEach(o=>o.classList.remove('selected'));sel[qi]=new Set([idx]);this.classList.add('selected')}const btn=card.querySelector('.quiz-submit-btn');if(btn)btn.style.display=sel[qi].size>0?'block':'none'}));
+function pageOneCopy(s){if(s===PREVIEW.questionCount)return'Perfect page 1. Continue to questions 6-10, then decide if you want the full '+PREVIEW.totalQuestionCount+'-question bank.';if(s>=3)return'Solid start. Finish questions 6-10 to see a fuller slice of the exam before you buy.';return'This is exactly where the full course helps: more reps, more sourced explanations, and less guessing under pressure.'}
+function finalCopy(s){if(s===PREVIEW.totalPreviewQuestions)return'Perfect free preview. The full course is still the fastest way to stress-test the rest of the blueprint before exam day.';if(s>=7)return'Strong free preview. The full course helps close the last gaps before you sit the exam.';return'The free preview exposed real gaps. The full course is built to fix them with more exam-style repetition and richer explanations.'}
+function showResult(){const box=document.getElementById('previewResult'),scoreValue=document.getElementById('previewScoreValue'),scoreLabel=document.getElementById('previewScoreLabel'),copyEl=document.getElementById('previewResultCopy'),helper=document.getElementById('previewHelper'),emailWrap=document.getElementById('previewEmailWrap'),continueBtn=document.getElementById('previewContinueBtn'),backLink=document.getElementById('previewBackLink');box.classList.add('show');box.scrollIntoView({behavior:'smooth',block:'start'});if(PREVIEW.step===1){saveState({page1Answered:answered,page1Score:score,savedAt:Date.now()});scoreValue.textContent=score+'/'+PREVIEW.questionCount;scoreLabel.textContent='Page 1 of 2 complete';copyEl.textContent=pageOneCopy(score);helper.textContent='You have finished questions 1-5. Questions 6-10 are next.';if(continueBtn)continueBtn.hidden=false;if(emailWrap)emailWrap.classList.remove('show');if(backLink)backLink.hidden=true;return}const prior=readState();if(prior&&prior.page1Answered===PREVIEW.questionCount){const total=prior.page1Score+score;scoreValue.textContent=total+'/'+PREVIEW.totalPreviewQuestions;scoreLabel.textContent='10-question free preview complete';copyEl.textContent=finalCopy(total);helper.textContent='You have now seen 10 free questions. The full course keeps the same answer breakdown style across the rest of the bank.'}else{scoreValue.textContent=score+'/'+PREVIEW.questionCount;scoreLabel.textContent='Page 2 complete';copyEl.textContent='You completed questions 6-10 only. Start from page 1 if you want the full 10-question preview before deciding.';helper.textContent='Page 1 contains questions 1-5 and sets up the full 10-question score.';if(backLink)backLink.hidden=false}if(emailWrap)emailWrap.classList.add('show');if(!completeSent){completeSent=true;evt('preview_complete',{page_score:score,combined_score:prior&&prior.page1Answered===PREVIEW.questionCount?prior.page1Score+score:null})}}
+function submitAnswer(){const qi=parseInt(this.dataset.q,10),card=document.getElementById('qcard'+qi);if(card.dataset.state)return;const selected=Array.from(sel[qi]||[]).sort((a,b)=>a-b),correct=(Array.isArray(answers[qi])?answers[qi].slice():[answers[qi]]).sort((a,b)=>a-b),opts=card.querySelectorAll('.quiz-opt'),ok=selected.length===correct.length&&selected.every((v,i)=>v===correct[i]);if(ok){score+=1;card.dataset.state='correct';selected.forEach(i=>opts[i].classList.add('correct'))}else{card.dataset.state='wrong';selected.forEach(i=>{if(correct.indexOf(i)===-1)opts[i].classList.add('wrong');else opts[i].classList.add('correct')});correct.forEach(i=>opts[i].classList.add('correct'))}opts.forEach(o=>o.setAttribute('disabled',''));this.style.display='none';answered+=1;done.add(qi);updateSlots();showExplanations(qi);if(answered===answers.length)showResult()}
+document.querySelectorAll('.quiz-submit-btn').forEach(btn=>btn.addEventListener('click',submitAnswer));
+const continueBtn=document.getElementById('previewContinueBtn');if(continueBtn)continueBtn.addEventListener('click',()=>{saveState({page1Answered:answered,page1Score:score,savedAt:Date.now()});evt('preview_continue',{page_score:score});window.location.href=PREVIEW.page2Url+'#free-quiz'});
+const retakeBtn=document.getElementById('previewRetakeBtn');if(retakeBtn)retakeBtn.addEventListener('click',()=>{clearState();window.location.href=PREVIEW.page1Url+'#free-quiz'});
+function handleLead(form){const input=form.querySelector('input[type="email"]'),btn=form.querySelector('button'),email=input.value.trim().toLowerCase(),ok=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)&&email.length<=254,defaultText=btn.dataset.defaultText||btn.textContent;if(!ok){btn.textContent='Use a valid email';btn.style.background='#c43030';setTimeout(()=>{btn.textContent=defaultText;btn.style.background=''},2500);return}btn.textContent='Sending...';btn.disabled=true;fetch('https://app.convertkit.com/forms/'+PREVIEW.convertKitFormId+'/subscriptions',{method:'POST',headers:{'Content-Type':'application/json; charset=utf-8'},body:JSON.stringify({email_address:email})}).then(r=>{if(r.ok||r.status===200||r.status===201){emailCaptured=true;input.disabled=true;btn.textContent='Check your inbox';btn.style.background='#1f7a50';evt('preview_email_submit',{email_source:form.dataset.source||form.id||'unknown'})}else throw new Error('lead fail')}).catch(()=>{btn.textContent='Try again';btn.style.background='#c43030';btn.disabled=false;setTimeout(()=>{btn.textContent=defaultText;btn.style.background=''},2500)})}
+['previewLeadForm','exitLeadForm'].forEach(id=>{const form=document.getElementById(id);if(form)form.addEventListener('submit',e=>{e.preventDefault();handleLead(form)})});
+(function(){const overlay=document.getElementById('exitPopup'),closeBtn=document.getElementById('exitPopupClose');if(!overlay||!closeBtn)return;function hide(){overlay.classList.remove('active');overlay.setAttribute('aria-hidden','true')}function show(){if(!exitReady||emailCaptured||sessionStorage.getItem(EXIT))return;sessionStorage.setItem(EXIT,'1');overlay.classList.add('active');overlay.setAttribute('aria-hidden','false');evt('preview_exit_popup_shown')}document.addEventListener('mouseout',e=>{if(e.clientY<5&&e.relatedTarget===null)show()});closeBtn.addEventListener('click',hide);overlay.addEventListener('click',e=>{if(e.target===overlay)hide()});document.addEventListener('keydown',e=>{if(e.key==='Escape')hide()})})();
+updateSlots();
 
-  // Quiz logic
-  const answers = [0, 1, 1, 1, 3, 1, 2, [0, 1, 2], 2, [0, 2], [0, 3], 1, [1, 2], [2, 4, 5], 1];
-  let answered = 0, score = 0;
-  const selections = {};
-
-  // Create submit buttons for all questions
-  document.querySelectorAll('.quiz-card').forEach(function(card) {
-    if (!card.querySelector('.quiz-submit-btn')) {
-      var qi = parseInt(card.id.replace('qcard', ''));
-      var btn = document.createElement('button');
-      btn.className = 'quiz-submit-btn';
-      btn.dataset.q = qi;
-      btn.textContent = 'Submit Answer';
-      var opts = card.querySelector('.quiz-opts');
-      opts.parentNode.insertBefore(btn, opts.nextSibling);
-    }
-  });
-
-  function processOverallSections(container) {
-    if (container.dataset.processed) return;
-    container.dataset.processed = '1';
-    var h5s = Array.from(container.querySelectorAll('h5'));
-    if (!h5s.length) return;
-    var sections = [];
-    h5s.forEach(function(h5) {
-      var text = h5.textContent.toLowerCase();
-      var cls = 'exp-section';
-      if (text.indexOf('correct answer') !== -1) cls += ' exp-correct-answer';
-      else if (text.indexOf('source') !== -1) cls += ' exp-source';
-      else if (text.indexOf('expert') !== -1) cls += ' exp-expert';
-      else if (text.indexOf('why') !== -1 || text.indexOf('wrong') !== -1) cls += ' exp-wrong';
-      else if (text.indexOf('memory') !== -1) cls += ' exp-memory';
-      else if (text.indexOf('real-world') !== -1 || text.indexOf('example') !== -1) cls += ' exp-realworld';
-      sections.push({ cls: cls, h5: h5 });
-    });
-    for (var i = 0; i < sections.length; i++) {
-      var sec = sections[i];
-      var div = document.createElement('div');
-      div.className = sec.cls;
-      var nextH5 = i < sections.length - 1 ? sections[i + 1].h5 : null;
-      sec.h5.parentNode.insertBefore(div, sec.h5);
-      div.appendChild(sec.h5);
-      while (div.nextSibling && div.nextSibling !== nextH5) {
-        div.appendChild(div.nextSibling);
-      }
-    }
-  }
-
-  function showExplanations(qi) {
-    var card = document.getElementById('qcard' + qi);
-    var opts = card.querySelectorAll('.quiz-opt');
-    var correct = Array.isArray(answers[qi]) ? answers[qi] : [answers[qi]];
-    opts.forEach(function(opt, j) {
-      var perExp = opt.getAttribute('data-exp');
-      var isCorr = correct.indexOf(j) !== -1;
-      if (perExp) {
-        var expDiv = document.createElement('div');
-        expDiv.className = 'quiz-opt-exp-inline ' + (isCorr ? 'qoe-is-correct' : 'qoe-is-wrong');
-        var icon = isCorr ? '\u2713' : '\u2717';
-        var label = isCorr
-          ? '<span class="qoe-correct">' + icon + ' Correct</span>'
-          : '<span class="qoe-wrong">' + icon + ' Incorrect</span>';
-        expDiv.innerHTML = '<div class="qoe-header">' + label + ' <span class="qoe-letter">Option ' + 'ABCDEF'[j] + '</span></div>' +
-          '<div class="qoe-text">' + perExp + '</div>';
-        opt.appendChild(expDiv);
-      }
-    });
-    var overall = document.getElementById('qexp' + qi);
-    if (overall) {
-      var content = overall.querySelector('.quiz-overall-content');
-      if (content && content.innerHTML.trim()) {
-        processOverallSections(content);
-        overall.style.display = 'block';
-      }
-    }
-  }
-
-  // Click: select option (all questions use submit button flow)
-  document.querySelectorAll('.quiz-opt').forEach(function(opt) {
-    opt.addEventListener('click', function() {
-      var qi = parseInt(this.dataset.q);
-      var card = document.getElementById('qcard' + qi);
-      if (card.dataset.state) return;
-      var idx = parseInt(this.dataset.idx);
-      var isMulti = Array.isArray(answers[qi]);
-      if (!selections[qi]) selections[qi] = new Set();
-      if (isMulti) {
-        if (selections[qi].has(idx)) { selections[qi].delete(idx); this.classList.remove('selected'); }
-        else { selections[qi].add(idx); this.classList.add('selected'); }
-      } else {
-        card.querySelectorAll('.quiz-opt').forEach(function(o) { o.classList.remove('selected'); });
-        selections[qi] = new Set([idx]);
-        this.classList.add('selected');
-      }
-      var btn = card.querySelector('.quiz-submit-btn');
-      if (btn) btn.style.display = selections[qi].size > 0 ? 'block' : 'none';
-    });
-  });
-
-  function submitAnswer() {
-    var qi = parseInt(this.dataset.q);
-    var card = document.getElementById('qcard' + qi);
-    if (card.dataset.state) return;
-    var selected = Array.from(selections[qi] || []).sort();
-    var correct = Array.isArray(answers[qi]) ? answers[qi].slice().sort() : [answers[qi]];
-    var isCorrect = selected.length === correct.length && selected.every(function(v, i) { return v === correct[i]; });
-    var opts = card.querySelectorAll('.quiz-opt');
-    if (isCorrect) {
-      score++;
-      card.dataset.state = 'correct';
-      selected.forEach(function(i) { opts[i].classList.add('correct'); });
-    } else {
-      card.dataset.state = 'wrong';
-      selected.forEach(function(i) {
-        if (correct.indexOf(i) === -1) opts[i].classList.add('wrong');
-        else opts[i].classList.add('correct');
-      });
-      correct.forEach(function(i) { opts[i].classList.add('correct'); });
-    }
-    opts.forEach(function(o) { o.setAttribute('disabled', ''); });
-    this.style.display = 'none';
-    showExplanations(qi);
-    answered++;
-    checkDone();
-  }
-
-  // Submit handlers (covers both existing HTML buttons and dynamically created ones)
-  document.querySelectorAll('.quiz-submit-btn').forEach(function(btn) {
-    btn.addEventListener('click', submitAnswer);
-  });
-
-  function checkDone() {
-    if (answered === answers.length) {
-      var el = document.getElementById('quizScore');
-      el.classList.add('show');
-      document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
-      var msg = score === answers.length ? 'Perfect score! You are well prepared.' : score >= 10 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
-      document.getElementById('quizScoreMsg').textContent = msg;
-      var code = document.querySelector('.cp-code');
-      if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: code ? code.textContent : 'quiz', quiz_score: score });
-    }
-  }</script>
+</script>
 </body>
 </html>
