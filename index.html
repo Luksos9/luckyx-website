@@ -362,6 +362,7 @@ body::after {
 .nav-btn svg {
   width: 20px; height: 20px;
   stroke: var(--text-dim); stroke-width: 1.5; fill: none;
+  stroke-linecap: round;
   transition: stroke 0.25s ease;
 }
 
@@ -2541,15 +2542,18 @@ btns.forEach((b, i) => {
 });
 
 const secs = ['hero', 'courses', 'why', 'cta'];
+const visibleSecs = new Set();
 const obs = new IntersectionObserver(entries => {
   if (navLocked) return;
   entries.forEach(e => {
-    if (e.isIntersecting) {
-      const idx = secs.indexOf(e.target.id);
-      if (idx >= 0) setNav(idx);
-    }
+    if (e.isIntersecting) visibleSecs.add(e.target.id);
+    else visibleSecs.delete(e.target.id);
   });
-}, { threshold: 0.25 });
+  /* Pick the visible section furthest down the page */
+  let best = -1;
+  secs.forEach((id, i) => { if (visibleSecs.has(id)) best = i; });
+  if (best >= 0) setNav(best);
+}, { threshold: 0.15 });
 
 secs.forEach(id => { const el = document.getElementById(id); if (el) obs.observe(el); });
 setNav(0);
