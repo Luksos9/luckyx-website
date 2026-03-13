@@ -323,47 +323,68 @@ a:hover { text-decoration: underline; }
 .quiz-q { font-weight: 600; font-size: 1rem; margin-bottom: 16px; line-height: 1.5; }
 .quiz-q-num { color: var(--orange); font-weight: 700; margin-right: 6px; }
 .quiz-opts { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-.quiz-opt { display: flex; align-items: flex-start; gap: 10px; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border); cursor: pointer; transition: background 0.15s, border-color 0.15s; color: var(--text-dim); font-size: 0.95rem; line-height: 1.5; }
+.quiz-opt { display: flex; align-items: flex-start; gap: 10px; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border); cursor: pointer; transition: background 0.15s, border-color 0.15s; color: var(--text-dim); font-size: 0.95rem; line-height: 1.5; flex-wrap: wrap; }
 .quiz-opt:hover { background: rgba(221,92,12,0.06); border-color: var(--border-hover); }
 .quiz-opt.selected { background: rgba(221,92,12,0.1); border-color: var(--orange); color: var(--text); }
 .quiz-opt.correct { background: rgba(46,160,67,0.1); border-color: #2ea043; color: var(--text); }
 .quiz-opt.wrong { background: rgba(215,58,73,0.1); border-color: #d73a49; }
-.quiz-opt[disabled] { pointer-events: none; }
+.quiz-opt[disabled] { pointer-events: none; cursor: default; }
 .quiz-opt-letter { width: 22px; height: 22px; border-radius: 50%; background: var(--bg-card); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 600; flex-shrink: 0; color: var(--text-dim); }
 .quiz-opt.selected .quiz-opt-letter { background: var(--orange); color: #fff; border-color: var(--orange); }
 .quiz-opt.correct .quiz-opt-letter { background: #2ea043; color: #fff; border-color: #2ea043; }
 .quiz-opt.wrong .quiz-opt-letter { background: #d73a49; color: #fff; border-color: #d73a49; }
-
 .quiz-choose { font-weight: 400; color: var(--orange); font-size: 0.85rem; margin-left: 4px; }
-.quiz-submit-btn { margin-top: 12px; padding: 10px 24px; background: var(--orange); color: #fff; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.15s, transform 0.1s; }
+.quiz-submit-btn { display: none; margin-top: 14px; padding: 11px 28px; background: var(--orange); color: #fff; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.15s, transform 0.1s; }
 .quiz-submit-btn:hover { background: #c75400; }
 .quiz-submit-btn:active { transform: scale(0.97); }
-/* Per-option explanations */
-.quiz-opt-explains { margin-top: 12px; display: flex; flex-direction: column; gap: 6px; }
-.quiz-opt-exp { padding: 10px 14px; border-radius: 8px; font-size: 0.88rem; line-height: 1.5; }
-.qoe-is-correct { background: rgba(46,160,67,0.07); border-left: 3px solid #2ea043; }
-.qoe-is-wrong { background: rgba(215,58,73,0.05); border-left: 3px solid #d73a49; }
-.qoe-header { font-weight: 600; margin-bottom: 4px; font-size: 0.82rem; }
+/* Per-option inline explanation (under each option) */
+.quiz-opt-exp-inline { flex-basis: 100%; padding: 10px 14px; border-radius: 8px; font-size: 0.88rem; line-height: 1.5; margin-top: 6px; animation: fadeInExp 0.3s ease; }
+@keyframes fadeInExp { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+.quiz-opt-exp-inline.qoe-is-correct { background: rgba(46,160,67,0.08); border-left: 3px solid #2ea043; }
+.quiz-opt-exp-inline.qoe-is-wrong { background: rgba(215,58,73,0.06); border-left: 3px solid #d73a49; }
+.qoe-header { font-weight: 600; margin-bottom: 4px; font-size: 0.82rem; display: flex; align-items: center; gap: 6px; }
 .qoe-correct { color: #2ea043; }
 .qoe-wrong { color: #d73a49; }
-.qoe-letter { color: var(--text-dim); margin-left: 4px; font-weight: 500; }
+.qoe-letter { color: var(--text-dim); font-weight: 500; }
 .qoe-text { color: var(--text-dim); }
+/* Legacy grouped explanation container - hidden */
+.quiz-opt-explains { display: none !important; }
 /* Collapsible overall explanation */
-.quiz-overall { display: none; margin-top: 10px; }
+.quiz-overall { display: none; margin-top: 14px; }
 .quiz-overall[style*="block"] { display: block; }
-.quiz-overall-toggle { cursor: pointer; font-size: 0.88rem; font-weight: 600; color: var(--orange); padding: 8px 0; list-style: none; display: flex; align-items: center; gap: 6px; }
+.quiz-overall-toggle { cursor: pointer; font-size: 0.9rem; font-weight: 600; color: var(--orange); padding: 10px 0; list-style: none; display: flex; align-items: center; gap: 6px; }
 .quiz-overall-toggle::-webkit-details-marker { display: none; }
 .quiz-overall-toggle::before { content: ''; display: inline-block; width: 0; height: 0; border-left: 5px solid var(--orange); border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform 0.2s; }
 details.quiz-overall[open] .quiz-overall-toggle::before { transform: rotate(90deg); }
-.quiz-overall-content { padding: 12px 16px; background: var(--bg-card); border-radius: 8px; font-size: 0.88rem; color: var(--text-dim); line-height: 1.6; border-left: 3px solid var(--orange); margin-top: 6px; }
-
+.quiz-overall-content { padding: 4px 0; background: transparent; border-radius: 0; font-size: 0.9rem; color: var(--text-dim); line-height: 1.7; margin-top: 8px; border-left: none; }
+/* Section-specific styling for overall explanation */
+.exp-section { margin-bottom: 14px; padding: 14px 18px; border-radius: 10px; border-left: 3px solid; }
+.exp-section:last-child { margin-bottom: 0; }
+.exp-section h5 { margin: 0 0 8px 0; font-size: 0.92rem; font-weight: 700; }
+.exp-section p { margin-bottom: 6px; }
+.exp-section p:last-child { margin-bottom: 0; }
+.exp-section ul { padding-left: 20px; margin-bottom: 6px; }
+.exp-section ul:last-child { margin-bottom: 0; }
+.exp-section li { margin-bottom: 4px; }
+.exp-correct-answer { background: rgba(46,160,67,0.05); border-left-color: #2ea043; }
+.exp-correct-answer h5 { color: #2ea043; }
+.exp-source { background: rgba(59,130,246,0.05); border-left-color: #3b82f6; }
+.exp-source h5 { color: #3b82f6; }
+.exp-source a { color: #3b82f6; }
+.exp-expert { background: rgba(139,92,246,0.05); border-left-color: #8b5cf6; }
+.exp-expert h5 { color: #8b5cf6; }
+.exp-wrong { background: rgba(215,58,73,0.04); border-left-color: #d73a49; }
+.exp-wrong h5 { color: #d73a49; }
+.exp-memory { background: rgba(217,119,6,0.05); border-left-color: #d97706; }
+.exp-memory h5 { color: #d97706; }
+.exp-realworld { background: rgba(16,185,129,0.05); border-left-color: #10b981; }
+.exp-realworld h5 { color: #10b981; }
 .quiz-score { margin-top: 24px; padding: 20px; background: var(--bg-raised); border-radius: 12px; border: 1px solid var(--border); text-align: center; display: none; }
 .quiz-score.show { display: block; }
 .quiz-score-num { font-size: 2rem; font-weight: 800; color: var(--orange); }
 .quiz-score-label { color: var(--text-dim); font-size: 0.95rem; margin-top: 4px; }
 .quiz-score-msg { margin-top: 12px; font-size: 0.95rem; color: var(--text-dim); }
 .quiz-score .cp-cta { margin-top: 16px; font-size: 1rem; padding: 12px 32px; display: inline-flex; }
-
 /* Countdown banner */
 .countdown-banner { max-width: 100%; margin: 0 0 24px; padding: 20px 24px; background: linear-gradient(135deg, rgba(221,92,12,0.08), rgba(221,92,12,0.03)); border: 1px solid rgba(221,92,12,0.2); border-radius: 14px; text-align: center; position: relative; overflow: hidden; }
 .countdown-banner::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(221,92,12,0.04), transparent); animation: cd-shimmer 3s ease-in-out infinite; }
@@ -766,39 +787,81 @@ details.quiz-overall[open] .quiz-overall-toggle::before { transform: rotate(90de
   // Quiz logic
   const answers = [1, 1, 1, 2, 0, 3, 1, [1, 3], 1, [0, 1], [1, 2, 3], 1, [1, 2, 3], [0, 2, 3], 3];
   let answered = 0, score = 0;
-  const multiSelections = {};
+  const selections = {};
 
-  function showExplanations(qi, isCorrect) {
-    var card = document.getElementById('qcard' + qi);
-    var opts = card.querySelectorAll('.quiz-opt');
-    var correct = Array.isArray(answers[qi]) ? answers[qi] : [answers[qi]];
-    var expContainer = document.getElementById('qoptexp' + qi);
-    var html = '';
-
-    opts.forEach(function(opt, j) {
-      var perExp = opt.getAttribute('data-exp');
-      var isCorr = correct.indexOf(j) !== -1;
-
-      if (perExp) {
-        var label = isCorr ? '<span class="qoe-correct">Correct</span>' : '<span class="qoe-wrong">Incorrect</span>';
-        html += '<div class="quiz-opt-exp ' + (isCorr ? 'qoe-is-correct' : 'qoe-is-wrong') + '">' +
-          '<div class="qoe-header">' + label + ' <span class="qoe-letter">' + 'ABCDEF'[j] + '</span></div>' +
-          '<div class="qoe-text">' + perExp + '</div></div>';
-      }
-    });
-
-    if (html) {
-      expContainer.innerHTML = html;
-      expContainer.style.display = 'block';
+  // Create submit buttons for all questions
+  document.querySelectorAll('.quiz-card').forEach(function(card) {
+    if (!card.querySelector('.quiz-submit-btn')) {
+      var qi = parseInt(card.id.replace('qcard', ''));
+      var btn = document.createElement('button');
+      btn.className = 'quiz-submit-btn';
+      btn.dataset.q = qi;
+      btn.textContent = 'Submit Answer';
+      var opts = card.querySelector('.quiz-opts');
+      opts.parentNode.insertBefore(btn, opts.nextSibling);
     }
+  });
 
-    // Show overall explanation toggle if it has content
-    var overall = document.getElementById('qexp' + qi);
-    if (overall && overall.querySelector('.quiz-overall-content').innerHTML.trim()) {
-      overall.style.display = 'block';
+  function processOverallSections(container) {
+    if (container.dataset.processed) return;
+    container.dataset.processed = '1';
+    var h5s = Array.from(container.querySelectorAll('h5'));
+    if (!h5s.length) return;
+    var sections = [];
+    h5s.forEach(function(h5) {
+      var text = h5.textContent.toLowerCase();
+      var cls = 'exp-section';
+      if (text.indexOf('correct answer') !== -1) cls += ' exp-correct-answer';
+      else if (text.indexOf('source') !== -1) cls += ' exp-source';
+      else if (text.indexOf('expert') !== -1) cls += ' exp-expert';
+      else if (text.indexOf('why') !== -1 || text.indexOf('wrong') !== -1) cls += ' exp-wrong';
+      else if (text.indexOf('memory') !== -1) cls += ' exp-memory';
+      else if (text.indexOf('real-world') !== -1 || text.indexOf('example') !== -1) cls += ' exp-realworld';
+      sections.push({ cls: cls, h5: h5 });
+    });
+    for (var i = 0; i < sections.length; i++) {
+      var sec = sections[i];
+      var div = document.createElement('div');
+      div.className = sec.cls;
+      var nextH5 = i < sections.length - 1 ? sections[i + 1].h5 : null;
+      sec.h5.parentNode.insertBefore(div, sec.h5);
+      div.appendChild(sec.h5);
+      while (div.nextSibling && div.nextSibling !== nextH5) {
+        div.appendChild(div.nextSibling);
+      }
     }
   }
 
+  function showExplanations(qi) {
+    var card = document.getElementById('qcard' + qi);
+    var opts = card.querySelectorAll('.quiz-opt');
+    var correct = Array.isArray(answers[qi]) ? answers[qi] : [answers[qi]];
+    opts.forEach(function(opt, j) {
+      var perExp = opt.getAttribute('data-exp');
+      var isCorr = correct.indexOf(j) !== -1;
+      if (perExp) {
+        var expDiv = document.createElement('div');
+        expDiv.className = 'quiz-opt-exp-inline ' + (isCorr ? 'qoe-is-correct' : 'qoe-is-wrong');
+        var icon = isCorr ? '\u2713' : '\u2717';
+        var label = isCorr
+          ? '<span class="qoe-correct">' + icon + ' Correct</span>'
+          : '<span class="qoe-wrong">' + icon + ' Incorrect</span>';
+        expDiv.innerHTML = '<div class="qoe-header">' + label + ' <span class="qoe-letter">Option ' + 'ABCDEF'[j] + '</span></div>' +
+          '<div class="qoe-text">' + perExp + '</div>';
+        opt.appendChild(expDiv);
+      }
+    });
+    var overall = document.getElementById('qexp' + qi);
+    if (overall) {
+      var content = overall.querySelector('.quiz-overall-content');
+      if (content && content.innerHTML.trim()) {
+        processOverallSections(content);
+        overall.style.display = 'block';
+      }
+    }
+  }
+
+  // Click: select option (all questions use submit button flow)
   document.querySelectorAll('.quiz-opt').forEach(function(opt) {
     opt.addEventListener('click', function() {
       var qi = parseInt(this.dataset.q);
@@ -806,61 +869,50 @@ details.quiz-overall[open] .quiz-overall-toggle::before { transform: rotate(90de
       if (card.dataset.state) return;
       var idx = parseInt(this.dataset.idx);
       var isMulti = Array.isArray(answers[qi]);
-
+      if (!selections[qi]) selections[qi] = new Set();
       if (isMulti) {
-        // Multi-select: toggle selection
-        if (!multiSelections[qi]) multiSelections[qi] = new Set();
-        if (multiSelections[qi].has(idx)) {
-          multiSelections[qi].delete(idx);
-          this.classList.remove('selected');
-        } else {
-          multiSelections[qi].add(idx);
-          this.classList.add('selected');
-        }
-        // Show/hide submit button
-        var btn = card.querySelector('.quiz-submit-btn');
-        btn.style.display = multiSelections[qi].size > 0 ? 'block' : 'none';
+        if (selections[qi].has(idx)) { selections[qi].delete(idx); this.classList.remove('selected'); }
+        else { selections[qi].add(idx); this.classList.add('selected'); }
       } else {
-        // Single answer: immediate check
-        var isCorrect = idx === answers[qi];
-        if (isCorrect) { score++; this.classList.add('correct'); card.dataset.state = 'correct'; }
-        else { this.classList.add('wrong'); card.dataset.state = 'wrong'; card.querySelectorAll('.quiz-opt')[answers[qi]].classList.add('correct'); }
+        card.querySelectorAll('.quiz-opt').forEach(function(o) { o.classList.remove('selected'); });
+        selections[qi] = new Set([idx]);
         this.classList.add('selected');
-        card.querySelectorAll('.quiz-opt').forEach(function(o) { o.setAttribute('disabled',''); });
-        showExplanations(qi, isCorrect);
-        answered++;
-        checkDone();
       }
+      var btn = card.querySelector('.quiz-submit-btn');
+      if (btn) btn.style.display = selections[qi].size > 0 ? 'block' : 'none';
     });
   });
 
+  function submitAnswer() {
+    var qi = parseInt(this.dataset.q);
+    var card = document.getElementById('qcard' + qi);
+    if (card.dataset.state) return;
+    var selected = Array.from(selections[qi] || []).sort();
+    var correct = Array.isArray(answers[qi]) ? answers[qi].slice().sort() : [answers[qi]];
+    var isCorrect = selected.length === correct.length && selected.every(function(v, i) { return v === correct[i]; });
+    var opts = card.querySelectorAll('.quiz-opt');
+    if (isCorrect) {
+      score++;
+      card.dataset.state = 'correct';
+      selected.forEach(function(i) { opts[i].classList.add('correct'); });
+    } else {
+      card.dataset.state = 'wrong';
+      selected.forEach(function(i) {
+        if (correct.indexOf(i) === -1) opts[i].classList.add('wrong');
+        else opts[i].classList.add('correct');
+      });
+      correct.forEach(function(i) { opts[i].classList.add('correct'); });
+    }
+    opts.forEach(function(o) { o.setAttribute('disabled', ''); });
+    this.style.display = 'none';
+    showExplanations(qi);
+    answered++;
+    checkDone();
+  }
+
+  // Submit handlers (covers both existing HTML buttons and dynamically created ones)
   document.querySelectorAll('.quiz-submit-btn').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var qi = parseInt(this.dataset.q);
-      var card = document.getElementById('qcard' + qi);
-      if (card.dataset.state) return;
-      var selected = Array.from(multiSelections[qi] || []).sort();
-      var correct = answers[qi].slice().sort();
-      var isCorrect = selected.length === correct.length && selected.every(function(v, i) { return v === correct[i]; });
-      var opts = card.querySelectorAll('.quiz-opt');
-      if (isCorrect) {
-        score++;
-        card.dataset.state = 'correct';
-        selected.forEach(function(i) { opts[i].classList.add('correct'); });
-      } else {
-        card.dataset.state = 'wrong';
-        selected.forEach(function(i) {
-          if (correct.indexOf(i) === -1) opts[i].classList.add('wrong');
-          else opts[i].classList.add('correct');
-        });
-        correct.forEach(function(i) { opts[i].classList.add('correct'); });
-      }
-      opts.forEach(function(o) { o.setAttribute('disabled',''); });
-      this.style.display = 'none';
-      showExplanations(qi, isCorrect);
-      answered++;
-      checkDone();
-    });
+    btn.addEventListener('click', submitAnswer);
   });
 
   function checkDone() {
@@ -870,7 +922,8 @@ details.quiz-overall[open] .quiz-overall-toggle::before { transform: rotate(90de
       document.getElementById('quizScoreNum').textContent = score + '/' + answers.length;
       var msg = score === answers.length ? 'Perfect score! You are well prepared.' : score >= 10 ? 'Good start! The full test covers all exam domains in depth.' : 'The full practice test will help you master every topic.';
       document.getElementById('quizScoreMsg').textContent = msg;
-      if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: 'GRC', quiz_score: score });
+      var code = document.querySelector('.cp-code');
+      if (typeof gtag === 'function') gtag('event', 'quiz_complete', { quiz_name: code ? code.textContent : 'quiz', quiz_score: score });
     }
   }</script>
 </body>
