@@ -382,6 +382,32 @@ body::after {
 
 .nav-btn.active svg { stroke: var(--text); }
 
+/* Nav tooltip */
+.nav-btn::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--bg-raised);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 8px;
+  white-space: nowrap;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.nav-btn:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
 /* Emphasize courses button as primary CTA */
 .nav-btn.nav-primary svg {
   stroke: var(--orange);
@@ -2047,27 +2073,27 @@ h3.card-title,
       <div class="clip"><div class="spin"></div></div>
       <div class="inner"></div>
     </div>
-    <button class="nav-btn active" data-s="hero" aria-label="Home" title="Home">
+    <button class="nav-btn active" data-s="hero" aria-label="Home" data-tip="Home">
       <svg viewBox="0 0 24 24"><path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
     </button>
     <div class="nav-divider"></div>
-    <button class="nav-btn nav-primary" data-s="courses" aria-label="Practice Tests" title="Practice Tests">
+    <button class="nav-btn nav-primary" data-s="courses" aria-label="Practice Tests" data-tip="Practice Tests">
       <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
     </button>
     <div class="nav-divider"></div>
-    <button class="nav-btn" data-s="why" aria-label="Why Lucky X" title="Why Lucky X">
+    <button class="nav-btn" data-s="why" aria-label="Why Lucky X" data-tip="Why Lucky X">
       <svg viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 16v-4M12 8h.01"/></svg>
     </button>
     <div class="nav-divider"></div>
-    <button class="nav-btn" data-s="faq" aria-label="FAQ" title="FAQ">
+    <button class="nav-btn" data-s="faq" aria-label="FAQ" data-tip="FAQ">
       <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
     </button>
     <div class="nav-divider"></div>
-    <a class="nav-btn" href="/blog/" aria-label="Blog (opens blog page)" title="Blog">
+    <a class="nav-btn" href="/blog/" aria-label="Blog (opens blog page)" data-tip="Blog">
       <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
     </a>
     <div class="nav-divider"></div>
-    <button class="nav-btn" data-s="cta" aria-label="Get Started" title="Get Started">
+    <button class="nav-btn" data-s="cta" aria-label="Get Started" data-tip="Get Started">
       <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </button>
   </div>
