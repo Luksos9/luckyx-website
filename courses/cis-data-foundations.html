@@ -77,8 +77,8 @@
 {
   "@context": "https://schema.org",
   "@type": "Quiz",
-  "name": "5 Free CIS Data Foundations / CSDM - ServiceNow Practice Test 2026 Practice Questions",
-  "description": "Try 5 free questions from the 15-question preview for the CIS Data Foundations / CSDM - ServiceNow Practice Test 2026 practice test.",
+  "name": "15-Question CIS Data Foundations / CSDM - ServiceNow Practice Test 2026 Preview",
+  "description": "Work through a 15-question preview for the CIS Data Foundations / CSDM - ServiceNow Practice Test 2026 practice test.",
   "url": "https://luckyx.dev/courses/cis-data-foundations.html#free-quiz",
   "educationalAlignment": {
     "@type": "AlignmentObject",
@@ -193,6 +193,218 @@
         {
           "@type": "Answer",
           "text": "Reconciliation Rules tab"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "What is the default threshold value that the IRE uses to determine when it should stop updating the oldest duplicate CI record, thereby skipping updates on all records when that threshold is exceeded-",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "5"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "2"
+        },
+        {
+          "@type": "Answer",
+          "text": "3"
+        },
+        {
+          "@type": "Answer",
+          "text": "10"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "Which components are displayed on the CMDB and CSDM Data Foundations Dashboards-",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Foundational Metric Results, Priorities, and Remediation Playbook URLs"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Incident Management, Change Management, and Problem Management"
+        },
+        {
+          "@type": "Answer",
+          "text": "Configuration Items, Relationships, and Business Services"
+        },
+        {
+          "@type": "Answer",
+          "text": "Knowledge Articles, Service Catalog Items, and Catalog Categories"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "From which of the following can the Managed by group be configured and synchronised to the underlying group or class of Configuration Items (CIs)- (Choose 2) (choose 2)",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Technology Management Offerings | CI Class Manager"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Business Service Offerings"
+        },
+        {
+          "@type": "Answer",
+          "text": "Technology Management Services"
+        },
+        {
+          "@type": "Answer",
+          "text": "Business Services"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "When configuring an Identification Rule entry, what is the impact of checking the Allow fallback to parent's rules option-",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If the current CI's identifier entry fails to find a match, the IRE attempts matching using the criterion attributes of the parent class."
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "It allows null attribute values for that identifier entry."
+        },
+        {
+          "@type": "Answer",
+          "text": "The system uses the parent's reconciliation rule priority if the child rule fails."
+        },
+        {
+          "@type": "Answer",
+          "text": "It prevents the CI from being reclassified."
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "The Unified Map combines many of the features from which of the following maps- (Choose 2) (choose 2)",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Application Service | Dependency View"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Geolocation"
+        },
+        {
+          "@type": "Answer",
+          "text": "Transform"
+        },
+        {
+          "@type": "Answer",
+          "text": "Dynamic"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "A CMDB Administrator has built a number of Technology Management Service Offerings (Technical Service Offerings) based on Dynamic CI Groups to better maintain group alignment for the member CIs. Which Groups are synced to CIs from the offering that has a relationship to a Dynamic CI Group- (Choose 2) (choose 2)",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Managed by Group | Support Group"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Approval Group"
+        },
+        {
+          "@type": "Answer",
+          "text": "Owned by Group"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "Which of the following can be configured to prevent inserts into the CMDB from an unwanted data source-",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IRE Data Source Rule"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Identification Rule"
+        },
+        {
+          "@type": "Answer",
+          "text": "Reconciliation Rule"
+        },
+        {
+          "@type": "Answer",
+          "text": "Dynamic Reconciliation Rule"
+        },
+        {
+          "@type": "Answer",
+          "text": "Data Refresh Rule"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "To update the CMDB Data Foundations Dashboard health metrics and reports immediately, versus waiting for them to update automatically, which scheduled jobs need to be executed- (Select 2) (choose 2)",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CMDB Data Foundations PA metric Collection | CMDB Get Well Metric Collection"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "CSDM Data Foundations PA metric Collection"
+        },
+        {
+          "@type": "Answer",
+          "text": "CSDM Get Well Metric Collection"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "The following Reconciliation Rules were configured for ServiceNow, Altiris, and SCCM for the Windows Server (cmdb_ci_win_server) class: ServiceNow: Priority 100 Altiris: Priority 200 SCCM: Priority 300 Which statements are true- (Choose 2) (choose 2)",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Data collected with a discovery source of Altiris can update records inserted by SCCM into the Windows Server table. | Data collected with a discovery source of SCCM can be inserted as new records in the Windows Server table."
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Data collected with a discovery source of ServiceNow can insert new records into the Windows Server table, but cannot update records created by Altiris or SCCM."
+        },
+        {
+          "@type": "Answer",
+          "text": "Data collected with a discovery source of SCCM can update any record in the Windows Server table because it has the highest priority number."
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "A CMDB Admin is reviewing the CMDB Data Foundations Dashboard and notices that the score for \"CIs with Relationships\" is critically low. The admin understands the metric but is unsure of the specific organizational process required to fix the root cause. They click the Remediation Playbook URL associated with the metric. What does this action provide to the admin-",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It opens a Knowledge Base article/guide explaining \"What is this-\", \"Why it matters-\", and \"How to fix it-\"."
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "It immediately opens the \"Duplicate CI Remediator\" wizard to merge records."
+        },
+        {
+          "@type": "Answer",
+          "text": "It triggers a background script to auto-generate relationships based on identifying attributes."
+        },
+        {
+          "@type": "Answer",
+          "text": "It opens the \"Get Well\" scheduled job to re-calculate the score immediately."
         }
       ]
     }
@@ -323,7 +535,119 @@ a:hover { text-decoration: underline; }
 .theme-toggle svg { width: 18px; height: 18px; stroke: var(--text-dim); stroke-width: 2; fill: none; }
 
 /* Quiz section */
-.quiz-section{margin-top:48px}.quiz-section h2{font-size:1.38rem;font-weight:700;margin-bottom:10px;line-height:1.24}.quiz-intro{margin:0;color:var(--text-dim);font-size:.97rem;line-height:1.65;max-width:62ch}.preview-shell{margin-bottom:28px}.preview-kicker{display:inline-flex;align-items:center;gap:8px;margin-bottom:14px;padding:6px 12px;border-radius:999px;background:rgba(221,92,12,.08);border:1px solid rgba(221,92,12,.18);color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}.preview-status-line{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px}.preview-status-pill{display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--border);color:var(--text-dim);font-size:.84rem}.preview-status-pill strong{color:var(--text)}.preview-progress-wrap{overflow-x:auto;padding-bottom:4px}.preview-progress{display:grid;grid-template-columns:repeat(15,58px);gap:8px;list-style:none;margin:0;padding:0;min-width:max-content}.preview-slot{min-height:60px;padding:9px 6px;border-radius:12px;border:1px solid var(--border);background:var(--bg-raised);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:default;transition:border-color .18s,background .18s,transform .18s}.preview-slot.is-clickable{cursor:pointer}.preview-slot.is-clickable:hover{transform:translateY(-1px);border-color:var(--border-hover)}.preview-slot.is-current{border-color:rgba(221,92,12,.42);background:rgba(221,92,12,.08)}.preview-slot.is-correct{border-color:rgba(46,160,67,.45);background:rgba(46,160,67,.08)}.preview-slot.is-wrong{border-color:rgba(215,58,73,.45);background:rgba(215,58,73,.08)}.preview-slot.is-email-locked{opacity:.78}.preview-slot.is-locked{opacity:.55}.preview-slot-num{display:block;font-size:.94rem;font-weight:700;line-height:1.1;color:var(--text)}.preview-slot-state{display:block;margin-top:4px;font-size:.63rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text-dim)}.preview-slot.is-correct .preview-slot-num,.preview-slot.is-correct .preview-slot-state{color:#2ea043}.preview-slot.is-wrong .preview-slot-num,.preview-slot.is-wrong .preview-slot-state{color:#d73a49}.preview-slot-lock{width:16px;height:16px;margin-top:4px;color:var(--text-dim)}.preview-slot-lock svg{width:100%;height:100%;stroke:currentColor;stroke-width:1.6;fill:none}.preview-group-labels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:10px}.preview-group-label{padding:10px 12px;border-radius:12px;border:1px solid var(--border);background:rgba(255,255,255,.02);font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text-dim);text-align:center}.quiz-tier-heading{margin:26px 0 14px;padding-top:4px;font-size:.85rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--orange)}.quiz-card{background:var(--bg-raised);border:1px solid var(--border);border-radius:14px;padding:20px 20px 18px;margin-bottom:14px;transition:border-color .2s,background .2s}.quiz-card[data-state="correct"]{border-color:#2ea043}.quiz-card[data-state="wrong"]{border-color:#d73a49}.quiz-card.is-email-locked,.quiz-card.is-teaser-locked{background:linear-gradient(180deg,rgba(255,255,255,.018),rgba(255,255,255,.005))}.quiz-q{font-weight:600;font-size:1rem;margin-bottom:14px;line-height:1.5}.quiz-q-num{color:var(--orange);font-weight:700;margin-right:6px}.quiz-answer-shell{position:relative}.quiz-answer-content.quiz-gate-blur{filter:blur(4px);pointer-events:none;user-select:none}.quiz-opts{list-style:none;display:flex;flex-direction:column;gap:6px}.quiz-opt{display:flex;align-items:flex-start;gap:10px;padding:11px 12px;border-radius:12px;border:1px solid var(--border);cursor:pointer;transition:background .15s,border-color .15s;color:var(--text-dim);font-size:.94rem;line-height:1.5;flex-wrap:wrap}.quiz-opt:hover{background:rgba(221,92,12,.06);border-color:var(--border-hover)}.quiz-opt.selected{background:rgba(221,92,12,.1);border-color:var(--orange);color:var(--text)}.quiz-opt.correct{background:rgba(46,160,67,.1);border-color:#2ea043;color:var(--text)}.quiz-opt.wrong{background:rgba(215,58,73,.1);border-color:#d73a49}.quiz-opt[disabled]{pointer-events:none;cursor:default}.quiz-opt-letter{width:22px;height:22px;border-radius:50%;background:var(--bg-card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:600;flex-shrink:0;color:var(--text-dim)}.quiz-opt.selected .quiz-opt-letter{background:var(--orange);color:#fff;border-color:var(--orange)}.quiz-opt.correct .quiz-opt-letter{background:#2ea043;color:#fff;border-color:#2ea043}.quiz-opt.wrong .quiz-opt-letter{background:#d73a49;color:#fff;border-color:#d73a49}.quiz-choose{font-weight:500;color:var(--orange);font-size:.85rem;margin-left:4px}.quiz-submit-btn{display:none;margin-top:12px;padding:11px 26px;background:var(--orange);color:#fff;border:none;border-radius:10px;font-size:.92rem;font-weight:700;cursor:pointer}.quiz-submit-btn:hover{background:#c75400}.quiz-opt-exp-inline{flex-basis:100%;padding:8px 12px;border-radius:9px;font-size:.86rem;line-height:1.48;margin-top:6px}.quiz-opt-exp-inline.qoe-is-correct{background:rgba(46,160,67,.08);border-left:3px solid #2ea043}.quiz-opt-exp-inline.qoe-is-wrong{background:rgba(215,58,73,.06);border-left:3px solid #d73a49}.qoe-header{font-weight:700;margin-bottom:3px;font-size:.8rem;display:flex;align-items:center;gap:6px}.qoe-correct{color:#2ea043}.qoe-wrong{color:#d73a49}.qoe-letter,.qoe-text{color:var(--text-dim)}.quiz-opt-explains{display:none!important}.quiz-overall{display:none;margin-top:10px}.quiz-overall[style*="block"]{display:block}details.quiz-overall:not([open]) .quiz-overall-content{display:none}.quiz-overall-toggle{cursor:pointer;font-size:.88rem;font-weight:700;color:var(--orange);padding:8px 0 2px;list-style:none;display:flex;align-items:center;gap:6px}.quiz-overall-toggle::-webkit-details-marker{display:none}.quiz-overall-toggle::before{content:'';display:inline-block;width:0;height:0;border-left:5px solid var(--orange);border-top:4px solid transparent;border-bottom:4px solid transparent;transition:transform .2s}details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}.quiz-overall-content{padding:6px 0 0;background:transparent;border-radius:0;font-size:.88rem;color:var(--text-dim);line-height:1.65;margin-top:6px;border-left:none}.exp-section{margin-bottom:10px;padding:12px 14px;border-radius:11px;border-left:3px solid}.exp-section:last-child,.exp-section p:last-child,.exp-section ul:last-child{margin-bottom:0}.exp-section h5{margin:0 0 6px;font-size:.88rem;font-weight:700}.exp-section p{margin-bottom:5px}.exp-section ul{padding-left:18px;margin-bottom:5px}.exp-section li{margin-bottom:3px}.exp-correct-answer{background:rgba(46,160,67,.05);border-left-color:#2ea043}.exp-correct-answer h5{color:#2ea043}.exp-source{background:rgba(59,130,246,.05);border-left-color:#3b82f6}.exp-source h5,.exp-source a{color:#3b82f6}.exp-expert{background:rgba(139,92,246,.05);border-left-color:#8b5cf6}.exp-expert h5{color:#8b5cf6}.exp-wrong{background:rgba(215,58,73,.04);border-left-color:#d73a49}.exp-wrong h5{color:#d73a49}.exp-memory{background:rgba(217,119,6,.05);border-left-color:#d97706}.exp-memory h5{color:#d97706}.exp-realworld{background:rgba(16,185,129,.05);border-left-color:#10b981}.exp-realworld h5{color:#10b981}.quiz-gate-prompt,.quiz-locked-overlay{position:absolute;inset:14px;display:flex;align-items:center;justify-content:center;border-radius:14px;background:rgba(7,9,13,.56);z-index:4}.quiz-gate-card,.quiz-locked-card{width:min(100%,480px);padding:22px;border-radius:16px;border:1px solid rgba(221,92,12,.32);background:var(--bg-raised);box-shadow:0 18px 45px rgba(0,0,0,.28);text-align:center}.quiz-gate-title,.quiz-locked-title{font-size:1.08rem;font-weight:700;line-height:1.35}.quiz-gate-copy,.quiz-locked-copy{margin-top:10px;color:var(--text-dim);font-size:.92rem;line-height:1.6}.quiz-gate-form{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.quiz-gate-email-input{flex:1 1 220px;min-height:48px;padding:0 14px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-family:var(--font);font-size:.94rem}.quiz-gate-email-input:focus{outline:none;border-color:rgba(221,92,12,.5);box-shadow:0 0 0 3px rgba(221,92,12,.12)}.quiz-gate-submit,.quiz-locked-cta-btn,.quiz-interstitial .cp-cta,.quiz-secondary-btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:12px;border:none;background:var(--orange);color:#fff;font-family:var(--font);font-size:.95rem;font-weight:700;cursor:pointer;text-decoration:none}.quiz-gate-submit:hover,.quiz-locked-cta-btn:hover,.quiz-interstitial .cp-cta:hover,.quiz-secondary-btn:hover{background:#c75400;text-decoration:none}.quiz-secondary-btn{background:transparent;border:1px solid var(--border-hover);color:var(--text)}.quiz-secondary-btn:hover{background:rgba(221,92,12,.06)}.quiz-gate-note{margin-top:12px;color:var(--text-dim);font-size:.82rem;line-height:1.5}.quiz-gate-message{margin-top:10px;font-size:.85rem;color:var(--text-dim);min-height:1.3em}.quiz-gate-message.is-error{color:#ff868f}.quiz-gate-message.is-success{color:#2ea043}.quiz-locked-lock{width:26px;height:26px;margin:0 auto 8px;color:var(--orange)}.quiz-locked-lock svg{width:100%;height:100%;stroke:currentColor;stroke-width:1.7;fill:none}.quiz-interstitial{margin:24px 0;padding:24px;border-radius:18px;border:1px solid rgba(221,92,12,.2);background:radial-gradient(circle at top right,rgba(221,92,12,.1),transparent 44%),linear-gradient(180deg,rgba(255,255,255,.015),rgba(255,255,255,.004))}.quiz-interstitial[hidden]{display:none!important}.quiz-interstitial-kicker{color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}.quiz-interstitial h3{margin-top:10px;font-size:1.32rem;line-height:1.28}.quiz-interstitial-score{font-size:2.15rem;font-weight:800;color:var(--text);line-height:1;margin-top:16px}.quiz-interstitial-copy{margin-top:8px;color:var(--text-dim);max-width:58ch}.quiz-interstitial-anchor{margin-top:12px;color:var(--text);font-size:.92rem}.quiz-interstitial-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.quiz-cross-sell{margin-top:24px;padding:22px;border-radius:16px;border:1px solid var(--border);background:rgba(255,255,255,.02)}.quiz-cross-sell h3{font-size:1rem;margin-bottom:8px}.quiz-cross-sell p{margin:0;color:var(--text-dim);font-size:.92rem;line-height:1.6}.quiz-cross-sell-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.quiz-cross-sell-links a{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;border:1px solid var(--border-hover);background:transparent;color:var(--text);font-weight:700}.quiz-cross-sell-links a:hover{background:rgba(221,92,12,.06);border-color:var(--orange);text-decoration:none}.quiz-toast{position:fixed;right:18px;bottom:18px;z-index:1002;min-width:220px;max-width:min(360px,calc(100vw - 36px));padding:14px 16px;border-radius:12px;border:1px solid rgba(46,160,67,.35);background:rgba(18,25,21,.96);color:#e8fff0;box-shadow:0 18px 45px rgba(0,0,0,.32);font-size:.9rem;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .2s,transform .2s}.quiz-toast.show{opacity:1;transform:translateY(0)}@media (min-width:1040px){.cp-wrap{max-width:960px;padding-left:32px;padding-right:32px}.quiz-card{padding:22px 24px 20px}}@media (max-width:720px){.preview-group-labels{grid-template-columns:1fr}.quiz-gate-form{flex-direction:column}.quiz-gate-submit,.quiz-secondary-btn,.quiz-cross-sell-links a,.quiz-interstitial .cp-cta{width:100%}.quiz-gate-card,.quiz-locked-card{padding:18px}.quiz-interstitial-actions{flex-direction:column}.quiz-card{padding:16px}}
+.quiz-section{margin-top:48px}
+.quiz-section h2{font-size:1.38rem;font-weight:700;margin-bottom:10px;line-height:1.24}
+.quiz-intro{margin:0;color:var(--text-dim);font-size:.97rem;line-height:1.65;max-width:62ch}
+.preview-shell{margin-bottom:22px}
+.preview-kicker{display:inline-flex;align-items:center;gap:8px;margin-bottom:14px;padding:6px 12px;border-radius:999px;background:rgba(221,92,12,.08);border:1px solid rgba(221,92,12,.18);color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.quiz-stepper-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin:18px 0 12px}
+.quiz-stepper-label{font-size:1rem;font-weight:700;color:var(--text)}
+.quiz-stepper-tier{display:inline-flex;align-items:center;margin-top:7px;padding:6px 10px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.02);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text-dim)}
+.quiz-stepper-tier[data-state="free"]{color:#2ea043;border-color:rgba(46,160,67,.28);background:rgba(46,160,67,.08)}
+.quiz-stepper-tier[data-state="locked"]{color:var(--orange);border-color:rgba(221,92,12,.28);background:rgba(221,92,12,.08)}
+.quiz-stepper-tier[data-state="open"]{color:#3b82f6;border-color:rgba(59,130,246,.28);background:rgba(59,130,246,.08)}
+.quiz-stepper-score{font-size:.9rem;color:var(--text-dim);white-space:nowrap;padding-top:2px}
+.quiz-stepper-dots{display:grid;grid-template-columns:repeat(15,minmax(0,1fr));gap:8px}
+.preview-dot{height:10px;border-radius:999px;border:1px solid var(--border);background:var(--bg-card);opacity:.55;transition:border-color .18s,background .18s,box-shadow .18s,opacity .18s}
+.preview-dot.is-available{opacity:1}
+.preview-dot.is-locked{opacity:.38}
+.preview-dot.is-correct{background:#2ea043;border-color:#2ea043;opacity:1}
+.preview-dot.is-wrong{background:#d73a49;border-color:#d73a49;opacity:1}
+.preview-dot.is-current{border-color:var(--orange);box-shadow:0 0 0 3px rgba(221,92,12,.14)}
+.quiz-card-stack{position:relative}
+.quiz-card{background:var(--bg-raised);border:1px solid var(--border);border-radius:16px;padding:20px 20px 18px;margin-bottom:14px;transition:border-color .2s,background .2s}
+.quiz-card[hidden]{display:none!important}
+.quiz-card[data-state="correct"]{border-color:#2ea043}
+.quiz-card[data-state="wrong"]{border-color:#d73a49}
+.quiz-card.is-email-locked{background:linear-gradient(180deg,rgba(255,255,255,.018),rgba(255,255,255,.005))}
+.quiz-q{font-weight:600;font-size:1rem;margin-bottom:14px;line-height:1.5}
+.quiz-q-num{color:var(--orange);font-weight:700;margin-right:6px}
+.quiz-answer-shell{position:relative}
+.quiz-answer-content.quiz-gate-blur{filter:blur(4px);pointer-events:none;user-select:none}
+.quiz-opts{list-style:none;display:flex;flex-direction:column;gap:6px}
+.quiz-opt{display:flex;align-items:flex-start;gap:10px;padding:11px 12px;border-radius:12px;border:1px solid var(--border);cursor:pointer;transition:background .15s,border-color .15s;color:var(--text-dim);font-size:.94rem;line-height:1.5;flex-wrap:wrap}
+.quiz-opt:hover{background:rgba(221,92,12,.06);border-color:var(--border-hover)}
+.quiz-opt.selected{background:rgba(221,92,12,.1);border-color:var(--orange);color:var(--text)}
+.quiz-opt.correct{background:rgba(46,160,67,.1);border-color:#2ea043;color:var(--text)}
+.quiz-opt.wrong{background:rgba(215,58,73,.1);border-color:#d73a49}
+.quiz-opt[disabled]{pointer-events:none;cursor:default}
+.quiz-opt-letter{width:22px;height:22px;border-radius:50%;background:var(--bg-card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:600;flex-shrink:0;color:var(--text-dim)}
+.quiz-opt.selected .quiz-opt-letter{background:var(--orange);color:#fff;border-color:var(--orange)}
+.quiz-opt.correct .quiz-opt-letter{background:#2ea043;color:#fff;border-color:#2ea043}
+.quiz-opt.wrong .quiz-opt-letter{background:#d73a49;color:#fff;border-color:#d73a49}
+.quiz-choose{font-weight:500;color:var(--orange);font-size:.85rem;margin-left:4px}
+.quiz-submit-btn{display:none;margin-top:12px;padding:11px 26px;background:var(--orange);color:#fff;border:none;border-radius:10px;font-size:.92rem;font-weight:700;cursor:pointer}
+.quiz-submit-btn:hover{background:#c75400}
+.quiz-opt-exp-inline{flex-basis:100%;padding:8px 12px;border-radius:9px;font-size:.86rem;line-height:1.48;margin-top:6px}
+.quiz-opt-exp-inline.qoe-is-correct{background:rgba(46,160,67,.08);border-left:3px solid #2ea043}
+.quiz-opt-exp-inline.qoe-is-wrong{background:rgba(215,58,73,.06);border-left:3px solid #d73a49}
+.qoe-header{font-weight:700;margin-bottom:3px;font-size:.8rem;display:flex;align-items:center;gap:6px}
+.qoe-correct{color:#2ea043}
+.qoe-wrong{color:#d73a49}
+.qoe-letter,.qoe-text{color:var(--text-dim)}
+.quiz-opt-explains{display:none!important}
+.quiz-overall{display:none;margin-top:10px}
+.quiz-overall[style*="block"]{display:block}
+details.quiz-overall:not([open]) .quiz-overall-content{display:none}
+.quiz-overall-toggle{cursor:pointer;font-size:.88rem;font-weight:700;color:var(--orange);padding:8px 0 2px;list-style:none;display:flex;align-items:center;gap:6px}
+.quiz-overall-toggle::-webkit-details-marker{display:none}
+.quiz-overall-toggle::before{content:'';display:inline-block;width:0;height:0;border-left:5px solid var(--orange);border-top:4px solid transparent;border-bottom:4px solid transparent;transition:transform .2s}
+details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
+.quiz-overall-content{padding:6px 0 0;background:transparent;border-radius:0;font-size:.88rem;color:var(--text-dim);line-height:1.65;margin-top:6px;border-left:none}
+.exp-section{margin-bottom:10px;padding:12px 14px;border-radius:11px;border-left:3px solid}
+.exp-section:last-child,.exp-section p:last-child,.exp-section ul:last-child{margin-bottom:0}
+.exp-section h5{margin:0 0 6px;font-size:.88rem;font-weight:700}
+.exp-section p{margin-bottom:5px}
+.exp-section ul{padding-left:18px;margin-bottom:5px}
+.exp-section li{margin-bottom:3px}
+.exp-correct-answer{background:rgba(46,160,67,.05);border-left-color:#2ea043}
+.exp-correct-answer h5{color:#2ea043}
+.exp-source{background:rgba(59,130,246,.05);border-left-color:#3b82f6}
+.exp-source h5,.exp-source a{color:#3b82f6}
+.exp-expert{background:rgba(139,92,246,.05);border-left-color:#8b5cf6}
+.exp-expert h5{color:#8b5cf6}
+.exp-wrong{background:rgba(215,58,73,.04);border-left-color:#d73a49}
+.exp-wrong h5{color:#d73a49}
+.exp-memory{background:rgba(217,119,6,.05);border-left-color:#d97706}
+.exp-memory h5{color:#d97706}
+.exp-realworld{background:rgba(16,185,129,.05);border-left-color:#10b981}
+.exp-realworld h5{color:#10b981}
+.quiz-gate-prompt{position:absolute;inset:14px;display:flex;align-items:center;justify-content:center;border-radius:14px;background:rgba(7,9,13,.56);z-index:4}
+.quiz-gate-card{width:min(100%,520px);padding:22px;border-radius:16px;border:1px solid rgba(221,92,12,.32);background:var(--bg-raised);box-shadow:0 18px 45px rgba(0,0,0,.28);text-align:center}
+.quiz-gate-title{font-size:1.08rem;font-weight:700;line-height:1.35}
+.quiz-gate-copy{margin-top:10px;color:var(--text-dim);font-size:.92rem;line-height:1.6}
+.quiz-gate-form{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.quiz-gate-email-input{flex:1 1 220px;min-height:48px;padding:0 14px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-family:var(--font);font-size:.94rem}
+.quiz-gate-email-input:focus{outline:none;border-color:rgba(221,92,12,.5);box-shadow:0 0 0 3px rgba(221,92,12,.12)}
+.quiz-gate-submit,.quiz-nav-next,.quiz-final .cp-cta,.quiz-secondary-btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:12px;border:none;font-family:var(--font);font-size:.95rem;font-weight:700;cursor:pointer;text-decoration:none}
+.quiz-nav-next,.quiz-gate-submit,.quiz-final .cp-cta{background:var(--orange);color:#fff}
+.quiz-nav-next:hover,.quiz-gate-submit:hover,.quiz-final .cp-cta:hover{background:#c75400;text-decoration:none}
+.quiz-nav-next[disabled],.quiz-gate-submit[disabled],.quiz-secondary-btn[disabled]{cursor:not-allowed;opacity:.45}
+.quiz-secondary-btn{background:transparent;border:1px solid var(--border-hover);color:var(--text)}
+.quiz-secondary-btn:hover{background:rgba(221,92,12,.06)}
+.quiz-gate-message{margin-top:10px;font-size:.85rem;color:var(--text-dim);min-height:1.3em}
+.quiz-gate-message.is-error{color:#ff868f}
+.quiz-gate-message.is-success{color:#2ea043}
+.quiz-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px;padding:16px 18px;border-radius:16px;border:1px solid var(--border);background:rgba(255,255,255,.02)}
+.quiz-nav-meta{flex:1;color:var(--text-dim);font-size:.9rem;line-height:1.5;text-align:center}
+.quiz-final{margin-top:22px;padding:24px;border-radius:18px;border:1px solid rgba(221,92,12,.2);background:radial-gradient(circle at top right,rgba(221,92,12,.1),transparent 44%),linear-gradient(180deg,rgba(255,255,255,.015),rgba(255,255,255,.004))}
+.quiz-final[hidden],.quiz-cross-sell[hidden]{display:none!important}
+.quiz-final-kicker{color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.quiz-final h3{margin-top:10px;font-size:1.32rem;line-height:1.28}
+.quiz-final-score{font-size:2.15rem;font-weight:800;color:var(--text);line-height:1;margin-top:16px}
+.quiz-final-copy{margin-top:8px;color:var(--text-dim);max-width:58ch}
+.quiz-final-anchor{margin-top:12px;color:var(--text);font-size:.92rem}
+.quiz-final-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.quiz-cross-sell{margin-top:22px;padding:22px;border-radius:16px;border:1px solid var(--border);background:rgba(255,255,255,.02)}
+.quiz-cross-sell h3{font-size:1rem;margin-bottom:8px}
+.quiz-cross-sell p{margin:0;color:var(--text-dim);font-size:.92rem;line-height:1.6}
+.quiz-cross-sell-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.quiz-cross-sell-links a{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;border:1px solid var(--border-hover);background:transparent;color:var(--text);font-weight:700}
+.quiz-cross-sell-links a:hover{background:rgba(221,92,12,.06);border-color:var(--orange);text-decoration:none}
+.quiz-toast{position:fixed;right:18px;bottom:18px;z-index:1002;min-width:220px;max-width:min(360px,calc(100vw - 36px));padding:14px 16px;border-radius:12px;border:1px solid rgba(46,160,67,.35);background:rgba(18,25,21,.96);color:#e8fff0;box-shadow:0 18px 45px rgba(0,0,0,.32);font-size:.9rem;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .2s,transform .2s}
+.quiz-toast.show{opacity:1;transform:translateY(0)}
+@media (min-width:1040px){.cp-wrap{max-width:960px;padding-left:32px;padding-right:32px}.quiz-card{padding:22px 24px 20px}}
+@media (max-width:720px){.quiz-stepper-head,.quiz-nav,.quiz-final-actions,.quiz-cross-sell-links,.quiz-gate-form{flex-direction:column;align-items:stretch}.quiz-stepper-score,.quiz-nav-meta{text-align:left}.quiz-nav-next,.quiz-secondary-btn,.quiz-gate-submit,.quiz-final .cp-cta,.quiz-cross-sell-links a{width:100%}.quiz-card,.quiz-final,.quiz-cross-sell{padding:18px}.quiz-stepper-dots{gap:6px}}
 
 /* Countdown banner */
 .countdown-banner { max-width: 100%; margin: 0 0 24px; padding: 20px 24px; background: linear-gradient(135deg, rgba(221,92,12,0.08), rgba(221,92,12,0.03)); border: 1px solid rgba(221,92,12,0.2); border-radius: 14px; text-align: center; position: relative; overflow: hidden; }
@@ -450,48 +774,44 @@ a:hover { text-decoration: underline; }
     </ul>
   </div>
 
-  <section class="quiz-section" id="free-quiz" data-preview-style="three-tier">
+  <section class="quiz-section" id="free-quiz" data-preview-style="guided-15">
     <div class="preview-shell">
       <div class="preview-kicker">15-question preview</div>
       <h2>15 Free Preview Questions</h2>
-      <p class="quiz-intro">Answer 5 questions free. Enter your email to continue with 5 more. The full course has 470 questions on Udemy.</p>
-      <div class="preview-status-line">
-        <span class="preview-status-pill">Answered <strong id="quizStatusAnswered">0 of 10 interactive questions</strong></span>
-        <span class="preview-status-pill">Score <strong id="quizStatusScore">0 correct</strong></span>
+      <p class="quiz-intro">Answer 5 questions free. Enter your email to continue through question 15. The full course has 470 questions on Udemy.</p>
+      <div class="quiz-stepper-head">
+        <div class="quiz-stepper-copy">
+          <div class="quiz-stepper-label" id="quizStepLabel">Question 1 of 15</div>
+          <div class="quiz-stepper-tier" data-state="free" id="quizTierLabel">Free</div>
+        </div>
+        <div class="quiz-stepper-score" id="quizMiniScore">0 correct so far</div>
       </div>
-      <div class="preview-progress-wrap">
-        <ol class="preview-progress" id="quizProgress">
-        <li class="preview-slot is-clickable" data-slot="0"><span class="preview-slot-num">1</span><span class="preview-slot-state">Free</span></li>
-        <li class="preview-slot is-clickable" data-slot="1"><span class="preview-slot-num">2</span><span class="preview-slot-state">Free</span></li>
-        <li class="preview-slot is-clickable" data-slot="2"><span class="preview-slot-num">3</span><span class="preview-slot-state">Free</span></li>
-        <li class="preview-slot is-clickable" data-slot="3"><span class="preview-slot-num">4</span><span class="preview-slot-state">Free</span></li>
-        <li class="preview-slot is-clickable" data-slot="4"><span class="preview-slot-num">5</span><span class="preview-slot-state">Free</span></li>
-        <li class="preview-slot" data-slot="5"><span class="preview-slot-num">6</span><span class="preview-slot-state">Email</span></li>
-        <li class="preview-slot" data-slot="6"><span class="preview-slot-num">7</span><span class="preview-slot-state">Email</span></li>
-        <li class="preview-slot" data-slot="7"><span class="preview-slot-num">8</span><span class="preview-slot-state">Email</span></li>
-        <li class="preview-slot" data-slot="8"><span class="preview-slot-num">9</span><span class="preview-slot-state">Email</span></li>
-        <li class="preview-slot" data-slot="9"><span class="preview-slot-num">10</span><span class="preview-slot-state">Email</span></li>
-        <li class="preview-slot is-locked" data-slot="10"><span class="preview-slot-num">11</span><span class="preview-slot-state">Full</span><span class="preview-slot-lock"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 1 1 8 0v3"/></svg></span></li>
-        <li class="preview-slot is-locked" data-slot="11"><span class="preview-slot-num">12</span><span class="preview-slot-state">Full</span><span class="preview-slot-lock"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 1 1 8 0v3"/></svg></span></li>
-        <li class="preview-slot is-locked" data-slot="12"><span class="preview-slot-num">13</span><span class="preview-slot-state">Full</span><span class="preview-slot-lock"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 1 1 8 0v3"/></svg></span></li>
-        <li class="preview-slot is-locked" data-slot="13"><span class="preview-slot-num">14</span><span class="preview-slot-state">Full</span><span class="preview-slot-lock"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 1 1 8 0v3"/></svg></span></li>
-        <li class="preview-slot is-locked" data-slot="14"><span class="preview-slot-num">15</span><span class="preview-slot-state">Full</span><span class="preview-slot-lock"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 1 1 8 0v3"/></svg></span></li>
-        </ol>
-      </div>
-      <div class="preview-group-labels">
-        <div class="preview-group-label">Questions 1-5. Free.</div>
-        <div class="preview-group-label">Questions 6-10. Email required.</div>
-        <div class="preview-group-label">Questions 11-15. Full course.</div>
+      <div class="quiz-stepper-dots" id="quizProgress">
+        <span class="preview-dot" data-slot="0" title="Question 1"></span>
+        <span class="preview-dot" data-slot="1" title="Question 2"></span>
+        <span class="preview-dot" data-slot="2" title="Question 3"></span>
+        <span class="preview-dot" data-slot="3" title="Question 4"></span>
+        <span class="preview-dot" data-slot="4" title="Question 5"></span>
+        <span class="preview-dot" data-slot="5" title="Question 6"></span>
+        <span class="preview-dot" data-slot="6" title="Question 7"></span>
+        <span class="preview-dot" data-slot="7" title="Question 8"></span>
+        <span class="preview-dot" data-slot="8" title="Question 9"></span>
+        <span class="preview-dot" data-slot="9" title="Question 10"></span>
+        <span class="preview-dot" data-slot="10" title="Question 11"></span>
+        <span class="preview-dot" data-slot="11" title="Question 12"></span>
+        <span class="preview-dot" data-slot="12" title="Question 13"></span>
+        <span class="preview-dot" data-slot="13" title="Question 14"></span>
+        <span class="preview-dot" data-slot="14" title="Question 15"></span>
       </div>
     </div>
-    <div class="quiz-tier-heading">Questions 1-5. Free.</div>
+    <div class="quiz-card-stack">
 <div class="quiz-card" data-question-index="0" data-tier="1" id="qcard0">
-<div class="quiz-q"><span class="quiz-q-num">1.</span>Which results in a reclassification task being generated-</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t">
+<div class="quiz-q"><span class="quiz-q-num">1.</span>Which results in a reclassification task being generated-</div><div class="quiz-answer-shell"><div class="quiz-answer-content">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="CORRECT: When glide.class.upgrade.enabled is set to false, automatic reclassification for class upgrades is blocked. Discovery finding that a generic Server is actually a Windows Server is a class upgrade (moving to a more specific subclass), so the system generates a reclassification task for manual review instead of processing it automatically." data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>glide.class.upgrade.enabled set to false and during discovery a Server is classified as a Windows server.</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: When glide.class.switch.enabled is set to true, automatic reclassification for class switches is allowed. A change from Windows Server to Linux Server is a class switch (lateral move between sibling classes), and because the property is set to true, the switch processes automatically without generating a task." data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>glide.class.switch.enabled set to true and during discovery a Windows server is classified as a Linux server.</span></li>
 </ul><button class="quiz-submit-btn" data-q="0" type="button">Submit Answer</button>
-<div class="quiz-opt-explains" id="qoptexp0" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp0">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
@@ -499,15 +819,15 @@ a:hover { text-decoration: underline; }
 </div>
 </details>
 </div></div></div>
-<div class="quiz-card" data-question-index="1" data-tier="1" id="qcard1">
-<div class="quiz-q"><span class="quiz-q-num">2.</span>Which CSDM domain are business applications, information objects, and capabilities part of-</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t">
+<div class="quiz-card" data-question-index="1" data-tier="1" hidden="" id="qcard1">
+<div class="quiz-q"><span class="quiz-q-num">2.</span>Which CSDM domain are business applications, information objects, and capabilities part of-</div><div class="quiz-answer-shell"><div class="quiz-answer-content">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: Service Delivery is the CSDM domain for deployed, running service instances and their discoverable technical components. It contains things like application services, infrastructure services, and the actual CIs that Discovery finds - not the logical planning entities like business applications." data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>Service Delivery</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Service Consumption is the CSDM domain that represents how end users and customers interact with services. It includes service portals, request catalogs, and service-level agreements - the consumer-facing side of service management." data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>Service Consumption</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Build and Integration is the CSDM domain focused on the development and deployment pipeline. It covers build processes, code repositories, and integration workflows - the technical construction phase, not the logical design phase." data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>Build &amp; Integration</span></li>
 <li class="quiz-opt" data-exp="CORRECT: Design and Planning is the CSDM domain where you model what a service IS before it gets deployed. Business Applications, Information Objects, and Capabilities are all logical, non-deployed entities that live in this domain. They represent the architectural blueprint of your service ecosystem." data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>Design &amp; Planning</span></li>
 </ul><button class="quiz-submit-btn" data-q="1" type="button">Submit Answer</button>
-<div class="quiz-opt-explains" id="qoptexp1" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp1">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
@@ -515,8 +835,8 @@ a:hover { text-decoration: underline; }
 </div>
 </details>
 </div></div></div>
-<div class="quiz-card" data-question-index="2" data-tier="1" id="qcard2">
-<div class="quiz-q"><span class="quiz-q-num">3.</span>Which CSDM domain represents deployed service instances and their related, discoverable, components-</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t">
+<div class="quiz-card" data-question-index="2" data-tier="1" hidden="" id="qcard2">
+<div class="quiz-q"><span class="quiz-q-num">3.</span>Which CSDM domain represents deployed service instances and their related, discoverable, components-</div><div class="quiz-answer-shell"><div class="quiz-answer-content">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="CORRECT: Service Delivery is the CSDM domain that represents the deployed, running instances of services and their discoverable technical components. This includes application services, infrastructure services, and all the actual CIs (servers, databases, load balancers) that Discovery can detect in your environment." data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>Service Delivery</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Ideation and Strategy is focused on the earliest phase of service planning - defining business strategy, identifying opportunities, and aligning IT investments with business goals. It does not contain deployed infrastructure or discoverable components." data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>Ideation &amp; Strategy</span></li>
@@ -524,7 +844,7 @@ a:hover { text-decoration: underline; }
 <li class="quiz-opt" data-exp="INCORRECT: Build and Integration covers the development and deployment pipeline - code repos, CI/CD processes, and integration workflows. While it is involved in getting services deployed, it does not represent the final deployed state of service instances." data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>Build &amp; Integration</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Design and Planning contains the logical, non-deployed entities like Business Applications, Information Objects, and Capabilities. These are architectural blueprints, not the actual running infrastructure that Discovery can find." data-idx="4" data-q="2"><span class="quiz-opt-letter">E</span><span>Design &amp; Planning</span></li>
 </ul><button class="quiz-submit-btn" data-q="2" type="button">Submit Answer</button>
-<div class="quiz-opt-explains" id="qoptexp2" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp2">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
@@ -532,8 +852,8 @@ a:hover { text-decoration: underline; }
 </div>
 </details>
 </div></div></div>
-<div class="quiz-card" data-question-index="3" data-tier="1" id="qcard3">
-<div class="quiz-q"><span class="quiz-q-num">4.</span>An operations team wants a health dashboard that focuses only on:Windows Server and Linux Server CIsThat are OperationalThey do not want other classes included, and they want this filtered view to be available as a standard dashboard, not a one-off ad hoc filter.Which configuration best meets this goal-</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t">
+<div class="quiz-card" data-question-index="3" data-tier="1" hidden="" id="qcard3">
+<div class="quiz-q"><span class="quiz-q-num">4.</span>An operations team wants a health dashboard that focuses only on:Windows Server and Linux Server CIsThat are OperationalThey do not want other classes included, and they want this filtered view to be available as a standard dashboard, not a one-off ad hoc filter.Which configuration best meets this goal-</div><div class="quiz-answer-shell"><div class="quiz-answer-content">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="CORRECT: CMDB Groups of type &quot;Health&quot; allow administrators to define filtered sets of CIs using encoded queries. You create a group that targets Windows Server and Linux Server classes with an operational status filter, then use the CMDB Health Dashboard's built-in group filter to display health metrics for only those CIs. This is the proper, reusable, and admin-configured approach." data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>Create a CMDB Group of type Health with encoded queries for Windows and Linux servers, then use the Group Health Dashboard</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Manually filtering the CMDB Health Dashboard each time is not a sustainable or reusable solution. It requires the operations team to remember and re-apply filters every time they access the dashboard. This approach does not leverage the built-in CMDB Group functionality designed for exactly this purpose." data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>Filter the main CMDB Health Dashboard manually each time by class and operational status</span></li>
@@ -541,7 +861,7 @@ a:hover { text-decoration: underline; }
 <li class="quiz-opt" data-exp="INCORRECT: Cloning the CMDB Health Dashboard is not a supported or recommended practice. The CMDB Health Dashboard is designed to work with CMDB Groups as filters. Creating clones introduces maintenance overhead and does not follow ServiceNow best practices." data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>Create a separate CMDB Health dashboard clone limited only to server classes</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Modifying CMDB Health inclusion rules to remove all other classes would affect the health system globally for all users, not just for this operations team. This is an overly broad change that would break health monitoring for other teams and use cases across the organization." data-idx="4" data-q="3"><span class="quiz-opt-letter">E</span><span>Adjust CMDB Health inclusion rules to remove all other classes from the health system</span></li>
 </ul><button class="quiz-submit-btn" data-q="3" type="button">Submit Answer</button>
-<div class="quiz-opt-explains" id="qoptexp3" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp3">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
@@ -549,15 +869,15 @@ a:hover { text-decoration: underline; }
 </div>
 </details>
 </div></div></div>
-<div class="quiz-card" data-question-index="4" data-tier="1" id="qcard4">
-<div class="quiz-q"><span class="quiz-q-num">5.</span>Where do you go to configure a rule to uniquely identifies CIs-</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t">
+<div class="quiz-card" data-question-index="4" data-tier="1" hidden="" id="qcard4">
+<div class="quiz-q"><span class="quiz-q-num">5.</span>Where do you go to configure a rule to uniquely identifies CIs-</div><div class="quiz-answer-shell"><div class="quiz-answer-content">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: The Basic Info tab in CI Class Manager displays general information about a CI class such as its name, label, parent class, and table structure. It does not contain identification rule configuration. Identification rules are on their own dedicated tab." data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>Basic Info tab</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Pinned Classes is a convenience feature in CI Class Manager that lets you bookmark frequently accessed CI classes for quick navigation. It has nothing to do with configuring identification rules or defining how CIs are uniquely identified." data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>Pinned Classes</span></li>
 <li class="quiz-opt" data-exp="CORRECT: The Identification Rule tab in CI Class Manager is where you configure the rules that uniquely identify CIs in the CMDB. Identification rules define which attribute combinations (called identifier entries) make a CI unique - for example, a server might be identified by serial number plus name. These rules are critical for preventing duplicate CIs during Discovery and data imports." data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>Identification Rule tab</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: The Reconciliation Rules tab handles data precedence - which data source wins when multiple sources provide conflicting values for the same CI attribute. While reconciliation is important for data quality, it does not define how CIs are uniquely identified. That is the job of identification rules." data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>Reconciliation Rules tab</span></li>
 </ul><button class="quiz-submit-btn" data-q="4" type="button">Submit Answer</button>
-<div class="quiz-opt-explains" id="qoptexp4" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp4">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
@@ -565,28 +885,15 @@ a:hover { text-decoration: underline; }
 </div>
 </details>
 </div></div></div>
-    <div class="quiz-interstitial" id="tier1Interstitial" hidden>
-      <div class="quiz-interstitial-kicker">Questions 1-5 complete</div>
-      <h3>You scored <span id="tier1ScoreText">0/5</span> on questions 1-5.</h3>
-      <div class="quiz-interstitial-score" id="tier1ScoreValue">0/5</div>
-      <p class="quiz-interstitial-copy">You have seen the free section. Continue with questions 6-10 after email, or move straight to the full course.</p>
-      <div class="quiz-interstitial-actions">
-        <a href="https://www.udemy.com/course/pass-servicenow-cis-data-foundations-cmdbcsdm/?referralCode=442CA6D450663B1D42AF" target="_blank" rel="noopener" class="cp-cta" data-buy-tier="tier1">Get all 470 questions for $9.99
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <button type="button" class="quiz-secondary-btn" id="tier1ContinueBtn">Enter your email to continue</button>
-      </div>
-    </div>
-    <div class="quiz-tier-heading">Questions 6-10. Email required.</div>
-<div class="quiz-card is-email-locked" data-question-index="5" data-tier="2" id="qcard5">
-<div class="quiz-q"><span class="quiz-q-num">6.</span>What is the default threshold value that the IRE uses to determine when it should stop updating the oldest duplicate CI record, thereby skipping updates on all records when that threshold is exceeded-</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
+<div class="quiz-card is-email-locked" data-question-index="5" data-tier="2" hidden="" id="qcard5">
+<div class="quiz-q"><span class="quiz-q-num">6.</span>What is the default threshold value that the IRE uses to determine when it should stop updating the oldest duplicate CI record, thereby skipping updates on all records when that threshold is exceeded-</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: A threshold of 2 would be far too aggressive, causing the IRE to create new CIs after finding just 2 duplicates. This would lead to excessive CI proliferation in the CMDB and defeat the purpose of deduplication." data-idx="0" data-q="5"><span class="quiz-opt-letter">A</span><span>2</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: A threshold of 3 is not the default value. While it might seem reasonable, ServiceNow chose a higher default to give the IRE more tolerance before switching from updating existing duplicates to creating new CIs." data-idx="1" data-q="5"><span class="quiz-opt-letter">B</span><span>3</span></li>
 <li class="quiz-opt" data-exp="CORRECT: The default duplicate threshold in the IRE is 5. When the IRE detects more than 5 CIs matching the same identification criteria, it stops updating the oldest duplicate CI and instead creates a new CI. This value balances deduplication effectiveness with data integrity." data-idx="2" data-q="5"><span class="quiz-opt-letter">C</span><span>5</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: A threshold of 10 would be too permissive, allowing the IRE to continue updating potentially stale or incorrect duplicate CIs far too long before creating a fresh one. This is not the default value set by ServiceNow." data-idx="3" data-q="5"><span class="quiz-opt-letter">D</span><span>10</span></li>
 </ul><button class="quiz-submit-btn" data-q="5" type="button">Submit Answer</button>
-<div class="quiz-opt-explains" id="qoptexp5" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp5">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
@@ -595,38 +902,33 @@ a:hover { text-decoration: underline; }
 </details>
 </div><div class="quiz-gate-prompt" data-email-overlay="">
 <div class="quiz-gate-card">
-<div class="quiz-gate-title">Enter your email to continue with questions 6-10</div>
+<div class="quiz-gate-title">Enter your email to continue with questions 6-15</div>
 <p class="quiz-gate-copy">Free exam updates. No spam. Unsubscribe anytime.</p>
 <form class="quiz-gate-form" id="quizGateForm">
 <input autocomplete="email" class="quiz-gate-email-input" id="quizGateEmail" placeholder="you@email.com" required="" type="email"/>
-<button class="quiz-gate-submit" id="quizGateSubmit" type="submit">Continue with 5 More Questions</button>
+<button class="quiz-gate-submit" id="quizGateSubmit" type="submit">Continue with 10 More Questions</button>
 </form>
 <p class="quiz-gate-message" id="quizGateMessage"></p>
 </div>
 </div></div></div>
-<div class="quiz-card is-email-locked" data-question-index="6" data-tier="2" id="qcard6">
-<div class="quiz-q"><span class="quiz-q-num">7.</span>Which components are displayed on the CMDB and CSDM Data Foundations Dashboards-</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
+<div class="quiz-card is-email-locked" data-question-index="6" data-tier="2" hidden="" id="qcard6">
+<div class="quiz-q"><span class="quiz-q-num">7.</span>Which components are displayed on the CMDB and CSDM Data Foundations Dashboards-</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: Incident, Change, and Problem Management are ITSM process modules, not components of the Data Foundations Dashboard. These modules consume CMDB data but are not part of the health monitoring dashboards for CMDB and CSDM." data-idx="0" data-q="6"><span class="quiz-opt-letter">A</span><span>Incident Management, Change Management, and Problem Management</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: While CIs, Relationships, and Business Services are core CMDB and CSDM objects, they are what the dashboards measure rather than the dashboard components themselves. The dashboards report on the health of these objects through metrics, not by simply listing them." data-idx="1" data-q="6"><span class="quiz-opt-letter">B</span><span>Configuration Items, Relationships, and Business Services</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Knowledge Articles, Service Catalog Items, and Catalog Categories belong to the Knowledge Management and Service Catalog applications. They are unrelated to the CMDB and CSDM Data Foundations Dashboards, which focus on data quality and health metrics." data-idx="2" data-q="6"><span class="quiz-opt-letter">C</span><span>Knowledge Articles, Service Catalog Items, and Catalog Categories</span></li>
 <li class="quiz-opt" data-exp="CORRECT: The CMDB and CSDM Data Foundations Dashboards display three key components: Foundational Metric Results (scores such as percentage of CIs with valid relationships or populated attributes), Priorities (highlighting the most critical data quality issues to address first), and Remediation Playbook URLs (links to Knowledge Base articles that explain step-by-step how to fix each failing metric)." data-idx="3" data-q="6"><span class="quiz-opt-letter">D</span><span>Foundational Metric Results, Priorities, and Remediation Playbook URLs</span></li>
 </ul><button class="quiz-submit-btn" data-q="6" type="button">Submit Answer</button>
-<div class="quiz-opt-explains" id="qoptexp6" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp6">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
 <h5>Correct Answer</h5><p><strong>D. Foundational Metric Results, Priorities, and Remediation Playbook URLs</strong></p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-it-operations-management/page/product/configuration-management/concept/cmdb-data-foundations-dashboard.html" target="_blank">ServiceNow Zurich Docs - CMDB Data Foundations Dashboard</a></p><p>If the link fails, search Google for: <em>ServiceNow Zurich CMDB CSDM Data Foundations Dashboard components</em></p><h5>Expert Explanation</h5><p>The <strong>CMDB and CSDM Data Foundations Dashboards</strong> are purpose-built to monitor and improve CMDB data quality. They display three distinct components that work together as a continuous improvement loop:</p><ul><li><strong>Foundational Metric Results</strong> - These are scored measurements of your CMDB health, such as the percentage of CIs that have a valid relationship, the percentage of Business Services mapped in CSDM, or how many CIs have a populated <strong>Managed by</strong> group. Each metric produces a pass/fail or percentage score.</li><li><strong>Priorities</strong> - The dashboard ranks which failing metrics should be fixed first based on impact. This helps CMDB managers focus their limited time on the issues that will improve overall CMDB health the most.</li><li><strong>Remediation Playbook URLs</strong> - Each metric links to a Knowledge Base article (playbook) that provides step-by-step guidance on how to fix the specific data quality issue. These playbooks turn metric failures into actionable remediation steps.</li></ul><h5>Why the Others Are Wrong</h5><ul><li><strong>A. Incident, Change, and Problem Management</strong> - These are ITSM process modules. They rely on CMDB data but are not displayed as components of the Data Foundations Dashboards.</li><li><strong>B. CIs, Relationships, and Business Services</strong> - These are the CMDB objects being measured by the dashboard, not the dashboard components themselves. The dashboard reports on the quality of these objects through metrics.</li><li><strong>C. Knowledge Articles, Service Catalog Items, and Catalog Categories</strong> - These belong to entirely different ServiceNow applications (Knowledge Management and Service Catalog) and have no role in the Data Foundations Dashboards.</li></ul><h5>Memory Tip</h5><p>Think <strong>"MPR - Measure, Prioritize, Remediate"</strong>. The dashboard shows your Metric results (M), tells you what to fix first with Priorities (P), and gives you Remediation playbook links (R) to actually fix it.</p><h5>Real-World Example</h5><p>A CMDB Manager at a financial services company opens the Data Foundations Dashboard and sees the metric "CIs with valid Managed by group" scoring at 42%. The Priorities section flags this as the top issue because 1,200 Windows servers lack ownership. She clicks the Remediation Playbook URL, which opens a Knowledge Base article explaining how to use CI Class Manager to bulk-assign the Managed by group for the Windows Server class. Within a week, the metric improves to 89%.</p>
 </div>
 </details>
-</div><div class="quiz-gate-prompt" data-email-overlay="">
-<div class="quiz-gate-card">
-<div class="quiz-gate-title">Questions 6-10 continue after email</div>
-<p class="quiz-gate-copy">Use the form on question 6 to keep going.</p>
-</div>
 </div></div></div>
-<div class="quiz-card quiz-multi is-email-locked" data-question-index="7" data-tier="2" id="qcard7">
-<div class="quiz-q"><span class="quiz-q-num">8.</span>From which of the following can the Managed by group be configured and synchronised to the underlying group or class of Configuration Items (CIs)- (Choose 2) <span class="quiz-choose">(choose 2)</span></div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
+<div class="quiz-card quiz-multi is-email-locked" data-question-index="7" data-tier="2" hidden="" id="qcard7">
+<div class="quiz-q"><span class="quiz-q-num">8.</span>From which of the following can the Managed by group be configured and synchronised to the underlying group or class of Configuration Items (CIs)- (Choose 2) <span class="quiz-choose">(choose 2)</span></div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="CORRECT: Technology Management Offerings (formerly called Technical Service Offerings) allow you to configure a Managed by group that automatically propagates down to the underlying CIs associated with that offering. This provides a top-down approach to ownership assignment through the CSDM service model." data-idx="0" data-q="7"><span class="quiz-opt-letter">A</span><span>Technology Management Offerings</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Business Service Offerings define how a business service is consumed by end users. They do not provide a mechanism to configure or synchronize the Managed by group to underlying CIs. They sit on the business-facing side of CSDM, not the technology management side." data-idx="1" data-q="7"><span class="quiz-opt-letter">B</span><span>Business Service Offerings</span></li>
@@ -635,42 +937,32 @@ a:hover { text-decoration: underline; }
 <li class="quiz-opt" data-exp="CORRECT: The CI Class Manager allows you to configure the Managed by group at the CI class level and synchronize it to all CIs belonging to that class. This provides a bulk, class-based approach to assigning ownership, complementing the service-model approach offered by Technology Management Offerings." data-idx="4" data-q="7"><span class="quiz-opt-letter">E</span><span>CI Class Manager</span></li>
 </ul><button class="quiz-submit-btn" data-q="7" type="button">Submit Answer</button>
 
-<div class="quiz-opt-explains" id="qoptexp7" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp7">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
 <h5>Correct Answer</h5><p><strong>A. Technology Management Offerings</strong> and <strong>E. CI Class Manager</strong></p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-it-operations-management/page/product/configuration-management/concept/ci-class-manager.html" target="_blank">ServiceNow Zurich Docs - CI Class Manager</a></p><p>If the link fails, search Google for: <em>ServiceNow Zurich CI Class Manager Managed by group synchronization</em></p><h5>Expert Explanation</h5><p>The <strong>Managed by group</strong> field on a CI identifies the team responsible for managing that configuration item. ServiceNow provides two paths to configure and synchronize this field to underlying CIs:</p><ul><li><strong>Technology Management Offerings (TMOs)</strong> - Formerly called Technical Service Offerings, TMOs sit in the CSDM service model. When you set a Managed by group on a TMO, that group propagates to the CIs associated with the offering. This is a <strong>service-model-driven approach</strong>, ideal when your organization has already mapped CIs to technology offerings in CSDM.</li><li><strong>CI Class Manager</strong> - This administrative tool lets you configure default values at the <strong>CI class level</strong>, including the Managed by group. When set, the group synchronizes to all CIs belonging to that class. This is a <strong>class-based approach</strong>, useful for bulk assignment when many CIs of the same type share the same support group.</li></ul><p>These two methods complement each other. TMOs work top-down through the service model, while CI Class Manager works horizontally across all instances of a CI class.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>B. Business Service Offerings</strong> - BSOs define how business services are delivered to consumers. They operate on the business side of CSDM and do not synchronize technical ownership groups to CIs.</li><li><strong>C. Technology Management Services</strong> - While these represent the overall technical service, the synchronization of Managed by group happens at the <strong>offering</strong> level (TMO), not the service level.</li><li><strong>D. Business Services</strong> - Business Services have their own ownership fields but do not provide a synchronization mechanism to push Managed by groups to the technical CIs underneath them.</li></ul><h5>Memory Tip</h5><p>Think <strong>"TMO + Class = Managed by Mass"</strong>. The two tools that can push Managed by groups in bulk are <strong>T</strong>echnology <strong>M</strong>anagement <strong>O</strong>fferings (service model path) and <strong>C</strong>I <strong>Class</strong> Manager (class-level path).</p><h5>Real-World Example</h5><p>A Platform Engineer at a healthcare company needs to assign the "Network Operations" group as the Managed by group for 800 network switches. She has two options: (1) Open CI Class Manager, select the Network Switch class, set the Managed by group to "Network Operations," and synchronize it to all 800 CIs at once. (2) Open the TMO for "Network Infrastructure," set the Managed by group there, and let it propagate to all CIs linked to that offering. She uses CI Class Manager because not all switches are mapped to a TMO yet, saving hours of manual updates.</p>
 </div>
 </details>
-</div><div class="quiz-gate-prompt" data-email-overlay="">
-<div class="quiz-gate-card">
-<div class="quiz-gate-title">Questions 6-10 continue after email</div>
-<p class="quiz-gate-copy">Use the form on question 6 to keep going.</p>
-</div>
 </div></div></div>
-<div class="quiz-card is-email-locked" data-question-index="8" data-tier="2" id="qcard8">
-<div class="quiz-q"><span class="quiz-q-num">9.</span>When configuring an Identification Rule entry, what is the impact of checking the Allow fallback to parent's rules option-</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
+<div class="quiz-card is-email-locked" data-question-index="8" data-tier="2" hidden="" id="qcard8">
+<div class="quiz-q"><span class="quiz-q-num">9.</span>When configuring an Identification Rule entry, what is the impact of checking the Allow fallback to parent's rules option-</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: Allowing null attribute values is controlled by a different setting in identification rules. The &quot;Allow fallback to parent's rules&quot; option has nothing to do with how null values are handled during CI identification." data-idx="0" data-q="8"><span class="quiz-opt-letter">A</span><span>It allows null attribute values for that identifier entry.</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Reconciliation rule priority is a separate concept from identification rule fallback. Reconciliation rules determine which data source wins when there are conflicting attribute values. The fallback option only affects the identification matching process, not reconciliation priority." data-idx="1" data-q="8"><span class="quiz-opt-letter">B</span><span>The system uses the parent's reconciliation rule priority if the child rule fails.</span></li>
 <li class="quiz-opt" data-exp="CORRECT: When &quot;Allow fallback to parent's rules&quot; is checked, the IRE first attempts to match the incoming CI using the child class identification rule. If no match is found, the IRE then tries matching using the parent class identification rules. This creates a two-step matching process that increases the chance of finding an existing CI before creating a new one." data-idx="2" data-q="8"><span class="quiz-opt-letter">C</span><span>If the current CI's identifier entry fails to find a match, the IRE attempts matching using the criterion attributes of the parent class.</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: CI reclassification is governed by reconciliation rules and the reclassification settings in the IRE, not by the fallback option on identification rule entries. Reclassification determines whether a CI can change from one class to another based on incoming data." data-idx="3" data-q="8"><span class="quiz-opt-letter">D</span><span>It prevents the CI from being reclassified.</span></li>
 </ul><button class="quiz-submit-btn" data-q="8" type="button">Submit Answer</button>
-<div class="quiz-opt-explains" id="qoptexp8" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp8">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
 <h5>Correct Answer</h5><p><strong>C. If the current CI's identifier entry fails to find a match, the IRE attempts matching using the criteria defined in the parent class's identification rules.</strong></p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-it-operations-management/page/product/configuration-management/concept/id-and-reconciliation-rules.html" target="_blank">ServiceNow Zurich Docs - Identification and Reconciliation Rules</a></p><p>If the link fails, search Google for: <em>ServiceNow Zurich identification rule allow fallback parent rules</em></p><h5>Expert Explanation</h5><p>The <strong>"Allow fallback to parent's rules"</strong> option on an identification rule entry creates a hierarchical matching strategy. When the IRE processes an incoming CI:</p><ol style="list-style-type: none; padding-left: 0;"><li><strong>Step 1:</strong> The IRE tries to match using the <strong>child class identification rule</strong> (the specific class the CI belongs to, such as Linux Server).</li><li><strong>Step 2:</strong> If no match is found and fallback is enabled, the IRE moves up the class hierarchy and tries matching using the <strong>parent class identification rule</strong> (such as Server or Computer).</li></ol><p>This is valuable because child classes often have more specific identification criteria (like a unique hardware attribute), while parent classes may use broader criteria (like hostname plus IP address). Enabling fallback ensures the IRE exhausts all matching possibilities before creating a duplicate CI.</p><p>Without this option, a failed match at the child class level would immediately result in a new CI being created, even if the parent class rules could have identified an existing match.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>A. Allows null attribute values</strong> - Null handling in identification rules is managed through separate settings like "Enforce exact count" or by marking attributes as optional. The fallback option does not control null value behavior.</li><li><strong>B. Uses parent's reconciliation rule priority</strong> - Reconciliation and identification are distinct processes. Reconciliation rules resolve conflicting attribute values between data sources. The fallback option only affects the identification (matching) phase.</li><li><strong>D. Prevents CI reclassification</strong> - Reclassification is controlled by its own settings in the IRE. It determines whether a CI can change class based on new data. The fallback option is strictly about expanding the search for matching CIs up the class hierarchy.</li></ul><h5>Memory Tip</h5><p>Think of it like <strong>asking your parent for help</strong>. The child tries to solve the problem (find a match) on their own first. If they fail, they "fall back" to their parent for help using the parent's approach. Just like real life - child tries first, parent is the backup.</p><h5>Real-World Example</h5><p>A Discovery scan finds a new ESXi host and tries to match it using the VMware ESXi Server identification rule, which uses the BIOS UUID. The BIOS UUID field is missing from the scan data, so no match is found. Because "Allow fallback to parent's rules" is enabled, the IRE falls back to the Server class identification rule, which uses serial number plus hostname. It finds an existing CI with the same serial number and hostname, preventing a duplicate. Without fallback enabled, the IRE would have created a second CI for the same physical server.</p>
 </div>
 </details>
-</div><div class="quiz-gate-prompt" data-email-overlay="">
-<div class="quiz-gate-card">
-<div class="quiz-gate-title">Questions 6-10 continue after email</div>
-<p class="quiz-gate-copy">Use the form on question 6 to keep going.</p>
-</div>
 </div></div></div>
-<div class="quiz-card quiz-multi is-email-locked" data-question-index="9" data-tier="2" id="qcard9">
-<div class="quiz-q"><span class="quiz-q-num">10.</span>The Unified Map combines many of the features from which of the following maps- (Choose 2) <span class="quiz-choose">(choose 2)</span></div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
+<div class="quiz-card quiz-multi is-email-locked" data-question-index="9" data-tier="2" hidden="" id="qcard9">
+<div class="quiz-q"><span class="quiz-q-num">10.</span>The Unified Map combines many of the features from which of the following maps- (Choose 2) <span class="quiz-choose">(choose 2)</span></div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="CORRECT: The Application Service map shows application services along with their infrastructure components, connections, and hosting relationships. The Unified Map incorporates this capability, allowing users to visualize how application services are composed and what technical components support them." data-idx="0" data-q="9"><span class="quiz-opt-letter">A</span><span>Application Service</span></li>
 <li class="quiz-opt" data-exp="CORRECT: The Dependency View map displays upstream and downstream CI relationships, showing what a given CI depends on and what depends on it. The Unified Map brings in this dependency visualization so users can trace impact chains and service dependencies in the same consolidated view." data-idx="1" data-q="9"><span class="quiz-opt-letter">B</span><span>Dependency View</span></li>
@@ -679,153 +971,133 @@ a:hover { text-decoration: underline; }
 <li class="quiz-opt" data-exp='INCORRECT: There is no standard CMDB map called "Dynamic" in ServiceNow. This option does not correspond to a recognized map type that the Unified Map combines.' data-idx="4" data-q="9"><span class="quiz-opt-letter">E</span><span>Dynamic</span></li>
 </ul><button class="quiz-submit-btn" data-q="9" type="button">Submit Answer</button>
 
-<div class="quiz-opt-explains" id="qoptexp9" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp9">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
 <h5>Correct Answer</h5><p><strong>A. Application Service</strong> and <strong>B. Dependency View</strong></p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-it-operations-management/page/product/configuration-management/concept/unified-map.html" target="_blank">ServiceNow Zurich Docs - Unified Map</a></p><p>If the link fails, search Google for: <em>ServiceNow Zurich Unified Map application service dependency view</em></p><h5>Expert Explanation</h5><p>The <strong>Unified Map</strong> is a consolidated visualization tool that merges the capabilities of two previously separate CMDB maps:</p><ul><li><strong>Application Service Map</strong> - This map displays <strong>application services</strong> and their underlying components, showing how infrastructure CIs (servers, databases, load balancers) are grouped together to deliver an application service. It visualizes the composition of services from the bottom up.</li><li><strong>Dependency View Map</strong> - This map shows <strong>upstream and downstream relationships</strong> between CIs. It answers questions like "What does this CI depend on-" and "What breaks if this CI goes down-" by tracing relationship chains in both directions.</li></ul><p>By combining these two maps, the Unified Map gives users a <strong>single consolidated interface</strong> to see both service composition and dependency chains without switching between different map views. Users can explore how an application service is built and simultaneously trace the impact of a failure through the dependency chain.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>C. Geolocation</strong> - The Geolocation map plots CIs on a world map based on their physical location. It serves a different purpose (asset location tracking) and is not combined into the Unified Map.</li><li><strong>D. Transform</strong> - Transform maps are part of the <strong>data import framework</strong> in ServiceNow. They map source fields to target table fields during import set processing. They are not a CMDB visualization tool at all.</li><li><strong>E. Dynamic</strong> - There is no standard CMDB map called "Dynamic" in ServiceNow. This is a fabricated option that does not correspond to any recognized map type.</li></ul><h5>Memory Tip</h5><p>Think <strong>"Unified = App + Dep"</strong>. The Unified Map unifies the <strong>App</strong>lication Service map (what makes up a service) with the <strong>Dep</strong>endency View map (what depends on what). App + Dep = one unified picture.</p><h5>Real-World Example</h5><p>A Change Manager at a retail company needs to assess the risk of patching a database server. She opens the Unified Map for the "E-Commerce Platform" application service. The Application Service view shows her that this database server supports the payment processing module, the product catalog, and the order management system. The Dependency View overlay shows that 3 upstream web servers and 2 load balancers depend on this database. She can see both the service context and the full dependency chain in one map, allowing her to schedule the patch during the lowest-impact maintenance window and notify all affected service owners.</p>
 </div>
 </details>
-</div><div class="quiz-gate-prompt" data-email-overlay="">
-<div class="quiz-gate-card">
-<div class="quiz-gate-title">Questions 6-10 continue after email</div>
-<p class="quiz-gate-copy">Use the form on question 6 to keep going.</p>
-</div>
 </div></div></div>
-    <div class="quiz-interstitial" id="tier2Interstitial" hidden>
-      <div class="quiz-interstitial-kicker">Free preview complete</div>
-      <h3>You scored <span id="tier2ScoreText">0/10</span> on the free preview.</h3>
-      <div class="quiz-interstitial-score" id="tier2ScoreValue">0/10</div>
-      <p class="quiz-interstitial-copy">You have seen 10 preview questions. The full course keeps the same answer breakdown style across the full bank.</p>
-      <div class="quiz-interstitial-actions">
-        <a href="https://www.udemy.com/course/pass-servicenow-cis-data-foundations-cmdbcsdm/?referralCode=442CA6D450663B1D42AF" target="_blank" rel="noopener" class="cp-cta" data-buy-tier="tier2">Get all 470 questions for $9.99
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </div>
-    <div class="quiz-tier-heading">Questions 11-15. Full course teaser.</div>
-<div class="quiz-card quiz-multi is-teaser-locked" data-question-index="10" data-tier="3" id="qcard10">
+<div class="quiz-card quiz-multi is-email-locked" data-question-index="10" data-tier="2" hidden="" id="qcard10">
 <div class="quiz-q"><span class="quiz-q-num">11.</span>A CMDB Administrator has built a number of Technology Management Service Offerings (Technical Service Offerings) based on Dynamic CI Groups to better maintain group alignment for the member CIs.
 
-Which Groups are synced to CIs from the offering that has a relationship to a Dynamic CI Group- (Choose 2) <span class="quiz-choose">(choose 2)</span></div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
+Which Groups are synced to CIs from the offering that has a relationship to a Dynamic CI Group- (Choose 2) <span class="quiz-choose">(choose 2)</span></div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
-<li class="quiz-opt" data-idx="0"><span class="quiz-opt-letter">A</span><span>Approval Group</span></li>
-<li class="quiz-opt" data-idx="1"><span class="quiz-opt-letter">B</span><span>Managed by Group</span></li>
-<li class="quiz-opt" data-idx="2"><span class="quiz-opt-letter">C</span><span>Support Group</span></li>
-<li class="quiz-opt" data-idx="3"><span class="quiz-opt-letter">D</span><span>Owned by Group</span></li>
-</ul>
+<li class="quiz-opt" data-exp="INCORRECT: Approval Group is a field on the Technology Management Service record, but it is used for approval workflows at the service level. It does not sync or propagate down to the underlying Configuration Items through Technology Management Service Offerings." data-idx="0" data-q="10"><span class="quiz-opt-letter">A</span><span>Approval Group</span></li>
+<li class="quiz-opt" data-exp="CORRECT: Managed by Group is one of the two group fields that can be synced from a Technology Management Service down to the underlying CIs through Technology Management Service Offerings. This ensures the CIs inherit the correct management responsibility from the parent service." data-idx="1" data-q="10"><span class="quiz-opt-letter">B</span><span>Managed by Group</span></li>
+<li class="quiz-opt" data-exp="CORRECT: Support Group is the other group field that can be synced from a Technology Management Service to the underlying CIs via Technology Management Service Offerings. This propagation ensures consistent support assignment across all CIs tied to a given service offering." data-idx="2" data-q="10"><span class="quiz-opt-letter">C</span><span>Support Group</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Owned by Group exists on the Technology Management Service record for tracking ownership at the service level. However, it does not propagate down to the CI class through Technology Management Service Offerings - it remains a service-level attribute only." data-idx="3" data-q="10"><span class="quiz-opt-letter">D</span><span>Owned by Group</span></li>
+</ul><button class="quiz-submit-btn" data-q="10" type="button">Submit Answer</button>
 
 
-
-</div><div class="quiz-locked-overlay">
-<div class="quiz-locked-card">
-<div class="quiz-locked-lock"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="10" rx="2" width="14" x="5" y="11"></rect><path d="M8 11V8a4 4 0 1 1 8 0v3"></path></svg></div>
-<div class="quiz-locked-title">This question is part of the full 470-question course.</div>
-<p class="quiz-locked-copy">Keep the teaser here, then move to Udemy for the full question bank.</p>
-<a class="quiz-locked-cta-btn" data-buy-tier="tier3" href="https://www.udemy.com/course/pass-servicenow-cis-data-foundations-cmdbcsdm/?referralCode=442CA6D450663B1D42AF" rel="noopener" target="_blank">Get all 470 questions on Udemy</a>
+<details class="quiz-overall" id="qexp10">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
+<h5>Correct Answer</h5><p><strong>B. Managed by Group</strong> and <strong>C. Support Group</strong></p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-it-operations-management/page/product/service-mapping/concept/technology-management-service.html" target="_blank">ServiceNow Zurich - Technology Management Services</a></p><p>If the link fails, search Google for: <em>ServiceNow Zurich Technology Management Service Offerings group sync CI</em></p><h5>Expert Explanation</h5><p>Technology Management Services in CSDM act as containers that group related infrastructure under a single service definition - for example, "Network Infrastructure" covering all routers, switches, and firewalls.</p><p>When you create <strong>Technology Management Service Offerings</strong> beneath that service, you can configure them to <strong>sync certain group fields down to the CIs</strong> that belong to each offering. This is a powerful feature because it lets you manage group assignments at scale rather than updating each CI individually.</p><p>Only two groups support this downward sync:</p><ul><li><strong>Managed by Group</strong> - defines which team is responsible for managing the CIs day-to-day</li><li><strong>Support Group</strong> - defines which team handles incidents and support tickets for those CIs</li></ul><p>The other group fields (<strong>Approval Group</strong> and <strong>Owned by Group</strong>) exist on the Technology Management Service but operate at the service level only. They do not have the sync mechanism built into the Service Offering framework.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>A. Approval Group</strong> - This group is used for approval workflows when changes are proposed to the service itself. It has no sync relationship with the underlying CI records and stays at the service level.</li><li><strong>D. Owned by Group</strong> - While ownership tracking is important, this field is a service-level attribute. The platform does not propagate Owned by Group values to individual CIs through the Service Offering mechanism.</li></ul><h5>Memory Tip</h5><p>Think <strong>"MS syncs down"</strong> - <strong>M</strong>anaged by and <strong>S</strong>upport are the two groups that sync. Or remember: CIs need to know who <strong>M</strong>anages them and who <strong>S</strong>upports them - those are the operational groups that matter at the CI level.</p><h5>Real-World Example</h5><p>A Network Engineer creates a Technology Management Service called "Network Infrastructure" with four Service Offerings: Core Routing, Edge Switching, Wireless, and Firewall. She sets the Support Group on the Core Routing offering to "Network Ops - Tier 2" and the Managed by Group to "Network Engineering." When she syncs, all 47 router CIs under that offering automatically inherit both group assignments - saving her from manually updating each router record.</p>
 </div>
+</details>
 </div></div></div>
-<div class="quiz-card is-teaser-locked" data-question-index="11" data-tier="3" id="qcard11">
-<div class="quiz-q"><span class="quiz-q-num">12.</span>Which of the following can be configured to prevent inserts into the CMDB from an unwanted data source-</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
+<div class="quiz-card is-email-locked" data-question-index="11" data-tier="2" hidden="" id="qcard11">
+<div class="quiz-q"><span class="quiz-q-num">12.</span>Which of the following can be configured to prevent inserts into the CMDB from an unwanted data source-</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
-<li class="quiz-opt" data-idx="0"><span class="quiz-opt-letter">A</span><span>Identification Rule</span></li>
-<li class="quiz-opt" data-idx="1"><span class="quiz-opt-letter">B</span><span>Reconciliation Rule</span></li>
-<li class="quiz-opt" data-idx="2"><span class="quiz-opt-letter">C</span><span>Dynamic Reconciliation Rule</span></li>
-<li class="quiz-opt" data-idx="3"><span class="quiz-opt-letter">D</span><span>Data Refresh Rule</span></li>
-<li class="quiz-opt" data-idx="4"><span class="quiz-opt-letter">E</span><span>IRE Data Source Rule</span></li>
-</ul>
+<li class="quiz-opt" data-exp="INCORRECT: Identification Rules define how the IRE matches incoming data to existing CIs using identifying attributes like serial number or name. They determine identity - not whether a data source is allowed or blocked from inserting records." data-idx="0" data-q="11"><span class="quiz-opt-letter">A</span><span>Identification Rule</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Reconciliation Rules control data priority between sources - which source wins when multiple sources report different values for the same attribute. They do not block or allow inserts from specific data sources." data-idx="1" data-q="11"><span class="quiz-opt-letter">B</span><span>Reconciliation Rule</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Dynamic Reconciliation Rules extend standard reconciliation by allowing conditional logic for attribute-level priority. They still deal with which source takes precedence for attribute values, not whether a source can insert new CIs." data-idx="2" data-q="11"><span class="quiz-opt-letter">C</span><span>Dynamic Reconciliation Rule</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Data Refresh Rules govern how frequently CI data should be refreshed and when stale data should be flagged. They manage data currency and staleness, not access control for data source inserts." data-idx="3" data-q="11"><span class="quiz-opt-letter">D</span><span>Data Refresh Rule</span></li>
+<li class="quiz-opt" data-exp="CORRECT: IRE Data Source Rules act as the gatekeeper for CMDB inserts. You can configure an IRE Data Source Rule to explicitly block a specific data source from inserting new CI records while still allowing that source to update existing records. This is the correct mechanism for preventing unwanted inserts." data-idx="4" data-q="11"><span class="quiz-opt-letter">E</span><span>IRE Data Source Rule</span></li>
+</ul><button class="quiz-submit-btn" data-q="11" type="button">Submit Answer</button>
 
-
-</div><div class="quiz-locked-overlay">
-<div class="quiz-locked-card">
-<div class="quiz-locked-lock"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="10" rx="2" width="14" x="5" y="11"></rect><path d="M8 11V8a4 4 0 1 1 8 0v3"></path></svg></div>
-<div class="quiz-locked-title">This question is part of the full 470-question course.</div>
-<p class="quiz-locked-copy">Keep the teaser here, then move to Udemy for the full question bank.</p>
-<a class="quiz-locked-cta-btn" data-buy-tier="tier3" href="https://www.udemy.com/course/pass-servicenow-cis-data-foundations-cmdbcsdm/?referralCode=442CA6D450663B1D42AF" rel="noopener" target="_blank">Get all 470 questions on Udemy</a>
+<details class="quiz-overall" id="qexp11">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
+<h5>Correct Answer</h5><p><strong>E. IRE Data Source Rule</strong></p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-it-operations-management/page/product/configuration-management/concept/ire-data-source-rules.html" target="_blank">ServiceNow Zurich - IRE Data Source Rules</a></p><p>If the link fails, search Google for: <em>ServiceNow Zurich IRE Data Source Rule prevent insert CMDB</em></p><h5>Expert Explanation</h5><p>The <strong>Identification and Reconciliation Engine (IRE)</strong> processes all incoming data headed for the CMDB. Within the IRE framework, <strong>Data Source Rules</strong> serve as the access control layer that determines what each data source is permitted to do.</p><p>An IRE Data Source Rule can be configured to:</p><ul><li><strong>Block inserts</strong> from a specific data source (preventing new CI creation)</li><li><strong>Allow updates</strong> from the same source (so existing CIs still get refreshed)</li><li><strong>Block both inserts and updates</strong> (completely locking out a data source)</li></ul><p>This is critical for <strong>CMDB data quality</strong>. Without Data Source Rules, any integration feeding the IRE could create unwanted CIs - leading to duplicates, junk records, and inflated CI counts. By configuring these rules, CMDB Administrators maintain control over which sources can introduce new records.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>A. Identification Rule</strong> - These rules define the matching criteria (like serial number + class) used to determine if an incoming record matches an existing CI. They answer "Is this CI already in the CMDB-" - not "Should this source be allowed to insert-"</li><li><strong>B. Reconciliation Rule</strong> - These set data source priority for attribute-level conflicts. If Discovery says the OS is "Windows 2022" and SCCM says "Windows 2019," the reconciliation rule decides which value wins. They do not control insert permissions.</li><li><strong>C. Dynamic Reconciliation Rule</strong> - An extension of reconciliation that adds conditional logic. Still focused on attribute-level data priority, not source-level access control for inserts.</li><li><strong>D. Data Refresh Rule</strong> - These rules define how often CI data should be refreshed and when records become stale. They deal with data freshness, not insert prevention.</li></ul><h5>Memory Tip</h5><p>Think of <strong>IRE Data Source Rules</strong> as the <strong>bouncer at the CMDB door</strong>. The bouncer checks your ID (data source) and decides: "You can come in (insert)," "You can update your info but can't bring new people (update only)," or "You're not welcome at all (blocked)."</p><h5>Real-World Example</h5><p>A CMDB Manager at a financial services company discovers that an old Altiris integration is inserting 200+ duplicate server CIs per week. Rather than disabling the entire integration (which still provides useful attribute updates for existing servers), she creates an IRE Data Source Rule for the Altiris data source that blocks inserts but allows updates. The duplicate CI creation stops immediately, while the 1,500 existing server CIs continue receiving attribute refreshes from Altiris.</p>
 </div>
+</details>
 </div></div></div>
-<div class="quiz-card quiz-multi is-teaser-locked" data-question-index="12" data-tier="3" id="qcard12">
-<div class="quiz-q"><span class="quiz-q-num">13.</span>To update the CMDB Data Foundations Dashboard health metrics and reports immediately, versus waiting for them to update automatically, which scheduled jobs need to be executed- (Select 2) <span class="quiz-choose">(choose 2)</span></div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
+<div class="quiz-card quiz-multi is-email-locked" data-question-index="12" data-tier="2" hidden="" id="qcard12">
+<div class="quiz-q"><span class="quiz-q-num">13.</span>To update the CMDB Data Foundations Dashboard health metrics and reports immediately, versus waiting for them to update automatically, which scheduled jobs need to be executed- (Select 2) <span class="quiz-choose">(choose 2)</span></div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
-<li class="quiz-opt" data-idx="0"><span class="quiz-opt-letter">A</span><span>CMDB Data Foundations PA metric Collection</span></li>
-<li class="quiz-opt" data-idx="1"><span class="quiz-opt-letter">B</span><span>CSDM Data Foundations PA metric Collection</span></li>
-<li class="quiz-opt" data-idx="2"><span class="quiz-opt-letter">C</span><span>CSDM Get Well Metric Collection</span></li>
-<li class="quiz-opt" data-idx="3"><span class="quiz-opt-letter">D</span><span>CMDB Get Well Metric Collection</span></li>
-</ul>
+<li class="quiz-opt" data-exp='CORRECT: The "CMDB Data Foundations PA metric Collection" scheduled job collects the Performance Analytics metrics that feed the CMDB Data Foundations Dashboard. Running this job manually triggers an immediate refresh of the PA-based health metrics instead of waiting for the next scheduled run.' data-idx="0" data-q="12"><span class="quiz-opt-letter">A</span><span>CMDB Data Foundations PA metric Collection</span></li>
+<li class="quiz-opt" data-exp='INCORRECT: The "CSDM Data Foundations PA metric Collection" job collects metrics for the CSDM Data Foundations Dashboard, not the CMDB Data Foundations Dashboard. While similarly named, CSDM metrics track service model compliance, not CMDB health scores.' data-idx="1" data-q="12"><span class="quiz-opt-letter">B</span><span>CSDM Data Foundations PA metric Collection</span></li>
+<li class="quiz-opt" data-exp='INCORRECT: The "CSDM Get Well Metric Collection" job feeds the CSDM dashboard with Get Well scores related to service model completeness. It does not update the CMDB Data Foundations Dashboard health metrics - those require the CMDB-prefixed version of this job.' data-idx="2" data-q="12"><span class="quiz-opt-letter">C</span><span>CSDM Get Well Metric Collection</span></li>
+<li class="quiz-opt" data-exp='CORRECT: The "CMDB Get Well Metric Collection" scheduled job collects the Get Well health scores that appear on the CMDB Data Foundations Dashboard. Running it manually provides an immediate recalculation of health scores like CI completeness, relationship coverage, and staleness metrics.' data-idx="3" data-q="12"><span class="quiz-opt-letter">D</span><span>CMDB Get Well Metric Collection</span></li>
+</ul><button class="quiz-submit-btn" data-q="12" type="button">Submit Answer</button>
 
 
-
-</div><div class="quiz-locked-overlay">
-<div class="quiz-locked-card">
-<div class="quiz-locked-lock"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="10" rx="2" width="14" x="5" y="11"></rect><path d="M8 11V8a4 4 0 1 1 8 0v3"></path></svg></div>
-<div class="quiz-locked-title">This question is part of the full 470-question course.</div>
-<p class="quiz-locked-copy">Keep the teaser here, then move to Udemy for the full question bank.</p>
-<a class="quiz-locked-cta-btn" data-buy-tier="tier3" href="https://www.udemy.com/course/pass-servicenow-cis-data-foundations-cmdbcsdm/?referralCode=442CA6D450663B1D42AF" rel="noopener" target="_blank">Get all 470 questions on Udemy</a>
+<details class="quiz-overall" id="qexp12">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
+<h5>Correct Answer</h5><p><strong>A. CMDB Data Foundations PA metric Collection</strong> and <strong>D. CMDB Get Well Metric Collection</strong></p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-it-operations-management/page/product/configuration-management/concept/cmdb-data-foundations-dashboard.html" target="_blank">ServiceNow Zurich - CMDB Data Foundations Dashboard</a></p><p>If the link fails, search Google for: <em>ServiceNow Zurich CMDB Data Foundations Dashboard scheduled jobs metric collection</em></p><h5>Expert Explanation</h5><p>The <strong>CMDB Data Foundations Dashboard</strong> displays health metrics and scores that are calculated by two separate scheduled jobs:</p><ul><li><strong>CMDB Data Foundations PA metric Collection</strong> - collects <strong>Performance Analytics indicators</strong> such as CI counts by class, orphan CI percentages, and relationship statistics</li><li><strong>CMDB Get Well Metric Collection</strong> - collects the <strong>Get Well health scores</strong> that grade your CMDB across dimensions like completeness, compliance, and correctness</li></ul><p>Both jobs run on a schedule (typically daily), but if you need the dashboard to reflect recent changes immediately - for example, after a bulk import or cleanup effort - you can execute both jobs manually from the <strong>Scheduled Jobs</strong> module.</p><p>The key distinction is that both jobs start with <strong>"CMDB"</strong>, not "CSDM." ServiceNow maintains parallel sets of jobs for the CMDB and CSDM dashboards, and confusing them is a common mistake.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>B. CSDM Data Foundations PA metric Collection</strong> - This job exists but feeds the <strong>CSDM</strong> Data Foundations Dashboard, which tracks service model health (Business Services, Technical Services, Service Offerings). It does not update CMDB-level metrics.</li><li><strong>C. CSDM Get Well Metric Collection</strong> - Similarly, this collects Get Well scores for the CSDM dashboard. Running it would update CSDM health scores, not the CMDB Data Foundations Dashboard metrics.</li></ul><h5>Memory Tip</h5><p>Remember: <strong>"CMDB dashboard = CMDB jobs."</strong> Both jobs that feed the CMDB Data Foundations Dashboard start with the letters <strong>CMDB</strong>. If you see "CSDM" in the job name, it feeds the CSDM dashboard instead. Also remember there are exactly <strong>two</strong> jobs - one for <strong>PA</strong> metrics and one for <strong>Get Well</strong> scores.</p><h5>Real-World Example</h5><p>A CMDB Analyst just finished a weekend cleanup project where she remediated 340 orphan CIs by adding proper relationships and filled in missing attributes on 500+ server records. On Monday morning, her manager asks for an updated health score to report to the CAB meeting at 10 AM. Rather than waiting for the nightly scheduled run, she navigates to System Definition &gt; Scheduled Jobs, searches for "CMDB," and manually executes both "CMDB Data Foundations PA metric Collection" and "CMDB Get Well Metric Collection." Within minutes, the dashboard reflects the improved scores - jumping from 62% to 78% overall health.</p>
 </div>
+</details>
 </div></div></div>
-<div class="quiz-card quiz-multi is-teaser-locked" data-question-index="13" data-tier="3" id="qcard13">
+<div class="quiz-card quiz-multi is-email-locked" data-question-index="13" data-tier="2" hidden="" id="qcard13">
 <div class="quiz-q"><span class="quiz-q-num">14.</span>The following Reconciliation Rules were configured for ServiceNow, Altiris, and SCCM for the Windows Server (cmdb_ci_win_server) class:
 
 ServiceNow: Priority 100
 Altiris: Priority 200
 SCCM: Priority 300
 
-Which statements are true- (Choose 2) <span class="quiz-choose">(choose 2)</span></div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
+Which statements are true- (Choose 2) <span class="quiz-choose">(choose 2)</span></div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
-<li class="quiz-opt" data-idx="0"><span class="quiz-opt-letter">A</span><span>Data collected with a discovery source of Altiris can update records inserted by SCCM into the Windows Server table.</span></li>
-<li class="quiz-opt" data-idx="1"><span class="quiz-opt-letter">B</span><span>Data collected with a discovery source of ServiceNow can insert new records into the Windows Server table, but cannot update records created by Altiris or SCCM.</span></li>
-<li class="quiz-opt" data-idx="2"><span class="quiz-opt-letter">C</span><span>Data collected with a discovery source of SCCM can be inserted as new records in the Windows Server table.</span></li>
-<li class="quiz-opt" data-idx="3"><span class="quiz-opt-letter">D</span><span>Data collected with a discovery source of SCCM can update any record in the Windows Server table because it has the highest priority number.</span></li>
-</ul>
+<li class="quiz-opt" data-exp="CORRECT: Altiris has priority 200, which is a lower number than SCCM's priority 300. In ServiceNow reconciliation, a lower priority number means higher priority. Since Altiris outranks SCCM, Altiris data can update records that were originally inserted by SCCM." data-idx="0" data-q="13"><span class="quiz-opt-letter">A</span><span>Data collected with a discovery source of Altiris can update records inserted by SCCM into the Windows Server table.</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: While ServiceNow Discovery has the highest priority (100 is the lowest number), priority alone does not grant insert capability. A data source can only insert new CIs if &quot;Allow Inserts&quot; is explicitly checked on its reconciliation rule. ServiceNow Discovery's rule is Read-Write without Allow Inserts." data-idx="1" data-q="13"><span class="quiz-opt-letter">B</span><span>Data collected with a discovery source of ServiceNow can insert new records into the Windows Server table, but cannot update records created by Altiris or SCCM.</span></li>
+<li class="quiz-opt" data-exp="CORRECT: SCCM's reconciliation rule is the only one with &quot;Allow Inserts&quot; checked. This means SCCM is the only data source among the three that can create new CI records in the Windows Server table. The Allow Inserts flag is independent of priority - it is a separate permission." data-idx="2" data-q="13"><span class="quiz-opt-letter">C</span><span>Data collected with a discovery source of SCCM can be inserted as new records in the Windows Server table.</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: SCCM has priority 300, which is the highest number and therefore the lowest priority. A lower-priority source cannot update records owned by a higher-priority source. SCCM cannot overwrite data from ServiceNow Discovery (100) or Altiris (200) - it can only update records it originally inserted or records from even lower-priority sources." data-idx="3" data-q="13"><span class="quiz-opt-letter">D</span><span>Data collected with a discovery source of SCCM can update any record in the Windows Server table because it has the highest priority number.</span></li>
+</ul><button class="quiz-submit-btn" data-q="13" type="button">Submit Answer</button>
 
 
-
-</div><div class="quiz-locked-overlay">
-<div class="quiz-locked-card">
-<div class="quiz-locked-lock"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="10" rx="2" width="14" x="5" y="11"></rect><path d="M8 11V8a4 4 0 1 1 8 0v3"></path></svg></div>
-<div class="quiz-locked-title">This question is part of the full 470-question course.</div>
-<p class="quiz-locked-copy">Keep the teaser here, then move to Udemy for the full question bank.</p>
-<a class="quiz-locked-cta-btn" data-buy-tier="tier3" href="https://www.udemy.com/course/pass-servicenow-cis-data-foundations-cmdbcsdm/?referralCode=442CA6D450663B1D42AF" rel="noopener" target="_blank">Get all 470 questions on Udemy</a>
+<details class="quiz-overall" id="qexp13">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
+<h5>Correct Answer</h5><p><strong>A. Altiris can update SCCM records (higher priority)</strong> and <strong>C. SCCM can insert new records (Allow Inserts checked)</strong></p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-it-operations-management/page/product/configuration-management/concept/reconciliation-rules.html" target="_blank">ServiceNow Zurich - Reconciliation Rules</a></p><p>If the link fails, search Google for: <em>ServiceNow Zurich reconciliation rules priority allow inserts CMDB</em></p><h5>Expert Explanation</h5><p>Reconciliation Rules in ServiceNow control two things: <strong>data source priority</strong> and <strong>insert permissions</strong>. Understanding both is essential for this question.</p><p><strong>Priority (lower number = higher priority):</strong></p><ul><li>ServiceNow Discovery: <strong>100</strong> (highest priority)</li><li>Altiris: <strong>200</strong> (medium priority)</li><li>SCCM: <strong>300</strong> (lowest priority)</li></ul><p>A source with <strong>higher priority</strong> (lower number) can update records that were inserted or last updated by a <strong>lower priority</strong> (higher number) source. So Altiris at 200 can update SCCM records at 300, and ServiceNow Discovery at 100 can update records from both Altiris and SCCM.</p><p><strong>Allow Inserts:</strong></p><p>The ability to insert <strong>new</strong> CI records is controlled by the <strong>Allow Inserts</strong> checkbox - not by priority. Only SCCM has this checked, so only SCCM can create brand-new CIs in the Windows Server table. Even though ServiceNow Discovery has the highest priority, it cannot insert new records because Allow Inserts is not enabled on its reconciliation rule.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>B. ServiceNow can insert because of highest priority</strong> - This confuses priority with insert permission. Priority determines which source wins attribute-level conflicts. The <strong>Allow Inserts</strong> flag is a separate, independent setting. ServiceNow Discovery is Read-Write (can update existing records) but does not have Allow Inserts checked, so it cannot create new CIs.</li><li><strong>D. SCCM can update any record because of lowest priority number</strong> - This statement gets the priority logic backwards. SCCM has priority 300, which is the <strong>highest number</strong> and therefore the <strong>lowest priority</strong>. A lower-priority source cannot override data from higher-priority sources. SCCM can only update records it originally created or records from sources with even higher priority numbers (if any existed).</li></ul><h5>Memory Tip</h5><p>Think of priority like a <strong>military rank</strong>: a <strong>1-star general (100)</strong> outranks a <strong>3-star colonel (300)</strong> in ServiceNow's world. Lower number = higher rank = more authority. And remember: <strong>"Priority lets you UPDATE, but only Allow Inserts lets you CREATE."</strong></p><h5>Real-World Example</h5><p>A Windows infrastructure team runs three discovery tools. ServiceNow Discovery (priority 100) is the most trusted - it scans 800 production servers nightly. Altiris (priority 200) covers 1,200 servers across dev and staging. SCCM (priority 300) manages 2,000 endpoints and is the only tool with Allow Inserts enabled because new servers are first registered through SCCM's deployment process. When SCCM discovers a new server, it inserts the CI. Later, when Altiris scans that same server, it can update the CI's attributes because Altiris (200) outranks SCCM (300). When ServiceNow Discovery runs, it takes final authority over all attributes because it has the highest priority (100).</p>
 </div>
+</details>
 </div></div></div>
-<div class="quiz-card is-teaser-locked" data-question-index="14" data-tier="3" id="qcard14">
-<div class="quiz-q"><span class="quiz-q-num">15.</span>A CMDB Admin is reviewing the CMDB Data Foundations Dashboard and notices that the score for "CIs with Relationships" is critically low. The admin understands the metric but is unsure of the specific organizational process required to fix the root cause. They click the Remediation Playbook URL associated with the metric. What does this action provide to the admin-</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
+<div class="quiz-card is-email-locked" data-question-index="14" data-tier="2" hidden="" id="qcard14">
+<div class="quiz-q"><span class="quiz-q-num">15.</span>A CMDB Admin is reviewing the CMDB Data Foundations Dashboard and notices that the score for "CIs with Relationships" is critically low. The admin understands the metric but is unsure of the specific organizational process required to fix the root cause. They click the Remediation Playbook URL associated with the metric. What does this action provide to the admin-</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
-<li class="quiz-opt" data-idx="0"><span class="quiz-opt-letter">A</span><span>It immediately opens the "Duplicate CI Remediator" wizard to merge records.</span></li>
-<li class="quiz-opt" data-idx="1"><span class="quiz-opt-letter">B</span><span>It triggers a background script to auto-generate relationships based on identifying attributes.</span></li>
-<li class="quiz-opt" data-idx="2"><span class="quiz-opt-letter">C</span><span>It opens a Knowledge Base article/guide explaining "What is this-", "Why it matters-", and "How to fix it-".</span></li>
-<li class="quiz-opt" data-idx="3"><span class="quiz-opt-letter">D</span><span>It opens the "Get Well" scheduled job to re-calculate the score immediately.</span></li>
-</ul>
+<li class="quiz-opt" data-exp="INCORRECT: The Duplicate CI Remediator is a separate tool used specifically for merging or resolving duplicate CI records. It is not triggered by clicking the Remediation Playbook URL on the Data Foundations Dashboard. Each metric has its own specific playbook link, and they all lead to Knowledge Base articles." data-idx="0" data-q="14"><span class="quiz-opt-letter">A</span><span>It immediately opens the "Duplicate CI Remediator" wizard to merge records.</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Clicking the Remediation Playbook URL does not trigger any background script or automated process. The playbooks are instructional resources, not automation triggers. Automatic relationship generation would require a separate integration or discovery process." data-idx="1" data-q="14"><span class="quiz-opt-letter">B</span><span>It triggers a background script to auto-generate relationships based on identifying attributes.</span></li>
+<li class="quiz-opt" data-exp='CORRECT: The Remediation Playbook URL opens a Knowledge Base article that is structured around three key sections: "What is this-" (explains the metric), "Why it matters-" (business impact), and "How to fix it-" (step-by-step remediation guidance). These are educational guides that help admins understand and manually address the issue.' data-idx="2" data-q="14"><span class="quiz-opt-letter">C</span><span>It opens a Knowledge Base article/guide explaining "What is this-", "Why it matters-", and "How to fix it-".</span></li>
+<li class="quiz-opt" data-exp='INCORRECT: The "Get Well" scheduled job is responsible for collecting health metrics, not for being triggered by a dashboard click. The Remediation Playbook URL links to instructional content, not to scheduled job execution. Re-running the Get Well job would only recalculate scores - it would not fix the underlying data issue.' data-idx="3" data-q="14"><span class="quiz-opt-letter">D</span><span>It opens the "Get Well" scheduled job to re-calculate the score immediately.</span></li>
+</ul><button class="quiz-submit-btn" data-q="14" type="button">Submit Answer</button>
 
-
-</div><div class="quiz-locked-overlay">
-<div class="quiz-locked-card">
-<div class="quiz-locked-lock"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="10" rx="2" width="14" x="5" y="11"></rect><path d="M8 11V8a4 4 0 1 1 8 0v3"></path></svg></div>
-<div class="quiz-locked-title">This question is part of the full 470-question course.</div>
-<p class="quiz-locked-copy">Keep the teaser here, then move to Udemy for the full question bank.</p>
-<a class="quiz-locked-cta-btn" data-buy-tier="tier3" href="https://www.udemy.com/course/pass-servicenow-cis-data-foundations-cmdbcsdm/?referralCode=442CA6D450663B1D42AF" rel="noopener" target="_blank">Get all 470 questions on Udemy</a>
+<details class="quiz-overall" id="qexp14">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
+<h5>Correct Answer</h5><p><strong>C. It opens a Knowledge Base article explaining "What is this-", "Why it matters-", and "How to fix it-"</strong></p><h5>Source</h5><p><a href="https://www.servicenow.com/docs/bundle/zurich-it-operations-management/page/product/configuration-management/concept/cmdb-data-foundations-dashboard.html" target="_blank">ServiceNow Zurich - CMDB Data Foundations Dashboard</a></p><p>If the link fails, search Google for: <em>ServiceNow Zurich CMDB Data Foundations Dashboard remediation playbook knowledge base</em></p><h5>Expert Explanation</h5><p>The <strong>CMDB Data Foundations Dashboard</strong> presents a series of health metrics - each with a score, a trend indicator, and a <strong>Remediation Playbook URL</strong>. When an administrator clicks the Remediation Playbook URL for any metric (like "CIs with Relationships"), it opens a <strong>Knowledge Base (KB) article</strong> specific to that metric.</p><p>Each Remediation Playbook KB article follows a consistent three-section structure:</p><ul><li><strong>What is this-</strong> - Defines the metric, what it measures, and how the score is calculated</li><li><strong>Why it matters-</strong> - Explains the business impact of a low score and the risks of not addressing it</li><li><strong>How to fix it-</strong> - Provides step-by-step guidance, best practices, and recommended actions to improve the score</li></ul><p>These playbooks are <strong>instructional guides</strong>, not automated remediation tools. They empower CMDB administrators with knowledge and direction, but the actual remediation work must be performed manually or through separate tools and processes.</p><h5>Why the Others Are Wrong</h5><ul><li><strong>A. Opens the Duplicate CI Remediator</strong> - The Duplicate CI Remediator is a standalone tool accessed through the CMDB workspace or application navigator. It is designed for merging duplicate CIs and has nothing to do with the "CIs with Relationships" metric. Remediation Playbook URLs always link to KB articles, never to specific tools.</li><li><strong>B. Triggers a background script to auto-generate relationships</strong> - This is a dangerous misconception. The platform does not auto-generate relationships from a dashboard click. Creating meaningful CI relationships requires understanding the actual infrastructure topology, which is done through Discovery, Service Mapping, or manual entry - not background scripts.</li><li><strong>D. Opens the Get Well scheduled job</strong> - The Get Well scheduled job collects and calculates health scores. It is not triggered by the Remediation Playbook URL. Re-running this job would recalculate the score with current data, but it would not remediate the underlying issue of missing relationships.</li></ul><h5>Memory Tip</h5><p>Think of Remediation Playbooks as a <strong>doctor's advice sheet</strong>: when you get a bad test result (low score), the doctor gives you a pamphlet explaining <strong>What</strong> the condition is, <strong>Why</strong> it matters, and <strong>How</strong> to treat it. The pamphlet does not perform surgery - it tells you what to do. Same with playbooks: they teach, they do not automate.</p><h5>Real-World Example</h5><p>A CMDB Administrator named Raj notices that the "CIs with Relationships" score is only 34% on the Data Foundations Dashboard. He clicks the Remediation Playbook URL and reads the KB article. The "What is this-" section explains that this metric tracks the percentage of CIs that have at least one defined relationship (like "Runs on," "Hosted on," or "Depends on"). The "Why it matters-" section warns that without relationships, impact analysis during incidents is blind - a P1 outage on a server with no relationships means the team cannot identify which business services are affected. The "How to fix it-" section recommends running Service Mapping for top-tier application services, enabling relationship discovery in Discovery patterns, and manually adding relationships for the 150 business-critical CIs that currently have none.</p>
 </div>
+</details>
 </div></div></div>
-    <div class="quiz-interstitial" id="tier3FinalCta">
-      <div class="quiz-interstitial-kicker">Full course</div>
-      <h3>You've seen 10 of 470 questions.</h3>
-      <p class="quiz-interstitial-copy">The full course covers the exam blueprint with sourced explanations.</p>
-      <p class="quiz-interstitial-anchor">Your first exam attempt is free. Your second costs $350.</p>
-      <div class="quiz-interstitial-actions">
-        <a href="https://www.udemy.com/course/pass-servicenow-cis-data-foundations-cmdbcsdm/?referralCode=442CA6D450663B1D42AF" target="_blank" rel="noopener" class="cp-cta" data-buy-tier="final">Get all 470 questions on Udemy
+    </div>
+    <div class="quiz-nav" id="quizNav">
+      <button type="button" class="quiz-secondary-btn" id="quizPrevBtn">Previous question</button>
+      <div class="quiz-nav-meta" id="quizNavMeta">Choose an answer and submit to continue.</div>
+      <button type="button" class="quiz-nav-next" id="quizNextBtn" disabled>Next question</button>
+    </div>
+    <div class="quiz-final" id="quizFinal" hidden>
+      <div class="quiz-final-kicker">Preview complete</div>
+      <h3>You scored <span id="quizFinalScoreText">0/15</span> on the 15-question preview.</h3>
+      <div class="quiz-final-score" id="quizFinalScoreValue">0/15</div>
+      <p class="quiz-final-copy">The full course keeps the same answer breakdown style across all 470 questions.</p>
+      <p class="quiz-final-anchor">Your first exam attempt is free. Your second costs $350.</p>
+      <div class="quiz-final-actions">
+        <a href="https://www.udemy.com/course/pass-servicenow-cis-data-foundations-cmdbcsdm/?referralCode=442CA6D450663B1D42AF" target="_blank" rel="noopener" class="cp-cta" data-buy-stage="final">Get all 470 questions for $9.99
           <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
     </div>
-    <div class="quiz-cross-sell">
+    <div class="quiz-cross-sell" id="quizCrossSell" hidden>
       <h3>Many students also study:</h3>
-      <p>Keep going with the cert recommendation quiz, or compare all 18 practice tests side by side.</p>
+      <p>Compare all 18 practice tests, or use the cert quiz to plan what to study next.</p>
       <div class="quiz-cross-sell-links">
         <a href="/quiz.html">Find your next cert</a>
         <a href="/compare.html">Compare all 18 courses</a>
       </div>
     </div>
-    <div class="quiz-toast" id="quizToast">Questions 6-10 are ready.</div>
+    <div class="quiz-toast" id="quizToast">Questions 6-15 are ready.</div>
   </section>
 
   <div class="cp-bottom">
@@ -841,44 +1113,52 @@ Which statements are true- (Choose 2) <span class="quiz-choose">(choose 2)</span
 
 <script>
 const QUIZ={"slug": "cis-data-foundations", "code": "DF", "totalQuestionCount": 470, "convertKitFormId": "9183962"};
-const answers=[0, 3, 0, 0, 2, 2, 3, [0, 4], 2, [0, 1]];
-const STORAGE_EMAIL='luckyx-email:'+QUIZ.slug,STORAGE_ANSWERS='luckyx-answers:'+QUIZ.slug,STORAGE_SCORE='luckyx-score:'+QUIZ.slug;
-const themeToggle=document.getElementById('themeToggle'),slots=Array.from(document.querySelectorAll('.preview-slot[data-slot]')),cards=Array.from(document.querySelectorAll('.quiz-card')),interactiveCards=cards.filter((card)=>parseInt(card.dataset.questionIndex,10)<10),tierTwoCards=cards.filter((card)=>card.dataset.tier==='2'),tierOneInterstitial=document.getElementById('tier1Interstitial'),tierTwoInterstitial=document.getElementById('tier2Interstitial'),tier1ContinueBtn=document.getElementById('tier1ContinueBtn'),gateForm=document.getElementById('quizGateForm'),gateEmail=document.getElementById('quizGateEmail'),gateSubmit=document.getElementById('quizGateSubmit'),gateMessage=document.getElementById('quizGateMessage'),toast=document.getElementById('quizToast');
-let emailReady=false,storedAnswers={},startEventSent=false,tier1EventSent=false,tier2EventSent=false;const drafts={};
+const answers=[0, 3, 0, 0, 2, 2, 3, [0, 4], 2, [0, 1], [1, 2], 4, [0, 3], [0, 2], 2];
+const STORAGE_EMAIL='luckyx-email:'+QUIZ.slug,STORAGE_ANSWERS='luckyx-answers:'+QUIZ.slug,STORAGE_SCORE='luckyx-score:'+QUIZ.slug,STORAGE_CURRENT='luckyx-current:'+QUIZ.slug;
+const themeToggle=document.getElementById('themeToggle'),cards=Array.from(document.querySelectorAll('.quiz-card')),dots=Array.from(document.querySelectorAll('.preview-dot[data-slot]')),prevBtn=document.getElementById('quizPrevBtn'),nextBtn=document.getElementById('quizNextBtn'),navMeta=document.getElementById('quizNavMeta'),stepLabel=document.getElementById('quizStepLabel'),tierLabel=document.getElementById('quizTierLabel'),miniScore=document.getElementById('quizMiniScore'),gateForm=document.getElementById('quizGateForm'),gateEmail=document.getElementById('quizGateEmail'),gateSubmit=document.getElementById('quizGateSubmit'),gateMessage=document.getElementById('quizGateMessage'),finalBlock=document.getElementById('quizFinal'),finalScoreText=document.getElementById('quizFinalScoreText'),finalScoreValue=document.getElementById('quizFinalScoreValue'),crossSell=document.getElementById('quizCrossSell'),toast=document.getElementById('quizToast');
+let emailReady=false,storedAnswers={},currentIndex=0,startEventSent=false,tier1EventSent=false,tier2EventSent=false;const drafts={};
 if(themeToggle){themeToggle.addEventListener('click',()=>{const current=document.documentElement.getAttribute('data-theme');const next=current==='light'?'dark':'light';document.documentElement.setAttribute('data-theme',next);localStorage.setItem('luckyx-theme',next);});}
 function evt(name,extra){if(typeof gtag!=='function')return;gtag('event',name,Object.assign({cert:QUIZ.code},extra||{}));}
 function showToast(message){if(!toast)return;toast.textContent=message;toast.classList.add('show');window.clearTimeout(showToast._timer);showToast._timer=window.setTimeout(()=>toast.classList.remove('show'),2600);}
 function readJson(key,fallback){try{const raw=localStorage.getItem(key);return raw?JSON.parse(raw):fallback;}catch(err){return fallback;}}
 function normalizeSelection(value){if(!Array.isArray(value))return[];return Array.from(new Set(value.map((item)=>parseInt(item,10)).filter((item)=>Number.isInteger(item)&&item>=0))).sort((a,b)=>a-b);}
-function readAnswers(){const parsed=readJson(STORAGE_ANSWERS,{}),out={};if(!parsed||typeof parsed!=='object')return out;Object.keys(parsed).forEach((key)=>{const qi=parseInt(key,10),item=parsed[key];if(!Number.isInteger(qi)||qi<0||qi>=10||!item||typeof item!=='object')return;const selected=normalizeSelection(item.selected);if(!selected.length||typeof item.isCorrect!=='boolean')return;out[qi]={selected,isCorrect:item.isCorrect};});return out;}
+function readAnswers(){const parsed=readJson(STORAGE_ANSWERS,{}),out={};if(!parsed||typeof parsed!=='object')return out;Object.keys(parsed).forEach((key)=>{const qi=parseInt(key,10),item=parsed[key];if(!Number.isInteger(qi)||qi<0||qi>=15||!item||typeof item!=='object')return;const selected=normalizeSelection(item.selected);if(!selected.length||typeof item.isCorrect!=='boolean')return;out[qi]={selected,isCorrect:item.isCorrect};});return out;}
+function readCurrent(){const raw=localStorage.getItem(STORAGE_CURRENT),value=parseInt(raw,10);return Number.isInteger(value)?value:null;}
 function writeAnswers(){localStorage.setItem(STORAGE_ANSWERS,JSON.stringify(storedAnswers));}
+function writeCurrent(){localStorage.setItem(STORAGE_CURRENT,String(currentIndex));}
 function scoreSlice(start,end){let answered=0,correct=0;for(let i=start;i<=end;i+=1){if(!storedAnswers[i])continue;answered+=1;if(storedAnswers[i].isCorrect)correct+=1;}return{answered,correct};}
-function saveScoreState(){const tier1=scoreSlice(0,4),tier2Only=scoreSlice(5,9),total=scoreSlice(0,9);localStorage.setItem(STORAGE_SCORE,JSON.stringify({tier1:tier1.correct,tier2:tier2Only.correct,total:total.correct}));}
+function saveScoreState(){const free5=scoreSlice(0,4),total15=scoreSlice(0,14);localStorage.setItem(STORAGE_SCORE,JSON.stringify({free5:free5.correct,total15:total15.correct}));}
 function correctIndicesFor(qi){return(Array.isArray(answers[qi])?answers[qi].slice():[answers[qi]]).sort((a,b)=>a-b);}
+function isUnlocked(qi){return qi<5||emailReady;}
+function nextPendingIndex(){const max=emailReady?14:5;for(let i=0;i<=max;i+=1){if(!storedAnswers[i])return i;}return max;}
+function navigationLimit(){return nextPendingIndex();}
+function normalizeCurrent(candidate){const limit=navigationLimit();if(!Number.isInteger(candidate))return limit;if(candidate<0)return 0;if(candidate>limit)return limit;return candidate;}
 function setMessage(text,cls){if(!gateMessage)return;gateMessage.textContent=text||'';gateMessage.classList.remove('is-error','is-success');if(cls)gateMessage.classList.add(cls);}
 function processSections(container){if(!container||container.dataset.processed)return;container.dataset.processed='1';const h5s=Array.from(container.querySelectorAll('h5'));if(!h5s.length)return;const sections=[];h5s.forEach((h5)=>{const title=h5.textContent.toLowerCase();let cls='exp-section';if(title.includes('correct answer'))cls+=' exp-correct-answer';else if(title.includes('source'))cls+=' exp-source';else if(title.includes('expert'))cls+=' exp-expert';else if(title.includes('why')||title.includes('wrong'))cls+=' exp-wrong';else if(title.includes('memory'))cls+=' exp-memory';else if(title.includes('real-world')||title.includes('example'))cls+=' exp-realworld';sections.push({cls,h5});});for(let i=0;i<sections.length;i+=1){const section=sections[i],div=document.createElement('div'),next=i<sections.length-1?sections[i+1].h5:null;div.className=section.cls;section.h5.parentNode.insertBefore(div,section.h5);div.appendChild(section.h5);while(div.nextSibling&&div.nextSibling!==next)div.appendChild(div.nextSibling);}}
 function showExplanations(qi){const card=document.getElementById('qcard'+qi);if(!card)return;const opts=card.querySelectorAll('.quiz-opt'),correct=correctIndicesFor(qi);opts.forEach((opt,index)=>{const per=opt.getAttribute('data-exp');if(!per||opt.querySelector('.quiz-opt-exp-inline'))return;const ok=correct.indexOf(index)!==-1,txt=per.replace(/^(CORRECT|INCORRECT):\s*/i,''),div=document.createElement('div'),icon=ok?'\u2713':'\u2717';div.className='quiz-opt-exp-inline '+(ok?'qoe-is-correct':'qoe-is-wrong');div.innerHTML='<div class="qoe-header">'+(ok?'<span class="qoe-correct">'+icon+' Correct</span>':'<span class="qoe-wrong">'+icon+' Incorrect</span>')+' <span class="qoe-letter">Option '+'ABCDEFG'[index]+'</span></div><div class="qoe-text">'+txt+'</div>';opt.appendChild(div);});const overall=document.getElementById('qexp'+qi);if(!overall)return;const content=overall.querySelector('.quiz-overall-content');if(!content||!content.innerHTML.trim())return;processSections(content);overall.open=false;overall.removeAttribute('open');overall.style.display='block';}
 document.querySelectorAll('.quiz-overall').forEach((detail)=>{detail.addEventListener('toggle',function(){if(!this.open)return;document.querySelectorAll('.quiz-overall').forEach((other)=>{if(other!==this)other.open=false;});});});
 function clearOptionState(opt){opt.classList.remove('selected','correct','wrong');opt.removeAttribute('disabled');}
-function renderDraft(qi){const card=document.getElementById('qcard'+qi);if(!card)return;card.removeAttribute('data-state');const selected=drafts[qi]||[];card.querySelectorAll('.quiz-opt').forEach((opt,index)=>{clearOptionState(opt);if(selected.indexOf(index)!==-1)opt.classList.add('selected');if(emailReady||qi<5)opt.removeAttribute('disabled');else opt.setAttribute('disabled','');});const btn=card.querySelector('.quiz-submit-btn');if(btn)btn.style.display=selected.length&&(emailReady||qi<5)?'block':'none';const overall=card.querySelector('.quiz-overall');if(overall){overall.open=false;overall.removeAttribute('open');overall.style.display='';}}
+function renderDraft(qi){const card=document.getElementById('qcard'+qi);if(!card)return;card.removeAttribute('data-state');const selected=drafts[qi]||[];card.querySelectorAll('.quiz-opt').forEach((opt,index)=>{clearOptionState(opt);if(selected.indexOf(index)!==-1)opt.classList.add('selected');if(isUnlocked(qi))opt.removeAttribute('disabled');else opt.setAttribute('disabled','');});const btn=card.querySelector('.quiz-submit-btn');if(btn)btn.style.display=selected.length&&isUnlocked(qi)?'inline-flex':'none';const overall=card.querySelector('.quiz-overall');if(overall){overall.open=false;overall.removeAttribute('open');overall.style.display='';}}
 function applyResponse(qi,response){const card=document.getElementById('qcard'+qi);if(!card||!response)return;const correct=correctIndicesFor(qi),opts=card.querySelectorAll('.quiz-opt');card.dataset.state=response.isCorrect?'correct':'wrong';opts.forEach((opt)=>clearOptionState(opt));if(response.isCorrect){response.selected.forEach((index)=>{if(opts[index])opts[index].classList.add('correct');});}else{response.selected.forEach((index)=>{if(!opts[index])return;if(correct.indexOf(index)===-1)opts[index].classList.add('wrong');else opts[index].classList.add('correct');});correct.forEach((index)=>{if(opts[index])opts[index].classList.add('correct');});}opts.forEach((opt)=>opt.setAttribute('disabled',''));const btn=card.querySelector('.quiz-submit-btn');if(btn)btn.style.display='none';showExplanations(qi);}
-function currentSlotIndex(){for(let i=0;i<5;i+=1){if(!storedAnswers[i])return i;}if(!emailReady)return 5;for(let i=5;i<10;i+=1){if(!storedAnswers[i])return i;}return-1;}
-function updateStatus(){const total=scoreSlice(0,9),answeredLabel=document.getElementById('quizStatusAnswered'),scoreLabel=document.getElementById('quizStatusScore');if(answeredLabel)answeredLabel.textContent=total.answered+' of 10 interactive questions';if(scoreLabel)scoreLabel.textContent=total.correct+' correct';}
-function updateSlots(){const current=currentSlotIndex();slots.forEach((slot)=>{const idx=parseInt(slot.dataset.slot,10);slot.classList.remove('is-correct','is-wrong','is-current','is-email-locked','is-clickable');if(idx>=10)return;if(storedAnswers[idx])slot.classList.add(storedAnswers[idx].isCorrect?'is-correct':'is-wrong');else if(idx>=5&&!emailReady)slot.classList.add('is-email-locked');if(idx===current)slot.classList.add('is-current');if(idx<5||(idx<10&&emailReady))slot.classList.add('is-clickable');});}
-function updateInterstitials(){const tier1=scoreSlice(0,4),total=scoreSlice(0,9),tier1Text=document.getElementById('tier1ScoreText'),tier1Value=document.getElementById('tier1ScoreValue'),tier2Text=document.getElementById('tier2ScoreText'),tier2Value=document.getElementById('tier2ScoreValue');if(tier1Text)tier1Text.textContent=tier1.correct+'/5';if(tier1Value)tier1Value.textContent=tier1.correct+'/5';if(tierTwoInterstitial&&tier2Text&&tier2Value){tier2Text.textContent=total.correct+'/10';tier2Value.textContent=total.correct+'/10';}if(tierOneInterstitial)tierOneInterstitial.hidden=tier1.answered!==5;if(tierTwoInterstitial)tierTwoInterstitial.hidden=total.answered!==10;}
-function persistState(){writeAnswers();saveScoreState();}
-function setTierTwoAccess(open){emailReady=!!open;tierTwoCards.forEach((card)=>{card.classList.toggle('is-email-locked',!open);const content=card.querySelector('.quiz-answer-content');if(content)content.classList.toggle('quiz-gate-blur',!open);card.querySelectorAll('[data-email-overlay]').forEach((overlay)=>{overlay.hidden=open;});const qi=parseInt(card.dataset.questionIndex,10);if(!storedAnswers[qi])renderDraft(qi);});updateSlots();}
-function maybeSendCompletionEvents(qi){const tier1=scoreSlice(0,4),total=scoreSlice(0,9);if(qi===0&&!startEventSent){startEventSent=true;evt('quiz_start',{tier:1});}if(!tier1EventSent&&tier1.answered===5){tier1EventSent=true;evt('quiz_tier1_complete',{score:tier1.correct});}if(!tier2EventSent&&total.answered===10){tier2EventSent=true;evt('quiz_tier2_complete',{score_total:total.correct});}}
-function render(){interactiveCards.forEach((card)=>{const qi=parseInt(card.dataset.questionIndex,10);if(storedAnswers[qi])applyResponse(qi,storedAnswers[qi]);else renderDraft(qi);});updateStatus();updateSlots();updateInterstitials();persistState();}
-document.querySelectorAll('.quiz-opt[data-q]').forEach((opt)=>{opt.addEventListener('click',function(){const qi=parseInt(this.dataset.q,10);if(qi>=5&&!emailReady)return;if(storedAnswers[qi])return;const idx=parseInt(this.dataset.idx,10),multi=Array.isArray(answers[qi]),current=drafts[qi]?drafts[qi].slice():[];if(multi){const pos=current.indexOf(idx);if(pos===-1)current.push(idx);else current.splice(pos,1);}else{current.length=0;current.push(idx);}drafts[qi]=normalizeSelection(current);renderDraft(qi);});});
-function submitAnswer(){const qi=parseInt(this.dataset.q,10);if(qi>=5&&!emailReady)return;if(storedAnswers[qi])return;const selected=normalizeSelection(drafts[qi]);if(!selected.length)return;const correct=correctIndicesFor(qi),isCorrect=selected.length===correct.length&&selected.every((value,index)=>value===correct[index]);storedAnswers[qi]={selected,isCorrect};delete drafts[qi];render();maybeSendCompletionEvents(qi);}
+function updateHeader(){if(stepLabel)stepLabel.textContent='Question '+(currentIndex+1)+' of 15';if(miniScore){const total=scoreSlice(0,14);miniScore.textContent=total.correct+' correct so far';}if(tierLabel){let label='Free',state='free';if(currentIndex>=5&&!emailReady){label='Email required';state='locked';}else if(currentIndex>=5&&emailReady){label='Preview unlocked';state='open';}tierLabel.textContent=label;tierLabel.dataset.state=state;}}
+function updateDots(){const limit=navigationLimit();dots.forEach((dot)=>{const idx=parseInt(dot.dataset.slot,10);dot.classList.remove('is-available','is-locked','is-correct','is-wrong','is-current');dot.classList.add(idx<=limit?'is-available':'is-locked');if(storedAnswers[idx])dot.classList.add(storedAnswers[idx].isCorrect?'is-correct':'is-wrong');if(idx===currentIndex)dot.classList.add('is-current');});}
+function updateVisibleCard(){cards.forEach((card)=>{const qi=parseInt(card.dataset.questionIndex,10),active=qi===currentIndex;card.hidden=!active;card.classList.toggle('is-active',active);card.setAttribute('aria-hidden',active?'false':'true');});}
+function updateNav(){const answered=!!storedAnswers[currentIndex],complete=scoreSlice(0,14).answered===15,limit=complete?14:navigationLimit();if(prevBtn)prevBtn.disabled=currentIndex===0;if(nextBtn){nextBtn.hidden=currentIndex===14&&complete;nextBtn.disabled=!answered||currentIndex>=limit;nextBtn.textContent='Next question';}if(navMeta){if(currentIndex===5&&!emailReady)navMeta.textContent='Enter your email to continue.';else if(currentIndex===14&&complete)navMeta.textContent='Preview complete. Your score is below.';else if(answered)navMeta.textContent='Ready for the next question.';else navMeta.textContent='Choose an answer and submit to continue.';}}
+function updateFinal(){const total=scoreSlice(0,14),complete=total.answered===15;if(finalBlock){finalBlock.hidden=!complete;if(complete){finalScoreText.textContent=total.correct+'/15';finalScoreValue.textContent=total.correct+'/15';}}if(crossSell)crossSell.hidden=!complete;}
+function persistState(){writeAnswers();saveScoreState();writeCurrent();}
+function setEmailAccess(open){emailReady=!!open;cards.forEach((card)=>{const qi=parseInt(card.dataset.questionIndex,10);if(qi<5)return;card.classList.toggle('is-email-locked',!open);const content=card.querySelector('.quiz-answer-content');if(content)content.classList.toggle('quiz-gate-blur',!open);if(qi===5){card.querySelectorAll('[data-email-overlay]').forEach((overlay)=>{overlay.hidden=open;});}});if(!emailReady&&currentIndex>5)currentIndex=5;}
+function maybeSendCompletionEvents(qi){const free5=scoreSlice(0,4),total=scoreSlice(0,14);if(qi===0&&!startEventSent){startEventSent=true;evt('quiz_start',{tier:1});}if(!tier1EventSent&&free5.answered===5){tier1EventSent=true;evt('quiz_tier1_complete',{score:free5.correct});}if(!tier2EventSent&&total.answered===15){tier2EventSent=true;evt('quiz_tier2_complete',{score_total:total.correct});}}
+function render(){currentIndex=normalizeCurrent(currentIndex);cards.forEach((card)=>{const qi=parseInt(card.dataset.questionIndex,10);if(storedAnswers[qi])applyResponse(qi,storedAnswers[qi]);else renderDraft(qi);});updateVisibleCard();updateHeader();updateDots();updateNav();updateFinal();persistState();}
+function scrollToCurrent(){const card=document.getElementById('qcard'+currentIndex);if(card)card.scrollIntoView({behavior:'smooth',block:'start'});}
+document.querySelectorAll('.quiz-opt[data-q]').forEach((opt)=>{opt.addEventListener('click',function(){const qi=parseInt(this.dataset.q,10);if(!isUnlocked(qi)||storedAnswers[qi])return;const idx=parseInt(this.dataset.idx,10),multi=Array.isArray(answers[qi]),current=drafts[qi]?drafts[qi].slice():[];if(multi){const pos=current.indexOf(idx);if(pos===-1)current.push(idx);else current.splice(pos,1);}else{current.length=0;current.push(idx);}drafts[qi]=normalizeSelection(current);render();});});
+function submitAnswer(){const qi=parseInt(this.dataset.q,10);if(!isUnlocked(qi)||storedAnswers[qi])return;const selected=normalizeSelection(drafts[qi]);if(!selected.length)return;const correct=correctIndicesFor(qi),isCorrect=selected.length===correct.length&&selected.every((value,index)=>value===correct[index]);storedAnswers[qi]={selected,isCorrect};delete drafts[qi];maybeSendCompletionEvents(qi);render();}
 document.querySelectorAll('.quiz-submit-btn[data-q]').forEach((btn)=>btn.addEventListener('click',submitAnswer));
-slots.forEach((slot)=>{slot.addEventListener('click',()=>{const idx=parseInt(slot.dataset.slot,10);if(idx>=10)return;if(idx>=5&&!emailReady){const gateCard=document.getElementById('qcard5');if(gateCard)gateCard.scrollIntoView({behavior:'smooth',block:'start'});return;}const card=document.getElementById('qcard'+idx);if(card)card.scrollIntoView({behavior:'smooth',block:'start'});});});
-if(tier1ContinueBtn){tier1ContinueBtn.addEventListener('click',()=>{const gateCard=document.getElementById('qcard5');if(gateCard)gateCard.scrollIntoView({behavior:'smooth',block:'start'});if(gateEmail)window.setTimeout(()=>gateEmail.focus(),250);});}
-function handleGateSubmit(event){event.preventDefault();const email=gateEmail.value.trim().toLowerCase(),valid=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)&&email.length<=254;if(!valid){setMessage('Use a valid email address.','is-error');return;}gateSubmit.disabled=true;gateSubmit.textContent='Sending...';setMessage('');fetch('https://app.convertkit.com/forms/'+QUIZ.convertKitFormId+'/subscriptions',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email_address:email,fields:{source:'quiz-gate-'+QUIZ.slug}})}).then((response)=>{if(!response.ok&&response.status!==200&&response.status!==201)throw new Error('gate failed');localStorage.setItem(STORAGE_EMAIL,'1');setTierTwoAccess(true);gateEmail.value='';gateEmail.disabled=true;gateSubmit.textContent='Questions ready';setMessage('Questions 6-10 are ready.','is-success');evt('quiz_email_submit');showToast('Questions 6-10 are ready.');}).catch(()=>{gateSubmit.disabled=false;gateSubmit.textContent='Continue with 5 More Questions';setMessage('That did not go through. Please try again.','is-error');});}
+if(prevBtn){prevBtn.addEventListener('click',()=>{if(currentIndex===0)return;currentIndex-=1;render();scrollToCurrent();});}
+if(nextBtn){nextBtn.addEventListener('click',()=>{const complete=scoreSlice(0,14).answered===15,limit=complete?14:navigationLimit();if(!storedAnswers[currentIndex]||currentIndex>=limit)return;currentIndex+=1;render();scrollToCurrent();if(currentIndex===5&&!emailReady&&gateEmail)window.setTimeout(()=>gateEmail.focus(),180);});}
+function handleGateSubmit(event){event.preventDefault();const email=gateEmail.value.trim().toLowerCase(),valid=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)&&email.length<=254;if(!valid){setMessage('Use a valid email address.','is-error');return;}gateSubmit.disabled=true;gateSubmit.textContent='Sending...';setMessage('');fetch('https://app.convertkit.com/forms/'+QUIZ.convertKitFormId+'/subscriptions',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email_address:email,fields:{source:'quiz-gate-'+QUIZ.slug}})}).then((response)=>{if(!response.ok&&response.status!==200&&response.status!==201)throw new Error('gate failed');localStorage.setItem(STORAGE_EMAIL,'1');setMessage('Questions 6-15 are ready.','is-success');evt('quiz_email_submit');showToast('Questions 6-15 are ready.');gateSubmit.disabled=false;gateSubmit.textContent='Continue with 10 More Questions';setEmailAccess(true);currentIndex=Math.max(currentIndex,5);render();}).catch(()=>{gateSubmit.disabled=false;gateSubmit.textContent='Continue with 10 More Questions';setMessage('That did not go through. Please try again.','is-error');});}
 if(gateForm)gateForm.addEventListener('submit',handleGateSubmit);
-document.querySelectorAll('a[data-buy-tier],a.cp-cta[href*="udemy.com"]').forEach((link)=>{link.addEventListener('click',()=>{const total=scoreSlice(0,9),tier=link.dataset.buyTier||(link.closest('#tier1Interstitial')?'tier1':'hero');evt('quiz_buy_click',{tier,score:total.correct});});});
-storedAnswers=readAnswers();emailReady=localStorage.getItem(STORAGE_EMAIL)==='1'||Object.keys(storedAnswers).some((key)=>parseInt(key,10)>=5);setTierTwoAccess(emailReady);render();evt('quiz_page_view');
+document.querySelectorAll('a[href*="udemy.com"]').forEach((link)=>{link.addEventListener('click',()=>{const total=scoreSlice(0,14),stage=link.dataset.buyStage||(link.closest('#quizFinal')?'final':'hero');evt('quiz_buy_click',{tier:stage,score:total.correct});});});
+storedAnswers=readAnswers();emailReady=localStorage.getItem(STORAGE_EMAIL)==='1'||Object.keys(storedAnswers).some((key)=>parseInt(key,10)>=5);startEventSent=Object.keys(storedAnswers).length>0;tier1EventSent=scoreSlice(0,4).answered===5;tier2EventSent=scoreSlice(0,14).answered===15;currentIndex=readCurrent();setEmailAccess(emailReady);render();evt('quiz_page_view');
 // CIS-DF Mandate Countdown
 (function(){const deadline=new Date('2027-01-01T00:00:00').getTime(),d=document.getElementById('cdDays'),h=document.getElementById('cdHrs'),m=document.getElementById('cdMin'),s=document.getElementById('cdSec');if(!d)return;const pad=n=>n<10?'0'+n:n;function tick(){const diff=deadline-Date.now();if(diff<=0){d.textContent='0';h.textContent='00';m.textContent='00';s.textContent='00';return}d.textContent=Math.floor(diff/86400000);h.textContent=pad(Math.floor(diff%86400000/3600000));m.textContent=pad(Math.floor(diff%3600000/60000));s.textContent=pad(Math.floor(diff%60000/1000))}tick();setInterval(tick,1000)})();
 

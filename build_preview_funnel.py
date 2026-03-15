@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the 3-tier single-page quiz funnel from the rich course source pages."""
+"""Build the guided 15-question quiz funnel from the rich course source pages."""
 
 from __future__ import annotations
 
@@ -78,7 +78,119 @@ LOCK_ICON = (
 )
 
 QUIZ_CSS = """/* Quiz section */
-.quiz-section{margin-top:48px}.quiz-section h2{font-size:1.38rem;font-weight:700;margin-bottom:10px;line-height:1.24}.quiz-intro{margin:0;color:var(--text-dim);font-size:.97rem;line-height:1.65;max-width:62ch}.preview-shell{margin-bottom:28px}.preview-kicker{display:inline-flex;align-items:center;gap:8px;margin-bottom:14px;padding:6px 12px;border-radius:999px;background:rgba(221,92,12,.08);border:1px solid rgba(221,92,12,.18);color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}.preview-status-line{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px}.preview-status-pill{display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--border);color:var(--text-dim);font-size:.84rem}.preview-status-pill strong{color:var(--text)}.preview-progress-wrap{overflow-x:auto;padding-bottom:4px}.preview-progress{display:grid;grid-template-columns:repeat(15,58px);gap:8px;list-style:none;margin:0;padding:0;min-width:max-content}.preview-slot{min-height:60px;padding:9px 6px;border-radius:12px;border:1px solid var(--border);background:var(--bg-raised);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:default;transition:border-color .18s,background .18s,transform .18s}.preview-slot.is-clickable{cursor:pointer}.preview-slot.is-clickable:hover{transform:translateY(-1px);border-color:var(--border-hover)}.preview-slot.is-current{border-color:rgba(221,92,12,.42);background:rgba(221,92,12,.08)}.preview-slot.is-correct{border-color:rgba(46,160,67,.45);background:rgba(46,160,67,.08)}.preview-slot.is-wrong{border-color:rgba(215,58,73,.45);background:rgba(215,58,73,.08)}.preview-slot.is-email-locked{opacity:.78}.preview-slot.is-locked{opacity:.55}.preview-slot-num{display:block;font-size:.94rem;font-weight:700;line-height:1.1;color:var(--text)}.preview-slot-state{display:block;margin-top:4px;font-size:.63rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text-dim)}.preview-slot.is-correct .preview-slot-num,.preview-slot.is-correct .preview-slot-state{color:#2ea043}.preview-slot.is-wrong .preview-slot-num,.preview-slot.is-wrong .preview-slot-state{color:#d73a49}.preview-slot-lock{width:16px;height:16px;margin-top:4px;color:var(--text-dim)}.preview-slot-lock svg{width:100%;height:100%;stroke:currentColor;stroke-width:1.6;fill:none}.preview-group-labels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:10px}.preview-group-label{padding:10px 12px;border-radius:12px;border:1px solid var(--border);background:rgba(255,255,255,.02);font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text-dim);text-align:center}.quiz-tier-heading{margin:26px 0 14px;padding-top:4px;font-size:.85rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--orange)}.quiz-card{background:var(--bg-raised);border:1px solid var(--border);border-radius:14px;padding:20px 20px 18px;margin-bottom:14px;transition:border-color .2s,background .2s}.quiz-card[data-state="correct"]{border-color:#2ea043}.quiz-card[data-state="wrong"]{border-color:#d73a49}.quiz-card.is-email-locked,.quiz-card.is-teaser-locked{background:linear-gradient(180deg,rgba(255,255,255,.018),rgba(255,255,255,.005))}.quiz-q{font-weight:600;font-size:1rem;margin-bottom:14px;line-height:1.5}.quiz-q-num{color:var(--orange);font-weight:700;margin-right:6px}.quiz-answer-shell{position:relative}.quiz-answer-content.quiz-gate-blur{filter:blur(4px);pointer-events:none;user-select:none}.quiz-opts{list-style:none;display:flex;flex-direction:column;gap:6px}.quiz-opt{display:flex;align-items:flex-start;gap:10px;padding:11px 12px;border-radius:12px;border:1px solid var(--border);cursor:pointer;transition:background .15s,border-color .15s;color:var(--text-dim);font-size:.94rem;line-height:1.5;flex-wrap:wrap}.quiz-opt:hover{background:rgba(221,92,12,.06);border-color:var(--border-hover)}.quiz-opt.selected{background:rgba(221,92,12,.1);border-color:var(--orange);color:var(--text)}.quiz-opt.correct{background:rgba(46,160,67,.1);border-color:#2ea043;color:var(--text)}.quiz-opt.wrong{background:rgba(215,58,73,.1);border-color:#d73a49}.quiz-opt[disabled]{pointer-events:none;cursor:default}.quiz-opt-letter{width:22px;height:22px;border-radius:50%;background:var(--bg-card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:600;flex-shrink:0;color:var(--text-dim)}.quiz-opt.selected .quiz-opt-letter{background:var(--orange);color:#fff;border-color:var(--orange)}.quiz-opt.correct .quiz-opt-letter{background:#2ea043;color:#fff;border-color:#2ea043}.quiz-opt.wrong .quiz-opt-letter{background:#d73a49;color:#fff;border-color:#d73a49}.quiz-choose{font-weight:500;color:var(--orange);font-size:.85rem;margin-left:4px}.quiz-submit-btn{display:none;margin-top:12px;padding:11px 26px;background:var(--orange);color:#fff;border:none;border-radius:10px;font-size:.92rem;font-weight:700;cursor:pointer}.quiz-submit-btn:hover{background:#c75400}.quiz-opt-exp-inline{flex-basis:100%;padding:8px 12px;border-radius:9px;font-size:.86rem;line-height:1.48;margin-top:6px}.quiz-opt-exp-inline.qoe-is-correct{background:rgba(46,160,67,.08);border-left:3px solid #2ea043}.quiz-opt-exp-inline.qoe-is-wrong{background:rgba(215,58,73,.06);border-left:3px solid #d73a49}.qoe-header{font-weight:700;margin-bottom:3px;font-size:.8rem;display:flex;align-items:center;gap:6px}.qoe-correct{color:#2ea043}.qoe-wrong{color:#d73a49}.qoe-letter,.qoe-text{color:var(--text-dim)}.quiz-opt-explains{display:none!important}.quiz-overall{display:none;margin-top:10px}.quiz-overall[style*="block"]{display:block}details.quiz-overall:not([open]) .quiz-overall-content{display:none}.quiz-overall-toggle{cursor:pointer;font-size:.88rem;font-weight:700;color:var(--orange);padding:8px 0 2px;list-style:none;display:flex;align-items:center;gap:6px}.quiz-overall-toggle::-webkit-details-marker{display:none}.quiz-overall-toggle::before{content:'';display:inline-block;width:0;height:0;border-left:5px solid var(--orange);border-top:4px solid transparent;border-bottom:4px solid transparent;transition:transform .2s}details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}.quiz-overall-content{padding:6px 0 0;background:transparent;border-radius:0;font-size:.88rem;color:var(--text-dim);line-height:1.65;margin-top:6px;border-left:none}.exp-section{margin-bottom:10px;padding:12px 14px;border-radius:11px;border-left:3px solid}.exp-section:last-child,.exp-section p:last-child,.exp-section ul:last-child{margin-bottom:0}.exp-section h5{margin:0 0 6px;font-size:.88rem;font-weight:700}.exp-section p{margin-bottom:5px}.exp-section ul{padding-left:18px;margin-bottom:5px}.exp-section li{margin-bottom:3px}.exp-correct-answer{background:rgba(46,160,67,.05);border-left-color:#2ea043}.exp-correct-answer h5{color:#2ea043}.exp-source{background:rgba(59,130,246,.05);border-left-color:#3b82f6}.exp-source h5,.exp-source a{color:#3b82f6}.exp-expert{background:rgba(139,92,246,.05);border-left-color:#8b5cf6}.exp-expert h5{color:#8b5cf6}.exp-wrong{background:rgba(215,58,73,.04);border-left-color:#d73a49}.exp-wrong h5{color:#d73a49}.exp-memory{background:rgba(217,119,6,.05);border-left-color:#d97706}.exp-memory h5{color:#d97706}.exp-realworld{background:rgba(16,185,129,.05);border-left-color:#10b981}.exp-realworld h5{color:#10b981}.quiz-gate-prompt,.quiz-locked-overlay{position:absolute;inset:14px;display:flex;align-items:center;justify-content:center;border-radius:14px;background:rgba(7,9,13,.56);z-index:4}.quiz-gate-card,.quiz-locked-card{width:min(100%,480px);padding:22px;border-radius:16px;border:1px solid rgba(221,92,12,.32);background:var(--bg-raised);box-shadow:0 18px 45px rgba(0,0,0,.28);text-align:center}.quiz-gate-title,.quiz-locked-title{font-size:1.08rem;font-weight:700;line-height:1.35}.quiz-gate-copy,.quiz-locked-copy{margin-top:10px;color:var(--text-dim);font-size:.92rem;line-height:1.6}.quiz-gate-form{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.quiz-gate-email-input{flex:1 1 220px;min-height:48px;padding:0 14px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-family:var(--font);font-size:.94rem}.quiz-gate-email-input:focus{outline:none;border-color:rgba(221,92,12,.5);box-shadow:0 0 0 3px rgba(221,92,12,.12)}.quiz-gate-submit,.quiz-locked-cta-btn,.quiz-interstitial .cp-cta,.quiz-secondary-btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:12px;border:none;background:var(--orange);color:#fff;font-family:var(--font);font-size:.95rem;font-weight:700;cursor:pointer;text-decoration:none}.quiz-gate-submit:hover,.quiz-locked-cta-btn:hover,.quiz-interstitial .cp-cta:hover,.quiz-secondary-btn:hover{background:#c75400;text-decoration:none}.quiz-secondary-btn{background:transparent;border:1px solid var(--border-hover);color:var(--text)}.quiz-secondary-btn:hover{background:rgba(221,92,12,.06)}.quiz-gate-note{margin-top:12px;color:var(--text-dim);font-size:.82rem;line-height:1.5}.quiz-gate-message{margin-top:10px;font-size:.85rem;color:var(--text-dim);min-height:1.3em}.quiz-gate-message.is-error{color:#ff868f}.quiz-gate-message.is-success{color:#2ea043}.quiz-locked-lock{width:26px;height:26px;margin:0 auto 8px;color:var(--orange)}.quiz-locked-lock svg{width:100%;height:100%;stroke:currentColor;stroke-width:1.7;fill:none}.quiz-interstitial{margin:24px 0;padding:24px;border-radius:18px;border:1px solid rgba(221,92,12,.2);background:radial-gradient(circle at top right,rgba(221,92,12,.1),transparent 44%),linear-gradient(180deg,rgba(255,255,255,.015),rgba(255,255,255,.004))}.quiz-interstitial[hidden]{display:none!important}.quiz-interstitial-kicker{color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}.quiz-interstitial h3{margin-top:10px;font-size:1.32rem;line-height:1.28}.quiz-interstitial-score{font-size:2.15rem;font-weight:800;color:var(--text);line-height:1;margin-top:16px}.quiz-interstitial-copy{margin-top:8px;color:var(--text-dim);max-width:58ch}.quiz-interstitial-anchor{margin-top:12px;color:var(--text);font-size:.92rem}.quiz-interstitial-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.quiz-cross-sell{margin-top:24px;padding:22px;border-radius:16px;border:1px solid var(--border);background:rgba(255,255,255,.02)}.quiz-cross-sell h3{font-size:1rem;margin-bottom:8px}.quiz-cross-sell p{margin:0;color:var(--text-dim);font-size:.92rem;line-height:1.6}.quiz-cross-sell-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.quiz-cross-sell-links a{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;border:1px solid var(--border-hover);background:transparent;color:var(--text);font-weight:700}.quiz-cross-sell-links a:hover{background:rgba(221,92,12,.06);border-color:var(--orange);text-decoration:none}.quiz-toast{position:fixed;right:18px;bottom:18px;z-index:1002;min-width:220px;max-width:min(360px,calc(100vw - 36px));padding:14px 16px;border-radius:12px;border:1px solid rgba(46,160,67,.35);background:rgba(18,25,21,.96);color:#e8fff0;box-shadow:0 18px 45px rgba(0,0,0,.32);font-size:.9rem;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .2s,transform .2s}.quiz-toast.show{opacity:1;transform:translateY(0)}@media (min-width:1040px){.cp-wrap{max-width:960px;padding-left:32px;padding-right:32px}.quiz-card{padding:22px 24px 20px}}@media (max-width:720px){.preview-group-labels{grid-template-columns:1fr}.quiz-gate-form{flex-direction:column}.quiz-gate-submit,.quiz-secondary-btn,.quiz-cross-sell-links a,.quiz-interstitial .cp-cta{width:100%}.quiz-gate-card,.quiz-locked-card{padding:18px}.quiz-interstitial-actions{flex-direction:column}.quiz-card{padding:16px}}
+.quiz-section{margin-top:48px}
+.quiz-section h2{font-size:1.38rem;font-weight:700;margin-bottom:10px;line-height:1.24}
+.quiz-intro{margin:0;color:var(--text-dim);font-size:.97rem;line-height:1.65;max-width:62ch}
+.preview-shell{margin-bottom:22px}
+.preview-kicker{display:inline-flex;align-items:center;gap:8px;margin-bottom:14px;padding:6px 12px;border-radius:999px;background:rgba(221,92,12,.08);border:1px solid rgba(221,92,12,.18);color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.quiz-stepper-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin:18px 0 12px}
+.quiz-stepper-label{font-size:1rem;font-weight:700;color:var(--text)}
+.quiz-stepper-tier{display:inline-flex;align-items:center;margin-top:7px;padding:6px 10px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.02);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text-dim)}
+.quiz-stepper-tier[data-state="free"]{color:#2ea043;border-color:rgba(46,160,67,.28);background:rgba(46,160,67,.08)}
+.quiz-stepper-tier[data-state="locked"]{color:var(--orange);border-color:rgba(221,92,12,.28);background:rgba(221,92,12,.08)}
+.quiz-stepper-tier[data-state="open"]{color:#3b82f6;border-color:rgba(59,130,246,.28);background:rgba(59,130,246,.08)}
+.quiz-stepper-score{font-size:.9rem;color:var(--text-dim);white-space:nowrap;padding-top:2px}
+.quiz-stepper-dots{display:grid;grid-template-columns:repeat(15,minmax(0,1fr));gap:8px}
+.preview-dot{height:10px;border-radius:999px;border:1px solid var(--border);background:var(--bg-card);opacity:.55;transition:border-color .18s,background .18s,box-shadow .18s,opacity .18s}
+.preview-dot.is-available{opacity:1}
+.preview-dot.is-locked{opacity:.38}
+.preview-dot.is-correct{background:#2ea043;border-color:#2ea043;opacity:1}
+.preview-dot.is-wrong{background:#d73a49;border-color:#d73a49;opacity:1}
+.preview-dot.is-current{border-color:var(--orange);box-shadow:0 0 0 3px rgba(221,92,12,.14)}
+.quiz-card-stack{position:relative}
+.quiz-card{background:var(--bg-raised);border:1px solid var(--border);border-radius:16px;padding:20px 20px 18px;margin-bottom:14px;transition:border-color .2s,background .2s}
+.quiz-card[hidden]{display:none!important}
+.quiz-card[data-state="correct"]{border-color:#2ea043}
+.quiz-card[data-state="wrong"]{border-color:#d73a49}
+.quiz-card.is-email-locked{background:linear-gradient(180deg,rgba(255,255,255,.018),rgba(255,255,255,.005))}
+.quiz-q{font-weight:600;font-size:1rem;margin-bottom:14px;line-height:1.5}
+.quiz-q-num{color:var(--orange);font-weight:700;margin-right:6px}
+.quiz-answer-shell{position:relative}
+.quiz-answer-content.quiz-gate-blur{filter:blur(4px);pointer-events:none;user-select:none}
+.quiz-opts{list-style:none;display:flex;flex-direction:column;gap:6px}
+.quiz-opt{display:flex;align-items:flex-start;gap:10px;padding:11px 12px;border-radius:12px;border:1px solid var(--border);cursor:pointer;transition:background .15s,border-color .15s;color:var(--text-dim);font-size:.94rem;line-height:1.5;flex-wrap:wrap}
+.quiz-opt:hover{background:rgba(221,92,12,.06);border-color:var(--border-hover)}
+.quiz-opt.selected{background:rgba(221,92,12,.1);border-color:var(--orange);color:var(--text)}
+.quiz-opt.correct{background:rgba(46,160,67,.1);border-color:#2ea043;color:var(--text)}
+.quiz-opt.wrong{background:rgba(215,58,73,.1);border-color:#d73a49}
+.quiz-opt[disabled]{pointer-events:none;cursor:default}
+.quiz-opt-letter{width:22px;height:22px;border-radius:50%;background:var(--bg-card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:600;flex-shrink:0;color:var(--text-dim)}
+.quiz-opt.selected .quiz-opt-letter{background:var(--orange);color:#fff;border-color:var(--orange)}
+.quiz-opt.correct .quiz-opt-letter{background:#2ea043;color:#fff;border-color:#2ea043}
+.quiz-opt.wrong .quiz-opt-letter{background:#d73a49;color:#fff;border-color:#d73a49}
+.quiz-choose{font-weight:500;color:var(--orange);font-size:.85rem;margin-left:4px}
+.quiz-submit-btn{display:none;margin-top:12px;padding:11px 26px;background:var(--orange);color:#fff;border:none;border-radius:10px;font-size:.92rem;font-weight:700;cursor:pointer}
+.quiz-submit-btn:hover{background:#c75400}
+.quiz-opt-exp-inline{flex-basis:100%;padding:8px 12px;border-radius:9px;font-size:.86rem;line-height:1.48;margin-top:6px}
+.quiz-opt-exp-inline.qoe-is-correct{background:rgba(46,160,67,.08);border-left:3px solid #2ea043}
+.quiz-opt-exp-inline.qoe-is-wrong{background:rgba(215,58,73,.06);border-left:3px solid #d73a49}
+.qoe-header{font-weight:700;margin-bottom:3px;font-size:.8rem;display:flex;align-items:center;gap:6px}
+.qoe-correct{color:#2ea043}
+.qoe-wrong{color:#d73a49}
+.qoe-letter,.qoe-text{color:var(--text-dim)}
+.quiz-opt-explains{display:none!important}
+.quiz-overall{display:none;margin-top:10px}
+.quiz-overall[style*="block"]{display:block}
+details.quiz-overall:not([open]) .quiz-overall-content{display:none}
+.quiz-overall-toggle{cursor:pointer;font-size:.88rem;font-weight:700;color:var(--orange);padding:8px 0 2px;list-style:none;display:flex;align-items:center;gap:6px}
+.quiz-overall-toggle::-webkit-details-marker{display:none}
+.quiz-overall-toggle::before{content:'';display:inline-block;width:0;height:0;border-left:5px solid var(--orange);border-top:4px solid transparent;border-bottom:4px solid transparent;transition:transform .2s}
+details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
+.quiz-overall-content{padding:6px 0 0;background:transparent;border-radius:0;font-size:.88rem;color:var(--text-dim);line-height:1.65;margin-top:6px;border-left:none}
+.exp-section{margin-bottom:10px;padding:12px 14px;border-radius:11px;border-left:3px solid}
+.exp-section:last-child,.exp-section p:last-child,.exp-section ul:last-child{margin-bottom:0}
+.exp-section h5{margin:0 0 6px;font-size:.88rem;font-weight:700}
+.exp-section p{margin-bottom:5px}
+.exp-section ul{padding-left:18px;margin-bottom:5px}
+.exp-section li{margin-bottom:3px}
+.exp-correct-answer{background:rgba(46,160,67,.05);border-left-color:#2ea043}
+.exp-correct-answer h5{color:#2ea043}
+.exp-source{background:rgba(59,130,246,.05);border-left-color:#3b82f6}
+.exp-source h5,.exp-source a{color:#3b82f6}
+.exp-expert{background:rgba(139,92,246,.05);border-left-color:#8b5cf6}
+.exp-expert h5{color:#8b5cf6}
+.exp-wrong{background:rgba(215,58,73,.04);border-left-color:#d73a49}
+.exp-wrong h5{color:#d73a49}
+.exp-memory{background:rgba(217,119,6,.05);border-left-color:#d97706}
+.exp-memory h5{color:#d97706}
+.exp-realworld{background:rgba(16,185,129,.05);border-left-color:#10b981}
+.exp-realworld h5{color:#10b981}
+.quiz-gate-prompt{position:absolute;inset:14px;display:flex;align-items:center;justify-content:center;border-radius:14px;background:rgba(7,9,13,.56);z-index:4}
+.quiz-gate-card{width:min(100%,520px);padding:22px;border-radius:16px;border:1px solid rgba(221,92,12,.32);background:var(--bg-raised);box-shadow:0 18px 45px rgba(0,0,0,.28);text-align:center}
+.quiz-gate-title{font-size:1.08rem;font-weight:700;line-height:1.35}
+.quiz-gate-copy{margin-top:10px;color:var(--text-dim);font-size:.92rem;line-height:1.6}
+.quiz-gate-form{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.quiz-gate-email-input{flex:1 1 220px;min-height:48px;padding:0 14px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-family:var(--font);font-size:.94rem}
+.quiz-gate-email-input:focus{outline:none;border-color:rgba(221,92,12,.5);box-shadow:0 0 0 3px rgba(221,92,12,.12)}
+.quiz-gate-submit,.quiz-nav-next,.quiz-final .cp-cta,.quiz-secondary-btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:12px;border:none;font-family:var(--font);font-size:.95rem;font-weight:700;cursor:pointer;text-decoration:none}
+.quiz-nav-next,.quiz-gate-submit,.quiz-final .cp-cta{background:var(--orange);color:#fff}
+.quiz-nav-next:hover,.quiz-gate-submit:hover,.quiz-final .cp-cta:hover{background:#c75400;text-decoration:none}
+.quiz-nav-next[disabled],.quiz-gate-submit[disabled],.quiz-secondary-btn[disabled]{cursor:not-allowed;opacity:.45}
+.quiz-secondary-btn{background:transparent;border:1px solid var(--border-hover);color:var(--text)}
+.quiz-secondary-btn:hover{background:rgba(221,92,12,.06)}
+.quiz-gate-message{margin-top:10px;font-size:.85rem;color:var(--text-dim);min-height:1.3em}
+.quiz-gate-message.is-error{color:#ff868f}
+.quiz-gate-message.is-success{color:#2ea043}
+.quiz-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px;padding:16px 18px;border-radius:16px;border:1px solid var(--border);background:rgba(255,255,255,.02)}
+.quiz-nav-meta{flex:1;color:var(--text-dim);font-size:.9rem;line-height:1.5;text-align:center}
+.quiz-final{margin-top:22px;padding:24px;border-radius:18px;border:1px solid rgba(221,92,12,.2);background:radial-gradient(circle at top right,rgba(221,92,12,.1),transparent 44%),linear-gradient(180deg,rgba(255,255,255,.015),rgba(255,255,255,.004))}
+.quiz-final[hidden],.quiz-cross-sell[hidden]{display:none!important}
+.quiz-final-kicker{color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.quiz-final h3{margin-top:10px;font-size:1.32rem;line-height:1.28}
+.quiz-final-score{font-size:2.15rem;font-weight:800;color:var(--text);line-height:1;margin-top:16px}
+.quiz-final-copy{margin-top:8px;color:var(--text-dim);max-width:58ch}
+.quiz-final-anchor{margin-top:12px;color:var(--text);font-size:.92rem}
+.quiz-final-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.quiz-cross-sell{margin-top:22px;padding:22px;border-radius:16px;border:1px solid var(--border);background:rgba(255,255,255,.02)}
+.quiz-cross-sell h3{font-size:1rem;margin-bottom:8px}
+.quiz-cross-sell p{margin:0;color:var(--text-dim);font-size:.92rem;line-height:1.6}
+.quiz-cross-sell-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.quiz-cross-sell-links a{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;border:1px solid var(--border-hover);background:transparent;color:var(--text);font-weight:700}
+.quiz-cross-sell-links a:hover{background:rgba(221,92,12,.06);border-color:var(--orange);text-decoration:none}
+.quiz-toast{position:fixed;right:18px;bottom:18px;z-index:1002;min-width:220px;max-width:min(360px,calc(100vw - 36px));padding:14px 16px;border-radius:12px;border:1px solid rgba(46,160,67,.35);background:rgba(18,25,21,.96);color:#e8fff0;box-shadow:0 18px 45px rgba(0,0,0,.32);font-size:.9rem;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .2s,transform .2s}
+.quiz-toast.show{opacity:1;transform:translateY(0)}
+@media (min-width:1040px){.cp-wrap{max-width:960px;padding-left:32px;padding-right:32px}.quiz-card{padding:22px 24px 20px}}
+@media (max-width:720px){.quiz-stepper-head,.quiz-nav,.quiz-final-actions,.quiz-cross-sell-links,.quiz-gate-form{flex-direction:column;align-items:stretch}.quiz-stepper-score,.quiz-nav-meta{text-align:left}.quiz-nav-next,.quiz-secondary-btn,.quiz-gate-submit,.quiz-final .cp-cta,.quiz-cross-sell-links a{width:100%}.quiz-card,.quiz-final,.quiz-cross-sell{padding:18px}.quiz-stepper-dots{gap:6px}}
 """
 COUNTDOWN_JS = """
 // CIS-DF Mandate Countdown
@@ -135,6 +247,11 @@ def new_tag(name: str, text: str | None = None, attrs: dict | None = None):
     return tag
 
 
+def class_tokens(tag) -> list[str]:
+    tokens = tag.get("class", [])
+    return tokens.split() if isinstance(tokens, str) else list(tokens)
+
+
 def replace_question_count_phrases(text: str, total_q: int) -> str:
     updated = text
     updated = re.sub(r"\b\d+(?=-question\b)", str(total_q), updated)
@@ -165,8 +282,8 @@ def question_wrapper(card, global_idx: int):
     question = card.select_one(".quiz-q")
     if not question:
         raise ValueError(f"Question card {global_idx + 1} is missing .quiz-q.")
-    shell = new_tag("div", attrs={"class": "quiz-answer-shell"})
-    content = new_tag("div", attrs={"class": "quiz-answer-content"})
+    shell = new_tag("div", attrs={"class": ["quiz-answer-shell"]})
+    content = new_tag("div", attrs={"class": ["quiz-answer-content"]})
     move_nodes = []
     seen_question = False
     for child in list(card.children):
@@ -185,33 +302,13 @@ def question_wrapper(card, global_idx: int):
 def gate_prompt_html() -> str:
     return """<div class="quiz-gate-prompt" data-email-overlay>
   <div class="quiz-gate-card">
-    <div class="quiz-gate-title">Enter your email to continue with questions 6-10</div>
+    <div class="quiz-gate-title">Enter your email to continue with questions 6-15</div>
     <p class="quiz-gate-copy">Free exam updates. No spam. Unsubscribe anytime.</p>
     <form class="quiz-gate-form" id="quizGateForm">
       <input type="email" class="quiz-gate-email-input" id="quizGateEmail" placeholder="you@email.com" autocomplete="email" required>
-      <button type="submit" class="quiz-gate-submit" id="quizGateSubmit">Continue with 5 More Questions</button>
+      <button type="submit" class="quiz-gate-submit" id="quizGateSubmit">Continue with 10 More Questions</button>
     </form>
     <p class="quiz-gate-message" id="quizGateMessage"></p>
-  </div>
-</div>"""
-
-
-def gate_note_html() -> str:
-    return """<div class="quiz-gate-prompt" data-email-overlay>
-  <div class="quiz-gate-card">
-    <div class="quiz-gate-title">Questions 6-10 continue after email</div>
-    <p class="quiz-gate-copy">Use the form on question 6 to keep going.</p>
-  </div>
-</div>"""
-
-
-def locked_overlay_html(total_q: int, udemy: str) -> str:
-    return f"""<div class="quiz-locked-overlay">
-  <div class="quiz-locked-card">
-    <div class="quiz-locked-lock">{LOCK_ICON}</div>
-    <div class="quiz-locked-title">This question is part of the full {total_q}-question course.</div>
-    <p class="quiz-locked-copy">Keep the teaser here, then move to Udemy for the full question bank.</p>
-    <a href="{udemy}" target="_blank" rel="noopener" class="quiz-locked-cta-btn" data-buy-tier="tier3">Get all {total_q} questions on Udemy</a>
   </div>
 </div>"""
 
@@ -227,7 +324,7 @@ def interactive_button(global_idx: int):
 def placeholder_card(global_idx: int, total_q: int, udemy: str) -> str:
     placeholder = BeautifulSoup(
         f"""
-<div class="quiz-card is-teaser-locked" id="qcard{global_idx}" data-tier="3" data-question-index="{global_idx}">
+<div class="quiz-card is-email-locked" id="qcard{global_idx}" data-tier="2" data-question-index="{global_idx}" hidden>
   <div class="quiz-q"><span class="quiz-q-num">{global_idx + 1}.</span>Question coming soon.</div>
   <div class="quiz-answer-shell">
     <div class="quiz-answer-content quiz-gate-blur">
@@ -238,7 +335,13 @@ def placeholder_card(global_idx: int, total_q: int, udemy: str) -> str:
         <li class="quiz-opt"><span class="quiz-opt-letter">D</span><span>Preview answer option</span></li>
       </ul>
     </div>
-    {locked_overlay_html(total_q, udemy)}
+    <div class="quiz-gate-prompt">
+      <div class="quiz-gate-card">
+        <div class="quiz-gate-title">Question coming soon.</div>
+        <p class="quiz-gate-copy">The full {total_q}-question course is already live on Udemy.</p>
+        <a href="{udemy}" target="_blank" rel="noopener" class="quiz-gate-submit" data-buy-stage="final">Get all {total_q} questions on Udemy</a>
+      </div>
+    </div>
   </div>
 </div>
 """,
@@ -248,12 +351,15 @@ def placeholder_card(global_idx: int, total_q: int, udemy: str) -> str:
 
 
 def build_card(card, global_idx: int, total_q: int, udemy: str) -> str:
-    tier = 1 if global_idx < 5 else 2 if global_idx < 10 else 3
+    tier = 1 if global_idx < 5 else 2
     new_card = copy.deepcopy(card)
     new_card["id"] = f"qcard{global_idx}"
     new_card["data-tier"] = str(tier)
     new_card["data-question-index"] = str(global_idx)
-    new_card.attrs.pop("hidden", None)
+    if global_idx:
+        new_card["hidden"] = ""
+    else:
+        new_card.attrs.pop("hidden", None)
     q_num = new_card.select_one(".quiz-q-num")
     if q_num:
         q_num.string = f"{global_idx + 1}."
@@ -264,55 +370,37 @@ def build_card(card, global_idx: int, total_q: int, udemy: str) -> str:
     for opt in new_card.select(".quiz-opt"):
         opt.attrs.pop("disabled", None)
         opt["class"] = [c for c in opt.get("class", []) if c not in {"selected", "correct", "wrong"}]
-        if tier < 3:
-            opt["data-q"] = str(global_idx)
-        else:
-            opt.attrs.pop("data-q", None)
-            opt.attrs.pop("data-exp", None)
+        opt["data-q"] = str(global_idx)
 
     overall = new_card.select_one(".quiz-overall")
     if overall:
-        if tier < 3:
-            overall["id"] = f"qexp{global_idx}"
-            overall.attrs.pop("open", None)
-            overall.attrs.pop("style", None)
-        else:
-            overall.decompose()
+        overall["id"] = f"qexp{global_idx}"
+        overall.attrs.pop("open", None)
+        overall.attrs.pop("style", None)
 
     inline = new_card.select_one(".quiz-opt-explains")
     if inline:
-        if tier < 3:
-            inline["id"] = f"qoptexp{global_idx}"
-            inline["style"] = "display:none"
-        else:
-            inline.decompose()
+        inline.decompose()
 
     shell, content = question_wrapper(new_card, global_idx)
-    if tier < 3:
-        content_classes = list(content.get("class", []))
-        if tier == 2:
-            content_classes.append("quiz-gate-blur")
-        content["class"] = content_classes
-        opts = new_card.select_one(".quiz-opts")
-        if opts:
-            opts.insert_after(interactive_button(global_idx))
-    else:
-        content["class"] = list(content.get("class", [])) + ["quiz-gate-blur"]
-
+    content_classes = class_tokens(content)
     if tier == 2:
-        new_card["class"] = list(new_card.get("class", [])) + ["is-email-locked"]
-        overlay_html = gate_prompt_html() if global_idx == 5 else gate_note_html()
-        shell.append(BeautifulSoup(overlay_html, "html.parser"))
-    elif tier == 3:
-        new_card["class"] = list(new_card.get("class", [])) + ["is-teaser-locked"]
-        shell.append(BeautifulSoup(locked_overlay_html(total_q, udemy), "html.parser"))
+        content_classes.append("quiz-gate-blur")
+    content["class"] = content_classes
+    opts = new_card.select_one(".quiz-opts")
+    if opts:
+        opts.insert_after(interactive_button(global_idx))
+    if tier == 2:
+        new_card["class"] = class_tokens(new_card) + ["is-email-locked"]
+        if global_idx == 5:
+            shell.append(BeautifulSoup(gate_prompt_html(), "html.parser"))
 
     return str(new_card)
 
 
 def quiz_schema(title: str, code: str, slug: str, cards: list, answers: list) -> str:
     parts = []
-    for card, answer in zip(cards[:5], answers[:5]):
+    for card, answer in zip(cards[:15], answers[:15]):
         opts = option_texts(card)
         if isinstance(answer, list):
             accepted = " | ".join(opts[i] for i in answer)
@@ -331,8 +419,8 @@ def quiz_schema(title: str, code: str, slug: str, cards: list, answers: list) ->
     body = {
         "@context": "https://schema.org",
         "@type": "Quiz",
-        "name": f"5 Free {title} Practice Questions",
-        "description": f"Try 5 free questions from the 15-question preview for the {title} practice test.",
+        "name": f"15-Question {title} Preview",
+        "description": f"Work through a 15-question preview for the {title} practice test.",
         "url": f"https://luckyx.dev/courses/{slug}.html#free-quiz",
         "educationalAlignment": {
             "@type": "AlignmentObject",
@@ -344,66 +432,22 @@ def quiz_schema(title: str, code: str, slug: str, cards: list, answers: list) ->
     return "<!-- Structured Data: Quiz -->\n<script type=\"application/ld+json\">\n" + json.dumps(body, indent=2) + "\n</script>"
 
 
-def progress_slots() -> str:
+def progress_dots() -> str:
     slots = []
-    for idx in range(1, 16):
-        slot_class = "preview-slot is-clickable"
-        state = "Free"
-        lock = ""
-        if 6 <= idx <= 10:
-            slot_class = "preview-slot"
-            state = "Email"
-        if idx >= 11:
-            slot_class = "preview-slot is-locked"
-            state = "Full"
-            lock = f'<span class="preview-slot-lock">{LOCK_ICON}</span>'
-        slots.append(
-            f'        <li class="{slot_class}" data-slot="{idx - 1}"><span class="preview-slot-num">{idx}</span><span class="preview-slot-state">{state}</span>{lock}</li>'
-        )
+    for idx in range(15):
+        slots.append(f'        <span class="preview-dot" data-slot="{idx}" title="Question {idx + 1}"></span>')
     return "\n".join(slots)
 
 
-def tier_heading(text: str) -> str:
-    return f'    <div class="quiz-tier-heading">{text}</div>'
-
-
-def tier_one_interstitial(total_q: int, udemy: str) -> str:
-    return f"""    <div class="quiz-interstitial" id="tier1Interstitial" hidden>
-      <div class="quiz-interstitial-kicker">Questions 1-5 complete</div>
-      <h3>You scored <span id="tier1ScoreText">0/5</span> on questions 1-5.</h3>
-      <div class="quiz-interstitial-score" id="tier1ScoreValue">0/5</div>
-      <p class="quiz-interstitial-copy">You have seen the free section. Continue with questions 6-10 after email, or move straight to the full course.</p>
-      <div class="quiz-interstitial-actions">
-        <a href="{udemy}" target="_blank" rel="noopener" class="cp-cta" data-buy-tier="tier1">Get all {total_q} questions for $9.99
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <button type="button" class="quiz-secondary-btn" id="tier1ContinueBtn">Enter your email to continue</button>
-      </div>
-    </div>"""
-
-
-def tier_two_interstitial(total_q: int, udemy: str) -> str:
-    return f"""    <div class="quiz-interstitial" id="tier2Interstitial" hidden>
-      <div class="quiz-interstitial-kicker">Free preview complete</div>
-      <h3>You scored <span id="tier2ScoreText">0/10</span> on the free preview.</h3>
-      <div class="quiz-interstitial-score" id="tier2ScoreValue">0/10</div>
-      <p class="quiz-interstitial-copy">You have seen 10 preview questions. The full course keeps the same answer breakdown style across the full bank.</p>
-      <div class="quiz-interstitial-actions">
-        <a href="{udemy}" target="_blank" rel="noopener" class="cp-cta" data-buy-tier="tier2">Get all {total_q} questions for $9.99
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </div>"""
-
-
 def final_cta(total_q: int, udemy: str) -> str:
-    return f"""    <div class="quiz-interstitial" id="tier3FinalCta">
-      <div class="quiz-interstitial-kicker">Full course</div>
-      <h3>You've seen 10 of {total_q} questions.</h3>
-      <p class="quiz-interstitial-copy">The full course covers the exam blueprint with sourced explanations.</p>
-      <p class="quiz-interstitial-anchor">Your first exam attempt is free. Your second costs $350.</p>
-      <div class="quiz-interstitial-actions">
-        <a href="{udemy}" target="_blank" rel="noopener" class="cp-cta" data-buy-tier="final">Get all {total_q} questions on Udemy
+    return f"""    <div class="quiz-final" id="quizFinal" hidden>
+      <div class="quiz-final-kicker">Preview complete</div>
+      <h3>You scored <span id="quizFinalScoreText">0/15</span> on the 15-question preview.</h3>
+      <div class="quiz-final-score" id="quizFinalScoreValue">0/15</div>
+      <p class="quiz-final-copy">The full course keeps the same answer breakdown style across all {total_q} questions.</p>
+      <p class="quiz-final-anchor">Your first exam attempt is free. Your second costs $350.</p>
+      <div class="quiz-final-actions">
+        <a href="{udemy}" target="_blank" rel="noopener" class="cp-cta" data-buy-stage="final">Get all {total_q} questions for $9.99
           <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
@@ -411,9 +455,9 @@ def final_cta(total_q: int, udemy: str) -> str:
 
 
 def cross_sell_block() -> str:
-    return """    <div class="quiz-cross-sell">
+    return """    <div class="quiz-cross-sell" id="quizCrossSell" hidden>
       <h3>Many students also study:</h3>
-      <p>Keep going with the cert recommendation quiz, or compare all 18 practice tests side by side.</p>
+      <p>Compare all 18 practice tests, or use the cert quiz to plan what to study next.</p>
       <div class="quiz-cross-sell-links">
         <a href="/quiz.html">Find your next cert</a>
         <a href="/compare.html">Compare all 18 courses</a>
@@ -422,80 +466,84 @@ def cross_sell_block() -> str:
 
 
 def quiz_section(total_q: int, udemy: str, cards_html: list[str]) -> str:
-    return f"""  <section class="quiz-section" id="free-quiz" data-preview-style="three-tier">
+    return f"""  <section class="quiz-section" id="free-quiz" data-preview-style="guided-15">
     <div class="preview-shell">
       <div class="preview-kicker">15-question preview</div>
       <h2>15 Free Preview Questions</h2>
-      <p class="quiz-intro">Answer 5 questions free. Enter your email to continue with 5 more. The full course has {total_q} questions on Udemy.</p>
-      <div class="preview-status-line">
-        <span class="preview-status-pill">Answered <strong id="quizStatusAnswered">0 of 10 interactive questions</strong></span>
-        <span class="preview-status-pill">Score <strong id="quizStatusScore">0 correct</strong></span>
+      <p class="quiz-intro">Answer 5 questions free. Enter your email to continue through question 15. The full course has {total_q} questions on Udemy.</p>
+      <div class="quiz-stepper-head">
+        <div class="quiz-stepper-copy">
+          <div class="quiz-stepper-label" id="quizStepLabel">Question 1 of 15</div>
+          <div class="quiz-stepper-tier" data-state="free" id="quizTierLabel">Free</div>
+        </div>
+        <div class="quiz-stepper-score" id="quizMiniScore">0 correct so far</div>
       </div>
-      <div class="preview-progress-wrap">
-        <ol class="preview-progress" id="quizProgress">
-{progress_slots()}
-        </ol>
-      </div>
-      <div class="preview-group-labels">
-        <div class="preview-group-label">Questions 1-5. Free.</div>
-        <div class="preview-group-label">Questions 6-10. Email required.</div>
-        <div class="preview-group-label">Questions 11-15. Full course.</div>
+      <div class="quiz-stepper-dots" id="quizProgress">
+{progress_dots()}
       </div>
     </div>
-{tier_heading("Questions 1-5. Free.")}
-{chr(10).join(cards_html[:5])}
-{tier_one_interstitial(total_q, udemy)}
-{tier_heading("Questions 6-10. Email required.")}
-{chr(10).join(cards_html[5:10])}
-{tier_two_interstitial(total_q, udemy)}
-{tier_heading("Questions 11-15. Full course teaser.")}
-{chr(10).join(cards_html[10:15])}
+    <div class="quiz-card-stack">
+{chr(10).join(cards_html)}
+    </div>
+    <div class="quiz-nav" id="quizNav">
+      <button type="button" class="quiz-secondary-btn" id="quizPrevBtn">Previous question</button>
+      <div class="quiz-nav-meta" id="quizNavMeta">Choose an answer and submit to continue.</div>
+      <button type="button" class="quiz-nav-next" id="quizNextBtn" disabled>Next question</button>
+    </div>
 {final_cta(total_q, udemy)}
 {cross_sell_block()}
-    <div class="quiz-toast" id="quizToast">Questions 6-10 are ready.</div>
+    <div class="quiz-toast" id="quizToast">Questions 6-15 are ready.</div>
   </section>"""
 
 
 JS_TEMPLATE = """<script>
 const QUIZ=__CONFIG__;
 const answers=__ANSWERS__;
-const STORAGE_EMAIL='luckyx-email:'+QUIZ.slug,STORAGE_ANSWERS='luckyx-answers:'+QUIZ.slug,STORAGE_SCORE='luckyx-score:'+QUIZ.slug;
-const themeToggle=document.getElementById('themeToggle'),slots=Array.from(document.querySelectorAll('.preview-slot[data-slot]')),cards=Array.from(document.querySelectorAll('.quiz-card')),interactiveCards=cards.filter((card)=>parseInt(card.dataset.questionIndex,10)<10),tierTwoCards=cards.filter((card)=>card.dataset.tier==='2'),tierOneInterstitial=document.getElementById('tier1Interstitial'),tierTwoInterstitial=document.getElementById('tier2Interstitial'),tier1ContinueBtn=document.getElementById('tier1ContinueBtn'),gateForm=document.getElementById('quizGateForm'),gateEmail=document.getElementById('quizGateEmail'),gateSubmit=document.getElementById('quizGateSubmit'),gateMessage=document.getElementById('quizGateMessage'),toast=document.getElementById('quizToast');
-let emailReady=false,storedAnswers={},startEventSent=false,tier1EventSent=false,tier2EventSent=false;const drafts={};
+const STORAGE_EMAIL='luckyx-email:'+QUIZ.slug,STORAGE_ANSWERS='luckyx-answers:'+QUIZ.slug,STORAGE_SCORE='luckyx-score:'+QUIZ.slug,STORAGE_CURRENT='luckyx-current:'+QUIZ.slug;
+const themeToggle=document.getElementById('themeToggle'),cards=Array.from(document.querySelectorAll('.quiz-card')),dots=Array.from(document.querySelectorAll('.preview-dot[data-slot]')),prevBtn=document.getElementById('quizPrevBtn'),nextBtn=document.getElementById('quizNextBtn'),navMeta=document.getElementById('quizNavMeta'),stepLabel=document.getElementById('quizStepLabel'),tierLabel=document.getElementById('quizTierLabel'),miniScore=document.getElementById('quizMiniScore'),gateForm=document.getElementById('quizGateForm'),gateEmail=document.getElementById('quizGateEmail'),gateSubmit=document.getElementById('quizGateSubmit'),gateMessage=document.getElementById('quizGateMessage'),finalBlock=document.getElementById('quizFinal'),finalScoreText=document.getElementById('quizFinalScoreText'),finalScoreValue=document.getElementById('quizFinalScoreValue'),crossSell=document.getElementById('quizCrossSell'),toast=document.getElementById('quizToast');
+let emailReady=false,storedAnswers={},currentIndex=0,startEventSent=false,tier1EventSent=false,tier2EventSent=false;const drafts={};
 if(themeToggle){themeToggle.addEventListener('click',()=>{const current=document.documentElement.getAttribute('data-theme');const next=current==='light'?'dark':'light';document.documentElement.setAttribute('data-theme',next);localStorage.setItem('luckyx-theme',next);});}
 function evt(name,extra){if(typeof gtag!=='function')return;gtag('event',name,Object.assign({cert:QUIZ.code},extra||{}));}
 function showToast(message){if(!toast)return;toast.textContent=message;toast.classList.add('show');window.clearTimeout(showToast._timer);showToast._timer=window.setTimeout(()=>toast.classList.remove('show'),2600);}
 function readJson(key,fallback){try{const raw=localStorage.getItem(key);return raw?JSON.parse(raw):fallback;}catch(err){return fallback;}}
 function normalizeSelection(value){if(!Array.isArray(value))return[];return Array.from(new Set(value.map((item)=>parseInt(item,10)).filter((item)=>Number.isInteger(item)&&item>=0))).sort((a,b)=>a-b);}
-function readAnswers(){const parsed=readJson(STORAGE_ANSWERS,{}),out={};if(!parsed||typeof parsed!=='object')return out;Object.keys(parsed).forEach((key)=>{const qi=parseInt(key,10),item=parsed[key];if(!Number.isInteger(qi)||qi<0||qi>=10||!item||typeof item!=='object')return;const selected=normalizeSelection(item.selected);if(!selected.length||typeof item.isCorrect!=='boolean')return;out[qi]={selected,isCorrect:item.isCorrect};});return out;}
+function readAnswers(){const parsed=readJson(STORAGE_ANSWERS,{}),out={};if(!parsed||typeof parsed!=='object')return out;Object.keys(parsed).forEach((key)=>{const qi=parseInt(key,10),item=parsed[key];if(!Number.isInteger(qi)||qi<0||qi>=15||!item||typeof item!=='object')return;const selected=normalizeSelection(item.selected);if(!selected.length||typeof item.isCorrect!=='boolean')return;out[qi]={selected,isCorrect:item.isCorrect};});return out;}
+function readCurrent(){const raw=localStorage.getItem(STORAGE_CURRENT),value=parseInt(raw,10);return Number.isInteger(value)?value:null;}
 function writeAnswers(){localStorage.setItem(STORAGE_ANSWERS,JSON.stringify(storedAnswers));}
+function writeCurrent(){localStorage.setItem(STORAGE_CURRENT,String(currentIndex));}
 function scoreSlice(start,end){let answered=0,correct=0;for(let i=start;i<=end;i+=1){if(!storedAnswers[i])continue;answered+=1;if(storedAnswers[i].isCorrect)correct+=1;}return{answered,correct};}
-function saveScoreState(){const tier1=scoreSlice(0,4),tier2Only=scoreSlice(5,9),total=scoreSlice(0,9);localStorage.setItem(STORAGE_SCORE,JSON.stringify({tier1:tier1.correct,tier2:tier2Only.correct,total:total.correct}));}
+function saveScoreState(){const free5=scoreSlice(0,4),total15=scoreSlice(0,14);localStorage.setItem(STORAGE_SCORE,JSON.stringify({free5:free5.correct,total15:total15.correct}));}
 function correctIndicesFor(qi){return(Array.isArray(answers[qi])?answers[qi].slice():[answers[qi]]).sort((a,b)=>a-b);}
+function isUnlocked(qi){return qi<5||emailReady;}
+function nextPendingIndex(){const max=emailReady?14:5;for(let i=0;i<=max;i+=1){if(!storedAnswers[i])return i;}return max;}
+function navigationLimit(){return nextPendingIndex();}
+function normalizeCurrent(candidate){const limit=navigationLimit();if(!Number.isInteger(candidate))return limit;if(candidate<0)return 0;if(candidate>limit)return limit;return candidate;}
 function setMessage(text,cls){if(!gateMessage)return;gateMessage.textContent=text||'';gateMessage.classList.remove('is-error','is-success');if(cls)gateMessage.classList.add(cls);}
 function processSections(container){if(!container||container.dataset.processed)return;container.dataset.processed='1';const h5s=Array.from(container.querySelectorAll('h5'));if(!h5s.length)return;const sections=[];h5s.forEach((h5)=>{const title=h5.textContent.toLowerCase();let cls='exp-section';if(title.includes('correct answer'))cls+=' exp-correct-answer';else if(title.includes('source'))cls+=' exp-source';else if(title.includes('expert'))cls+=' exp-expert';else if(title.includes('why')||title.includes('wrong'))cls+=' exp-wrong';else if(title.includes('memory'))cls+=' exp-memory';else if(title.includes('real-world')||title.includes('example'))cls+=' exp-realworld';sections.push({cls,h5});});for(let i=0;i<sections.length;i+=1){const section=sections[i],div=document.createElement('div'),next=i<sections.length-1?sections[i+1].h5:null;div.className=section.cls;section.h5.parentNode.insertBefore(div,section.h5);div.appendChild(section.h5);while(div.nextSibling&&div.nextSibling!==next)div.appendChild(div.nextSibling);}}
 function showExplanations(qi){const card=document.getElementById('qcard'+qi);if(!card)return;const opts=card.querySelectorAll('.quiz-opt'),correct=correctIndicesFor(qi);opts.forEach((opt,index)=>{const per=opt.getAttribute('data-exp');if(!per||opt.querySelector('.quiz-opt-exp-inline'))return;const ok=correct.indexOf(index)!==-1,txt=per.replace(/^(CORRECT|INCORRECT):\\s*/i,''),div=document.createElement('div'),icon=ok?'\\u2713':'\\u2717';div.className='quiz-opt-exp-inline '+(ok?'qoe-is-correct':'qoe-is-wrong');div.innerHTML='<div class=\"qoe-header\">'+(ok?'<span class=\"qoe-correct\">'+icon+' Correct</span>':'<span class=\"qoe-wrong\">'+icon+' Incorrect</span>')+' <span class=\"qoe-letter\">Option '+'ABCDEFG'[index]+'</span></div><div class=\"qoe-text\">'+txt+'</div>';opt.appendChild(div);});const overall=document.getElementById('qexp'+qi);if(!overall)return;const content=overall.querySelector('.quiz-overall-content');if(!content||!content.innerHTML.trim())return;processSections(content);overall.open=false;overall.removeAttribute('open');overall.style.display='block';}
 document.querySelectorAll('.quiz-overall').forEach((detail)=>{detail.addEventListener('toggle',function(){if(!this.open)return;document.querySelectorAll('.quiz-overall').forEach((other)=>{if(other!==this)other.open=false;});});});
 function clearOptionState(opt){opt.classList.remove('selected','correct','wrong');opt.removeAttribute('disabled');}
-function renderDraft(qi){const card=document.getElementById('qcard'+qi);if(!card)return;card.removeAttribute('data-state');const selected=drafts[qi]||[];card.querySelectorAll('.quiz-opt').forEach((opt,index)=>{clearOptionState(opt);if(selected.indexOf(index)!==-1)opt.classList.add('selected');if(emailReady||qi<5)opt.removeAttribute('disabled');else opt.setAttribute('disabled','');});const btn=card.querySelector('.quiz-submit-btn');if(btn)btn.style.display=selected.length&&(emailReady||qi<5)?'block':'none';const overall=card.querySelector('.quiz-overall');if(overall){overall.open=false;overall.removeAttribute('open');overall.style.display='';}}
+function renderDraft(qi){const card=document.getElementById('qcard'+qi);if(!card)return;card.removeAttribute('data-state');const selected=drafts[qi]||[];card.querySelectorAll('.quiz-opt').forEach((opt,index)=>{clearOptionState(opt);if(selected.indexOf(index)!==-1)opt.classList.add('selected');if(isUnlocked(qi))opt.removeAttribute('disabled');else opt.setAttribute('disabled','');});const btn=card.querySelector('.quiz-submit-btn');if(btn)btn.style.display=selected.length&&isUnlocked(qi)?'inline-flex':'none';const overall=card.querySelector('.quiz-overall');if(overall){overall.open=false;overall.removeAttribute('open');overall.style.display='';}}
 function applyResponse(qi,response){const card=document.getElementById('qcard'+qi);if(!card||!response)return;const correct=correctIndicesFor(qi),opts=card.querySelectorAll('.quiz-opt');card.dataset.state=response.isCorrect?'correct':'wrong';opts.forEach((opt)=>clearOptionState(opt));if(response.isCorrect){response.selected.forEach((index)=>{if(opts[index])opts[index].classList.add('correct');});}else{response.selected.forEach((index)=>{if(!opts[index])return;if(correct.indexOf(index)===-1)opts[index].classList.add('wrong');else opts[index].classList.add('correct');});correct.forEach((index)=>{if(opts[index])opts[index].classList.add('correct');});}opts.forEach((opt)=>opt.setAttribute('disabled',''));const btn=card.querySelector('.quiz-submit-btn');if(btn)btn.style.display='none';showExplanations(qi);}
-function currentSlotIndex(){for(let i=0;i<5;i+=1){if(!storedAnswers[i])return i;}if(!emailReady)return 5;for(let i=5;i<10;i+=1){if(!storedAnswers[i])return i;}return-1;}
-function updateStatus(){const total=scoreSlice(0,9),answeredLabel=document.getElementById('quizStatusAnswered'),scoreLabel=document.getElementById('quizStatusScore');if(answeredLabel)answeredLabel.textContent=total.answered+' of 10 interactive questions';if(scoreLabel)scoreLabel.textContent=total.correct+' correct';}
-function updateSlots(){const current=currentSlotIndex();slots.forEach((slot)=>{const idx=parseInt(slot.dataset.slot,10);slot.classList.remove('is-correct','is-wrong','is-current','is-email-locked','is-clickable');if(idx>=10)return;if(storedAnswers[idx])slot.classList.add(storedAnswers[idx].isCorrect?'is-correct':'is-wrong');else if(idx>=5&&!emailReady)slot.classList.add('is-email-locked');if(idx===current)slot.classList.add('is-current');if(idx<5||(idx<10&&emailReady))slot.classList.add('is-clickable');});}
-function updateInterstitials(){const tier1=scoreSlice(0,4),total=scoreSlice(0,9),tier1Text=document.getElementById('tier1ScoreText'),tier1Value=document.getElementById('tier1ScoreValue'),tier2Text=document.getElementById('tier2ScoreText'),tier2Value=document.getElementById('tier2ScoreValue');if(tier1Text)tier1Text.textContent=tier1.correct+'/5';if(tier1Value)tier1Value.textContent=tier1.correct+'/5';if(tierTwoInterstitial&&tier2Text&&tier2Value){tier2Text.textContent=total.correct+'/10';tier2Value.textContent=total.correct+'/10';}if(tierOneInterstitial)tierOneInterstitial.hidden=tier1.answered!==5;if(tierTwoInterstitial)tierTwoInterstitial.hidden=total.answered!==10;}
-function persistState(){writeAnswers();saveScoreState();}
-function setTierTwoAccess(open){emailReady=!!open;tierTwoCards.forEach((card)=>{card.classList.toggle('is-email-locked',!open);const content=card.querySelector('.quiz-answer-content');if(content)content.classList.toggle('quiz-gate-blur',!open);card.querySelectorAll('[data-email-overlay]').forEach((overlay)=>{overlay.hidden=open;});const qi=parseInt(card.dataset.questionIndex,10);if(!storedAnswers[qi])renderDraft(qi);});updateSlots();}
-function maybeSendCompletionEvents(qi){const tier1=scoreSlice(0,4),total=scoreSlice(0,9);if(qi===0&&!startEventSent){startEventSent=true;evt('quiz_start',{tier:1});}if(!tier1EventSent&&tier1.answered===5){tier1EventSent=true;evt('quiz_tier1_complete',{score:tier1.correct});}if(!tier2EventSent&&total.answered===10){tier2EventSent=true;evt('quiz_tier2_complete',{score_total:total.correct});}}
-function render(){interactiveCards.forEach((card)=>{const qi=parseInt(card.dataset.questionIndex,10);if(storedAnswers[qi])applyResponse(qi,storedAnswers[qi]);else renderDraft(qi);});updateStatus();updateSlots();updateInterstitials();persistState();}
-document.querySelectorAll('.quiz-opt[data-q]').forEach((opt)=>{opt.addEventListener('click',function(){const qi=parseInt(this.dataset.q,10);if(qi>=5&&!emailReady)return;if(storedAnswers[qi])return;const idx=parseInt(this.dataset.idx,10),multi=Array.isArray(answers[qi]),current=drafts[qi]?drafts[qi].slice():[];if(multi){const pos=current.indexOf(idx);if(pos===-1)current.push(idx);else current.splice(pos,1);}else{current.length=0;current.push(idx);}drafts[qi]=normalizeSelection(current);renderDraft(qi);});});
-function submitAnswer(){const qi=parseInt(this.dataset.q,10);if(qi>=5&&!emailReady)return;if(storedAnswers[qi])return;const selected=normalizeSelection(drafts[qi]);if(!selected.length)return;const correct=correctIndicesFor(qi),isCorrect=selected.length===correct.length&&selected.every((value,index)=>value===correct[index]);storedAnswers[qi]={selected,isCorrect};delete drafts[qi];render();maybeSendCompletionEvents(qi);}
+function updateHeader(){if(stepLabel)stepLabel.textContent='Question '+(currentIndex+1)+' of 15';if(miniScore){const total=scoreSlice(0,14);miniScore.textContent=total.correct+' correct so far';}if(tierLabel){let label='Free',state='free';if(currentIndex>=5&&!emailReady){label='Email required';state='locked';}else if(currentIndex>=5&&emailReady){label='Preview unlocked';state='open';}tierLabel.textContent=label;tierLabel.dataset.state=state;}}
+function updateDots(){const limit=navigationLimit();dots.forEach((dot)=>{const idx=parseInt(dot.dataset.slot,10);dot.classList.remove('is-available','is-locked','is-correct','is-wrong','is-current');dot.classList.add(idx<=limit?'is-available':'is-locked');if(storedAnswers[idx])dot.classList.add(storedAnswers[idx].isCorrect?'is-correct':'is-wrong');if(idx===currentIndex)dot.classList.add('is-current');});}
+function updateVisibleCard(){cards.forEach((card)=>{const qi=parseInt(card.dataset.questionIndex,10),active=qi===currentIndex;card.hidden=!active;card.classList.toggle('is-active',active);card.setAttribute('aria-hidden',active?'false':'true');});}
+function updateNav(){const answered=!!storedAnswers[currentIndex],complete=scoreSlice(0,14).answered===15,limit=complete?14:navigationLimit();if(prevBtn)prevBtn.disabled=currentIndex===0;if(nextBtn){nextBtn.hidden=currentIndex===14&&complete;nextBtn.disabled=!answered||currentIndex>=limit;nextBtn.textContent='Next question';}if(navMeta){if(currentIndex===5&&!emailReady)navMeta.textContent='Enter your email to continue.';else if(currentIndex===14&&complete)navMeta.textContent='Preview complete. Your score is below.';else if(answered)navMeta.textContent='Ready for the next question.';else navMeta.textContent='Choose an answer and submit to continue.';}}
+function updateFinal(){const total=scoreSlice(0,14),complete=total.answered===15;if(finalBlock){finalBlock.hidden=!complete;if(complete){finalScoreText.textContent=total.correct+'/15';finalScoreValue.textContent=total.correct+'/15';}}if(crossSell)crossSell.hidden=!complete;}
+function persistState(){writeAnswers();saveScoreState();writeCurrent();}
+function setEmailAccess(open){emailReady=!!open;cards.forEach((card)=>{const qi=parseInt(card.dataset.questionIndex,10);if(qi<5)return;card.classList.toggle('is-email-locked',!open);const content=card.querySelector('.quiz-answer-content');if(content)content.classList.toggle('quiz-gate-blur',!open);if(qi===5){card.querySelectorAll('[data-email-overlay]').forEach((overlay)=>{overlay.hidden=open;});}});if(!emailReady&&currentIndex>5)currentIndex=5;}
+function maybeSendCompletionEvents(qi){const free5=scoreSlice(0,4),total=scoreSlice(0,14);if(qi===0&&!startEventSent){startEventSent=true;evt('quiz_start',{tier:1});}if(!tier1EventSent&&free5.answered===5){tier1EventSent=true;evt('quiz_tier1_complete',{score:free5.correct});}if(!tier2EventSent&&total.answered===15){tier2EventSent=true;evt('quiz_tier2_complete',{score_total:total.correct});}}
+function render(){currentIndex=normalizeCurrent(currentIndex);cards.forEach((card)=>{const qi=parseInt(card.dataset.questionIndex,10);if(storedAnswers[qi])applyResponse(qi,storedAnswers[qi]);else renderDraft(qi);});updateVisibleCard();updateHeader();updateDots();updateNav();updateFinal();persistState();}
+function scrollToCurrent(){const card=document.getElementById('qcard'+currentIndex);if(card)card.scrollIntoView({behavior:'smooth',block:'start'});}
+document.querySelectorAll('.quiz-opt[data-q]').forEach((opt)=>{opt.addEventListener('click',function(){const qi=parseInt(this.dataset.q,10);if(!isUnlocked(qi)||storedAnswers[qi])return;const idx=parseInt(this.dataset.idx,10),multi=Array.isArray(answers[qi]),current=drafts[qi]?drafts[qi].slice():[];if(multi){const pos=current.indexOf(idx);if(pos===-1)current.push(idx);else current.splice(pos,1);}else{current.length=0;current.push(idx);}drafts[qi]=normalizeSelection(current);render();});});
+function submitAnswer(){const qi=parseInt(this.dataset.q,10);if(!isUnlocked(qi)||storedAnswers[qi])return;const selected=normalizeSelection(drafts[qi]);if(!selected.length)return;const correct=correctIndicesFor(qi),isCorrect=selected.length===correct.length&&selected.every((value,index)=>value===correct[index]);storedAnswers[qi]={selected,isCorrect};delete drafts[qi];maybeSendCompletionEvents(qi);render();}
 document.querySelectorAll('.quiz-submit-btn[data-q]').forEach((btn)=>btn.addEventListener('click',submitAnswer));
-slots.forEach((slot)=>{slot.addEventListener('click',()=>{const idx=parseInt(slot.dataset.slot,10);if(idx>=10)return;if(idx>=5&&!emailReady){const gateCard=document.getElementById('qcard5');if(gateCard)gateCard.scrollIntoView({behavior:'smooth',block:'start'});return;}const card=document.getElementById('qcard'+idx);if(card)card.scrollIntoView({behavior:'smooth',block:'start'});});});
-if(tier1ContinueBtn){tier1ContinueBtn.addEventListener('click',()=>{const gateCard=document.getElementById('qcard5');if(gateCard)gateCard.scrollIntoView({behavior:'smooth',block:'start'});if(gateEmail)window.setTimeout(()=>gateEmail.focus(),250);});}
-function handleGateSubmit(event){event.preventDefault();const email=gateEmail.value.trim().toLowerCase(),valid=/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)&&email.length<=254;if(!valid){setMessage('Use a valid email address.','is-error');return;}gateSubmit.disabled=true;gateSubmit.textContent='Sending...';setMessage('');fetch('https://app.convertkit.com/forms/'+QUIZ.convertKitFormId+'/subscriptions',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email_address:email,fields:{source:'quiz-gate-'+QUIZ.slug}})}).then((response)=>{if(!response.ok&&response.status!==200&&response.status!==201)throw new Error('gate failed');localStorage.setItem(STORAGE_EMAIL,'1');setTierTwoAccess(true);gateEmail.value='';gateEmail.disabled=true;gateSubmit.textContent='Questions ready';setMessage('Questions 6-10 are ready.','is-success');evt('quiz_email_submit');showToast('Questions 6-10 are ready.');}).catch(()=>{gateSubmit.disabled=false;gateSubmit.textContent='Continue with 5 More Questions';setMessage('That did not go through. Please try again.','is-error');});}
+if(prevBtn){prevBtn.addEventListener('click',()=>{if(currentIndex===0)return;currentIndex-=1;render();scrollToCurrent();});}
+if(nextBtn){nextBtn.addEventListener('click',()=>{const complete=scoreSlice(0,14).answered===15,limit=complete?14:navigationLimit();if(!storedAnswers[currentIndex]||currentIndex>=limit)return;currentIndex+=1;render();scrollToCurrent();if(currentIndex===5&&!emailReady&&gateEmail)window.setTimeout(()=>gateEmail.focus(),180);});}
+function handleGateSubmit(event){event.preventDefault();const email=gateEmail.value.trim().toLowerCase(),valid=/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)&&email.length<=254;if(!valid){setMessage('Use a valid email address.','is-error');return;}gateSubmit.disabled=true;gateSubmit.textContent='Sending...';setMessage('');fetch('https://app.convertkit.com/forms/'+QUIZ.convertKitFormId+'/subscriptions',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email_address:email,fields:{source:'quiz-gate-'+QUIZ.slug}})}).then((response)=>{if(!response.ok&&response.status!==200&&response.status!==201)throw new Error('gate failed');localStorage.setItem(STORAGE_EMAIL,'1');setMessage('Questions 6-15 are ready.','is-success');evt('quiz_email_submit');showToast('Questions 6-15 are ready.');gateSubmit.disabled=false;gateSubmit.textContent='Continue with 10 More Questions';setEmailAccess(true);currentIndex=Math.max(currentIndex,5);render();}).catch(()=>{gateSubmit.disabled=false;gateSubmit.textContent='Continue with 10 More Questions';setMessage('That did not go through. Please try again.','is-error');});}
 if(gateForm)gateForm.addEventListener('submit',handleGateSubmit);
-document.querySelectorAll('a[data-buy-tier],a.cp-cta[href*=\"udemy.com\"]').forEach((link)=>{link.addEventListener('click',()=>{const total=scoreSlice(0,9),tier=link.dataset.buyTier||(link.closest('#tier1Interstitial')?'tier1':'hero');evt('quiz_buy_click',{tier,score:total.correct});});});
-storedAnswers=readAnswers();emailReady=localStorage.getItem(STORAGE_EMAIL)==='1'||Object.keys(storedAnswers).some((key)=>parseInt(key,10)>=5);setTierTwoAccess(emailReady);render();evt('quiz_page_view');__EXTRA__
+document.querySelectorAll('a[href*=\"udemy.com\"]').forEach((link)=>{link.addEventListener('click',()=>{const total=scoreSlice(0,14),stage=link.dataset.buyStage||(link.closest('#quizFinal')?'final':'hero');evt('quiz_buy_click',{tier:stage,score:total.correct});});});
+storedAnswers=readAnswers();emailReady=localStorage.getItem(STORAGE_EMAIL)==='1'||Object.keys(storedAnswers).some((key)=>parseInt(key,10)>=5);startEventSent=Object.keys(storedAnswers).length>0;tier1EventSent=scoreSlice(0,4).answered===5;tier2EventSent=scoreSlice(0,14).answered===15;currentIndex=readCurrent();setEmailAccess(emailReady);render();evt('quiz_page_view');__EXTRA__
 </script>"""
 
 
@@ -562,9 +610,9 @@ def source_data(main_path: Path):
     soup = BeautifulSoup(raw, "html.parser")
     cards = soup.select("#free-quiz .quiz-card")
     answers = extract_answers(raw)
-    if len(cards) < 10 or len(answers) < 10:
-        raise ValueError(f"{source_path.name}: expected at least 10 interactive source questions.")
-    return raw, list(cards[:15]), list(answers[:10]), 'id="cdDays"' in raw
+    if len(cards) < 15 or len(answers) < 15:
+        raise ValueError(f"{source_path.name}: expected at least 15 interactive source questions.")
+    return raw, list(cards[:15]), list(answers[:15]), 'id="cdDays"' in raw
 
 
 def render_page(raw: str, slug: str, title: str, code: str, udemy: str, total_q: int, cards: list, answers: list, countdown: bool) -> str:
@@ -603,18 +651,20 @@ def validate(path: Path, slug: str) -> None:
     if len(cards) != 15:
         raise ValueError(f"{path.name}: expected 15 quiz cards.")
     tiers = [card.get("data-tier") for card in cards]
-    if tiers[:5] != ["1"] * 5 or tiers[5:10] != ["2"] * 5 or tiers[10:] != ["3"] * 5:
+    if tiers[:5] != ["1"] * 5 or tiers[5:] != ["2"] * 10:
         raise ValueError(f"{path.name}: unexpected tier distribution {tiers}.")
-    if len(extract_answers(raw)) != 10:
-        raise ValueError(f"{path.name}: expected 10 interactive answers in script.")
-    if raw.count('class="preview-slot') < 15:
-        raise ValueError(f"{path.name}: progress slots are missing.")
-    if 'id="quizGateForm"' not in raw or 'id="tier1Interstitial"' not in raw or 'id="tier2Interstitial"' not in raw:
-        raise ValueError(f"{path.name}: gate or interstitial markup is missing.")
-    if 'data-preview-style="three-tier"' not in raw:
-        raise ValueError(f"{path.name}: three-tier marker is missing.")
+    if len(extract_answers(raw)) != 15:
+        raise ValueError(f"{path.name}: expected 15 interactive answers in script.")
+    if raw.count('class="preview-dot"') < 15:
+        raise ValueError(f"{path.name}: progress dots are missing.")
+    if 'id="quizGateForm"' not in raw or 'id="quizPrevBtn"' not in raw or 'id="quizNextBtn"' not in raw or 'id="quizFinal"' not in raw:
+        raise ValueError(f"{path.name}: gate, navigation, or final result markup is missing.")
+    if 'data-preview-style="guided-15"' not in raw:
+        raise ValueError(f"{path.name}: guided preview marker is missing.")
     if "15 Free Preview Questions" not in raw:
         raise ValueError(f"{path.name}: new preview heading missing.")
+    if 'preview-progress' in raw or 'tier1Interstitial' in raw or 'tier2Interstitial' in raw:
+        raise ValueError(f"{path.name}: stacked three-tier markup still present.")
     if re.search(rf"\b{QUESTION_COUNTS[slug]}\b questions", raw) is None:
         raise ValueError(f"{path.name}: expected question count {QUESTION_COUNTS[slug]} not found.")
     if any(marker in raw for marker in MOJIBAKE_MARKERS):
@@ -632,7 +682,7 @@ def main() -> None:
         page = render_page(raw, path.stem, title, code, udemy, total_q, cards, answers, countdown)
         path.write_text(page, encoding="utf-8", newline="\n")
         validate(path, path.stem)
-        print(f"Built 3-tier funnel: {path.name}")
+        print(f"Built guided preview: {path.name}")
     cleanup_preview_pages()
     update_sitemap()
 
