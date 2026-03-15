@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CIS-DF vs CSA: Which ServiceNow Exam Should You Take First? | Lucky X Blog</title>
+<meta name="description" content="A direct comparison of CIS-Data Foundations and CSA. Covers prerequisites, exam format, career impact, study time, and which one to take first based on your background.">
+<meta name="keywords" content="CIS-DF vs CSA, ServiceNow CIS-DF or CSA first, CIS-Data Foundations vs Certified System Administrator, ServiceNow certification comparison">
+<meta name="author" content="Lukasz Szumilas">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://luckyx.dev/blog/cis-df-vs-csa.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="CIS-DF vs CSA: Which ServiceNow Exam Should You Take First?">
+<meta property="og:description" content="A direct comparison of CIS-Data Foundations and CSA. Prerequisites, exam format, career impact, and which one to take first.">
+<meta property="og:url" content="https://luckyx.dev/blog/cis-df-vs-csa.html">
+<meta property="og:site_name" content="Lucky X">
+<meta property="og:image" content="https://luckyx.dev/og-image.png">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-03-15">
+<meta property="article:author" content="Lukasz Szumilas">
+<meta property="article:section" content="Comparison Guides">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CIS-DF vs CSA: Which ServiceNow Exam Should You Take First?">
+<meta name="twitter:description" content="CIS-DF tests your CMDB and CSDM knowledge. CSA tests platform administration. Here is how to decide which one comes first.">
+<meta name="twitter:image" content="https://luckyx.dev/og-image.png">
+<meta name="twitter:creator" content="@luckyxdev">
+
+<link rel="icon" type="image/svg+xml" href="/luckyx-icon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#eeebe5">
+
+<!-- Structured Data: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "CIS-DF vs CSA: Which ServiceNow Exam Should You Take First?",
+  "description": "A direct comparison of CIS-Data Foundations and CSA. Covers prerequisites, exam format, career impact, study time, and which one to take first based on your background.",
+  "image": "https://luckyx.dev/og-image.png",
+  "datePublished": "2026-03-15",
+  "dateModified": "2026-03-15",
+  "author": {
+    "@type": "Person",
+    "name": "Lukasz Szumilas",
+    "url": "https://luckyx.dev/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lucky X",
+    "url": "https://luckyx.dev/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://luckyx.dev/luckyx-icon.svg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://luckyx.dev/blog/cis-df-vs-csa.html"
+  }
+}
+</script>
+
+<!-- Structured Data: BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Lucky X", "item": "https://luckyx.dev/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://luckyx.dev/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "CIS-DF vs CSA" }
+  ]
+}
+</script>
+
+<script>
+  (function() {
+    var t = localStorage.getItem('luckyx-theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+    else if (window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.setAttribute('data-theme', 'dark');
+    else document.documentElement.setAttribute('data-theme', 'light');
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BLYHHC76GG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BLYHHC76GG');
+</script>
+
+<style>
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --orange: #dd5c0c; --orange-bright: #ff8c42; --orange-deep: #8a3a08;
+  --bg: #111114; --bg-raised: #18181c; --bg-card: #1c1c21;
+  --border: rgba(255,255,255,0.06); --border-hover: rgba(221,92,12,0.35);
+  --text: #e0ddd8; --text-dim: #8a8580; --text-faint: #4a4540;
+  --star: #dd5c0c; --font: 'Outfit', sans-serif;
+  --card-shadow: 0 2px 12px rgba(0,0,0,0.35);
+  --grain-opacity: 0.022;
+}
+[data-theme="light"] {
+  --bg: #eeebe5; --bg-raised: #f7f5f1; --bg-card: #f7f5f1;
+  --border: rgba(0,0,0,0.08); --border-hover: rgba(221,92,12,0.4);
+  --text: #2a2725; --text-dim: #6b6560; --text-faint: #b0aaa3;
+  --card-shadow: 0 2px 16px rgba(0,0,0,0.05);
+  --grain-opacity: 0.012;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--text); font-family: var(--font);
+  -webkit-font-smoothing: antialiased; line-height: 1.7;
+  transition: background-color 0.5s ease, color 0.4s ease;
+}
+body::after {
+  content: ''; position: fixed; inset: 0; pointer-events: none;
+  opacity: var(--grain-opacity); z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+a { color: var(--orange); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Theme toggle */
+.theme-toggle-wrap { position: fixed; top: 16px; right: 16px; z-index: 1001; }
+.theme-toggle { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border); background: var(--bg-raised); cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.theme-toggle svg { width: 18px; height: 18px; stroke: var(--text-dim); stroke-width: 2; fill: none; }
+
+/* Layout */
+.bp-wrap { max-width: 1040px; margin: 0 auto; padding: 40px 24px 80px; }
+.bp-back { display: inline-flex; align-items: center; gap: 6px; color: var(--text-dim); font-size: 0.9rem; margin-bottom: 12px; transition: color 0.2s; }
+.bp-back:hover { color: var(--orange); text-decoration: none; }
+.bp-back svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 2; fill: none; }
+
+.bp-breadcrumb { font-size: 0.82rem; color: var(--text-faint); margin-bottom: 32px; }
+.bp-breadcrumb a { color: var(--text-dim); }
+.bp-breadcrumb a:hover { color: var(--orange); }
+.bp-breadcrumb span { margin: 0 6px; }
+
+/* Grid: article + sidebar */
+.bp-grid { display: grid; grid-template-columns: 1fr; gap: 48px; }
+@media (min-width: 1040px) {
+  .bp-grid { grid-template-columns: 1fr 220px; }
+}
+
+/* Article header */
+.bp-tag { display: inline-block; background: rgba(221,92,12,0.1); color: var(--orange); font-size: 0.78rem; font-weight: 600; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.04em; }
+.bp-meta { display: flex; gap: 16px; font-size: 0.82rem; color: var(--text-dim); margin-bottom: 20px; flex-wrap: wrap; }
+.bp-header h1 { font-size: 2.2rem; font-weight: 800; line-height: 1.15; margin-bottom: 12px; }
+@media (max-width: 640px) { .bp-header h1 { font-size: 1.6rem; } }
+.bp-subtitle { font-size: 1.08rem; color: var(--text-dim); line-height: 1.6; margin-bottom: 40px; }
+
+/* Prose */
+.bp-body h2 { font-size: 1.45rem; font-weight: 700; margin: 48px 0 16px; line-height: 1.25; }
+.bp-body h3 { font-size: 1.15rem; font-weight: 600; margin: 32px 0 12px; }
+.bp-body p { margin-bottom: 18px; max-width: 720px; }
+.bp-body ul, .bp-body ol { margin: 0 0 18px 24px; max-width: 720px; }
+.bp-body li { margin-bottom: 6px; }
+.bp-body blockquote { border-left: 3px solid var(--orange); padding: 12px 20px; margin: 24px 0; background: var(--bg-raised); border-radius: 0 10px 10px 0; font-style: italic; color: var(--text-dim); }
+
+/* Comparison table */
+.bp-domain-table { width: 100%; max-width: 720px; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.92rem; }
+.bp-domain-table th { text-align: left; font-weight: 600; padding: 10px 14px; border-bottom: 2px solid var(--orange); color: var(--text); }
+.bp-domain-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); }
+.bp-domain-table tr:last-child td { border-bottom: none; }
+.bp-domain-table .bp-weight { color: var(--orange); font-weight: 600; text-align: right; white-space: nowrap; }
+
+/* Versus cards */
+.bp-vs-grid { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 720px; margin: 24px 0 32px; }
+@media (min-width: 640px) { .bp-vs-grid { grid-template-columns: 1fr 1fr; } }
+.bp-vs-card { background: var(--bg-raised); border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px; }
+.bp-vs-card h3 { font-size: 1.1rem; font-weight: 700; margin: 0 0 12px; color: var(--orange); }
+.bp-vs-card p { margin-bottom: 10px; font-size: 0.92rem; }
+.bp-vs-card p:last-child { margin-bottom: 0; }
+
+/* CTA box */
+.bp-cta-box { background: var(--bg-raised); border-top: 3px solid var(--orange); border-radius: 0 0 14px 14px; padding: 28px 24px; margin: 36px 0; max-width: 720px; }
+.bp-cta-box p { margin-bottom: 14px; }
+.bp-cta-box .bp-cta-btn { display: inline-block; background: var(--orange); color: #fff; font-family: var(--font); font-size: 1rem; font-weight: 600; padding: 12px 28px; border-radius: 10px; transition: background 0.2s, transform 0.15s; margin-right: 12px; margin-bottom: 8px; }
+.bp-cta-box .bp-cta-btn:hover { background: var(--orange-bright); text-decoration: none; transform: translateY(-1px); }
+.bp-cta-box .bp-cta-btn-secondary { display: inline-block; background: transparent; color: var(--orange); border: 2px solid var(--orange); font-family: var(--font); font-size: 1rem; font-weight: 600; padding: 10px 26px; border-radius: 10px; transition: background 0.2s, transform 0.15s; margin-bottom: 8px; }
+.bp-cta-box .bp-cta-btn-secondary:hover { background: rgba(221,92,12,0.1); text-decoration: none; transform: translateY(-1px); }
+
+/* Email section */
+.bp-email-section { background: var(--bg-raised); border: 1px solid var(--border); border-radius: 14px; padding: 32px 24px; margin: 40px 0; max-width: 720px; text-align: center; }
+.bp-email-section h3 { font-size: 1.2rem; margin-bottom: 8px; }
+.bp-email-section p { color: var(--text-dim); margin-bottom: 16px; font-size: 0.95rem; }
+.bp-email-section form { display: flex; gap: 10px; max-width: 400px; margin: 0 auto; }
+.bp-email-section input[type="email"] {
+  flex: 1; padding: 10px 14px; border-radius: 8px; border: 1px solid var(--border);
+  background: var(--bg); color: var(--text); font-family: var(--font); font-size: 0.92rem;
+}
+.bp-email-section input[type="email"]::placeholder { color: var(--text-faint); }
+.bp-email-section button {
+  background: var(--orange); color: #fff; border: none; padding: 10px 20px;
+  border-radius: 8px; font-family: var(--font); font-weight: 600; font-size: 0.92rem; cursor: pointer;
+  transition: background 0.2s;
+}
+.bp-email-section button:hover { background: var(--orange-bright); }
+
+/* Sidebar TOC */
+.bp-toc { display: none; }
+@media (min-width: 1040px) {
+  .bp-toc {
+    display: block; position: sticky; top: 80px; align-self: start;
+    border-left: 2px solid var(--border); padding-left: 16px;
+  }
+}
+.bp-toc-title { font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-faint); margin-bottom: 12px; }
+.bp-toc a { display: block; font-size: 0.84rem; color: var(--text-dim); padding: 5px 0; transition: color 0.2s; line-height: 1.35; }
+.bp-toc a:hover { color: var(--orange); text-decoration: none; }
+.bp-toc a.active { color: var(--orange); }
+
+/* Footer */
+.bp-footer { text-align: center; padding: 40px 24px; font-size: 0.84rem; color: var(--text-faint); border-top: 1px solid var(--border); margin-top: 60px; }
+.bp-footer a { color: var(--text-dim); }
+
+/* Responsive table scroll */
+@media (max-width: 640px) {
+  .bp-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 20px -12px 28px; padding: 0 12px; }
+  .bp-table-wrap .bp-domain-table { min-width: 500px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Theme toggle -->
+<div class="theme-toggle-wrap">
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+  </button>
+</div>
+
+<div class="bp-wrap">
+
+  <!-- Back link -->
+  <a href="/blog/" class="bp-back">
+    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    Back to blog
+  </a>
+
+  <!-- Breadcrumb -->
+  <nav class="bp-breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Lucky X</a><span>/</span>
+    <a href="/blog/">Blog</a><span>/</span>
+    CIS-DF vs CSA
+  </nav>
+
+  <div class="bp-grid">
+    <!-- Main article -->
+    <article class="bp-article">
+      <header class="bp-header">
+        <span class="bp-tag">Comparison guide</span>
+        <div class="bp-meta">
+          <span>March 15, 2026</span>
+          <span>10 min read</span>
+        </div>
+        <h1>CIS-DF vs CSA: which ServiceNow exam should you take first?</h1>
+        <p class="bp-subtitle">Two exams, two different skill sets, one decision. CIS-Data Foundations tests your CMDB and CSDM knowledge. CSA tests platform administration. Here is how to decide which comes first.</p>
+      </header>
+
+      <div class="bp-body">
+
+        <h2 id="why-this-comparison">Why people compare these two</h2>
+
+        <p>CSA (Certified System Administrator) used to be the obvious starting point. It was the first cert on every ServiceNow career path, the one hiring managers expected, and the prerequisite for everything else.</p>
+
+        <p>Then ServiceNow introduced CIS-Data Foundations and made it mandatory for seven CIS certifications. Now anyone planning a CIS track has to pass CIS-DF before they can sit for ITSM, Discovery, HAM, SAM, Service Mapping, SIR, or VR. That created a new question: do I still start with CSA, or do I go straight to CIS-DF?</p>
+
+        <p>The answer depends on your background and where you want to end up. Both exams cost the same, take the same amount of time, and carry weight on a resume. But they test completely different things.</p>
+
+
+        <h2 id="what-each-tests">What each exam actually tests</h2>
+
+        <div class="bp-vs-grid">
+          <div class="bp-vs-card">
+            <h3>CSA</h3>
+            <p>Platform navigation, user administration, tables, forms, lists, filters, ACLs, notifications, UI policies, business rules, workflows, service catalog, reports, dashboards, update sets, instance management.</p>
+            <p>Think of it as "can you configure and manage a ServiceNow instance from the ground up?"</p>
+          </div>
+          <div class="bp-vs-card">
+            <h3>CIS-DF</h3>
+            <p>CMDB architecture, CSDM (Common Service Data Model), CI classes, CI relationships, identification and reconciliation (IRE), health metrics, data quality dashboards, service mapping concepts, discovery basics.</p>
+            <p>Think of it as "do you understand the data layer that every other module depends on?"</p>
+          </div>
+        </div>
+
+        <p>CSA is broad. It covers a little bit of everything across the platform. You will learn how ServiceNow works as a system: how to build forms, write conditions, manage users, configure notifications, and move changes between instances.</p>
+
+        <p>CIS-DF is narrow and deep. It focuses entirely on CMDB and CSDM, the data model that maps your organization's infrastructure, services, and relationships. You will learn how CIs are created, classified, reconciled, and monitored for quality.</p>
+
+        <p>There is almost no overlap between the two exams. A question about ACLs or business rules will never appear on CIS-DF. A question about IRE policies or CSDM lifecycle will never appear on CSA.</p>
+
+
+        <h2 id="side-by-side">Side-by-side comparison</h2>
+
+        <div class="bp-table-wrap">
+        <table class="bp-domain-table">
+          <thead>
+            <tr>
+              <th>Factor</th>
+              <th>CSA</th>
+              <th>CIS-DF</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Full name</td>
+              <td>Certified System Administrator</td>
+              <td>CIS-Data Foundations</td>
+            </tr>
+            <tr>
+              <td>Prerequisites</td>
+              <td>None</td>
+              <td>None (CSA recommended but not required)</td>
+            </tr>
+            <tr>
+              <td>Questions</td>
+              <td>~60</td>
+              <td>~60</td>
+            </tr>
+            <tr>
+              <td>Time limit</td>
+              <td>90 minutes</td>
+              <td>90 minutes</td>
+            </tr>
+            <tr>
+              <td>Passing score</td>
+              <td>~70% (scaled)</td>
+              <td>~70% (scaled)</td>
+            </tr>
+            <tr>
+              <td>Exam cost</td>
+              <td>$450 (retake $225)</td>
+              <td>$450 (retake $225)</td>
+            </tr>
+            <tr>
+              <td>Free first attempt</td>
+              <td>No</td>
+              <td>Yes, through June 30, 2026</td>
+            </tr>
+            <tr>
+              <td>Platform</td>
+              <td>Pearson VUE</td>
+              <td>Pearson VUE</td>
+            </tr>
+            <tr>
+              <td>Release tested</td>
+              <td>Zurich</td>
+              <td>Zurich</td>
+            </tr>
+            <tr>
+              <td>Scope</td>
+              <td>Broad platform administration</td>
+              <td>Deep CMDB/CSDM focus</td>
+            </tr>
+            <tr>
+              <td>Unlocks</td>
+              <td>All CIS and CAS certifications</td>
+              <td>7 specific CIS certs (ITSM, Discovery, HAM, SAM, Service Mapping, SIR, VR)</td>
+            </tr>
+            <tr>
+              <td>Median salary boost</td>
+              <td>$95,000 to $110,000</td>
+              <td>Adds leverage to existing CIS certs</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+
+        <p>The structural similarities are striking. Same question count, same time, same price, same platform. The difference is what they unlock and what they test.</p>
+
+        <p>CSA is the gateway to the entire ServiceNow certification ecosystem. Without it, you cannot pursue any CIS or CAS certification. CIS-DF is the gateway to a specific subset: the seven CIS certs that depend on CMDB knowledge.</p>
+
+        <p>One detail worth noting: CIS-DF currently offers a free first attempt through June 30, 2026. CSA does not. If you are going to take both anyway, taking CIS-DF first while the free attempt is available saves you $450.</p>
+
+
+        <!-- MID-ARTICLE CTA -->
+        <div class="bp-cta-box">
+          <p>Preparing for one of these exams? Both practice tests include per-option explanations, source links to Zurich documentation, and timed exam simulation.</p>
+          <a href="https://www.udemy.com/course/pass-servicenow-cis-data-foundations-cmdbcsdm/?referralCode=442CA6D450663B1D42AF" target="_blank" rel="noopener" class="bp-cta-btn">CIS-DF practice test (470 Qs)</a>
+          <a href="https://www.udemy.com/course/pass-your-servicenow-csa-certified-system-administrator/?referralCode=2AE0DFA7BE468BCA8888" target="_blank" rel="noopener" class="bp-cta-btn-secondary">CSA practice test (392 Qs)</a>
+        </div>
+
+
+        <h2 id="who-should-take-which">Who should take which first</h2>
+
+        <h3>Take CSA first if you are new to ServiceNow</h3>
+
+        <p>If you have never worked on the platform, CSA gives you the foundation everything else builds on. You will learn how tables work, how the UI is structured, how access control functions, and how data flows between modules. That knowledge makes every other certification easier to study for, including CIS-DF.</p>
+
+        <p>Most job postings for ServiceNow roles list CSA as a minimum requirement. Having it on your resume gets you past the initial filter. CIS-DF alone will not do that if the role expects general platform administration skills.</p>
+
+        <p>If you are transitioning into ServiceNow from another platform (Salesforce, Jira, SAP), CSA is the translation layer. It maps your existing admin concepts to how ServiceNow does them.</p>
+
+        <h3>Take CIS-DF first if you already work on the platform</h3>
+
+        <p>If you have been administering ServiceNow instances for six months or more, you probably already know the CSA material. You configure forms, build reports, manage users, and push update sets as part of your job. The CSA exam will just confirm what you already do daily.</p>
+
+        <p>CIS-DF is the smarter move because it fills a gap that hands-on work rarely covers. Most administrators interact with the CMDB but never learn how it actually works underneath: how IRE processes reconcile incoming data, how CSDM layers map to CI classes, or how health scoring determines data quality.</p>
+
+        <p>CIS-DF also has a deadline. Existing holders of ITSM, Discovery, HAM, SAM, Service Mapping, SIR, or VR certifications must pass CIS-DF by December 31, 2026 or those certs expire. There is no equivalent deadline for CSA. That makes CIS-DF more time-sensitive for anyone already in the ecosystem.</p>
+
+        <h3>Take CIS-DF first if you are chasing a CIS certification this year</h3>
+
+        <p>Planning to get CIS-ITSM or CIS-Discovery in 2026? You need CIS-DF first. It is a hard prerequisite, not a recommendation. ServiceNow will not let you register for those exams without a passed CIS-DF on your profile.</p>
+
+        <p>The free first attempt through June 30, 2026 makes the timing even clearer. Pass CIS-DF for free now, then spend the rest of the year working toward your target CIS cert.</p>
+
+        <h3>Take both if you can study for 8 to 10 weeks</h3>
+
+        <p>They test different material, so studying for one does not prepare you for the other. But the combined study time is manageable: roughly 4 weeks for CIS-DF and 4 to 6 weeks for CSA, assuming 8 to 10 hours per week. Passing both in a single quarter puts you ahead of most candidates in the hiring pool.</p>
+
+
+        <h2 id="study-time">Study time comparison</h2>
+
+        <div class="bp-table-wrap">
+        <table class="bp-domain-table">
+          <thead>
+            <tr>
+              <th>Factor</th>
+              <th>CSA</th>
+              <th>CIS-DF</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Recommended study time</td>
+              <td>4 to 6 weeks</td>
+              <td>3 to 4 weeks</td>
+            </tr>
+            <tr>
+              <td>Hours per week</td>
+              <td>8 to 10</td>
+              <td>8 to 10</td>
+            </tr>
+            <tr>
+              <td>Total hours</td>
+              <td>40 to 60</td>
+              <td>25 to 40</td>
+            </tr>
+            <tr>
+              <td>PDI needed?</td>
+              <td>Yes (hands-on practice)</td>
+              <td>Helpful but less critical</td>
+            </tr>
+            <tr>
+              <td>Hardest domain</td>
+              <td>Database administration / ACLs</td>
+              <td>Identification and Reconciliation (IRE)</td>
+            </tr>
+            <tr>
+              <td>Common trap</td>
+              <td>Memorizing UI without understanding logic</td>
+              <td>Ignoring CSDM lifecycle layers</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+
+        <p>CIS-DF is a shorter study cycle because the scope is narrower. You are learning one domain in depth rather than twelve domains at surface level. Most people who fail CIS-DF do so because they underestimate the CSDM and IRE sections, not because the overall volume is too large.</p>
+
+        <p>CSA takes longer because it covers the entire platform. You need hands-on time with a PDI (Personal Developer Instance) to build muscle memory for navigation, form configuration, and scripting basics. Reading documentation alone will not get you there.</p>
+
+        <p>For both exams, practice tests matter more than passive study. The exam format punishes you for "sort of" knowing an answer. Multi-select questions award zero points if you miss even one option. Timed practice runs train you to make decisions under pressure, which is where most failures happen.</p>
+
+
+        <h2 id="skip-csa">Can you skip CSA entirely?</h2>
+
+        <p>Technically, yes. CIS-DF has no prerequisites. You can pass it without holding CSA. But "can" and "should" are different questions.</p>
+
+        <p>If you skip CSA, you will miss the platform fundamentals that every other certification assumes you know. CIS-DF questions reference tables, forms, ACLs, and modules without explaining what they are. If you have never seen the ServiceNow UI, those references will confuse you.</p>
+
+        <p>The exception: if you have been working on ServiceNow for a year or more without any certifications. In that case, you already have the platform knowledge that CSA tests. Getting CIS-DF first makes sense because it adds something new to your skill set rather than validating what you already do.</p>
+
+        <p>If you are uncertain, try the free practice quiz on the <a href="/courses/csa.html#free-quiz">CSA course page</a>. If you score above 70% without studying, you can safely prioritize CIS-DF. If you score below 50%, start with CSA.</p>
+
+        <p>For a broader look at all certification paths and where CSA and CIS-DF fit, see the <a href="/blog/which-servicenow-certification-first.html">full decision guide</a> and the <a href="/blog/servicenow-certification-landscape-2026.html">certification landscape reference</a>.</p>
+
+
+        <h2 id="recommendation">The short answer</h2>
+
+        <p>New to ServiceNow? Take CSA. It teaches you how the platform works and is required for every certification path.</p>
+
+        <p>Already working on the platform? Take CIS-DF. It fills a knowledge gap, has a deadline, and currently offers a free first attempt. You can come back for CSA later, and the material will feel like a review of what you already do.</p>
+
+        <p>Planning a CIS cert this year? You need CIS-DF regardless. Take it now while the free attempt is available, then pursue your target CIS cert.</p>
+
+        <p>Have 8 to 10 weeks? Take both. The exams test different material, so there is no wasted study time. CIS-DF first (free attempt), then CSA. Two certifications in one quarter is a strong signal to any hiring manager.</p>
+
+
+        <!-- BOTTOM CTA -->
+        <div class="bp-cta-box">
+          <p>Both practice tests include per-option explanations and links to official Zurich documentation. A retake costs $225. Preparation costs $9.99.</p>
+          <a href="https://www.udemy.com/course/pass-servicenow-cis-data-foundations-cmdbcsdm/?referralCode=442CA6D450663B1D42AF" target="_blank" rel="noopener" class="bp-cta-btn">CIS-DF practice test (470 Qs)</a>
+          <a href="https://www.udemy.com/course/pass-your-servicenow-csa-certified-system-administrator/?referralCode=2AE0DFA7BE468BCA8888" target="_blank" rel="noopener" class="bp-cta-btn-secondary">CSA practice test (392 Qs)</a>
+        </div>
+
+
+        <!-- EMAIL CAPTURE -->
+        <div class="bp-email-section">
+          <h3>Get the certification roadmap</h3>
+          <p>A one-page PDF showing every ServiceNow cert path, prerequisites, and recommended order. Free, no spam.</p>
+          <form action="https://app.convertkit.com/forms/9183962/subscriptions" method="post" data-sv-form="9183962">
+            <input type="email" name="email_address" placeholder="you@company.com" required>
+            <button type="submit">Send it</button>
+          </form>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- Sidebar TOC -->
+    <aside class="bp-toc" aria-label="Table of contents">
+      <div class="bp-toc-title">On this page</div>
+      <a href="#why-this-comparison">Why people compare these two</a>
+      <a href="#what-each-tests">What each exam tests</a>
+      <a href="#side-by-side">Side-by-side comparison</a>
+      <a href="#who-should-take-which">Who should take which first</a>
+      <a href="#study-time">Study time comparison</a>
+      <a href="#skip-csa">Can you skip CSA?</a>
+      <a href="#recommendation">The short answer</a>
+    </aside>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="bp-footer">
+  &copy; 2026 Lucky X &middot; <a href="/">luckyx.dev</a> &middot; <a href="/blog/">Blog</a>
+</footer>
+
+<!-- Theme toggle JS -->
+<script>
+document.getElementById('themeToggle').addEventListener('click', function() {
+  var cur = document.documentElement.getAttribute('data-theme') || 'dark';
+  var next = cur === 'light' ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('luckyx-theme', next);
+});
+</script>
+
+<!-- TOC active state -->
+<script>
+(function() {
+  var toc = document.querySelector('.bp-toc');
+  if (!toc) return;
+  var links = toc.querySelectorAll('a');
+  var targets = [];
+  links.forEach(function(a) {
+    var id = a.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if (el) targets.push({ link: a, el: el });
+  });
+  if (!targets.length) return;
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        links.forEach(function(l) { l.classList.remove('active'); });
+        var match = targets.find(function(t) { return t.el === entry.target; });
+        if (match) match.link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -75% 0px' });
+  targets.forEach(function(t) { observer.observe(t.el); });
+})();
+</script>
+
+</body>
+</html>
