@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Pass the ServiceNow CSA Exam in 2026 | Lucky X Blog</title>
+<meta name="description" content="Everything you need to pass CSA on the first attempt: Zurich domain weights, a 5-week study plan, the five mistakes that fail people, and how to use your PDI effectively.">
+<meta name="keywords" content="ServiceNow CSA exam 2026, how to pass CSA, Certified System Administrator study guide, CSA exam prep, ServiceNow CSA practice test, CSA domain weights Zurich">
+<meta name="author" content="Lukasz Szumilas">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://luckyx.dev/blog/how-to-pass-csa-2026.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Pass the ServiceNow CSA Exam in 2026">
+<meta property="og:description" content="Zurich domain weights, a 5-week study plan, common mistakes, and free practice questions for the CSA exam.">
+<meta property="og:url" content="https://luckyx.dev/blog/how-to-pass-csa-2026.html">
+<meta property="og:site_name" content="Lucky X">
+<meta property="og:image" content="https://luckyx.dev/og-image.png">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-03-15">
+<meta property="article:author" content="Lukasz Szumilas">
+<meta property="article:section" content="Study Guides">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Pass the ServiceNow CSA Exam in 2026">
+<meta name="twitter:description" content="Domain weights, study plan, common mistakes, and free questions for ServiceNow CSA.">
+<meta name="twitter:image" content="https://luckyx.dev/og-image.png">
+<meta name="twitter:creator" content="@luckyxdev">
+
+<link rel="icon" type="image/svg+xml" href="/luckyx-icon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#eeebe5">
+
+<!-- Structured Data: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Pass the ServiceNow CSA Exam in 2026",
+  "description": "Everything you need to pass CSA on the first attempt: Zurich domain weights, a 5-week study plan, the five mistakes that fail people, and how to use your PDI effectively.",
+  "image": "https://luckyx.dev/og-image.png",
+  "datePublished": "2026-03-15",
+  "dateModified": "2026-03-15",
+  "author": {
+    "@type": "Person",
+    "name": "Lukasz Szumilas",
+    "url": "https://luckyx.dev/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lucky X",
+    "url": "https://luckyx.dev/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://luckyx.dev/luckyx-icon.svg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://luckyx.dev/blog/how-to-pass-csa-2026.html"
+  }
+}
+</script>
+
+<!-- Structured Data: BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Lucky X", "item": "https://luckyx.dev/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://luckyx.dev/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "How to Pass CSA in 2026" }
+  ]
+}
+</script>
+
+<script>
+  (function() {
+    var t = localStorage.getItem('luckyx-theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+    else if (window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.setAttribute('data-theme', 'dark');
+    else document.documentElement.setAttribute('data-theme', 'light');
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BLYHHC76GG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BLYHHC76GG');
+</script>
+
+<style>
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --orange: #dd5c0c; --orange-bright: #ff8c42; --orange-deep: #8a3a08;
+  --bg: #111114; --bg-raised: #18181c; --bg-card: #1c1c21;
+  --border: rgba(255,255,255,0.06); --border-hover: rgba(221,92,12,0.35);
+  --text: #e0ddd8; --text-dim: #8a8580; --text-faint: #4a4540;
+  --star: #dd5c0c; --font: 'Outfit', sans-serif;
+  --card-shadow: 0 2px 12px rgba(0,0,0,0.35);
+  --grain-opacity: 0.022;
+}
+[data-theme="light"] {
+  --bg: #eeebe5; --bg-raised: #f7f5f1; --bg-card: #f7f5f1;
+  --border: rgba(0,0,0,0.08); --border-hover: rgba(221,92,12,0.4);
+  --text: #2a2725; --text-dim: #6b6560; --text-faint: #b0aaa3;
+  --card-shadow: 0 2px 16px rgba(0,0,0,0.05);
+  --grain-opacity: 0.012;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--text); font-family: var(--font);
+  -webkit-font-smoothing: antialiased; line-height: 1.7;
+  transition: background-color 0.5s ease, color 0.4s ease;
+}
+body::after {
+  content: ''; position: fixed; inset: 0; pointer-events: none;
+  opacity: var(--grain-opacity); z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+a { color: var(--orange); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Theme toggle */
+.theme-toggle-wrap { position: fixed; top: 16px; right: 16px; z-index: 1001; }
+.theme-toggle { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border); background: var(--bg-raised); cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.theme-toggle svg { width: 18px; height: 18px; stroke: var(--text-dim); stroke-width: 2; fill: none; }
+
+/* Layout */
+.bp-wrap { max-width: 1040px; margin: 0 auto; padding: 40px 24px 80px; }
+.bp-back { display: inline-flex; align-items: center; gap: 6px; color: var(--text-dim); font-size: 0.9rem; margin-bottom: 12px; transition: color 0.2s; }
+.bp-back:hover { color: var(--orange); text-decoration: none; }
+.bp-back svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 2; fill: none; }
+
+.bp-breadcrumb { font-size: 0.82rem; color: var(--text-faint); margin-bottom: 32px; }
+.bp-breadcrumb a { color: var(--text-dim); }
+.bp-breadcrumb a:hover { color: var(--orange); }
+.bp-breadcrumb span { margin: 0 6px; }
+
+/* Grid: article + sidebar */
+.bp-grid { display: grid; grid-template-columns: 1fr; gap: 48px; }
+@media (min-width: 1040px) {
+  .bp-grid { grid-template-columns: 1fr 220px; }
+}
+
+/* Article header */
+.bp-tag { display: inline-block; background: rgba(221,92,12,0.1); color: var(--orange); font-size: 0.78rem; font-weight: 600; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.04em; }
+.bp-meta { display: flex; gap: 16px; font-size: 0.82rem; color: var(--text-dim); margin-bottom: 20px; flex-wrap: wrap; }
+.bp-header h1 { font-size: 2.2rem; font-weight: 800; line-height: 1.15; margin-bottom: 12px; }
+@media (max-width: 640px) { .bp-header h1 { font-size: 1.6rem; } }
+.bp-subtitle { font-size: 1.08rem; color: var(--text-dim); line-height: 1.6; margin-bottom: 40px; }
+
+/* Prose */
+.bp-body h2 { font-size: 1.45rem; font-weight: 700; margin: 48px 0 16px; line-height: 1.25; }
+.bp-body h3 { font-size: 1.15rem; font-weight: 600; margin: 32px 0 12px; }
+.bp-body p { margin-bottom: 18px; max-width: 720px; }
+.bp-body ul, .bp-body ol { margin: 0 0 18px 24px; max-width: 720px; }
+.bp-body li { margin-bottom: 6px; }
+.bp-body blockquote { border-left: 3px solid var(--orange); padding: 12px 20px; margin: 24px 0; background: var(--bg-raised); border-radius: 0 10px 10px 0; font-style: italic; color: var(--text-dim); }
+
+/* Domain table */
+.bp-domain-table { width: 100%; max-width: 720px; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.92rem; }
+.bp-domain-table th { text-align: left; font-weight: 600; padding: 10px 14px; border-bottom: 2px solid var(--orange); color: var(--text); }
+.bp-domain-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); }
+.bp-domain-table tr:last-child td { border-bottom: none; }
+.bp-domain-table .bp-weight { color: var(--orange); font-weight: 600; text-align: right; white-space: nowrap; }
+
+/* Week cards */
+.bp-weeks { display: grid; gap: 16px; max-width: 720px; margin: 20px 0 28px; }
+.bp-week { background: var(--bg-raised); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+.bp-week-label { font-size: 0.78rem; font-weight: 600; color: var(--orange); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px; }
+.bp-week p { margin-bottom: 0; }
+
+/* CTA box */
+.bp-cta-box { background: var(--bg-raised); border-top: 3px solid var(--orange); border-radius: 0 0 14px 14px; padding: 28px 24px; margin: 36px 0; max-width: 720px; }
+.bp-cta-box p { margin-bottom: 14px; }
+.bp-cta-box .bp-cta-btn { display: inline-block; background: var(--orange); color: #fff; font-family: var(--font); font-size: 1rem; font-weight: 600; padding: 12px 28px; border-radius: 10px; transition: background 0.2s, transform 0.15s; }
+.bp-cta-box .bp-cta-btn:hover { background: var(--orange-bright); text-decoration: none; transform: translateY(-1px); }
+
+/* Email section */
+.bp-email-section { background: var(--bg-raised); border: 1px solid var(--border); border-radius: 14px; padding: 32px 24px; margin: 40px 0; max-width: 720px; text-align: center; }
+.bp-email-section h3 { font-size: 1.2rem; margin-bottom: 8px; }
+.bp-email-section p { color: var(--text-dim); margin-bottom: 16px; font-size: 0.95rem; }
+.bp-email-section form { display: flex; gap: 10px; max-width: 400px; margin: 0 auto; }
+.bp-email-section input[type="email"] {
+  flex: 1; padding: 10px 14px; border-radius: 8px; border: 1px solid var(--border);
+  background: var(--bg); color: var(--text); font-family: var(--font); font-size: 0.92rem;
+}
+.bp-email-section input[type="email"]::placeholder { color: var(--text-faint); }
+.bp-email-section button {
+  background: var(--orange); color: #fff; border: none; padding: 10px 20px;
+  border-radius: 8px; font-family: var(--font); font-weight: 600; font-size: 0.92rem; cursor: pointer;
+  transition: background 0.2s;
+}
+.bp-email-section button:hover { background: var(--orange-bright); }
+
+/* Sidebar TOC */
+.bp-toc { display: none; }
+@media (min-width: 1040px) {
+  .bp-toc {
+    display: block; position: sticky; top: 80px; align-self: start;
+    border-left: 2px solid var(--border); padding-left: 16px;
+  }
+}
+.bp-toc-title { font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-faint); margin-bottom: 12px; }
+.bp-toc a { display: block; font-size: 0.84rem; color: var(--text-dim); padding: 5px 0; transition: color 0.2s; line-height: 1.35; }
+.bp-toc a:hover { color: var(--orange); text-decoration: none; }
+.bp-toc a.active { color: var(--orange); }
+
+/* Footer */
+.bp-footer { text-align: center; padding: 40px 24px; font-size: 0.84rem; color: var(--text-faint); border-top: 1px solid var(--border); margin-top: 60px; }
+.bp-footer a { color: var(--text-dim); }
+
+/* Responsive table */
+@media (max-width: 640px) {
+  .bp-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 20px -12px 28px; padding: 0 12px; }
+  .bp-table-wrap .bp-domain-table { min-width: 500px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Theme toggle -->
+<div class="theme-toggle-wrap">
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+  </button>
+</div>
+
+<div class="bp-wrap">
+
+  <!-- Back link -->
+  <a href="/blog/" class="bp-back">
+    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    Back to blog
+  </a>
+
+  <!-- Breadcrumb -->
+  <nav class="bp-breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Lucky X</a><span>/</span>
+    <a href="/blog/">Blog</a><span>/</span>
+    How to pass CSA in 2026
+  </nav>
+
+  <div class="bp-grid">
+    <!-- Main article -->
+    <article class="bp-article">
+      <header class="bp-header">
+        <span class="bp-tag">Study guide</span>
+        <div class="bp-meta">
+          <span>March 15, 2026</span>
+          <span>14 min read</span>
+        </div>
+        <h1>How to pass the ServiceNow CSA exam in 2026</h1>
+        <p class="bp-subtitle">The Certified System Administrator exam is the entry point for every ServiceNow career path. This guide covers the Zurich domain weights, a week-by-week study plan, and the mistakes that cost people a $225 retake.</p>
+      </header>
+
+      <div class="bp-body">
+
+        <h2 id="what-is-csa">What is CSA?</h2>
+
+        <p>CSA stands for Certified System Administrator. It is ServiceNow's foundational certification, the one that validates you can configure, manage, and troubleshoot a ServiceNow instance from an admin perspective.</p>
+
+        <p>Every other ServiceNow certification assumes you have CSA-level knowledge. Want CIS-ITSM? You need CSA first. Want CAS-PA? CSA first. Want CAD? CSA first. It is the prerequisite for the entire certification tree.</p>
+
+        <p>The exam covers six domains, ranging from basic platform navigation to database administration and scripting fundamentals. It is broad by design. ServiceNow wants to confirm you understand how the platform works as a whole before you specialize.</p>
+
+        <p>For hiring managers, CSA is the minimum filter. ServiceNow admin job postings almost universally list it as a requirement. Having it does not guarantee a job, but not having it will often disqualify you from the interview.</p>
+
+
+        <h2 id="exam-format">Exam format and logistics</h2>
+
+        <p>The CSA exam has approximately 60 questions. You get 90 minutes. The passing score is around 70%, though ServiceNow uses scaled scoring and does not publish the exact cutoff.</p>
+
+        <p>Most questions are multiple-choice with a single correct answer. Some ask you to select two or three options. Those multi-select questions are the hardest to get right because partial credit does not exist. Miss one correct option out of three and you score zero on that question.</p>
+
+        <p>The exam runs on the Pearson VUE platform. ServiceNow migrated from Kryterion/Webassessor in November 2025. You can take it at a Pearson VUE testing center or online with the OnVUE app. The online option requires a webcam, a clear desk, and no second monitor.</p>
+
+        <p>All questions target the Zurich release. If you study from Xanadu or Washington documentation, some answers will be wrong. Always check the release selector on docs.servicenow.com before trusting a page.</p>
+
+        <p>The exam costs $450 for the first attempt. Retakes cost $225. Unlike CIS-DF, there is no free first attempt for CSA. That makes preparation worth more per dollar: a $9.99 practice test versus a $225 retake is a 22x return on investment if it helps you pass on the first try.</p>
+
+
+        <h2 id="domains">Domain breakdown and weights</h2>
+
+        <p>ServiceNow splits CSA into six domains. The weights determine how many questions come from each section. Study time should match these proportions. If you spend equal time on all six, you are over-preparing for the small domains and under-preparing for the ones that carry the exam.</p>
+
+        <div class="bp-table-wrap">
+        <table class="bp-domain-table">
+          <thead>
+            <tr>
+              <th>Domain</th>
+              <th>What it covers</th>
+              <th class="bp-weight">Weight</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Database Administration and Security</td>
+              <td>Tables, columns, ACLs, data policies, import sets, LDAP, SSO, encryption, roles, groups, user administration</td>
+              <td class="bp-weight">~27%</td>
+            </tr>
+            <tr>
+              <td>Self-Service and Process Automation</td>
+              <td>Service Catalog, service portal, knowledge management, workflow/flow designer, notifications, SLAs, inbound email actions</td>
+              <td class="bp-weight">~20%</td>
+            </tr>
+            <tr>
+              <td>Configuring Applications for Collaboration</td>
+              <td>Task management, incident/problem/change, visual task boards, assignment rules, Connect Chat, teams</td>
+              <td class="bp-weight">~20%</td>
+            </tr>
+            <tr>
+              <td>Introduction to Development</td>
+              <td>Scripting basics (client scripts, business rules, UI policies, UI actions), script includes, GlideRecord, GlideSystem, debugging</td>
+              <td class="bp-weight">~15%</td>
+            </tr>
+            <tr>
+              <td>Instance Configuration</td>
+              <td>Plugins, update sets, system properties, application menus, lists, forms, related lists, views, homepages, dashboards</td>
+              <td class="bp-weight">~11%</td>
+            </tr>
+            <tr>
+              <td>Platform Overview and Navigation</td>
+              <td>UI components, application navigator, lists, forms, platform architecture overview, personas</td>
+              <td class="bp-weight">~7%</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+
+        <p>Database Administration and Security alone is 27% of the exam. That is more than a quarter of your score from one domain. If you are weak on ACLs, data policies, or user/group/role relationships, fix that before anything else.</p>
+
+        <p>The two 20% domains (Self-Service and Collaboration) together account for 40%. Combined with Database Admin, those three domains make up 67% of the exam. Two-thirds of your score comes from three sections. Prioritize them.</p>
+
+        <p>Platform Overview at 7% is the smallest domain. Do not spend a full week on it. A single pass through the docs is enough. The questions are straightforward if you have spent any time on the platform.</p>
+
+
+        <!-- MID-ARTICLE CTA -->
+        <div class="bp-cta-box">
+          <p>The CSA practice test on Udemy has 392 questions mapped to all six domains. Every question includes a per-option explanation that links to official Zurich documentation. The course costs $9.99 with the referral link below.</p>
+          <p>A retake costs $225. Preparation costs less than a coffee.</p>
+          <a href="https://www.udemy.com/course/pass-your-servicenow-csa-certified-system-administrator/?referralCode=2AE0DFA7BE468BCA8888" target="_blank" rel="noopener" class="bp-cta-btn">Get the 392-question practice test ($9.99)</a>
+        </div>
+
+
+        <h2 id="study-plan">5-week study plan</h2>
+
+        <p>This plan assumes 8 to 10 hours per week. CSA is broader than CIS-DF, so it needs an extra week. If you have more time, compress it. If you have less, stretch to 7 weeks but do not skip the timed practice exams in week 5.</p>
+
+        <div class="bp-weeks">
+          <div class="bp-week">
+            <div class="bp-week-label">Week 1: Platform fundamentals and navigation</div>
+            <p>Set up a Personal Developer Instance (PDI) from developer.servicenow.com. Spend this week getting comfortable: navigate the application menu, explore lists and forms, create a few test records, experiment with filters and views. Cover the Platform Overview (~7%) and Instance Configuration (~11%) domains. These are the smallest slices of the exam, but they build the vocabulary everything else depends on.</p>
+          </div>
+          <div class="bp-week">
+            <div class="bp-week-label">Week 2: Database administration and security</div>
+            <p>This is 27% of the exam. Learn how tables and columns work, how to create and modify them, and how data dictionary entries control field behavior. Study ACLs in depth: how they evaluate, how they interact with roles, and what happens when multiple ACLs apply to the same record. Practice creating roles, groups, and users in your PDI. Cover import sets, LDAP configuration concepts, and data policies. Do not move on until you can explain the ACL evaluation order without checking notes.</p>
+          </div>
+          <div class="bp-week">
+            <div class="bp-week-label">Week 3: Self-service and process automation</div>
+            <p>Another 20% domain. Build a service catalog item from scratch in your PDI: create the item, add variables, attach a workflow or flow, configure approvals, and test the request. Study knowledge management (knowledge bases, article lifecycle, feedback). Learn how SLAs work: when they attach, how they pause, and what triggers a breach. Cover notifications and inbound email actions. Hands-on practice matters here because the exam tests "what happens when" scenarios.</p>
+          </div>
+          <div class="bp-week">
+            <div class="bp-week-label">Week 4: Collaboration apps and development basics</div>
+            <p>Cover the Collaboration domain (20%): task management, incident/problem/change workflows, assignment rules, visual task boards. Then move to Introduction to Development (15%): client scripts, UI policies, business rules, UI actions, and when to use each. You do not need to write complex GlideRecord queries from memory, but you need to understand server-side versus client-side execution, when a business rule runs versus a UI policy, and how to debug using the system log.</p>
+          </div>
+          <div class="bp-week">
+            <div class="bp-week-label">Week 5: Full-length practice exams</div>
+            <p>Take at least two full-length timed tests. 60 questions, 90 minutes, no pausing, no looking things up. After each test, review every wrong answer and identify which domain it came from. If any domain scores below 75%, go back to that section's documentation before exam day. Aim for 80%+ on practice tests. Stress during the real exam eats 5 to 10 points from your score, so you need that margin.</p>
+          </div>
+        </div>
+
+
+        <h2 id="pdi-tips">How to use your PDI effectively</h2>
+
+        <p>A Personal Developer Instance is free from <a href="https://developer.servicenow.com" target="_blank" rel="noopener">developer.servicenow.com</a>. You can spin one up in about two minutes. It comes pre-loaded with demo data, which means you get incidents, problems, changes, users, and catalog items to work with immediately.</p>
+
+        <p>The mistake most people make: they read documentation for hours and never open the PDI. CSA is a hands-on exam. Questions describe scenarios ("a user reports they cannot see a field on the incident form, what is the most likely cause?") and expect you to know what you would check first. That intuition comes from clicking around the platform, not from reading about it.</p>
+
+        <p>Build something real. Create a service catalog item that provisions a laptop request with an approval workflow. Set up ACLs that restrict a custom table to a specific role. Configure an SLA that breaches after 4 hours if a priority-1 incident is not resolved. Each of those exercises covers two or three exam domains at once.</p>
+
+        <p>Your PDI resets after a period of inactivity (usually 10 days). That is fine. Rebuilding from scratch is good practice. The second time you set up a catalog item or ACL configuration, it takes a quarter of the time and sticks in memory better.</p>
+
+
+        <h2 id="common-mistakes">5 mistakes that fail people</h2>
+
+        <p>Underestimating ACLs. Access control lists are the backbone of the Security domain, and that domain is 27% of the exam. People study ACLs once, think they understand them, and then get tripped up by evaluation order questions. Know the difference between table-level, field-level, and row-level ACLs. Know what "requires role" versus a script-based ACL condition means. Know what happens when no ACL matches.</p>
+
+        <p>Skipping the Service Catalog build. Reading about catalog items is different from building one. The exam asks about variable types, variable sets, order guides, record producers, and the request fulfillment process. If you have never created a catalog item with variables and a flow, these questions will feel abstract. Spend 90 minutes in your PDI building one end to end.</p>
+
+        <p>Confusing client-side and server-side. Client scripts run in the browser. Business rules run on the server. UI policies are client-side but have a server-side option. The exam tests when each fires, what each can access, and what happens if you use a GlideRecord call in a client script (answer: performance problems, because it makes a synchronous server call). Draw a chart of what runs where and memorize it.</p>
+
+        <p>Studying from the wrong release. ServiceNow documentation defaults to the latest release, but the CSA exam targets Zurich. Features introduced after Zurich will not appear on the test, and features that changed between releases will have different correct answers. Always set the release selector to Zurich before reading a documentation page.</p>
+
+        <p>Never simulating exam conditions. Taking a practice test while pausing to look up answers teaches you content but not exam performance. The real test gives you 90 minutes, no references, and a proctor watching. Practice under those conditions at least twice. Close all tabs, set a timer, and commit to the full 60 questions without stopping.</p>
+
+
+        <h2 id="csa-vs-cis-df">CSA or CIS-DF first?</h2>
+
+        <p>This is the most common question from people starting their ServiceNow certification journey. The short answer: if you are new to the platform, take CSA first. If you already work on ServiceNow, consider <a href="/blog/cis-df-vs-csa.html">taking CIS-DF first</a> while the free first attempt is available through June 2026.</p>
+
+        <p>CSA and CIS-DF test completely different material. There is almost no overlap. Passing one does not help you pass the other. But CSA gives you the platform vocabulary that makes every other certification easier to study for, including CIS-DF.</p>
+
+        <p>For the full comparison, including side-by-side tables and persona-based recommendations, read <a href="/blog/cis-df-vs-csa.html">CIS-DF vs CSA: which exam should you take first?</a></p>
+
+
+        <h2 id="free-questions">Try 15 free practice questions</h2>
+
+        <p>The <a href="/courses/csa.html#free-quiz">CSA course page</a> has a 15-question free preview. Each question shows per-option explanations after you answer, with links to the relevant Zurich documentation page. No email required, no paywall. Scroll to the quiz section and start.</p>
+
+        <p>If you score above 75% on the free preview without studying, you are in good shape. Focus your remaining prep on the Database Admin and Security domain (27%) and the two 20% domains. If you score below 50%, start from week 1 of the study plan above.</p>
+
+        <p>For a broader view of all ServiceNow certifications and where CSA fits in the ecosystem, see the <a href="/blog/which-servicenow-certification-first.html">certification decision guide</a> and the <a href="/blog/servicenow-certification-landscape-2026.html">2026 landscape reference</a>.</p>
+
+
+        <h2 id="resources">Where to go from here</h2>
+
+        <p>The official study resource is <a href="https://docs.servicenow.com" target="_blank" rel="noopener">docs.servicenow.com</a>, filtered to the Zurich release. Read the Platform Administration, Security, Service Catalog, and Scripting sections. These are dense, but the exam pulls questions directly from them.</p>
+
+        <p>ServiceNow's free training on <a href="https://nowlearning.servicenow.com" target="_blank" rel="noopener">Now Learning</a> includes a CSA learning path. The on-demand courses cover all six domains with labs and quizzes. The material is solid if you have the time to work through it.</p>
+
+        <p>For practice questions, the <a href="https://www.udemy.com/course/pass-your-servicenow-csa-certified-system-administrator/?referralCode=2AE0DFA7BE468BCA8888" target="_blank" rel="noopener">CSA practice test on Udemy</a> has 392 questions with per-option explanations and Zurich source links. At $9.99, you are spending less than 5% of what a single retake costs.</p>
+
+
+        <!-- BOTTOM CTA -->
+        <div class="bp-cta-box">
+          <p>The CSA exam costs $450. A retake costs $225. The entire 392-question practice test costs $9.99.</p>
+          <p>That is 4.4% of one retake fee, for a course that covers all six domains with explanations sourced from Zurich documentation.</p>
+          <a href="https://www.udemy.com/course/pass-your-servicenow-csa-certified-system-administrator/?referralCode=2AE0DFA7BE468BCA8888" target="_blank" rel="noopener" class="bp-cta-btn">Get the 392-question practice test ($9.99)</a>
+        </div>
+
+
+        <!-- EMAIL CAPTURE -->
+        <div class="bp-email-section">
+          <h3>Get the certification roadmap</h3>
+          <p>A one-page PDF showing every ServiceNow cert path, prerequisites, and recommended order. Free, no spam.</p>
+          <form action="https://app.convertkit.com/forms/9183962/subscriptions" method="post" data-sv-form="9183962">
+            <input type="email" name="email_address" placeholder="you@company.com" required>
+            <button type="submit">Send it</button>
+          </form>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- Sidebar TOC -->
+    <aside class="bp-toc" aria-label="Table of contents">
+      <div class="bp-toc-title">On this page</div>
+      <a href="#what-is-csa">What is CSA?</a>
+      <a href="#exam-format">Exam format</a>
+      <a href="#domains">Domain breakdown</a>
+      <a href="#study-plan">5-week study plan</a>
+      <a href="#pdi-tips">PDI tips</a>
+      <a href="#common-mistakes">Common mistakes</a>
+      <a href="#csa-vs-cis-df">CSA or CIS-DF first?</a>
+      <a href="#free-questions">Free questions</a>
+      <a href="#resources">Where to study</a>
+    </aside>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="bp-footer">
+  &copy; 2026 Lucky X &middot; <a href="/">luckyx.dev</a> &middot; <a href="/blog/">Blog</a>
+</footer>
+
+<!-- Theme toggle JS -->
+<script>
+document.getElementById('themeToggle').addEventListener('click', function() {
+  var cur = document.documentElement.getAttribute('data-theme') || 'dark';
+  var next = cur === 'light' ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('luckyx-theme', next);
+});
+</script>
+
+<!-- TOC active state -->
+<script>
+(function() {
+  var toc = document.querySelector('.bp-toc');
+  if (!toc) return;
+  var links = toc.querySelectorAll('a');
+  var targets = [];
+  links.forEach(function(a) {
+    var id = a.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if (el) targets.push({ link: a, el: el });
+  });
+  if (!targets.length) return;
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        links.forEach(function(l) { l.classList.remove('active'); });
+        var match = targets.find(function(t) { return t.el === entry.target; });
+        if (match) match.link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -75% 0px' });
+  targets.forEach(function(t) { observer.observe(t.el); });
+})();
+</script>
+
+</body>
+</html>
