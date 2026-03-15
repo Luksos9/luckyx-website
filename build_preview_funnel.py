@@ -97,6 +97,7 @@ QUIZ_CSS = """/* Quiz section */
 .preview-dot.is-correct{background:#2ea043;border-color:#2ea043;opacity:1}
 .preview-dot.is-wrong{background:#d73a49;border-color:#d73a49;opacity:1}
 .preview-dot.is-current{border-color:var(--orange);box-shadow:0 0 0 3px rgba(221,92,12,.14)}
+.quiz-stage{position:relative}
 .quiz-card-stack{position:relative}
 .quiz-card{background:var(--bg-raised);border:1px solid var(--border);border-radius:16px;padding:20px 20px 18px;margin-bottom:14px;transition:border-color .2s,background .2s}
 .quiz-card[hidden]{display:none!important}
@@ -171,6 +172,9 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
 .quiz-gate-message{margin-top:10px;font-size:.85rem;color:var(--text-dim);min-height:1.3em}
 .quiz-gate-message.is-error{color:#ff868f}
 .quiz-gate-message.is-success{color:#2ea043}
+.quiz-stage-blocker{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:18px;border-radius:18px;background:rgba(7,9,13,.74);backdrop-filter:blur(2px);z-index:8}
+.quiz-stage-blocker[hidden]{display:none!important}
+.quiz-stage.is-gated .quiz-nav,.quiz-stage.is-gated .quiz-card.is-active{pointer-events:none}
 .quiz-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px;padding:16px 18px;border-radius:16px;border:1px solid var(--border);background:rgba(255,255,255,.02)}
 .quiz-nav-meta{flex:1;color:var(--text-dim);font-size:.9rem;line-height:1.5;text-align:center}
 .quiz-final{margin-top:22px;padding:24px;border-radius:18px;border:1px solid rgba(221,92,12,.2);background:radial-gradient(circle at top right,rgba(221,92,12,.1),transparent 44%),linear-gradient(180deg,rgba(255,255,255,.015),rgba(255,255,255,.004))}
@@ -299,16 +303,26 @@ def question_wrapper(card, global_idx: int):
     return shell, content
 
 
-def gate_prompt_html() -> str:
-    return """<div class="quiz-gate-prompt" data-email-overlay>
+def stage_gate_html() -> str:
+    return """    <div class="quiz-stage-blocker" id="quizStageGate" hidden>
+      <div class="quiz-gate-card">
+        <div class="quiz-gate-title">Enter your email to continue with questions 6-15</div>
+        <p class="quiz-gate-copy">Free exam updates. No spam. Unsubscribe anytime.</p>
+        <form class="quiz-gate-form" id="quizGateForm">
+          <input type="email" class="quiz-gate-email-input" id="quizGateEmail" placeholder="you@email.com" autocomplete="email" required>
+          <button type="submit" class="quiz-gate-submit" id="quizGateSubmit">Continue with 10 More Questions</button>
+        </form>
+        <p class="quiz-gate-message" id="quizGateMessage"></p>
+      </div>
+    </div>"""
+
+
+def placeholder_gate_html(total_q: int, udemy: str) -> str:
+    return f"""<div class="quiz-gate-prompt">
   <div class="quiz-gate-card">
-    <div class="quiz-gate-title">Enter your email to continue with questions 6-15</div>
-    <p class="quiz-gate-copy">Free exam updates. No spam. Unsubscribe anytime.</p>
-    <form class="quiz-gate-form" id="quizGateForm">
-      <input type="email" class="quiz-gate-email-input" id="quizGateEmail" placeholder="you@email.com" autocomplete="email" required>
-      <button type="submit" class="quiz-gate-submit" id="quizGateSubmit">Continue with 10 More Questions</button>
-    </form>
-    <p class="quiz-gate-message" id="quizGateMessage"></p>
+    <div class="quiz-gate-title">Question coming soon.</div>
+    <p class="quiz-gate-copy">The full {total_q}-question course is already live on Udemy.</p>
+    <a href="{udemy}" target="_blank" rel="noopener" class="quiz-gate-submit" data-buy-stage="final">Get all {total_q} questions on Udemy</a>
   </div>
 </div>"""
 
@@ -335,13 +349,7 @@ def placeholder_card(global_idx: int, total_q: int, udemy: str) -> str:
         <li class="quiz-opt"><span class="quiz-opt-letter">D</span><span>Preview answer option</span></li>
       </ul>
     </div>
-    <div class="quiz-gate-prompt">
-      <div class="quiz-gate-card">
-        <div class="quiz-gate-title">Question coming soon.</div>
-        <p class="quiz-gate-copy">The full {total_q}-question course is already live on Udemy.</p>
-        <a href="{udemy}" target="_blank" rel="noopener" class="quiz-gate-submit" data-buy-stage="final">Get all {total_q} questions on Udemy</a>
-      </div>
-    </div>
+    {placeholder_gate_html(total_q, udemy)}
   </div>
 </div>
 """,
@@ -392,8 +400,6 @@ def build_card(card, global_idx: int, total_q: int, udemy: str) -> str:
         opts.insert_after(interactive_button(global_idx))
     if tier == 2:
         new_card["class"] = class_tokens(new_card) + ["is-email-locked"]
-        if global_idx == 5:
-            shell.append(BeautifulSoup(gate_prompt_html(), "html.parser"))
 
     return str(new_card)
 
@@ -482,13 +488,16 @@ def quiz_section(total_q: int, udemy: str, cards_html: list[str]) -> str:
 {progress_dots()}
       </div>
     </div>
-    <div class="quiz-card-stack">
+    <div class="quiz-stage" id="quizStage">
+      <div class="quiz-card-stack">
 {chr(10).join(cards_html)}
-    </div>
-    <div class="quiz-nav" id="quizNav">
-      <button type="button" class="quiz-secondary-btn" id="quizPrevBtn">Previous question</button>
-      <div class="quiz-nav-meta" id="quizNavMeta">Choose an answer and submit to continue.</div>
-      <button type="button" class="quiz-nav-next" id="quizNextBtn" disabled>Next question</button>
+      </div>
+      <div class="quiz-nav" id="quizNav">
+        <button type="button" class="quiz-secondary-btn" id="quizPrevBtn">Previous question</button>
+        <div class="quiz-nav-meta" id="quizNavMeta">Choose an answer and submit to continue.</div>
+        <button type="button" class="quiz-nav-next" id="quizNextBtn" disabled>Next question</button>
+      </div>
+{stage_gate_html()}
     </div>
 {final_cta(total_q, udemy)}
 {cross_sell_block()}
@@ -499,8 +508,8 @@ def quiz_section(total_q: int, udemy: str, cards_html: list[str]) -> str:
 JS_TEMPLATE = """<script>
 const QUIZ=__CONFIG__;
 const answers=__ANSWERS__;
-const STORAGE_EMAIL='luckyx-email:'+QUIZ.slug,STORAGE_ANSWERS='luckyx-answers:'+QUIZ.slug,STORAGE_SCORE='luckyx-score:'+QUIZ.slug,STORAGE_CURRENT='luckyx-current:'+QUIZ.slug;
-const themeToggle=document.getElementById('themeToggle'),cards=Array.from(document.querySelectorAll('.quiz-card')),dots=Array.from(document.querySelectorAll('.preview-dot[data-slot]')),prevBtn=document.getElementById('quizPrevBtn'),nextBtn=document.getElementById('quizNextBtn'),navMeta=document.getElementById('quizNavMeta'),stepLabel=document.getElementById('quizStepLabel'),tierLabel=document.getElementById('quizTierLabel'),miniScore=document.getElementById('quizMiniScore'),gateForm=document.getElementById('quizGateForm'),gateEmail=document.getElementById('quizGateEmail'),gateSubmit=document.getElementById('quizGateSubmit'),gateMessage=document.getElementById('quizGateMessage'),finalBlock=document.getElementById('quizFinal'),finalScoreText=document.getElementById('quizFinalScoreText'),finalScoreValue=document.getElementById('quizFinalScoreValue'),crossSell=document.getElementById('quizCrossSell'),toast=document.getElementById('quizToast');
+const STORAGE_EMAIL='luckyx-email-unlocked:v1',STORAGE_EMAIL_SOURCE='luckyx-email-source:v1',STORAGE_EMAIL_LEGACY_PREFIX='luckyx-email:',STORAGE_ANSWERS='luckyx-answers:'+QUIZ.slug,STORAGE_SCORE='luckyx-score:'+QUIZ.slug,STORAGE_CURRENT='luckyx-current:'+QUIZ.slug;
+const themeToggle=document.getElementById('themeToggle'),stage=document.getElementById('quizStage'),stageGate=document.getElementById('quizStageGate'),cards=Array.from(document.querySelectorAll('.quiz-card')),dots=Array.from(document.querySelectorAll('.preview-dot[data-slot]')),prevBtn=document.getElementById('quizPrevBtn'),nextBtn=document.getElementById('quizNextBtn'),navMeta=document.getElementById('quizNavMeta'),stepLabel=document.getElementById('quizStepLabel'),tierLabel=document.getElementById('quizTierLabel'),miniScore=document.getElementById('quizMiniScore'),gateForm=document.getElementById('quizGateForm'),gateEmail=document.getElementById('quizGateEmail'),gateSubmit=document.getElementById('quizGateSubmit'),gateMessage=document.getElementById('quizGateMessage'),finalBlock=document.getElementById('quizFinal'),finalScoreText=document.getElementById('quizFinalScoreText'),finalScoreValue=document.getElementById('quizFinalScoreValue'),crossSell=document.getElementById('quizCrossSell'),toast=document.getElementById('quizToast');
 let emailReady=false,storedAnswers={},currentIndex=0,startEventSent=false,tier1EventSent=false,tier2EventSent=false;const drafts={};
 if(themeToggle){themeToggle.addEventListener('click',()=>{const current=document.documentElement.getAttribute('data-theme');const next=current==='light'?'dark':'light';document.documentElement.setAttribute('data-theme',next);localStorage.setItem('luckyx-theme',next);});}
 function evt(name,extra){if(typeof gtag!=='function')return;gtag('event',name,Object.assign({cert:QUIZ.code},extra||{}));}
@@ -509,6 +518,9 @@ function readJson(key,fallback){try{const raw=localStorage.getItem(key);return r
 function normalizeSelection(value){if(!Array.isArray(value))return[];return Array.from(new Set(value.map((item)=>parseInt(item,10)).filter((item)=>Number.isInteger(item)&&item>=0))).sort((a,b)=>a-b);}
 function readAnswers(){const parsed=readJson(STORAGE_ANSWERS,{}),out={};if(!parsed||typeof parsed!=='object')return out;Object.keys(parsed).forEach((key)=>{const qi=parseInt(key,10),item=parsed[key];if(!Number.isInteger(qi)||qi<0||qi>=15||!item||typeof item!=='object')return;const selected=normalizeSelection(item.selected);if(!selected.length||typeof item.isCorrect!=='boolean')return;out[qi]={selected,isCorrect:item.isCorrect};});return out;}
 function readCurrent(){const raw=localStorage.getItem(STORAGE_CURRENT),value=parseInt(raw,10);return Number.isInteger(value)?value:null;}
+function hasGlobalUnlock(){return localStorage.getItem(STORAGE_EMAIL)==='1';}
+function cleanupLegacyEmailKeys(){const legacy=[];for(let i=0;i<localStorage.length;i+=1){const key=localStorage.key(i);if(key&&key.startsWith(STORAGE_EMAIL_LEGACY_PREFIX))legacy.push(key);}legacy.forEach((key)=>localStorage.removeItem(key));}
+function migrateLegacyUnlock(){if(hasGlobalUnlock()){cleanupLegacyEmailKeys();return true;}let source='';for(let i=0;i<localStorage.length;i+=1){const key=localStorage.key(i);if(!key||!key.startsWith(STORAGE_EMAIL_LEGACY_PREFIX))continue;if(localStorage.getItem(key)==='1'){source=key.slice(STORAGE_EMAIL_LEGACY_PREFIX.length);break;}}if(source){localStorage.setItem(STORAGE_EMAIL,'1');localStorage.setItem(STORAGE_EMAIL_SOURCE,source);}cleanupLegacyEmailKeys();return hasGlobalUnlock();}
 function writeAnswers(){localStorage.setItem(STORAGE_ANSWERS,JSON.stringify(storedAnswers));}
 function writeCurrent(){localStorage.setItem(STORAGE_CURRENT,String(currentIndex));}
 function scoreSlice(start,end){let answered=0,correct=0;for(let i=start;i<=end;i+=1){if(!storedAnswers[i])continue;answered+=1;if(storedAnswers[i].isCorrect)correct+=1;}return{answered,correct};}
@@ -518,6 +530,7 @@ function isUnlocked(qi){return qi<5||emailReady;}
 function nextPendingIndex(){const max=emailReady?14:5;for(let i=0;i<=max;i+=1){if(!storedAnswers[i])return i;}return max;}
 function navigationLimit(){return nextPendingIndex();}
 function normalizeCurrent(candidate){const limit=navigationLimit();if(!Number.isInteger(candidate))return limit;if(candidate<0)return 0;if(candidate>limit)return limit;return candidate;}
+function sanitizeLockedState(){if(emailReady)return;const cleaned={};Object.keys(storedAnswers).forEach((key)=>{const qi=parseInt(key,10);if(Number.isInteger(qi)&&qi>=0&&qi<5)cleaned[qi]=storedAnswers[key];});storedAnswers=cleaned;writeAnswers();const free5=scoreSlice(0,4);localStorage.setItem(STORAGE_SCORE,JSON.stringify({free5:free5.correct,total15:free5.correct}));const storedCurrent=readCurrent();currentIndex=Number.isInteger(storedCurrent)?Math.min(storedCurrent,5):nextPendingIndex();writeCurrent();}
 function setMessage(text,cls){if(!gateMessage)return;gateMessage.textContent=text||'';gateMessage.classList.remove('is-error','is-success');if(cls)gateMessage.classList.add(cls);}
 function processSections(container){if(!container||container.dataset.processed)return;container.dataset.processed='1';const h5s=Array.from(container.querySelectorAll('h5'));if(!h5s.length)return;const sections=[];h5s.forEach((h5)=>{const title=h5.textContent.toLowerCase();let cls='exp-section';if(title.includes('correct answer'))cls+=' exp-correct-answer';else if(title.includes('source'))cls+=' exp-source';else if(title.includes('expert'))cls+=' exp-expert';else if(title.includes('why')||title.includes('wrong'))cls+=' exp-wrong';else if(title.includes('memory'))cls+=' exp-memory';else if(title.includes('real-world')||title.includes('example'))cls+=' exp-realworld';sections.push({cls,h5});});for(let i=0;i<sections.length;i+=1){const section=sections[i],div=document.createElement('div'),next=i<sections.length-1?sections[i+1].h5:null;div.className=section.cls;section.h5.parentNode.insertBefore(div,section.h5);div.appendChild(section.h5);while(div.nextSibling&&div.nextSibling!==next)div.appendChild(div.nextSibling);}}
 function showExplanations(qi){const card=document.getElementById('qcard'+qi);if(!card)return;const opts=card.querySelectorAll('.quiz-opt'),correct=correctIndicesFor(qi);opts.forEach((opt,index)=>{const per=opt.getAttribute('data-exp');if(!per||opt.querySelector('.quiz-opt-exp-inline'))return;const ok=correct.indexOf(index)!==-1,txt=per.replace(/^(CORRECT|INCORRECT):\\s*/i,''),div=document.createElement('div'),icon=ok?'\\u2713':'\\u2717';div.className='quiz-opt-exp-inline '+(ok?'qoe-is-correct':'qoe-is-wrong');div.innerHTML='<div class=\"qoe-header\">'+(ok?'<span class=\"qoe-correct\">'+icon+' Correct</span>':'<span class=\"qoe-wrong\">'+icon+' Incorrect</span>')+' <span class=\"qoe-letter\">Option '+'ABCDEFG'[index]+'</span></div><div class=\"qoe-text\">'+txt+'</div>';opt.appendChild(div);});const overall=document.getElementById('qexp'+qi);if(!overall)return;const content=overall.querySelector('.quiz-overall-content');if(!content||!content.innerHTML.trim())return;processSections(content);overall.open=false;overall.removeAttribute('open');overall.style.display='block';}
@@ -528,22 +541,23 @@ function applyResponse(qi,response){const card=document.getElementById('qcard'+q
 function updateHeader(){if(stepLabel)stepLabel.textContent='Question '+(currentIndex+1)+' of 15';if(miniScore){const total=scoreSlice(0,14);miniScore.textContent=total.correct+' correct so far';}if(tierLabel){let label='Free',state='free';if(currentIndex>=5&&!emailReady){label='Email required';state='locked';}else if(currentIndex>=5&&emailReady){label='Preview unlocked';state='open';}tierLabel.textContent=label;tierLabel.dataset.state=state;}}
 function updateDots(){const limit=navigationLimit();dots.forEach((dot)=>{const idx=parseInt(dot.dataset.slot,10);dot.classList.remove('is-available','is-locked','is-correct','is-wrong','is-current');dot.classList.add(idx<=limit?'is-available':'is-locked');if(storedAnswers[idx])dot.classList.add(storedAnswers[idx].isCorrect?'is-correct':'is-wrong');if(idx===currentIndex)dot.classList.add('is-current');});}
 function updateVisibleCard(){cards.forEach((card)=>{const qi=parseInt(card.dataset.questionIndex,10),active=qi===currentIndex;card.hidden=!active;card.classList.toggle('is-active',active);card.setAttribute('aria-hidden',active?'false':'true');});}
-function updateNav(){const answered=!!storedAnswers[currentIndex],complete=scoreSlice(0,14).answered===15,limit=complete?14:navigationLimit();if(prevBtn)prevBtn.disabled=currentIndex===0;if(nextBtn){nextBtn.hidden=currentIndex===14&&complete;nextBtn.disabled=!answered||currentIndex>=limit;nextBtn.textContent='Next question';}if(navMeta){if(currentIndex===5&&!emailReady)navMeta.textContent='Enter your email to continue.';else if(currentIndex===14&&complete)navMeta.textContent='Preview complete. Your score is below.';else if(answered)navMeta.textContent='Ready for the next question.';else navMeta.textContent='Choose an answer and submit to continue.';}}
+function updateStageGate(){const gateActive=currentIndex===5&&!emailReady;if(stage)stage.classList.toggle('is-gated',gateActive);if(stageGate)stageGate.hidden=!gateActive;}
+function updateNav(){const answered=!!storedAnswers[currentIndex],complete=scoreSlice(0,14).answered===15,limit=complete?14:navigationLimit(),gateActive=currentIndex===5&&!emailReady;if(prevBtn)prevBtn.disabled=currentIndex===0||gateActive;if(nextBtn){nextBtn.hidden=currentIndex===14&&complete;nextBtn.disabled=gateActive||!answered||currentIndex>=limit;nextBtn.textContent='Next question';}if(navMeta){if(gateActive)navMeta.textContent='Enter your email to continue.';else if(currentIndex===14&&complete)navMeta.textContent='Preview complete. Your score is below.';else if(answered)navMeta.textContent='Ready for the next question.';else navMeta.textContent='Choose an answer and submit to continue.';}}
 function updateFinal(){const total=scoreSlice(0,14),complete=total.answered===15;if(finalBlock){finalBlock.hidden=!complete;if(complete){finalScoreText.textContent=total.correct+'/15';finalScoreValue.textContent=total.correct+'/15';}}if(crossSell)crossSell.hidden=!complete;}
 function persistState(){writeAnswers();saveScoreState();writeCurrent();}
-function setEmailAccess(open){emailReady=!!open;cards.forEach((card)=>{const qi=parseInt(card.dataset.questionIndex,10);if(qi<5)return;card.classList.toggle('is-email-locked',!open);const content=card.querySelector('.quiz-answer-content');if(content)content.classList.toggle('quiz-gate-blur',!open);if(qi===5){card.querySelectorAll('[data-email-overlay]').forEach((overlay)=>{overlay.hidden=open;});}});if(!emailReady&&currentIndex>5)currentIndex=5;}
+function setEmailAccess(open){emailReady=!!open;cards.forEach((card)=>{const qi=parseInt(card.dataset.questionIndex,10);if(qi<5)return;card.classList.toggle('is-email-locked',!open);const content=card.querySelector('.quiz-answer-content');if(content)content.classList.toggle('quiz-gate-blur',!open);});if(!emailReady&&currentIndex>5)currentIndex=5;}
 function maybeSendCompletionEvents(qi){const free5=scoreSlice(0,4),total=scoreSlice(0,14);if(qi===0&&!startEventSent){startEventSent=true;evt('quiz_start',{tier:1});}if(!tier1EventSent&&free5.answered===5){tier1EventSent=true;evt('quiz_tier1_complete',{score:free5.correct});}if(!tier2EventSent&&total.answered===15){tier2EventSent=true;evt('quiz_tier2_complete',{score_total:total.correct});}}
-function render(){currentIndex=normalizeCurrent(currentIndex);cards.forEach((card)=>{const qi=parseInt(card.dataset.questionIndex,10);if(storedAnswers[qi])applyResponse(qi,storedAnswers[qi]);else renderDraft(qi);});updateVisibleCard();updateHeader();updateDots();updateNav();updateFinal();persistState();}
+function render(){currentIndex=normalizeCurrent(currentIndex);cards.forEach((card)=>{const qi=parseInt(card.dataset.questionIndex,10);if(storedAnswers[qi])applyResponse(qi,storedAnswers[qi]);else renderDraft(qi);});updateVisibleCard();updateHeader();updateDots();updateStageGate();updateNav();updateFinal();persistState();}
 function scrollToCurrent(){const card=document.getElementById('qcard'+currentIndex);if(card)card.scrollIntoView({behavior:'smooth',block:'start'});}
 document.querySelectorAll('.quiz-opt[data-q]').forEach((opt)=>{opt.addEventListener('click',function(){const qi=parseInt(this.dataset.q,10);if(!isUnlocked(qi)||storedAnswers[qi])return;const idx=parseInt(this.dataset.idx,10),multi=Array.isArray(answers[qi]),current=drafts[qi]?drafts[qi].slice():[];if(multi){const pos=current.indexOf(idx);if(pos===-1)current.push(idx);else current.splice(pos,1);}else{current.length=0;current.push(idx);}drafts[qi]=normalizeSelection(current);render();});});
 function submitAnswer(){const qi=parseInt(this.dataset.q,10);if(!isUnlocked(qi)||storedAnswers[qi])return;const selected=normalizeSelection(drafts[qi]);if(!selected.length)return;const correct=correctIndicesFor(qi),isCorrect=selected.length===correct.length&&selected.every((value,index)=>value===correct[index]);storedAnswers[qi]={selected,isCorrect};delete drafts[qi];maybeSendCompletionEvents(qi);render();}
 document.querySelectorAll('.quiz-submit-btn[data-q]').forEach((btn)=>btn.addEventListener('click',submitAnswer));
-if(prevBtn){prevBtn.addEventListener('click',()=>{if(currentIndex===0)return;currentIndex-=1;render();scrollToCurrent();});}
-if(nextBtn){nextBtn.addEventListener('click',()=>{const complete=scoreSlice(0,14).answered===15,limit=complete?14:navigationLimit();if(!storedAnswers[currentIndex]||currentIndex>=limit)return;currentIndex+=1;render();scrollToCurrent();if(currentIndex===5&&!emailReady&&gateEmail)window.setTimeout(()=>gateEmail.focus(),180);});}
-function handleGateSubmit(event){event.preventDefault();const email=gateEmail.value.trim().toLowerCase(),valid=/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)&&email.length<=254;if(!valid){setMessage('Use a valid email address.','is-error');return;}gateSubmit.disabled=true;gateSubmit.textContent='Sending...';setMessage('');fetch('https://app.convertkit.com/forms/'+QUIZ.convertKitFormId+'/subscriptions',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email_address:email,fields:{source:'quiz-gate-'+QUIZ.slug}})}).then((response)=>{if(!response.ok&&response.status!==200&&response.status!==201)throw new Error('gate failed');localStorage.setItem(STORAGE_EMAIL,'1');setMessage('Questions 6-15 are ready.','is-success');evt('quiz_email_submit');showToast('Questions 6-15 are ready.');gateSubmit.disabled=false;gateSubmit.textContent='Continue with 10 More Questions';setEmailAccess(true);currentIndex=Math.max(currentIndex,5);render();}).catch(()=>{gateSubmit.disabled=false;gateSubmit.textContent='Continue with 10 More Questions';setMessage('That did not go through. Please try again.','is-error');});}
+if(prevBtn){prevBtn.addEventListener('click',()=>{if(currentIndex===0||currentIndex===5&&!emailReady)return;currentIndex-=1;render();scrollToCurrent();});}
+if(nextBtn){nextBtn.addEventListener('click',()=>{const complete=scoreSlice(0,14).answered===15,limit=complete?14:navigationLimit();if(currentIndex===5&&!emailReady)return;if(!storedAnswers[currentIndex]||currentIndex>=limit)return;currentIndex+=1;render();scrollToCurrent();if(currentIndex===5&&!emailReady&&gateEmail)window.setTimeout(()=>gateEmail.focus(),180);});}
+function handleGateSubmit(event){event.preventDefault();const email=gateEmail.value.trim().toLowerCase(),valid=/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)&&email.length<=254;if(!valid){setMessage('Use a valid email address.','is-error');return;}gateSubmit.disabled=true;gateSubmit.textContent='Sending...';setMessage('');fetch('https://app.convertkit.com/forms/'+QUIZ.convertKitFormId+'/subscriptions',{method:'POST',headers:{'Content-Type':'application/json; charset=utf-8'},body:JSON.stringify({email_address:email,fields:{source:'quiz-gate-'+QUIZ.slug}})}).then((response)=>{if(!response.ok&&response.status!==200&&response.status!==201)throw new Error('gate failed');localStorage.setItem(STORAGE_EMAIL,'1');localStorage.setItem(STORAGE_EMAIL_SOURCE,QUIZ.slug);cleanupLegacyEmailKeys();evt('quiz_email_submit');showToast('Questions 6-15 are ready.');gateForm.reset();setMessage('');gateSubmit.disabled=false;gateSubmit.textContent='Continue with 10 More Questions';setEmailAccess(true);currentIndex=Math.max(currentIndex,5);render();}).catch(()=>{gateSubmit.disabled=false;gateSubmit.textContent='Continue with 10 More Questions';setMessage('That did not go through. Please try again.','is-error');});}
 if(gateForm)gateForm.addEventListener('submit',handleGateSubmit);
 document.querySelectorAll('a[href*=\"udemy.com\"]').forEach((link)=>{link.addEventListener('click',()=>{const total=scoreSlice(0,14),stage=link.dataset.buyStage||(link.closest('#quizFinal')?'final':'hero');evt('quiz_buy_click',{tier:stage,score:total.correct});});});
-storedAnswers=readAnswers();emailReady=localStorage.getItem(STORAGE_EMAIL)==='1'||Object.keys(storedAnswers).some((key)=>parseInt(key,10)>=5);startEventSent=Object.keys(storedAnswers).length>0;tier1EventSent=scoreSlice(0,4).answered===5;tier2EventSent=scoreSlice(0,14).answered===15;currentIndex=readCurrent();setEmailAccess(emailReady);render();evt('quiz_page_view');__EXTRA__
+migrateLegacyUnlock();storedAnswers=readAnswers();emailReady=hasGlobalUnlock();if(emailReady){currentIndex=readCurrent();}else{sanitizeLockedState();}startEventSent=Object.keys(storedAnswers).length>0;tier1EventSent=scoreSlice(0,4).answered===5;tier2EventSent=scoreSlice(0,14).answered===15;setEmailAccess(emailReady);render();evt('quiz_page_view');__EXTRA__
 </script>"""
 
 
@@ -657,13 +671,13 @@ def validate(path: Path, slug: str) -> None:
         raise ValueError(f"{path.name}: expected 15 interactive answers in script.")
     if raw.count('class="preview-dot"') < 15:
         raise ValueError(f"{path.name}: progress dots are missing.")
-    if 'id="quizGateForm"' not in raw or 'id="quizPrevBtn"' not in raw or 'id="quizNextBtn"' not in raw or 'id="quizFinal"' not in raw:
+    if 'id="quizGateForm"' not in raw or 'id="quizPrevBtn"' not in raw or 'id="quizNextBtn"' not in raw or 'id="quizFinal"' not in raw or 'id="quizStageGate"' not in raw:
         raise ValueError(f"{path.name}: gate, navigation, or final result markup is missing.")
     if 'data-preview-style="guided-15"' not in raw:
         raise ValueError(f"{path.name}: guided preview marker is missing.")
     if "15 Free Preview Questions" not in raw:
         raise ValueError(f"{path.name}: new preview heading missing.")
-    if 'preview-progress' in raw or 'tier1Interstitial' in raw or 'tier2Interstitial' in raw:
+    if 'preview-progress' in raw or 'tier1Interstitial' in raw or 'tier2Interstitial' in raw or 'data-email-overlay' in raw:
         raise ValueError(f"{path.name}: stacked three-tier markup still present.")
     if re.search(rf"\b{QUESTION_COUNTS[slug]}\b questions", raw) is None:
         raise ValueError(f"{path.name}: expected question count {QUESTION_COUNTS[slug]} not found.")
