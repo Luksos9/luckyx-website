@@ -186,12 +186,12 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" href="https://fonts.googleapis.com/css2-family=Outfit:wght@300;400;500;600;700;800&display=swap" as="style">
-<link href="https://fonts.googleapis.com/css2-family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" as="style">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <link rel="dns-prefetch" href="https://app.convertkit.com">
 
-<script async src="https://www.googletagmanager.com/gtag/js-id=G-BLYHHC76GG"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BLYHHC76GG"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -2740,7 +2740,7 @@ if (savedTheme) {
 
 themeToggle.addEventListener('click', () => {
   const current = document.documentElement.getAttribute('data-theme');
-  const next = current === 'light' - 'dark' : 'light';
+  const next = current === 'light' ? 'dark' : 'light';
   document.documentElement.setAttribute('data-theme', next);
   localStorage.setItem('luckyx-theme', next);
 });
@@ -2777,9 +2777,9 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
       var elapsed = now - start;
       var progress = Math.min(elapsed / duration, 1);
       var value = ease(progress) * target;
-      var display = decimals > 0 - value.toFixed(decimals) : Math.floor(value).toString();
+      var display = decimals > 0 ? value.toFixed(decimals) : Math.floor(value).toString();
       if (useComma) display = parseInt(display).toLocaleString('en-US');
-      el.innerHTML = display + (suffix - '<span class="acc">' + suffix + '</span>' : '');
+      el.innerHTML = display + (suffix ? '<span class="acc">' + suffix + '</span>' : '');
       if (progress < 1) requestAnimationFrame(tick);
     }
 
@@ -2792,7 +2792,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
   var nums = statsRow.querySelectorAll('.stat-num[data-count-to]');
   nums.forEach(function(num) {
     var suffix = num.dataset.countSuffix || '';
-    num.innerHTML = '0' + (suffix - '<span class="acc">' + suffix + '</span>' : '');
+    num.innerHTML = '0' + (suffix ? '<span class="acc">' + suffix + '</span>' : '');
   });
 
   var statsObs = new IntersectionObserver(function(entries) {
@@ -2833,7 +2833,7 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   var sEl = document.getElementById('cdSec');
   if (!dEl) return;
 
-  function pad(n) { return n < 10 - '0' + n : n; }
+  function pad(n) { return n < 10 ? '0' + n : n; }
 
   function tick() {
     var now = Date.now();
