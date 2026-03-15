@@ -451,6 +451,120 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
   .cp-cta { width: 100%; justify-content: center; }
   .quiz-card { padding: 16px; }
 }
+
+/* ── Quiz Gate (email capture modal + guarantee badge + result enhancements) ── */
+
+/* Add class to html element early so CSS suppresses email wrap before render */
+.qg-unlocked #previewEmailWrap,
+.qg-unlocked #previewEmailWrap.show {
+  display: none !important;
+}
+
+/* ── Email gate backdrop & modal ── */
+.qg-backdrop {
+  position: fixed; inset: 0; z-index: 3000;
+  background: rgba(0, 0, 0, 0.62);
+  display: flex; align-items: center; justify-content: center;
+  padding: 16px;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.qg-backdrop.qg-visible {
+  opacity: 1; pointer-events: auto;
+}
+.qg-modal {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 40px 36px;
+  max-width: 420px; width: 100%;
+  position: relative;
+  text-align: center;
+  transform: translateY(10px);
+  transition: transform 0.25s ease;
+  z-index: 3100;
+}
+.qg-backdrop.qg-visible .qg-modal {
+  transform: translateY(0);
+}
+.qg-close {
+  position: absolute; top: 14px; right: 14px;
+  background: none; border: none; cursor: pointer;
+  color: var(--text-dim); font-size: 1.1rem;
+  padding: 6px 10px; border-radius: 8px;
+  transition: background 0.15s, color 0.15s;
+  font-family: var(--font); line-height: 1;
+}
+.qg-close:hover { background: rgba(255,255,255,0.08); color: var(--text); }
+[data-theme="light"] .qg-close:hover { background: rgba(0,0,0,0.07); }
+.qg-icon { font-size: 2.4rem; margin-bottom: 16px; display: block; }
+.qg-title {
+  font-size: 1.3rem; font-weight: 700; color: var(--text);
+  margin: 0 0 10px; line-height: 1.3;
+}
+.qg-sub {
+  font-size: 0.9rem; color: var(--text-dim);
+  margin: 0 0 24px; line-height: 1.55;
+}
+.qg-form { display: flex; flex-direction: column; gap: 10px; }
+.qg-input {
+  width: 100%; box-sizing: border-box;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 10px; padding: 13px 16px;
+  font-size: 0.95rem; color: var(--text);
+  font-family: var(--font); outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.qg-input:focus {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(221,92,12,0.15);
+}
+.qg-input::placeholder { color: var(--text-faint); }
+.qg-submit {
+  background: var(--orange); color: #fff;
+  border: none; border-radius: 10px;
+  padding: 14px 24px; font-size: 1rem; font-weight: 700;
+  cursor: pointer; font-family: var(--font);
+  transition: opacity 0.2s, transform 0.15s;
+}
+.qg-submit:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
+.qg-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+.qg-fine {
+  font-size: 0.77rem; color: var(--text-faint); margin: 10px 0 0;
+}
+@media (max-width: 480px) {
+  .qg-modal { padding: 32px 20px; }
+  .qg-title { font-size: 1.1rem; }
+}
+
+/* ── Guarantee badge (Fix 2) ── */
+.cp-guarantee {
+  display: flex; align-items: center; gap: 10px;
+  background: rgba(46,160,67,0.08); border: 1px solid rgba(46,160,67,0.22);
+  border-radius: 10px; padding: 11px 16px; margin: 14px 0 0;
+  font-size: 0.87rem; color: var(--text-dim);
+}
+.cp-guarantee-icon { font-size: 1.1rem; flex-shrink: 0; }
+.cp-guarantee-text { line-height: 1.45; }
+
+/* ── Result-section enhancements (Fix 4) ── */
+.qg-result-note {
+  font-size: 0.9rem; color: var(--text-dim); line-height: 1.55;
+  margin: 0 0 16px;
+}
+.qg-result-note strong { color: var(--text); }
+.qg-guarantee-note {
+  font-size: 0.82rem; color: var(--text-dim); margin: 10px 0 0;
+}
+/* END QG */
+
+.cp-next-label { font-size: 0.78rem; color: var(--text-faint); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 12px; }
+.cp-next-link { display: inline-flex; align-items: center; gap: 8px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 12px 18px; color: var(--text); font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: border-color .18s, background .18s; margin-bottom: 14px; }
+.cp-next-link:hover { border-color: var(--orange); background: rgba(221,92,12,.06); }
+.cp-next-arrow { color: var(--orange); font-size: 1rem; }
+.cp-next-browse { font-size: 0.82rem; color: var(--text-faint); margin-top: 4px; }
+.cp-next-browse a { color: var(--text-dim); }
+/* END CROSSSELL */
 </style>
 </head>
 <body>
@@ -682,9 +796,11 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
   </section>
 
   <div class="cp-bottom">
-    <p>Looking for a different certification-</p>
-    <a href="/#courses">Browse all 18 practice tests &rarr;</a>
-  </div>
+  <p class="cp-next-label">Many students also study:</p>
+  <a class="cp-next-link" href="/courses/cis-hrsd.html">CIS-HR Service Delivery<span class="cp-next-arrow">&rarr;</span></a>
+  <p class="cp-next-browse">or <a href="/#courses">browse all 18 practice tests</a></p>
+</div>
+<!-- END CROSSSELL -->
 
 </main>
 
@@ -1327,6 +1443,206 @@ function handleLead(form) {
 })();
 
 renderPageState({ persist: false });
+
+
+(function () {
+  'use strict';
+
+  var LOCK_KEY     = 'luckyx-email-captured';
+  var CK_ENDPOINT  = 'https://app.convertkit.com/forms/9183962/subscriptions';
+  var captured     = localStorage.getItem(LOCK_KEY) === '1';
+
+  /* ── Apply 'qg-unlocked' class to <html> early so CSS can suppress email wrap ── */
+  if (captured) document.documentElement.classList.add('qg-unlocked');
+
+  /* ── GA4 helper ── */
+  function ga4(name, params) {
+    try {
+      gtag('event', name, Object.assign(
+        {},
+        (typeof PREVIEW !== 'undefined') ? { course_slug: PREVIEW.slug } : {},
+        params || {}
+      ));
+    } catch (e) {}
+  }
+
+  /* ════════════════════════════════════════════════════════════════
+     FIX 1 — EMAIL GATE ON "Continue to Q6-10" BUTTON (page 1 only)
+     ════════════════════════════════════════════════════════════════ */
+  if (typeof PREVIEW !== 'undefined' && PREVIEW.step === 1 && !captured) {
+    var origBtn = document.getElementById('previewContinueBtn');
+    if (origBtn) {
+      /* Clone to strip existing navigation handler (preserves attributes + inner text) */
+      var newBtn = origBtn.cloneNode(true);
+      origBtn.parentNode.replaceChild(newBtn, origBtn);
+
+      newBtn.addEventListener('click', function () {
+        /* Re-check in case another tab captured since page load */
+        if (localStorage.getItem(LOCK_KEY) === '1') {
+          doNavigate();
+          return;
+        }
+        showModal();
+      });
+    }
+  }
+
+  /* ════════════════════════════════════════════════════════════════
+     FIX 2 — GUARANTEE BADGE after hero .cp-cta (all pages)
+     ════════════════════════════════════════════════════════════════ */
+  (function addGuaranteeBadge() {
+    /* Find first .cp-cta NOT inside .preview-result (that's the hero CTA) */
+    var allCtas = document.querySelectorAll('a.cp-cta');
+    var heroCta = null;
+    for (var i = 0; i < allCtas.length; i++) {
+      if (!allCtas[i].closest('.preview-result') && !allCtas[i].closest('.preview-exit-card')) {
+        heroCta = allCtas[i]; break;
+      }
+    }
+    if (!heroCta) return;
+    /* Don't double-inject */
+    var next = heroCta.nextElementSibling;
+    if (next && next.classList.contains('cp-guarantee')) return;
+    var badge = document.createElement('div');
+    badge.className = 'cp-guarantee';
+    badge.innerHTML =
+      '<span class="cp-guarantee-icon">\uD83D\uDEE1\uFE0F</span>' +
+      '<span class="cp-guarantee-text">30-day money-back guarantee through Udemy. No questions asked.</span>';
+    heroCta.parentNode.insertBefore(badge, heroCta.nextSibling);
+  }());
+
+  /* ════════════════════════════════════════════════════════════════
+     FIX 4 — ENHANCE FINAL RESULT SECTION (page 2 only)
+     Adds "You sampled 10 of N questions" + guarantee note near CTA
+     ════════════════════════════════════════════════════════════════ */
+  if (typeof PREVIEW !== 'undefined' && PREVIEW.step === 2) {
+    var resultBox = document.getElementById('previewResult');
+    if (resultBox) {
+      /* Enhance if already shown (e.g. page reloaded after completing) */
+      if (resultBox.classList.contains('show')) {
+        enhanceResultBox(resultBox);
+      }
+      /* Watch for when result becomes visible */
+      if (typeof MutationObserver !== 'undefined') {
+        var resObs = new MutationObserver(function () {
+          if (resultBox.classList.contains('show')) {
+            enhanceResultBox(resultBox);
+            resObs.disconnect();
+          }
+        });
+        resObs.observe(resultBox, { attributes: true, attributeFilter: ['class'] });
+      }
+    }
+  }
+
+  function enhanceResultBox(box) {
+    if (box.querySelector('.qg-result-note')) return; /* Already enhanced */
+    var ctaLink = box.querySelector('a.cp-cta[href*="udemy"]');
+    if (!ctaLink) return;
+
+    var qCount = (typeof PREVIEW !== 'undefined') ? PREVIEW.totalQuestionCount : null;
+
+    /* "You just sampled 10 of N questions..." */
+    if (qCount) {
+      var note = document.createElement('p');
+      note.className = 'qg-result-note';
+      note.innerHTML =
+        'You just sampled <strong>10</strong> of <strong>' + qCount + '</strong> questions. ' +
+        'The full course has sourced explanations for every wrong answer across the entire bank.';
+      ctaLink.parentNode.insertBefore(note, ctaLink);
+    }
+
+    /* Guarantee note after CTA */
+    var gNote = document.createElement('p');
+    gNote.className = 'qg-guarantee-note';
+    gNote.innerHTML = '\uD83D\uDEE1\uFE0F 30-day money-back guarantee through Udemy';
+    var refNode = ctaLink.nextSibling;
+    /* Skip a #text node if present */
+    ctaLink.parentNode.insertBefore(gNote, refNode);
+  }
+
+  /* ════════════════════════════════════════════════════════════════
+     MODAL IMPLEMENTATION
+     ════════════════════════════════════════════════════════════════ */
+  function showModal() {
+    buildModal();
+    var bd = document.getElementById('qgBackdrop');
+    if (bd) {
+      bd.classList.add('qg-visible');
+      var input = document.getElementById('qgEmail');
+      if (input) setTimeout(function () { input.focus(); }, 80);
+      ga4('quiz_gate_shown');
+    }
+  }
+
+  function buildModal() {
+    if (document.getElementById('qgBackdrop')) return;
+    var bd = document.createElement('div');
+    bd.id = 'qgBackdrop';
+    bd.className = 'qg-backdrop';
+    bd.setAttribute('role', 'dialog');
+    bd.setAttribute('aria-modal', 'true');
+    bd.setAttribute('aria-labelledby', 'qgTitle');
+    bd.innerHTML =
+      '<div class="qg-modal">' +
+        '<button class="qg-close" aria-label="Close">\u2715</button>' +
+        '<span class="qg-icon">\uD83D\uDD13</span>' +
+        '<h3 class="qg-title" id="qgTitle">Unlock 5 more questions \u2014 free</h3>' +
+        '<p class="qg-sub">One email gets you questions\u00a06\u201310 on every ServiceNow cert on this site.</p>' +
+        '<form class="qg-form">' +
+          '<input class="qg-input" id="qgEmail" type="email" ' +
+            'placeholder="you@email.com" autocomplete="email" required />' +
+          '<button class="qg-submit" type="submit">Unlock Questions \u2192</button>' +
+        '</form>' +
+        '<p class="qg-fine">No spam. Unsubscribe anytime.</p>' +
+      '</div>';
+    document.body.appendChild(bd);
+
+    bd.querySelector('.qg-close').addEventListener('click', function () {
+      bd.classList.remove('qg-visible');
+    });
+    bd.addEventListener('click', function (e) {
+      if (e.target === bd) bd.classList.remove('qg-visible');
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && bd.classList.contains('qg-visible')) {
+        bd.classList.remove('qg-visible');
+      }
+    });
+
+    bd.querySelector('.qg-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var email = (document.getElementById('qgEmail').value || '').trim();
+      if (!email) return;
+      var btn = bd.querySelector('.qg-submit');
+      btn.textContent = 'Unlocking\u2026';
+      btn.disabled = true;
+      ga4('quiz_gate_email_submitted', { email: email });
+
+      fetch(CK_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json; charset=utf-8' },
+        body: JSON.stringify({ email_address: email })
+      })
+      .then(function () { doNavigate(); })
+      .catch(function () { doNavigate(); }); /* Unlock on network error — intent shown */
+    });
+  }
+
+  function doNavigate() {
+    localStorage.setItem(LOCK_KEY, '1');
+    captured = true;
+    document.documentElement.classList.add('qg-unlocked');
+    ga4('quiz_gate_unlocked');
+    ga4('generate_lead', { currency: 'USD', value: 0 });
+    /* Replicate original continue-button behavior */
+    if (typeof persistPageState === 'function') persistPageState();
+    if (typeof evt === 'function') evt('preview_continue', { page_score: typeof score !== 'undefined' ? score : 0 });
+    window.location.href = PREVIEW.page2Url + '#free-quiz';
+  }
+
+}());
+// END QG SYSTEM
 
 </script>
 </body>

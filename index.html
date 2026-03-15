@@ -1286,6 +1286,48 @@ h3.card-title,
   line-height: 1.55;
 }
 
+/* ── Testimonials ── */
+.testimonials {
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 0 24px 56px;
+}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.tq {
+  margin: 0;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.tq-text {
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.6;
+  flex: 1;
+  margin: 0;
+}
+.tq-text::before { content: '\201C'; }
+.tq-text::after  { content: '\201D'; }
+.tq-cite {
+  font-size: 0.78rem;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.tq-name  { font-weight: 700; color: var(--text-dim); }
+.tq-cert  { color: var(--text-faint); }
+.tq-stars { color: var(--orange); font-size: 0.85rem; letter-spacing: 1px; }
+@media (max-width: 600px) { .testimonials-grid { grid-template-columns: 1fr; } }
+
 /* ============ CTA ============ */
 .cta-section {
   padding: 0;
@@ -2198,6 +2240,36 @@ h3.card-title,
 <div class="num-strip reveal">
   <p class="num-headline">7,000+ students use these tests to prepare. The explanations keep getting mentioned.</p>
   <p class="num-sub">Reviews keep circling back to the same thing: the answer breakdowns help people stop guessing and study faster.</p>
+</div>
+
+<!-- Testimonials -->
+<div class="testimonials reveal">
+  <div class="testimonials-grid">
+    <figure class="tq">
+      <p class="tq-text">Passed my CAD exam on first attempt. There was like 90% of questions there that I learned here!</p>
+      <figcaption class="tq-cite">
+        <span class="tq-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="tq-name">Orion S.</span>
+        <span class="tq-cert">CAD certification</span>
+      </figcaption>
+    </figure>
+    <figure class="tq">
+      <p class="tq-text">I passed my exam today. Almost all the questions in the exam were from this practice course. Thank you!</p>
+      <figcaption class="tq-cite">
+        <span class="tq-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="tq-name">Shubham K.</span>
+        <span class="tq-cert">CIS-HRSD certification</span>
+      </figcaption>
+    </figure>
+    <figure class="tq">
+      <p class="tq-text">Explanations are detailed with sources. I didn't have hands-on experience but still managed to pass the SIR exam.</p>
+      <figcaption class="tq-cite">
+        <span class="tq-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="tq-name">Marcin K.</span>
+        <span class="tq-cert">CIS-SIR certification</span>
+      </figcaption>
+    </figure>
+  </div>
 </div>
 
 <!-- Lead magnet -->
