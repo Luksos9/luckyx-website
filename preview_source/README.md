@@ -1,8 +1,8 @@
 This folder stores the canonical 15-question course HTML source used by `build_preview_funnel.py`.
 
 Why it exists:
-- `courses/*.html` is now generated page 1 output.
-- `courses/*-preview-2.html` is generated page 2 output.
+- `courses/*.html` is generated single-page output.
+- The build now creates one 3-tier funnel per course page.
 - Rebuilding from generated output is fragile, so the funnel build reads from `preview_source/courses/*.html` instead.
 
 Expected workflow:
