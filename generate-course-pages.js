@@ -1,11 +1,18 @@
 #!/usr/bin/env node
 /**
- * Generates individual SEO-optimized course landing pages
- * from the course data. Run: node generate-course-pages.js
+ * LEGACY GENERATOR
+ *
+ * This file still reflects the older placeholder sample-question flow and is
+ * not the source of truth for the current 2-step free preview funnel.
+ *
+ * Do not use this script to regenerate `courses/*.html` preview pages until it
+ * is migrated to the current rich-question pipeline.
  */
 
 const fs = require('fs');
 const path = require('path');
+
+console.warn('[legacy] generate-course-pages.js does not support the current 2-step preview funnel. Use build_preview_funnel.py instead.');
 
 const courses = [
   { title:"CIS-Discovery / RISCO", code:"DISCO", slug:"cis-discovery", desc:"Real exam-style questions with full Discovery and RISCO coverage across all domains", longDesc:"Prepare for the ServiceNow CIS-Discovery certification with 113 real exam-style practice questions. Covers all Discovery and RISCO domains including horizontal discovery, service mapping patterns, MID Server configuration, and credential management. Every answer links to official ServiceNow documentation.", rating:4.9, ratings:261, q:113, badge:"best", price:9.99, orig:84.99, track:"infra", ref:"https://www.udemy.com/course/pass-your-servicenow-cis-discovery-exam-vancouver-2023/?referralCode=752D974C366D4DEBE963", keywords:"CIS-Discovery, RISCO, ServiceNow Discovery practice test, CIS-Discovery exam prep, horizontal discovery, MID Server, credential management" },
