@@ -77,8 +77,8 @@
 {
   "@context": "https://schema.org",
   "@type": "Quiz",
-  "name": "5 Free CIS Vulnerability Response - ServiceNow Practice Test 2026 Practice Questions",
-  "description": "Try 5 free questions from the 15-question preview for the CIS Vulnerability Response - ServiceNow Practice Test 2026 practice test.",
+  "name": "15-Question CIS Vulnerability Response - ServiceNow Practice Test 2026 Preview",
+  "description": "Work through a 15-question preview for the CIS Vulnerability Response - ServiceNow Practice Test 2026 practice test.",
   "url": "https://luckyx.dev/courses/cis-vr.html#free-quiz",
   "educationalAlignment": {
     "@type": "AlignmentObject",
@@ -193,6 +193,218 @@
         {
           "@type": "Answer",
           "text": "block_request"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "What is the specific table name where Discovered Items are stored-",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "sn_sec_cmn_src_ci"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "sn_vul_discovered_item"
+        },
+        {
+          "@type": "Answer",
+          "text": "sn_vul_source_ci"
+        },
+        {
+          "@type": "Answer",
+          "text": "cmdb_ci_discovered"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "What is the primary function of the \"Reapply\" button on a Remediation Target Rule-",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It recalculates the target date for active Vulnerable Items that match the rule's condition."
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "It forces the rule to run against all historical Closed records."
+        },
+        {
+          "@type": "Answer",
+          "text": "It resets the SLAs for all items."
+        },
+        {
+          "@type": "Answer",
+          "text": "It creates a new rule with the same criteria."
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "Which is a common integration point between Vulnerability Response and Governance, Risk, and Compliance (GRC)- (Choose two.) (choose 2)",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Risk indicators | Risk Events"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Security incidents"
+        },
+        {
+          "@type": "Answer",
+          "text": "Problem Records"
+        },
+        {
+          "@type": "Answer",
+          "text": "Change Requests"
+        },
+        {
+          "@type": "Answer",
+          "text": "Policy Exceptions"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "In the context of Vulnerability Response Workspaces, what is a \"Remediation Effort\"-",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A container for managing multiple Remediation Tasks and VIs toward a specific goal or campaign."
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "A calculation of how much money a fix will cost."
+        },
+        {
+          "@type": "Answer",
+          "text": "A rename of the \"Change Request\" table."
+        },
+        {
+          "@type": "Answer",
+          "text": "A metric used by Performance Analytics."
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "The following integration methods are available to bring vulnerability and Cl data into the ServiceNow platform: (Choose three.) (choose 3)",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Service Graph | Import Set | REST"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "SNMP"
+        },
+        {
+          "@type": "Answer",
+          "text": "SOAP"
+        },
+        {
+          "@type": "Answer",
+          "text": "Splunk"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "Which data do Risk Score Calculators typically combine to compute a Risk Score- (Choose two.) (choose 2)",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vulnerability severity or CVSS-related scoring | Asset criticality or business impact of the CI"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "The user\u2019s theme settings"
+        },
+        {
+          "@type": "Answer",
+          "text": "The number of update sets in the instance"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "Vulnerability Solution Management correlates vulnerabilities with solutions. Which of the following is considered a \"Solution\" in this context-",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A software patch or configuration change (e.g., Microsoft KB)"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "A change request"
+        },
+        {
+          "@type": "Answer",
+          "text": "A security policy exception"
+        },
+        {
+          "@type": "Answer",
+          "text": "A firewall rule"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "When the Qualys Integration imports host detection results, which of the following actions can it perform on the Configuration Item table- (Choose two.) (choose 2)",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Update | Insert"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Re-parent"
+        },
+        {
+          "@type": "Answer",
+          "text": "Delete"
+        },
+        {
+          "@type": "Answer",
+          "text": "Re-classify"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "Select the three components of a Filter Condition: (Choose three.) (choose 3)",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Field | Operator | Value"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Sum"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "Which ServiceNow application is often installed alongside Vulnerability Response to check if CIs meet specific configuration standards (e.g., CIS Benchmarks)-",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Configuration Compliance"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Trusted Security Circles"
+        },
+        {
+          "@type": "Answer",
+          "text": "Threat Intelligence"
+        },
+        {
+          "@type": "Answer",
+          "text": "Security Incident Response"
         }
       ]
     }
@@ -323,7 +535,119 @@ a:hover { text-decoration: underline; }
 .theme-toggle svg { width: 18px; height: 18px; stroke: var(--text-dim); stroke-width: 2; fill: none; }
 
 /* Quiz section */
-.quiz-section{margin-top:48px}.quiz-section h2{font-size:1.38rem;font-weight:700;margin-bottom:10px;line-height:1.24}.quiz-intro{margin:0;color:var(--text-dim);font-size:.97rem;line-height:1.65;max-width:62ch}.preview-shell{margin-bottom:28px}.preview-kicker{display:inline-flex;align-items:center;gap:8px;margin-bottom:14px;padding:6px 12px;border-radius:999px;background:rgba(221,92,12,.08);border:1px solid rgba(221,92,12,.18);color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}.preview-status-line{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px}.preview-status-pill{display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--border);color:var(--text-dim);font-size:.84rem}.preview-status-pill strong{color:var(--text)}.preview-progress-wrap{overflow-x:auto;padding-bottom:4px}.preview-progress{display:grid;grid-template-columns:repeat(15,58px);gap:8px;list-style:none;margin:0;padding:0;min-width:max-content}.preview-slot{min-height:60px;padding:9px 6px;border-radius:12px;border:1px solid var(--border);background:var(--bg-raised);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:default;transition:border-color .18s,background .18s,transform .18s}.preview-slot.is-clickable{cursor:pointer}.preview-slot.is-clickable:hover{transform:translateY(-1px);border-color:var(--border-hover)}.preview-slot.is-current{border-color:rgba(221,92,12,.42);background:rgba(221,92,12,.08)}.preview-slot.is-correct{border-color:rgba(46,160,67,.45);background:rgba(46,160,67,.08)}.preview-slot.is-wrong{border-color:rgba(215,58,73,.45);background:rgba(215,58,73,.08)}.preview-slot.is-email-locked{opacity:.78}.preview-slot.is-locked{opacity:.55}.preview-slot-num{display:block;font-size:.94rem;font-weight:700;line-height:1.1;color:var(--text)}.preview-slot-state{display:block;margin-top:4px;font-size:.63rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text-dim)}.preview-slot.is-correct .preview-slot-num,.preview-slot.is-correct .preview-slot-state{color:#2ea043}.preview-slot.is-wrong .preview-slot-num,.preview-slot.is-wrong .preview-slot-state{color:#d73a49}.preview-slot-lock{width:16px;height:16px;margin-top:4px;color:var(--text-dim)}.preview-slot-lock svg{width:100%;height:100%;stroke:currentColor;stroke-width:1.6;fill:none}.preview-group-labels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:10px}.preview-group-label{padding:10px 12px;border-radius:12px;border:1px solid var(--border);background:rgba(255,255,255,.02);font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text-dim);text-align:center}.quiz-tier-heading{margin:26px 0 14px;padding-top:4px;font-size:.85rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--orange)}.quiz-card{background:var(--bg-raised);border:1px solid var(--border);border-radius:14px;padding:20px 20px 18px;margin-bottom:14px;transition:border-color .2s,background .2s}.quiz-card[data-state="correct"]{border-color:#2ea043}.quiz-card[data-state="wrong"]{border-color:#d73a49}.quiz-card.is-email-locked,.quiz-card.is-teaser-locked{background:linear-gradient(180deg,rgba(255,255,255,.018),rgba(255,255,255,.005))}.quiz-q{font-weight:600;font-size:1rem;margin-bottom:14px;line-height:1.5}.quiz-q-num{color:var(--orange);font-weight:700;margin-right:6px}.quiz-answer-shell{position:relative}.quiz-answer-content.quiz-gate-blur{filter:blur(4px);pointer-events:none;user-select:none}.quiz-opts{list-style:none;display:flex;flex-direction:column;gap:6px}.quiz-opt{display:flex;align-items:flex-start;gap:10px;padding:11px 12px;border-radius:12px;border:1px solid var(--border);cursor:pointer;transition:background .15s,border-color .15s;color:var(--text-dim);font-size:.94rem;line-height:1.5;flex-wrap:wrap}.quiz-opt:hover{background:rgba(221,92,12,.06);border-color:var(--border-hover)}.quiz-opt.selected{background:rgba(221,92,12,.1);border-color:var(--orange);color:var(--text)}.quiz-opt.correct{background:rgba(46,160,67,.1);border-color:#2ea043;color:var(--text)}.quiz-opt.wrong{background:rgba(215,58,73,.1);border-color:#d73a49}.quiz-opt[disabled]{pointer-events:none;cursor:default}.quiz-opt-letter{width:22px;height:22px;border-radius:50%;background:var(--bg-card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:600;flex-shrink:0;color:var(--text-dim)}.quiz-opt.selected .quiz-opt-letter{background:var(--orange);color:#fff;border-color:var(--orange)}.quiz-opt.correct .quiz-opt-letter{background:#2ea043;color:#fff;border-color:#2ea043}.quiz-opt.wrong .quiz-opt-letter{background:#d73a49;color:#fff;border-color:#d73a49}.quiz-choose{font-weight:500;color:var(--orange);font-size:.85rem;margin-left:4px}.quiz-submit-btn{display:none;margin-top:12px;padding:11px 26px;background:var(--orange);color:#fff;border:none;border-radius:10px;font-size:.92rem;font-weight:700;cursor:pointer}.quiz-submit-btn:hover{background:#c75400}.quiz-opt-exp-inline{flex-basis:100%;padding:8px 12px;border-radius:9px;font-size:.86rem;line-height:1.48;margin-top:6px}.quiz-opt-exp-inline.qoe-is-correct{background:rgba(46,160,67,.08);border-left:3px solid #2ea043}.quiz-opt-exp-inline.qoe-is-wrong{background:rgba(215,58,73,.06);border-left:3px solid #d73a49}.qoe-header{font-weight:700;margin-bottom:3px;font-size:.8rem;display:flex;align-items:center;gap:6px}.qoe-correct{color:#2ea043}.qoe-wrong{color:#d73a49}.qoe-letter,.qoe-text{color:var(--text-dim)}.quiz-opt-explains{display:none!important}.quiz-overall{display:none;margin-top:10px}.quiz-overall[style*="block"]{display:block}details.quiz-overall:not([open]) .quiz-overall-content{display:none}.quiz-overall-toggle{cursor:pointer;font-size:.88rem;font-weight:700;color:var(--orange);padding:8px 0 2px;list-style:none;display:flex;align-items:center;gap:6px}.quiz-overall-toggle::-webkit-details-marker{display:none}.quiz-overall-toggle::before{content:'';display:inline-block;width:0;height:0;border-left:5px solid var(--orange);border-top:4px solid transparent;border-bottom:4px solid transparent;transition:transform .2s}details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}.quiz-overall-content{padding:6px 0 0;background:transparent;border-radius:0;font-size:.88rem;color:var(--text-dim);line-height:1.65;margin-top:6px;border-left:none}.exp-section{margin-bottom:10px;padding:12px 14px;border-radius:11px;border-left:3px solid}.exp-section:last-child,.exp-section p:last-child,.exp-section ul:last-child{margin-bottom:0}.exp-section h5{margin:0 0 6px;font-size:.88rem;font-weight:700}.exp-section p{margin-bottom:5px}.exp-section ul{padding-left:18px;margin-bottom:5px}.exp-section li{margin-bottom:3px}.exp-correct-answer{background:rgba(46,160,67,.05);border-left-color:#2ea043}.exp-correct-answer h5{color:#2ea043}.exp-source{background:rgba(59,130,246,.05);border-left-color:#3b82f6}.exp-source h5,.exp-source a{color:#3b82f6}.exp-expert{background:rgba(139,92,246,.05);border-left-color:#8b5cf6}.exp-expert h5{color:#8b5cf6}.exp-wrong{background:rgba(215,58,73,.04);border-left-color:#d73a49}.exp-wrong h5{color:#d73a49}.exp-memory{background:rgba(217,119,6,.05);border-left-color:#d97706}.exp-memory h5{color:#d97706}.exp-realworld{background:rgba(16,185,129,.05);border-left-color:#10b981}.exp-realworld h5{color:#10b981}.quiz-gate-prompt,.quiz-locked-overlay{position:absolute;inset:14px;display:flex;align-items:center;justify-content:center;border-radius:14px;background:rgba(7,9,13,.56);z-index:4}.quiz-gate-card,.quiz-locked-card{width:min(100%,480px);padding:22px;border-radius:16px;border:1px solid rgba(221,92,12,.32);background:var(--bg-raised);box-shadow:0 18px 45px rgba(0,0,0,.28);text-align:center}.quiz-gate-title,.quiz-locked-title{font-size:1.08rem;font-weight:700;line-height:1.35}.quiz-gate-copy,.quiz-locked-copy{margin-top:10px;color:var(--text-dim);font-size:.92rem;line-height:1.6}.quiz-gate-form{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.quiz-gate-email-input{flex:1 1 220px;min-height:48px;padding:0 14px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-family:var(--font);font-size:.94rem}.quiz-gate-email-input:focus{outline:none;border-color:rgba(221,92,12,.5);box-shadow:0 0 0 3px rgba(221,92,12,.12)}.quiz-gate-submit,.quiz-locked-cta-btn,.quiz-interstitial .cp-cta,.quiz-secondary-btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:12px;border:none;background:var(--orange);color:#fff;font-family:var(--font);font-size:.95rem;font-weight:700;cursor:pointer;text-decoration:none}.quiz-gate-submit:hover,.quiz-locked-cta-btn:hover,.quiz-interstitial .cp-cta:hover,.quiz-secondary-btn:hover{background:#c75400;text-decoration:none}.quiz-secondary-btn{background:transparent;border:1px solid var(--border-hover);color:var(--text)}.quiz-secondary-btn:hover{background:rgba(221,92,12,.06)}.quiz-gate-note{margin-top:12px;color:var(--text-dim);font-size:.82rem;line-height:1.5}.quiz-gate-message{margin-top:10px;font-size:.85rem;color:var(--text-dim);min-height:1.3em}.quiz-gate-message.is-error{color:#ff868f}.quiz-gate-message.is-success{color:#2ea043}.quiz-locked-lock{width:26px;height:26px;margin:0 auto 8px;color:var(--orange)}.quiz-locked-lock svg{width:100%;height:100%;stroke:currentColor;stroke-width:1.7;fill:none}.quiz-interstitial{margin:24px 0;padding:24px;border-radius:18px;border:1px solid rgba(221,92,12,.2);background:radial-gradient(circle at top right,rgba(221,92,12,.1),transparent 44%),linear-gradient(180deg,rgba(255,255,255,.015),rgba(255,255,255,.004))}.quiz-interstitial[hidden]{display:none!important}.quiz-interstitial-kicker{color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}.quiz-interstitial h3{margin-top:10px;font-size:1.32rem;line-height:1.28}.quiz-interstitial-score{font-size:2.15rem;font-weight:800;color:var(--text);line-height:1;margin-top:16px}.quiz-interstitial-copy{margin-top:8px;color:var(--text-dim);max-width:58ch}.quiz-interstitial-anchor{margin-top:12px;color:var(--text);font-size:.92rem}.quiz-interstitial-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.quiz-cross-sell{margin-top:24px;padding:22px;border-radius:16px;border:1px solid var(--border);background:rgba(255,255,255,.02)}.quiz-cross-sell h3{font-size:1rem;margin-bottom:8px}.quiz-cross-sell p{margin:0;color:var(--text-dim);font-size:.92rem;line-height:1.6}.quiz-cross-sell-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.quiz-cross-sell-links a{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;border:1px solid var(--border-hover);background:transparent;color:var(--text);font-weight:700}.quiz-cross-sell-links a:hover{background:rgba(221,92,12,.06);border-color:var(--orange);text-decoration:none}.quiz-toast{position:fixed;right:18px;bottom:18px;z-index:1002;min-width:220px;max-width:min(360px,calc(100vw - 36px));padding:14px 16px;border-radius:12px;border:1px solid rgba(46,160,67,.35);background:rgba(18,25,21,.96);color:#e8fff0;box-shadow:0 18px 45px rgba(0,0,0,.32);font-size:.9rem;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .2s,transform .2s}.quiz-toast.show{opacity:1;transform:translateY(0)}@media (min-width:1040px){.cp-wrap{max-width:960px;padding-left:32px;padding-right:32px}.quiz-card{padding:22px 24px 20px}}@media (max-width:720px){.preview-group-labels{grid-template-columns:1fr}.quiz-gate-form{flex-direction:column}.quiz-gate-submit,.quiz-secondary-btn,.quiz-cross-sell-links a,.quiz-interstitial .cp-cta{width:100%}.quiz-gate-card,.quiz-locked-card{padding:18px}.quiz-interstitial-actions{flex-direction:column}.quiz-card{padding:16px}}
+.quiz-section{margin-top:48px}
+.quiz-section h2{font-size:1.38rem;font-weight:700;margin-bottom:10px;line-height:1.24}
+.quiz-intro{margin:0;color:var(--text-dim);font-size:.97rem;line-height:1.65;max-width:62ch}
+.preview-shell{margin-bottom:22px}
+.preview-kicker{display:inline-flex;align-items:center;gap:8px;margin-bottom:14px;padding:6px 12px;border-radius:999px;background:rgba(221,92,12,.08);border:1px solid rgba(221,92,12,.18);color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.quiz-stepper-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin:18px 0 12px}
+.quiz-stepper-label{font-size:1rem;font-weight:700;color:var(--text)}
+.quiz-stepper-tier{display:inline-flex;align-items:center;margin-top:7px;padding:6px 10px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.02);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text-dim)}
+.quiz-stepper-tier[data-state="free"]{color:#2ea043;border-color:rgba(46,160,67,.28);background:rgba(46,160,67,.08)}
+.quiz-stepper-tier[data-state="locked"]{color:var(--orange);border-color:rgba(221,92,12,.28);background:rgba(221,92,12,.08)}
+.quiz-stepper-tier[data-state="open"]{color:#3b82f6;border-color:rgba(59,130,246,.28);background:rgba(59,130,246,.08)}
+.quiz-stepper-score{font-size:.9rem;color:var(--text-dim);white-space:nowrap;padding-top:2px}
+.quiz-stepper-dots{display:grid;grid-template-columns:repeat(15,minmax(0,1fr));gap:8px}
+.preview-dot{height:10px;border-radius:999px;border:1px solid var(--border);background:var(--bg-card);opacity:.55;transition:border-color .18s,background .18s,box-shadow .18s,opacity .18s}
+.preview-dot.is-available{opacity:1}
+.preview-dot.is-locked{opacity:.38}
+.preview-dot.is-correct{background:#2ea043;border-color:#2ea043;opacity:1}
+.preview-dot.is-wrong{background:#d73a49;border-color:#d73a49;opacity:1}
+.preview-dot.is-current{border-color:var(--orange);box-shadow:0 0 0 3px rgba(221,92,12,.14)}
+.quiz-card-stack{position:relative}
+.quiz-card{background:var(--bg-raised);border:1px solid var(--border);border-radius:16px;padding:20px 20px 18px;margin-bottom:14px;transition:border-color .2s,background .2s}
+.quiz-card[hidden]{display:none!important}
+.quiz-card[data-state="correct"]{border-color:#2ea043}
+.quiz-card[data-state="wrong"]{border-color:#d73a49}
+.quiz-card.is-email-locked{background:linear-gradient(180deg,rgba(255,255,255,.018),rgba(255,255,255,.005))}
+.quiz-q{font-weight:600;font-size:1rem;margin-bottom:14px;line-height:1.5}
+.quiz-q-num{color:var(--orange);font-weight:700;margin-right:6px}
+.quiz-answer-shell{position:relative}
+.quiz-answer-content.quiz-gate-blur{filter:blur(4px);pointer-events:none;user-select:none}
+.quiz-opts{list-style:none;display:flex;flex-direction:column;gap:6px}
+.quiz-opt{display:flex;align-items:flex-start;gap:10px;padding:11px 12px;border-radius:12px;border:1px solid var(--border);cursor:pointer;transition:background .15s,border-color .15s;color:var(--text-dim);font-size:.94rem;line-height:1.5;flex-wrap:wrap}
+.quiz-opt:hover{background:rgba(221,92,12,.06);border-color:var(--border-hover)}
+.quiz-opt.selected{background:rgba(221,92,12,.1);border-color:var(--orange);color:var(--text)}
+.quiz-opt.correct{background:rgba(46,160,67,.1);border-color:#2ea043;color:var(--text)}
+.quiz-opt.wrong{background:rgba(215,58,73,.1);border-color:#d73a49}
+.quiz-opt[disabled]{pointer-events:none;cursor:default}
+.quiz-opt-letter{width:22px;height:22px;border-radius:50%;background:var(--bg-card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:600;flex-shrink:0;color:var(--text-dim)}
+.quiz-opt.selected .quiz-opt-letter{background:var(--orange);color:#fff;border-color:var(--orange)}
+.quiz-opt.correct .quiz-opt-letter{background:#2ea043;color:#fff;border-color:#2ea043}
+.quiz-opt.wrong .quiz-opt-letter{background:#d73a49;color:#fff;border-color:#d73a49}
+.quiz-choose{font-weight:500;color:var(--orange);font-size:.85rem;margin-left:4px}
+.quiz-submit-btn{display:none;margin-top:12px;padding:11px 26px;background:var(--orange);color:#fff;border:none;border-radius:10px;font-size:.92rem;font-weight:700;cursor:pointer}
+.quiz-submit-btn:hover{background:#c75400}
+.quiz-opt-exp-inline{flex-basis:100%;padding:8px 12px;border-radius:9px;font-size:.86rem;line-height:1.48;margin-top:6px}
+.quiz-opt-exp-inline.qoe-is-correct{background:rgba(46,160,67,.08);border-left:3px solid #2ea043}
+.quiz-opt-exp-inline.qoe-is-wrong{background:rgba(215,58,73,.06);border-left:3px solid #d73a49}
+.qoe-header{font-weight:700;margin-bottom:3px;font-size:.8rem;display:flex;align-items:center;gap:6px}
+.qoe-correct{color:#2ea043}
+.qoe-wrong{color:#d73a49}
+.qoe-letter,.qoe-text{color:var(--text-dim)}
+.quiz-opt-explains{display:none!important}
+.quiz-overall{display:none;margin-top:10px}
+.quiz-overall[style*="block"]{display:block}
+details.quiz-overall:not([open]) .quiz-overall-content{display:none}
+.quiz-overall-toggle{cursor:pointer;font-size:.88rem;font-weight:700;color:var(--orange);padding:8px 0 2px;list-style:none;display:flex;align-items:center;gap:6px}
+.quiz-overall-toggle::-webkit-details-marker{display:none}
+.quiz-overall-toggle::before{content:'';display:inline-block;width:0;height:0;border-left:5px solid var(--orange);border-top:4px solid transparent;border-bottom:4px solid transparent;transition:transform .2s}
+details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
+.quiz-overall-content{padding:6px 0 0;background:transparent;border-radius:0;font-size:.88rem;color:var(--text-dim);line-height:1.65;margin-top:6px;border-left:none}
+.exp-section{margin-bottom:10px;padding:12px 14px;border-radius:11px;border-left:3px solid}
+.exp-section:last-child,.exp-section p:last-child,.exp-section ul:last-child{margin-bottom:0}
+.exp-section h5{margin:0 0 6px;font-size:.88rem;font-weight:700}
+.exp-section p{margin-bottom:5px}
+.exp-section ul{padding-left:18px;margin-bottom:5px}
+.exp-section li{margin-bottom:3px}
+.exp-correct-answer{background:rgba(46,160,67,.05);border-left-color:#2ea043}
+.exp-correct-answer h5{color:#2ea043}
+.exp-source{background:rgba(59,130,246,.05);border-left-color:#3b82f6}
+.exp-source h5,.exp-source a{color:#3b82f6}
+.exp-expert{background:rgba(139,92,246,.05);border-left-color:#8b5cf6}
+.exp-expert h5{color:#8b5cf6}
+.exp-wrong{background:rgba(215,58,73,.04);border-left-color:#d73a49}
+.exp-wrong h5{color:#d73a49}
+.exp-memory{background:rgba(217,119,6,.05);border-left-color:#d97706}
+.exp-memory h5{color:#d97706}
+.exp-realworld{background:rgba(16,185,129,.05);border-left-color:#10b981}
+.exp-realworld h5{color:#10b981}
+.quiz-gate-prompt{position:absolute;inset:14px;display:flex;align-items:center;justify-content:center;border-radius:14px;background:rgba(7,9,13,.56);z-index:4}
+.quiz-gate-card{width:min(100%,520px);padding:22px;border-radius:16px;border:1px solid rgba(221,92,12,.32);background:var(--bg-raised);box-shadow:0 18px 45px rgba(0,0,0,.28);text-align:center}
+.quiz-gate-title{font-size:1.08rem;font-weight:700;line-height:1.35}
+.quiz-gate-copy{margin-top:10px;color:var(--text-dim);font-size:.92rem;line-height:1.6}
+.quiz-gate-form{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.quiz-gate-email-input{flex:1 1 220px;min-height:48px;padding:0 14px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-family:var(--font);font-size:.94rem}
+.quiz-gate-email-input:focus{outline:none;border-color:rgba(221,92,12,.5);box-shadow:0 0 0 3px rgba(221,92,12,.12)}
+.quiz-gate-submit,.quiz-nav-next,.quiz-final .cp-cta,.quiz-secondary-btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:12px;border:none;font-family:var(--font);font-size:.95rem;font-weight:700;cursor:pointer;text-decoration:none}
+.quiz-nav-next,.quiz-gate-submit,.quiz-final .cp-cta{background:var(--orange);color:#fff}
+.quiz-nav-next:hover,.quiz-gate-submit:hover,.quiz-final .cp-cta:hover{background:#c75400;text-decoration:none}
+.quiz-nav-next[disabled],.quiz-gate-submit[disabled],.quiz-secondary-btn[disabled]{cursor:not-allowed;opacity:.45}
+.quiz-secondary-btn{background:transparent;border:1px solid var(--border-hover);color:var(--text)}
+.quiz-secondary-btn:hover{background:rgba(221,92,12,.06)}
+.quiz-gate-message{margin-top:10px;font-size:.85rem;color:var(--text-dim);min-height:1.3em}
+.quiz-gate-message.is-error{color:#ff868f}
+.quiz-gate-message.is-success{color:#2ea043}
+.quiz-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px;padding:16px 18px;border-radius:16px;border:1px solid var(--border);background:rgba(255,255,255,.02)}
+.quiz-nav-meta{flex:1;color:var(--text-dim);font-size:.9rem;line-height:1.5;text-align:center}
+.quiz-final{margin-top:22px;padding:24px;border-radius:18px;border:1px solid rgba(221,92,12,.2);background:radial-gradient(circle at top right,rgba(221,92,12,.1),transparent 44%),linear-gradient(180deg,rgba(255,255,255,.015),rgba(255,255,255,.004))}
+.quiz-final[hidden],.quiz-cross-sell[hidden]{display:none!important}
+.quiz-final-kicker{color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.quiz-final h3{margin-top:10px;font-size:1.32rem;line-height:1.28}
+.quiz-final-score{font-size:2.15rem;font-weight:800;color:var(--text);line-height:1;margin-top:16px}
+.quiz-final-copy{margin-top:8px;color:var(--text-dim);max-width:58ch}
+.quiz-final-anchor{margin-top:12px;color:var(--text);font-size:.92rem}
+.quiz-final-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.quiz-cross-sell{margin-top:22px;padding:22px;border-radius:16px;border:1px solid var(--border);background:rgba(255,255,255,.02)}
+.quiz-cross-sell h3{font-size:1rem;margin-bottom:8px}
+.quiz-cross-sell p{margin:0;color:var(--text-dim);font-size:.92rem;line-height:1.6}
+.quiz-cross-sell-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.quiz-cross-sell-links a{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;border:1px solid var(--border-hover);background:transparent;color:var(--text);font-weight:700}
+.quiz-cross-sell-links a:hover{background:rgba(221,92,12,.06);border-color:var(--orange);text-decoration:none}
+.quiz-toast{position:fixed;right:18px;bottom:18px;z-index:1002;min-width:220px;max-width:min(360px,calc(100vw - 36px));padding:14px 16px;border-radius:12px;border:1px solid rgba(46,160,67,.35);background:rgba(18,25,21,.96);color:#e8fff0;box-shadow:0 18px 45px rgba(0,0,0,.32);font-size:.9rem;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .2s,transform .2s}
+.quiz-toast.show{opacity:1;transform:translateY(0)}
+@media (min-width:1040px){.cp-wrap{max-width:960px;padding-left:32px;padding-right:32px}.quiz-card{padding:22px 24px 20px}}
+@media (max-width:720px){.quiz-stepper-head,.quiz-nav,.quiz-final-actions,.quiz-cross-sell-links,.quiz-gate-form{flex-direction:column;align-items:stretch}.quiz-stepper-score,.quiz-nav-meta{text-align:left}.quiz-nav-next,.quiz-secondary-btn,.quiz-gate-submit,.quiz-final .cp-cta,.quiz-cross-sell-links a{width:100%}.quiz-card,.quiz-final,.quiz-cross-sell{padding:18px}.quiz-stepper-dots{gap:6px}}
 
 /* Countdown banner */
 .countdown-banner { max-width: 100%; margin: 0 0 24px; padding: 20px 24px; background: linear-gradient(135deg, rgba(221,92,12,0.08), rgba(221,92,12,0.03)); border: 1px solid rgba(221,92,12,0.2); border-radius: 14px; text-align: center; position: relative; overflow: hidden; }
@@ -440,50 +764,46 @@ a:hover { text-decoration: underline; }
     </ul>
   </div>
 
-  <section class="quiz-section" id="free-quiz" data-preview-style="three-tier">
+  <section class="quiz-section" id="free-quiz" data-preview-style="guided-15">
     <div class="preview-shell">
       <div class="preview-kicker">15-question preview</div>
       <h2>15 Free Preview Questions</h2>
-      <p class="quiz-intro">Answer 5 questions free. Enter your email to continue with 5 more. The full course has 213 questions on Udemy.</p>
-      <div class="preview-status-line">
-        <span class="preview-status-pill">Answered <strong id="quizStatusAnswered">0 of 10 interactive questions</strong></span>
-        <span class="preview-status-pill">Score <strong id="quizStatusScore">0 correct</strong></span>
+      <p class="quiz-intro">Answer 5 questions free. Enter your email to continue through question 15. The full course has 213 questions on Udemy.</p>
+      <div class="quiz-stepper-head">
+        <div class="quiz-stepper-copy">
+          <div class="quiz-stepper-label" id="quizStepLabel">Question 1 of 15</div>
+          <div class="quiz-stepper-tier" data-state="free" id="quizTierLabel">Free</div>
+        </div>
+        <div class="quiz-stepper-score" id="quizMiniScore">0 correct so far</div>
       </div>
-      <div class="preview-progress-wrap">
-        <ol class="preview-progress" id="quizProgress">
-        <li class="preview-slot is-clickable" data-slot="0"><span class="preview-slot-num">1</span><span class="preview-slot-state">Free</span></li>
-        <li class="preview-slot is-clickable" data-slot="1"><span class="preview-slot-num">2</span><span class="preview-slot-state">Free</span></li>
-        <li class="preview-slot is-clickable" data-slot="2"><span class="preview-slot-num">3</span><span class="preview-slot-state">Free</span></li>
-        <li class="preview-slot is-clickable" data-slot="3"><span class="preview-slot-num">4</span><span class="preview-slot-state">Free</span></li>
-        <li class="preview-slot is-clickable" data-slot="4"><span class="preview-slot-num">5</span><span class="preview-slot-state">Free</span></li>
-        <li class="preview-slot" data-slot="5"><span class="preview-slot-num">6</span><span class="preview-slot-state">Email</span></li>
-        <li class="preview-slot" data-slot="6"><span class="preview-slot-num">7</span><span class="preview-slot-state">Email</span></li>
-        <li class="preview-slot" data-slot="7"><span class="preview-slot-num">8</span><span class="preview-slot-state">Email</span></li>
-        <li class="preview-slot" data-slot="8"><span class="preview-slot-num">9</span><span class="preview-slot-state">Email</span></li>
-        <li class="preview-slot" data-slot="9"><span class="preview-slot-num">10</span><span class="preview-slot-state">Email</span></li>
-        <li class="preview-slot is-locked" data-slot="10"><span class="preview-slot-num">11</span><span class="preview-slot-state">Full</span><span class="preview-slot-lock"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 1 1 8 0v3"/></svg></span></li>
-        <li class="preview-slot is-locked" data-slot="11"><span class="preview-slot-num">12</span><span class="preview-slot-state">Full</span><span class="preview-slot-lock"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 1 1 8 0v3"/></svg></span></li>
-        <li class="preview-slot is-locked" data-slot="12"><span class="preview-slot-num">13</span><span class="preview-slot-state">Full</span><span class="preview-slot-lock"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 1 1 8 0v3"/></svg></span></li>
-        <li class="preview-slot is-locked" data-slot="13"><span class="preview-slot-num">14</span><span class="preview-slot-state">Full</span><span class="preview-slot-lock"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 1 1 8 0v3"/></svg></span></li>
-        <li class="preview-slot is-locked" data-slot="14"><span class="preview-slot-num">15</span><span class="preview-slot-state">Full</span><span class="preview-slot-lock"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 1 1 8 0v3"/></svg></span></li>
-        </ol>
-      </div>
-      <div class="preview-group-labels">
-        <div class="preview-group-label">Questions 1-5. Free.</div>
-        <div class="preview-group-label">Questions 6-10. Email required.</div>
-        <div class="preview-group-label">Questions 11-15. Full course.</div>
+      <div class="quiz-stepper-dots" id="quizProgress">
+        <span class="preview-dot" data-slot="0" title="Question 1"></span>
+        <span class="preview-dot" data-slot="1" title="Question 2"></span>
+        <span class="preview-dot" data-slot="2" title="Question 3"></span>
+        <span class="preview-dot" data-slot="3" title="Question 4"></span>
+        <span class="preview-dot" data-slot="4" title="Question 5"></span>
+        <span class="preview-dot" data-slot="5" title="Question 6"></span>
+        <span class="preview-dot" data-slot="6" title="Question 7"></span>
+        <span class="preview-dot" data-slot="7" title="Question 8"></span>
+        <span class="preview-dot" data-slot="8" title="Question 9"></span>
+        <span class="preview-dot" data-slot="9" title="Question 10"></span>
+        <span class="preview-dot" data-slot="10" title="Question 11"></span>
+        <span class="preview-dot" data-slot="11" title="Question 12"></span>
+        <span class="preview-dot" data-slot="12" title="Question 13"></span>
+        <span class="preview-dot" data-slot="13" title="Question 14"></span>
+        <span class="preview-dot" data-slot="14" title="Question 15"></span>
       </div>
     </div>
-    <div class="quiz-tier-heading">Questions 1-5. Free.</div>
+    <div class="quiz-card-stack">
 <div class="quiz-card" data-question-index="0" data-tier="1" id="qcard0">
-<div class="quiz-q"><span class="quiz-q-num">1.</span>To facilitate "Exception Management", a user requests an exception for a Vulnerability. If the Risk Score of the item is below a certain threshold, the system can be configured to:</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t">
+<div class="quiz-q"><span class="quiz-q-num">1.</span>To facilitate "Exception Management", a user requests an exception for a Vulnerability. If the Risk Score of the item is below a certain threshold, the system can be configured to:</div><div class="quiz-answer-shell"><div class="quiz-answer-content">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: Rejecting the request immediately is not a configurable behavior for low-risk exceptions. The system is designed to streamline approvals, not block them outright when risk is minimal." data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>Reject the request immediately.</span></li>
 <li class="quiz-opt" data-exp="CORRECT: When the Risk Score falls below a configured threshold, Vulnerability Response can auto-approve the exception without requiring human intervention. This speeds up exception handling for low-risk items and reduces the workload on approvers." data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>Auto-approve the exception without human intervention.</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Escalating to the CISO is typically reserved for high-risk or critical exceptions, not for items below a risk threshold. Auto-escalation for low-risk items would be counterproductive." data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>Escalate to the CISO.</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Creating a Problem record is part of ITSM integration for root cause analysis, not part of the exception approval workflow. Exception management and Problem management serve different purposes." data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>Create a Problem record.</span></li>
 </ul><button class="quiz-submit-btn" data-q="0" type="button">Submit Answer</button>
-<div class="quiz-opt-explains" id="qoptexp0" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp0">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
@@ -491,13 +811,13 @@ a:hover { text-decoration: underline; }
 </div>
 </details>
 </div></div></div>
-<div class="quiz-card" data-question-index="1" data-tier="1" id="qcard1">
-<div class="quiz-q"><span class="quiz-q-num">2.</span>sn_vul.itsm_popup is the property that is set to True or False based on the customer desire for a popup when creating a Problem or Change record from a Vulnerability or VI record.</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t">
+<div class="quiz-card" data-question-index="1" data-tier="1" hidden="" id="qcard1">
+<div class="quiz-q"><span class="quiz-q-num">2.</span>sn_vul.itsm_popup is the property that is set to True or False based on the customer desire for a popup when creating a Problem or Change record from a Vulnerability or VI record.</div><div class="quiz-answer-shell"><div class="quiz-answer-content">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="CORRECT: The statement is true. The system property sn_vul.itsm_popup controls whether a popup dialog appears when a user creates a Problem or Change record directly from a Vulnerability or Vulnerable Item record. Setting it to True enables the popup, while False disables it." data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>True</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: The statement accurately describes the sn_vul.itsm_popup property. This property does exist and it does control the popup behavior when creating ITSM records from vulnerability records." data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>False</span></li>
 </ul><button class="quiz-submit-btn" data-q="1" type="button">Submit Answer</button>
-<div class="quiz-opt-explains" id="qoptexp1" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp1">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
@@ -505,15 +825,15 @@ a:hover { text-decoration: underline; }
 </div>
 </details>
 </div></div></div>
-<div class="quiz-card" data-question-index="2" data-tier="1" id="qcard2">
-<div class="quiz-q"><span class="quiz-q-num">3.</span>In the Vulnerability Manager Workspace, you want to create a static list of vulnerabilities to present to the Board of Directors regarding a specific campaign (e.g., "Q4 Clean-up"). Which object should you create-</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t">
+<div class="quiz-card" data-question-index="2" data-tier="1" hidden="" id="qcard2">
+<div class="quiz-q"><span class="quiz-q-num">3.</span>In the Vulnerability Manager Workspace, you want to create a static list of vulnerabilities to present to the Board of Directors regarding a specific campaign (e.g., "Q4 Clean-up"). Which object should you create-</div><div class="quiz-answer-shell"><div class="quiz-answer-content">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: A Watch Topic is used for monitoring and grouping vulnerabilities for ongoing tracking, not for creating a static list to present to stakeholders. Watch Topics are dynamic monitoring tools." data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>A Watch Topic</span></li>
 <li class="quiz-opt" data-exp='CORRECT: A Remediation Effort is a container that groups multiple Remediation Tasks and Vulnerable Items toward a specific goal or campaign. Creating a Remediation Effort named "Q4 Clean-up" lets you organize and present a curated list of vulnerabilities and their remediation progress to the Board of Directors.' data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>A Remediation Effort</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: A Remediation Task is a single work item assigned to a person or group to fix specific vulnerabilities. It is a child of a Remediation Effort, not the grouping container itself." data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>A Remediation Task</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: A Dashboard Tab is a visualization layer in the workspace. It displays data but is not an object that contains or groups specific vulnerability records for campaign management." data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>A Dashboard Tab</span></li>
 </ul><button class="quiz-submit-btn" data-q="2" type="button">Submit Answer</button>
-<div class="quiz-opt-explains" id="qoptexp2" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp2">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
@@ -521,8 +841,8 @@ a:hover { text-decoration: underline; }
 </div>
 </details>
 </div></div></div>
-<div class="quiz-card" data-question-index="3" data-tier="1" id="qcard3">
-<div class="quiz-q"><span class="quiz-q-num">4.</span>CWE's are downloaded by a scheduled job into Vulnerability Response from which of the following sources-</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t">
+<div class="quiz-card" data-question-index="3" data-tier="1" hidden="" id="qcard3">
+<div class="quiz-q"><span class="quiz-q-num">4.</span>CWE's are downloaded by a scheduled job into Vulnerability Response from which of the following sources-</div><div class="quiz-answer-shell"><div class="quiz-answer-content">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="CORRECT: CWE (Common Weakness Enumeration) data is downloaded into Vulnerability Response from MITRE via a scheduled job. MITRE is the organization that maintains the CWE database, which catalogs software and hardware weakness types." data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>Mitre</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Microsoft Security Response Center (MSRC) publishes Microsoft-specific security advisories and patches, not the CWE database. MSRC data may feed into vulnerability definitions but is not the source for CWE entries." data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>Microsoft Security Response Center</span></li>
@@ -530,7 +850,7 @@ a:hover { text-decoration: underline; }
 <li class="quiz-opt" data-exp="INCORRECT: Splunk is a SIEM and log analysis platform. While it can integrate with ServiceNow for security operations, it is not the source of CWE definitions." data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>Splunk</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: NVD (National Vulnerability Database) provides CVE vulnerability data and CVSS scores, not CWE entries. While NVD references CWEs in its CVE records, the CWE definitions themselves come from MITRE." data-idx="4" data-q="3"><span class="quiz-opt-letter">E</span><span>NVD</span></li>
 </ul><button class="quiz-submit-btn" data-q="3" type="button">Submit Answer</button>
-<div class="quiz-opt-explains" id="qoptexp3" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp3">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
@@ -538,8 +858,8 @@ a:hover { text-decoration: underline; }
 </div>
 </details>
 </div></div></div>
-<div class="quiz-card" data-question-index="4" data-tier="1" id="qcard4">
-<div class="quiz-q"><span class="quiz-q-num">5.</span>In the Vulnerability Response Exception Process selecting the Request Exception button (UI Action) opens which UI Page (as a popup)-</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t">
+<div class="quiz-card" data-question-index="4" data-tier="1" hidden="" id="qcard4">
+<div class="quiz-q"><span class="quiz-q-num">5.</span>In the Vulnerability Response Exception Process selecting the Request Exception button (UI Action) opens which UI Page (as a popup)-</div><div class="quiz-answer-shell"><div class="quiz-answer-content">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: review_request is not the UI Page that opens when clicking Request Exception. This name suggests a review step, not the initial exception request form." data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>review_request</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: notification_preview is related to viewing notification content, not to the exception request workflow." data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>notification_preview</span></li>
@@ -547,7 +867,7 @@ a:hover { text-decoration: underline; }
 <li class="quiz-opt" data-exp="INCORRECT: block_request does not exist as the UI Page for exception requests. Blocking a request is functionally opposite to requesting an exception." data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>block_request</span></li>
 <li class="quiz-opt" data-exp="CORRECT: Clicking the Request Exception UI Action (button) on a Vulnerability or Vulnerable Item record opens the request_exception UI Page as a popup. This page provides the form where users enter exception details like justification and requested duration." data-idx="4" data-q="4"><span class="quiz-opt-letter">E</span><span>request_exception</span></li>
 </ul><button class="quiz-submit-btn" data-q="4" type="button">Submit Answer</button>
-<div class="quiz-opt-explains" id="qoptexp4" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp4">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
@@ -555,28 +875,15 @@ a:hover { text-decoration: underline; }
 </div>
 </details>
 </div></div></div>
-    <div class="quiz-interstitial" id="tier1Interstitial" hidden>
-      <div class="quiz-interstitial-kicker">Questions 1-5 complete</div>
-      <h3>You scored <span id="tier1ScoreText">0/5</span> on questions 1-5.</h3>
-      <div class="quiz-interstitial-score" id="tier1ScoreValue">0/5</div>
-      <p class="quiz-interstitial-copy">You have seen the free section. Continue with questions 6-10 after email, or move straight to the full course.</p>
-      <div class="quiz-interstitial-actions">
-        <a href="https://www.udemy.com/course/pass-your-servicenow-cis-vulnerability-response-vr-exam/?referralCode=EE503A8EA58C23039100" target="_blank" rel="noopener" class="cp-cta" data-buy-tier="tier1">Get all 213 questions for $9.99
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <button type="button" class="quiz-secondary-btn" id="tier1ContinueBtn">Enter your email to continue</button>
-      </div>
-    </div>
-    <div class="quiz-tier-heading">Questions 6-10. Email required.</div>
-<div class="quiz-card is-email-locked" data-question-index="5" data-tier="2" id="qcard5">
-<div class="quiz-q"><span class="quiz-q-num">6.</span>What is the specific table name where Discovered Items are stored-</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
+<div class="quiz-card is-email-locked" data-question-index="5" data-tier="2" hidden="" id="qcard5">
+<div class="quiz-q"><span class="quiz-q-num">6.</span>What is the specific table name where Discovered Items are stored-</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: sn_vul_discovered_item is a plausible guess but is not the actual table name. Discovered Items do not live directly under the sn_vul namespace." data-idx="0" data-q="5"><span class="quiz-opt-letter">A</span><span>sn_vul_discovered_item</span></li>
 <li class="quiz-opt" data-exp="CORRECT: Discovered Items are stored in the sn_sec_cmn_src_ci table. The name stands for Security Common Source CI, reflecting that this table is shared across security applications (not just Vulnerability Response) to hold CI data as reported by external scanners before matching to the CMDB." data-idx="1" data-q="5"><span class="quiz-opt-letter">B</span><span>sn_sec_cmn_src_ci</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: sn_vul_source_ci is not the correct table name. While it contains similar keywords, this is not the actual ServiceNow table for Discovered Items." data-idx="2" data-q="5"><span class="quiz-opt-letter">C</span><span>sn_vul_source_ci</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: cmdb_ci_discovered is not the table used for Discovered Items in Vulnerability Response. The cmdb_ci hierarchy stores actual CMDB records, not the raw scanner-reported items." data-idx="3" data-q="5"><span class="quiz-opt-letter">D</span><span>cmdb_ci_discovered</span></li>
 </ul><button class="quiz-submit-btn" data-q="5" type="button">Submit Answer</button>
-<div class="quiz-opt-explains" id="qoptexp5" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp5">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
@@ -585,38 +892,33 @@ a:hover { text-decoration: underline; }
 </details>
 </div><div class="quiz-gate-prompt" data-email-overlay="">
 <div class="quiz-gate-card">
-<div class="quiz-gate-title">Enter your email to continue with questions 6-10</div>
+<div class="quiz-gate-title">Enter your email to continue with questions 6-15</div>
 <p class="quiz-gate-copy">Free exam updates. No spam. Unsubscribe anytime.</p>
 <form class="quiz-gate-form" id="quizGateForm">
 <input autocomplete="email" class="quiz-gate-email-input" id="quizGateEmail" placeholder="you@email.com" required="" type="email"/>
-<button class="quiz-gate-submit" id="quizGateSubmit" type="submit">Continue with 5 More Questions</button>
+<button class="quiz-gate-submit" id="quizGateSubmit" type="submit">Continue with 10 More Questions</button>
 </form>
 <p class="quiz-gate-message" id="quizGateMessage"></p>
 </div>
 </div></div></div>
-<div class="quiz-card is-email-locked" data-question-index="6" data-tier="2" id="qcard6">
-<div class="quiz-q"><span class="quiz-q-num">7.</span>What is the primary function of the "Reapply" button on a Remediation Target Rule-</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
+<div class="quiz-card is-email-locked" data-question-index="6" data-tier="2" hidden="" id="qcard6">
+<div class="quiz-q"><span class="quiz-q-num">7.</span>What is the primary function of the "Reapply" button on a Remediation Target Rule-</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: The Reapply button does not process historical Closed records. It only affects active Vulnerable Items that currently match the rule conditions." data-idx="0" data-q="6"><span class="quiz-opt-letter">A</span><span>It forces the rule to run against all historical Closed records.</span></li>
 <li class="quiz-opt" data-exp="CORRECT: The Reapply button on a Remediation Target Rule recalculates the remediation target date for all active Vulnerable Items that match the rule's condition. This is useful when you update a rule's target timeframe and need the new dates to apply to existing open items." data-idx="1" data-q="6"><span class="quiz-opt-letter">B</span><span>It recalculates the target date for active Vulnerable Items that match the rule's condition.</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: The Reapply button does not reset SLAs. SLA management is handled separately through the SLA framework, not through the Reapply function on Remediation Target Rules." data-idx="2" data-q="6"><span class="quiz-opt-letter">C</span><span>It resets the SLAs for all items.</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: The Reapply button does not create a new rule. It re-evaluates the existing rule against current active records. Rule duplication would be done through a different action." data-idx="3" data-q="6"><span class="quiz-opt-letter">D</span><span>It creates a new rule with the same criteria.</span></li>
 </ul><button class="quiz-submit-btn" data-q="6" type="button">Submit Answer</button>
-<div class="quiz-opt-explains" id="qoptexp6" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp6">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
 <h5>Correct Answer</h5><p>B - It recalculates the target date for active Vulnerable Items that match the rule's condition.</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-security-management/page/product/vulnerability-response/concept/vr-remediation-targets.html" target="_blank">ServiceNow Zurich Documentation - Remediation Target Rules</a></p><h5>Expert Explanation</h5><p>Remediation Target Rules define the expected timeframe for remediating vulnerabilities based on conditions like severity or asset criticality. The Reapply button forces the rule to re-evaluate all currently active Vulnerable Items against its conditions and recalculate their target remediation dates. This is essential when rule parameters change and you want existing open items to reflect the updated targets.</p><h5>Why the Others Are Wrong</h5><p>Option A (run against Closed records) is wrong because Reapply only targets active items. Option C (reset SLAs) confuses remediation targets with the SLA framework, which is a separate mechanism. Option D (create a new rule) is wrong because Reapply acts on the existing rule, not creating a copy.</p><h5>Memory Tip</h5><p>Think of "Reapply" like updating a deadline policy at work. If your company changes the response time from 30 days to 14 days, you "reapply" the new policy to all open tickets. Closed tickets keep their old deadlines.</p><h5>Real-World Example</h5><p>Your security team decides critical vulnerabilities must now be remediated in 7 days instead of 14. You update the Remediation Target Rule and click Reapply. All active critical Vulnerable Items get their target dates recalculated to 7 days from their discovery date, while already-closed items remain unchanged.</p>
 </div>
 </details>
-</div><div class="quiz-gate-prompt" data-email-overlay="">
-<div class="quiz-gate-card">
-<div class="quiz-gate-title">Questions 6-10 continue after email</div>
-<p class="quiz-gate-copy">Use the form on question 6 to keep going.</p>
-</div>
 </div></div></div>
-<div class="quiz-card quiz-multi is-email-locked" data-question-index="7" data-tier="2" id="qcard7">
-<div class="quiz-q"><span class="quiz-q-num">8.</span>Which is a common integration point between Vulnerability Response and Governance, Risk, and Compliance (GRC)- (Choose two.) <span class="quiz-choose">(choose 2)</span></div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
+<div class="quiz-card quiz-multi is-email-locked" data-question-index="7" data-tier="2" hidden="" id="qcard7">
+<div class="quiz-q"><span class="quiz-q-num">8.</span>Which is a common integration point between Vulnerability Response and Governance, Risk, and Compliance (GRC)- (Choose two.) <span class="quiz-choose">(choose 2)</span></div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="CORRECT: Risk Indicators are a key integration point between Vulnerability Response and GRC. VR can feed vulnerability data into GRC Risk Indicators, allowing the risk management team to track vulnerability-related risks as part of their broader risk assessment framework." data-idx="0" data-q="7"><span class="quiz-opt-letter">A</span><span>Risk indicators</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Security Incidents are part of Security Incident Response (SIR), not the primary integration point between VR and GRC. While security incidents may relate to vulnerabilities, the direct integration path is through risk-oriented objects." data-idx="1" data-q="7"><span class="quiz-opt-letter">B</span><span>Security incidents</span></li>
@@ -626,42 +928,32 @@ a:hover { text-decoration: underline; }
 <li class="quiz-opt" data-exp="CORRECT: Risk Events are a common integration point between VR and GRC. Vulnerability data can generate Risk Events in GRC, enabling the organization to evaluate and respond to vulnerability-related risks within the GRC risk assessment workflow." data-idx="5" data-q="7"><span class="quiz-opt-letter">F</span><span>Risk Events</span></li>
 </ul><button class="quiz-submit-btn" data-q="7" type="button">Submit Answer</button>
 
-<div class="quiz-opt-explains" id="qoptexp7" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp7">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
 <h5>Correct Answer</h5><p>A - Risk Indicators and F - Risk Events</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-security-management/page/product/vulnerability-response/concept/vr-grc-integration.html" target="_blank">ServiceNow Zurich Documentation - VR and GRC Integration</a></p><h5>Expert Explanation</h5><p>Vulnerability Response integrates with Governance, Risk, and Compliance through two primary objects: Risk Indicators and Risk Events. Risk Indicators allow GRC to monitor vulnerability metrics as ongoing risk signals, while Risk Events capture specific vulnerability occurrences that require risk assessment. Together, these bridge the gap between operational security (VR) and enterprise risk management (GRC).</p><h5>Why the Others Are Wrong</h5><p>Option B (Security Incidents) belongs to the SIR application, not GRC. Options C (Problem Records) and D (Change Requests) are ITSM integration points, not GRC. Option E (Policy Exceptions) is a GRC concept but not a standard VR integration point since VR has its own exception process.</p><h5>Memory Tip</h5><p>VR talks to GRC through "Risk" objects. Both correct answers contain the word "Risk" in them: Risk Indicators and Risk Events. If the answer has "Risk" in the name and it is a GRC object, it is likely correct.</p><h5>Real-World Example</h5><p>Your VR instance detects a spike in critical unpatched vulnerabilities across production servers. This triggers a Risk Event in GRC that flags the organization's IT risk register. At the same time, a Risk Indicator in GRC tracks the percentage of critical VIs past their remediation target, giving the risk committee a live metric to monitor during their quarterly review.</p>
 </div>
 </details>
-</div><div class="quiz-gate-prompt" data-email-overlay="">
-<div class="quiz-gate-card">
-<div class="quiz-gate-title">Questions 6-10 continue after email</div>
-<p class="quiz-gate-copy">Use the form on question 6 to keep going.</p>
-</div>
 </div></div></div>
-<div class="quiz-card is-email-locked" data-question-index="8" data-tier="2" id="qcard8">
-<div class="quiz-q"><span class="quiz-q-num">9.</span>In the context of Vulnerability Response Workspaces, what is a "Remediation Effort"-</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
+<div class="quiz-card is-email-locked" data-question-index="8" data-tier="2" hidden="" id="qcard8">
+<div class="quiz-q"><span class="quiz-q-num">9.</span>In the context of Vulnerability Response Workspaces, what is a "Remediation Effort"-</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: A Remediation Effort is not a financial calculation. It does not estimate costs. It is an organizational container for grouping remediation work." data-idx="0" data-q="8"><span class="quiz-opt-letter">A</span><span>A calculation of how much money a fix will cost.</span></li>
 <li class="quiz-opt" data-exp="CORRECT: A Remediation Effort is a container object in VR Workspaces that groups multiple Remediation Tasks and Vulnerable Items toward a specific goal or campaign. It helps teams organize and track progress on remediation initiatives like patch drives or compliance pushes." data-idx="1" data-q="8"><span class="quiz-opt-letter">B</span><span>A container for managing multiple Remediation Tasks and VIs toward a specific goal or campaign.</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: A Remediation Effort is not a renamed Change Request table. It is a distinct concept specific to Vulnerability Response that exists alongside ITSM records." data-idx="2" data-q="8"><span class="quiz-opt-letter">C</span><span>A rename of the "Change Request" table.</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: A Remediation Effort is not a Performance Analytics metric. While PA can report on Remediation Efforts, the Effort itself is a record type used for campaign management, not a measurement unit." data-idx="3" data-q="8"><span class="quiz-opt-letter">D</span><span>A metric used by Performance Analytics.</span></li>
 </ul><button class="quiz-submit-btn" data-q="8" type="button">Submit Answer</button>
-<div class="quiz-opt-explains" id="qoptexp8" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp8">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
 <h5>Correct Answer</h5><p>B - A container for managing multiple Remediation Tasks and VIs toward a specific goal or campaign.</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-security-management/page/product/vulnerability-response/concept/vr-remediation-effort.html" target="_blank">ServiceNow Zurich Documentation - Remediation Effort</a></p><h5>Expert Explanation</h5><p>A Remediation Effort in the Vulnerability Response Workspace is a campaign-level container. It groups related Remediation Tasks and Vulnerable Items under a unified goal, such as "Patch Log4j across all production systems" or "Q4 Compliance Cleanup." This gives vulnerability managers a way to track, prioritize, and report on coordinated remediation activities.</p><h5>Why the Others Are Wrong</h5><p>Option A (cost calculation) confuses the word "effort" with financial estimation. In VR, "effort" means a coordinated initiative. Option C (renamed Change Request) is incorrect because Remediation Efforts are a separate VR construct, not a rebrand of ITSM tables. Option D (PA metric) confuses the record type with analytics measurements.</p><h5>Memory Tip</h5><p>Think of a Remediation Effort like a "project" in project management. It is the umbrella that holds all the individual tasks and items for one remediation campaign. Effort = Campaign Container.</p><h5>Real-World Example</h5><p>When Log4Shell (CVE-2021-44228) hit, your team created a Remediation Effort called "Log4j Emergency Response." Under it, they grouped 47 Remediation Tasks across different teams and 312 Vulnerable Items. The CISO could open that single Effort and see the overall progress, who was behind, and which systems were still exposed.</p>
 </div>
 </details>
-</div><div class="quiz-gate-prompt" data-email-overlay="">
-<div class="quiz-gate-card">
-<div class="quiz-gate-title">Questions 6-10 continue after email</div>
-<p class="quiz-gate-copy">Use the form on question 6 to keep going.</p>
-</div>
 </div></div></div>
-<div class="quiz-card quiz-multi is-email-locked" data-question-index="9" data-tier="2" id="qcard9">
-<div class="quiz-q"><span class="quiz-q-num">10.</span>The following integration methods are available to bring vulnerability and Cl data into the ServiceNow platform: (Choose three.) <span class="quiz-choose">(choose 3)</span></div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
+<div class="quiz-card quiz-multi is-email-locked" data-question-index="9" data-tier="2" hidden="" id="qcard9">
+<div class="quiz-q"><span class="quiz-q-num">10.</span>The following integration methods are available to bring vulnerability and Cl data into the ServiceNow platform: (Choose three.) <span class="quiz-choose">(choose 3)</span></div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: SNMP (Simple Network Management Protocol) is a network monitoring protocol used by tools like network management systems. It is not a supported integration method for bringing vulnerability and CI data into ServiceNow VR." data-idx="0" data-q="9"><span class="quiz-opt-letter">A</span><span>SNMP</span></li>
 <li class="quiz-opt" data-exp="CORRECT: Service Graph is a supported integration method. Service Graph Connectors allow third-party tools (including vulnerability scanners) to push CI and vulnerability data into ServiceNow using a standardized framework that maps to the CMDB and VR tables." data-idx="1" data-q="9"><span class="quiz-opt-letter">B</span><span>Service Graph</span></li>
@@ -671,145 +963,125 @@ a:hover { text-decoration: underline; }
 <li class="quiz-opt" data-exp="CORRECT: REST API is a supported integration method. Vulnerability scanners and third-party tools can use the ServiceNow REST API to push vulnerability findings and CI data directly into the platform programmatically." data-idx="5" data-q="9"><span class="quiz-opt-letter">F</span><span>REST</span></li>
 </ul><button class="quiz-submit-btn" data-q="9" type="button">Submit Answer</button>
 
-<div class="quiz-opt-explains" id="qoptexp9" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp9">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
 <h5>Correct Answer</h5><p>B - Service Graph, D - Import Set, and F - REST</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-security-management/page/product/vulnerability-response/concept/vr-integrations-overview.html" target="_blank">ServiceNow Zurich Documentation - VR Integrations Overview</a></p><h5>Expert Explanation</h5><p>ServiceNow Vulnerability Response supports three primary methods for importing vulnerability and CI data. Service Graph Connectors provide a standardized, CMDB-aware integration framework. Import Sets allow bulk data loading through staging tables and Transform Maps. REST APIs enable real-time programmatic data exchange with external scanners and tools. Each method serves different use cases depending on the scanner, data volume, and integration requirements.</p><h5>Why the Others Are Wrong</h5><p>Option A (SNMP) is a network monitoring protocol, not a VR data import method. Option C (SOAP) is an older web service protocol that is not listed as a primary VR integration method. Option E (Splunk) is a product/platform, not an integration method or protocol.</p><h5>Memory Tip</h5><p>Remember "SIR" but rearranged: Service graph, Import set, REST. These are the three doors through which vulnerability data enters ServiceNow. Each one is a framework or API, not a specific vendor product.</p><h5>Real-World Example</h5><p>A large enterprise uses all three methods: Service Graph Connector for their Qualys scanner (out-of-box integration), Import Sets for a legacy in-house scanner that exports CSVs nightly, and REST API calls from their cloud security tool that sends findings in real-time as new cloud resources are scanned.</p>
 </div>
 </details>
-</div><div class="quiz-gate-prompt" data-email-overlay="">
-<div class="quiz-gate-card">
-<div class="quiz-gate-title">Questions 6-10 continue after email</div>
-<p class="quiz-gate-copy">Use the form on question 6 to keep going.</p>
-</div>
 </div></div></div>
-    <div class="quiz-interstitial" id="tier2Interstitial" hidden>
-      <div class="quiz-interstitial-kicker">Free preview complete</div>
-      <h3>You scored <span id="tier2ScoreText">0/10</span> on the free preview.</h3>
-      <div class="quiz-interstitial-score" id="tier2ScoreValue">0/10</div>
-      <p class="quiz-interstitial-copy">You have seen 10 preview questions. The full course keeps the same answer breakdown style across the full bank.</p>
-      <div class="quiz-interstitial-actions">
-        <a href="https://www.udemy.com/course/pass-your-servicenow-cis-vulnerability-response-vr-exam/?referralCode=EE503A8EA58C23039100" target="_blank" rel="noopener" class="cp-cta" data-buy-tier="tier2">Get all 213 questions for $9.99
+<div class="quiz-card quiz-multi is-email-locked" data-question-index="10" data-tier="2" hidden="" id="qcard10">
+<div class="quiz-q"><span class="quiz-q-num">11.</span>Which data do Risk Score Calculators typically combine to compute a Risk Score- (Choose two.) <span class="quiz-choose">(choose 2)</span></div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="CORRECT: Vulnerability severity (often based on CVSS scores) is one of the two primary inputs to Risk Score Calculators. The severity of the vulnerability itself is a core factor in determining overall risk." data-idx="0" data-q="10"><span class="quiz-opt-letter">A</span><span>Vulnerability severity or CVSS-related scoring</span></li>
+<li class="quiz-opt" data-exp="CORRECT: Asset criticality or business impact of the CI is the second primary input. A critical vulnerability on a high-value production server poses more risk than the same vulnerability on a development sandbox. Risk Score Calculators combine vulnerability severity with asset importance." data-idx="1" data-q="10"><span class="quiz-opt-letter">B</span><span>Asset criticality or business impact of the CI</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Theme settings are a user interface preference and have no relevance to risk calculation. This is a distractor option with no connection to security risk assessment." data-idx="2" data-q="10"><span class="quiz-opt-letter">C</span><span>The user’s theme settings</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: The number of update sets in the instance is an administrative metric related to platform development and has nothing to do with vulnerability risk scoring." data-idx="3" data-q="10"><span class="quiz-opt-letter">D</span><span>The number of update sets in the instance</span></li>
+</ul><button class="quiz-submit-btn" data-q="10" type="button">Submit Answer</button>
+
+
+<details class="quiz-overall" id="qexp10">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>A - Vulnerability severity or CVSS-related scoring and B - Asset criticality or business impact of the CI</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-security-management/page/product/vulnerability-response/concept/vr-risk-score-calculators.html" target="_blank">ServiceNow Zurich Documentation - Risk Score Calculators</a></p><h5>Expert Explanation</h5><p>Risk Score Calculators in Vulnerability Response combine two key data points to produce a meaningful risk score. The first is the vulnerability's severity, typically derived from CVSS scores or similar rating systems. The second is the asset's criticality or business impact, which reflects how important the affected CI is to the organization. By combining "how bad is the vulnerability" with "how important is the asset," the calculator produces a prioritized risk score.</p><h5>Why the Others Are Wrong</h5><p>Option C (theme settings) is a UI cosmetic preference that has zero impact on security risk calculations. Option D (update sets) is a developer/admin concept related to instance configuration management, completely unrelated to vulnerability risk scoring.</p><h5>Memory Tip</h5><p>Risk = Threat x Impact. In VR terms, Threat = Vulnerability Severity (CVSS) and Impact = Asset Criticality. The two correct answers map directly to this classic risk formula.</p><h5>Real-World Example</h5><p>Two servers both have CVE-2024-1234 with a CVSS score of 9.8. Server A is a public-facing payment gateway (asset criticality: Critical). Server B is an internal test box (asset criticality: Low). The Risk Score Calculator gives Server A a score of 95 and Server B a score of 35, ensuring the payment gateway gets remediated first.</p>
+</div>
+</details>
+</div></div></div>
+<div class="quiz-card is-email-locked" data-question-index="11" data-tier="2" hidden="" id="qcard11">
+<div class="quiz-q"><span class="quiz-q-num">12.</span>Vulnerability Solution Management correlates vulnerabilities with solutions. Which of the following is considered a "Solution" in this context-</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp='INCORRECT: A Change Request is an ITSM process record used to track and approve changes to the environment. It is not a "Solution" in the context of Vulnerability Solution Management. Changes may implement a solution, but they are not the solution definition itself.' data-idx="0" data-q="11"><span class="quiz-opt-letter">A</span><span>A change request</span></li>
+<li class="quiz-opt" data-exp='CORRECT: In Vulnerability Solution Management, a "Solution" refers to a software patch or configuration change (such as a Microsoft KB article) that resolves one or more vulnerabilities. The Solution Management feature correlates known solutions with open vulnerabilities to help teams identify what fix to apply.' data-idx="1" data-q="11"><span class="quiz-opt-letter">B</span><span>A software patch or configuration change (e.g., Microsoft KB)</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: A security policy exception is part of exception management. It is an acceptance of risk, not a fix. Exceptions do not resolve the underlying vulnerability." data-idx="2" data-q="11"><span class="quiz-opt-letter">C</span><span>A security policy exception</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: A firewall rule is a network security control that may mitigate exposure but does not fix the root vulnerability. In VR Solution Management, solutions are patches or configuration changes that address the vulnerability directly." data-idx="3" data-q="11"><span class="quiz-opt-letter">D</span><span>A firewall rule</span></li>
+</ul><button class="quiz-submit-btn" data-q="11" type="button">Submit Answer</button>
+
+<details class="quiz-overall" id="qexp11">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>B - A software patch or configuration change (e.g., Microsoft KB)</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-security-management/page/product/vulnerability-response/concept/vr-solution-management.html" target="_blank">ServiceNow Zurich Documentation - Vulnerability Solution Management</a></p><h5>Expert Explanation</h5><p>Vulnerability Solution Management in ServiceNow correlates known solutions with open vulnerabilities. A "Solution" in this context is specifically a software patch, hotfix, or configuration change (like a Microsoft Knowledge Base article) that directly resolves the vulnerability. The system matches solutions to vulnerabilities so remediation teams know exactly which patch to apply without manual research.</p><h5>Why the Others Are Wrong</h5><p>Option A (Change Request) is a process record for tracking changes, not the solution itself. Option C (Policy Exception) accepts risk rather than fixing the vulnerability. Option D (Firewall Rule) is a compensating control that limits exposure but does not eliminate the root vulnerability.</p><h5>Memory Tip</h5><p>A Solution in VR is the actual "medicine" for the vulnerability. Just like a doctor prescribes a specific medication (patch) rather than a hospital form (Change Request) or a bandage (firewall rule), VR Solution Management identifies the specific fix needed.</p><h5>Real-World Example</h5><p>Your scanner identifies 200 servers vulnerable to CVE-2024-5678. Vulnerability Solution Management automatically correlates this CVE with Microsoft KB5034567. Now your patch management team can see exactly which KB article to deploy, and as servers get patched and rescanned, the Vulnerable Items close automatically.</p>
+</div>
+</details>
+</div></div></div>
+<div class="quiz-card quiz-multi is-email-locked" data-question-index="12" data-tier="2" hidden="" id="qcard12">
+<div class="quiz-q"><span class="quiz-q-num">13.</span>When the Qualys Integration imports host detection results, which of the following actions can it perform on the Configuration Item table- (Choose two.) <span class="quiz-choose">(choose 2)</span></div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="CORRECT: The Qualys integration can Update existing Configuration Items in the CI table. When a Qualys scan returns data for a host that already has a matching CI in the CMDB, the integration updates the existing record with the latest information." data-idx="0" data-q="12"><span class="quiz-opt-letter">A</span><span>Update</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Re-parent is not a standard action performed by the Qualys integration on the CI table. Re-parenting involves changing the hierarchical relationship of CIs, which is a CMDB management function, not a scanner integration action." data-idx="1" data-q="12"><span class="quiz-opt-letter">B</span><span>Re-parent</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Delete is not an action the Qualys integration performs on Configuration Items. Removing CIs from the CMDB based on scanner data would be destructive and is not part of the integration design. CI lifecycle management is handled separately." data-idx="2" data-q="12"><span class="quiz-opt-letter">C</span><span>Delete</span></li>
+<li class="quiz-opt" data-exp="CORRECT: The Qualys integration can Insert new Configuration Items into the CI table. When a Qualys scan discovers a host that does not have a matching CI in the CMDB, the integration can create a new CI record." data-idx="3" data-q="12"><span class="quiz-opt-letter">D</span><span>Insert</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Re-classify is not a standard Qualys integration action on the CI table. While CI classification can change through other CMDB processes, the Qualys integration focuses on inserting new and updating existing CIs." data-idx="4" data-q="12"><span class="quiz-opt-letter">E</span><span>Re-classify</span></li>
+</ul><button class="quiz-submit-btn" data-q="12" type="button">Submit Answer</button>
+
+
+<details class="quiz-overall" id="qexp12">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>A - Update and D - Insert</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-security-management/page/product/vulnerability-response/concept/vr-qualys-integration.html" target="_blank">ServiceNow Zurich Documentation - Qualys Integration</a></p><h5>Expert Explanation</h5><p>The Qualys integration for Vulnerability Response can perform two actions on the Configuration Item table: Update and Insert. When scan results come in, the integration checks if a CI already exists for the scanned host. If it does, the CI record is updated with the latest data. If no matching CI is found, a new CI record is inserted. This ensures the CMDB stays current with the assets being scanned.</p><h5>Why the Others Are Wrong</h5><p>Option B (Re-parent) changes CI hierarchy relationships, which is outside the scope of scanner integration. Option C (Delete) would be destructive and is not a function of the Qualys integration. Option E (Re-classify) changes CI class types, which is a CMDB management function not triggered by scanner imports.</p><h5>Memory Tip</h5><p>Think CRUD: the Qualys integration only does the "C" (Create/Insert) and "U" (Update) parts. It never Deletes or does structural changes like re-parenting. Scanners add and refresh data; they do not remove or restructure it.</p><h5>Real-World Example</h5><p>A Qualys scan runs against your data center. It finds Server-A (which already exists in the CMDB) and updates its OS version. It also discovers Server-B (a new server the infrastructure team just deployed). The integration inserts Server-B as a new CI. Neither action deletes or reclassifies anything in the CMDB.</p>
+</div>
+</details>
+</div></div></div>
+<div class="quiz-card quiz-multi is-email-locked" data-question-index="13" data-tier="2" hidden="" id="qcard13">
+<div class="quiz-q"><span class="quiz-q-num">14.</span>Select the three components of a Filter Condition: (Choose three.) <span class="quiz-choose">(choose 3)</span></div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="CORRECT: Field is one of the three components of a Filter Condition. The Field specifies which data attribute (such as State, Priority, or Assignment Group) you are filtering on." data-idx="0" data-q="13"><span class="quiz-opt-letter">A</span><span>Field</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Sum is an aggregate function used in reporting and analytics, not a component of a filter condition. Filter conditions define criteria for matching records, not for performing mathematical calculations." data-idx="1" data-q="13"><span class="quiz-opt-letter">B</span><span>Sum</span></li>
+<li class="quiz-opt" data-exp='CORRECT: Operator is one of the three components of a Filter Condition. The Operator defines the comparison logic, such as "is," "is not," "contains," "greater than," or "starts with."' data-idx="2" data-q="13"><span class="quiz-opt-letter">C</span><span>Operator</span></li>
+<li class="quiz-opt" data-exp='CORRECT: Value is one of the three components of a Filter Condition. The Value is the specific data you are comparing against, such as "Active," "High," or a specific date.' data-idx="3" data-q="13"><span class="quiz-opt-letter">D</span><span>Value</span></li>
+</ul><button class="quiz-submit-btn" data-q="13" type="button">Submit Answer</button>
+
+
+<details class="quiz-overall" id="qexp13">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>A - Field, C - Operator, and D - Value</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-security-management/page/use/using-lists/concept/c_FilterConditions.html" target="_blank">ServiceNow Zurich Documentation - Filter Conditions</a></p><h5>Expert Explanation</h5><p>Every filter condition in ServiceNow is built from three components. The Field identifies which column or attribute to evaluate (e.g., "Priority"). The Operator defines the comparison type (e.g., "is," "contains," "greater than"). The Value specifies what to compare against (e.g., "Critical"). Together, they form a complete condition like "Priority is Critical."</p><h5>Why the Others Are Wrong</h5><p>Option B (Sum) is an aggregate function found in reports and Performance Analytics. It calculates totals across records and has nothing to do with building filter conditions. Filter conditions match records; they do not perform arithmetic.</p><h5>Memory Tip</h5><p>Think of a filter condition as a sentence: [Field] [Operator] [Value] = "Priority" "is" "Critical." It reads like natural language. If a word does not fit into that sentence structure, it is not a filter component.</p><h5>Real-World Example</h5><p>You want to find all critical, open Vulnerable Items. Your filter condition reads: Field = "State," Operator = "is," Value = "Open" AND Field = "Risk Score," Operator = "greater than," Value = "75." Each condition follows the same three-part structure.</p>
+</div>
+</details>
+</div></div></div>
+<div class="quiz-card is-email-locked" data-question-index="14" data-tier="2" hidden="" id="qcard14">
+<div class="quiz-q"><span class="quiz-q-num">15.</span>Which ServiceNow application is often installed alongside Vulnerability Response to check if CIs meet specific configuration standards (e.g., CIS Benchmarks)-</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="CORRECT: Configuration Compliance is the ServiceNow application commonly installed alongside Vulnerability Response to verify that CIs meet specific configuration standards such as CIS Benchmarks. It assesses whether systems are configured securely and flags deviations from hardening baselines." data-idx="0" data-q="14"><span class="quiz-opt-letter">A</span><span>Configuration Compliance</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Trusted Security Circles is a feature for sharing threat intelligence data between ServiceNow instances. It does not check CI configurations against hardening benchmarks." data-idx="1" data-q="14"><span class="quiz-opt-letter">B</span><span>Trusted Security Circles</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Threat Intelligence focuses on ingesting, analyzing, and correlating threat data (indicators of compromise, threat actors, campaigns). It does not perform configuration compliance checks against standards like CIS Benchmarks." data-idx="2" data-q="14"><span class="quiz-opt-letter">C</span><span>Threat Intelligence</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Security Incident Response (SIR) handles the investigation and remediation of security incidents. It does not assess whether CIs meet configuration hardening standards." data-idx="3" data-q="14"><span class="quiz-opt-letter">D</span><span>Security Incident Response</span></li>
+</ul><button class="quiz-submit-btn" data-q="14" type="button">Submit Answer</button>
+
+<details class="quiz-overall" id="qexp14">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>A - Configuration Compliance</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-security-management/page/product/configuration-compliance/concept/cc-overview.html" target="_blank">ServiceNow Zurich Documentation - Configuration Compliance</a></p><h5>Expert Explanation</h5><p>Configuration Compliance is the ServiceNow Security Operations application designed to check whether CIs meet defined configuration standards. It works alongside Vulnerability Response to provide a complete security posture view. While VR identifies known vulnerabilities (missing patches, software flaws), Configuration Compliance checks for misconfigurations against benchmarks like CIS, DISA STIGs, or custom internal baselines.</p><h5>Why the Others Are Wrong</h5><p>Option B (Trusted Security Circles) enables inter-instance threat data sharing, not configuration checking. Option C (Threat Intelligence) processes threat indicators and IOCs, not configuration baselines. Option D (Security Incident Response) manages security incidents from detection to resolution, not configuration compliance scanning.</p><h5>Memory Tip</h5><p>VR asks "Are you vulnerable-" while Configuration Compliance asks "Are you configured correctly-" They are two sides of the same coin. If a question mentions CIS Benchmarks, DISA STIGs, or configuration standards, the answer is always Configuration Compliance.</p><h5>Real-World Example</h5><p>Your Qualys scan finds no known CVEs on a Linux server, so VR shows it clean. But Configuration Compliance checks the same server against CIS Benchmarks and discovers SSH root login is enabled, password complexity is weak, and unnecessary services are running. VR and Configuration Compliance together give the full picture of that server's security posture.</p>
+</div>
+</details>
+</div></div></div>
+    </div>
+    <div class="quiz-nav" id="quizNav">
+      <button type="button" class="quiz-secondary-btn" id="quizPrevBtn">Previous question</button>
+      <div class="quiz-nav-meta" id="quizNavMeta">Choose an answer and submit to continue.</div>
+      <button type="button" class="quiz-nav-next" id="quizNextBtn" disabled>Next question</button>
+    </div>
+    <div class="quiz-final" id="quizFinal" hidden>
+      <div class="quiz-final-kicker">Preview complete</div>
+      <h3>You scored <span id="quizFinalScoreText">0/15</span> on the 15-question preview.</h3>
+      <div class="quiz-final-score" id="quizFinalScoreValue">0/15</div>
+      <p class="quiz-final-copy">The full course keeps the same answer breakdown style across all 213 questions.</p>
+      <p class="quiz-final-anchor">Your first exam attempt is free. Your second costs $350.</p>
+      <div class="quiz-final-actions">
+        <a href="https://www.udemy.com/course/pass-your-servicenow-cis-vulnerability-response-vr-exam/?referralCode=EE503A8EA58C23039100" target="_blank" rel="noopener" class="cp-cta" data-buy-stage="final">Get all 213 questions for $9.99
           <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
     </div>
-    <div class="quiz-tier-heading">Questions 11-15. Full course teaser.</div>
-<div class="quiz-card quiz-multi is-teaser-locked" data-question-index="10" data-tier="3" id="qcard10">
-<div class="quiz-q"><span class="quiz-q-num">11.</span>Which data do Risk Score Calculators typically combine to compute a Risk Score- (Choose two.) <span class="quiz-choose">(choose 2)</span></div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
-<ul class="quiz-opts">
-<li class="quiz-opt" data-idx="0"><span class="quiz-opt-letter">A</span><span>Vulnerability severity or CVSS-related scoring</span></li>
-<li class="quiz-opt" data-idx="1"><span class="quiz-opt-letter">B</span><span>Asset criticality or business impact of the CI</span></li>
-<li class="quiz-opt" data-idx="2"><span class="quiz-opt-letter">C</span><span>The user’s theme settings</span></li>
-<li class="quiz-opt" data-idx="3"><span class="quiz-opt-letter">D</span><span>The number of update sets in the instance</span></li>
-</ul>
-
-
-
-</div><div class="quiz-locked-overlay">
-<div class="quiz-locked-card">
-<div class="quiz-locked-lock"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="10" rx="2" width="14" x="5" y="11"></rect><path d="M8 11V8a4 4 0 1 1 8 0v3"></path></svg></div>
-<div class="quiz-locked-title">This question is part of the full 213-question course.</div>
-<p class="quiz-locked-copy">Keep the teaser here, then move to Udemy for the full question bank.</p>
-<a class="quiz-locked-cta-btn" data-buy-tier="tier3" href="https://www.udemy.com/course/pass-your-servicenow-cis-vulnerability-response-vr-exam/?referralCode=EE503A8EA58C23039100" rel="noopener" target="_blank">Get all 213 questions on Udemy</a>
-</div>
-</div></div></div>
-<div class="quiz-card is-teaser-locked" data-question-index="11" data-tier="3" id="qcard11">
-<div class="quiz-q"><span class="quiz-q-num">12.</span>Vulnerability Solution Management correlates vulnerabilities with solutions. Which of the following is considered a "Solution" in this context-</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
-<ul class="quiz-opts">
-<li class="quiz-opt" data-idx="0"><span class="quiz-opt-letter">A</span><span>A change request</span></li>
-<li class="quiz-opt" data-idx="1"><span class="quiz-opt-letter">B</span><span>A software patch or configuration change (e.g., Microsoft KB)</span></li>
-<li class="quiz-opt" data-idx="2"><span class="quiz-opt-letter">C</span><span>A security policy exception</span></li>
-<li class="quiz-opt" data-idx="3"><span class="quiz-opt-letter">D</span><span>A firewall rule</span></li>
-</ul>
-
-
-</div><div class="quiz-locked-overlay">
-<div class="quiz-locked-card">
-<div class="quiz-locked-lock"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="10" rx="2" width="14" x="5" y="11"></rect><path d="M8 11V8a4 4 0 1 1 8 0v3"></path></svg></div>
-<div class="quiz-locked-title">This question is part of the full 213-question course.</div>
-<p class="quiz-locked-copy">Keep the teaser here, then move to Udemy for the full question bank.</p>
-<a class="quiz-locked-cta-btn" data-buy-tier="tier3" href="https://www.udemy.com/course/pass-your-servicenow-cis-vulnerability-response-vr-exam/?referralCode=EE503A8EA58C23039100" rel="noopener" target="_blank">Get all 213 questions on Udemy</a>
-</div>
-</div></div></div>
-<div class="quiz-card quiz-multi is-teaser-locked" data-question-index="12" data-tier="3" id="qcard12">
-<div class="quiz-q"><span class="quiz-q-num">13.</span>When the Qualys Integration imports host detection results, which of the following actions can it perform on the Configuration Item table- (Choose two.) <span class="quiz-choose">(choose 2)</span></div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
-<ul class="quiz-opts">
-<li class="quiz-opt" data-idx="0"><span class="quiz-opt-letter">A</span><span>Update</span></li>
-<li class="quiz-opt" data-idx="1"><span class="quiz-opt-letter">B</span><span>Re-parent</span></li>
-<li class="quiz-opt" data-idx="2"><span class="quiz-opt-letter">C</span><span>Delete</span></li>
-<li class="quiz-opt" data-idx="3"><span class="quiz-opt-letter">D</span><span>Insert</span></li>
-<li class="quiz-opt" data-idx="4"><span class="quiz-opt-letter">E</span><span>Re-classify</span></li>
-</ul>
-
-
-
-</div><div class="quiz-locked-overlay">
-<div class="quiz-locked-card">
-<div class="quiz-locked-lock"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="10" rx="2" width="14" x="5" y="11"></rect><path d="M8 11V8a4 4 0 1 1 8 0v3"></path></svg></div>
-<div class="quiz-locked-title">This question is part of the full 213-question course.</div>
-<p class="quiz-locked-copy">Keep the teaser here, then move to Udemy for the full question bank.</p>
-<a class="quiz-locked-cta-btn" data-buy-tier="tier3" href="https://www.udemy.com/course/pass-your-servicenow-cis-vulnerability-response-vr-exam/?referralCode=EE503A8EA58C23039100" rel="noopener" target="_blank">Get all 213 questions on Udemy</a>
-</div>
-</div></div></div>
-<div class="quiz-card quiz-multi is-teaser-locked" data-question-index="13" data-tier="3" id="qcard13">
-<div class="quiz-q"><span class="quiz-q-num">14.</span>Select the three components of a Filter Condition: (Choose three.) <span class="quiz-choose">(choose 3)</span></div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
-<ul class="quiz-opts">
-<li class="quiz-opt" data-idx="0"><span class="quiz-opt-letter">A</span><span>Field</span></li>
-<li class="quiz-opt" data-idx="1"><span class="quiz-opt-letter">B</span><span>Sum</span></li>
-<li class="quiz-opt" data-idx="2"><span class="quiz-opt-letter">C</span><span>Operator</span></li>
-<li class="quiz-opt" data-idx="3"><span class="quiz-opt-letter">D</span><span>Value</span></li>
-</ul>
-
-
-
-</div><div class="quiz-locked-overlay">
-<div class="quiz-locked-card">
-<div class="quiz-locked-lock"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="10" rx="2" width="14" x="5" y="11"></rect><path d="M8 11V8a4 4 0 1 1 8 0v3"></path></svg></div>
-<div class="quiz-locked-title">This question is part of the full 213-question course.</div>
-<p class="quiz-locked-copy">Keep the teaser here, then move to Udemy for the full question bank.</p>
-<a class="quiz-locked-cta-btn" data-buy-tier="tier3" href="https://www.udemy.com/course/pass-your-servicenow-cis-vulnerability-response-vr-exam/?referralCode=EE503A8EA58C23039100" rel="noopener" target="_blank">Get all 213 questions on Udemy</a>
-</div>
-</div></div></div>
-<div class="quiz-card is-teaser-locked" data-question-index="14" data-tier="3" id="qcard14">
-<div class="quiz-q"><span class="quiz-q-num">15.</span>Which ServiceNow application is often installed alongside Vulnerability Response to check if CIs meet specific configuration standards (e.g., CIS Benchmarks)-</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
-<ul class="quiz-opts">
-<li class="quiz-opt" data-idx="0"><span class="quiz-opt-letter">A</span><span>Configuration Compliance</span></li>
-<li class="quiz-opt" data-idx="1"><span class="quiz-opt-letter">B</span><span>Trusted Security Circles</span></li>
-<li class="quiz-opt" data-idx="2"><span class="quiz-opt-letter">C</span><span>Threat Intelligence</span></li>
-<li class="quiz-opt" data-idx="3"><span class="quiz-opt-letter">D</span><span>Security Incident Response</span></li>
-</ul>
-
-
-</div><div class="quiz-locked-overlay">
-<div class="quiz-locked-card">
-<div class="quiz-locked-lock"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="10" rx="2" width="14" x="5" y="11"></rect><path d="M8 11V8a4 4 0 1 1 8 0v3"></path></svg></div>
-<div class="quiz-locked-title">This question is part of the full 213-question course.</div>
-<p class="quiz-locked-copy">Keep the teaser here, then move to Udemy for the full question bank.</p>
-<a class="quiz-locked-cta-btn" data-buy-tier="tier3" href="https://www.udemy.com/course/pass-your-servicenow-cis-vulnerability-response-vr-exam/?referralCode=EE503A8EA58C23039100" rel="noopener" target="_blank">Get all 213 questions on Udemy</a>
-</div>
-</div></div></div>
-    <div class="quiz-interstitial" id="tier3FinalCta">
-      <div class="quiz-interstitial-kicker">Full course</div>
-      <h3>You've seen 10 of 213 questions.</h3>
-      <p class="quiz-interstitial-copy">The full course covers the exam blueprint with sourced explanations.</p>
-      <p class="quiz-interstitial-anchor">Your first exam attempt is free. Your second costs $350.</p>
-      <div class="quiz-interstitial-actions">
-        <a href="https://www.udemy.com/course/pass-your-servicenow-cis-vulnerability-response-vr-exam/?referralCode=EE503A8EA58C23039100" target="_blank" rel="noopener" class="cp-cta" data-buy-tier="final">Get all 213 questions on Udemy
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </div>
-    <div class="quiz-cross-sell">
+    <div class="quiz-cross-sell" id="quizCrossSell" hidden>
       <h3>Many students also study:</h3>
-      <p>Keep going with the cert recommendation quiz, or compare all 18 practice tests side by side.</p>
+      <p>Compare all 18 practice tests, or use the cert quiz to plan what to study next.</p>
       <div class="quiz-cross-sell-links">
         <a href="/quiz.html">Find your next cert</a>
         <a href="/compare.html">Compare all 18 courses</a>
       </div>
     </div>
-    <div class="quiz-toast" id="quizToast">Questions 6-10 are ready.</div>
+    <div class="quiz-toast" id="quizToast">Questions 6-15 are ready.</div>
   </section>
 
   <div class="cp-bottom">
@@ -825,44 +1097,52 @@ a:hover { text-decoration: underline; }
 
 <script>
 const QUIZ={"slug": "cis-vr", "code": "VR", "totalQuestionCount": 213, "convertKitFormId": "9183962"};
-const answers=[1, 0, 1, 0, 4, 1, 1, [0, 5], 1, [1, 3, 5]];
-const STORAGE_EMAIL='luckyx-email:'+QUIZ.slug,STORAGE_ANSWERS='luckyx-answers:'+QUIZ.slug,STORAGE_SCORE='luckyx-score:'+QUIZ.slug;
-const themeToggle=document.getElementById('themeToggle'),slots=Array.from(document.querySelectorAll('.preview-slot[data-slot]')),cards=Array.from(document.querySelectorAll('.quiz-card')),interactiveCards=cards.filter((card)=>parseInt(card.dataset.questionIndex,10)<10),tierTwoCards=cards.filter((card)=>card.dataset.tier==='2'),tierOneInterstitial=document.getElementById('tier1Interstitial'),tierTwoInterstitial=document.getElementById('tier2Interstitial'),tier1ContinueBtn=document.getElementById('tier1ContinueBtn'),gateForm=document.getElementById('quizGateForm'),gateEmail=document.getElementById('quizGateEmail'),gateSubmit=document.getElementById('quizGateSubmit'),gateMessage=document.getElementById('quizGateMessage'),toast=document.getElementById('quizToast');
-let emailReady=false,storedAnswers={},startEventSent=false,tier1EventSent=false,tier2EventSent=false;const drafts={};
+const answers=[1, 0, 1, 0, 4, 1, 1, [0, 5], 1, [1, 3, 5], [0, 1], 1, [0, 3], [0, 2, 3], 0];
+const STORAGE_EMAIL='luckyx-email:'+QUIZ.slug,STORAGE_ANSWERS='luckyx-answers:'+QUIZ.slug,STORAGE_SCORE='luckyx-score:'+QUIZ.slug,STORAGE_CURRENT='luckyx-current:'+QUIZ.slug;
+const themeToggle=document.getElementById('themeToggle'),cards=Array.from(document.querySelectorAll('.quiz-card')),dots=Array.from(document.querySelectorAll('.preview-dot[data-slot]')),prevBtn=document.getElementById('quizPrevBtn'),nextBtn=document.getElementById('quizNextBtn'),navMeta=document.getElementById('quizNavMeta'),stepLabel=document.getElementById('quizStepLabel'),tierLabel=document.getElementById('quizTierLabel'),miniScore=document.getElementById('quizMiniScore'),gateForm=document.getElementById('quizGateForm'),gateEmail=document.getElementById('quizGateEmail'),gateSubmit=document.getElementById('quizGateSubmit'),gateMessage=document.getElementById('quizGateMessage'),finalBlock=document.getElementById('quizFinal'),finalScoreText=document.getElementById('quizFinalScoreText'),finalScoreValue=document.getElementById('quizFinalScoreValue'),crossSell=document.getElementById('quizCrossSell'),toast=document.getElementById('quizToast');
+let emailReady=false,storedAnswers={},currentIndex=0,startEventSent=false,tier1EventSent=false,tier2EventSent=false;const drafts={};
 if(themeToggle){themeToggle.addEventListener('click',()=>{const current=document.documentElement.getAttribute('data-theme');const next=current==='light'?'dark':'light';document.documentElement.setAttribute('data-theme',next);localStorage.setItem('luckyx-theme',next);});}
 function evt(name,extra){if(typeof gtag!=='function')return;gtag('event',name,Object.assign({cert:QUIZ.code},extra||{}));}
 function showToast(message){if(!toast)return;toast.textContent=message;toast.classList.add('show');window.clearTimeout(showToast._timer);showToast._timer=window.setTimeout(()=>toast.classList.remove('show'),2600);}
 function readJson(key,fallback){try{const raw=localStorage.getItem(key);return raw?JSON.parse(raw):fallback;}catch(err){return fallback;}}
 function normalizeSelection(value){if(!Array.isArray(value))return[];return Array.from(new Set(value.map((item)=>parseInt(item,10)).filter((item)=>Number.isInteger(item)&&item>=0))).sort((a,b)=>a-b);}
-function readAnswers(){const parsed=readJson(STORAGE_ANSWERS,{}),out={};if(!parsed||typeof parsed!=='object')return out;Object.keys(parsed).forEach((key)=>{const qi=parseInt(key,10),item=parsed[key];if(!Number.isInteger(qi)||qi<0||qi>=10||!item||typeof item!=='object')return;const selected=normalizeSelection(item.selected);if(!selected.length||typeof item.isCorrect!=='boolean')return;out[qi]={selected,isCorrect:item.isCorrect};});return out;}
+function readAnswers(){const parsed=readJson(STORAGE_ANSWERS,{}),out={};if(!parsed||typeof parsed!=='object')return out;Object.keys(parsed).forEach((key)=>{const qi=parseInt(key,10),item=parsed[key];if(!Number.isInteger(qi)||qi<0||qi>=15||!item||typeof item!=='object')return;const selected=normalizeSelection(item.selected);if(!selected.length||typeof item.isCorrect!=='boolean')return;out[qi]={selected,isCorrect:item.isCorrect};});return out;}
+function readCurrent(){const raw=localStorage.getItem(STORAGE_CURRENT),value=parseInt(raw,10);return Number.isInteger(value)?value:null;}
 function writeAnswers(){localStorage.setItem(STORAGE_ANSWERS,JSON.stringify(storedAnswers));}
+function writeCurrent(){localStorage.setItem(STORAGE_CURRENT,String(currentIndex));}
 function scoreSlice(start,end){let answered=0,correct=0;for(let i=start;i<=end;i+=1){if(!storedAnswers[i])continue;answered+=1;if(storedAnswers[i].isCorrect)correct+=1;}return{answered,correct};}
-function saveScoreState(){const tier1=scoreSlice(0,4),tier2Only=scoreSlice(5,9),total=scoreSlice(0,9);localStorage.setItem(STORAGE_SCORE,JSON.stringify({tier1:tier1.correct,tier2:tier2Only.correct,total:total.correct}));}
+function saveScoreState(){const free5=scoreSlice(0,4),total15=scoreSlice(0,14);localStorage.setItem(STORAGE_SCORE,JSON.stringify({free5:free5.correct,total15:total15.correct}));}
 function correctIndicesFor(qi){return(Array.isArray(answers[qi])?answers[qi].slice():[answers[qi]]).sort((a,b)=>a-b);}
+function isUnlocked(qi){return qi<5||emailReady;}
+function nextPendingIndex(){const max=emailReady?14:5;for(let i=0;i<=max;i+=1){if(!storedAnswers[i])return i;}return max;}
+function navigationLimit(){return nextPendingIndex();}
+function normalizeCurrent(candidate){const limit=navigationLimit();if(!Number.isInteger(candidate))return limit;if(candidate<0)return 0;if(candidate>limit)return limit;return candidate;}
 function setMessage(text,cls){if(!gateMessage)return;gateMessage.textContent=text||'';gateMessage.classList.remove('is-error','is-success');if(cls)gateMessage.classList.add(cls);}
 function processSections(container){if(!container||container.dataset.processed)return;container.dataset.processed='1';const h5s=Array.from(container.querySelectorAll('h5'));if(!h5s.length)return;const sections=[];h5s.forEach((h5)=>{const title=h5.textContent.toLowerCase();let cls='exp-section';if(title.includes('correct answer'))cls+=' exp-correct-answer';else if(title.includes('source'))cls+=' exp-source';else if(title.includes('expert'))cls+=' exp-expert';else if(title.includes('why')||title.includes('wrong'))cls+=' exp-wrong';else if(title.includes('memory'))cls+=' exp-memory';else if(title.includes('real-world')||title.includes('example'))cls+=' exp-realworld';sections.push({cls,h5});});for(let i=0;i<sections.length;i+=1){const section=sections[i],div=document.createElement('div'),next=i<sections.length-1?sections[i+1].h5:null;div.className=section.cls;section.h5.parentNode.insertBefore(div,section.h5);div.appendChild(section.h5);while(div.nextSibling&&div.nextSibling!==next)div.appendChild(div.nextSibling);}}
 function showExplanations(qi){const card=document.getElementById('qcard'+qi);if(!card)return;const opts=card.querySelectorAll('.quiz-opt'),correct=correctIndicesFor(qi);opts.forEach((opt,index)=>{const per=opt.getAttribute('data-exp');if(!per||opt.querySelector('.quiz-opt-exp-inline'))return;const ok=correct.indexOf(index)!==-1,txt=per.replace(/^(CORRECT|INCORRECT):\s*/i,''),div=document.createElement('div'),icon=ok?'\u2713':'\u2717';div.className='quiz-opt-exp-inline '+(ok?'qoe-is-correct':'qoe-is-wrong');div.innerHTML='<div class="qoe-header">'+(ok?'<span class="qoe-correct">'+icon+' Correct</span>':'<span class="qoe-wrong">'+icon+' Incorrect</span>')+' <span class="qoe-letter">Option '+'ABCDEFG'[index]+'</span></div><div class="qoe-text">'+txt+'</div>';opt.appendChild(div);});const overall=document.getElementById('qexp'+qi);if(!overall)return;const content=overall.querySelector('.quiz-overall-content');if(!content||!content.innerHTML.trim())return;processSections(content);overall.open=false;overall.removeAttribute('open');overall.style.display='block';}
 document.querySelectorAll('.quiz-overall').forEach((detail)=>{detail.addEventListener('toggle',function(){if(!this.open)return;document.querySelectorAll('.quiz-overall').forEach((other)=>{if(other!==this)other.open=false;});});});
 function clearOptionState(opt){opt.classList.remove('selected','correct','wrong');opt.removeAttribute('disabled');}
-function renderDraft(qi){const card=document.getElementById('qcard'+qi);if(!card)return;card.removeAttribute('data-state');const selected=drafts[qi]||[];card.querySelectorAll('.quiz-opt').forEach((opt,index)=>{clearOptionState(opt);if(selected.indexOf(index)!==-1)opt.classList.add('selected');if(emailReady||qi<5)opt.removeAttribute('disabled');else opt.setAttribute('disabled','');});const btn=card.querySelector('.quiz-submit-btn');if(btn)btn.style.display=selected.length&&(emailReady||qi<5)?'block':'none';const overall=card.querySelector('.quiz-overall');if(overall){overall.open=false;overall.removeAttribute('open');overall.style.display='';}}
+function renderDraft(qi){const card=document.getElementById('qcard'+qi);if(!card)return;card.removeAttribute('data-state');const selected=drafts[qi]||[];card.querySelectorAll('.quiz-opt').forEach((opt,index)=>{clearOptionState(opt);if(selected.indexOf(index)!==-1)opt.classList.add('selected');if(isUnlocked(qi))opt.removeAttribute('disabled');else opt.setAttribute('disabled','');});const btn=card.querySelector('.quiz-submit-btn');if(btn)btn.style.display=selected.length&&isUnlocked(qi)?'inline-flex':'none';const overall=card.querySelector('.quiz-overall');if(overall){overall.open=false;overall.removeAttribute('open');overall.style.display='';}}
 function applyResponse(qi,response){const card=document.getElementById('qcard'+qi);if(!card||!response)return;const correct=correctIndicesFor(qi),opts=card.querySelectorAll('.quiz-opt');card.dataset.state=response.isCorrect?'correct':'wrong';opts.forEach((opt)=>clearOptionState(opt));if(response.isCorrect){response.selected.forEach((index)=>{if(opts[index])opts[index].classList.add('correct');});}else{response.selected.forEach((index)=>{if(!opts[index])return;if(correct.indexOf(index)===-1)opts[index].classList.add('wrong');else opts[index].classList.add('correct');});correct.forEach((index)=>{if(opts[index])opts[index].classList.add('correct');});}opts.forEach((opt)=>opt.setAttribute('disabled',''));const btn=card.querySelector('.quiz-submit-btn');if(btn)btn.style.display='none';showExplanations(qi);}
-function currentSlotIndex(){for(let i=0;i<5;i+=1){if(!storedAnswers[i])return i;}if(!emailReady)return 5;for(let i=5;i<10;i+=1){if(!storedAnswers[i])return i;}return-1;}
-function updateStatus(){const total=scoreSlice(0,9),answeredLabel=document.getElementById('quizStatusAnswered'),scoreLabel=document.getElementById('quizStatusScore');if(answeredLabel)answeredLabel.textContent=total.answered+' of 10 interactive questions';if(scoreLabel)scoreLabel.textContent=total.correct+' correct';}
-function updateSlots(){const current=currentSlotIndex();slots.forEach((slot)=>{const idx=parseInt(slot.dataset.slot,10);slot.classList.remove('is-correct','is-wrong','is-current','is-email-locked','is-clickable');if(idx>=10)return;if(storedAnswers[idx])slot.classList.add(storedAnswers[idx].isCorrect?'is-correct':'is-wrong');else if(idx>=5&&!emailReady)slot.classList.add('is-email-locked');if(idx===current)slot.classList.add('is-current');if(idx<5||(idx<10&&emailReady))slot.classList.add('is-clickable');});}
-function updateInterstitials(){const tier1=scoreSlice(0,4),total=scoreSlice(0,9),tier1Text=document.getElementById('tier1ScoreText'),tier1Value=document.getElementById('tier1ScoreValue'),tier2Text=document.getElementById('tier2ScoreText'),tier2Value=document.getElementById('tier2ScoreValue');if(tier1Text)tier1Text.textContent=tier1.correct+'/5';if(tier1Value)tier1Value.textContent=tier1.correct+'/5';if(tierTwoInterstitial&&tier2Text&&tier2Value){tier2Text.textContent=total.correct+'/10';tier2Value.textContent=total.correct+'/10';}if(tierOneInterstitial)tierOneInterstitial.hidden=tier1.answered!==5;if(tierTwoInterstitial)tierTwoInterstitial.hidden=total.answered!==10;}
-function persistState(){writeAnswers();saveScoreState();}
-function setTierTwoAccess(open){emailReady=!!open;tierTwoCards.forEach((card)=>{card.classList.toggle('is-email-locked',!open);const content=card.querySelector('.quiz-answer-content');if(content)content.classList.toggle('quiz-gate-blur',!open);card.querySelectorAll('[data-email-overlay]').forEach((overlay)=>{overlay.hidden=open;});const qi=parseInt(card.dataset.questionIndex,10);if(!storedAnswers[qi])renderDraft(qi);});updateSlots();}
-function maybeSendCompletionEvents(qi){const tier1=scoreSlice(0,4),total=scoreSlice(0,9);if(qi===0&&!startEventSent){startEventSent=true;evt('quiz_start',{tier:1});}if(!tier1EventSent&&tier1.answered===5){tier1EventSent=true;evt('quiz_tier1_complete',{score:tier1.correct});}if(!tier2EventSent&&total.answered===10){tier2EventSent=true;evt('quiz_tier2_complete',{score_total:total.correct});}}
-function render(){interactiveCards.forEach((card)=>{const qi=parseInt(card.dataset.questionIndex,10);if(storedAnswers[qi])applyResponse(qi,storedAnswers[qi]);else renderDraft(qi);});updateStatus();updateSlots();updateInterstitials();persistState();}
-document.querySelectorAll('.quiz-opt[data-q]').forEach((opt)=>{opt.addEventListener('click',function(){const qi=parseInt(this.dataset.q,10);if(qi>=5&&!emailReady)return;if(storedAnswers[qi])return;const idx=parseInt(this.dataset.idx,10),multi=Array.isArray(answers[qi]),current=drafts[qi]?drafts[qi].slice():[];if(multi){const pos=current.indexOf(idx);if(pos===-1)current.push(idx);else current.splice(pos,1);}else{current.length=0;current.push(idx);}drafts[qi]=normalizeSelection(current);renderDraft(qi);});});
-function submitAnswer(){const qi=parseInt(this.dataset.q,10);if(qi>=5&&!emailReady)return;if(storedAnswers[qi])return;const selected=normalizeSelection(drafts[qi]);if(!selected.length)return;const correct=correctIndicesFor(qi),isCorrect=selected.length===correct.length&&selected.every((value,index)=>value===correct[index]);storedAnswers[qi]={selected,isCorrect};delete drafts[qi];render();maybeSendCompletionEvents(qi);}
+function updateHeader(){if(stepLabel)stepLabel.textContent='Question '+(currentIndex+1)+' of 15';if(miniScore){const total=scoreSlice(0,14);miniScore.textContent=total.correct+' correct so far';}if(tierLabel){let label='Free',state='free';if(currentIndex>=5&&!emailReady){label='Email required';state='locked';}else if(currentIndex>=5&&emailReady){label='Preview unlocked';state='open';}tierLabel.textContent=label;tierLabel.dataset.state=state;}}
+function updateDots(){const limit=navigationLimit();dots.forEach((dot)=>{const idx=parseInt(dot.dataset.slot,10);dot.classList.remove('is-available','is-locked','is-correct','is-wrong','is-current');dot.classList.add(idx<=limit?'is-available':'is-locked');if(storedAnswers[idx])dot.classList.add(storedAnswers[idx].isCorrect?'is-correct':'is-wrong');if(idx===currentIndex)dot.classList.add('is-current');});}
+function updateVisibleCard(){cards.forEach((card)=>{const qi=parseInt(card.dataset.questionIndex,10),active=qi===currentIndex;card.hidden=!active;card.classList.toggle('is-active',active);card.setAttribute('aria-hidden',active?'false':'true');});}
+function updateNav(){const answered=!!storedAnswers[currentIndex],complete=scoreSlice(0,14).answered===15,limit=complete?14:navigationLimit();if(prevBtn)prevBtn.disabled=currentIndex===0;if(nextBtn){nextBtn.hidden=currentIndex===14&&complete;nextBtn.disabled=!answered||currentIndex>=limit;nextBtn.textContent='Next question';}if(navMeta){if(currentIndex===5&&!emailReady)navMeta.textContent='Enter your email to continue.';else if(currentIndex===14&&complete)navMeta.textContent='Preview complete. Your score is below.';else if(answered)navMeta.textContent='Ready for the next question.';else navMeta.textContent='Choose an answer and submit to continue.';}}
+function updateFinal(){const total=scoreSlice(0,14),complete=total.answered===15;if(finalBlock){finalBlock.hidden=!complete;if(complete){finalScoreText.textContent=total.correct+'/15';finalScoreValue.textContent=total.correct+'/15';}}if(crossSell)crossSell.hidden=!complete;}
+function persistState(){writeAnswers();saveScoreState();writeCurrent();}
+function setEmailAccess(open){emailReady=!!open;cards.forEach((card)=>{const qi=parseInt(card.dataset.questionIndex,10);if(qi<5)return;card.classList.toggle('is-email-locked',!open);const content=card.querySelector('.quiz-answer-content');if(content)content.classList.toggle('quiz-gate-blur',!open);if(qi===5){card.querySelectorAll('[data-email-overlay]').forEach((overlay)=>{overlay.hidden=open;});}});if(!emailReady&&currentIndex>5)currentIndex=5;}
+function maybeSendCompletionEvents(qi){const free5=scoreSlice(0,4),total=scoreSlice(0,14);if(qi===0&&!startEventSent){startEventSent=true;evt('quiz_start',{tier:1});}if(!tier1EventSent&&free5.answered===5){tier1EventSent=true;evt('quiz_tier1_complete',{score:free5.correct});}if(!tier2EventSent&&total.answered===15){tier2EventSent=true;evt('quiz_tier2_complete',{score_total:total.correct});}}
+function render(){currentIndex=normalizeCurrent(currentIndex);cards.forEach((card)=>{const qi=parseInt(card.dataset.questionIndex,10);if(storedAnswers[qi])applyResponse(qi,storedAnswers[qi]);else renderDraft(qi);});updateVisibleCard();updateHeader();updateDots();updateNav();updateFinal();persistState();}
+function scrollToCurrent(){const card=document.getElementById('qcard'+currentIndex);if(card)card.scrollIntoView({behavior:'smooth',block:'start'});}
+document.querySelectorAll('.quiz-opt[data-q]').forEach((opt)=>{opt.addEventListener('click',function(){const qi=parseInt(this.dataset.q,10);if(!isUnlocked(qi)||storedAnswers[qi])return;const idx=parseInt(this.dataset.idx,10),multi=Array.isArray(answers[qi]),current=drafts[qi]?drafts[qi].slice():[];if(multi){const pos=current.indexOf(idx);if(pos===-1)current.push(idx);else current.splice(pos,1);}else{current.length=0;current.push(idx);}drafts[qi]=normalizeSelection(current);render();});});
+function submitAnswer(){const qi=parseInt(this.dataset.q,10);if(!isUnlocked(qi)||storedAnswers[qi])return;const selected=normalizeSelection(drafts[qi]);if(!selected.length)return;const correct=correctIndicesFor(qi),isCorrect=selected.length===correct.length&&selected.every((value,index)=>value===correct[index]);storedAnswers[qi]={selected,isCorrect};delete drafts[qi];maybeSendCompletionEvents(qi);render();}
 document.querySelectorAll('.quiz-submit-btn[data-q]').forEach((btn)=>btn.addEventListener('click',submitAnswer));
-slots.forEach((slot)=>{slot.addEventListener('click',()=>{const idx=parseInt(slot.dataset.slot,10);if(idx>=10)return;if(idx>=5&&!emailReady){const gateCard=document.getElementById('qcard5');if(gateCard)gateCard.scrollIntoView({behavior:'smooth',block:'start'});return;}const card=document.getElementById('qcard'+idx);if(card)card.scrollIntoView({behavior:'smooth',block:'start'});});});
-if(tier1ContinueBtn){tier1ContinueBtn.addEventListener('click',()=>{const gateCard=document.getElementById('qcard5');if(gateCard)gateCard.scrollIntoView({behavior:'smooth',block:'start'});if(gateEmail)window.setTimeout(()=>gateEmail.focus(),250);});}
-function handleGateSubmit(event){event.preventDefault();const email=gateEmail.value.trim().toLowerCase(),valid=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)&&email.length<=254;if(!valid){setMessage('Use a valid email address.','is-error');return;}gateSubmit.disabled=true;gateSubmit.textContent='Sending...';setMessage('');fetch('https://app.convertkit.com/forms/'+QUIZ.convertKitFormId+'/subscriptions',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email_address:email,fields:{source:'quiz-gate-'+QUIZ.slug}})}).then((response)=>{if(!response.ok&&response.status!==200&&response.status!==201)throw new Error('gate failed');localStorage.setItem(STORAGE_EMAIL,'1');setTierTwoAccess(true);gateEmail.value='';gateEmail.disabled=true;gateSubmit.textContent='Questions ready';setMessage('Questions 6-10 are ready.','is-success');evt('quiz_email_submit');showToast('Questions 6-10 are ready.');}).catch(()=>{gateSubmit.disabled=false;gateSubmit.textContent='Continue with 5 More Questions';setMessage('That did not go through. Please try again.','is-error');});}
+if(prevBtn){prevBtn.addEventListener('click',()=>{if(currentIndex===0)return;currentIndex-=1;render();scrollToCurrent();});}
+if(nextBtn){nextBtn.addEventListener('click',()=>{const complete=scoreSlice(0,14).answered===15,limit=complete?14:navigationLimit();if(!storedAnswers[currentIndex]||currentIndex>=limit)return;currentIndex+=1;render();scrollToCurrent();if(currentIndex===5&&!emailReady&&gateEmail)window.setTimeout(()=>gateEmail.focus(),180);});}
+function handleGateSubmit(event){event.preventDefault();const email=gateEmail.value.trim().toLowerCase(),valid=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)&&email.length<=254;if(!valid){setMessage('Use a valid email address.','is-error');return;}gateSubmit.disabled=true;gateSubmit.textContent='Sending...';setMessage('');fetch('https://app.convertkit.com/forms/'+QUIZ.convertKitFormId+'/subscriptions',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email_address:email,fields:{source:'quiz-gate-'+QUIZ.slug}})}).then((response)=>{if(!response.ok&&response.status!==200&&response.status!==201)throw new Error('gate failed');localStorage.setItem(STORAGE_EMAIL,'1');setMessage('Questions 6-15 are ready.','is-success');evt('quiz_email_submit');showToast('Questions 6-15 are ready.');gateSubmit.disabled=false;gateSubmit.textContent='Continue with 10 More Questions';setEmailAccess(true);currentIndex=Math.max(currentIndex,5);render();}).catch(()=>{gateSubmit.disabled=false;gateSubmit.textContent='Continue with 10 More Questions';setMessage('That did not go through. Please try again.','is-error');});}
 if(gateForm)gateForm.addEventListener('submit',handleGateSubmit);
-document.querySelectorAll('a[data-buy-tier],a.cp-cta[href*="udemy.com"]').forEach((link)=>{link.addEventListener('click',()=>{const total=scoreSlice(0,9),tier=link.dataset.buyTier||(link.closest('#tier1Interstitial')?'tier1':'hero');evt('quiz_buy_click',{tier,score:total.correct});});});
-storedAnswers=readAnswers();emailReady=localStorage.getItem(STORAGE_EMAIL)==='1'||Object.keys(storedAnswers).some((key)=>parseInt(key,10)>=5);setTierTwoAccess(emailReady);render();evt('quiz_page_view');
+document.querySelectorAll('a[href*="udemy.com"]').forEach((link)=>{link.addEventListener('click',()=>{const total=scoreSlice(0,14),stage=link.dataset.buyStage||(link.closest('#quizFinal')?'final':'hero');evt('quiz_buy_click',{tier:stage,score:total.correct});});});
+storedAnswers=readAnswers();emailReady=localStorage.getItem(STORAGE_EMAIL)==='1'||Object.keys(storedAnswers).some((key)=>parseInt(key,10)>=5);startEventSent=Object.keys(storedAnswers).length>0;tier1EventSent=scoreSlice(0,4).answered===5;tier2EventSent=scoreSlice(0,14).answered===15;currentIndex=readCurrent();setEmailAccess(emailReady);render();evt('quiz_page_view');
 </script>
 </body>
 </html>

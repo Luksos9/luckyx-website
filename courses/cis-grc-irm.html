@@ -70,8 +70,8 @@
 {
   "@context": "https://schema.org",
   "@type": "Quiz",
-  "name": "5 Free CIS Risk & Compliance GRC/IRM - ServiceNow Practice Test 2026 Practice Questions",
-  "description": "Try 5 free questions from the 15-question preview for the CIS Risk & Compliance GRC/IRM - ServiceNow Practice Test 2026 practice test.",
+  "name": "15-Question CIS Risk & Compliance GRC/IRM - ServiceNow Practice Test 2026 Preview",
+  "description": "Work through a 15-question preview for the CIS Risk & Compliance GRC/IRM - ServiceNow Practice Test 2026 practice test.",
   "url": "https://luckyx.dev/courses/cis-grc-irm.html#free-quiz",
   "educationalAlignment": {
     "@type": "AlignmentObject",
@@ -186,6 +186,214 @@
         {
           "@type": "Answer",
           "text": "$1,000,000"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "What would you use in order to accommodate a customer's unique process around policy approvals- For example each policy needs a second layer of approval.",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Create a new workflow in the workflow editor"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Create a new field and create notifications"
+        },
+        {
+          "@type": "Answer",
+          "text": "Add a new related list to keep track of who has already approved it and who hasn't approved yet"
+        },
+        {
+          "@type": "Answer",
+          "text": "Add a UI Action to track who the stakeholders are"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "Which specific table stores the many-to-many relationship links between Control Objectives and Citations",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "sn_compliance_m2m_statement_citation"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "sn_compliance_m2m_policy_profile_type"
+        },
+        {
+          "@type": "Answer",
+          "text": "sn_compliance_m2m_statement_policy"
+        },
+        {
+          "@type": "Answer",
+          "text": "sn_compliance_citation_m2m_objective"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "When configuring the Assessment Context for a Risk Assessment Methodology (RAM) in the Advanced Risk application which of the following are valid options (Choose two.) (choose 2)",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Risk | Object"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Risk Statement"
+        },
+        {
+          "@type": "Answer",
+          "text": "Project Risk"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "You have configured two different Entity Class Rules that both target the Department [cmn_department] table. If a specific Department record matches the conditions defined in both rules which logic determines which Entity Class is assigned",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The rule with the lowest Order value takes precedence"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "The rule created most recently takes precedence"
+        },
+        {
+          "@type": "Answer",
+          "text": "Both classes are assigned to the Entity"
+        },
+        {
+          "@type": "Answer",
+          "text": "The system prevents the Entity from being created until the conflict is resolved"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "Who can request approval for a policy- (Choose two.) (choose 2)",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Policy owner | Policy requester"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Compliance manager"
+        },
+        {
+          "@type": "Answer",
+          "text": "Audit manager"
+        },
+        {
+          "@type": "Answer",
+          "text": "Risk manager"
+        },
+        {
+          "@type": "Answer",
+          "text": "Policy contributor"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "What are the most common baseline tables used in an entity filter to generate entities for an entity type- (Choose three.) (choose 3)",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "cmn_department | cmn_location | core_company"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "cmn_job_center"
+        },
+        {
+          "@type": "Answer",
+          "text": "cmn_geography"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "For classic risk assessment indicator failure factor represents the impact of risk indicator failures on what score-",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Calculated ALE"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Inherent ALE"
+        },
+        {
+          "@type": "Answer",
+          "text": "Residual ALE"
+        },
+        {
+          "@type": "Answer",
+          "text": "Inherent SLE"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "When setting up a Regulatory Change Management integration with a provider RSS feed which records are required to be configured (Choose three.) (choose 3)",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Feed Source | Connection and Credentials | Provider"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Regulatory Taxonomy"
+        },
+        {
+          "@type": "Answer",
+          "text": "Regulatory Event"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "For a particular risk assessment methodology (RAM) the control effectiveness score is calculated based on an individual assessment of controls. What are options for control identification- (Choose three.) (choose 3)",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Controls are identified from library and ad-hoc | Controls are identified from library | Controls are identified ad-hoc"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Controls are identified from indicator results"
+        },
+        {
+          "@type": "Answer",
+          "text": "Controls are identified from related issues"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "If a Control is created manually for an Entity and that Entity is later added to an Entity Type that automatically generates the same Control what is the result",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ServiceNow creates a duplicate control without notifying the control owner"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "ServiceNow identifies the existing control and links it"
+        },
+        {
+          "@type": "Answer",
+          "text": "ServiceNow overwrites the manual control with the automatic one"
+        },
+        {
+          "@type": "Answer",
+          "text": "ServiceNow creates a duplicate control and triggers a notification"
         }
       ]
     }
@@ -316,7 +524,119 @@ a:hover { text-decoration: underline; }
 .theme-toggle svg { width: 18px; height: 18px; stroke: var(--text-dim); stroke-width: 2; fill: none; }
 
 /* Quiz section */
-.quiz-section{margin-top:48px}.quiz-section h2{font-size:1.38rem;font-weight:700;margin-bottom:10px;line-height:1.24}.quiz-intro{margin:0;color:var(--text-dim);font-size:.97rem;line-height:1.65;max-width:62ch}.preview-shell{margin-bottom:28px}.preview-kicker{display:inline-flex;align-items:center;gap:8px;margin-bottom:14px;padding:6px 12px;border-radius:999px;background:rgba(221,92,12,.08);border:1px solid rgba(221,92,12,.18);color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}.preview-status-line{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px}.preview-status-pill{display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--border);color:var(--text-dim);font-size:.84rem}.preview-status-pill strong{color:var(--text)}.preview-progress-wrap{overflow-x:auto;padding-bottom:4px}.preview-progress{display:grid;grid-template-columns:repeat(15,58px);gap:8px;list-style:none;margin:0;padding:0;min-width:max-content}.preview-slot{min-height:60px;padding:9px 6px;border-radius:12px;border:1px solid var(--border);background:var(--bg-raised);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:default;transition:border-color .18s,background .18s,transform .18s}.preview-slot.is-clickable{cursor:pointer}.preview-slot.is-clickable:hover{transform:translateY(-1px);border-color:var(--border-hover)}.preview-slot.is-current{border-color:rgba(221,92,12,.42);background:rgba(221,92,12,.08)}.preview-slot.is-correct{border-color:rgba(46,160,67,.45);background:rgba(46,160,67,.08)}.preview-slot.is-wrong{border-color:rgba(215,58,73,.45);background:rgba(215,58,73,.08)}.preview-slot.is-email-locked{opacity:.78}.preview-slot.is-locked{opacity:.55}.preview-slot-num{display:block;font-size:.94rem;font-weight:700;line-height:1.1;color:var(--text)}.preview-slot-state{display:block;margin-top:4px;font-size:.63rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text-dim)}.preview-slot.is-correct .preview-slot-num,.preview-slot.is-correct .preview-slot-state{color:#2ea043}.preview-slot.is-wrong .preview-slot-num,.preview-slot.is-wrong .preview-slot-state{color:#d73a49}.preview-slot-lock{width:16px;height:16px;margin-top:4px;color:var(--text-dim)}.preview-slot-lock svg{width:100%;height:100%;stroke:currentColor;stroke-width:1.6;fill:none}.preview-group-labels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:10px}.preview-group-label{padding:10px 12px;border-radius:12px;border:1px solid var(--border);background:rgba(255,255,255,.02);font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text-dim);text-align:center}.quiz-tier-heading{margin:26px 0 14px;padding-top:4px;font-size:.85rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--orange)}.quiz-card{background:var(--bg-raised);border:1px solid var(--border);border-radius:14px;padding:20px 20px 18px;margin-bottom:14px;transition:border-color .2s,background .2s}.quiz-card[data-state="correct"]{border-color:#2ea043}.quiz-card[data-state="wrong"]{border-color:#d73a49}.quiz-card.is-email-locked,.quiz-card.is-teaser-locked{background:linear-gradient(180deg,rgba(255,255,255,.018),rgba(255,255,255,.005))}.quiz-q{font-weight:600;font-size:1rem;margin-bottom:14px;line-height:1.5}.quiz-q-num{color:var(--orange);font-weight:700;margin-right:6px}.quiz-answer-shell{position:relative}.quiz-answer-content.quiz-gate-blur{filter:blur(4px);pointer-events:none;user-select:none}.quiz-opts{list-style:none;display:flex;flex-direction:column;gap:6px}.quiz-opt{display:flex;align-items:flex-start;gap:10px;padding:11px 12px;border-radius:12px;border:1px solid var(--border);cursor:pointer;transition:background .15s,border-color .15s;color:var(--text-dim);font-size:.94rem;line-height:1.5;flex-wrap:wrap}.quiz-opt:hover{background:rgba(221,92,12,.06);border-color:var(--border-hover)}.quiz-opt.selected{background:rgba(221,92,12,.1);border-color:var(--orange);color:var(--text)}.quiz-opt.correct{background:rgba(46,160,67,.1);border-color:#2ea043;color:var(--text)}.quiz-opt.wrong{background:rgba(215,58,73,.1);border-color:#d73a49}.quiz-opt[disabled]{pointer-events:none;cursor:default}.quiz-opt-letter{width:22px;height:22px;border-radius:50%;background:var(--bg-card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:600;flex-shrink:0;color:var(--text-dim)}.quiz-opt.selected .quiz-opt-letter{background:var(--orange);color:#fff;border-color:var(--orange)}.quiz-opt.correct .quiz-opt-letter{background:#2ea043;color:#fff;border-color:#2ea043}.quiz-opt.wrong .quiz-opt-letter{background:#d73a49;color:#fff;border-color:#d73a49}.quiz-choose{font-weight:500;color:var(--orange);font-size:.85rem;margin-left:4px}.quiz-submit-btn{display:none;margin-top:12px;padding:11px 26px;background:var(--orange);color:#fff;border:none;border-radius:10px;font-size:.92rem;font-weight:700;cursor:pointer}.quiz-submit-btn:hover{background:#c75400}.quiz-opt-exp-inline{flex-basis:100%;padding:8px 12px;border-radius:9px;font-size:.86rem;line-height:1.48;margin-top:6px}.quiz-opt-exp-inline.qoe-is-correct{background:rgba(46,160,67,.08);border-left:3px solid #2ea043}.quiz-opt-exp-inline.qoe-is-wrong{background:rgba(215,58,73,.06);border-left:3px solid #d73a49}.qoe-header{font-weight:700;margin-bottom:3px;font-size:.8rem;display:flex;align-items:center;gap:6px}.qoe-correct{color:#2ea043}.qoe-wrong{color:#d73a49}.qoe-letter,.qoe-text{color:var(--text-dim)}.quiz-opt-explains{display:none!important}.quiz-overall{display:none;margin-top:10px}.quiz-overall[style*="block"]{display:block}details.quiz-overall:not([open]) .quiz-overall-content{display:none}.quiz-overall-toggle{cursor:pointer;font-size:.88rem;font-weight:700;color:var(--orange);padding:8px 0 2px;list-style:none;display:flex;align-items:center;gap:6px}.quiz-overall-toggle::-webkit-details-marker{display:none}.quiz-overall-toggle::before{content:'';display:inline-block;width:0;height:0;border-left:5px solid var(--orange);border-top:4px solid transparent;border-bottom:4px solid transparent;transition:transform .2s}details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}.quiz-overall-content{padding:6px 0 0;background:transparent;border-radius:0;font-size:.88rem;color:var(--text-dim);line-height:1.65;margin-top:6px;border-left:none}.exp-section{margin-bottom:10px;padding:12px 14px;border-radius:11px;border-left:3px solid}.exp-section:last-child,.exp-section p:last-child,.exp-section ul:last-child{margin-bottom:0}.exp-section h5{margin:0 0 6px;font-size:.88rem;font-weight:700}.exp-section p{margin-bottom:5px}.exp-section ul{padding-left:18px;margin-bottom:5px}.exp-section li{margin-bottom:3px}.exp-correct-answer{background:rgba(46,160,67,.05);border-left-color:#2ea043}.exp-correct-answer h5{color:#2ea043}.exp-source{background:rgba(59,130,246,.05);border-left-color:#3b82f6}.exp-source h5,.exp-source a{color:#3b82f6}.exp-expert{background:rgba(139,92,246,.05);border-left-color:#8b5cf6}.exp-expert h5{color:#8b5cf6}.exp-wrong{background:rgba(215,58,73,.04);border-left-color:#d73a49}.exp-wrong h5{color:#d73a49}.exp-memory{background:rgba(217,119,6,.05);border-left-color:#d97706}.exp-memory h5{color:#d97706}.exp-realworld{background:rgba(16,185,129,.05);border-left-color:#10b981}.exp-realworld h5{color:#10b981}.quiz-gate-prompt,.quiz-locked-overlay{position:absolute;inset:14px;display:flex;align-items:center;justify-content:center;border-radius:14px;background:rgba(7,9,13,.56);z-index:4}.quiz-gate-card,.quiz-locked-card{width:min(100%,480px);padding:22px;border-radius:16px;border:1px solid rgba(221,92,12,.32);background:var(--bg-raised);box-shadow:0 18px 45px rgba(0,0,0,.28);text-align:center}.quiz-gate-title,.quiz-locked-title{font-size:1.08rem;font-weight:700;line-height:1.35}.quiz-gate-copy,.quiz-locked-copy{margin-top:10px;color:var(--text-dim);font-size:.92rem;line-height:1.6}.quiz-gate-form{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.quiz-gate-email-input{flex:1 1 220px;min-height:48px;padding:0 14px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-family:var(--font);font-size:.94rem}.quiz-gate-email-input:focus{outline:none;border-color:rgba(221,92,12,.5);box-shadow:0 0 0 3px rgba(221,92,12,.12)}.quiz-gate-submit,.quiz-locked-cta-btn,.quiz-interstitial .cp-cta,.quiz-secondary-btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:12px;border:none;background:var(--orange);color:#fff;font-family:var(--font);font-size:.95rem;font-weight:700;cursor:pointer;text-decoration:none}.quiz-gate-submit:hover,.quiz-locked-cta-btn:hover,.quiz-interstitial .cp-cta:hover,.quiz-secondary-btn:hover{background:#c75400;text-decoration:none}.quiz-secondary-btn{background:transparent;border:1px solid var(--border-hover);color:var(--text)}.quiz-secondary-btn:hover{background:rgba(221,92,12,.06)}.quiz-gate-note{margin-top:12px;color:var(--text-dim);font-size:.82rem;line-height:1.5}.quiz-gate-message{margin-top:10px;font-size:.85rem;color:var(--text-dim);min-height:1.3em}.quiz-gate-message.is-error{color:#ff868f}.quiz-gate-message.is-success{color:#2ea043}.quiz-locked-lock{width:26px;height:26px;margin:0 auto 8px;color:var(--orange)}.quiz-locked-lock svg{width:100%;height:100%;stroke:currentColor;stroke-width:1.7;fill:none}.quiz-interstitial{margin:24px 0;padding:24px;border-radius:18px;border:1px solid rgba(221,92,12,.2);background:radial-gradient(circle at top right,rgba(221,92,12,.1),transparent 44%),linear-gradient(180deg,rgba(255,255,255,.015),rgba(255,255,255,.004))}.quiz-interstitial[hidden]{display:none!important}.quiz-interstitial-kicker{color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}.quiz-interstitial h3{margin-top:10px;font-size:1.32rem;line-height:1.28}.quiz-interstitial-score{font-size:2.15rem;font-weight:800;color:var(--text);line-height:1;margin-top:16px}.quiz-interstitial-copy{margin-top:8px;color:var(--text-dim);max-width:58ch}.quiz-interstitial-anchor{margin-top:12px;color:var(--text);font-size:.92rem}.quiz-interstitial-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.quiz-cross-sell{margin-top:24px;padding:22px;border-radius:16px;border:1px solid var(--border);background:rgba(255,255,255,.02)}.quiz-cross-sell h3{font-size:1rem;margin-bottom:8px}.quiz-cross-sell p{margin:0;color:var(--text-dim);font-size:.92rem;line-height:1.6}.quiz-cross-sell-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.quiz-cross-sell-links a{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;border:1px solid var(--border-hover);background:transparent;color:var(--text);font-weight:700}.quiz-cross-sell-links a:hover{background:rgba(221,92,12,.06);border-color:var(--orange);text-decoration:none}.quiz-toast{position:fixed;right:18px;bottom:18px;z-index:1002;min-width:220px;max-width:min(360px,calc(100vw - 36px));padding:14px 16px;border-radius:12px;border:1px solid rgba(46,160,67,.35);background:rgba(18,25,21,.96);color:#e8fff0;box-shadow:0 18px 45px rgba(0,0,0,.32);font-size:.9rem;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .2s,transform .2s}.quiz-toast.show{opacity:1;transform:translateY(0)}@media (min-width:1040px){.cp-wrap{max-width:960px;padding-left:32px;padding-right:32px}.quiz-card{padding:22px 24px 20px}}@media (max-width:720px){.preview-group-labels{grid-template-columns:1fr}.quiz-gate-form{flex-direction:column}.quiz-gate-submit,.quiz-secondary-btn,.quiz-cross-sell-links a,.quiz-interstitial .cp-cta{width:100%}.quiz-gate-card,.quiz-locked-card{padding:18px}.quiz-interstitial-actions{flex-direction:column}.quiz-card{padding:16px}}
+.quiz-section{margin-top:48px}
+.quiz-section h2{font-size:1.38rem;font-weight:700;margin-bottom:10px;line-height:1.24}
+.quiz-intro{margin:0;color:var(--text-dim);font-size:.97rem;line-height:1.65;max-width:62ch}
+.preview-shell{margin-bottom:22px}
+.preview-kicker{display:inline-flex;align-items:center;gap:8px;margin-bottom:14px;padding:6px 12px;border-radius:999px;background:rgba(221,92,12,.08);border:1px solid rgba(221,92,12,.18);color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.quiz-stepper-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin:18px 0 12px}
+.quiz-stepper-label{font-size:1rem;font-weight:700;color:var(--text)}
+.quiz-stepper-tier{display:inline-flex;align-items:center;margin-top:7px;padding:6px 10px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.02);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text-dim)}
+.quiz-stepper-tier[data-state="free"]{color:#2ea043;border-color:rgba(46,160,67,.28);background:rgba(46,160,67,.08)}
+.quiz-stepper-tier[data-state="locked"]{color:var(--orange);border-color:rgba(221,92,12,.28);background:rgba(221,92,12,.08)}
+.quiz-stepper-tier[data-state="open"]{color:#3b82f6;border-color:rgba(59,130,246,.28);background:rgba(59,130,246,.08)}
+.quiz-stepper-score{font-size:.9rem;color:var(--text-dim);white-space:nowrap;padding-top:2px}
+.quiz-stepper-dots{display:grid;grid-template-columns:repeat(15,minmax(0,1fr));gap:8px}
+.preview-dot{height:10px;border-radius:999px;border:1px solid var(--border);background:var(--bg-card);opacity:.55;transition:border-color .18s,background .18s,box-shadow .18s,opacity .18s}
+.preview-dot.is-available{opacity:1}
+.preview-dot.is-locked{opacity:.38}
+.preview-dot.is-correct{background:#2ea043;border-color:#2ea043;opacity:1}
+.preview-dot.is-wrong{background:#d73a49;border-color:#d73a49;opacity:1}
+.preview-dot.is-current{border-color:var(--orange);box-shadow:0 0 0 3px rgba(221,92,12,.14)}
+.quiz-card-stack{position:relative}
+.quiz-card{background:var(--bg-raised);border:1px solid var(--border);border-radius:16px;padding:20px 20px 18px;margin-bottom:14px;transition:border-color .2s,background .2s}
+.quiz-card[hidden]{display:none!important}
+.quiz-card[data-state="correct"]{border-color:#2ea043}
+.quiz-card[data-state="wrong"]{border-color:#d73a49}
+.quiz-card.is-email-locked{background:linear-gradient(180deg,rgba(255,255,255,.018),rgba(255,255,255,.005))}
+.quiz-q{font-weight:600;font-size:1rem;margin-bottom:14px;line-height:1.5}
+.quiz-q-num{color:var(--orange);font-weight:700;margin-right:6px}
+.quiz-answer-shell{position:relative}
+.quiz-answer-content.quiz-gate-blur{filter:blur(4px);pointer-events:none;user-select:none}
+.quiz-opts{list-style:none;display:flex;flex-direction:column;gap:6px}
+.quiz-opt{display:flex;align-items:flex-start;gap:10px;padding:11px 12px;border-radius:12px;border:1px solid var(--border);cursor:pointer;transition:background .15s,border-color .15s;color:var(--text-dim);font-size:.94rem;line-height:1.5;flex-wrap:wrap}
+.quiz-opt:hover{background:rgba(221,92,12,.06);border-color:var(--border-hover)}
+.quiz-opt.selected{background:rgba(221,92,12,.1);border-color:var(--orange);color:var(--text)}
+.quiz-opt.correct{background:rgba(46,160,67,.1);border-color:#2ea043;color:var(--text)}
+.quiz-opt.wrong{background:rgba(215,58,73,.1);border-color:#d73a49}
+.quiz-opt[disabled]{pointer-events:none;cursor:default}
+.quiz-opt-letter{width:22px;height:22px;border-radius:50%;background:var(--bg-card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:600;flex-shrink:0;color:var(--text-dim)}
+.quiz-opt.selected .quiz-opt-letter{background:var(--orange);color:#fff;border-color:var(--orange)}
+.quiz-opt.correct .quiz-opt-letter{background:#2ea043;color:#fff;border-color:#2ea043}
+.quiz-opt.wrong .quiz-opt-letter{background:#d73a49;color:#fff;border-color:#d73a49}
+.quiz-choose{font-weight:500;color:var(--orange);font-size:.85rem;margin-left:4px}
+.quiz-submit-btn{display:none;margin-top:12px;padding:11px 26px;background:var(--orange);color:#fff;border:none;border-radius:10px;font-size:.92rem;font-weight:700;cursor:pointer}
+.quiz-submit-btn:hover{background:#c75400}
+.quiz-opt-exp-inline{flex-basis:100%;padding:8px 12px;border-radius:9px;font-size:.86rem;line-height:1.48;margin-top:6px}
+.quiz-opt-exp-inline.qoe-is-correct{background:rgba(46,160,67,.08);border-left:3px solid #2ea043}
+.quiz-opt-exp-inline.qoe-is-wrong{background:rgba(215,58,73,.06);border-left:3px solid #d73a49}
+.qoe-header{font-weight:700;margin-bottom:3px;font-size:.8rem;display:flex;align-items:center;gap:6px}
+.qoe-correct{color:#2ea043}
+.qoe-wrong{color:#d73a49}
+.qoe-letter,.qoe-text{color:var(--text-dim)}
+.quiz-opt-explains{display:none!important}
+.quiz-overall{display:none;margin-top:10px}
+.quiz-overall[style*="block"]{display:block}
+details.quiz-overall:not([open]) .quiz-overall-content{display:none}
+.quiz-overall-toggle{cursor:pointer;font-size:.88rem;font-weight:700;color:var(--orange);padding:8px 0 2px;list-style:none;display:flex;align-items:center;gap:6px}
+.quiz-overall-toggle::-webkit-details-marker{display:none}
+.quiz-overall-toggle::before{content:'';display:inline-block;width:0;height:0;border-left:5px solid var(--orange);border-top:4px solid transparent;border-bottom:4px solid transparent;transition:transform .2s}
+details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
+.quiz-overall-content{padding:6px 0 0;background:transparent;border-radius:0;font-size:.88rem;color:var(--text-dim);line-height:1.65;margin-top:6px;border-left:none}
+.exp-section{margin-bottom:10px;padding:12px 14px;border-radius:11px;border-left:3px solid}
+.exp-section:last-child,.exp-section p:last-child,.exp-section ul:last-child{margin-bottom:0}
+.exp-section h5{margin:0 0 6px;font-size:.88rem;font-weight:700}
+.exp-section p{margin-bottom:5px}
+.exp-section ul{padding-left:18px;margin-bottom:5px}
+.exp-section li{margin-bottom:3px}
+.exp-correct-answer{background:rgba(46,160,67,.05);border-left-color:#2ea043}
+.exp-correct-answer h5{color:#2ea043}
+.exp-source{background:rgba(59,130,246,.05);border-left-color:#3b82f6}
+.exp-source h5,.exp-source a{color:#3b82f6}
+.exp-expert{background:rgba(139,92,246,.05);border-left-color:#8b5cf6}
+.exp-expert h5{color:#8b5cf6}
+.exp-wrong{background:rgba(215,58,73,.04);border-left-color:#d73a49}
+.exp-wrong h5{color:#d73a49}
+.exp-memory{background:rgba(217,119,6,.05);border-left-color:#d97706}
+.exp-memory h5{color:#d97706}
+.exp-realworld{background:rgba(16,185,129,.05);border-left-color:#10b981}
+.exp-realworld h5{color:#10b981}
+.quiz-gate-prompt{position:absolute;inset:14px;display:flex;align-items:center;justify-content:center;border-radius:14px;background:rgba(7,9,13,.56);z-index:4}
+.quiz-gate-card{width:min(100%,520px);padding:22px;border-radius:16px;border:1px solid rgba(221,92,12,.32);background:var(--bg-raised);box-shadow:0 18px 45px rgba(0,0,0,.28);text-align:center}
+.quiz-gate-title{font-size:1.08rem;font-weight:700;line-height:1.35}
+.quiz-gate-copy{margin-top:10px;color:var(--text-dim);font-size:.92rem;line-height:1.6}
+.quiz-gate-form{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.quiz-gate-email-input{flex:1 1 220px;min-height:48px;padding:0 14px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-family:var(--font);font-size:.94rem}
+.quiz-gate-email-input:focus{outline:none;border-color:rgba(221,92,12,.5);box-shadow:0 0 0 3px rgba(221,92,12,.12)}
+.quiz-gate-submit,.quiz-nav-next,.quiz-final .cp-cta,.quiz-secondary-btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:12px;border:none;font-family:var(--font);font-size:.95rem;font-weight:700;cursor:pointer;text-decoration:none}
+.quiz-nav-next,.quiz-gate-submit,.quiz-final .cp-cta{background:var(--orange);color:#fff}
+.quiz-nav-next:hover,.quiz-gate-submit:hover,.quiz-final .cp-cta:hover{background:#c75400;text-decoration:none}
+.quiz-nav-next[disabled],.quiz-gate-submit[disabled],.quiz-secondary-btn[disabled]{cursor:not-allowed;opacity:.45}
+.quiz-secondary-btn{background:transparent;border:1px solid var(--border-hover);color:var(--text)}
+.quiz-secondary-btn:hover{background:rgba(221,92,12,.06)}
+.quiz-gate-message{margin-top:10px;font-size:.85rem;color:var(--text-dim);min-height:1.3em}
+.quiz-gate-message.is-error{color:#ff868f}
+.quiz-gate-message.is-success{color:#2ea043}
+.quiz-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px;padding:16px 18px;border-radius:16px;border:1px solid var(--border);background:rgba(255,255,255,.02)}
+.quiz-nav-meta{flex:1;color:var(--text-dim);font-size:.9rem;line-height:1.5;text-align:center}
+.quiz-final{margin-top:22px;padding:24px;border-radius:18px;border:1px solid rgba(221,92,12,.2);background:radial-gradient(circle at top right,rgba(221,92,12,.1),transparent 44%),linear-gradient(180deg,rgba(255,255,255,.015),rgba(255,255,255,.004))}
+.quiz-final[hidden],.quiz-cross-sell[hidden]{display:none!important}
+.quiz-final-kicker{color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.quiz-final h3{margin-top:10px;font-size:1.32rem;line-height:1.28}
+.quiz-final-score{font-size:2.15rem;font-weight:800;color:var(--text);line-height:1;margin-top:16px}
+.quiz-final-copy{margin-top:8px;color:var(--text-dim);max-width:58ch}
+.quiz-final-anchor{margin-top:12px;color:var(--text);font-size:.92rem}
+.quiz-final-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.quiz-cross-sell{margin-top:22px;padding:22px;border-radius:16px;border:1px solid var(--border);background:rgba(255,255,255,.02)}
+.quiz-cross-sell h3{font-size:1rem;margin-bottom:8px}
+.quiz-cross-sell p{margin:0;color:var(--text-dim);font-size:.92rem;line-height:1.6}
+.quiz-cross-sell-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.quiz-cross-sell-links a{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;border:1px solid var(--border-hover);background:transparent;color:var(--text);font-weight:700}
+.quiz-cross-sell-links a:hover{background:rgba(221,92,12,.06);border-color:var(--orange);text-decoration:none}
+.quiz-toast{position:fixed;right:18px;bottom:18px;z-index:1002;min-width:220px;max-width:min(360px,calc(100vw - 36px));padding:14px 16px;border-radius:12px;border:1px solid rgba(46,160,67,.35);background:rgba(18,25,21,.96);color:#e8fff0;box-shadow:0 18px 45px rgba(0,0,0,.32);font-size:.9rem;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .2s,transform .2s}
+.quiz-toast.show{opacity:1;transform:translateY(0)}
+@media (min-width:1040px){.cp-wrap{max-width:960px;padding-left:32px;padding-right:32px}.quiz-card{padding:22px 24px 20px}}
+@media (max-width:720px){.quiz-stepper-head,.quiz-nav,.quiz-final-actions,.quiz-cross-sell-links,.quiz-gate-form{flex-direction:column;align-items:stretch}.quiz-stepper-score,.quiz-nav-meta{text-align:left}.quiz-nav-next,.quiz-secondary-btn,.quiz-gate-submit,.quiz-final .cp-cta,.quiz-cross-sell-links a{width:100%}.quiz-card,.quiz-final,.quiz-cross-sell{padding:18px}.quiz-stepper-dots{gap:6px}}
 
 /* Countdown banner */
 .countdown-banner { max-width: 100%; margin: 0 0 24px; padding: 20px 24px; background: linear-gradient(135deg, rgba(221,92,12,0.08), rgba(221,92,12,0.03)); border: 1px solid rgba(221,92,12,0.2); border-radius: 14px; text-align: center; position: relative; overflow: hidden; }
@@ -433,50 +753,46 @@ a:hover { text-decoration: underline; }
     </ul>
   </div>
 
-  <section class="quiz-section" id="free-quiz" data-preview-style="three-tier">
+  <section class="quiz-section" id="free-quiz" data-preview-style="guided-15">
     <div class="preview-shell">
       <div class="preview-kicker">15-question preview</div>
       <h2>15 Free Preview Questions</h2>
-      <p class="quiz-intro">Answer 5 questions free. Enter your email to continue with 5 more. The full course has 300 questions on Udemy.</p>
-      <div class="preview-status-line">
-        <span class="preview-status-pill">Answered <strong id="quizStatusAnswered">0 of 10 interactive questions</strong></span>
-        <span class="preview-status-pill">Score <strong id="quizStatusScore">0 correct</strong></span>
+      <p class="quiz-intro">Answer 5 questions free. Enter your email to continue through question 15. The full course has 300 questions on Udemy.</p>
+      <div class="quiz-stepper-head">
+        <div class="quiz-stepper-copy">
+          <div class="quiz-stepper-label" id="quizStepLabel">Question 1 of 15</div>
+          <div class="quiz-stepper-tier" data-state="free" id="quizTierLabel">Free</div>
+        </div>
+        <div class="quiz-stepper-score" id="quizMiniScore">0 correct so far</div>
       </div>
-      <div class="preview-progress-wrap">
-        <ol class="preview-progress" id="quizProgress">
-        <li class="preview-slot is-clickable" data-slot="0"><span class="preview-slot-num">1</span><span class="preview-slot-state">Free</span></li>
-        <li class="preview-slot is-clickable" data-slot="1"><span class="preview-slot-num">2</span><span class="preview-slot-state">Free</span></li>
-        <li class="preview-slot is-clickable" data-slot="2"><span class="preview-slot-num">3</span><span class="preview-slot-state">Free</span></li>
-        <li class="preview-slot is-clickable" data-slot="3"><span class="preview-slot-num">4</span><span class="preview-slot-state">Free</span></li>
-        <li class="preview-slot is-clickable" data-slot="4"><span class="preview-slot-num">5</span><span class="preview-slot-state">Free</span></li>
-        <li class="preview-slot" data-slot="5"><span class="preview-slot-num">6</span><span class="preview-slot-state">Email</span></li>
-        <li class="preview-slot" data-slot="6"><span class="preview-slot-num">7</span><span class="preview-slot-state">Email</span></li>
-        <li class="preview-slot" data-slot="7"><span class="preview-slot-num">8</span><span class="preview-slot-state">Email</span></li>
-        <li class="preview-slot" data-slot="8"><span class="preview-slot-num">9</span><span class="preview-slot-state">Email</span></li>
-        <li class="preview-slot" data-slot="9"><span class="preview-slot-num">10</span><span class="preview-slot-state">Email</span></li>
-        <li class="preview-slot is-locked" data-slot="10"><span class="preview-slot-num">11</span><span class="preview-slot-state">Full</span><span class="preview-slot-lock"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 1 1 8 0v3"/></svg></span></li>
-        <li class="preview-slot is-locked" data-slot="11"><span class="preview-slot-num">12</span><span class="preview-slot-state">Full</span><span class="preview-slot-lock"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 1 1 8 0v3"/></svg></span></li>
-        <li class="preview-slot is-locked" data-slot="12"><span class="preview-slot-num">13</span><span class="preview-slot-state">Full</span><span class="preview-slot-lock"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 1 1 8 0v3"/></svg></span></li>
-        <li class="preview-slot is-locked" data-slot="13"><span class="preview-slot-num">14</span><span class="preview-slot-state">Full</span><span class="preview-slot-lock"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 1 1 8 0v3"/></svg></span></li>
-        <li class="preview-slot is-locked" data-slot="14"><span class="preview-slot-num">15</span><span class="preview-slot-state">Full</span><span class="preview-slot-lock"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 1 1 8 0v3"/></svg></span></li>
-        </ol>
-      </div>
-      <div class="preview-group-labels">
-        <div class="preview-group-label">Questions 1-5. Free.</div>
-        <div class="preview-group-label">Questions 6-10. Email required.</div>
-        <div class="preview-group-label">Questions 11-15. Full course.</div>
+      <div class="quiz-stepper-dots" id="quizProgress">
+        <span class="preview-dot" data-slot="0" title="Question 1"></span>
+        <span class="preview-dot" data-slot="1" title="Question 2"></span>
+        <span class="preview-dot" data-slot="2" title="Question 3"></span>
+        <span class="preview-dot" data-slot="3" title="Question 4"></span>
+        <span class="preview-dot" data-slot="4" title="Question 5"></span>
+        <span class="preview-dot" data-slot="5" title="Question 6"></span>
+        <span class="preview-dot" data-slot="6" title="Question 7"></span>
+        <span class="preview-dot" data-slot="7" title="Question 8"></span>
+        <span class="preview-dot" data-slot="8" title="Question 9"></span>
+        <span class="preview-dot" data-slot="9" title="Question 10"></span>
+        <span class="preview-dot" data-slot="10" title="Question 11"></span>
+        <span class="preview-dot" data-slot="11" title="Question 12"></span>
+        <span class="preview-dot" data-slot="12" title="Question 13"></span>
+        <span class="preview-dot" data-slot="13" title="Question 14"></span>
+        <span class="preview-dot" data-slot="14" title="Question 15"></span>
       </div>
     </div>
-    <div class="quiz-tier-heading">Questions 1-5. Free.</div>
+    <div class="quiz-card-stack">
 <div class="quiz-card" data-question-index="0" data-tier="1" id="qcard0">
-<div class="quiz-q"><span class="quiz-q-num">1.</span>In the Audit Workspace an Auditor creates an Evidence Request task and assigns it to a First Line user. When the First Line user opens the task to respond which action are they strictly required to take to move the workflow forward</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t">
+<div class="quiz-q"><span class="quiz-q-num">1.</span>In the Audit Workspace an Auditor creates an Evidence Request task and assigns it to a First Line user. When the First Line user opens the task to respond which action are they strictly required to take to move the workflow forward</div><div class="quiz-answer-shell"><div class="quiz-answer-content">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: Creating a new Control Test is the responsibility of the Compliance team or Control owner, not the First Line user responding to an Evidence Request. Evidence Request tasks are about providing evidence, not creating tests." data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>Create a new Control Test</span></li>
 <li class="quiz-opt" data-exp="CORRECT: When a First Line user receives an Evidence Request task, they must attach supporting evidence (a file or link to a record) and submit the task for approval. This is the defined workflow step that moves the process forward in the Audit Workspace." data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>Attach a file or link to a record and submit the task for approval</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Manually closing an Audit Engagement is a high-level action reserved for the Lead Auditor or Audit Manager, not a First Line responder handling an individual evidence task." data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>Manually close the Audit Engagement</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Marking a Control as Compliant is determined through the control testing process and audit findings, not by the person responding to an evidence request. Compliance status is set based on test results." data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>Mark the related Control as Compliant</span></li>
 </ul><button class="quiz-submit-btn" data-q="0" type="button">Submit Answer</button>
-<div class="quiz-opt-explains" id="qoptexp0" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp0">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
@@ -484,15 +800,15 @@ a:hover { text-decoration: underline; }
 </div>
 </details>
 </div></div></div>
-<div class="quiz-card" data-question-index="1" data-tier="1" id="qcard1">
-<div class="quiz-q"><span class="quiz-q-num">2.</span>To allow other applications such as Incident Management to request a policy exception you must configure the Integration Registry. What is a mandatory field on the Integration Registry form</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t">
+<div class="quiz-card" data-question-index="1" data-tier="1" hidden="" id="qcard1">
+<div class="quiz-q"><span class="quiz-q-num">2.</span>To allow other applications such as Incident Management to request a policy exception you must configure the Integration Registry. What is a mandatory field on the Integration Registry form</div><div class="quiz-answer-shell"><div class="quiz-answer-content">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: Source application identifies where the request originates but is not the mandatory field on the Integration Registry form. The registry needs to know where exceptions point, not just where requests come from." data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>Source application</span></li>
 <li class="quiz-opt" data-exp="CORRECT: The Policy exception target table is a mandatory field on the Integration Registry form. It defines which table stores the policy exception records that external applications (like Incident Management) can request. Without this field, the system cannot route exception requests to the correct destination." data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>Policy exception target table</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Flow Designer flow may be used to automate parts of the exception process, but it is not a mandatory field on the Integration Registry form itself. Flows are configured separately." data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>Flow Designer flow</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Requesting user is captured at runtime when an exception is actually requested, not as a configuration field on the Integration Registry. The registry defines the integration structure, not specific request details." data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>Requesting user</span></li>
 </ul><button class="quiz-submit-btn" data-q="1" type="button">Submit Answer</button>
-<div class="quiz-opt-explains" id="qoptexp1" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp1">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
@@ -500,15 +816,15 @@ a:hover { text-decoration: underline; }
 </div>
 </details>
 </div></div></div>
-<div class="quiz-card" data-question-index="2" data-tier="1" id="qcard2">
-<div class="quiz-q"><span class="quiz-q-num">3.</span>Which specific role enables a user to report a Risk Event such as a financial loss or near-miss from the Service Portal without granting them full access to the backend Risk Management application</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t">
+<div class="quiz-card" data-question-index="2" data-tier="1" hidden="" id="qcard2">
+<div class="quiz-q"><span class="quiz-q-num">3.</span>Which specific role enables a user to report a Risk Event such as a financial loss or near-miss from the Service Portal without granting them full access to the backend Risk Management application</div><div class="quiz-answer-shell"><div class="quiz-answer-content">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: sn_risk.user provides access to risk-related records but does not specifically enable Service Portal-based Risk Event reporting for business users without backend access." data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>sn_risk.user</span></li>
 <li class="quiz-opt" data-exp="CORRECT: sn_grc.business_user is the specific role designed for frontline business users to report Risk Events (financial losses, near-misses, incidents) through the Service Portal. It provides limited, portal-only access without exposing the full backend Risk Management application." data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>sn_grc.business_user</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: sn_risk.manager grants full managerial access to the Risk Management application, which is far more access than needed for simply reporting risk events from the portal." data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>sn_risk.manager</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: sn_grc.reader provides read-only access to GRC records. It does not grant the ability to create or submit Risk Event reports." data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>sn_grc.reader</span></li>
 </ul><button class="quiz-submit-btn" data-q="2" type="button">Submit Answer</button>
-<div class="quiz-opt-explains" id="qoptexp2" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp2">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
@@ -516,15 +832,15 @@ a:hover { text-decoration: underline; }
 </div>
 </details>
 </div></div></div>
-<div class="quiz-card" data-question-index="3" data-tier="1" id="qcard3">
-<div class="quiz-q"><span class="quiz-q-num">4.</span>When configuring a Risk Assessment Methodology (RAM) you have the option to define the Assessment Context. Which context type would you select if you need to assess a specific ServiceNow record such as a Change Request or Project directly without requiring the record to be defined as a GRC Entity</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t">
+<div class="quiz-card" data-question-index="3" data-tier="1" hidden="" id="qcard3">
+<div class="quiz-q"><span class="quiz-q-num">4.</span>When configuring a Risk Assessment Methodology (RAM) you have the option to define the Assessment Context. Which context type would you select if you need to assess a specific ServiceNow record such as a Change Request or Project directly without requiring the record to be defined as a GRC Entity</div><div class="quiz-answer-shell"><div class="quiz-answer-content">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: Entity-based context requires the record to first be defined as a GRC Entity. The question specifically asks about assessing records directly without Entity registration." data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>Entity-based</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Class-based is not a valid Assessment Context type in the Risk Assessment Methodology configuration. Entity Class is a concept used for entity categorization, not an assessment context option." data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>Class-based</span></li>
 <li class="quiz-opt" data-exp="CORRECT: Object-based context allows you to assess any specific ServiceNow record (such as a Change Request, Project, or Business Service) directly. The record does not need to be registered as a GRC Entity first. This makes it flexible for ad-hoc or targeted risk assessments on operational records." data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>Object-based</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Record-based is not the correct terminology used in the RAM configuration. While the concept involves assessing records, the ServiceNow platform uses the term Object-based for this context type." data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>Record-based</span></li>
 </ul><button class="quiz-submit-btn" data-q="3" type="button">Submit Answer</button>
-<div class="quiz-opt-explains" id="qoptexp3" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp3">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
@@ -532,15 +848,15 @@ a:hover { text-decoration: underline; }
 </div>
 </details>
 </div></div></div>
-<div class="quiz-card" data-question-index="4" data-tier="1" id="qcard4">
-<div class="quiz-q"><span class="quiz-q-num">5.</span>In a quantitative risk analysis if the Single Loss Expectancy (SLE) is $1000000 and the Annualized Rate of Occurrence (ARO) is 20% what is the Annualized Loss Expectancy (ALE)</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t">
+<div class="quiz-card" data-question-index="4" data-tier="1" hidden="" id="qcard4">
+<div class="quiz-q"><span class="quiz-q-num">5.</span>In a quantitative risk analysis if the Single Loss Expectancy (SLE) is $1000000 and the Annualized Rate of Occurrence (ARO) is 20% what is the Annualized Loss Expectancy (ALE)</div><div class="quiz-answer-shell"><div class="quiz-answer-content">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="CORRECT: The Annualized Loss Expectancy (ALE) is calculated as SLE x ARO. Here, $1,000,000 x 0.20 = $200,000. This means the organization can expect $200,000 in losses per year from this particular risk." data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>$200,000</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: $2,000,000 would result from multiplying the SLE by 2, not by the ARO of 0.20. This is a common mistake of misinterpreting the percentage." data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>$2,000,000</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: $10,000 does not result from any valid combination of the given SLE ($1,000,000) and ARO (20%). This answer has no mathematical basis from the provided figures." data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>$10,000</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: $1,000,000 is the SLE itself, not the ALE. The ALE must factor in the frequency (ARO), which reduces the annualized figure since the event does not occur every year." data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>$1,000,000</span></li>
 </ul><button class="quiz-submit-btn" data-q="4" type="button">Submit Answer</button>
-<div class="quiz-opt-explains" id="qoptexp4" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp4">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
@@ -548,28 +864,15 @@ a:hover { text-decoration: underline; }
 </div>
 </details>
 </div></div></div>
-    <div class="quiz-interstitial" id="tier1Interstitial" hidden>
-      <div class="quiz-interstitial-kicker">Questions 1-5 complete</div>
-      <h3>You scored <span id="tier1ScoreText">0/5</span> on questions 1-5.</h3>
-      <div class="quiz-interstitial-score" id="tier1ScoreValue">0/5</div>
-      <p class="quiz-interstitial-copy">You have seen the free section. Continue with questions 6-10 after email, or move straight to the full course.</p>
-      <div class="quiz-interstitial-actions">
-        <a href="https://www.udemy.com/course/pass-servicenow-cis-risk-and-compliance-grc-irm-rc/?referralCode=BAC69ADCBF13729F4018" target="_blank" rel="noopener" class="cp-cta" data-buy-tier="tier1">Get all 300 questions for $9.99
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <button type="button" class="quiz-secondary-btn" id="tier1ContinueBtn">Enter your email to continue</button>
-      </div>
-    </div>
-    <div class="quiz-tier-heading">Questions 6-10. Email required.</div>
-<div class="quiz-card is-email-locked" data-question-index="5" data-tier="2" id="qcard5">
-<div class="quiz-q"><span class="quiz-q-num">6.</span>What would you use in order to accommodate a customer's unique process around policy approvals- For example each policy needs a second layer of approval.</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
+<div class="quiz-card is-email-locked" data-question-index="5" data-tier="2" hidden="" id="qcard5">
+<div class="quiz-q"><span class="quiz-q-num">6.</span>What would you use in order to accommodate a customer's unique process around policy approvals- For example each policy needs a second layer of approval.</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: Creating a new field and notifications can alert users about approvals, but fields and notifications alone do not control the approval routing logic. You need a structured workflow to enforce approval sequences." data-idx="0" data-q="5"><span class="quiz-opt-letter">A</span><span>Create a new field and create notifications</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: A related list can display approval history but does not drive the approval process. Related lists are display components, not process engines. They show data but do not enforce approval steps." data-idx="1" data-q="5"><span class="quiz-opt-letter">B</span><span>Add a new related list to keep track of who has already approved it and who hasn't approved yet</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: A UI Action triggers a single server-side or client-side action. While it could initiate a process, it is not the right tool for managing a multi-step approval chain with conditions and routing." data-idx="2" data-q="5"><span class="quiz-opt-letter">C</span><span>Add a UI Action to track who the stakeholders are</span></li>
 <li class="quiz-opt" data-exp="CORRECT: Creating a new workflow in the Workflow Editor is the correct approach for customizing policy approval processes. Workflows allow you to define multi-step approval chains, conditions, parallel approvals, and escalation paths. For a second layer of approval, you add another approval activity in the workflow sequence." data-idx="3" data-q="5"><span class="quiz-opt-letter">D</span><span>Create a new workflow in the workflow editor</span></li>
 </ul><button class="quiz-submit-btn" data-q="5" type="button">Submit Answer</button>
-<div class="quiz-opt-explains" id="qoptexp5" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp5">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
@@ -578,38 +881,33 @@ a:hover { text-decoration: underline; }
 </details>
 </div><div class="quiz-gate-prompt" data-email-overlay="">
 <div class="quiz-gate-card">
-<div class="quiz-gate-title">Enter your email to continue with questions 6-10</div>
+<div class="quiz-gate-title">Enter your email to continue with questions 6-15</div>
 <p class="quiz-gate-copy">Free exam updates. No spam. Unsubscribe anytime.</p>
 <form class="quiz-gate-form" id="quizGateForm">
 <input autocomplete="email" class="quiz-gate-email-input" id="quizGateEmail" placeholder="you@email.com" required="" type="email"/>
-<button class="quiz-gate-submit" id="quizGateSubmit" type="submit">Continue with 5 More Questions</button>
+<button class="quiz-gate-submit" id="quizGateSubmit" type="submit">Continue with 10 More Questions</button>
 </form>
 <p class="quiz-gate-message" id="quizGateMessage"></p>
 </div>
 </div></div></div>
-<div class="quiz-card is-email-locked" data-question-index="6" data-tier="2" id="qcard6">
-<div class="quiz-q"><span class="quiz-q-num">7.</span>Which specific table stores the many-to-many relationship links between Control Objectives and Citations</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
+<div class="quiz-card is-email-locked" data-question-index="6" data-tier="2" hidden="" id="qcard6">
+<div class="quiz-q"><span class="quiz-q-num">7.</span>Which specific table stores the many-to-many relationship links between Control Objectives and Citations</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: sn_compliance_m2m_policy_profile_type stores the relationship between policies and profile types, not between Control Objectives (statements) and Citations." data-idx="0" data-q="6"><span class="quiz-opt-letter">A</span><span>sn_compliance_m2m_policy_profile_type</span></li>
 <li class="quiz-opt" data-exp="CORRECT: sn_compliance_m2m_statement_citation is the many-to-many table that links Control Objectives (stored as statements) and Citations. In ServiceNow GRC, Control Objectives are technically statement records, so the table name uses 'statement' to refer to them." data-idx="1" data-q="6"><span class="quiz-opt-letter">B</span><span>sn_compliance_m2m_statement_citation</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: sn_compliance_m2m_statement_policy stores the relationship between statements (Control Objectives) and Policies, not between statements and Citations." data-idx="2" data-q="6"><span class="quiz-opt-letter">C</span><span>sn_compliance_m2m_statement_policy</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: sn_compliance_citation_m2m_objective is a plausible-sounding name but does not follow ServiceNow's actual naming convention. The correct table uses 'statement_citation' because Control Objectives are stored as statement records." data-idx="3" data-q="6"><span class="quiz-opt-letter">D</span><span>sn_compliance_citation_m2m_objective</span></li>
 </ul><button class="quiz-submit-btn" data-q="6" type="button">Submit Answer</button>
-<div class="quiz-opt-explains" id="qoptexp6" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp6">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
 <h5>Correct Answer</h5><p>B - sn_compliance_m2m_statement_citation</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-governance-risk-compliance/page/product/policy-and-compliance-management/reference/compliance-data-model.html" target="_blank">ServiceNow Zurich Documentation - Compliance Data Model</a></p><h5>Expert Explanation</h5><p>ServiceNow GRC uses many-to-many (m2m) tables to link related records. Control Objectives are stored as "statement" records in the platform. The sn_compliance_m2m_statement_citation table creates the links between these statement (Control Objective) records and Citation records, enabling a single objective to map to multiple citations and vice versa.</p><h5>Why the Others Are Wrong</h5><p>sn_compliance_m2m_policy_profile_type (A) links policies to profile types. sn_compliance_m2m_statement_policy (C) links statements to policies. sn_compliance_citation_m2m_objective (D) does not exist - it uses incorrect naming conventions.</p><h5>Memory Tip</h5><p>"Statement = Control Objective" in GRC table names. So statement_citation = the bridge table between Control Objectives and Citations.</p><h5>Real-World Example</h5><p>A compliance team maps their "Access Control Review" objective to three regulatory citations: SOX Section 404, PCI-DSS Requirement 7, and ISO 27001 A.9.2. Each mapping creates a record in the sn_compliance_m2m_statement_citation table.</p>
 </div>
 </details>
-</div><div class="quiz-gate-prompt" data-email-overlay="">
-<div class="quiz-gate-card">
-<div class="quiz-gate-title">Questions 6-10 continue after email</div>
-<p class="quiz-gate-copy">Use the form on question 6 to keep going.</p>
-</div>
 </div></div></div>
-<div class="quiz-card quiz-multi is-email-locked" data-question-index="7" data-tier="2" id="qcard7">
-<div class="quiz-q"><span class="quiz-q-num">8.</span>When configuring the Assessment Context for a Risk Assessment Methodology (RAM) in the Advanced Risk application which of the following are valid options (Choose two.) <span class="quiz-choose">(choose 2)</span></div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
+<div class="quiz-card quiz-multi is-email-locked" data-question-index="7" data-tier="2" hidden="" id="qcard7">
+<div class="quiz-q"><span class="quiz-q-num">8.</span>When configuring the Assessment Context for a Risk Assessment Methodology (RAM) in the Advanced Risk application which of the following are valid options (Choose two.) <span class="quiz-choose">(choose 2)</span></div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: Risk Statement is not a valid Assessment Context option when configuring a Risk Assessment Methodology. Risk Statements define what the risk is, but they are not a context type for assessments." data-idx="0" data-q="7"><span class="quiz-opt-letter">A</span><span>Risk Statement</span></li>
 <li class="quiz-opt" data-exp="CORRECT: Risk is a valid Assessment Context option in the RAM configuration. When selected, assessments are performed in the context of specific risk records, allowing you to evaluate and score individual risks." data-idx="1" data-q="7"><span class="quiz-opt-letter">B</span><span>Risk</span></li>
@@ -617,42 +915,32 @@ a:hover { text-decoration: underline; }
 <li class="quiz-opt" data-exp="CORRECT: Object is a valid Assessment Context option. Object-based context allows assessments to target any ServiceNow record directly without requiring it to be defined as a GRC Entity, providing flexibility for ad-hoc assessments." data-idx="3" data-q="7"><span class="quiz-opt-letter">D</span><span>Object</span></li>
 </ul><button class="quiz-submit-btn" data-q="7" type="button">Submit Answer</button>
 
-<div class="quiz-opt-explains" id="qoptexp7" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp7">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
 <h5>Correct Answer</h5><p>B - Risk, D - Object</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-governance-risk-compliance/page/product/advanced-risk/concept/risk-assessment-methodology.html" target="_blank">ServiceNow Zurich Documentation - Risk Assessment Methodology</a></p><h5>Expert Explanation</h5><p>The Advanced Risk application supports multiple Assessment Context types when configuring a RAM. The two valid options from this list are Risk (assessing risk records directly) and Object (assessing any ServiceNow record without entity registration). These contexts determine what type of record the assessment targets.</p><h5>Why the Others Are Wrong</h5><p>Risk Statement (A) defines risk descriptions but is not an assessment context type. Project Risk (C) is not a standalone context option in the RAM configuration.</p><h5>Memory Tip</h5><p>Valid RAM contexts: "Risk and Object - R.O." Risk targets risk records. Object targets any record. Simple and direct.</p><h5>Real-World Example</h5><p>A risk team configures two RAMs: one with Risk context to score enterprise risks using a 5x5 matrix, and another with Object context to assess individual Change Requests for operational risk before approval.</p>
 </div>
 </details>
-</div><div class="quiz-gate-prompt" data-email-overlay="">
-<div class="quiz-gate-card">
-<div class="quiz-gate-title">Questions 6-10 continue after email</div>
-<p class="quiz-gate-copy">Use the form on question 6 to keep going.</p>
-</div>
 </div></div></div>
-<div class="quiz-card is-email-locked" data-question-index="8" data-tier="2" id="qcard8">
-<div class="quiz-q"><span class="quiz-q-num">9.</span>You have configured two different Entity Class Rules that both target the Department [cmn_department] table. If a specific Department record matches the conditions defined in both rules which logic determines which Entity Class is assigned</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
+<div class="quiz-card is-email-locked" data-question-index="8" data-tier="2" hidden="" id="qcard8">
+<div class="quiz-q"><span class="quiz-q-num">9.</span>You have configured two different Entity Class Rules that both target the Department [cmn_department] table. If a specific Department record matches the conditions defined in both rules which logic determines which Entity Class is assigned</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: Creation date does not determine rule precedence. ServiceNow uses explicit ordering, not timestamp-based priority, for Entity Class Rules." data-idx="0" data-q="8"><span class="quiz-opt-letter">A</span><span>The rule created most recently takes precedence</span></li>
 <li class="quiz-opt" data-exp="CORRECT: When multiple Entity Class Rules match the same record, the rule with the lowest Order value takes precedence. This is consistent with ServiceNow's standard approach to rule ordering across the platform - lower order numbers mean higher priority." data-idx="1" data-q="8"><span class="quiz-opt-letter">B</span><span>The rule with the lowest Order value takes precedence</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Both classes are not assigned simultaneously. The system uses the Order field to resolve conflicts and assigns only one Entity Class per the winning rule." data-idx="2" data-q="8"><span class="quiz-opt-letter">C</span><span>Both classes are assigned to the Entity</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: The system does not block Entity creation due to rule conflicts. It resolves the conflict automatically using the Order field, ensuring the Entity is created with the class from the highest-priority (lowest Order) rule." data-idx="3" data-q="8"><span class="quiz-opt-letter">D</span><span>The system prevents the Entity from being created until the conflict is resolved</span></li>
 </ul><button class="quiz-submit-btn" data-q="8" type="button">Submit Answer</button>
-<div class="quiz-opt-explains" id="qoptexp8" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp8">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
 <h5>Correct Answer</h5><p>B - The rule with the lowest Order value takes precedence</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-governance-risk-compliance/page/product/governance-risk-compliance/concept/entity-class-rules.html" target="_blank">ServiceNow Zurich Documentation - Entity Class Rules</a></p><h5>Expert Explanation</h5><p>Entity Class Rules use an Order field to determine priority when multiple rules match the same record. The rule with the lowest Order value wins. This is a standard ServiceNow pattern used across Business Rules, Data Policies, and other rule-based configurations throughout the platform.</p><h5>Why the Others Are Wrong</h5><p>Creation date (A) is irrelevant to rule priority. Assigning both classes (C) would create ambiguity and is not how the system works. Blocking creation (D) would halt operations unnecessarily when a simple ordering mechanism resolves the conflict.</p><h5>Memory Tip</h5><p>"Lowest Order wins" - just like everywhere else in ServiceNow. Think of it as a race: runner #1 (lowest number) crosses the finish line first.</p><h5>Real-World Example</h5><p>Two rules target the Department table: Rule A (Order 100) assigns "IT Department" class, Rule B (Order 200) assigns "General Department" class. When the "IT Security" department matches both rules, it gets the "IT Department" class because Rule A has the lower Order value.</p>
 </div>
 </details>
-</div><div class="quiz-gate-prompt" data-email-overlay="">
-<div class="quiz-gate-card">
-<div class="quiz-gate-title">Questions 6-10 continue after email</div>
-<p class="quiz-gate-copy">Use the form on question 6 to keep going.</p>
-</div>
 </div></div></div>
-<div class="quiz-card quiz-multi is-email-locked" data-question-index="9" data-tier="2" id="qcard9">
-<div class="quiz-q"><span class="quiz-q-num">10.</span>Who can request approval for a policy- (Choose two.) <span class="quiz-choose">(choose 2)</span></div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
+<div class="quiz-card quiz-multi is-email-locked" data-question-index="9" data-tier="2" hidden="" id="qcard9">
+<div class="quiz-q"><span class="quiz-q-num">10.</span>Who can request approval for a policy- (Choose two.) <span class="quiz-choose">(choose 2)</span></div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="CORRECT: The Policy owner is one of the users who can request approval for a policy. As the person responsible for the policy content and lifecycle, the owner has the authority to submit it for the formal approval process." data-idx="0" data-q="9"><span class="quiz-opt-letter">A</span><span>Policy owner</span></li>
 <li class="quiz-opt" data-exp="CORRECT: The Policy requester can also request approval for a policy. This is the person who initiated the policy creation request, and they retain the ability to push it forward into the approval workflow." data-idx="1" data-q="9"><span class="quiz-opt-letter">B</span><span>Policy requester</span></li>
@@ -662,147 +950,127 @@ a:hover { text-decoration: underline; }
 <li class="quiz-opt" data-exp="INCORRECT: A Policy contributor can add content to a policy draft but does not have the authority to request formal approval. Contributors support content creation, not lifecycle progression." data-idx="5" data-q="9"><span class="quiz-opt-letter">F</span><span>Policy contributor</span></li>
 </ul><button class="quiz-submit-btn" data-q="9" type="button">Submit Answer</button>
 
-<div class="quiz-opt-explains" id="qoptexp9" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp9">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
 <h5>Correct Answer</h5><p>A - Policy owner, B - Policy requester</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-governance-risk-compliance/page/product/policy-and-compliance-management/concept/policy-lifecycle.html" target="_blank">ServiceNow Zurich Documentation - Policy Lifecycle</a></p><h5>Expert Explanation</h5><p>In the ServiceNow GRC policy lifecycle, two roles can request approval: the Policy owner (who is responsible for the policy) and the Policy requester (who initiated it). This dual-authority model ensures that either the originator or the responsible party can move the policy through its approval workflow.</p><h5>Why the Others Are Wrong</h5><p>Compliance manager (C), Audit manager (D), and Risk manager (E) work in different GRC domains and do not request policy approvals. Policy contributor (F) supports drafting but lacks authority to initiate the approval process.</p><h5>Memory Tip</h5><p>"Owner and Requester - the two people with skin in the game." The owner owns it, the requester asked for it. Both have the authority to push it forward.</p><h5>Real-World Example</h5><p>The VP of IT Security (policy owner) drafts an updated Data Classification Policy. Either she or the compliance analyst (policy requester) who originally requested the policy can click "Request Approval" to send it to the approval committee.</p>
 </div>
 </details>
-</div><div class="quiz-gate-prompt" data-email-overlay="">
-<div class="quiz-gate-card">
-<div class="quiz-gate-title">Questions 6-10 continue after email</div>
-<p class="quiz-gate-copy">Use the form on question 6 to keep going.</p>
-</div>
 </div></div></div>
-    <div class="quiz-interstitial" id="tier2Interstitial" hidden>
-      <div class="quiz-interstitial-kicker">Free preview complete</div>
-      <h3>You scored <span id="tier2ScoreText">0/10</span> on the free preview.</h3>
-      <div class="quiz-interstitial-score" id="tier2ScoreValue">0/10</div>
-      <p class="quiz-interstitial-copy">You have seen 10 preview questions. The full course keeps the same answer breakdown style across the full bank.</p>
-      <div class="quiz-interstitial-actions">
-        <a href="https://www.udemy.com/course/pass-servicenow-cis-risk-and-compliance-grc-irm-rc/?referralCode=BAC69ADCBF13729F4018" target="_blank" rel="noopener" class="cp-cta" data-buy-tier="tier2">Get all 300 questions for $9.99
+<div class="quiz-card quiz-multi is-email-locked" data-question-index="10" data-tier="2" hidden="" id="qcard10">
+<div class="quiz-q"><span class="quiz-q-num">11.</span>What are the most common baseline tables used in an entity filter to generate entities for an entity type- (Choose three.) <span class="quiz-choose">(choose 3)</span></div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="INCORRECT: cmn_job_center is not a commonly used baseline table for entity generation in GRC. Job centers are not a standard organizational unit used for GRC entity scoping." data-idx="0" data-q="10"><span class="quiz-opt-letter">A</span><span>cmn_job_center</span></li>
+<li class="quiz-opt" data-exp="CORRECT: cmn_department is one of the most common baseline tables for entity generation. Departments represent organizational units that frequently need GRC controls, policies, and risk assessments applied to them." data-idx="1" data-q="10"><span class="quiz-opt-letter">B</span><span>cmn_department</span></li>
+<li class="quiz-opt" data-exp="CORRECT: cmn_location is a standard baseline table for entity generation. Physical locations often have distinct compliance requirements, risk profiles, and regulatory obligations that make them natural GRC entities." data-idx="2" data-q="10"><span class="quiz-opt-letter">C</span><span>cmn_location</span></li>
+<li class="quiz-opt" data-exp="CORRECT: core_company is a key baseline table for entity generation. Companies (including subsidiaries and business partners) are fundamental organizational units that require their own GRC governance structures." data-idx="3" data-q="10"><span class="quiz-opt-letter">D</span><span>core_company</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: cmn_geography is not one of the most commonly used baseline tables for entity generation. While geographic data exists in ServiceNow, entity filters typically use more granular organizational tables like department, location, and company." data-idx="4" data-q="10"><span class="quiz-opt-letter">E</span><span>cmn_geography</span></li>
+</ul><button class="quiz-submit-btn" data-q="10" type="button">Submit Answer</button>
+
+
+<details class="quiz-overall" id="qexp10">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>B - cmn_department, C - cmn_location, D - core_company</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-governance-risk-compliance/page/product/governance-risk-compliance/concept/entity-types-and-filters.html" target="_blank">ServiceNow Zurich Documentation - Entity Types and Filters</a></p><h5>Expert Explanation</h5><p>GRC entities represent the organizational units that need governance. Entity filters query baseline tables to automatically generate entities. The three most common tables are cmn_department (departments), cmn_location (locations), and core_company (companies). These represent the standard organizational hierarchy most companies use for GRC scoping.</p><h5>Why the Others Are Wrong</h5><p>cmn_job_center (A) is too granular and not a standard GRC scoping unit. cmn_geography (E) is too broad and not commonly used as a direct entity source - locations serve this purpose better.</p><h5>Memory Tip</h5><p>"D-L-C: Department, Location, Company" - the three pillars of organizational structure. Every company has these three, and every GRC program governs by these three.</p><h5>Real-World Example</h5><p>A multinational corporation sets up GRC entities using all three tables: 15 departments (cmn_department), 30 office locations (cmn_location), and 5 subsidiary companies (core_company). Each entity gets appropriate controls, policies, and risk assessments assigned automatically.</p>
+</div>
+</details>
+</div></div></div>
+<div class="quiz-card is-email-locked" data-question-index="11" data-tier="2" hidden="" id="qcard11">
+<div class="quiz-q"><span class="quiz-q-num">12.</span>For classic risk assessment indicator failure factor represents the impact of risk indicator failures on what score-</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="INCORRECT: Inherent ALE represents the loss expectancy before any controls are applied. The indicator failure factor affects the calculated score after considering control effectiveness, not the raw inherent value." data-idx="0" data-q="11"><span class="quiz-opt-letter">A</span><span>Inherent ALE</span></li>
+<li class="quiz-opt" data-exp="CORRECT: The indicator failure factor represents the impact of risk indicator failures on the Calculated ALE. When risk indicators (such as control tests or monitoring checks) fail, the failure factor adjusts the calculated ALE upward to reflect the increased risk exposure due to control deficiencies." data-idx="1" data-q="11"><span class="quiz-opt-letter">B</span><span>Calculated ALE</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Residual ALE is the loss expectancy after all risk treatments are applied. While related, the indicator failure factor specifically impacts the Calculated ALE, which feeds into the residual calculation." data-idx="2" data-q="11"><span class="quiz-opt-letter">C</span><span>Residual ALE</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Inherent SLE is the single loss expectancy before controls. The failure factor operates at the annualized level (ALE) and affects calculated values, not the inherent single-event cost." data-idx="3" data-q="11"><span class="quiz-opt-letter">D</span><span>Inherent SLE</span></li>
+</ul><button class="quiz-submit-btn" data-q="11" type="button">Submit Answer</button>
+
+<details class="quiz-overall" id="qexp11">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>B - Calculated ALE</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-governance-risk-compliance/page/product/advanced-risk/concept/classic-risk-assessment.html" target="_blank">ServiceNow Zurich Documentation - Classic Risk Assessment</a></p><h5>Expert Explanation</h5><p>In classic risk assessment, risk indicators monitor control effectiveness. When these indicators fail (showing controls are not working properly), the failure factor adjusts the Calculated ALE to reflect higher expected losses. This ensures the risk score accurately represents current control performance rather than theoretical values.</p><h5>Why the Others Are Wrong</h5><p>Inherent ALE (A) is the baseline before controls - it is not affected by indicator performance. Residual ALE (C) is a downstream calculation. Inherent SLE (D) is a single-event figure unrelated to indicator monitoring.</p><h5>Memory Tip</h5><p>"Indicators fail, Calculated ALE goes up." The failure factor modifies the calculation - hence Calculated ALE. It is not inherent (before controls) and not residual (after treatment).</p><h5>Real-World Example</h5><p>A firewall monitoring indicator fails three consecutive checks, triggering the failure factor. The Calculated ALE for the "Network Intrusion" risk increases from $50,000 to $150,000, alerting the risk team that current controls are not performing as expected.</p>
+</div>
+</details>
+</div></div></div>
+<div class="quiz-card quiz-multi is-email-locked" data-question-index="12" data-tier="2" hidden="" id="qcard12">
+<div class="quiz-q"><span class="quiz-q-num">13.</span>When setting up a Regulatory Change Management integration with a provider RSS feed which records are required to be configured (Choose three.) <span class="quiz-choose">(choose 3)</span></div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="INCORRECT: Regulatory Taxonomy is used to classify and categorize regulatory content, but it is not one of the records required specifically for setting up an RSS feed integration with a provider." data-idx="0" data-q="12"><span class="quiz-opt-letter">A</span><span>Regulatory Taxonomy</span></li>
+<li class="quiz-opt" data-exp="CORRECT: Feed Source is required when setting up an RSS feed integration. It defines the specific RSS feed URL and configuration that the system will poll for regulatory updates from the provider." data-idx="1" data-q="12"><span class="quiz-opt-letter">B</span><span>Feed Source</span></li>
+<li class="quiz-opt" data-exp="CORRECT: Connection and Credentials must be configured to authenticate and connect to the external RSS feed provider. This record stores the authentication details and connection parameters needed to access the feed." data-idx="2" data-q="12"><span class="quiz-opt-letter">C</span><span>Connection and Credentials</span></li>
+<li class="quiz-opt" data-exp="CORRECT: Provider is a required record that identifies the regulatory content provider (such as a regulatory intelligence service). It is the parent record that Feed Sources are linked to." data-idx="3" data-q="12"><span class="quiz-opt-letter">D</span><span>Provider</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Regulatory Event is a record created as a result of processing the RSS feed, not something configured during the initial integration setup. Events are generated when new regulatory changes are detected." data-idx="4" data-q="12"><span class="quiz-opt-letter">E</span><span>Regulatory Event</span></li>
+</ul><button class="quiz-submit-btn" data-q="12" type="button">Submit Answer</button>
+
+
+<details class="quiz-overall" id="qexp12">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>B - Feed Source, C - Connection and Credentials, D - Provider</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-governance-risk-compliance/page/product/regulatory-change-management/task/configure-rss-feed-integration.html" target="_blank">ServiceNow Zurich Documentation - Configure RSS Feed Integration</a></p><h5>Expert Explanation</h5><p>Setting up a Regulatory Change Management RSS feed integration requires three configuration records: Provider (who supplies the content), Feed Source (the specific RSS feed to poll), and Connection and Credentials (how to authenticate). These three form the integration chain from authentication to content retrieval.</p><h5>Why the Others Are Wrong</h5><p>Regulatory Taxonomy (A) categorizes content after ingestion but is not part of the feed setup. Regulatory Event (E) is an output of the feed processing, not an input to the configuration.</p><h5>Memory Tip</h5><p>"P-F-C: Provider, Feed, Credentials" - Who provides it- Where is the feed- How do we connect- Three questions, three required records.</p><h5>Real-World Example</h5><p>A bank sets up a Thomson Reuters Regulatory Intelligence feed: they create a Provider record for Thomson Reuters, configure Connection and Credentials with their API key, and define a Feed Source pointing to the specific RSS URL for banking regulations.</p>
+</div>
+</details>
+</div></div></div>
+<div class="quiz-card quiz-multi is-email-locked" data-question-index="13" data-tier="2" hidden="" id="qcard13">
+<div class="quiz-q"><span class="quiz-q-num">14.</span>For a particular risk assessment methodology (RAM) the control effectiveness score is calculated based on an individual assessment of controls. What are options for control identification- (Choose three.) <span class="quiz-choose">(choose 3)</span></div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="CORRECT: 'Controls are identified from library and ad-hoc' is a valid option that combines both approaches - pulling controls from the predefined Control Library and allowing users to add controls manually during the assessment." data-idx="0" data-q="13"><span class="quiz-opt-letter">A</span><span>Controls are identified from library and ad-hoc</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: 'Controls are identified from indicator results' is not a valid control identification option in the RAM configuration. Indicators monitor control performance but do not serve as a source for identifying which controls to assess." data-idx="1" data-q="13"><span class="quiz-opt-letter">B</span><span>Controls are identified from indicator results</span></li>
+<li class="quiz-opt" data-exp="CORRECT: 'Controls are identified from library' is a valid option where controls are pulled exclusively from the predefined Control Library. This ensures standardization and consistency across assessments." data-idx="2" data-q="13"><span class="quiz-opt-letter">C</span><span>Controls are identified from library</span></li>
+<li class="quiz-opt" data-exp="CORRECT: 'Controls are identified ad-hoc' is a valid option that allows assessors to manually identify and add controls during the assessment process. This provides flexibility for unique situations." data-idx="3" data-q="13"><span class="quiz-opt-letter">D</span><span>Controls are identified ad-hoc</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: 'Controls are identified from related issues' is not a valid control identification option. Issues are outputs of assessments and audits, not sources for identifying controls to be assessed." data-idx="4" data-q="13"><span class="quiz-opt-letter">E</span><span>Controls are identified from related issues</span></li>
+</ul><button class="quiz-submit-btn" data-q="13" type="button">Submit Answer</button>
+
+
+<details class="quiz-overall" id="qexp13">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>A - Controls are identified from library and ad-hoc, C - Controls are identified from library, D - Controls are identified ad-hoc</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-governance-risk-compliance/page/product/advanced-risk/concept/risk-assessment-methodology.html" target="_blank">ServiceNow Zurich Documentation - Risk Assessment Methodology</a></p><h5>Expert Explanation</h5><p>When configuring control effectiveness scoring in a RAM, you choose how controls are identified for assessment. The three valid options are: from the Control Library only (standardized), ad-hoc only (flexible), or a combination of both library and ad-hoc. These options balance standardization with flexibility depending on organizational needs.</p><h5>Why the Others Are Wrong</h5><p>Indicator results (B) monitor existing controls but do not identify them for assessment. Related issues (E) are findings from assessments, not inputs to control identification.</p><h5>Memory Tip</h5><p>Three options for finding controls: "Library, Ad-hoc, or Both." Think of it like shopping: from a catalog (library), finding items yourself (ad-hoc), or doing both.</p><h5>Real-World Example</h5><p>A healthcare company uses "library and ad-hoc" for their HIPAA risk assessments. Standard HIPAA controls come from the library, but assessors can add custom controls for department-specific processes that are not in the standard library.</p>
+</div>
+</details>
+</div></div></div>
+<div class="quiz-card is-email-locked" data-question-index="14" data-tier="2" hidden="" id="qcard14">
+<div class="quiz-q"><span class="quiz-q-num">15.</span>If a Control is created manually for an Entity and that Entity is later added to an Entity Type that automatically generates the same Control what is the result</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="INCORRECT: ServiceNow does not automatically detect and link the existing manual control to the auto-generated one. The platform does not perform duplicate detection for controls in this scenario." data-idx="0" data-q="14"><span class="quiz-opt-letter">A</span><span>ServiceNow identifies the existing control and links it</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: ServiceNow does not overwrite manually created controls. Overwriting would risk losing custom configurations and audit history associated with the manual control." data-idx="1" data-q="14"><span class="quiz-opt-letter">B</span><span>ServiceNow overwrites the manual control with the automatic one</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: While a duplicate is created, ServiceNow does not trigger a notification about it. There is no built-in duplicate detection notification for this specific scenario." data-idx="2" data-q="14"><span class="quiz-opt-letter">C</span><span>ServiceNow creates a duplicate control and triggers a notification</span></li>
+<li class="quiz-opt" data-exp="CORRECT: ServiceNow creates a duplicate control without notifying the control owner. The platform does not check for pre-existing manual controls when auto-generating controls through Entity Type assignments. This results in two separate control records for the same Entity with no alert." data-idx="3" data-q="14"><span class="quiz-opt-letter">D</span><span>ServiceNow creates a duplicate control without notifying the control owner</span></li>
+</ul><button class="quiz-submit-btn" data-q="14" type="button">Submit Answer</button>
+
+<details class="quiz-overall" id="qexp14">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>D - ServiceNow creates a duplicate control without notifying the control owner</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-governance-risk-compliance/page/product/governance-risk-compliance/concept/entity-scoping.html" target="_blank">ServiceNow Zurich Documentation - Entity Scoping</a></p><h5>Expert Explanation</h5><p>When an Entity is added to an Entity Type that auto-generates controls, ServiceNow creates the controls defined by the Entity Type without checking for existing manual controls on that Entity. This results in duplicate controls with no notification. Administrators should be aware of this behavior and plan control assignments carefully to avoid redundancy.</p><h5>Why the Others Are Wrong</h5><p>Linking existing controls (A) would require duplicate detection logic that does not exist in this context. Overwriting (B) would destroy audit trails. Notification on duplicate (C) would be helpful but is not the platform behavior - no alert is generated.</p><h5>Memory Tip</h5><p>"Auto-generation is blind" - it does not look at what already exists. It just creates what the Entity Type template says to create, duplicates or not.</p><h5>Real-World Example</h5><p>An admin manually creates a "Quarterly Access Review" control for the Finance Department entity. Later, the Finance Department is added to a "Regulated Department" Entity Type that auto-generates the same control. Now Finance has two identical "Quarterly Access Review" controls, and nobody is notified about the duplication.</p>
+</div>
+</details>
+</div></div></div>
+    </div>
+    <div class="quiz-nav" id="quizNav">
+      <button type="button" class="quiz-secondary-btn" id="quizPrevBtn">Previous question</button>
+      <div class="quiz-nav-meta" id="quizNavMeta">Choose an answer and submit to continue.</div>
+      <button type="button" class="quiz-nav-next" id="quizNextBtn" disabled>Next question</button>
+    </div>
+    <div class="quiz-final" id="quizFinal" hidden>
+      <div class="quiz-final-kicker">Preview complete</div>
+      <h3>You scored <span id="quizFinalScoreText">0/15</span> on the 15-question preview.</h3>
+      <div class="quiz-final-score" id="quizFinalScoreValue">0/15</div>
+      <p class="quiz-final-copy">The full course keeps the same answer breakdown style across all 300 questions.</p>
+      <p class="quiz-final-anchor">Your first exam attempt is free. Your second costs $350.</p>
+      <div class="quiz-final-actions">
+        <a href="https://www.udemy.com/course/pass-servicenow-cis-risk-and-compliance-grc-irm-rc/?referralCode=BAC69ADCBF13729F4018" target="_blank" rel="noopener" class="cp-cta" data-buy-stage="final">Get all 300 questions for $9.99
           <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
     </div>
-    <div class="quiz-tier-heading">Questions 11-15. Full course teaser.</div>
-<div class="quiz-card quiz-multi is-teaser-locked" data-question-index="10" data-tier="3" id="qcard10">
-<div class="quiz-q"><span class="quiz-q-num">11.</span>What are the most common baseline tables used in an entity filter to generate entities for an entity type- (Choose three.) <span class="quiz-choose">(choose 3)</span></div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
-<ul class="quiz-opts">
-<li class="quiz-opt" data-idx="0"><span class="quiz-opt-letter">A</span><span>cmn_job_center</span></li>
-<li class="quiz-opt" data-idx="1"><span class="quiz-opt-letter">B</span><span>cmn_department</span></li>
-<li class="quiz-opt" data-idx="2"><span class="quiz-opt-letter">C</span><span>cmn_location</span></li>
-<li class="quiz-opt" data-idx="3"><span class="quiz-opt-letter">D</span><span>core_company</span></li>
-<li class="quiz-opt" data-idx="4"><span class="quiz-opt-letter">E</span><span>cmn_geography</span></li>
-</ul>
-
-
-
-</div><div class="quiz-locked-overlay">
-<div class="quiz-locked-card">
-<div class="quiz-locked-lock"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="10" rx="2" width="14" x="5" y="11"></rect><path d="M8 11V8a4 4 0 1 1 8 0v3"></path></svg></div>
-<div class="quiz-locked-title">This question is part of the full 300-question course.</div>
-<p class="quiz-locked-copy">Keep the teaser here, then move to Udemy for the full question bank.</p>
-<a class="quiz-locked-cta-btn" data-buy-tier="tier3" href="https://www.udemy.com/course/pass-servicenow-cis-risk-and-compliance-grc-irm-rc/?referralCode=BAC69ADCBF13729F4018" rel="noopener" target="_blank">Get all 300 questions on Udemy</a>
-</div>
-</div></div></div>
-<div class="quiz-card is-teaser-locked" data-question-index="11" data-tier="3" id="qcard11">
-<div class="quiz-q"><span class="quiz-q-num">12.</span>For classic risk assessment indicator failure factor represents the impact of risk indicator failures on what score-</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
-<ul class="quiz-opts">
-<li class="quiz-opt" data-idx="0"><span class="quiz-opt-letter">A</span><span>Inherent ALE</span></li>
-<li class="quiz-opt" data-idx="1"><span class="quiz-opt-letter">B</span><span>Calculated ALE</span></li>
-<li class="quiz-opt" data-idx="2"><span class="quiz-opt-letter">C</span><span>Residual ALE</span></li>
-<li class="quiz-opt" data-idx="3"><span class="quiz-opt-letter">D</span><span>Inherent SLE</span></li>
-</ul>
-
-
-</div><div class="quiz-locked-overlay">
-<div class="quiz-locked-card">
-<div class="quiz-locked-lock"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="10" rx="2" width="14" x="5" y="11"></rect><path d="M8 11V8a4 4 0 1 1 8 0v3"></path></svg></div>
-<div class="quiz-locked-title">This question is part of the full 300-question course.</div>
-<p class="quiz-locked-copy">Keep the teaser here, then move to Udemy for the full question bank.</p>
-<a class="quiz-locked-cta-btn" data-buy-tier="tier3" href="https://www.udemy.com/course/pass-servicenow-cis-risk-and-compliance-grc-irm-rc/?referralCode=BAC69ADCBF13729F4018" rel="noopener" target="_blank">Get all 300 questions on Udemy</a>
-</div>
-</div></div></div>
-<div class="quiz-card quiz-multi is-teaser-locked" data-question-index="12" data-tier="3" id="qcard12">
-<div class="quiz-q"><span class="quiz-q-num">13.</span>When setting up a Regulatory Change Management integration with a provider RSS feed which records are required to be configured (Choose three.) <span class="quiz-choose">(choose 3)</span></div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
-<ul class="quiz-opts">
-<li class="quiz-opt" data-idx="0"><span class="quiz-opt-letter">A</span><span>Regulatory Taxonomy</span></li>
-<li class="quiz-opt" data-idx="1"><span class="quiz-opt-letter">B</span><span>Feed Source</span></li>
-<li class="quiz-opt" data-idx="2"><span class="quiz-opt-letter">C</span><span>Connection and Credentials</span></li>
-<li class="quiz-opt" data-idx="3"><span class="quiz-opt-letter">D</span><span>Provider</span></li>
-<li class="quiz-opt" data-idx="4"><span class="quiz-opt-letter">E</span><span>Regulatory Event</span></li>
-</ul>
-
-
-
-</div><div class="quiz-locked-overlay">
-<div class="quiz-locked-card">
-<div class="quiz-locked-lock"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="10" rx="2" width="14" x="5" y="11"></rect><path d="M8 11V8a4 4 0 1 1 8 0v3"></path></svg></div>
-<div class="quiz-locked-title">This question is part of the full 300-question course.</div>
-<p class="quiz-locked-copy">Keep the teaser here, then move to Udemy for the full question bank.</p>
-<a class="quiz-locked-cta-btn" data-buy-tier="tier3" href="https://www.udemy.com/course/pass-servicenow-cis-risk-and-compliance-grc-irm-rc/?referralCode=BAC69ADCBF13729F4018" rel="noopener" target="_blank">Get all 300 questions on Udemy</a>
-</div>
-</div></div></div>
-<div class="quiz-card quiz-multi is-teaser-locked" data-question-index="13" data-tier="3" id="qcard13">
-<div class="quiz-q"><span class="quiz-q-num">14.</span>For a particular risk assessment methodology (RAM) the control effectiveness score is calculated based on an individual assessment of controls. What are options for control identification- (Choose three.) <span class="quiz-choose">(choose 3)</span></div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
-<ul class="quiz-opts">
-<li class="quiz-opt" data-idx="0"><span class="quiz-opt-letter">A</span><span>Controls are identified from library and ad-hoc</span></li>
-<li class="quiz-opt" data-idx="1"><span class="quiz-opt-letter">B</span><span>Controls are identified from indicator results</span></li>
-<li class="quiz-opt" data-idx="2"><span class="quiz-opt-letter">C</span><span>Controls are identified from library</span></li>
-<li class="quiz-opt" data-idx="3"><span class="quiz-opt-letter">D</span><span>Controls are identified ad-hoc</span></li>
-<li class="quiz-opt" data-idx="4"><span class="quiz-opt-letter">E</span><span>Controls are identified from related issues</span></li>
-</ul>
-
-
-
-</div><div class="quiz-locked-overlay">
-<div class="quiz-locked-card">
-<div class="quiz-locked-lock"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="10" rx="2" width="14" x="5" y="11"></rect><path d="M8 11V8a4 4 0 1 1 8 0v3"></path></svg></div>
-<div class="quiz-locked-title">This question is part of the full 300-question course.</div>
-<p class="quiz-locked-copy">Keep the teaser here, then move to Udemy for the full question bank.</p>
-<a class="quiz-locked-cta-btn" data-buy-tier="tier3" href="https://www.udemy.com/course/pass-servicenow-cis-risk-and-compliance-grc-irm-rc/?referralCode=BAC69ADCBF13729F4018" rel="noopener" target="_blank">Get all 300 questions on Udemy</a>
-</div>
-</div></div></div>
-<div class="quiz-card is-teaser-locked" data-question-index="14" data-tier="3" id="qcard14">
-<div class="quiz-q"><span class="quiz-q-num">15.</span>If a Control is created manually for an Entity and that Entity is later added to an Entity Type that automatically generates the same Control what is the result</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
-<ul class="quiz-opts">
-<li class="quiz-opt" data-idx="0"><span class="quiz-opt-letter">A</span><span>ServiceNow identifies the existing control and links it</span></li>
-<li class="quiz-opt" data-idx="1"><span class="quiz-opt-letter">B</span><span>ServiceNow overwrites the manual control with the automatic one</span></li>
-<li class="quiz-opt" data-idx="2"><span class="quiz-opt-letter">C</span><span>ServiceNow creates a duplicate control and triggers a notification</span></li>
-<li class="quiz-opt" data-idx="3"><span class="quiz-opt-letter">D</span><span>ServiceNow creates a duplicate control without notifying the control owner</span></li>
-</ul>
-
-
-</div><div class="quiz-locked-overlay">
-<div class="quiz-locked-card">
-<div class="quiz-locked-lock"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="10" rx="2" width="14" x="5" y="11"></rect><path d="M8 11V8a4 4 0 1 1 8 0v3"></path></svg></div>
-<div class="quiz-locked-title">This question is part of the full 300-question course.</div>
-<p class="quiz-locked-copy">Keep the teaser here, then move to Udemy for the full question bank.</p>
-<a class="quiz-locked-cta-btn" data-buy-tier="tier3" href="https://www.udemy.com/course/pass-servicenow-cis-risk-and-compliance-grc-irm-rc/?referralCode=BAC69ADCBF13729F4018" rel="noopener" target="_blank">Get all 300 questions on Udemy</a>
-</div>
-</div></div></div>
-    <div class="quiz-interstitial" id="tier3FinalCta">
-      <div class="quiz-interstitial-kicker">Full course</div>
-      <h3>You've seen 10 of 300 questions.</h3>
-      <p class="quiz-interstitial-copy">The full course covers the exam blueprint with sourced explanations.</p>
-      <p class="quiz-interstitial-anchor">Your first exam attempt is free. Your second costs $350.</p>
-      <div class="quiz-interstitial-actions">
-        <a href="https://www.udemy.com/course/pass-servicenow-cis-risk-and-compliance-grc-irm-rc/?referralCode=BAC69ADCBF13729F4018" target="_blank" rel="noopener" class="cp-cta" data-buy-tier="final">Get all 300 questions on Udemy
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </div>
-    <div class="quiz-cross-sell">
+    <div class="quiz-cross-sell" id="quizCrossSell" hidden>
       <h3>Many students also study:</h3>
-      <p>Keep going with the cert recommendation quiz, or compare all 18 practice tests side by side.</p>
+      <p>Compare all 18 practice tests, or use the cert quiz to plan what to study next.</p>
       <div class="quiz-cross-sell-links">
         <a href="/quiz.html">Find your next cert</a>
         <a href="/compare.html">Compare all 18 courses</a>
       </div>
     </div>
-    <div class="quiz-toast" id="quizToast">Questions 6-10 are ready.</div>
+    <div class="quiz-toast" id="quizToast">Questions 6-15 are ready.</div>
   </section>
 
   <div class="cp-bottom">
@@ -818,44 +1086,52 @@ a:hover { text-decoration: underline; }
 
 <script>
 const QUIZ={"slug": "cis-grc-irm", "code": "GRC", "totalQuestionCount": 300, "convertKitFormId": "9183962"};
-const answers=[1, 1, 1, 2, 0, 3, 1, [1, 3], 1, [0, 1]];
-const STORAGE_EMAIL='luckyx-email:'+QUIZ.slug,STORAGE_ANSWERS='luckyx-answers:'+QUIZ.slug,STORAGE_SCORE='luckyx-score:'+QUIZ.slug;
-const themeToggle=document.getElementById('themeToggle'),slots=Array.from(document.querySelectorAll('.preview-slot[data-slot]')),cards=Array.from(document.querySelectorAll('.quiz-card')),interactiveCards=cards.filter((card)=>parseInt(card.dataset.questionIndex,10)<10),tierTwoCards=cards.filter((card)=>card.dataset.tier==='2'),tierOneInterstitial=document.getElementById('tier1Interstitial'),tierTwoInterstitial=document.getElementById('tier2Interstitial'),tier1ContinueBtn=document.getElementById('tier1ContinueBtn'),gateForm=document.getElementById('quizGateForm'),gateEmail=document.getElementById('quizGateEmail'),gateSubmit=document.getElementById('quizGateSubmit'),gateMessage=document.getElementById('quizGateMessage'),toast=document.getElementById('quizToast');
-let emailReady=false,storedAnswers={},startEventSent=false,tier1EventSent=false,tier2EventSent=false;const drafts={};
+const answers=[1, 1, 1, 2, 0, 3, 1, [1, 3], 1, [0, 1], [1, 2, 3], 1, [1, 2, 3], [0, 2, 3], 3];
+const STORAGE_EMAIL='luckyx-email:'+QUIZ.slug,STORAGE_ANSWERS='luckyx-answers:'+QUIZ.slug,STORAGE_SCORE='luckyx-score:'+QUIZ.slug,STORAGE_CURRENT='luckyx-current:'+QUIZ.slug;
+const themeToggle=document.getElementById('themeToggle'),cards=Array.from(document.querySelectorAll('.quiz-card')),dots=Array.from(document.querySelectorAll('.preview-dot[data-slot]')),prevBtn=document.getElementById('quizPrevBtn'),nextBtn=document.getElementById('quizNextBtn'),navMeta=document.getElementById('quizNavMeta'),stepLabel=document.getElementById('quizStepLabel'),tierLabel=document.getElementById('quizTierLabel'),miniScore=document.getElementById('quizMiniScore'),gateForm=document.getElementById('quizGateForm'),gateEmail=document.getElementById('quizGateEmail'),gateSubmit=document.getElementById('quizGateSubmit'),gateMessage=document.getElementById('quizGateMessage'),finalBlock=document.getElementById('quizFinal'),finalScoreText=document.getElementById('quizFinalScoreText'),finalScoreValue=document.getElementById('quizFinalScoreValue'),crossSell=document.getElementById('quizCrossSell'),toast=document.getElementById('quizToast');
+let emailReady=false,storedAnswers={},currentIndex=0,startEventSent=false,tier1EventSent=false,tier2EventSent=false;const drafts={};
 if(themeToggle){themeToggle.addEventListener('click',()=>{const current=document.documentElement.getAttribute('data-theme');const next=current==='light'?'dark':'light';document.documentElement.setAttribute('data-theme',next);localStorage.setItem('luckyx-theme',next);});}
 function evt(name,extra){if(typeof gtag!=='function')return;gtag('event',name,Object.assign({cert:QUIZ.code},extra||{}));}
 function showToast(message){if(!toast)return;toast.textContent=message;toast.classList.add('show');window.clearTimeout(showToast._timer);showToast._timer=window.setTimeout(()=>toast.classList.remove('show'),2600);}
 function readJson(key,fallback){try{const raw=localStorage.getItem(key);return raw?JSON.parse(raw):fallback;}catch(err){return fallback;}}
 function normalizeSelection(value){if(!Array.isArray(value))return[];return Array.from(new Set(value.map((item)=>parseInt(item,10)).filter((item)=>Number.isInteger(item)&&item>=0))).sort((a,b)=>a-b);}
-function readAnswers(){const parsed=readJson(STORAGE_ANSWERS,{}),out={};if(!parsed||typeof parsed!=='object')return out;Object.keys(parsed).forEach((key)=>{const qi=parseInt(key,10),item=parsed[key];if(!Number.isInteger(qi)||qi<0||qi>=10||!item||typeof item!=='object')return;const selected=normalizeSelection(item.selected);if(!selected.length||typeof item.isCorrect!=='boolean')return;out[qi]={selected,isCorrect:item.isCorrect};});return out;}
+function readAnswers(){const parsed=readJson(STORAGE_ANSWERS,{}),out={};if(!parsed||typeof parsed!=='object')return out;Object.keys(parsed).forEach((key)=>{const qi=parseInt(key,10),item=parsed[key];if(!Number.isInteger(qi)||qi<0||qi>=15||!item||typeof item!=='object')return;const selected=normalizeSelection(item.selected);if(!selected.length||typeof item.isCorrect!=='boolean')return;out[qi]={selected,isCorrect:item.isCorrect};});return out;}
+function readCurrent(){const raw=localStorage.getItem(STORAGE_CURRENT),value=parseInt(raw,10);return Number.isInteger(value)?value:null;}
 function writeAnswers(){localStorage.setItem(STORAGE_ANSWERS,JSON.stringify(storedAnswers));}
+function writeCurrent(){localStorage.setItem(STORAGE_CURRENT,String(currentIndex));}
 function scoreSlice(start,end){let answered=0,correct=0;for(let i=start;i<=end;i+=1){if(!storedAnswers[i])continue;answered+=1;if(storedAnswers[i].isCorrect)correct+=1;}return{answered,correct};}
-function saveScoreState(){const tier1=scoreSlice(0,4),tier2Only=scoreSlice(5,9),total=scoreSlice(0,9);localStorage.setItem(STORAGE_SCORE,JSON.stringify({tier1:tier1.correct,tier2:tier2Only.correct,total:total.correct}));}
+function saveScoreState(){const free5=scoreSlice(0,4),total15=scoreSlice(0,14);localStorage.setItem(STORAGE_SCORE,JSON.stringify({free5:free5.correct,total15:total15.correct}));}
 function correctIndicesFor(qi){return(Array.isArray(answers[qi])?answers[qi].slice():[answers[qi]]).sort((a,b)=>a-b);}
+function isUnlocked(qi){return qi<5||emailReady;}
+function nextPendingIndex(){const max=emailReady?14:5;for(let i=0;i<=max;i+=1){if(!storedAnswers[i])return i;}return max;}
+function navigationLimit(){return nextPendingIndex();}
+function normalizeCurrent(candidate){const limit=navigationLimit();if(!Number.isInteger(candidate))return limit;if(candidate<0)return 0;if(candidate>limit)return limit;return candidate;}
 function setMessage(text,cls){if(!gateMessage)return;gateMessage.textContent=text||'';gateMessage.classList.remove('is-error','is-success');if(cls)gateMessage.classList.add(cls);}
 function processSections(container){if(!container||container.dataset.processed)return;container.dataset.processed='1';const h5s=Array.from(container.querySelectorAll('h5'));if(!h5s.length)return;const sections=[];h5s.forEach((h5)=>{const title=h5.textContent.toLowerCase();let cls='exp-section';if(title.includes('correct answer'))cls+=' exp-correct-answer';else if(title.includes('source'))cls+=' exp-source';else if(title.includes('expert'))cls+=' exp-expert';else if(title.includes('why')||title.includes('wrong'))cls+=' exp-wrong';else if(title.includes('memory'))cls+=' exp-memory';else if(title.includes('real-world')||title.includes('example'))cls+=' exp-realworld';sections.push({cls,h5});});for(let i=0;i<sections.length;i+=1){const section=sections[i],div=document.createElement('div'),next=i<sections.length-1?sections[i+1].h5:null;div.className=section.cls;section.h5.parentNode.insertBefore(div,section.h5);div.appendChild(section.h5);while(div.nextSibling&&div.nextSibling!==next)div.appendChild(div.nextSibling);}}
 function showExplanations(qi){const card=document.getElementById('qcard'+qi);if(!card)return;const opts=card.querySelectorAll('.quiz-opt'),correct=correctIndicesFor(qi);opts.forEach((opt,index)=>{const per=opt.getAttribute('data-exp');if(!per||opt.querySelector('.quiz-opt-exp-inline'))return;const ok=correct.indexOf(index)!==-1,txt=per.replace(/^(CORRECT|INCORRECT):\s*/i,''),div=document.createElement('div'),icon=ok?'\u2713':'\u2717';div.className='quiz-opt-exp-inline '+(ok?'qoe-is-correct':'qoe-is-wrong');div.innerHTML='<div class="qoe-header">'+(ok?'<span class="qoe-correct">'+icon+' Correct</span>':'<span class="qoe-wrong">'+icon+' Incorrect</span>')+' <span class="qoe-letter">Option '+'ABCDEFG'[index]+'</span></div><div class="qoe-text">'+txt+'</div>';opt.appendChild(div);});const overall=document.getElementById('qexp'+qi);if(!overall)return;const content=overall.querySelector('.quiz-overall-content');if(!content||!content.innerHTML.trim())return;processSections(content);overall.open=false;overall.removeAttribute('open');overall.style.display='block';}
 document.querySelectorAll('.quiz-overall').forEach((detail)=>{detail.addEventListener('toggle',function(){if(!this.open)return;document.querySelectorAll('.quiz-overall').forEach((other)=>{if(other!==this)other.open=false;});});});
 function clearOptionState(opt){opt.classList.remove('selected','correct','wrong');opt.removeAttribute('disabled');}
-function renderDraft(qi){const card=document.getElementById('qcard'+qi);if(!card)return;card.removeAttribute('data-state');const selected=drafts[qi]||[];card.querySelectorAll('.quiz-opt').forEach((opt,index)=>{clearOptionState(opt);if(selected.indexOf(index)!==-1)opt.classList.add('selected');if(emailReady||qi<5)opt.removeAttribute('disabled');else opt.setAttribute('disabled','');});const btn=card.querySelector('.quiz-submit-btn');if(btn)btn.style.display=selected.length&&(emailReady||qi<5)?'block':'none';const overall=card.querySelector('.quiz-overall');if(overall){overall.open=false;overall.removeAttribute('open');overall.style.display='';}}
+function renderDraft(qi){const card=document.getElementById('qcard'+qi);if(!card)return;card.removeAttribute('data-state');const selected=drafts[qi]||[];card.querySelectorAll('.quiz-opt').forEach((opt,index)=>{clearOptionState(opt);if(selected.indexOf(index)!==-1)opt.classList.add('selected');if(isUnlocked(qi))opt.removeAttribute('disabled');else opt.setAttribute('disabled','');});const btn=card.querySelector('.quiz-submit-btn');if(btn)btn.style.display=selected.length&&isUnlocked(qi)?'inline-flex':'none';const overall=card.querySelector('.quiz-overall');if(overall){overall.open=false;overall.removeAttribute('open');overall.style.display='';}}
 function applyResponse(qi,response){const card=document.getElementById('qcard'+qi);if(!card||!response)return;const correct=correctIndicesFor(qi),opts=card.querySelectorAll('.quiz-opt');card.dataset.state=response.isCorrect?'correct':'wrong';opts.forEach((opt)=>clearOptionState(opt));if(response.isCorrect){response.selected.forEach((index)=>{if(opts[index])opts[index].classList.add('correct');});}else{response.selected.forEach((index)=>{if(!opts[index])return;if(correct.indexOf(index)===-1)opts[index].classList.add('wrong');else opts[index].classList.add('correct');});correct.forEach((index)=>{if(opts[index])opts[index].classList.add('correct');});}opts.forEach((opt)=>opt.setAttribute('disabled',''));const btn=card.querySelector('.quiz-submit-btn');if(btn)btn.style.display='none';showExplanations(qi);}
-function currentSlotIndex(){for(let i=0;i<5;i+=1){if(!storedAnswers[i])return i;}if(!emailReady)return 5;for(let i=5;i<10;i+=1){if(!storedAnswers[i])return i;}return-1;}
-function updateStatus(){const total=scoreSlice(0,9),answeredLabel=document.getElementById('quizStatusAnswered'),scoreLabel=document.getElementById('quizStatusScore');if(answeredLabel)answeredLabel.textContent=total.answered+' of 10 interactive questions';if(scoreLabel)scoreLabel.textContent=total.correct+' correct';}
-function updateSlots(){const current=currentSlotIndex();slots.forEach((slot)=>{const idx=parseInt(slot.dataset.slot,10);slot.classList.remove('is-correct','is-wrong','is-current','is-email-locked','is-clickable');if(idx>=10)return;if(storedAnswers[idx])slot.classList.add(storedAnswers[idx].isCorrect?'is-correct':'is-wrong');else if(idx>=5&&!emailReady)slot.classList.add('is-email-locked');if(idx===current)slot.classList.add('is-current');if(idx<5||(idx<10&&emailReady))slot.classList.add('is-clickable');});}
-function updateInterstitials(){const tier1=scoreSlice(0,4),total=scoreSlice(0,9),tier1Text=document.getElementById('tier1ScoreText'),tier1Value=document.getElementById('tier1ScoreValue'),tier2Text=document.getElementById('tier2ScoreText'),tier2Value=document.getElementById('tier2ScoreValue');if(tier1Text)tier1Text.textContent=tier1.correct+'/5';if(tier1Value)tier1Value.textContent=tier1.correct+'/5';if(tierTwoInterstitial&&tier2Text&&tier2Value){tier2Text.textContent=total.correct+'/10';tier2Value.textContent=total.correct+'/10';}if(tierOneInterstitial)tierOneInterstitial.hidden=tier1.answered!==5;if(tierTwoInterstitial)tierTwoInterstitial.hidden=total.answered!==10;}
-function persistState(){writeAnswers();saveScoreState();}
-function setTierTwoAccess(open){emailReady=!!open;tierTwoCards.forEach((card)=>{card.classList.toggle('is-email-locked',!open);const content=card.querySelector('.quiz-answer-content');if(content)content.classList.toggle('quiz-gate-blur',!open);card.querySelectorAll('[data-email-overlay]').forEach((overlay)=>{overlay.hidden=open;});const qi=parseInt(card.dataset.questionIndex,10);if(!storedAnswers[qi])renderDraft(qi);});updateSlots();}
-function maybeSendCompletionEvents(qi){const tier1=scoreSlice(0,4),total=scoreSlice(0,9);if(qi===0&&!startEventSent){startEventSent=true;evt('quiz_start',{tier:1});}if(!tier1EventSent&&tier1.answered===5){tier1EventSent=true;evt('quiz_tier1_complete',{score:tier1.correct});}if(!tier2EventSent&&total.answered===10){tier2EventSent=true;evt('quiz_tier2_complete',{score_total:total.correct});}}
-function render(){interactiveCards.forEach((card)=>{const qi=parseInt(card.dataset.questionIndex,10);if(storedAnswers[qi])applyResponse(qi,storedAnswers[qi]);else renderDraft(qi);});updateStatus();updateSlots();updateInterstitials();persistState();}
-document.querySelectorAll('.quiz-opt[data-q]').forEach((opt)=>{opt.addEventListener('click',function(){const qi=parseInt(this.dataset.q,10);if(qi>=5&&!emailReady)return;if(storedAnswers[qi])return;const idx=parseInt(this.dataset.idx,10),multi=Array.isArray(answers[qi]),current=drafts[qi]?drafts[qi].slice():[];if(multi){const pos=current.indexOf(idx);if(pos===-1)current.push(idx);else current.splice(pos,1);}else{current.length=0;current.push(idx);}drafts[qi]=normalizeSelection(current);renderDraft(qi);});});
-function submitAnswer(){const qi=parseInt(this.dataset.q,10);if(qi>=5&&!emailReady)return;if(storedAnswers[qi])return;const selected=normalizeSelection(drafts[qi]);if(!selected.length)return;const correct=correctIndicesFor(qi),isCorrect=selected.length===correct.length&&selected.every((value,index)=>value===correct[index]);storedAnswers[qi]={selected,isCorrect};delete drafts[qi];render();maybeSendCompletionEvents(qi);}
+function updateHeader(){if(stepLabel)stepLabel.textContent='Question '+(currentIndex+1)+' of 15';if(miniScore){const total=scoreSlice(0,14);miniScore.textContent=total.correct+' correct so far';}if(tierLabel){let label='Free',state='free';if(currentIndex>=5&&!emailReady){label='Email required';state='locked';}else if(currentIndex>=5&&emailReady){label='Preview unlocked';state='open';}tierLabel.textContent=label;tierLabel.dataset.state=state;}}
+function updateDots(){const limit=navigationLimit();dots.forEach((dot)=>{const idx=parseInt(dot.dataset.slot,10);dot.classList.remove('is-available','is-locked','is-correct','is-wrong','is-current');dot.classList.add(idx<=limit?'is-available':'is-locked');if(storedAnswers[idx])dot.classList.add(storedAnswers[idx].isCorrect?'is-correct':'is-wrong');if(idx===currentIndex)dot.classList.add('is-current');});}
+function updateVisibleCard(){cards.forEach((card)=>{const qi=parseInt(card.dataset.questionIndex,10),active=qi===currentIndex;card.hidden=!active;card.classList.toggle('is-active',active);card.setAttribute('aria-hidden',active?'false':'true');});}
+function updateNav(){const answered=!!storedAnswers[currentIndex],complete=scoreSlice(0,14).answered===15,limit=complete?14:navigationLimit();if(prevBtn)prevBtn.disabled=currentIndex===0;if(nextBtn){nextBtn.hidden=currentIndex===14&&complete;nextBtn.disabled=!answered||currentIndex>=limit;nextBtn.textContent='Next question';}if(navMeta){if(currentIndex===5&&!emailReady)navMeta.textContent='Enter your email to continue.';else if(currentIndex===14&&complete)navMeta.textContent='Preview complete. Your score is below.';else if(answered)navMeta.textContent='Ready for the next question.';else navMeta.textContent='Choose an answer and submit to continue.';}}
+function updateFinal(){const total=scoreSlice(0,14),complete=total.answered===15;if(finalBlock){finalBlock.hidden=!complete;if(complete){finalScoreText.textContent=total.correct+'/15';finalScoreValue.textContent=total.correct+'/15';}}if(crossSell)crossSell.hidden=!complete;}
+function persistState(){writeAnswers();saveScoreState();writeCurrent();}
+function setEmailAccess(open){emailReady=!!open;cards.forEach((card)=>{const qi=parseInt(card.dataset.questionIndex,10);if(qi<5)return;card.classList.toggle('is-email-locked',!open);const content=card.querySelector('.quiz-answer-content');if(content)content.classList.toggle('quiz-gate-blur',!open);if(qi===5){card.querySelectorAll('[data-email-overlay]').forEach((overlay)=>{overlay.hidden=open;});}});if(!emailReady&&currentIndex>5)currentIndex=5;}
+function maybeSendCompletionEvents(qi){const free5=scoreSlice(0,4),total=scoreSlice(0,14);if(qi===0&&!startEventSent){startEventSent=true;evt('quiz_start',{tier:1});}if(!tier1EventSent&&free5.answered===5){tier1EventSent=true;evt('quiz_tier1_complete',{score:free5.correct});}if(!tier2EventSent&&total.answered===15){tier2EventSent=true;evt('quiz_tier2_complete',{score_total:total.correct});}}
+function render(){currentIndex=normalizeCurrent(currentIndex);cards.forEach((card)=>{const qi=parseInt(card.dataset.questionIndex,10);if(storedAnswers[qi])applyResponse(qi,storedAnswers[qi]);else renderDraft(qi);});updateVisibleCard();updateHeader();updateDots();updateNav();updateFinal();persistState();}
+function scrollToCurrent(){const card=document.getElementById('qcard'+currentIndex);if(card)card.scrollIntoView({behavior:'smooth',block:'start'});}
+document.querySelectorAll('.quiz-opt[data-q]').forEach((opt)=>{opt.addEventListener('click',function(){const qi=parseInt(this.dataset.q,10);if(!isUnlocked(qi)||storedAnswers[qi])return;const idx=parseInt(this.dataset.idx,10),multi=Array.isArray(answers[qi]),current=drafts[qi]?drafts[qi].slice():[];if(multi){const pos=current.indexOf(idx);if(pos===-1)current.push(idx);else current.splice(pos,1);}else{current.length=0;current.push(idx);}drafts[qi]=normalizeSelection(current);render();});});
+function submitAnswer(){const qi=parseInt(this.dataset.q,10);if(!isUnlocked(qi)||storedAnswers[qi])return;const selected=normalizeSelection(drafts[qi]);if(!selected.length)return;const correct=correctIndicesFor(qi),isCorrect=selected.length===correct.length&&selected.every((value,index)=>value===correct[index]);storedAnswers[qi]={selected,isCorrect};delete drafts[qi];maybeSendCompletionEvents(qi);render();}
 document.querySelectorAll('.quiz-submit-btn[data-q]').forEach((btn)=>btn.addEventListener('click',submitAnswer));
-slots.forEach((slot)=>{slot.addEventListener('click',()=>{const idx=parseInt(slot.dataset.slot,10);if(idx>=10)return;if(idx>=5&&!emailReady){const gateCard=document.getElementById('qcard5');if(gateCard)gateCard.scrollIntoView({behavior:'smooth',block:'start'});return;}const card=document.getElementById('qcard'+idx);if(card)card.scrollIntoView({behavior:'smooth',block:'start'});});});
-if(tier1ContinueBtn){tier1ContinueBtn.addEventListener('click',()=>{const gateCard=document.getElementById('qcard5');if(gateCard)gateCard.scrollIntoView({behavior:'smooth',block:'start'});if(gateEmail)window.setTimeout(()=>gateEmail.focus(),250);});}
-function handleGateSubmit(event){event.preventDefault();const email=gateEmail.value.trim().toLowerCase(),valid=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)&&email.length<=254;if(!valid){setMessage('Use a valid email address.','is-error');return;}gateSubmit.disabled=true;gateSubmit.textContent='Sending...';setMessage('');fetch('https://app.convertkit.com/forms/'+QUIZ.convertKitFormId+'/subscriptions',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email_address:email,fields:{source:'quiz-gate-'+QUIZ.slug}})}).then((response)=>{if(!response.ok&&response.status!==200&&response.status!==201)throw new Error('gate failed');localStorage.setItem(STORAGE_EMAIL,'1');setTierTwoAccess(true);gateEmail.value='';gateEmail.disabled=true;gateSubmit.textContent='Questions ready';setMessage('Questions 6-10 are ready.','is-success');evt('quiz_email_submit');showToast('Questions 6-10 are ready.');}).catch(()=>{gateSubmit.disabled=false;gateSubmit.textContent='Continue with 5 More Questions';setMessage('That did not go through. Please try again.','is-error');});}
+if(prevBtn){prevBtn.addEventListener('click',()=>{if(currentIndex===0)return;currentIndex-=1;render();scrollToCurrent();});}
+if(nextBtn){nextBtn.addEventListener('click',()=>{const complete=scoreSlice(0,14).answered===15,limit=complete?14:navigationLimit();if(!storedAnswers[currentIndex]||currentIndex>=limit)return;currentIndex+=1;render();scrollToCurrent();if(currentIndex===5&&!emailReady&&gateEmail)window.setTimeout(()=>gateEmail.focus(),180);});}
+function handleGateSubmit(event){event.preventDefault();const email=gateEmail.value.trim().toLowerCase(),valid=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)&&email.length<=254;if(!valid){setMessage('Use a valid email address.','is-error');return;}gateSubmit.disabled=true;gateSubmit.textContent='Sending...';setMessage('');fetch('https://app.convertkit.com/forms/'+QUIZ.convertKitFormId+'/subscriptions',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email_address:email,fields:{source:'quiz-gate-'+QUIZ.slug}})}).then((response)=>{if(!response.ok&&response.status!==200&&response.status!==201)throw new Error('gate failed');localStorage.setItem(STORAGE_EMAIL,'1');setMessage('Questions 6-15 are ready.','is-success');evt('quiz_email_submit');showToast('Questions 6-15 are ready.');gateSubmit.disabled=false;gateSubmit.textContent='Continue with 10 More Questions';setEmailAccess(true);currentIndex=Math.max(currentIndex,5);render();}).catch(()=>{gateSubmit.disabled=false;gateSubmit.textContent='Continue with 10 More Questions';setMessage('That did not go through. Please try again.','is-error');});}
 if(gateForm)gateForm.addEventListener('submit',handleGateSubmit);
-document.querySelectorAll('a[data-buy-tier],a.cp-cta[href*="udemy.com"]').forEach((link)=>{link.addEventListener('click',()=>{const total=scoreSlice(0,9),tier=link.dataset.buyTier||(link.closest('#tier1Interstitial')?'tier1':'hero');evt('quiz_buy_click',{tier,score:total.correct});});});
-storedAnswers=readAnswers();emailReady=localStorage.getItem(STORAGE_EMAIL)==='1'||Object.keys(storedAnswers).some((key)=>parseInt(key,10)>=5);setTierTwoAccess(emailReady);render();evt('quiz_page_view');
+document.querySelectorAll('a[href*="udemy.com"]').forEach((link)=>{link.addEventListener('click',()=>{const total=scoreSlice(0,14),stage=link.dataset.buyStage||(link.closest('#quizFinal')?'final':'hero');evt('quiz_buy_click',{tier:stage,score:total.correct});});});
+storedAnswers=readAnswers();emailReady=localStorage.getItem(STORAGE_EMAIL)==='1'||Object.keys(storedAnswers).some((key)=>parseInt(key,10)>=5);startEventSent=Object.keys(storedAnswers).length>0;tier1EventSent=scoreSlice(0,4).answered===5;tier2EventSent=scoreSlice(0,14).answered===15;currentIndex=readCurrent();setEmailAccess(emailReady);render();evt('quiz_page_view');
 </script>
 </body>
 </html>

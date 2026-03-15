@@ -77,8 +77,8 @@
 {
   "@context": "https://schema.org",
   "@type": "Quiz",
-  "name": "5 Free CIS Hardware Asset Mgmt - ServiceNow Practice Test 2026 Practice Questions",
-  "description": "Try 5 free questions from the 15-question preview for the CIS Hardware Asset Mgmt - ServiceNow Practice Test 2026 practice test.",
+  "name": "15-Question CIS Hardware Asset Mgmt - ServiceNow Practice Test 2026 Preview",
+  "description": "Work through a 15-question preview for the CIS Hardware Asset Mgmt - ServiceNow Practice Test 2026 practice test.",
   "url": "https://luckyx.dev/courses/cis-ham.html#free-quiz",
   "educationalAlignment": {
     "@type": "AlignmentObject",
@@ -193,6 +193,214 @@
         {
           "@type": "Answer",
           "text": "CPU type"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "Which three attributes from a hardware model record are used for setting the normalized display name during hardware model normalization-",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Name, Manufacturer, Model number"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Name, Manufacturer, Model category"
+        },
+        {
+          "@type": "Answer",
+          "text": "Asset tracking unit, Manufacturer, Model number"
+        },
+        {
+          "@type": "Answer",
+          "text": "Name, Asset tracking unit, Model number"
+        },
+        {
+          "@type": "Answer",
+          "text": "Asset tracking unit, Manufacturer, Model category"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "What best describes asset management-",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Financial tracking of an organization's property"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Financial tracking of the organization's network"
+        },
+        {
+          "@type": "Answer",
+          "text": "Building of the organization's property"
+        },
+        {
+          "@type": "Answer",
+          "text": "Building the elements that create the organization's network"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "When adding assets to a Disposal Order you notice some assets are not appearing in the selection list. Which conditions must typically be met for an asset to be eligible- (Choose two.) (choose 2)",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Substate must be \"Pending Disposal\" | State must be \"Retired\""
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Residual Value must be greater than $0"
+        },
+        {
+          "@type": "Answer",
+          "text": "Asset must be assigned to a user"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "You need to return a defective server to the vendor for repair via an RMA order. Which specific Asset Task type is generated to track the shipment of the broken asset back to the vendor-",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ship"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Return"
+        },
+        {
+          "@type": "Answer",
+          "text": "Transfer"
+        },
+        {
+          "@type": "Answer",
+          "text": "Disposal"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "Which two automatic restocking actions are available in the baseline ServiceNow Stock Rules- (Choose two.) (choose 2)",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Create a transfer order to restock from another stockroom | Create a task assigned to the stock room manage to create a purchase order"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Create a transfer order to restock from a vendor"
+        },
+        {
+          "@type": "Answer",
+          "text": "Create a task assigned to the stock room manager to contact the procurement manager"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "An event runs each night to send reminders to contract administrators about upcoming contract expiration dates. By default at what intervals does the contract administrator receive these notifications- (Choose four.) (choose 4)",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "90 days before | 60 days before | 30 days before | Day of expiration"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "45 days before"
+        },
+        {
+          "@type": "Answer",
+          "text": "7 days before"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "You are defining a new Hardware Model in ServiceNow. You want to ensure that every time an asset of this model is created it automatically generates a corresponding Configuration Item (CI) in the CMDB. Where is this behavior controlled-",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On the Model Category record associated with the model"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "On the Hardware Model record itself"
+        },
+        {
+          "@type": "Answer",
+          "text": "On the Business Rule \"Create CI on Insert\""
+        },
+        {
+          "@type": "Answer",
+          "text": "On the Asset Class record"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "In addition to hardware which are types of assets- (Choose three.) (choose 3)",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Facility | Consumable | Software entitlement"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "Stockroom"
+        },
+        {
+          "@type": "Answer",
+          "text": "Configuration item"
+        },
+        {
+          "@type": "Answer",
+          "text": "Model"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "Several hardware models in your dashboard show a normalization status of \"Match Not Found.\" What are the most likely causes for this status- (Choose three.) (choose 3)",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The model name contains special characters or bad formatting that prevents matching | The content library has not been downloaded or updated recently | The model is a new release and does not yet exist in the ServiceNow Content Service"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "The Hardware Asset Management plugin is not active"
+        },
+        {
+          "@type": "Answer",
+          "text": "The asset record is missing the \"Assigned to\" field"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "name": "When is the appropriate time to initiate the retirement of an IT asset-",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "At any point that it is recommended by your company-defined policies and procedures"
+      },
+      "suggestedAnswer": [
+        {
+          "@type": "Answer",
+          "text": "When the Hardware Content Service reports the asset is reaching End of Life (EOL)"
+        },
+        {
+          "@type": "Answer",
+          "text": "When the Hardware Content Service reports the asset is reaching End of Service (EOS)"
+        },
+        {
+          "@type": "Answer",
+          "text": "At any point it is recommended by the HAM-defined baseline asset policy"
         }
       ]
     }
@@ -323,7 +531,119 @@ a:hover { text-decoration: underline; }
 .theme-toggle svg { width: 18px; height: 18px; stroke: var(--text-dim); stroke-width: 2; fill: none; }
 
 /* Quiz section */
-.quiz-section{margin-top:48px}.quiz-section h2{font-size:1.38rem;font-weight:700;margin-bottom:10px;line-height:1.24}.quiz-intro{margin:0;color:var(--text-dim);font-size:.97rem;line-height:1.65;max-width:62ch}.preview-shell{margin-bottom:28px}.preview-kicker{display:inline-flex;align-items:center;gap:8px;margin-bottom:14px;padding:6px 12px;border-radius:999px;background:rgba(221,92,12,.08);border:1px solid rgba(221,92,12,.18);color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}.preview-status-line{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px}.preview-status-pill{display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--border);color:var(--text-dim);font-size:.84rem}.preview-status-pill strong{color:var(--text)}.preview-progress-wrap{overflow-x:auto;padding-bottom:4px}.preview-progress{display:grid;grid-template-columns:repeat(15,58px);gap:8px;list-style:none;margin:0;padding:0;min-width:max-content}.preview-slot{min-height:60px;padding:9px 6px;border-radius:12px;border:1px solid var(--border);background:var(--bg-raised);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:default;transition:border-color .18s,background .18s,transform .18s}.preview-slot.is-clickable{cursor:pointer}.preview-slot.is-clickable:hover{transform:translateY(-1px);border-color:var(--border-hover)}.preview-slot.is-current{border-color:rgba(221,92,12,.42);background:rgba(221,92,12,.08)}.preview-slot.is-correct{border-color:rgba(46,160,67,.45);background:rgba(46,160,67,.08)}.preview-slot.is-wrong{border-color:rgba(215,58,73,.45);background:rgba(215,58,73,.08)}.preview-slot.is-email-locked{opacity:.78}.preview-slot.is-locked{opacity:.55}.preview-slot-num{display:block;font-size:.94rem;font-weight:700;line-height:1.1;color:var(--text)}.preview-slot-state{display:block;margin-top:4px;font-size:.63rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text-dim)}.preview-slot.is-correct .preview-slot-num,.preview-slot.is-correct .preview-slot-state{color:#2ea043}.preview-slot.is-wrong .preview-slot-num,.preview-slot.is-wrong .preview-slot-state{color:#d73a49}.preview-slot-lock{width:16px;height:16px;margin-top:4px;color:var(--text-dim)}.preview-slot-lock svg{width:100%;height:100%;stroke:currentColor;stroke-width:1.6;fill:none}.preview-group-labels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:10px}.preview-group-label{padding:10px 12px;border-radius:12px;border:1px solid var(--border);background:rgba(255,255,255,.02);font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text-dim);text-align:center}.quiz-tier-heading{margin:26px 0 14px;padding-top:4px;font-size:.85rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--orange)}.quiz-card{background:var(--bg-raised);border:1px solid var(--border);border-radius:14px;padding:20px 20px 18px;margin-bottom:14px;transition:border-color .2s,background .2s}.quiz-card[data-state="correct"]{border-color:#2ea043}.quiz-card[data-state="wrong"]{border-color:#d73a49}.quiz-card.is-email-locked,.quiz-card.is-teaser-locked{background:linear-gradient(180deg,rgba(255,255,255,.018),rgba(255,255,255,.005))}.quiz-q{font-weight:600;font-size:1rem;margin-bottom:14px;line-height:1.5}.quiz-q-num{color:var(--orange);font-weight:700;margin-right:6px}.quiz-answer-shell{position:relative}.quiz-answer-content.quiz-gate-blur{filter:blur(4px);pointer-events:none;user-select:none}.quiz-opts{list-style:none;display:flex;flex-direction:column;gap:6px}.quiz-opt{display:flex;align-items:flex-start;gap:10px;padding:11px 12px;border-radius:12px;border:1px solid var(--border);cursor:pointer;transition:background .15s,border-color .15s;color:var(--text-dim);font-size:.94rem;line-height:1.5;flex-wrap:wrap}.quiz-opt:hover{background:rgba(221,92,12,.06);border-color:var(--border-hover)}.quiz-opt.selected{background:rgba(221,92,12,.1);border-color:var(--orange);color:var(--text)}.quiz-opt.correct{background:rgba(46,160,67,.1);border-color:#2ea043;color:var(--text)}.quiz-opt.wrong{background:rgba(215,58,73,.1);border-color:#d73a49}.quiz-opt[disabled]{pointer-events:none;cursor:default}.quiz-opt-letter{width:22px;height:22px;border-radius:50%;background:var(--bg-card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:600;flex-shrink:0;color:var(--text-dim)}.quiz-opt.selected .quiz-opt-letter{background:var(--orange);color:#fff;border-color:var(--orange)}.quiz-opt.correct .quiz-opt-letter{background:#2ea043;color:#fff;border-color:#2ea043}.quiz-opt.wrong .quiz-opt-letter{background:#d73a49;color:#fff;border-color:#d73a49}.quiz-choose{font-weight:500;color:var(--orange);font-size:.85rem;margin-left:4px}.quiz-submit-btn{display:none;margin-top:12px;padding:11px 26px;background:var(--orange);color:#fff;border:none;border-radius:10px;font-size:.92rem;font-weight:700;cursor:pointer}.quiz-submit-btn:hover{background:#c75400}.quiz-opt-exp-inline{flex-basis:100%;padding:8px 12px;border-radius:9px;font-size:.86rem;line-height:1.48;margin-top:6px}.quiz-opt-exp-inline.qoe-is-correct{background:rgba(46,160,67,.08);border-left:3px solid #2ea043}.quiz-opt-exp-inline.qoe-is-wrong{background:rgba(215,58,73,.06);border-left:3px solid #d73a49}.qoe-header{font-weight:700;margin-bottom:3px;font-size:.8rem;display:flex;align-items:center;gap:6px}.qoe-correct{color:#2ea043}.qoe-wrong{color:#d73a49}.qoe-letter,.qoe-text{color:var(--text-dim)}.quiz-opt-explains{display:none!important}.quiz-overall{display:none;margin-top:10px}.quiz-overall[style*="block"]{display:block}details.quiz-overall:not([open]) .quiz-overall-content{display:none}.quiz-overall-toggle{cursor:pointer;font-size:.88rem;font-weight:700;color:var(--orange);padding:8px 0 2px;list-style:none;display:flex;align-items:center;gap:6px}.quiz-overall-toggle::-webkit-details-marker{display:none}.quiz-overall-toggle::before{content:'';display:inline-block;width:0;height:0;border-left:5px solid var(--orange);border-top:4px solid transparent;border-bottom:4px solid transparent;transition:transform .2s}details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}.quiz-overall-content{padding:6px 0 0;background:transparent;border-radius:0;font-size:.88rem;color:var(--text-dim);line-height:1.65;margin-top:6px;border-left:none}.exp-section{margin-bottom:10px;padding:12px 14px;border-radius:11px;border-left:3px solid}.exp-section:last-child,.exp-section p:last-child,.exp-section ul:last-child{margin-bottom:0}.exp-section h5{margin:0 0 6px;font-size:.88rem;font-weight:700}.exp-section p{margin-bottom:5px}.exp-section ul{padding-left:18px;margin-bottom:5px}.exp-section li{margin-bottom:3px}.exp-correct-answer{background:rgba(46,160,67,.05);border-left-color:#2ea043}.exp-correct-answer h5{color:#2ea043}.exp-source{background:rgba(59,130,246,.05);border-left-color:#3b82f6}.exp-source h5,.exp-source a{color:#3b82f6}.exp-expert{background:rgba(139,92,246,.05);border-left-color:#8b5cf6}.exp-expert h5{color:#8b5cf6}.exp-wrong{background:rgba(215,58,73,.04);border-left-color:#d73a49}.exp-wrong h5{color:#d73a49}.exp-memory{background:rgba(217,119,6,.05);border-left-color:#d97706}.exp-memory h5{color:#d97706}.exp-realworld{background:rgba(16,185,129,.05);border-left-color:#10b981}.exp-realworld h5{color:#10b981}.quiz-gate-prompt,.quiz-locked-overlay{position:absolute;inset:14px;display:flex;align-items:center;justify-content:center;border-radius:14px;background:rgba(7,9,13,.56);z-index:4}.quiz-gate-card,.quiz-locked-card{width:min(100%,480px);padding:22px;border-radius:16px;border:1px solid rgba(221,92,12,.32);background:var(--bg-raised);box-shadow:0 18px 45px rgba(0,0,0,.28);text-align:center}.quiz-gate-title,.quiz-locked-title{font-size:1.08rem;font-weight:700;line-height:1.35}.quiz-gate-copy,.quiz-locked-copy{margin-top:10px;color:var(--text-dim);font-size:.92rem;line-height:1.6}.quiz-gate-form{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.quiz-gate-email-input{flex:1 1 220px;min-height:48px;padding:0 14px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-family:var(--font);font-size:.94rem}.quiz-gate-email-input:focus{outline:none;border-color:rgba(221,92,12,.5);box-shadow:0 0 0 3px rgba(221,92,12,.12)}.quiz-gate-submit,.quiz-locked-cta-btn,.quiz-interstitial .cp-cta,.quiz-secondary-btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:12px;border:none;background:var(--orange);color:#fff;font-family:var(--font);font-size:.95rem;font-weight:700;cursor:pointer;text-decoration:none}.quiz-gate-submit:hover,.quiz-locked-cta-btn:hover,.quiz-interstitial .cp-cta:hover,.quiz-secondary-btn:hover{background:#c75400;text-decoration:none}.quiz-secondary-btn{background:transparent;border:1px solid var(--border-hover);color:var(--text)}.quiz-secondary-btn:hover{background:rgba(221,92,12,.06)}.quiz-gate-note{margin-top:12px;color:var(--text-dim);font-size:.82rem;line-height:1.5}.quiz-gate-message{margin-top:10px;font-size:.85rem;color:var(--text-dim);min-height:1.3em}.quiz-gate-message.is-error{color:#ff868f}.quiz-gate-message.is-success{color:#2ea043}.quiz-locked-lock{width:26px;height:26px;margin:0 auto 8px;color:var(--orange)}.quiz-locked-lock svg{width:100%;height:100%;stroke:currentColor;stroke-width:1.7;fill:none}.quiz-interstitial{margin:24px 0;padding:24px;border-radius:18px;border:1px solid rgba(221,92,12,.2);background:radial-gradient(circle at top right,rgba(221,92,12,.1),transparent 44%),linear-gradient(180deg,rgba(255,255,255,.015),rgba(255,255,255,.004))}.quiz-interstitial[hidden]{display:none!important}.quiz-interstitial-kicker{color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}.quiz-interstitial h3{margin-top:10px;font-size:1.32rem;line-height:1.28}.quiz-interstitial-score{font-size:2.15rem;font-weight:800;color:var(--text);line-height:1;margin-top:16px}.quiz-interstitial-copy{margin-top:8px;color:var(--text-dim);max-width:58ch}.quiz-interstitial-anchor{margin-top:12px;color:var(--text);font-size:.92rem}.quiz-interstitial-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.quiz-cross-sell{margin-top:24px;padding:22px;border-radius:16px;border:1px solid var(--border);background:rgba(255,255,255,.02)}.quiz-cross-sell h3{font-size:1rem;margin-bottom:8px}.quiz-cross-sell p{margin:0;color:var(--text-dim);font-size:.92rem;line-height:1.6}.quiz-cross-sell-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.quiz-cross-sell-links a{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;border:1px solid var(--border-hover);background:transparent;color:var(--text);font-weight:700}.quiz-cross-sell-links a:hover{background:rgba(221,92,12,.06);border-color:var(--orange);text-decoration:none}.quiz-toast{position:fixed;right:18px;bottom:18px;z-index:1002;min-width:220px;max-width:min(360px,calc(100vw - 36px));padding:14px 16px;border-radius:12px;border:1px solid rgba(46,160,67,.35);background:rgba(18,25,21,.96);color:#e8fff0;box-shadow:0 18px 45px rgba(0,0,0,.32);font-size:.9rem;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .2s,transform .2s}.quiz-toast.show{opacity:1;transform:translateY(0)}@media (min-width:1040px){.cp-wrap{max-width:960px;padding-left:32px;padding-right:32px}.quiz-card{padding:22px 24px 20px}}@media (max-width:720px){.preview-group-labels{grid-template-columns:1fr}.quiz-gate-form{flex-direction:column}.quiz-gate-submit,.quiz-secondary-btn,.quiz-cross-sell-links a,.quiz-interstitial .cp-cta{width:100%}.quiz-gate-card,.quiz-locked-card{padding:18px}.quiz-interstitial-actions{flex-direction:column}.quiz-card{padding:16px}}
+.quiz-section{margin-top:48px}
+.quiz-section h2{font-size:1.38rem;font-weight:700;margin-bottom:10px;line-height:1.24}
+.quiz-intro{margin:0;color:var(--text-dim);font-size:.97rem;line-height:1.65;max-width:62ch}
+.preview-shell{margin-bottom:22px}
+.preview-kicker{display:inline-flex;align-items:center;gap:8px;margin-bottom:14px;padding:6px 12px;border-radius:999px;background:rgba(221,92,12,.08);border:1px solid rgba(221,92,12,.18);color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.quiz-stepper-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin:18px 0 12px}
+.quiz-stepper-label{font-size:1rem;font-weight:700;color:var(--text)}
+.quiz-stepper-tier{display:inline-flex;align-items:center;margin-top:7px;padding:6px 10px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.02);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text-dim)}
+.quiz-stepper-tier[data-state="free"]{color:#2ea043;border-color:rgba(46,160,67,.28);background:rgba(46,160,67,.08)}
+.quiz-stepper-tier[data-state="locked"]{color:var(--orange);border-color:rgba(221,92,12,.28);background:rgba(221,92,12,.08)}
+.quiz-stepper-tier[data-state="open"]{color:#3b82f6;border-color:rgba(59,130,246,.28);background:rgba(59,130,246,.08)}
+.quiz-stepper-score{font-size:.9rem;color:var(--text-dim);white-space:nowrap;padding-top:2px}
+.quiz-stepper-dots{display:grid;grid-template-columns:repeat(15,minmax(0,1fr));gap:8px}
+.preview-dot{height:10px;border-radius:999px;border:1px solid var(--border);background:var(--bg-card);opacity:.55;transition:border-color .18s,background .18s,box-shadow .18s,opacity .18s}
+.preview-dot.is-available{opacity:1}
+.preview-dot.is-locked{opacity:.38}
+.preview-dot.is-correct{background:#2ea043;border-color:#2ea043;opacity:1}
+.preview-dot.is-wrong{background:#d73a49;border-color:#d73a49;opacity:1}
+.preview-dot.is-current{border-color:var(--orange);box-shadow:0 0 0 3px rgba(221,92,12,.14)}
+.quiz-card-stack{position:relative}
+.quiz-card{background:var(--bg-raised);border:1px solid var(--border);border-radius:16px;padding:20px 20px 18px;margin-bottom:14px;transition:border-color .2s,background .2s}
+.quiz-card[hidden]{display:none!important}
+.quiz-card[data-state="correct"]{border-color:#2ea043}
+.quiz-card[data-state="wrong"]{border-color:#d73a49}
+.quiz-card.is-email-locked{background:linear-gradient(180deg,rgba(255,255,255,.018),rgba(255,255,255,.005))}
+.quiz-q{font-weight:600;font-size:1rem;margin-bottom:14px;line-height:1.5}
+.quiz-q-num{color:var(--orange);font-weight:700;margin-right:6px}
+.quiz-answer-shell{position:relative}
+.quiz-answer-content.quiz-gate-blur{filter:blur(4px);pointer-events:none;user-select:none}
+.quiz-opts{list-style:none;display:flex;flex-direction:column;gap:6px}
+.quiz-opt{display:flex;align-items:flex-start;gap:10px;padding:11px 12px;border-radius:12px;border:1px solid var(--border);cursor:pointer;transition:background .15s,border-color .15s;color:var(--text-dim);font-size:.94rem;line-height:1.5;flex-wrap:wrap}
+.quiz-opt:hover{background:rgba(221,92,12,.06);border-color:var(--border-hover)}
+.quiz-opt.selected{background:rgba(221,92,12,.1);border-color:var(--orange);color:var(--text)}
+.quiz-opt.correct{background:rgba(46,160,67,.1);border-color:#2ea043;color:var(--text)}
+.quiz-opt.wrong{background:rgba(215,58,73,.1);border-color:#d73a49}
+.quiz-opt[disabled]{pointer-events:none;cursor:default}
+.quiz-opt-letter{width:22px;height:22px;border-radius:50%;background:var(--bg-card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:600;flex-shrink:0;color:var(--text-dim)}
+.quiz-opt.selected .quiz-opt-letter{background:var(--orange);color:#fff;border-color:var(--orange)}
+.quiz-opt.correct .quiz-opt-letter{background:#2ea043;color:#fff;border-color:#2ea043}
+.quiz-opt.wrong .quiz-opt-letter{background:#d73a49;color:#fff;border-color:#d73a49}
+.quiz-choose{font-weight:500;color:var(--orange);font-size:.85rem;margin-left:4px}
+.quiz-submit-btn{display:none;margin-top:12px;padding:11px 26px;background:var(--orange);color:#fff;border:none;border-radius:10px;font-size:.92rem;font-weight:700;cursor:pointer}
+.quiz-submit-btn:hover{background:#c75400}
+.quiz-opt-exp-inline{flex-basis:100%;padding:8px 12px;border-radius:9px;font-size:.86rem;line-height:1.48;margin-top:6px}
+.quiz-opt-exp-inline.qoe-is-correct{background:rgba(46,160,67,.08);border-left:3px solid #2ea043}
+.quiz-opt-exp-inline.qoe-is-wrong{background:rgba(215,58,73,.06);border-left:3px solid #d73a49}
+.qoe-header{font-weight:700;margin-bottom:3px;font-size:.8rem;display:flex;align-items:center;gap:6px}
+.qoe-correct{color:#2ea043}
+.qoe-wrong{color:#d73a49}
+.qoe-letter,.qoe-text{color:var(--text-dim)}
+.quiz-opt-explains{display:none!important}
+.quiz-overall{display:none;margin-top:10px}
+.quiz-overall[style*="block"]{display:block}
+details.quiz-overall:not([open]) .quiz-overall-content{display:none}
+.quiz-overall-toggle{cursor:pointer;font-size:.88rem;font-weight:700;color:var(--orange);padding:8px 0 2px;list-style:none;display:flex;align-items:center;gap:6px}
+.quiz-overall-toggle::-webkit-details-marker{display:none}
+.quiz-overall-toggle::before{content:'';display:inline-block;width:0;height:0;border-left:5px solid var(--orange);border-top:4px solid transparent;border-bottom:4px solid transparent;transition:transform .2s}
+details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
+.quiz-overall-content{padding:6px 0 0;background:transparent;border-radius:0;font-size:.88rem;color:var(--text-dim);line-height:1.65;margin-top:6px;border-left:none}
+.exp-section{margin-bottom:10px;padding:12px 14px;border-radius:11px;border-left:3px solid}
+.exp-section:last-child,.exp-section p:last-child,.exp-section ul:last-child{margin-bottom:0}
+.exp-section h5{margin:0 0 6px;font-size:.88rem;font-weight:700}
+.exp-section p{margin-bottom:5px}
+.exp-section ul{padding-left:18px;margin-bottom:5px}
+.exp-section li{margin-bottom:3px}
+.exp-correct-answer{background:rgba(46,160,67,.05);border-left-color:#2ea043}
+.exp-correct-answer h5{color:#2ea043}
+.exp-source{background:rgba(59,130,246,.05);border-left-color:#3b82f6}
+.exp-source h5,.exp-source a{color:#3b82f6}
+.exp-expert{background:rgba(139,92,246,.05);border-left-color:#8b5cf6}
+.exp-expert h5{color:#8b5cf6}
+.exp-wrong{background:rgba(215,58,73,.04);border-left-color:#d73a49}
+.exp-wrong h5{color:#d73a49}
+.exp-memory{background:rgba(217,119,6,.05);border-left-color:#d97706}
+.exp-memory h5{color:#d97706}
+.exp-realworld{background:rgba(16,185,129,.05);border-left-color:#10b981}
+.exp-realworld h5{color:#10b981}
+.quiz-gate-prompt{position:absolute;inset:14px;display:flex;align-items:center;justify-content:center;border-radius:14px;background:rgba(7,9,13,.56);z-index:4}
+.quiz-gate-card{width:min(100%,520px);padding:22px;border-radius:16px;border:1px solid rgba(221,92,12,.32);background:var(--bg-raised);box-shadow:0 18px 45px rgba(0,0,0,.28);text-align:center}
+.quiz-gate-title{font-size:1.08rem;font-weight:700;line-height:1.35}
+.quiz-gate-copy{margin-top:10px;color:var(--text-dim);font-size:.92rem;line-height:1.6}
+.quiz-gate-form{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.quiz-gate-email-input{flex:1 1 220px;min-height:48px;padding:0 14px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-family:var(--font);font-size:.94rem}
+.quiz-gate-email-input:focus{outline:none;border-color:rgba(221,92,12,.5);box-shadow:0 0 0 3px rgba(221,92,12,.12)}
+.quiz-gate-submit,.quiz-nav-next,.quiz-final .cp-cta,.quiz-secondary-btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:12px;border:none;font-family:var(--font);font-size:.95rem;font-weight:700;cursor:pointer;text-decoration:none}
+.quiz-nav-next,.quiz-gate-submit,.quiz-final .cp-cta{background:var(--orange);color:#fff}
+.quiz-nav-next:hover,.quiz-gate-submit:hover,.quiz-final .cp-cta:hover{background:#c75400;text-decoration:none}
+.quiz-nav-next[disabled],.quiz-gate-submit[disabled],.quiz-secondary-btn[disabled]{cursor:not-allowed;opacity:.45}
+.quiz-secondary-btn{background:transparent;border:1px solid var(--border-hover);color:var(--text)}
+.quiz-secondary-btn:hover{background:rgba(221,92,12,.06)}
+.quiz-gate-message{margin-top:10px;font-size:.85rem;color:var(--text-dim);min-height:1.3em}
+.quiz-gate-message.is-error{color:#ff868f}
+.quiz-gate-message.is-success{color:#2ea043}
+.quiz-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px;padding:16px 18px;border-radius:16px;border:1px solid var(--border);background:rgba(255,255,255,.02)}
+.quiz-nav-meta{flex:1;color:var(--text-dim);font-size:.9rem;line-height:1.5;text-align:center}
+.quiz-final{margin-top:22px;padding:24px;border-radius:18px;border:1px solid rgba(221,92,12,.2);background:radial-gradient(circle at top right,rgba(221,92,12,.1),transparent 44%),linear-gradient(180deg,rgba(255,255,255,.015),rgba(255,255,255,.004))}
+.quiz-final[hidden],.quiz-cross-sell[hidden]{display:none!important}
+.quiz-final-kicker{color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.quiz-final h3{margin-top:10px;font-size:1.32rem;line-height:1.28}
+.quiz-final-score{font-size:2.15rem;font-weight:800;color:var(--text);line-height:1;margin-top:16px}
+.quiz-final-copy{margin-top:8px;color:var(--text-dim);max-width:58ch}
+.quiz-final-anchor{margin-top:12px;color:var(--text);font-size:.92rem}
+.quiz-final-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.quiz-cross-sell{margin-top:22px;padding:22px;border-radius:16px;border:1px solid var(--border);background:rgba(255,255,255,.02)}
+.quiz-cross-sell h3{font-size:1rem;margin-bottom:8px}
+.quiz-cross-sell p{margin:0;color:var(--text-dim);font-size:.92rem;line-height:1.6}
+.quiz-cross-sell-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.quiz-cross-sell-links a{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;border:1px solid var(--border-hover);background:transparent;color:var(--text);font-weight:700}
+.quiz-cross-sell-links a:hover{background:rgba(221,92,12,.06);border-color:var(--orange);text-decoration:none}
+.quiz-toast{position:fixed;right:18px;bottom:18px;z-index:1002;min-width:220px;max-width:min(360px,calc(100vw - 36px));padding:14px 16px;border-radius:12px;border:1px solid rgba(46,160,67,.35);background:rgba(18,25,21,.96);color:#e8fff0;box-shadow:0 18px 45px rgba(0,0,0,.32);font-size:.9rem;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .2s,transform .2s}
+.quiz-toast.show{opacity:1;transform:translateY(0)}
+@media (min-width:1040px){.cp-wrap{max-width:960px;padding-left:32px;padding-right:32px}.quiz-card{padding:22px 24px 20px}}
+@media (max-width:720px){.quiz-stepper-head,.quiz-nav,.quiz-final-actions,.quiz-cross-sell-links,.quiz-gate-form{flex-direction:column;align-items:stretch}.quiz-stepper-score,.quiz-nav-meta{text-align:left}.quiz-nav-next,.quiz-secondary-btn,.quiz-gate-submit,.quiz-final .cp-cta,.quiz-cross-sell-links a{width:100%}.quiz-card,.quiz-final,.quiz-cross-sell{padding:18px}.quiz-stepper-dots{gap:6px}}
 
 /* Countdown banner */
 .countdown-banner { max-width: 100%; margin: 0 0 24px; padding: 20px 24px; background: linear-gradient(135deg, rgba(221,92,12,0.08), rgba(221,92,12,0.03)); border: 1px solid rgba(221,92,12,0.2); border-radius: 14px; text-align: center; position: relative; overflow: hidden; }
@@ -440,50 +760,46 @@ a:hover { text-decoration: underline; }
     </ul>
   </div>
 
-  <section class="quiz-section" id="free-quiz" data-preview-style="three-tier">
+  <section class="quiz-section" id="free-quiz" data-preview-style="guided-15">
     <div class="preview-shell">
       <div class="preview-kicker">15-question preview</div>
       <h2>15 Free Preview Questions</h2>
-      <p class="quiz-intro">Answer 5 questions free. Enter your email to continue with 5 more. The full course has 240 questions on Udemy.</p>
-      <div class="preview-status-line">
-        <span class="preview-status-pill">Answered <strong id="quizStatusAnswered">0 of 10 interactive questions</strong></span>
-        <span class="preview-status-pill">Score <strong id="quizStatusScore">0 correct</strong></span>
+      <p class="quiz-intro">Answer 5 questions free. Enter your email to continue through question 15. The full course has 240 questions on Udemy.</p>
+      <div class="quiz-stepper-head">
+        <div class="quiz-stepper-copy">
+          <div class="quiz-stepper-label" id="quizStepLabel">Question 1 of 15</div>
+          <div class="quiz-stepper-tier" data-state="free" id="quizTierLabel">Free</div>
+        </div>
+        <div class="quiz-stepper-score" id="quizMiniScore">0 correct so far</div>
       </div>
-      <div class="preview-progress-wrap">
-        <ol class="preview-progress" id="quizProgress">
-        <li class="preview-slot is-clickable" data-slot="0"><span class="preview-slot-num">1</span><span class="preview-slot-state">Free</span></li>
-        <li class="preview-slot is-clickable" data-slot="1"><span class="preview-slot-num">2</span><span class="preview-slot-state">Free</span></li>
-        <li class="preview-slot is-clickable" data-slot="2"><span class="preview-slot-num">3</span><span class="preview-slot-state">Free</span></li>
-        <li class="preview-slot is-clickable" data-slot="3"><span class="preview-slot-num">4</span><span class="preview-slot-state">Free</span></li>
-        <li class="preview-slot is-clickable" data-slot="4"><span class="preview-slot-num">5</span><span class="preview-slot-state">Free</span></li>
-        <li class="preview-slot" data-slot="5"><span class="preview-slot-num">6</span><span class="preview-slot-state">Email</span></li>
-        <li class="preview-slot" data-slot="6"><span class="preview-slot-num">7</span><span class="preview-slot-state">Email</span></li>
-        <li class="preview-slot" data-slot="7"><span class="preview-slot-num">8</span><span class="preview-slot-state">Email</span></li>
-        <li class="preview-slot" data-slot="8"><span class="preview-slot-num">9</span><span class="preview-slot-state">Email</span></li>
-        <li class="preview-slot" data-slot="9"><span class="preview-slot-num">10</span><span class="preview-slot-state">Email</span></li>
-        <li class="preview-slot is-locked" data-slot="10"><span class="preview-slot-num">11</span><span class="preview-slot-state">Full</span><span class="preview-slot-lock"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 1 1 8 0v3"/></svg></span></li>
-        <li class="preview-slot is-locked" data-slot="11"><span class="preview-slot-num">12</span><span class="preview-slot-state">Full</span><span class="preview-slot-lock"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 1 1 8 0v3"/></svg></span></li>
-        <li class="preview-slot is-locked" data-slot="12"><span class="preview-slot-num">13</span><span class="preview-slot-state">Full</span><span class="preview-slot-lock"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 1 1 8 0v3"/></svg></span></li>
-        <li class="preview-slot is-locked" data-slot="13"><span class="preview-slot-num">14</span><span class="preview-slot-state">Full</span><span class="preview-slot-lock"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 1 1 8 0v3"/></svg></span></li>
-        <li class="preview-slot is-locked" data-slot="14"><span class="preview-slot-num">15</span><span class="preview-slot-state">Full</span><span class="preview-slot-lock"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 1 1 8 0v3"/></svg></span></li>
-        </ol>
-      </div>
-      <div class="preview-group-labels">
-        <div class="preview-group-label">Questions 1-5. Free.</div>
-        <div class="preview-group-label">Questions 6-10. Email required.</div>
-        <div class="preview-group-label">Questions 11-15. Full course.</div>
+      <div class="quiz-stepper-dots" id="quizProgress">
+        <span class="preview-dot" data-slot="0" title="Question 1"></span>
+        <span class="preview-dot" data-slot="1" title="Question 2"></span>
+        <span class="preview-dot" data-slot="2" title="Question 3"></span>
+        <span class="preview-dot" data-slot="3" title="Question 4"></span>
+        <span class="preview-dot" data-slot="4" title="Question 5"></span>
+        <span class="preview-dot" data-slot="5" title="Question 6"></span>
+        <span class="preview-dot" data-slot="6" title="Question 7"></span>
+        <span class="preview-dot" data-slot="7" title="Question 8"></span>
+        <span class="preview-dot" data-slot="8" title="Question 9"></span>
+        <span class="preview-dot" data-slot="9" title="Question 10"></span>
+        <span class="preview-dot" data-slot="10" title="Question 11"></span>
+        <span class="preview-dot" data-slot="11" title="Question 12"></span>
+        <span class="preview-dot" data-slot="12" title="Question 13"></span>
+        <span class="preview-dot" data-slot="13" title="Question 14"></span>
+        <span class="preview-dot" data-slot="14" title="Question 15"></span>
       </div>
     </div>
-    <div class="quiz-tier-heading">Questions 1-5. Free.</div>
+    <div class="quiz-card-stack">
 <div class="quiz-card" data-question-index="0" data-tier="1" id="qcard0">
-<div class="quiz-q"><span class="quiz-q-num">1.</span>Populating CMDB tables using import sets can inadvertently result in duplicate configuration items (CIs). To minimize this duplication you can apply what process to the import sets-</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t">
+<div class="quiz-q"><span class="quiz-q-num">1.</span>Populating CMDB tables using import sets can inadvertently result in duplicate configuration items (CIs). To minimize this duplication you can apply what process to the import sets-</div><div class="quiz-answer-shell"><div class="quiz-answer-content">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: Import set prioritization is not a real ServiceNow process for handling duplicate CIs. There is no built-in feature by that name to prevent duplicates during import." data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>Import set prioritization</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Manual reconciliation would be extremely time-consuming and error-prone in large environments. ServiceNow provides an automated process specifically designed for this purpose." data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>Manual reconciliation</span></li>
 <li class="quiz-opt" data-exp="CORRECT: Identification and Reconciliation (IRE) is the ServiceNow process that prevents duplicate CIs when importing data via import sets. The Identification Engine matches incoming records against existing CIs using predefined identifier rules, and the Reconciliation Engine merges data from multiple sources to keep a single authoritative CI record." data-idx="2" data-q="0"><span class="quiz-opt-letter">C</span><span>Identification and reconciliation</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Transform map consolidation is not a standard ServiceNow process for duplicate prevention. Transform maps define field mappings but do not handle CI deduplication on their own." data-idx="3" data-q="0"><span class="quiz-opt-letter">D</span><span>Transform map consolidation</span></li>
 </ul><button class="quiz-submit-btn" data-q="0" type="button">Submit Answer</button>
-<div class="quiz-opt-explains" id="qoptexp0" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp0">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
@@ -491,15 +807,15 @@ a:hover { text-decoration: underline; }
 </div>
 </details>
 </div></div></div>
-<div class="quiz-card" data-question-index="1" data-tier="1" id="qcard1">
-<div class="quiz-q"><span class="quiz-q-num">2.</span>You have opted into the ServiceNow Hardware Asset Management Content Service. How frequently does your instance receive updates new models lifecycle data etc from the central ServiceNow library-</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t">
+<div class="quiz-card" data-question-index="1" data-tier="1" hidden="" id="qcard1">
+<div class="quiz-q"><span class="quiz-q-num">2.</span>You have opted into the ServiceNow Hardware Asset Management Content Service. How frequently does your instance receive updates new models lifecycle data etc from the central ServiceNow library-</div><div class="quiz-answer-shell"><div class="quiz-answer-content">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: Daily updates would put excessive load on instances and the central library. The Content Service does not push updates at this frequency." data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>Daily</span></li>
 <li class="quiz-opt" data-exp="CORRECT: The Hardware Asset Management Content Service delivers updates weekly. This cadence ensures instances receive timely model data, lifecycle information, and normalization content from ServiceNow's central library without overwhelming system resources." data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>Weekly</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Monthly updates would be too infrequent to keep pace with new hardware releases and lifecycle changes. ServiceNow uses a faster cadence." data-idx="2" data-q="1"><span class="quiz-opt-letter">C</span><span>Monthly</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Quarterly updates would leave significant gaps in model coverage. The Content Service operates on a much shorter update cycle." data-idx="3" data-q="1"><span class="quiz-opt-letter">D</span><span>Quarterly</span></li>
 </ul><button class="quiz-submit-btn" data-q="1" type="button">Submit Answer</button>
-<div class="quiz-opt-explains" id="qoptexp1" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp1">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
@@ -507,15 +823,15 @@ a:hover { text-decoration: underline; }
 </div>
 </details>
 </div></div></div>
-<div class="quiz-card" data-question-index="2" data-tier="1" id="qcard2">
-<div class="quiz-q"><span class="quiz-q-num">3.</span>An employee is leaving the company. Which flow is triggered to manage the return of their assets and what is the resulting state of the assets after they are received back-</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t">
+<div class="quiz-card" data-question-index="2" data-tier="1" hidden="" id="qcard2">
+<div class="quiz-q"><span class="quiz-q-num">3.</span>An employee is leaving the company. Which flow is triggered to manage the return of their assets and what is the resulting state of the assets after they are received back-</div><div class="quiz-answer-shell"><div class="quiz-answer-content">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp='INCORRECT: A Hardware Asset Order flow deals with procuring new assets, not reclaiming assets from departing employees. The "In Maintenance" state is also not the standard result of asset return.' data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>Hardware Asset Order State becomes "In Maintenance"</span></li>
 <li class="quiz-opt" data-exp='CORRECT: The Hardware Asset Reclamation flow is triggered when an employee leaves the company. This flow manages the return of assigned hardware. Once the assets are physically received back, they are set to State "In Stock" with Substate "Available," making them ready for reassignment to another employee.' data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>Hardware Asset Reclamation State becomes "In Stock" Substate "Available"</span></li>
 <li class="quiz-opt" data-exp='INCORRECT: Employee Offboarding is a broader HR process, not the specific HAM flow name. The "Retired" state would also be incorrect - returned assets are typically made available for reuse, not retired.' data-idx="2" data-q="2"><span class="quiz-opt-letter">C</span><span>Employee Offboarding State becomes "Retired"</span></li>
 <li class="quiz-opt" data-exp='INCORRECT: Asset Revocation is not a standard ServiceNow HAM flow name. The "Missing" state indicates an asset cannot be located, which is the opposite of a successful return.' data-idx="3" data-q="2"><span class="quiz-opt-letter">D</span><span>Asset Revocation State becomes "Missing"</span></li>
 </ul><button class="quiz-submit-btn" data-q="2" type="button">Submit Answer</button>
-<div class="quiz-opt-explains" id="qoptexp2" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp2">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
@@ -523,15 +839,15 @@ a:hover { text-decoration: underline; }
 </div>
 </details>
 </div></div></div>
-<div class="quiz-card" data-question-index="3" data-tier="1" id="qcard3">
-<div class="quiz-q"><span class="quiz-q-num">4.</span>You are processing a Loaner Asset Request. When the user returns the loaner device you complete the Receive task. What is the immediate next step in the standard Loaner workflow-</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t">
+<div class="quiz-card" data-question-index="3" data-tier="1" hidden="" id="qcard3">
+<div class="quiz-q"><span class="quiz-q-num">4.</span>You are processing a Loaner Asset Request. When the user returns the loaner device you complete the Receive task. What is the immediate next step in the standard Loaner workflow-</div><div class="quiz-answer-shell"><div class="quiz-answer-content">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: Retiring a loaner asset after every return would defeat the purpose of having loaners. Loaner devices are meant to be reused repeatedly." data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>The asset is automatically set to Retired</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: While the asset will eventually return to In Stock - Available, it does not happen immediately after the Receive task. A quality check step comes first." data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>The asset is automatically set to In Stock - Available</span></li>
 <li class="quiz-opt" data-exp="CORRECT: After completing the Receive task in the Loaner workflow, a Sanitization or Inspection task is automatically generated. This ensures the loaner device is cleaned, checked, and verified before being returned to available stock for the next borrower." data-idx="2" data-q="3"><span class="quiz-opt-letter">C</span><span>A Sanitization or Inspection task is generated</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: The request cannot close immediately after receive because the device has not been inspected or sanitized yet. The workflow requires a quality check before the loaner cycle is complete." data-idx="3" data-q="3"><span class="quiz-opt-letter">D</span><span>The request is closed immediately</span></li>
 </ul><button class="quiz-submit-btn" data-q="3" type="button">Submit Answer</button>
-<div class="quiz-opt-explains" id="qoptexp3" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp3">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
@@ -539,15 +855,15 @@ a:hover { text-decoration: underline; }
 </div>
 </details>
 </div></div></div>
-<div class="quiz-card" data-question-index="4" data-tier="1" id="qcard4">
-<div class="quiz-q"><span class="quiz-q-num">5.</span>What is an attribute that will remain unchanged throughout the life of the asset-</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t">
+<div class="quiz-card" data-question-index="4" data-tier="1" hidden="" id="qcard4">
+<div class="quiz-q"><span class="quiz-q-num">5.</span>What is an attribute that will remain unchanged throughout the life of the asset-</div><div class="quiz-answer-shell"><div class="quiz-answer-content">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: Memory (RAM) can be upgraded or replaced during the life of an asset. A laptop might go from 8GB to 16GB, so this attribute is not permanent." data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>Memory</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Operating systems change frequently - devices get OS upgrades, fresh installs, or even switch platforms. This is one of the most commonly changed attributes." data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>Operating system</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: While CPU swaps are less common in laptops, they can be changed in desktops and servers. The CPU type is tied to the current hardware configuration, not to the asset identity itself." data-idx="2" data-q="4"><span class="quiz-opt-letter">C</span><span>CPU type</span></li>
 <li class="quiz-opt" data-exp="CORRECT: The serial number is a factory-assigned, permanent identifier that uniquely identifies a specific physical device. It is stamped at manufacture and remains unchanged throughout the entire lifecycle of the asset, from procurement through retirement and disposal." data-idx="3" data-q="4"><span class="quiz-opt-letter">D</span><span>Serial number</span></li>
 </ul><button class="quiz-submit-btn" data-q="4" type="button">Submit Answer</button>
-<div class="quiz-opt-explains" id="qoptexp4" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp4">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
@@ -555,21 +871,8 @@ a:hover { text-decoration: underline; }
 </div>
 </details>
 </div></div></div>
-    <div class="quiz-interstitial" id="tier1Interstitial" hidden>
-      <div class="quiz-interstitial-kicker">Questions 1-5 complete</div>
-      <h3>You scored <span id="tier1ScoreText">0/5</span> on questions 1-5.</h3>
-      <div class="quiz-interstitial-score" id="tier1ScoreValue">0/5</div>
-      <p class="quiz-interstitial-copy">You have seen the free section. Continue with questions 6-10 after email, or move straight to the full course.</p>
-      <div class="quiz-interstitial-actions">
-        <a href="https://www.udemy.com/course/pass-servicenow-cis-hardware-asset-management-ham/?referralCode=58ECB1F51A94EC5A7F09" target="_blank" rel="noopener" class="cp-cta" data-buy-tier="tier1">Get all 240 questions for $9.99
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <button type="button" class="quiz-secondary-btn" id="tier1ContinueBtn">Enter your email to continue</button>
-      </div>
-    </div>
-    <div class="quiz-tier-heading">Questions 6-10. Email required.</div>
-<div class="quiz-card is-email-locked" data-question-index="5" data-tier="2" id="qcard5">
-<div class="quiz-q"><span class="quiz-q-num">6.</span>Which three attributes from a hardware model record are used for setting the normalized display name during hardware model normalization-</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
+<div class="quiz-card is-email-locked" data-question-index="5" data-tier="2" hidden="" id="qcard5">
+<div class="quiz-q"><span class="quiz-q-num">6.</span>Which three attributes from a hardware model record are used for setting the normalized display name during hardware model normalization-</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: While Name and Manufacturer are used, Model category is not one of the three key attributes for setting the normalized display name. Model number is used instead." data-idx="0" data-q="5"><span class="quiz-opt-letter">A</span><span>Name, Manufacturer, Model category</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Asset tracking unit is not one of the three attributes used for the normalized display name. The correct combination uses Name, not Asset tracking unit." data-idx="1" data-q="5"><span class="quiz-opt-letter">B</span><span>Asset tracking unit, Manufacturer, Model number</span></li>
@@ -577,7 +880,7 @@ a:hover { text-decoration: underline; }
 <li class="quiz-opt" data-exp="INCORRECT: Asset tracking unit is not part of the normalization display name attributes. Name is correct, but Asset tracking unit replaces Manufacturer, which is required." data-idx="3" data-q="5"><span class="quiz-opt-letter">D</span><span>Name, Asset tracking unit, Model number</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Neither Asset tracking unit nor Model category are used for the normalized display name. This option misses both Name and Model number." data-idx="4" data-q="5"><span class="quiz-opt-letter">E</span><span>Asset tracking unit, Manufacturer, Model category</span></li>
 </ul><button class="quiz-submit-btn" data-q="5" type="button">Submit Answer</button>
-<div class="quiz-opt-explains" id="qoptexp5" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp5">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
@@ -586,38 +889,33 @@ a:hover { text-decoration: underline; }
 </details>
 </div><div class="quiz-gate-prompt" data-email-overlay="">
 <div class="quiz-gate-card">
-<div class="quiz-gate-title">Enter your email to continue with questions 6-10</div>
+<div class="quiz-gate-title">Enter your email to continue with questions 6-15</div>
 <p class="quiz-gate-copy">Free exam updates. No spam. Unsubscribe anytime.</p>
 <form class="quiz-gate-form" id="quizGateForm">
 <input autocomplete="email" class="quiz-gate-email-input" id="quizGateEmail" placeholder="you@email.com" required="" type="email"/>
-<button class="quiz-gate-submit" id="quizGateSubmit" type="submit">Continue with 5 More Questions</button>
+<button class="quiz-gate-submit" id="quizGateSubmit" type="submit">Continue with 10 More Questions</button>
 </form>
 <p class="quiz-gate-message" id="quizGateMessage"></p>
 </div>
 </div></div></div>
-<div class="quiz-card is-email-locked" data-question-index="6" data-tier="2" id="qcard6">
-<div class="quiz-q"><span class="quiz-q-num">7.</span>What best describes asset management-</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
+<div class="quiz-card is-email-locked" data-question-index="6" data-tier="2" hidden="" id="qcard6">
+<div class="quiz-q"><span class="quiz-q-num">7.</span>What best describes asset management-</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="CORRECT: Asset management is fundamentally about the financial tracking of an organization's property. It encompasses the full financial lifecycle - procurement costs, depreciation, maintenance expenses, and residual value - of physical and intangible assets owned by the organization." data-idx="0" data-q="6"><span class="quiz-opt-letter">A</span><span>Financial tracking of an organization's property</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Tracking the organization's network is closer to network management or configuration management, not asset management. Asset management focuses on property (assets), not network topology." data-idx="1" data-q="6"><span class="quiz-opt-letter">B</span><span>Financial tracking of the organization's network</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Building the organization's property refers to construction or project management, not asset management. Asset management tracks existing assets financially, it does not build them." data-idx="2" data-q="6"><span class="quiz-opt-letter">C</span><span>Building of the organization's property</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Building network elements describes network engineering or infrastructure deployment. Asset management is about financial tracking, not building or constructing anything." data-idx="3" data-q="6"><span class="quiz-opt-letter">D</span><span>Building the elements that create the organization's network</span></li>
 </ul><button class="quiz-submit-btn" data-q="6" type="button">Submit Answer</button>
-<div class="quiz-opt-explains" id="qoptexp6" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp6">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
 <h5>Correct Answer</h5><p>A - Financial tracking of an organization's property</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-it-asset-management/page/product/asset-management/concept/c_AssetManagement.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>Asset management is defined as the financial tracking and management of an organization's property throughout its lifecycle. This includes tracking acquisition costs, calculating depreciation, managing warranties and contracts, and determining disposal value. The financial perspective distinguishes asset management from configuration management, which focuses on technical relationships.</p><h5>Why the Others Are Wrong</h5><p>Network tracking falls under configuration management or network management. Building property is construction or project management. Building network elements is infrastructure engineering. None of these capture the core financial tracking purpose of asset management.</p><h5>Memory Tip</h5><p>Asset management = Money tracking for stuff you own. Assets are on the balance sheet, and asset management keeps that balance sheet accurate.</p><h5>Real-World Example</h5><p>Your finance team needs to know the total value of all company laptops for the annual report. Asset management tracks each laptop from the $1,200 purchase price, through $300/year depreciation, to the $100 residual value at disposal - that is financial tracking of organizational property.</p>
 </div>
 </details>
-</div><div class="quiz-gate-prompt" data-email-overlay="">
-<div class="quiz-gate-card">
-<div class="quiz-gate-title">Questions 6-10 continue after email</div>
-<p class="quiz-gate-copy">Use the form on question 6 to keep going.</p>
-</div>
 </div></div></div>
-<div class="quiz-card quiz-multi is-email-locked" data-question-index="7" data-tier="2" id="qcard7">
-<div class="quiz-q"><span class="quiz-q-num">8.</span>When adding assets to a Disposal Order you notice some assets are not appearing in the selection list. Which conditions must typically be met for an asset to be eligible- (Choose two.) <span class="quiz-choose">(choose 2)</span></div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
+<div class="quiz-card quiz-multi is-email-locked" data-question-index="7" data-tier="2" hidden="" id="qcard7">
+<div class="quiz-q"><span class="quiz-q-num">8.</span>When adding assets to a Disposal Order you notice some assets are not appearing in the selection list. Which conditions must typically be met for an asset to be eligible- (Choose two.) <span class="quiz-choose">(choose 2)</span></div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp='CORRECT: Assets must have a Substate of "Pending Disposal" to appear in the Disposal Order selection list. This substate indicates the asset has been approved and staged for disposal, distinguishing it from assets that are simply retired but not yet cleared for disposal.' data-idx="0" data-q="7"><span class="quiz-opt-letter">A</span><span>Substate must be "Pending Disposal"</span></li>
 <li class="quiz-opt" data-exp='CORRECT: Assets must be in a State of "Retired" to be eligible for a Disposal Order. Only retired assets - those removed from active service - can be selected for disposal. Assets in other states like In Use or In Stock are not eligible.' data-idx="1" data-q="7"><span class="quiz-opt-letter">B</span><span>State must be "Retired"</span></li>
@@ -625,42 +923,32 @@ a:hover { text-decoration: underline; }
 <li class="quiz-opt" data-exp="INCORRECT: Assignment to a user is not a requirement for disposal eligibility. In fact, disposed assets should typically not be assigned to anyone since they are being removed from the organization entirely." data-idx="3" data-q="7"><span class="quiz-opt-letter">D</span><span>Asset must be assigned to a user</span></li>
 </ul><button class="quiz-submit-btn" data-q="7" type="button">Submit Answer</button>
 
-<div class="quiz-opt-explains" id="qoptexp7" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp7">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
 <h5>Correct Answer</h5><p>A - Substate must be "Pending Disposal" and B - State must be "Retired"</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-it-asset-management/page/product/hardware-asset-management/concept/ham-disposal.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>For an asset to appear in the Disposal Order selection list, it must meet two conditions: the State must be "Retired" and the Substate must be "Pending Disposal." This two-level check ensures that only assets explicitly marked for end-of-life and staged for disposal can be added to a disposal order, preventing accidental disposal of active or stockroom assets.</p><h5>Why the Others Are Wrong</h5><p>Residual value is a financial attribute that has no bearing on disposal eligibility - even assets with remaining book value can be disposed of. User assignment is irrelevant to disposal; retired assets awaiting disposal typically have no assigned user.</p><h5>Memory Tip</h5><p>Disposal needs a double lock: Retired (done with service) + Pending Disposal (cleared for removal). Both keys are required to open the disposal door.</p><h5>Real-World Example</h5><p>You try to add 50 old desktops to a Disposal Order but only 30 appear. Checking the missing 20, you find they are Retired but their substate is "Pending Return" not "Pending Disposal." Once you update the substate to "Pending Disposal," all 50 become selectable.</p>
 </div>
 </details>
-</div><div class="quiz-gate-prompt" data-email-overlay="">
-<div class="quiz-gate-card">
-<div class="quiz-gate-title">Questions 6-10 continue after email</div>
-<p class="quiz-gate-copy">Use the form on question 6 to keep going.</p>
-</div>
 </div></div></div>
-<div class="quiz-card is-email-locked" data-question-index="8" data-tier="2" id="qcard8">
-<div class="quiz-q"><span class="quiz-q-num">9.</span>You need to return a defective server to the vendor for repair via an RMA order. Which specific Asset Task type is generated to track the shipment of the broken asset back to the vendor-</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
+<div class="quiz-card is-email-locked" data-question-index="8" data-tier="2" hidden="" id="qcard8">
+<div class="quiz-q"><span class="quiz-q-num">9.</span>You need to return a defective server to the vendor for repair via an RMA order. Which specific Asset Task type is generated to track the shipment of the broken asset back to the vendor-</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="CORRECT: The Ship asset task type is generated in an RMA (Return Merchandise Authorization) order to track the shipment of the defective asset back to the vendor. This task captures shipping details like carrier, tracking number, and ship date for the outbound return shipment." data-idx="0" data-q="8"><span class="quiz-opt-letter">A</span><span>Ship</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Return is not a specific Asset Task type in the RMA workflow. The task for sending the asset to the vendor is called Ship, which specifically tracks the logistics of the outbound shipment." data-idx="1" data-q="8"><span class="quiz-opt-letter">B</span><span>Return</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Transfer tasks are used to move assets between internal stockrooms or locations within your organization. An RMA involves sending equipment externally to a vendor, not transferring internally." data-idx="2" data-q="8"><span class="quiz-opt-letter">C</span><span>Transfer</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Disposal tasks are part of the Disposal Order workflow for permanently removing assets from the organization. RMA orders are about repairing and returning assets, not disposing of them." data-idx="3" data-q="8"><span class="quiz-opt-letter">D</span><span>Disposal</span></li>
 </ul><button class="quiz-submit-btn" data-q="8" type="button">Submit Answer</button>
-<div class="quiz-opt-explains" id="qoptexp8" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp8">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
 <h5>Correct Answer</h5><p>A - Ship</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-it-asset-management/page/product/hardware-asset-management/concept/ham-rma.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>In the RMA (Return Merchandise Authorization) workflow, a Ship task is created to track sending the defective asset back to the vendor. This task type captures all shipping logistics - carrier information, tracking numbers, and dates. After the vendor repairs the asset, a separate Receive task tracks its return to your organization.</p><h5>Why the Others Are Wrong</h5><p>Return is not a defined task type in the RMA flow. Transfer is for internal stockroom-to-stockroom movement. Disposal is for permanently removing assets from the organization, not for vendor repair scenarios.</p><h5>Memory Tip</h5><p>RMA = you Ship it out, then Receive it back. Ship is the task for the outbound leg to the vendor.</p><h5>Real-World Example</h5><p>A rack server fails under warranty. You open an RMA order with the vendor. ServiceNow generates a Ship task where the technician records the carrier (FedEx), tracking number, and ship date. Once the vendor repairs and returns the server, a Receive task is completed to close the loop.</p>
 </div>
 </details>
-</div><div class="quiz-gate-prompt" data-email-overlay="">
-<div class="quiz-gate-card">
-<div class="quiz-gate-title">Questions 6-10 continue after email</div>
-<p class="quiz-gate-copy">Use the form on question 6 to keep going.</p>
-</div>
 </div></div></div>
-<div class="quiz-card quiz-multi is-email-locked" data-question-index="9" data-tier="2" id="qcard9">
-<div class="quiz-q"><span class="quiz-q-num">10.</span>Which two automatic restocking actions are available in the baseline ServiceNow Stock Rules- (Choose two.) <span class="quiz-choose">(choose 2)</span></div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
+<div class="quiz-card quiz-multi is-email-locked" data-question-index="9" data-tier="2" hidden="" id="qcard9">
+<div class="quiz-q"><span class="quiz-q-num">10.</span>Which two automatic restocking actions are available in the baseline ServiceNow Stock Rules- (Choose two.) <span class="quiz-choose">(choose 2)</span></div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="CORRECT: One of the two baseline stock rule actions is creating a transfer order to restock from another stockroom. This automates the internal redistribution of assets between stockrooms when inventory falls below the defined threshold." data-idx="0" data-q="9"><span class="quiz-opt-letter">A</span><span>Create a transfer order to restock from another stockroom</span></li>
 <li class="quiz-opt" data-exp="CORRECT: The second baseline stock rule action creates a task assigned to the stockroom manager to create a purchase order. This alerts the manager that new stock needs to be procured from an external vendor when internal transfer is not sufficient or appropriate." data-idx="1" data-q="9"><span class="quiz-opt-letter">B</span><span>Create a task assigned to the stock room manage to create a purchase order</span></li>
@@ -668,149 +956,129 @@ a:hover { text-decoration: underline; }
 <li class="quiz-opt" data-exp="INCORRECT: The task is assigned to the stockroom manager to create a purchase order, not to contact the procurement manager. The baseline action is specific about creating a PO, not about making a phone call." data-idx="3" data-q="9"><span class="quiz-opt-letter">D</span><span>Create a task assigned to the stock room manager to contact the procurement manager</span></li>
 </ul><button class="quiz-submit-btn" data-q="9" type="button">Submit Answer</button>
 
-<div class="quiz-opt-explains" id="qoptexp9" style="display:none"></div>
+
 <details class="quiz-overall" id="qexp9">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
 <h5>Correct Answer</h5><p>A - Create a transfer order to restock from another stockroom and B - Create a task assigned to the stockroom manager to create a purchase order</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-it-asset-management/page/product/hardware-asset-management/concept/ham-stock-rules.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>ServiceNow provides two baseline automatic restocking actions in Stock Rules. The first creates a transfer order to move assets from a stockroom that has surplus inventory to the one that is running low. The second creates a task for the stockroom manager to initiate a purchase order when external procurement is needed. These two actions cover both internal redistribution and external purchasing scenarios.</p><h5>Why the Others Are Wrong</h5><p>Transfer orders are strictly for internal stockroom-to-stockroom movement, never for vendor restocking. The task is specifically to create a purchase order, not to contact a procurement manager - the distinction is between a concrete action (create PO) and a vague directive (contact someone).</p><h5>Memory Tip</h5><p>Stock Rules have two restocking paths: Transfer (move from another stockroom) or Task-to-PO (tell the manager to buy more). Internal move or external buy - those are your two options.</p><h5>Real-World Example</h5><p>Your NYC stockroom drops below 5 laptops. Stock Rule #1 checks the Chicago stockroom and creates a transfer order for 10 laptops. Meanwhile, Stock Rule #2 creates a task for the NYC stockroom manager to submit a purchase order for 20 more laptops from Dell to replenish the overall supply.</p>
 </div>
 </details>
-</div><div class="quiz-gate-prompt" data-email-overlay="">
-<div class="quiz-gate-card">
-<div class="quiz-gate-title">Questions 6-10 continue after email</div>
-<p class="quiz-gate-copy">Use the form on question 6 to keep going.</p>
-</div>
 </div></div></div>
-    <div class="quiz-interstitial" id="tier2Interstitial" hidden>
-      <div class="quiz-interstitial-kicker">Free preview complete</div>
-      <h3>You scored <span id="tier2ScoreText">0/10</span> on the free preview.</h3>
-      <div class="quiz-interstitial-score" id="tier2ScoreValue">0/10</div>
-      <p class="quiz-interstitial-copy">You have seen 10 preview questions. The full course keeps the same answer breakdown style across the full bank.</p>
-      <div class="quiz-interstitial-actions">
-        <a href="https://www.udemy.com/course/pass-servicenow-cis-hardware-asset-management-ham/?referralCode=58ECB1F51A94EC5A7F09" target="_blank" rel="noopener" class="cp-cta" data-buy-tier="tier2">Get all 240 questions for $9.99
+<div class="quiz-card quiz-multi is-email-locked" data-question-index="10" data-tier="2" hidden="" id="qcard10">
+<div class="quiz-q"><span class="quiz-q-num">11.</span>An event runs each night to send reminders to contract administrators about upcoming contract expiration dates. By default at what intervals does the contract administrator receive these notifications- (Choose four.) <span class="quiz-choose">(choose 4)</span></div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="CORRECT: 90 days before expiration is one of the four default notification intervals. This early warning gives contract administrators ample time to begin renewal negotiations or plan for contract replacement." data-idx="0" data-q="10"><span class="quiz-opt-letter">A</span><span>90 days before</span></li>
+<li class="quiz-opt" data-exp="CORRECT: 60 days before expiration is one of the four default intervals. This is a follow-up reminder to ensure renewal discussions are actively progressing." data-idx="1" data-q="10"><span class="quiz-opt-letter">B</span><span>60 days before</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: 45 days before is not one of the default notification intervals. The system jumps from 60 days to 30 days, skipping the 45-day mark." data-idx="2" data-q="10"><span class="quiz-opt-letter">C</span><span>45 days before</span></li>
+<li class="quiz-opt" data-exp="CORRECT: 30 days before expiration is one of the four default intervals. This provides a more urgent reminder that the contract is approaching its end date." data-idx="3" data-q="10"><span class="quiz-opt-letter">D</span><span>30 days before</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: 7 days before is not a default notification interval. By the time only 7 days remain, the contract should already be in the process of renewal or replacement. The closest notification to expiration is the day-of reminder." data-idx="4" data-q="10"><span class="quiz-opt-letter">E</span><span>7 days before</span></li>
+<li class="quiz-opt" data-exp="CORRECT: Day of expiration is one of the four default intervals. This final notification confirms that the contract has reached its expiration date, signaling immediate action is required." data-idx="5" data-q="10"><span class="quiz-opt-letter">F</span><span>Day of expiration</span></li>
+</ul><button class="quiz-submit-btn" data-q="10" type="button">Submit Answer</button>
+
+
+<details class="quiz-overall" id="qexp10">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>A - 90 days before, B - 60 days before, D - 30 days before, F - Day of expiration</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-it-asset-management/page/product/asset-management/concept/contract-expiration-notifications.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>ServiceNow runs a nightly event that checks for upcoming contract expirations and sends reminders to contract administrators at four default intervals: 90 days, 60 days, 30 days, and on the day of expiration. This graduated notification schedule provides progressively urgent reminders so administrators can plan renewals, negotiate terms, or arrange replacements well in advance.</p><h5>Why the Others Are Wrong</h5><p>45 days before is not a default interval - the system goes from 60 to 30 days. 7 days before is also not a default - the last reminder before expiration day is the 30-day notice. These intervals can be customized, but the baseline defaults are 90, 60, 30, and day-of.</p><h5>Memory Tip</h5><p>Remember "90-60-30-0": the countdown pattern is like a rocket launch. Three months, two months, one month, liftoff (expiration day).</p><h5>Real-World Example</h5><p>A software maintenance contract expires July 1. The admin gets notified on April 2 (90 days), May 2 (60 days), June 1 (30 days), and July 1 (day of). Each notification gives them a chance to act - start renewal talks at 90 days, finalize terms at 60, get signatures at 30, and confirm completion on the expiration date.</p>
+</div>
+</details>
+</div></div></div>
+<div class="quiz-card is-email-locked" data-question-index="11" data-tier="2" hidden="" id="qcard11">
+<div class="quiz-q"><span class="quiz-q-num">12.</span>You are defining a new Hardware Model in ServiceNow. You want to ensure that every time an asset of this model is created it automatically generates a corresponding Configuration Item (CI) in the CMDB. Where is this behavior controlled-</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="INCORRECT: The Hardware Model record does not control CI creation behavior. The model record holds attributes like manufacturer, model number, and cost, but the CI auto-creation setting lives elsewhere." data-idx="0" data-q="11"><span class="quiz-opt-letter">A</span><span>On the Hardware Model record itself</span></li>
+<li class="quiz-opt" data-exp='CORRECT: The Model Category record controls whether a CI is automatically created when an asset of that category is inserted. The "Create CI" checkbox (or equivalent setting) on the Model Category determines this behavior. Since all models under a category share this setting, it provides consistent CI creation across similar asset types.' data-idx="1" data-q="11"><span class="quiz-opt-letter">B</span><span>On the Model Category record associated with the model</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: While business rules execute on record inserts, the CI creation behavior is not configured through a custom business rule. It is controlled declaratively through the Model Category configuration, which triggers the appropriate CI creation logic." data-idx="2" data-q="11"><span class="quiz-opt-letter">C</span><span>On the Business Rule "Create CI on Insert"</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: Asset Class is not where CI auto-creation is configured. The Asset Class defines the table extension (alm_hardware, alm_consumable) but does not control the CI creation behavior." data-idx="3" data-q="11"><span class="quiz-opt-letter">D</span><span>On the Asset Class record</span></li>
+</ul><button class="quiz-submit-btn" data-q="11" type="button">Submit Answer</button>
+
+<details class="quiz-overall" id="qexp11">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>B - On the Model Category record associated with the model</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-it-asset-management/page/product/asset-management/concept/c_ModelCategories.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>The Model Category record contains the setting that controls automatic CI creation for assets. When the "Create CI" flag is enabled on a Model Category, every asset created under a model belonging to that category will automatically generate a corresponding CI in the CMDB. This centralized approach ensures consistency - all laptops, all servers, or all printers in a category behave the same way.</p><h5>Why the Others Are Wrong</h5><p>The Hardware Model record inherits this behavior from its parent Model Category. A custom business rule is not used for this purpose - ServiceNow handles it through the Model Category configuration. Asset Class defines the table structure, not CI creation logic.</p><h5>Memory Tip</h5><p>Category = the boss that decides the rules for all models under it. If the Category says "create CIs," every model in that category obeys.</p><h5>Real-World Example</h5><p>You create a Model Category called "Laptops" and enable "Create CI." Now every time someone creates an asset using any laptop model (Dell Latitude 5520, HP EliteBook 840, Lenovo ThinkPad T14), a matching CI record is automatically created in the CMDB without any manual intervention.</p>
+</div>
+</details>
+</div></div></div>
+<div class="quiz-card quiz-multi is-email-locked" data-question-index="12" data-tier="2" hidden="" id="qcard12">
+<div class="quiz-q"><span class="quiz-q-num">13.</span>In addition to hardware which are types of assets- (Choose three.) <span class="quiz-choose">(choose 3)</span></div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="INCORRECT: A stockroom is a location where assets are stored, not a type of asset itself. Stockrooms hold assets but are not tracked as asset records on the asset tables." data-idx="0" data-q="12"><span class="quiz-opt-letter">A</span><span>Stockroom</span></li>
+<li class="quiz-opt" data-exp="CORRECT: Facility is a type of asset in ServiceNow. Facility assets represent physical locations like buildings, floors, or rooms that the organization owns or leases. They are tracked on the asset management tables with their own financial and lifecycle data." data-idx="1" data-q="12"><span class="quiz-opt-letter">B</span><span>Facility</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: A configuration item (CI) is a CMDB record that tracks the technical and relationship aspects of an item. While CIs and assets can be related, a CI itself is not an asset type - it lives in the CMDB, not the asset tables." data-idx="2" data-q="12"><span class="quiz-opt-letter">C</span><span>Configuration item</span></li>
+<li class="quiz-opt" data-exp="CORRECT: Consumable is a type of asset in ServiceNow. Consumable assets are items that are tracked by quantity rather than individually - things like toner cartridges, cables, and batteries. They are managed on the alm_consumable table." data-idx="3" data-q="12"><span class="quiz-opt-letter">D</span><span>Consumable</span></li>
+<li class="quiz-opt" data-exp='INCORRECT: A model is a template that defines the attributes of a class of assets (like "Dell Latitude 5520"). Models are used to categorize assets, but a model itself is not an asset type.' data-idx="4" data-q="12"><span class="quiz-opt-letter">E</span><span>Model</span></li>
+<li class="quiz-opt" data-exp="CORRECT: Software entitlement is a type of asset in ServiceNow. Software entitlements track software licenses and usage rights owned by the organization. They are managed alongside hardware assets as part of the broader asset management framework." data-idx="5" data-q="12"><span class="quiz-opt-letter">F</span><span>Software entitlement</span></li>
+</ul><button class="quiz-submit-btn" data-q="12" type="button">Submit Answer</button>
+
+
+<details class="quiz-overall" id="qexp12">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>B - Facility, D - Consumable, F - Software entitlement</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-it-asset-management/page/product/asset-management/concept/c_AssetManagement.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>ServiceNow supports multiple asset types beyond hardware. Facility assets track buildings and physical spaces. Consumable assets track items managed by quantity rather than individual serial numbers. Software entitlements track software licenses and usage rights. Each type extends the base asset table (alm_asset) and has its own specialized fields and lifecycle management.</p><h5>Why the Others Are Wrong</h5><p>Stockrooms are storage locations, not asset records. Configuration items belong to the CMDB (cmdb_ci tables), not the asset tables (alm tables). Models are templates that define asset characteristics but are not assets themselves.</p><h5>Memory Tip</h5><p>Think "FCS" - Facilities, Consumables, Software entitlements. These are the three non-hardware asset types. A building (F), a box of cables (C), and a software license (S).</p><h5>Real-World Example</h5><p>Your asset portfolio includes 500 laptops (hardware), the office building lease (facility), 2,000 USB cables in the supply closet (consumable), and 300 Microsoft Office licenses (software entitlement). All four are tracked as different asset types in ServiceNow.</p>
+</div>
+</details>
+</div></div></div>
+<div class="quiz-card quiz-multi is-email-locked" data-question-index="13" data-tier="2" hidden="" id="qcard13">
+<div class="quiz-q"><span class="quiz-q-num">14.</span>Several hardware models in your dashboard show a normalization status of "Match Not Found." What are the most likely causes for this status- (Choose three.) <span class="quiz-choose">(choose 3)</span></div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="CORRECT: Special characters, typos, or inconsistent formatting in the model name can prevent the normalization engine from finding a match in the Content Library. If the name is garbled or uses non-standard characters, the matching algorithm cannot identify the correct normalized model." data-idx="0" data-q="13"><span class="quiz-opt-letter">A</span><span>The model name contains special characters or bad formatting that prevents matching</span></li>
+<li class="quiz-opt" data-exp='INCORRECT: If the HAM plugin were not active, the entire normalization feature would be unavailable - you would not see a normalization status at all, let alone "Match Not Found." This status implies the normalization process is running but failing to find matches.' data-idx="1" data-q="13"><span class="quiz-opt-letter">B</span><span>The Hardware Asset Management plugin is not active</span></li>
+<li class="quiz-opt" data-exp="CORRECT: If the content library has not been downloaded or has not been updated recently, it may lack the model data needed for matching. The normalization engine can only match against models that exist in its local copy of the Content Library." data-idx="2" data-q="13"><span class="quiz-opt-letter">C</span><span>The content library has not been downloaded or updated recently</span></li>
+<li class="quiz-opt" data-exp='CORRECT: Brand-new hardware models may not yet exist in the ServiceNow Content Service. There is always a lag between when a manufacturer releases a new product and when ServiceNow adds it to the content library. During this gap, normalization returns "Match Not Found."' data-idx="3" data-q="13"><span class="quiz-opt-letter">D</span><span>The model is a new release and does not yet exist in the ServiceNow Content Service</span></li>
+<li class="quiz-opt" data-exp='INCORRECT: The "Assigned to" field on an asset record has no impact on hardware model normalization. Normalization works on model-level attributes (Name, Manufacturer, Model number), not on asset-level assignment fields.' data-idx="4" data-q="13"><span class="quiz-opt-letter">E</span><span>The asset record is missing the "Assigned to" field</span></li>
+</ul><button class="quiz-submit-btn" data-q="13" type="button">Submit Answer</button>
+
+
+<details class="quiz-overall" id="qexp13">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>A - Model name contains special characters or bad formatting, C - Content library not downloaded or updated recently, D - Model is a new release not yet in the Content Service</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-it-asset-management/page/product/hardware-asset-management/concept/ham-model-normalization.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>"Match Not Found" means the normalization engine ran but could not match the hardware model against the Content Library. The three most common causes are dirty data in the model name (special characters or formatting issues), a stale or missing content library (not downloaded or updated), and brand-new hardware that has not yet been added to ServiceNow's central content database.</p><h5>Why the Others Are Wrong</h5><p>If the HAM plugin were inactive, normalization would not run at all - there would be no status to display. The "Assigned to" field is an asset-level attribute that plays no role in model normalization, which operates entirely on model-level fields.</p><h5>Memory Tip</h5><p>Three reasons for "No Match": Bad name (garbage in), Old library (stale data), New model (not cataloged yet). Think of it as: the engine can't read it, can't find it, or it doesn't exist yet.</p><h5>Real-World Example</h5><p>Your dashboard shows 15 models with "Match Not Found." Investigation reveals: 8 have names like "D3ll Lat!tude" (bad formatting from a sloppy import), 4 match models added to the Content Service last month but your library has not synced in 60 days, and 3 are a brand-new HP model released just two weeks ago that ServiceNow has not cataloged yet.</p>
+</div>
+</details>
+</div></div></div>
+<div class="quiz-card is-email-locked" data-question-index="14" data-tier="2" hidden="" id="qcard14">
+<div class="quiz-q"><span class="quiz-q-num">15.</span>When is the appropriate time to initiate the retirement of an IT asset-</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
+<ul class="quiz-opts">
+<li class="quiz-opt" data-exp="INCORRECT: While EOL data from the Content Service is useful input, it alone does not dictate when to retire an asset. EOL is just one data point - the actual retirement decision depends on organizational policies, budget, and business needs." data-idx="0" data-q="14"><span class="quiz-opt-letter">A</span><span>When the Hardware Content Service reports the asset is reaching End of Life (EOL)</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: End of Service (EOS) status from the Content Service is valuable information, but it is not the sole trigger for retirement. Some organizations continue using assets beyond EOS with extended support arrangements." data-idx="1" data-q="14"><span class="quiz-opt-letter">B</span><span>When the Hardware Content Service reports the asset is reaching End of Service (EOS)</span></li>
+<li class="quiz-opt" data-exp="INCORRECT: There is no standardized &quot;HAM-defined baseline asset policy&quot; that universally applies. ServiceNow provides tools and data, but the retirement decision is governed by each organization's own rules and procedures." data-idx="2" data-q="14"><span class="quiz-opt-letter">C</span><span>At any point it is recommended by the HAM-defined baseline asset policy</span></li>
+<li class="quiz-opt" data-exp="CORRECT: Asset retirement should be initiated when your company's own defined policies and procedures recommend it. Each organization sets its own criteria for retirement based on factors like age, performance, cost of maintenance, compliance requirements, and business needs. ServiceNow data (EOL, EOS) informs the decision, but company policy drives it." data-idx="3" data-q="14"><span class="quiz-opt-letter">D</span><span>At any point that it is recommended by your company-defined policies and procedures</span></li>
+</ul><button class="quiz-submit-btn" data-q="14" type="button">Submit Answer</button>
+
+<details class="quiz-overall" id="qexp14">
+<summary class="quiz-overall-toggle">Show full explanation</summary>
+<div class="quiz-overall-content">
+<h5>Correct Answer</h5><p>D - At any point that it is recommended by your company-defined policies and procedures</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-it-asset-management/page/product/hardware-asset-management/concept/ham-asset-lifecycle.html" target="_blank">ServiceNow Zurich Documentation</a></p><h5>Expert Explanation</h5><p>The appropriate time to retire an IT asset is determined by the organization's own policies and procedures. While ServiceNow provides helpful data like End of Life and End of Service dates through the Content Service, these are informational inputs, not automatic triggers. Every organization has unique factors - budget cycles, compliance mandates, performance thresholds, and business priorities - that shape their retirement criteria.</p><h5>Why the Others Are Wrong</h5><p>EOL and EOS from the Content Service are valuable data points but are not the decision-makers. Many organizations keep assets well past EOL if they still function adequately. A "HAM-defined baseline policy" does not exist as a universal standard - ServiceNow provides the platform, but each organization defines its own asset policies.</p><h5>Memory Tip</h5><p>Your company, your rules. EOL and EOS are the weather report - your company policy is the one who decides whether to go outside.</p><h5>Real-World Example</h5><p>Company A retires laptops at 3 years per their policy, even if the manufacturer says EOL is 5 years. Company B keeps servers running 7 years past EOL because they still pass performance benchmarks. Both are valid - because each company follows its own defined policies and procedures for retirement timing.</p>
+</div>
+</details>
+</div></div></div>
+    </div>
+    <div class="quiz-nav" id="quizNav">
+      <button type="button" class="quiz-secondary-btn" id="quizPrevBtn">Previous question</button>
+      <div class="quiz-nav-meta" id="quizNavMeta">Choose an answer and submit to continue.</div>
+      <button type="button" class="quiz-nav-next" id="quizNextBtn" disabled>Next question</button>
+    </div>
+    <div class="quiz-final" id="quizFinal" hidden>
+      <div class="quiz-final-kicker">Preview complete</div>
+      <h3>You scored <span id="quizFinalScoreText">0/15</span> on the 15-question preview.</h3>
+      <div class="quiz-final-score" id="quizFinalScoreValue">0/15</div>
+      <p class="quiz-final-copy">The full course keeps the same answer breakdown style across all 240 questions.</p>
+      <p class="quiz-final-anchor">Your first exam attempt is free. Your second costs $350.</p>
+      <div class="quiz-final-actions">
+        <a href="https://www.udemy.com/course/pass-servicenow-cis-hardware-asset-management-ham/?referralCode=58ECB1F51A94EC5A7F09" target="_blank" rel="noopener" class="cp-cta" data-buy-stage="final">Get all 240 questions for $9.99
           <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
     </div>
-    <div class="quiz-tier-heading">Questions 11-15. Full course teaser.</div>
-<div class="quiz-card quiz-multi is-teaser-locked" data-question-index="10" data-tier="3" id="qcard10">
-<div class="quiz-q"><span class="quiz-q-num">11.</span>An event runs each night to send reminders to contract administrators about upcoming contract expiration dates. By default at what intervals does the contract administrator receive these notifications- (Choose four.) <span class="quiz-choose">(choose 4)</span></div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
-<ul class="quiz-opts">
-<li class="quiz-opt" data-idx="0"><span class="quiz-opt-letter">A</span><span>90 days before</span></li>
-<li class="quiz-opt" data-idx="1"><span class="quiz-opt-letter">B</span><span>60 days before</span></li>
-<li class="quiz-opt" data-idx="2"><span class="quiz-opt-letter">C</span><span>45 days before</span></li>
-<li class="quiz-opt" data-idx="3"><span class="quiz-opt-letter">D</span><span>30 days before</span></li>
-<li class="quiz-opt" data-idx="4"><span class="quiz-opt-letter">E</span><span>7 days before</span></li>
-<li class="quiz-opt" data-idx="5"><span class="quiz-opt-letter">F</span><span>Day of expiration</span></li>
-</ul>
-
-
-
-</div><div class="quiz-locked-overlay">
-<div class="quiz-locked-card">
-<div class="quiz-locked-lock"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="10" rx="2" width="14" x="5" y="11"></rect><path d="M8 11V8a4 4 0 1 1 8 0v3"></path></svg></div>
-<div class="quiz-locked-title">This question is part of the full 240-question course.</div>
-<p class="quiz-locked-copy">Keep the teaser here, then move to Udemy for the full question bank.</p>
-<a class="quiz-locked-cta-btn" data-buy-tier="tier3" href="https://www.udemy.com/course/pass-servicenow-cis-hardware-asset-management-ham/?referralCode=58ECB1F51A94EC5A7F09" rel="noopener" target="_blank">Get all 240 questions on Udemy</a>
-</div>
-</div></div></div>
-<div class="quiz-card is-teaser-locked" data-question-index="11" data-tier="3" id="qcard11">
-<div class="quiz-q"><span class="quiz-q-num">12.</span>You are defining a new Hardware Model in ServiceNow. You want to ensure that every time an asset of this model is created it automatically generates a corresponding Configuration Item (CI) in the CMDB. Where is this behavior controlled-</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
-<ul class="quiz-opts">
-<li class="quiz-opt" data-idx="0"><span class="quiz-opt-letter">A</span><span>On the Hardware Model record itself</span></li>
-<li class="quiz-opt" data-idx="1"><span class="quiz-opt-letter">B</span><span>On the Model Category record associated with the model</span></li>
-<li class="quiz-opt" data-idx="2"><span class="quiz-opt-letter">C</span><span>On the Business Rule "Create CI on Insert"</span></li>
-<li class="quiz-opt" data-idx="3"><span class="quiz-opt-letter">D</span><span>On the Asset Class record</span></li>
-</ul>
-
-
-</div><div class="quiz-locked-overlay">
-<div class="quiz-locked-card">
-<div class="quiz-locked-lock"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="10" rx="2" width="14" x="5" y="11"></rect><path d="M8 11V8a4 4 0 1 1 8 0v3"></path></svg></div>
-<div class="quiz-locked-title">This question is part of the full 240-question course.</div>
-<p class="quiz-locked-copy">Keep the teaser here, then move to Udemy for the full question bank.</p>
-<a class="quiz-locked-cta-btn" data-buy-tier="tier3" href="https://www.udemy.com/course/pass-servicenow-cis-hardware-asset-management-ham/?referralCode=58ECB1F51A94EC5A7F09" rel="noopener" target="_blank">Get all 240 questions on Udemy</a>
-</div>
-</div></div></div>
-<div class="quiz-card quiz-multi is-teaser-locked" data-question-index="12" data-tier="3" id="qcard12">
-<div class="quiz-q"><span class="quiz-q-num">13.</span>In addition to hardware which are types of assets- (Choose three.) <span class="quiz-choose">(choose 3)</span></div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
-<ul class="quiz-opts">
-<li class="quiz-opt" data-idx="0"><span class="quiz-opt-letter">A</span><span>Stockroom</span></li>
-<li class="quiz-opt" data-idx="1"><span class="quiz-opt-letter">B</span><span>Facility</span></li>
-<li class="quiz-opt" data-idx="2"><span class="quiz-opt-letter">C</span><span>Configuration item</span></li>
-<li class="quiz-opt" data-idx="3"><span class="quiz-opt-letter">D</span><span>Consumable</span></li>
-<li class="quiz-opt" data-idx="4"><span class="quiz-opt-letter">E</span><span>Model</span></li>
-<li class="quiz-opt" data-idx="5"><span class="quiz-opt-letter">F</span><span>Software entitlement</span></li>
-</ul>
-
-
-
-</div><div class="quiz-locked-overlay">
-<div class="quiz-locked-card">
-<div class="quiz-locked-lock"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="10" rx="2" width="14" x="5" y="11"></rect><path d="M8 11V8a4 4 0 1 1 8 0v3"></path></svg></div>
-<div class="quiz-locked-title">This question is part of the full 240-question course.</div>
-<p class="quiz-locked-copy">Keep the teaser here, then move to Udemy for the full question bank.</p>
-<a class="quiz-locked-cta-btn" data-buy-tier="tier3" href="https://www.udemy.com/course/pass-servicenow-cis-hardware-asset-management-ham/?referralCode=58ECB1F51A94EC5A7F09" rel="noopener" target="_blank">Get all 240 questions on Udemy</a>
-</div>
-</div></div></div>
-<div class="quiz-card quiz-multi is-teaser-locked" data-question-index="13" data-tier="3" id="qcard13">
-<div class="quiz-q"><span class="quiz-q-num">14.</span>Several hardware models in your dashboard show a normalization status of "Match Not Found." What are the most likely causes for this status- (Choose three.) <span class="quiz-choose">(choose 3)</span></div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
-<ul class="quiz-opts">
-<li class="quiz-opt" data-idx="0"><span class="quiz-opt-letter">A</span><span>The model name contains special characters or bad formatting that prevents matching</span></li>
-<li class="quiz-opt" data-idx="1"><span class="quiz-opt-letter">B</span><span>The Hardware Asset Management plugin is not active</span></li>
-<li class="quiz-opt" data-idx="2"><span class="quiz-opt-letter">C</span><span>The content library has not been downloaded or updated recently</span></li>
-<li class="quiz-opt" data-idx="3"><span class="quiz-opt-letter">D</span><span>The model is a new release and does not yet exist in the ServiceNow Content Service</span></li>
-<li class="quiz-opt" data-idx="4"><span class="quiz-opt-letter">E</span><span>The asset record is missing the "Assigned to" field</span></li>
-</ul>
-
-
-
-</div><div class="quiz-locked-overlay">
-<div class="quiz-locked-card">
-<div class="quiz-locked-lock"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="10" rx="2" width="14" x="5" y="11"></rect><path d="M8 11V8a4 4 0 1 1 8 0v3"></path></svg></div>
-<div class="quiz-locked-title">This question is part of the full 240-question course.</div>
-<p class="quiz-locked-copy">Keep the teaser here, then move to Udemy for the full question bank.</p>
-<a class="quiz-locked-cta-btn" data-buy-tier="tier3" href="https://www.udemy.com/course/pass-servicenow-cis-hardware-asset-management-ham/?referralCode=58ECB1F51A94EC5A7F09" rel="noopener" target="_blank">Get all 240 questions on Udemy</a>
-</div>
-</div></div></div>
-<div class="quiz-card is-teaser-locked" data-question-index="14" data-tier="3" id="qcard14">
-<div class="quiz-q"><span class="quiz-q-num">15.</span>When is the appropriate time to initiate the retirement of an IT asset-</div><div class="quiz-answer-shell"><div class="q u i z - a n s w e r - c o n t e n t quiz-gate-blur">
-<ul class="quiz-opts">
-<li class="quiz-opt" data-idx="0"><span class="quiz-opt-letter">A</span><span>When the Hardware Content Service reports the asset is reaching End of Life (EOL)</span></li>
-<li class="quiz-opt" data-idx="1"><span class="quiz-opt-letter">B</span><span>When the Hardware Content Service reports the asset is reaching End of Service (EOS)</span></li>
-<li class="quiz-opt" data-idx="2"><span class="quiz-opt-letter">C</span><span>At any point it is recommended by the HAM-defined baseline asset policy</span></li>
-<li class="quiz-opt" data-idx="3"><span class="quiz-opt-letter">D</span><span>At any point that it is recommended by your company-defined policies and procedures</span></li>
-</ul>
-
-
-</div><div class="quiz-locked-overlay">
-<div class="quiz-locked-card">
-<div class="quiz-locked-lock"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="10" rx="2" width="14" x="5" y="11"></rect><path d="M8 11V8a4 4 0 1 1 8 0v3"></path></svg></div>
-<div class="quiz-locked-title">This question is part of the full 240-question course.</div>
-<p class="quiz-locked-copy">Keep the teaser here, then move to Udemy for the full question bank.</p>
-<a class="quiz-locked-cta-btn" data-buy-tier="tier3" href="https://www.udemy.com/course/pass-servicenow-cis-hardware-asset-management-ham/?referralCode=58ECB1F51A94EC5A7F09" rel="noopener" target="_blank">Get all 240 questions on Udemy</a>
-</div>
-</div></div></div>
-    <div class="quiz-interstitial" id="tier3FinalCta">
-      <div class="quiz-interstitial-kicker">Full course</div>
-      <h3>You've seen 10 of 240 questions.</h3>
-      <p class="quiz-interstitial-copy">The full course covers the exam blueprint with sourced explanations.</p>
-      <p class="quiz-interstitial-anchor">Your first exam attempt is free. Your second costs $350.</p>
-      <div class="quiz-interstitial-actions">
-        <a href="https://www.udemy.com/course/pass-servicenow-cis-hardware-asset-management-ham/?referralCode=58ECB1F51A94EC5A7F09" target="_blank" rel="noopener" class="cp-cta" data-buy-tier="final">Get all 240 questions on Udemy
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </div>
-    <div class="quiz-cross-sell">
+    <div class="quiz-cross-sell" id="quizCrossSell" hidden>
       <h3>Many students also study:</h3>
-      <p>Keep going with the cert recommendation quiz, or compare all 18 practice tests side by side.</p>
+      <p>Compare all 18 practice tests, or use the cert quiz to plan what to study next.</p>
       <div class="quiz-cross-sell-links">
         <a href="/quiz.html">Find your next cert</a>
         <a href="/compare.html">Compare all 18 courses</a>
       </div>
     </div>
-    <div class="quiz-toast" id="quizToast">Questions 6-10 are ready.</div>
+    <div class="quiz-toast" id="quizToast">Questions 6-15 are ready.</div>
   </section>
 
   <div class="cp-bottom">
@@ -826,44 +1094,52 @@ a:hover { text-decoration: underline; }
 
 <script>
 const QUIZ={"slug": "cis-ham", "code": "HAM", "totalQuestionCount": 240, "convertKitFormId": "9183962"};
-const answers=[2, 1, 1, 2, 3, 2, 0, [0, 1], 0, [0, 1]];
-const STORAGE_EMAIL='luckyx-email:'+QUIZ.slug,STORAGE_ANSWERS='luckyx-answers:'+QUIZ.slug,STORAGE_SCORE='luckyx-score:'+QUIZ.slug;
-const themeToggle=document.getElementById('themeToggle'),slots=Array.from(document.querySelectorAll('.preview-slot[data-slot]')),cards=Array.from(document.querySelectorAll('.quiz-card')),interactiveCards=cards.filter((card)=>parseInt(card.dataset.questionIndex,10)<10),tierTwoCards=cards.filter((card)=>card.dataset.tier==='2'),tierOneInterstitial=document.getElementById('tier1Interstitial'),tierTwoInterstitial=document.getElementById('tier2Interstitial'),tier1ContinueBtn=document.getElementById('tier1ContinueBtn'),gateForm=document.getElementById('quizGateForm'),gateEmail=document.getElementById('quizGateEmail'),gateSubmit=document.getElementById('quizGateSubmit'),gateMessage=document.getElementById('quizGateMessage'),toast=document.getElementById('quizToast');
-let emailReady=false,storedAnswers={},startEventSent=false,tier1EventSent=false,tier2EventSent=false;const drafts={};
+const answers=[2, 1, 1, 2, 3, 2, 0, [0, 1], 0, [0, 1], [0, 1, 3, 5], 1, [1, 3, 5], [0, 2, 3], 3];
+const STORAGE_EMAIL='luckyx-email:'+QUIZ.slug,STORAGE_ANSWERS='luckyx-answers:'+QUIZ.slug,STORAGE_SCORE='luckyx-score:'+QUIZ.slug,STORAGE_CURRENT='luckyx-current:'+QUIZ.slug;
+const themeToggle=document.getElementById('themeToggle'),cards=Array.from(document.querySelectorAll('.quiz-card')),dots=Array.from(document.querySelectorAll('.preview-dot[data-slot]')),prevBtn=document.getElementById('quizPrevBtn'),nextBtn=document.getElementById('quizNextBtn'),navMeta=document.getElementById('quizNavMeta'),stepLabel=document.getElementById('quizStepLabel'),tierLabel=document.getElementById('quizTierLabel'),miniScore=document.getElementById('quizMiniScore'),gateForm=document.getElementById('quizGateForm'),gateEmail=document.getElementById('quizGateEmail'),gateSubmit=document.getElementById('quizGateSubmit'),gateMessage=document.getElementById('quizGateMessage'),finalBlock=document.getElementById('quizFinal'),finalScoreText=document.getElementById('quizFinalScoreText'),finalScoreValue=document.getElementById('quizFinalScoreValue'),crossSell=document.getElementById('quizCrossSell'),toast=document.getElementById('quizToast');
+let emailReady=false,storedAnswers={},currentIndex=0,startEventSent=false,tier1EventSent=false,tier2EventSent=false;const drafts={};
 if(themeToggle){themeToggle.addEventListener('click',()=>{const current=document.documentElement.getAttribute('data-theme');const next=current==='light'?'dark':'light';document.documentElement.setAttribute('data-theme',next);localStorage.setItem('luckyx-theme',next);});}
 function evt(name,extra){if(typeof gtag!=='function')return;gtag('event',name,Object.assign({cert:QUIZ.code},extra||{}));}
 function showToast(message){if(!toast)return;toast.textContent=message;toast.classList.add('show');window.clearTimeout(showToast._timer);showToast._timer=window.setTimeout(()=>toast.classList.remove('show'),2600);}
 function readJson(key,fallback){try{const raw=localStorage.getItem(key);return raw?JSON.parse(raw):fallback;}catch(err){return fallback;}}
 function normalizeSelection(value){if(!Array.isArray(value))return[];return Array.from(new Set(value.map((item)=>parseInt(item,10)).filter((item)=>Number.isInteger(item)&&item>=0))).sort((a,b)=>a-b);}
-function readAnswers(){const parsed=readJson(STORAGE_ANSWERS,{}),out={};if(!parsed||typeof parsed!=='object')return out;Object.keys(parsed).forEach((key)=>{const qi=parseInt(key,10),item=parsed[key];if(!Number.isInteger(qi)||qi<0||qi>=10||!item||typeof item!=='object')return;const selected=normalizeSelection(item.selected);if(!selected.length||typeof item.isCorrect!=='boolean')return;out[qi]={selected,isCorrect:item.isCorrect};});return out;}
+function readAnswers(){const parsed=readJson(STORAGE_ANSWERS,{}),out={};if(!parsed||typeof parsed!=='object')return out;Object.keys(parsed).forEach((key)=>{const qi=parseInt(key,10),item=parsed[key];if(!Number.isInteger(qi)||qi<0||qi>=15||!item||typeof item!=='object')return;const selected=normalizeSelection(item.selected);if(!selected.length||typeof item.isCorrect!=='boolean')return;out[qi]={selected,isCorrect:item.isCorrect};});return out;}
+function readCurrent(){const raw=localStorage.getItem(STORAGE_CURRENT),value=parseInt(raw,10);return Number.isInteger(value)?value:null;}
 function writeAnswers(){localStorage.setItem(STORAGE_ANSWERS,JSON.stringify(storedAnswers));}
+function writeCurrent(){localStorage.setItem(STORAGE_CURRENT,String(currentIndex));}
 function scoreSlice(start,end){let answered=0,correct=0;for(let i=start;i<=end;i+=1){if(!storedAnswers[i])continue;answered+=1;if(storedAnswers[i].isCorrect)correct+=1;}return{answered,correct};}
-function saveScoreState(){const tier1=scoreSlice(0,4),tier2Only=scoreSlice(5,9),total=scoreSlice(0,9);localStorage.setItem(STORAGE_SCORE,JSON.stringify({tier1:tier1.correct,tier2:tier2Only.correct,total:total.correct}));}
+function saveScoreState(){const free5=scoreSlice(0,4),total15=scoreSlice(0,14);localStorage.setItem(STORAGE_SCORE,JSON.stringify({free5:free5.correct,total15:total15.correct}));}
 function correctIndicesFor(qi){return(Array.isArray(answers[qi])?answers[qi].slice():[answers[qi]]).sort((a,b)=>a-b);}
+function isUnlocked(qi){return qi<5||emailReady;}
+function nextPendingIndex(){const max=emailReady?14:5;for(let i=0;i<=max;i+=1){if(!storedAnswers[i])return i;}return max;}
+function navigationLimit(){return nextPendingIndex();}
+function normalizeCurrent(candidate){const limit=navigationLimit();if(!Number.isInteger(candidate))return limit;if(candidate<0)return 0;if(candidate>limit)return limit;return candidate;}
 function setMessage(text,cls){if(!gateMessage)return;gateMessage.textContent=text||'';gateMessage.classList.remove('is-error','is-success');if(cls)gateMessage.classList.add(cls);}
 function processSections(container){if(!container||container.dataset.processed)return;container.dataset.processed='1';const h5s=Array.from(container.querySelectorAll('h5'));if(!h5s.length)return;const sections=[];h5s.forEach((h5)=>{const title=h5.textContent.toLowerCase();let cls='exp-section';if(title.includes('correct answer'))cls+=' exp-correct-answer';else if(title.includes('source'))cls+=' exp-source';else if(title.includes('expert'))cls+=' exp-expert';else if(title.includes('why')||title.includes('wrong'))cls+=' exp-wrong';else if(title.includes('memory'))cls+=' exp-memory';else if(title.includes('real-world')||title.includes('example'))cls+=' exp-realworld';sections.push({cls,h5});});for(let i=0;i<sections.length;i+=1){const section=sections[i],div=document.createElement('div'),next=i<sections.length-1?sections[i+1].h5:null;div.className=section.cls;section.h5.parentNode.insertBefore(div,section.h5);div.appendChild(section.h5);while(div.nextSibling&&div.nextSibling!==next)div.appendChild(div.nextSibling);}}
 function showExplanations(qi){const card=document.getElementById('qcard'+qi);if(!card)return;const opts=card.querySelectorAll('.quiz-opt'),correct=correctIndicesFor(qi);opts.forEach((opt,index)=>{const per=opt.getAttribute('data-exp');if(!per||opt.querySelector('.quiz-opt-exp-inline'))return;const ok=correct.indexOf(index)!==-1,txt=per.replace(/^(CORRECT|INCORRECT):\s*/i,''),div=document.createElement('div'),icon=ok?'\u2713':'\u2717';div.className='quiz-opt-exp-inline '+(ok?'qoe-is-correct':'qoe-is-wrong');div.innerHTML='<div class="qoe-header">'+(ok?'<span class="qoe-correct">'+icon+' Correct</span>':'<span class="qoe-wrong">'+icon+' Incorrect</span>')+' <span class="qoe-letter">Option '+'ABCDEFG'[index]+'</span></div><div class="qoe-text">'+txt+'</div>';opt.appendChild(div);});const overall=document.getElementById('qexp'+qi);if(!overall)return;const content=overall.querySelector('.quiz-overall-content');if(!content||!content.innerHTML.trim())return;processSections(content);overall.open=false;overall.removeAttribute('open');overall.style.display='block';}
 document.querySelectorAll('.quiz-overall').forEach((detail)=>{detail.addEventListener('toggle',function(){if(!this.open)return;document.querySelectorAll('.quiz-overall').forEach((other)=>{if(other!==this)other.open=false;});});});
 function clearOptionState(opt){opt.classList.remove('selected','correct','wrong');opt.removeAttribute('disabled');}
-function renderDraft(qi){const card=document.getElementById('qcard'+qi);if(!card)return;card.removeAttribute('data-state');const selected=drafts[qi]||[];card.querySelectorAll('.quiz-opt').forEach((opt,index)=>{clearOptionState(opt);if(selected.indexOf(index)!==-1)opt.classList.add('selected');if(emailReady||qi<5)opt.removeAttribute('disabled');else opt.setAttribute('disabled','');});const btn=card.querySelector('.quiz-submit-btn');if(btn)btn.style.display=selected.length&&(emailReady||qi<5)?'block':'none';const overall=card.querySelector('.quiz-overall');if(overall){overall.open=false;overall.removeAttribute('open');overall.style.display='';}}
+function renderDraft(qi){const card=document.getElementById('qcard'+qi);if(!card)return;card.removeAttribute('data-state');const selected=drafts[qi]||[];card.querySelectorAll('.quiz-opt').forEach((opt,index)=>{clearOptionState(opt);if(selected.indexOf(index)!==-1)opt.classList.add('selected');if(isUnlocked(qi))opt.removeAttribute('disabled');else opt.setAttribute('disabled','');});const btn=card.querySelector('.quiz-submit-btn');if(btn)btn.style.display=selected.length&&isUnlocked(qi)?'inline-flex':'none';const overall=card.querySelector('.quiz-overall');if(overall){overall.open=false;overall.removeAttribute('open');overall.style.display='';}}
 function applyResponse(qi,response){const card=document.getElementById('qcard'+qi);if(!card||!response)return;const correct=correctIndicesFor(qi),opts=card.querySelectorAll('.quiz-opt');card.dataset.state=response.isCorrect?'correct':'wrong';opts.forEach((opt)=>clearOptionState(opt));if(response.isCorrect){response.selected.forEach((index)=>{if(opts[index])opts[index].classList.add('correct');});}else{response.selected.forEach((index)=>{if(!opts[index])return;if(correct.indexOf(index)===-1)opts[index].classList.add('wrong');else opts[index].classList.add('correct');});correct.forEach((index)=>{if(opts[index])opts[index].classList.add('correct');});}opts.forEach((opt)=>opt.setAttribute('disabled',''));const btn=card.querySelector('.quiz-submit-btn');if(btn)btn.style.display='none';showExplanations(qi);}
-function currentSlotIndex(){for(let i=0;i<5;i+=1){if(!storedAnswers[i])return i;}if(!emailReady)return 5;for(let i=5;i<10;i+=1){if(!storedAnswers[i])return i;}return-1;}
-function updateStatus(){const total=scoreSlice(0,9),answeredLabel=document.getElementById('quizStatusAnswered'),scoreLabel=document.getElementById('quizStatusScore');if(answeredLabel)answeredLabel.textContent=total.answered+' of 10 interactive questions';if(scoreLabel)scoreLabel.textContent=total.correct+' correct';}
-function updateSlots(){const current=currentSlotIndex();slots.forEach((slot)=>{const idx=parseInt(slot.dataset.slot,10);slot.classList.remove('is-correct','is-wrong','is-current','is-email-locked','is-clickable');if(idx>=10)return;if(storedAnswers[idx])slot.classList.add(storedAnswers[idx].isCorrect?'is-correct':'is-wrong');else if(idx>=5&&!emailReady)slot.classList.add('is-email-locked');if(idx===current)slot.classList.add('is-current');if(idx<5||(idx<10&&emailReady))slot.classList.add('is-clickable');});}
-function updateInterstitials(){const tier1=scoreSlice(0,4),total=scoreSlice(0,9),tier1Text=document.getElementById('tier1ScoreText'),tier1Value=document.getElementById('tier1ScoreValue'),tier2Text=document.getElementById('tier2ScoreText'),tier2Value=document.getElementById('tier2ScoreValue');if(tier1Text)tier1Text.textContent=tier1.correct+'/5';if(tier1Value)tier1Value.textContent=tier1.correct+'/5';if(tierTwoInterstitial&&tier2Text&&tier2Value){tier2Text.textContent=total.correct+'/10';tier2Value.textContent=total.correct+'/10';}if(tierOneInterstitial)tierOneInterstitial.hidden=tier1.answered!==5;if(tierTwoInterstitial)tierTwoInterstitial.hidden=total.answered!==10;}
-function persistState(){writeAnswers();saveScoreState();}
-function setTierTwoAccess(open){emailReady=!!open;tierTwoCards.forEach((card)=>{card.classList.toggle('is-email-locked',!open);const content=card.querySelector('.quiz-answer-content');if(content)content.classList.toggle('quiz-gate-blur',!open);card.querySelectorAll('[data-email-overlay]').forEach((overlay)=>{overlay.hidden=open;});const qi=parseInt(card.dataset.questionIndex,10);if(!storedAnswers[qi])renderDraft(qi);});updateSlots();}
-function maybeSendCompletionEvents(qi){const tier1=scoreSlice(0,4),total=scoreSlice(0,9);if(qi===0&&!startEventSent){startEventSent=true;evt('quiz_start',{tier:1});}if(!tier1EventSent&&tier1.answered===5){tier1EventSent=true;evt('quiz_tier1_complete',{score:tier1.correct});}if(!tier2EventSent&&total.answered===10){tier2EventSent=true;evt('quiz_tier2_complete',{score_total:total.correct});}}
-function render(){interactiveCards.forEach((card)=>{const qi=parseInt(card.dataset.questionIndex,10);if(storedAnswers[qi])applyResponse(qi,storedAnswers[qi]);else renderDraft(qi);});updateStatus();updateSlots();updateInterstitials();persistState();}
-document.querySelectorAll('.quiz-opt[data-q]').forEach((opt)=>{opt.addEventListener('click',function(){const qi=parseInt(this.dataset.q,10);if(qi>=5&&!emailReady)return;if(storedAnswers[qi])return;const idx=parseInt(this.dataset.idx,10),multi=Array.isArray(answers[qi]),current=drafts[qi]?drafts[qi].slice():[];if(multi){const pos=current.indexOf(idx);if(pos===-1)current.push(idx);else current.splice(pos,1);}else{current.length=0;current.push(idx);}drafts[qi]=normalizeSelection(current);renderDraft(qi);});});
-function submitAnswer(){const qi=parseInt(this.dataset.q,10);if(qi>=5&&!emailReady)return;if(storedAnswers[qi])return;const selected=normalizeSelection(drafts[qi]);if(!selected.length)return;const correct=correctIndicesFor(qi),isCorrect=selected.length===correct.length&&selected.every((value,index)=>value===correct[index]);storedAnswers[qi]={selected,isCorrect};delete drafts[qi];render();maybeSendCompletionEvents(qi);}
+function updateHeader(){if(stepLabel)stepLabel.textContent='Question '+(currentIndex+1)+' of 15';if(miniScore){const total=scoreSlice(0,14);miniScore.textContent=total.correct+' correct so far';}if(tierLabel){let label='Free',state='free';if(currentIndex>=5&&!emailReady){label='Email required';state='locked';}else if(currentIndex>=5&&emailReady){label='Preview unlocked';state='open';}tierLabel.textContent=label;tierLabel.dataset.state=state;}}
+function updateDots(){const limit=navigationLimit();dots.forEach((dot)=>{const idx=parseInt(dot.dataset.slot,10);dot.classList.remove('is-available','is-locked','is-correct','is-wrong','is-current');dot.classList.add(idx<=limit?'is-available':'is-locked');if(storedAnswers[idx])dot.classList.add(storedAnswers[idx].isCorrect?'is-correct':'is-wrong');if(idx===currentIndex)dot.classList.add('is-current');});}
+function updateVisibleCard(){cards.forEach((card)=>{const qi=parseInt(card.dataset.questionIndex,10),active=qi===currentIndex;card.hidden=!active;card.classList.toggle('is-active',active);card.setAttribute('aria-hidden',active?'false':'true');});}
+function updateNav(){const answered=!!storedAnswers[currentIndex],complete=scoreSlice(0,14).answered===15,limit=complete?14:navigationLimit();if(prevBtn)prevBtn.disabled=currentIndex===0;if(nextBtn){nextBtn.hidden=currentIndex===14&&complete;nextBtn.disabled=!answered||currentIndex>=limit;nextBtn.textContent='Next question';}if(navMeta){if(currentIndex===5&&!emailReady)navMeta.textContent='Enter your email to continue.';else if(currentIndex===14&&complete)navMeta.textContent='Preview complete. Your score is below.';else if(answered)navMeta.textContent='Ready for the next question.';else navMeta.textContent='Choose an answer and submit to continue.';}}
+function updateFinal(){const total=scoreSlice(0,14),complete=total.answered===15;if(finalBlock){finalBlock.hidden=!complete;if(complete){finalScoreText.textContent=total.correct+'/15';finalScoreValue.textContent=total.correct+'/15';}}if(crossSell)crossSell.hidden=!complete;}
+function persistState(){writeAnswers();saveScoreState();writeCurrent();}
+function setEmailAccess(open){emailReady=!!open;cards.forEach((card)=>{const qi=parseInt(card.dataset.questionIndex,10);if(qi<5)return;card.classList.toggle('is-email-locked',!open);const content=card.querySelector('.quiz-answer-content');if(content)content.classList.toggle('quiz-gate-blur',!open);if(qi===5){card.querySelectorAll('[data-email-overlay]').forEach((overlay)=>{overlay.hidden=open;});}});if(!emailReady&&currentIndex>5)currentIndex=5;}
+function maybeSendCompletionEvents(qi){const free5=scoreSlice(0,4),total=scoreSlice(0,14);if(qi===0&&!startEventSent){startEventSent=true;evt('quiz_start',{tier:1});}if(!tier1EventSent&&free5.answered===5){tier1EventSent=true;evt('quiz_tier1_complete',{score:free5.correct});}if(!tier2EventSent&&total.answered===15){tier2EventSent=true;evt('quiz_tier2_complete',{score_total:total.correct});}}
+function render(){currentIndex=normalizeCurrent(currentIndex);cards.forEach((card)=>{const qi=parseInt(card.dataset.questionIndex,10);if(storedAnswers[qi])applyResponse(qi,storedAnswers[qi]);else renderDraft(qi);});updateVisibleCard();updateHeader();updateDots();updateNav();updateFinal();persistState();}
+function scrollToCurrent(){const card=document.getElementById('qcard'+currentIndex);if(card)card.scrollIntoView({behavior:'smooth',block:'start'});}
+document.querySelectorAll('.quiz-opt[data-q]').forEach((opt)=>{opt.addEventListener('click',function(){const qi=parseInt(this.dataset.q,10);if(!isUnlocked(qi)||storedAnswers[qi])return;const idx=parseInt(this.dataset.idx,10),multi=Array.isArray(answers[qi]),current=drafts[qi]?drafts[qi].slice():[];if(multi){const pos=current.indexOf(idx);if(pos===-1)current.push(idx);else current.splice(pos,1);}else{current.length=0;current.push(idx);}drafts[qi]=normalizeSelection(current);render();});});
+function submitAnswer(){const qi=parseInt(this.dataset.q,10);if(!isUnlocked(qi)||storedAnswers[qi])return;const selected=normalizeSelection(drafts[qi]);if(!selected.length)return;const correct=correctIndicesFor(qi),isCorrect=selected.length===correct.length&&selected.every((value,index)=>value===correct[index]);storedAnswers[qi]={selected,isCorrect};delete drafts[qi];maybeSendCompletionEvents(qi);render();}
 document.querySelectorAll('.quiz-submit-btn[data-q]').forEach((btn)=>btn.addEventListener('click',submitAnswer));
-slots.forEach((slot)=>{slot.addEventListener('click',()=>{const idx=parseInt(slot.dataset.slot,10);if(idx>=10)return;if(idx>=5&&!emailReady){const gateCard=document.getElementById('qcard5');if(gateCard)gateCard.scrollIntoView({behavior:'smooth',block:'start'});return;}const card=document.getElementById('qcard'+idx);if(card)card.scrollIntoView({behavior:'smooth',block:'start'});});});
-if(tier1ContinueBtn){tier1ContinueBtn.addEventListener('click',()=>{const gateCard=document.getElementById('qcard5');if(gateCard)gateCard.scrollIntoView({behavior:'smooth',block:'start'});if(gateEmail)window.setTimeout(()=>gateEmail.focus(),250);});}
-function handleGateSubmit(event){event.preventDefault();const email=gateEmail.value.trim().toLowerCase(),valid=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)&&email.length<=254;if(!valid){setMessage('Use a valid email address.','is-error');return;}gateSubmit.disabled=true;gateSubmit.textContent='Sending...';setMessage('');fetch('https://app.convertkit.com/forms/'+QUIZ.convertKitFormId+'/subscriptions',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email_address:email,fields:{source:'quiz-gate-'+QUIZ.slug}})}).then((response)=>{if(!response.ok&&response.status!==200&&response.status!==201)throw new Error('gate failed');localStorage.setItem(STORAGE_EMAIL,'1');setTierTwoAccess(true);gateEmail.value='';gateEmail.disabled=true;gateSubmit.textContent='Questions ready';setMessage('Questions 6-10 are ready.','is-success');evt('quiz_email_submit');showToast('Questions 6-10 are ready.');}).catch(()=>{gateSubmit.disabled=false;gateSubmit.textContent='Continue with 5 More Questions';setMessage('That did not go through. Please try again.','is-error');});}
+if(prevBtn){prevBtn.addEventListener('click',()=>{if(currentIndex===0)return;currentIndex-=1;render();scrollToCurrent();});}
+if(nextBtn){nextBtn.addEventListener('click',()=>{const complete=scoreSlice(0,14).answered===15,limit=complete?14:navigationLimit();if(!storedAnswers[currentIndex]||currentIndex>=limit)return;currentIndex+=1;render();scrollToCurrent();if(currentIndex===5&&!emailReady&&gateEmail)window.setTimeout(()=>gateEmail.focus(),180);});}
+function handleGateSubmit(event){event.preventDefault();const email=gateEmail.value.trim().toLowerCase(),valid=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)&&email.length<=254;if(!valid){setMessage('Use a valid email address.','is-error');return;}gateSubmit.disabled=true;gateSubmit.textContent='Sending...';setMessage('');fetch('https://app.convertkit.com/forms/'+QUIZ.convertKitFormId+'/subscriptions',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email_address:email,fields:{source:'quiz-gate-'+QUIZ.slug}})}).then((response)=>{if(!response.ok&&response.status!==200&&response.status!==201)throw new Error('gate failed');localStorage.setItem(STORAGE_EMAIL,'1');setMessage('Questions 6-15 are ready.','is-success');evt('quiz_email_submit');showToast('Questions 6-15 are ready.');gateSubmit.disabled=false;gateSubmit.textContent='Continue with 10 More Questions';setEmailAccess(true);currentIndex=Math.max(currentIndex,5);render();}).catch(()=>{gateSubmit.disabled=false;gateSubmit.textContent='Continue with 10 More Questions';setMessage('That did not go through. Please try again.','is-error');});}
 if(gateForm)gateForm.addEventListener('submit',handleGateSubmit);
-document.querySelectorAll('a[data-buy-tier],a.cp-cta[href*="udemy.com"]').forEach((link)=>{link.addEventListener('click',()=>{const total=scoreSlice(0,9),tier=link.dataset.buyTier||(link.closest('#tier1Interstitial')?'tier1':'hero');evt('quiz_buy_click',{tier,score:total.correct});});});
-storedAnswers=readAnswers();emailReady=localStorage.getItem(STORAGE_EMAIL)==='1'||Object.keys(storedAnswers).some((key)=>parseInt(key,10)>=5);setTierTwoAccess(emailReady);render();evt('quiz_page_view');
+document.querySelectorAll('a[href*="udemy.com"]').forEach((link)=>{link.addEventListener('click',()=>{const total=scoreSlice(0,14),stage=link.dataset.buyStage||(link.closest('#quizFinal')?'final':'hero');evt('quiz_buy_click',{tier:stage,score:total.correct});});});
+storedAnswers=readAnswers();emailReady=localStorage.getItem(STORAGE_EMAIL)==='1'||Object.keys(storedAnswers).some((key)=>parseInt(key,10)>=5);startEventSent=Object.keys(storedAnswers).length>0;tier1EventSent=scoreSlice(0,4).answered===5;tier2EventSent=scoreSlice(0,14).answered===15;currentIndex=readCurrent();setEmailAccess(emailReady);render();evt('quiz_page_view');
 </script>
 </body>
 </html>
