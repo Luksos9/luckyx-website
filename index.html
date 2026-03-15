@@ -106,7 +106,7 @@
       "name": "Why are these only $9.99?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Traditional certification prep charges $99 to $350 for 30-day access. Lucky X courses are self-published on Udemy with lifetime access and 400+ questions per exam. You get sourced explanations for $9.99 instead of $99."
+        "text": "A single CIS exam costs $450. A retake costs $225. Traditional certification prep charges $99 to $350 for 30-day access. Lucky X courses are self-published on Udemy with lifetime access and 400+ questions per exam. You get sourced explanations for $9.99. The full certification cost breakdown covers every exam tier."
       }
     },
     {
@@ -130,7 +130,7 @@
       "name": "Which certification should I start with?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Most people start with CSA (Certified System Administrator), then move to a CIS specialization. The free 2026 Certification Roadmap breaks down the common paths. It also includes study time estimates and salary data for each track."
+        "text": "Most people start with CSA (Certified System Administrator), then move to a CIS specialization. If your target cert is ITSM, Discovery, HAM, SAM, Service Mapping, SIR, or VR, you also need CIS-Data Foundations first (free through June 2026). The full certification path guide at luckyx.dev/blog/which-servicenow-certification-first.html breaks down every track with prerequisites, salary data, and recommended order."
       }
     }
   ]
@@ -188,6 +188,20 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" as="style">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* Prevent FOUT layout shift on hero title */
+  .hero h1 { opacity: 0; }
+  .fonts-loaded .hero h1 { opacity: 1; }
+</style>
+<script>
+  if (document.fonts) {
+    document.fonts.ready.then(function() {
+      document.documentElement.classList.add('fonts-loaded');
+    });
+  } else {
+    document.documentElement.classList.add('fonts-loaded');
+  }
+</script>
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <link rel="dns-prefetch" href="https://app.convertkit.com">
 
@@ -367,6 +381,32 @@ body::after {
 }
 
 .nav-btn.active svg { stroke: var(--text); }
+
+/* Nav tooltip */
+.nav-btn::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--bg-raised);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 8px;
+  white-space: nowrap;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.nav-btn:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
 
 /* Emphasize courses button as primary CTA */
 .nav-btn.nav-primary svg {
@@ -2033,27 +2073,27 @@ h3.card-title,
       <div class="clip"><div class="spin"></div></div>
       <div class="inner"></div>
     </div>
-    <button class="nav-btn active" data-s="hero" aria-label="Home">
+    <button class="nav-btn active" data-s="hero" aria-label="Home" data-tip="Home">
       <svg viewBox="0 0 24 24"><path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
     </button>
     <div class="nav-divider"></div>
-    <button class="nav-btn nav-primary" data-s="courses" aria-label="Courses">
+    <button class="nav-btn nav-primary" data-s="courses" aria-label="Practice Tests" data-tip="Practice Tests">
       <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
     </button>
     <div class="nav-divider"></div>
-    <button class="nav-btn" data-s="why" aria-label="About">
+    <button class="nav-btn" data-s="why" aria-label="Why Lucky X" data-tip="Why Lucky X">
       <svg viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 16v-4M12 8h.01"/></svg>
     </button>
     <div class="nav-divider"></div>
-    <button class="nav-btn" data-s="faq" aria-label="FAQ">
+    <button class="nav-btn" data-s="faq" aria-label="FAQ" data-tip="FAQ">
       <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
     </button>
     <div class="nav-divider"></div>
-    <a class="nav-btn" href="/blog/" aria-label="Blog">
+    <a class="nav-btn" href="/blog/" aria-label="Blog (opens blog page)" data-tip="Blog">
       <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
     </a>
     <div class="nav-divider"></div>
-    <button class="nav-btn" data-s="cta" aria-label="Get started">
+    <button class="nav-btn" data-s="cta" aria-label="Get Started" data-tip="Get Started">
       <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </button>
   </div>
@@ -2348,7 +2388,7 @@ h3.card-title,
     </div>
     <div class="faq-item" role="listitem">
       <button class="faq-q" aria-expanded="false">Why are these only $9.99?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
-      <div class="faq-a" role="region"><div class="faq-a-inner">Traditional certification prep charges $99 to $350 for 30-day access. Lucky X courses are self-published on Udemy with lifetime access and 400+ questions per exam. You get sourced explanations for $9.99 instead of $99.</div></div>
+      <div class="faq-a" role="region"><div class="faq-a-inner">A single CIS exam costs $450. A retake costs $225. Traditional certification prep charges $99 to $350 for 30-day access. Lucky X courses are self-published on Udemy with lifetime access and 400+ questions per exam. You get sourced explanations for $9.99. The full <a href="/blog/servicenow-certification-cost-2026.html">certification cost breakdown</a> covers every exam tier.</div></div>
     </div>
     <div class="faq-item" role="listitem">
       <button class="faq-q" aria-expanded="false">Has the author actually passed all 18 exams?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
@@ -2360,7 +2400,7 @@ h3.card-title,
     </div>
     <div class="faq-item" role="listitem">
       <button class="faq-q" aria-expanded="false">Which certification should I start with?<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
-      <div class="faq-a" role="region"><div class="faq-a-inner">Most people start with CSA (Certified System Administrator), then move to a CIS specialization. The free <a href="#roadmap">2026 Certification Roadmap</a> above breaks down the common paths. It also includes study time estimates and salary data for each track.</div></div>
+      <div class="faq-a" role="region"><div class="faq-a-inner">Most people start with CSA (Certified System Administrator), then move to a CIS specialization. If your target cert is ITSM, Discovery, HAM, SAM, Service Mapping, SIR, or VR, you also need <a href="/courses/cis-data-foundations.html">CIS-Data Foundations</a> first (free through June 2026). The <a href="/blog/which-servicenow-certification-first.html">full certification path guide</a> breaks down every track with prerequisites, salary data, and recommended order. You can also <a href="/blog/servicenow-certification-landscape-2026.html">compare all 18 certs side by side</a>.</div></div>
     </div>
   </div>
 </section>
