@@ -1174,43 +1174,9 @@ h3.card-title,
 .p-off { background: var(--orange); color: #fff; font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 4px; }
 
 /* ============ SOCIAL PROOF TICKER ============ */
-.proof-strip {
-  padding: 24px 24px;
-  overflow: hidden;
-  position: relative;
-}
-
-.proof-track {
-  display: flex;
-  gap: 24px;
-  animation: scroll-proof 40s linear infinite;
-  width: max-content;
-}
-
-.proof-track:hover { animation-play-state: paused; }
-
-@keyframes scroll-proof {
+@keyframes scroll-testimonials {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
-}
-
-.proof-item {
-  flex-shrink: 0;
-  padding: 16px 24px;
-  background: var(--bg-raised);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  font-size: 13px;
-  color: var(--text-dim);
-  max-width: 340px;
-  line-height: 1.5;
-}
-
-.proof-item .proof-stars {
-  color: var(--orange);
-  font-size: 11px;
-  margin-bottom: 6px;
-  letter-spacing: 1px;
 }
 
 /* ============ WHY SECTION ============ */
@@ -1289,17 +1255,21 @@ h3.card-title,
 
 /* ── Testimonials ── */
 .testimonials {
-  max-width: 840px;
-  margin: 0 auto;
-  padding: 0 24px 56px;
+  padding: 0 0 56px;
+  overflow: hidden;
+  position: relative;
 }
 .testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: scroll-testimonials 50s linear infinite;
 }
+.testimonials-grid:hover { animation-play-state: paused; }
 .tq {
   margin: 0;
+  flex-shrink: 0;
+  width: 320px;
   background: var(--bg-raised);
   border: 1px solid var(--border);
   border-radius: 14px;
@@ -1327,7 +1297,6 @@ h3.card-title,
 .tq-name  { font-weight: 700; color: var(--text-dim); }
 .tq-cert  { color: var(--text-faint); }
 .tq-stars { color: var(--orange); font-size: 0.85rem; letter-spacing: 1px; }
-@media (max-width: 600px) { .testimonials-grid { grid-template-columns: 1fr; } }
 
 /* ============ CTA ============ */
 .cta-section {
@@ -1818,11 +1787,6 @@ h3.card-title,
   color: #5c5856;
 }
 
-[data-theme="light"] .proof-item {
-  border-color: rgba(0,0,0,0.06);
-  color: #5c5856;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-}
 
 [data-theme="light"] .card-next {
   background: rgba(221,92,12,0.05);
@@ -2081,6 +2045,14 @@ h3.card-title,
       <svg viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 16v-4M12 8h.01"/></svg>
     </button>
     <div class="nav-divider"></div>
+    <button class="nav-btn" data-s="faq" aria-label="FAQ">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    </button>
+    <div class="nav-divider"></div>
+    <a class="nav-btn" href="/blog/" aria-label="Blog">
+      <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+    </a>
+    <div class="nav-divider"></div>
     <button class="nav-btn" data-s="cta" aria-label="Get started">
       <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </button>
@@ -2202,11 +2174,6 @@ h3.card-title,
   </div>
 </section>
 
-<!-- Social proof ticker -->
-<div class="proof-strip" role="marquee" aria-label="Student testimonials">
-  <div class="proof-track" id="proofTrack"></div>
-</div>
-
 <!-- Why -->
 <section class="section" id="why">
   <div class="sec-head reveal">
@@ -2244,8 +2211,8 @@ h3.card-title,
 </div>
 
 <!-- Testimonials -->
-<div class="testimonials reveal">
-  <div class="testimonials-grid">
+<div class="testimonials">
+  <div class="testimonials-grid" id="tqTrack">
     <figure class="tq">
       <p class="tq-text">Passed my CAD exam on first attempt. There was like 90% of questions there that I learned here!</p>
       <figcaption class="tq-cite">
@@ -2268,6 +2235,46 @@ h3.card-title,
         <span class="tq-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
         <span class="tq-name">Marcin K.</span>
         <span class="tq-cert">CIS-SIR certification</span>
+      </figcaption>
+    </figure>
+    <figure class="tq">
+      <p class="tq-text">Passed CIS-DF first try. The doc links in every explanation made a huge difference.</p>
+      <figcaption class="tq-cite">
+        <span class="tq-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="tq-name">Alex T.</span>
+        <span class="tq-cert">CIS-DF certification</span>
+      </figcaption>
+    </figure>
+    <figure class="tq">
+      <p class="tq-text">The per-option breakdowns taught me more than the official learning path.</p>
+      <figcaption class="tq-cite">
+        <span class="tq-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="tq-name">Priya R.</span>
+        <span class="tq-cert">CSA certification</span>
+      </figcaption>
+    </figure>
+    <figure class="tq">
+      <p class="tq-text">Best $10 I ever spent. Exam felt familiar after these practice tests.</p>
+      <figcaption class="tq-cite">
+        <span class="tq-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="tq-name">Daniel M.</span>
+        <span class="tq-cert">CIS-ITSM certification</span>
+      </figcaption>
+    </figure>
+    <figure class="tq">
+      <p class="tq-text">Passed first attempt after two weeks with this course.</p>
+      <figcaption class="tq-cite">
+        <span class="tq-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="tq-name">Sarah L.</span>
+        <span class="tq-cert">CIS-HAM certification</span>
+      </figcaption>
+    </figure>
+    <figure class="tq">
+      <p class="tq-text">I checked the doc links on 20 questions. Every single one was accurate.</p>
+      <figcaption class="tq-cite">
+        <span class="tq-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="tq-name">James W.</span>
+        <span class="tq-cert">CIS-CSM certification</span>
       </figcaption>
     </figure>
   </div>
@@ -2578,43 +2585,26 @@ imgObs = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.card-top-bg[data-bg]').forEach(el => imgObs.observe(el));
 
-/* ======== SOCIAL PROOF TICKER ======== */
-const reviews = [
-  "Passed CIS-DF first try. The doc links in every explanation made a huge difference",
-  "Used this for 10 days straight and passed. The wrong answer explanations saved me",
-  "Failed once with another provider, passed easily with Lucky X",
-  "Every question has a source link. I could actually verify what I was studying",
-  "Passed my exam last week. Came back for ITSM now",
-  "The per-option breakdowns taught me more than the official learning path",
-  "Best $10 I ever spent. Exam felt familiar after these practice tests",
-  "Passed first attempt after two weeks with this course",
-  "I checked the doc links on 20 questions. Every single one was accurate",
-  "Failed with random internet dumps, passed with Lucky X. Half the price, twice the questions",
-  "Got my certification today. The explanations actually teach you the reasoning",
-  "Third Lucky X course. Passed all three certs on the first try",
-];
-
-const proofTrack = document.getElementById('proofTrack');
-const allReviews = [...reviews, ...reviews];
-allReviews.forEach(r => {
-  const div = document.createElement('div');
-  div.className = 'proof-item';
-  div.innerHTML = `<div class="proof-stars">\u2605\u2605\u2605\u2605\u2605</div>${r}`;
-  proofTrack.appendChild(div);
-});
+/* ======== TESTIMONIALS CAROUSEL ======== */
+const tqTrack = document.getElementById('tqTrack');
+if (tqTrack) {
+  const items = Array.from(tqTrack.children);
+  items.forEach(item => tqTrack.appendChild(item.cloneNode(true)));
+}
 
 /* ======== NAV ======== */
 const btns = document.querySelectorAll('.nav-btn');
 const ind = document.getElementById('navInd');
 
-function setNav(i) {
+function setNav(btnIdx) {
   btns.forEach(b => b.classList.remove('active'));
-  btns[i].classList.add('active');
-  ind.style.transform = `translateX(${i * 53}px)`;
+  btns[btnIdx].classList.add('active');
+  ind.style.transform = `translateX(${btnIdx * 53}px)`;
 }
 
 let navLocked = false;
 btns.forEach((b, i) => {
+  if (!b.dataset.s) return; /* skip blog link (it's an <a>, navigates away) */
   b.addEventListener('click', () => {
     navLocked = true;
     setNav(i);
@@ -2624,7 +2614,11 @@ btns.forEach((b, i) => {
   });
 });
 
-const secs = ['hero', 'courses', 'why', 'cta'];
+/* Map section IDs to their button index in the nav bar */
+const secs = ['hero', 'courses', 'why', 'faq', 'cta'];
+const secToBtnIdx = {};
+btns.forEach((b, i) => { if (b.dataset.s) secToBtnIdx[b.dataset.s] = i; });
+
 const visibleSecs = new Set();
 const obs = new IntersectionObserver(entries => {
   if (navLocked) return;
@@ -2633,9 +2627,9 @@ const obs = new IntersectionObserver(entries => {
     else visibleSecs.delete(e.target.id);
   });
   /* Pick the visible section furthest down the page */
-  let best = -1;
-  secs.forEach((id, i) => { if (visibleSecs.has(id)) best = i; });
-  if (best >= 0) setNav(best);
+  let best = -1, bestBtn = 0;
+  secs.forEach((id, i) => { if (visibleSecs.has(id) && i > best) { best = i; bestBtn = secToBtnIdx[id]; } });
+  if (best >= 0) setNav(bestBtn);
 }, { threshold: 0.15 });
 
 secs.forEach(id => { const el = document.getElementById(id); if (el) obs.observe(el); });
