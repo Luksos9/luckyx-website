@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Pass the ServiceNow CAD Exam in 2026 | Lucky X Study Guides</title>
+<meta name="description" content="A complete CAD study guide: Zurich domain weights, a 6-week study plan focused on scripting and security, common mistakes, and how the developer track differs from the admin path.">
+<meta name="keywords" content="ServiceNow CAD exam 2026, how to pass CAD, Certified Application Developer study guide, CAD exam prep, ServiceNow CAD practice test, CAD domain weights Zurich, ServiceNow developer certification">
+<meta name="author" content="Lukasz Szumilas">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://luckyx.dev/blog/how-to-pass-cad-2026.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Pass the ServiceNow CAD Exam in 2026">
+<meta property="og:description" content="Zurich domain weights, a 6-week study plan, scripting deep-dives, and the mistakes that cost developers a $150 retake.">
+<meta property="og:url" content="https://luckyx.dev/blog/how-to-pass-cad-2026.html">
+<meta property="og:site_name" content="Lucky X">
+<meta property="og:image" content="https://luckyx.dev/og-image.png">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-03-15">
+<meta property="article:author" content="Lukasz Szumilas">
+<meta property="article:section" content="Study Guides">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Pass the ServiceNow CAD Exam in 2026">
+<meta name="twitter:description" content="Domain weights, study plan, scripting tips, and free questions for ServiceNow CAD.">
+<meta name="twitter:image" content="https://luckyx.dev/og-image.png">
+<meta name="twitter:creator" content="@luckyxdev">
+
+<link rel="icon" type="image/svg+xml" href="/luckyx-icon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#eeebe5">
+
+<!-- Structured Data: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Pass the ServiceNow CAD Exam in 2026",
+  "description": "A complete CAD study guide: Zurich domain weights, a 6-week study plan focused on scripting and security, common mistakes, and how the developer track differs from the admin path.",
+  "image": "https://luckyx.dev/og-image.png",
+  "datePublished": "2026-03-15",
+  "dateModified": "2026-03-15",
+  "author": {
+    "@type": "Person",
+    "name": "Lukasz Szumilas",
+    "url": "https://luckyx.dev/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lucky X",
+    "url": "https://luckyx.dev/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://luckyx.dev/luckyx-icon.svg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://luckyx.dev/blog/how-to-pass-cad-2026.html"
+  }
+}
+</script>
+
+<!-- Structured Data: BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Lucky X", "item": "https://luckyx.dev/" },
+    { "@type": "ListItem", "position": 2, "name": "Study Guides", "item": "https://luckyx.dev/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "How to Pass CAD in 2026" }
+  ]
+}
+</script>
+
+<!-- Structured Data: HowTo -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Pass CAD (Certified Application Developer) in 2026",
+  "description": "A 6-week study plan to pass the ServiceNow CAD exam on your first attempt.",
+  "totalTime": "PT48H",
+  "step": [
+    {"@type": "HowToStep", "name": "Week 1: Scripting fundamentals and GlideRecord", "text": "Master GlideRecord methods: query(), get(), addQuery(), next(), getValue(), setValue(), insert(), update(). Learn GlideSystem methods and current vs previous objects in business rules."},
+    {"@type": "HowToStep", "name": "Week 2: Business rules, client scripts, and UI policies", "text": "Core automation (20%). Study before/after/async/display business rules. Build client scripts (onChange, onLoad, onSubmit). Master g_form API and GlideAjax."},
+    {"@type": "HowToStep", "name": "Week 3: Security and ACLs", "text": "Security is 20%. Study ACL evaluation order, table/field/row-level ACLs, cross-scope access policies, and application access settings in scoped apps."},
+    {"@type": "HowToStep", "name": "Week 4: Scoped applications and lifecycle", "text": "Managing Applications is 25%. Create a scoped application from scratch. Study deployment, update sets vs application repository, and Team Development conflict handling."},
+    {"@type": "HowToStep", "name": "Week 5: Data operations, UX, and remaining topics", "text": "Cover import sets, transform maps, coalesce fields, GlideAggregate (20%). Then Service Portal basics, widget structure (10%), and Design Concepts (5%)."},
+    {"@type": "HowToStep", "name": "Week 6: Full-length practice exams", "text": "Take at least two timed practice tests. 60 questions, 90 minutes. Review wrong answers by domain. Aim for 80%+ before exam day."}
+  ]
+}
+</script>
+
+<script>
+  (function() {
+    var t = localStorage.getItem('luckyx-theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+    else if (window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.setAttribute('data-theme', 'dark');
+    else document.documentElement.setAttribute('data-theme', 'light');
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BLYHHC76GG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BLYHHC76GG');
+</script>
+
+<style>
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --orange: #dd5c0c; --orange-bright: #ff8c42; --orange-deep: #8a3a08;
+  --bg: #111114; --bg-raised: #18181c; --bg-card: #1c1c21;
+  --border: rgba(255,255,255,0.06); --border-hover: rgba(221,92,12,0.35);
+  --text: #e0ddd8; --text-dim: #8a8580; --text-faint: #4a4540;
+  --star: #dd5c0c; --font: 'Outfit', sans-serif;
+  --card-shadow: 0 2px 12px rgba(0,0,0,0.35);
+  --grain-opacity: 0.022;
+}
+[data-theme="light"] {
+  --bg: #eeebe5; --bg-raised: #f7f5f1; --bg-card: #f7f5f1;
+  --border: rgba(0,0,0,0.08); --border-hover: rgba(221,92,12,0.4);
+  --text: #2a2725; --text-dim: #6b6560; --text-faint: #b0aaa3;
+  --card-shadow: 0 2px 16px rgba(0,0,0,0.05);
+  --grain-opacity: 0.012;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--text); font-family: var(--font);
+  -webkit-font-smoothing: antialiased; line-height: 1.7;
+  transition: background-color 0.5s ease, color 0.4s ease;
+}
+body::after {
+  content: ''; position: fixed; inset: 0; pointer-events: none;
+  opacity: var(--grain-opacity); z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+a { color: var(--orange); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Theme toggle */
+.theme-toggle-wrap { position: fixed; top: 16px; right: 16px; z-index: 1001; }
+.theme-toggle { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border); background: var(--bg-raised); cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.theme-toggle svg { width: 18px; height: 18px; stroke: var(--text-dim); stroke-width: 2; fill: none; }
+
+/* Layout */
+.bp-wrap { max-width: 1040px; margin: 0 auto; padding: 40px 24px 80px; }
+.bp-back { display: inline-flex; align-items: center; gap: 6px; color: var(--text-dim); font-size: 0.9rem; margin-bottom: 12px; transition: color 0.2s; }
+.bp-back:hover { color: var(--orange); text-decoration: none; }
+.bp-back svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 2; fill: none; }
+
+.bp-breadcrumb { font-size: 0.82rem; color: var(--text-faint); margin-bottom: 32px; }
+.bp-breadcrumb a { color: var(--text-dim); }
+.bp-breadcrumb a:hover { color: var(--orange); }
+.bp-breadcrumb span { margin: 0 6px; }
+
+/* Grid: article + sidebar */
+.bp-grid { display: grid; grid-template-columns: 1fr; gap: 48px; }
+@media (min-width: 1040px) {
+  .bp-grid { grid-template-columns: 1fr 220px; }
+}
+
+/* Article header */
+.bp-tag { display: inline-block; background: rgba(221,92,12,0.1); color: var(--orange); font-size: 0.78rem; font-weight: 600; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.04em; }
+.bp-meta { display: flex; gap: 16px; font-size: 0.82rem; color: var(--text-dim); margin-bottom: 20px; flex-wrap: wrap; }
+.bp-header h1 { font-size: 2.2rem; font-weight: 800; line-height: 1.15; margin-bottom: 12px; }
+@media (max-width: 640px) { .bp-header h1 { font-size: 1.6rem; } }
+.bp-subtitle { font-size: 1.08rem; color: var(--text-dim); line-height: 1.6; margin-bottom: 40px; }
+
+/* Prose */
+.bp-body h2 { font-size: 1.45rem; font-weight: 700; margin: 48px 0 16px; line-height: 1.25; }
+.bp-body h3 { font-size: 1.15rem; font-weight: 600; margin: 32px 0 12px; }
+.bp-body p { margin-bottom: 18px; max-width: 720px; }
+.bp-body ul, .bp-body ol { margin: 0 0 18px 24px; max-width: 720px; }
+.bp-body li { margin-bottom: 6px; }
+.bp-body blockquote { border-left: 3px solid var(--orange); padding: 12px 20px; margin: 24px 0; background: var(--bg-raised); border-radius: 0 10px 10px 0; font-style: italic; color: var(--text-dim); }
+
+/* Domain table */
+.bp-domain-table { width: 100%; max-width: 720px; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.92rem; }
+.bp-domain-table th { text-align: left; font-weight: 600; padding: 10px 14px; border-bottom: 2px solid var(--orange); color: var(--text); }
+.bp-domain-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); }
+.bp-domain-table tr:last-child td { border-bottom: none; }
+.bp-domain-table .bp-weight { color: var(--orange); font-weight: 600; text-align: right; white-space: nowrap; }
+
+/* Week cards */
+.bp-weeks { display: grid; gap: 16px; max-width: 720px; margin: 20px 0 28px; }
+.bp-week { background: var(--bg-raised); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+.bp-week-label { font-size: 0.78rem; font-weight: 600; color: var(--orange); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px; }
+.bp-week p { margin-bottom: 0; }
+
+/* CTA box */
+.bp-cta-box { background: var(--bg-raised); border-top: 3px solid var(--orange); border-radius: 0 0 14px 14px; padding: 28px 24px; margin: 36px 0; max-width: 720px; }
+.bp-cta-box p { margin-bottom: 14px; }
+.bp-cta-box .bp-cta-btn { display: inline-block; background: var(--orange); color: #fff; font-family: var(--font); font-size: 1rem; font-weight: 600; padding: 12px 28px; border-radius: 10px; transition: background 0.2s, transform 0.15s; }
+.bp-cta-box .bp-cta-btn:hover { background: var(--orange-bright); text-decoration: none; transform: translateY(-1px); }
+
+/* Email section */
+.bp-email-section { background: var(--bg-raised); border: 1px solid var(--border); border-radius: 14px; padding: 32px 24px; margin: 40px 0; max-width: 720px; text-align: center; }
+.bp-email-section h3 { font-size: 1.2rem; margin-bottom: 8px; }
+.bp-email-section p { color: var(--text-dim); margin-bottom: 16px; font-size: 0.95rem; }
+.bp-email-section form { display: flex; gap: 10px; max-width: 400px; margin: 0 auto; }
+.bp-email-section input[type="email"] {
+  flex: 1; padding: 10px 14px; border-radius: 8px; border: 1px solid var(--border);
+  background: var(--bg); color: var(--text); font-family: var(--font); font-size: 0.92rem;
+}
+.bp-email-section input[type="email"]::placeholder { color: var(--text-faint); }
+.bp-email-section button {
+  background: var(--orange); color: #fff; border: none; padding: 10px 20px;
+  border-radius: 8px; font-family: var(--font); font-weight: 600; font-size: 0.92rem; cursor: pointer;
+  transition: background 0.2s;
+}
+.bp-email-section button:hover { background: var(--orange-bright); }
+
+/* Sidebar TOC */
+.bp-toc { display: none; }
+@media (min-width: 1040px) {
+  .bp-toc {
+    display: block; position: sticky; top: 80px; align-self: start;
+    border-left: 2px solid var(--border); padding-left: 16px;
+  }
+}
+.bp-toc-title { font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-faint); margin-bottom: 12px; }
+.bp-toc a { display: block; font-size: 0.84rem; color: var(--text-dim); padding: 5px 0; transition: color 0.2s; line-height: 1.35; }
+.bp-toc a:hover { color: var(--orange); text-decoration: none; }
+.bp-toc a.active { color: var(--orange); }
+
+/* Footer */
+.bp-footer { text-align: center; padding: 40px 24px; font-size: 0.84rem; color: var(--text-faint); border-top: 1px solid var(--border); margin-top: 60px; }
+.bp-footer a { color: var(--text-dim); }
+
+/* Responsive table */
+@media (max-width: 640px) {
+  .bp-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 20px -12px 28px; padding: 0 12px; }
+  .bp-table-wrap .bp-domain-table { min-width: 500px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Theme toggle -->
+<div class="theme-toggle-wrap">
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+  </button>
+</div>
+
+<div class="bp-wrap">
+
+  <!-- Back link -->
+  <a href="/blog/" class="bp-back">
+    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    Back to Study Guides
+  </a>
+
+  <!-- Breadcrumb -->
+  <nav class="bp-breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Lucky X</a><span>/</span>
+    <a href="/blog/">Study Guides</a><span>/</span>
+    How to pass CAD in 2026
+  </nav>
+
+  <div class="bp-grid">
+    <!-- Main article -->
+    <article class="bp-article">
+      <header class="bp-header">
+        <span class="bp-tag">Study guide</span>
+        <div class="bp-meta">
+          <span>March 15, 2026</span>
+          <span>14 min read</span>
+        </div>
+        <h1>How to pass the ServiceNow CAD exam in 2026</h1>
+        <p class="bp-subtitle">The Certified Application Developer exam tests scripting, security, scoped applications, and the development lifecycle on ServiceNow. This guide covers the Zurich domain weights, a 6-week study plan, and the scripting traps that catch experienced developers off guard.</p>
+      </header>
+
+      <div class="bp-body">
+
+        <h2 id="what-is-cad">What is CAD?</h2>
+
+        <p>CAD stands for Certified Application Developer. It is ServiceNow's certification for people who build custom applications on the platform: writing business rules, client scripts, script includes, building scoped apps, managing security through ACLs, and working with the application lifecycle.</p>
+
+        <p>CSA (Certified System Administrator) is a prerequisite. You need CSA before you can register for CAD. That is because CAD assumes you already know platform fundamentals: tables, forms, lists, roles, update sets, and basic navigation. CAD builds on top of that with scripting, application security, and development best practices.</p>
+
+        <p>Where CSA asks "how do you configure the platform?", CAD asks "how do you build on it?" The questions require you to understand GlideRecord, GlideSystem, GlideAjax, client-server communication, and when to use each scripting pattern. If you have never written a business rule or client script, this exam will be hard.</p>
+
+        <p>For career positioning, CAD is the credential that separates administrators from developers. ServiceNow developer roles typically pay $110,000 to $145,000 depending on market and experience. The certification proves you can do more than configure out-of-the-box features.</p>
+
+
+        <h2 id="exam-format">Exam format and logistics</h2>
+
+        <p>The CAD exam has approximately 60 questions. You get 90 minutes. The passing score is around 70%, though ServiceNow uses scaled scoring and does not publish the exact cutoff.</p>
+
+        <p>Questions are multiple-choice. Some have a single answer, others ask you to select two or three. The multi-select questions are where developers lose the most points because the platform has specific behaviors that differ from what a generic developer might expect. A JavaScript developer who has never worked on ServiceNow will get tripped up by scoping rules, GlideRecord behavior in scoped apps, and the difference between current and previous objects in business rules.</p>
+
+        <p>The exam runs on Pearson VUE. You can take it at a testing center or online with the OnVUE app. Online requires a webcam, a clear desk, and no second monitor.</p>
+
+        <p>All questions target the Zurich release. ServiceNow changes API behaviors and UI components between releases. If you studied from Xanadu documentation, some scripting answers will be wrong. Check the release selector on docs.servicenow.com before trusting a page.</p>
+
+        <p>The exam costs $300 for the first attempt. Retakes cost $150. There is no free first attempt for CAD.</p>
+
+
+        <h2 id="domains">Domain breakdown and weights</h2>
+
+        <p>ServiceNow splits CAD into six domains. Three of them (Security, Working with Data, and Automating Applications) each carry 20% or more. Together with Managing Applications at 25%, those four domains account for 85% of the exam. The remaining 15% comes from User Experience and Design Concepts.</p>
+
+        <div class="bp-table-wrap">
+        <table class="bp-domain-table">
+          <thead>
+            <tr>
+              <th>Domain</th>
+              <th>What it covers</th>
+              <th class="bp-weight">Weight</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Managing Applications</td>
+              <td>Scoped applications, application scope isolation, update sets, Team Development, source control integration, application lifecycle, deployment</td>
+              <td class="bp-weight">25%</td>
+            </tr>
+            <tr>
+              <td>Security</td>
+              <td>ACLs (table, field, row level), roles, scripted ACL conditions, data policies, security properties, cross-scope access, script security</td>
+              <td class="bp-weight">20%</td>
+            </tr>
+            <tr>
+              <td>Working with Data</td>
+              <td>GlideRecord, GlideAggregate, GlideSystem, import sets, transform maps, data sources, reference fields, dot-walking, encoded queries</td>
+              <td class="bp-weight">20%</td>
+            </tr>
+            <tr>
+              <td>Automating Applications</td>
+              <td>Business rules, client scripts, UI policies, UI actions, script includes, Flow Designer, scheduled jobs, events, notifications, REST/SOAP APIs</td>
+              <td class="bp-weight">20%</td>
+            </tr>
+            <tr>
+              <td>User Experience</td>
+              <td>Service Portal, UI pages, UI macros, Jelly, Angular in Service Portal, widgets, CSS and HTML customization</td>
+              <td class="bp-weight">10%</td>
+            </tr>
+            <tr>
+              <td>Design Concepts</td>
+              <td>Application design patterns, prototyping, requirements gathering, platform capabilities assessment, when to build vs when to configure</td>
+              <td class="bp-weight">5%</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+
+        <div class="bp-chart-wrap" role="img" aria-label="CAD domain weight distribution chart" style="max-width:720px;margin:20px 0 28px;">
+          <svg viewBox="0 0 600 260" width="100%" xmlns="http://www.w3.org/2000/svg">
+            <!-- Managing Applications: 25% -->
+            <text x="0" y="20" fill="currentColor" font-size="13" font-family="inherit">Managing Applications</text>
+            <rect x="190" y="8" width="330" height="20" rx="4" fill="rgba(255,255,255,0.06)"/>
+            <rect x="190" y="8" width="330" height="20" rx="4" fill="#dd5c0c" opacity="1.0"/>
+            <text x="530" y="22" fill="currentColor" font-size="13" font-family="inherit" text-anchor="start">25%</text>
+
+            <!-- Security: 20% -->
+            <text x="0" y="60" fill="currentColor" font-size="13" font-family="inherit">Security</text>
+            <rect x="190" y="48" width="330" height="20" rx="4" fill="rgba(255,255,255,0.06)"/>
+            <rect x="190" y="48" width="264" height="20" rx="4" fill="#dd5c0c" opacity="0.85"/>
+            <text x="530" y="62" fill="currentColor" font-size="13" font-family="inherit" text-anchor="start">20%</text>
+
+            <!-- Working with Data: 20% -->
+            <text x="0" y="100" fill="currentColor" font-size="13" font-family="inherit">Working with Data</text>
+            <rect x="190" y="88" width="330" height="20" rx="4" fill="rgba(255,255,255,0.06)"/>
+            <rect x="190" y="88" width="264" height="20" rx="4" fill="#dd5c0c" opacity="0.7"/>
+            <text x="530" y="102" fill="currentColor" font-size="13" font-family="inherit" text-anchor="start">20%</text>
+
+            <!-- Automating Applications: 20% -->
+            <text x="0" y="140" fill="currentColor" font-size="13" font-family="inherit">Automating Applications</text>
+            <rect x="190" y="128" width="330" height="20" rx="4" fill="rgba(255,255,255,0.06)"/>
+            <rect x="190" y="128" width="264" height="20" rx="4" fill="#dd5c0c" opacity="0.55"/>
+            <text x="530" y="142" fill="currentColor" font-size="13" font-family="inherit" text-anchor="start">20%</text>
+
+            <!-- User Experience: 10% -->
+            <text x="0" y="180" fill="currentColor" font-size="13" font-family="inherit">User Experience</text>
+            <rect x="190" y="168" width="330" height="20" rx="4" fill="rgba(255,255,255,0.06)"/>
+            <rect x="190" y="168" width="132" height="20" rx="4" fill="#dd5c0c" opacity="0.4"/>
+            <text x="530" y="182" fill="currentColor" font-size="13" font-family="inherit" text-anchor="start">10%</text>
+
+            <!-- Design Concepts: 5% -->
+            <text x="0" y="220" fill="currentColor" font-size="13" font-family="inherit">Design Concepts</text>
+            <rect x="190" y="208" width="330" height="20" rx="4" fill="rgba(255,255,255,0.06)"/>
+            <rect x="190" y="208" width="66" height="20" rx="4" fill="#dd5c0c" opacity="0.25"/>
+            <text x="530" y="222" fill="currentColor" font-size="13" font-family="inherit" text-anchor="start">5%</text>
+          </svg>
+        </div>
+
+        <p>Managing Applications at 25% is the largest domain. Many developers focus on scripting and neglect this section. The questions test scoped application behavior: what happens when a script in one scope tries to access a table in another, how application files are tracked, and how the deployment pipeline works.</p>
+
+        <p>The three 20% domains (Security, Data, Automation) together account for 60% of the exam. If you are strong in scripting but weak on ACL evaluation order or scoped app security rules, you will lose points in two of those three domains simultaneously.</p>
+
+        <p>Design Concepts at 5% is too small to spend more than a few hours on. Read the material once and move on. The questions are conceptual and test common sense about when to build a custom app versus configuring existing features.</p>
+
+
+        <!-- MID-ARTICLE CTA -->
+        <div class="bp-cta-box">
+          <p>The CAD practice test on Udemy has 325 questions mapped to all six domains. Every question includes a per-option explanation with links to the official Zurich documentation. The course costs $9.99 with the referral link below.</p>
+          <p>A retake costs $150. Preparation costs less than a coffee.</p>
+          <a href="https://www.udemy.com/course/pass-your-servicenow-cad-exam/?referralCode=CF61F2B36C7F02F40EFB" target="_blank" rel="noopener" class="bp-cta-btn">Get the 325-question practice test ($9.99)</a>
+        </div>
+
+
+        <h2 id="study-plan">6-week study plan</h2>
+
+        <p>CAD requires more study time than CSA because the material is deeper. You need to understand not just what a feature does, but how it behaves under different scripting and security conditions. This plan assumes 8 to 10 hours per week.</p>
+
+        <div class="bp-weeks">
+          <div class="bp-week">
+            <div class="bp-week-label">Week 1: Scripting fundamentals and GlideRecord</div>
+            <p>If you passed CSA, you already know the basics. CAD goes deeper. Spend this week mastering GlideRecord: query(), get(), addQuery(), addEncodedQuery(), next(), getValue(), setValue(), insert(), update(), deleteRecord(). Practice writing GlideRecord scripts in background scripts on your PDI. Learn GlideSystem methods: gs.getUser(), gs.hasRole(), gs.addInfoMessage(), gs.log(). Understand the difference between current and previous objects in business rules.</p>
+          </div>
+          <div class="bp-week">
+            <div class="bp-week-label">Week 2: Business rules, client scripts, and UI policies</div>
+            <p>This is core automation (20%). Study when each type runs: before vs after vs async vs display business rules. Build client scripts in your PDI: onChange, onLoad, onSubmit, onCellEdit. Understand the g_form API: getValue, setValue, setVisible, setMandatory, setReadOnly, addOption, clearOptions. Know the difference between a UI policy and a client script. Learn when to use script includes and GlideAjax for client-server communication. Build at least two working examples of each.</p>
+          </div>
+          <div class="bp-week">
+            <div class="bp-week-label">Week 3: Security and ACLs</div>
+            <p>Security is 20% and the domain where experienced developers make the most mistakes. Study ACL evaluation order: how table, field, and row-level ACLs interact, what "requires role" does versus a script condition, and what happens when no ACL matches (default deny). Learn how security works in scoped applications: cross-scope access policies, application access settings, and the difference between "accessible from" and "caller access." Build a custom ACL in your PDI that restricts access to a table based on a user's department.</p>
+          </div>
+          <div class="bp-week">
+            <div class="bp-week-label">Week 4: Scoped applications and lifecycle</div>
+            <p>Managing Applications is 25% of the exam. Create a scoped application from scratch in your PDI. Add tables, forms, business rules, and ACLs inside the scope. Test what happens when you try to access global tables from within the scope. Study the application deployment process: how applications move between instances, the role of update sets versus application repository, and how Team Development handles conflicts. Understand source control integration concepts.</p>
+          </div>
+          <div class="bp-week">
+            <div class="bp-week-label">Week 5: Data operations, UX, and remaining topics</div>
+            <p>Cover Working with Data (20%): import sets, transform maps, coalesce fields, data sources, GlideAggregate for counts and sums. Then handle User Experience (10%): Service Portal basics, widget structure, Angular data binding in portal context. Wrap up Design Concepts (5%) in a single sitting. These three areas together fill the gaps left by the first four weeks.</p>
+          </div>
+          <div class="bp-week">
+            <div class="bp-week-label">Week 6: Full-length practice exams</div>
+            <p>Take at least two timed practice tests. 60 questions, 90 minutes, no pausing, no looking things up. After each test, review every wrong answer. Pay attention to which domain the wrong answers cluster in. If Security or Managing Applications scores below 75%, go back to those sections. Aim for 80%+ on practice tests to give yourself margin for exam-day stress.</p>
+          </div>
+        </div>
+
+
+        <h2 id="scripting-tips">Scripting patterns the exam tests</h2>
+
+        <p>CAD assumes you can read and write ServiceNow JavaScript. The questions do not ask you to write code from scratch, but they show you code snippets and ask what the output will be, what the error is, or which alternative achieves the same result.</p>
+
+        <h3>GlideRecord in scoped apps</h3>
+
+        <p>In a scoped application, GlideRecord behavior changes. You cannot access tables from other scopes unless the application access settings allow it. The exam tests whether you know what happens when a scoped business rule tries to query a global table: does it fail silently, throw an error, or return an empty result set? (Answer: it depends on the cross-scope access policy for that table.)</p>
+
+        <h3>current vs previous</h3>
+
+        <p>In a business rule, "current" is the record being processed and "previous" is its state before the update. A common exam question shows a before-business-rule script that compares current.state to previous.state and asks when it fires. Know that "previous" is only populated on updates, not inserts. On an insert, previous fields are empty strings.</p>
+
+        <h3>Client-side GlideRecord</h3>
+
+        <p>GlideRecord calls from client scripts make synchronous server calls by default, which blocks the browser. The exam tests whether you know to use GlideAjax instead for asynchronous server lookups from the client side. If a question shows a client script using GlideRecord with a callback, understand that this is the asynchronous pattern and still has performance implications compared to GlideAjax through a script include.</p>
+
+        <h3>Flow Designer vs workflow</h3>
+
+        <p>ServiceNow is moving from legacy workflows to Flow Designer. The Zurich exam still tests both. Know the structural differences: Flow Designer uses actions and subflows, while legacy workflows use activities. Flow Designer supports IntegrationHub actions. The exam asks about triggers, conditions, and when Flow Designer is the right choice versus a business rule.</p>
+
+
+        <h2 id="common-mistakes">5 mistakes that fail developers</h2>
+
+        <p>Treating CAD like a harder version of CSA. The exams test different skills. CSA is about configuring the platform. CAD is about building on it. Studying CSA material harder will not prepare you for CAD scripting questions. You need to write code in your PDI, not just read documentation.</p>
+
+        <p>Ignoring scoped application behavior. Managing Applications is 25% of the exam, the largest single domain. Developers who have only worked in the global scope get caught by questions about scope isolation, cross-scope access, and how application files are organized. Build a scoped app from scratch before exam day.</p>
+
+        <p>Memorizing GlideRecord methods without understanding execution context. The same GlideRecord call behaves differently in a before business rule, an after business rule, a scheduled job, and a scoped application. The exam tests whether you understand where your code runs and what it can access from that context.</p>
+
+        <p>Skipping ACL evaluation order. Many developers know how to create ACLs but cannot explain the evaluation sequence. The exam asks: if a table-level ACL grants access but a field-level ACL denies it, what happens? If no ACL exists for a table, what is the default behavior? If two ACLs match the same operation, which one wins? These are the questions where memorization fails and understanding succeeds.</p>
+
+        <p>Never building in a PDI. Reading about client scripts, business rules, and scoped apps is different from building them. The exam questions describe scenarios and ask "what happens next?" If you have built the scenario before, you know the answer from experience. If you have only read about it, you are guessing between two plausible options.</p>
+
+
+        <h2 id="csa-to-cad">From CSA to CAD: what changes</h2>
+
+        <p>If you passed CSA, you already understand the platform's structure. CAD adds three layers on top of that.</p>
+
+        <p>The first layer is scripting depth. CSA touches on client scripts and business rules at a surface level. CAD expects you to read code, predict output, identify bugs, and choose the right scripting approach for a given scenario.</p>
+
+        <p>The second layer is application architecture. CSA barely mentions scoped applications. CAD makes them 25% of the exam. You need to understand scope isolation, deployment pipelines, and how to structure an application that other developers can maintain.</p>
+
+        <p>The third layer is security from a developer perspective. CSA covers ACLs as a configuration topic. CAD tests ACLs as a scripting and architecture topic: when to use a scripted ACL condition versus a role-based one, how ACLs interact with scoped applications, and what security implications your code introduces.</p>
+
+        <p>The transition from CSA to CAD typically takes 6 to 8 weeks of focused study if you are actively developing on the platform. If your day job involves building business rules and client scripts, much of the CAD material will feel like formalizing what you already do. If your role is more admin-focused, expect to spend extra time on the scripting sections.</p>
+
+
+        <h2 id="free-questions">Try 15 free practice questions</h2>
+
+        <p>The <a href="/courses/cad.html#free-quiz">CAD course page</a> has a 15-question free preview. Each question shows per-option explanations after you answer, with links to the relevant Zurich documentation. No email required, no paywall.</p>
+
+        <p>If you score above 75% on the free preview without studying, focus your remaining prep on Managing Applications (25%) and whichever 20% domain scored lowest. If you score below 50%, start from week 1 of the study plan above and give yourself the full six weeks.</p>
+
+        <p>For a broader view of where CAD fits in the ServiceNow certification ecosystem, see the <a href="/blog/which-servicenow-certification-first.html">certification decision guide</a> and the <a href="/blog/servicenow-certification-landscape-2026.html">2026 landscape reference</a>.</p>
+
+
+        <h2 id="resources">Where to go from here</h2>
+
+        <p>The official reference is <a href="https://docs.servicenow.com" target="_blank" rel="noopener">docs.servicenow.com</a>, filtered to Zurich. Read the Application Development, Security, GlideRecord API, and Flow Designer sections. The API reference pages are dense but the exam pulls directly from them.</p>
+
+        <p>ServiceNow's <a href="https://nowlearning.servicenow.com" target="_blank" rel="noopener">Now Learning</a> platform has a CAD learning path with labs. The labs are the most useful part because they put you in a real instance with guided exercises. If you do not have time for the full learning path, at least complete the labs.</p>
+
+        <p>For practice questions, the <a href="https://www.udemy.com/course/pass-your-servicenow-cad-exam/?referralCode=CF61F2B36C7F02F40EFB" target="_blank" rel="noopener">CAD practice test on Udemy</a> has 325 questions with per-option explanations and Zurich source links. At $9.99, you are spending less than 7% of what a single retake costs.</p>
+
+
+        <!-- BOTTOM CTA -->
+        <div class="bp-cta-box">
+          <p>The CAD exam costs $300. A retake costs $150. The entire 325-question practice test costs $9.99.</p>
+          <p>That covers all six domains with per-option explanations sourced from official Zurich documentation.</p>
+          <a href="https://www.udemy.com/course/pass-your-servicenow-cad-exam/?referralCode=CF61F2B36C7F02F40EFB" target="_blank" rel="noopener" class="bp-cta-btn">Get the 325-question practice test ($9.99)</a>
+        </div>
+
+
+        <!-- EMAIL CAPTURE -->
+        <div class="bp-email-section">
+          <h3>Get the certification roadmap</h3>
+          <p>A one-page PDF showing every ServiceNow cert path, prerequisites, and recommended order. Free, no spam.</p>
+          <form action="https://app.convertkit.com/forms/9183962/subscriptions" method="post" data-sv-form="9183962">
+            <input type="email" name="email_address" placeholder="you@company.com" required>
+            <button type="submit">Send it</button>
+          </form>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- Sidebar TOC -->
+    <aside class="bp-toc" aria-label="Table of contents">
+      <div class="bp-toc-title">On this page</div>
+      <a href="#what-is-cad">What is CAD?</a>
+      <a href="#exam-format">Exam format</a>
+      <a href="#domains">Domain breakdown</a>
+      <a href="#study-plan">6-week study plan</a>
+      <a href="#scripting-tips">Scripting patterns</a>
+      <a href="#common-mistakes">Common mistakes</a>
+      <a href="#csa-to-cad">CSA to CAD</a>
+      <a href="#free-questions">Free questions</a>
+      <a href="#resources">Where to study</a>
+    </aside>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="bp-footer">
+  &copy; 2026 Lucky X &middot; <a href="/">luckyx.dev</a> &middot; <a href="/blog/">Study Guides</a>
+</footer>
+
+<!-- Theme toggle JS -->
+<script>
+document.getElementById('themeToggle').addEventListener('click', function() {
+  var cur = document.documentElement.getAttribute('data-theme') || 'dark';
+  var next = cur === 'light' ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('luckyx-theme', next);
+});
+</script>
+
+<!-- TOC active state -->
+<script>
+(function() {
+  var toc = document.querySelector('.bp-toc');
+  if (!toc) return;
+  var links = toc.querySelectorAll('a');
+  var targets = [];
+  links.forEach(function(a) {
+    var id = a.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if (el) targets.push({ link: a, el: el });
+  });
+  if (!targets.length) return;
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        links.forEach(function(l) { l.classList.remove('active'); });
+        var match = targets.find(function(t) { return t.el === entry.target; });
+        if (match) match.link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -75% 0px' });
+  targets.forEach(function(t) { observer.observe(t.el); });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Pass CIS-Discovery in 2026: Study Guide &amp; Domain Weights | Lucky X Study Guides</title>
+<meta name="description" content="Complete study guide for the ServiceNow CIS-Discovery exam in 2026. Covers domain weights, a 5-week study plan, PDI labs, MID server setup, and practice test strategy.">
+<meta name="keywords" content="CIS-Discovery study guide, ServiceNow Discovery certification 2026, CIS-Discovery exam prep, ServiceNow Discovery practice test, how to pass CIS-Discovery">
+<meta name="author" content="Lukasz Szumilas">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://luckyx.dev/blog/how-to-pass-cis-discovery-2026.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Pass CIS-Discovery in 2026: Study Guide &amp; Domain Weights">
+<meta property="og:description" content="Complete study guide for the ServiceNow CIS-Discovery exam. Domain weights, 5-week study plan, PDI labs, and practice test strategy.">
+<meta property="og:url" content="https://luckyx.dev/blog/how-to-pass-cis-discovery-2026.html">
+<meta property="og:site_name" content="Lucky X">
+<meta property="og:image" content="https://luckyx.dev/og-image.png">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-03-16">
+<meta property="article:author" content="Lukasz Szumilas">
+<meta property="article:section" content="Study Guides">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Pass CIS-Discovery in 2026: Study Guide &amp; Domain Weights">
+<meta name="twitter:description" content="Complete study guide for the ServiceNow CIS-Discovery exam. Domain weights, 5-week plan, PDI labs, and practice tests.">
+<meta name="twitter:image" content="https://luckyx.dev/og-image.png">
+<meta name="twitter:creator" content="@luckyxdev">
+
+<link rel="icon" type="image/svg+xml" href="/luckyx-icon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#eeebe5">
+
+<!-- Structured Data: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Pass CIS-Discovery in 2026: Study Guide & Domain Weights",
+  "description": "Complete study guide for the ServiceNow CIS-Discovery exam in 2026. Covers domain weights, a 5-week study plan, PDI labs, MID server setup, and practice test strategy.",
+  "image": "https://luckyx.dev/og-image.png",
+  "datePublished": "2026-03-16",
+  "dateModified": "2026-03-16",
+  "author": {
+    "@type": "Person",
+    "name": "Lukasz Szumilas",
+    "url": "https://luckyx.dev/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lucky X",
+    "url": "https://luckyx.dev/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://luckyx.dev/luckyx-icon.svg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://luckyx.dev/blog/how-to-pass-cis-discovery-2026.html"
+  }
+}
+</script>
+
+<!-- Structured Data: BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Lucky X", "item": "https://luckyx.dev/" },
+    { "@type": "ListItem", "position": 2, "name": "Study Guides", "item": "https://luckyx.dev/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "How to Pass CIS-Discovery in 2026" }
+  ]
+}
+</script>
+
+<!-- Structured Data: HowTo -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Pass CIS-Discovery in 2026",
+  "description": "A 5-week study plan to pass the ServiceNow CIS-Discovery exam on your first attempt.",
+  "totalTime": "PT50H",
+  "step": [
+    {"@type": "HowToStep", "name": "Week 1: Discovery fundamentals and architecture", "text": "Study how ServiceNow Discovery works end to end. Learn the MID server role, probe and sensor architecture, the ECC queue, and how Discovery populates the CMDB. Set up a PDI and install a MID server."},
+    {"@type": "HowToStep", "name": "Week 2: Horizontal discovery and credentials", "text": "Focus on IP-based and network discovery. Configure Discovery schedules, create credentials for Windows, Linux, and SNMP targets. Run horizontal discovery and review results in the ECC queue."},
+    {"@type": "HowToStep", "name": "Week 3: Pattern-based discovery and service mapping", "text": "Study pattern-based discovery for application-layer detection. Learn how patterns work, how to customize them, and how Discovery feeds into Service Mapping to build application service maps."},
+    {"@type": "HowToStep", "name": "Week 4: Troubleshooting and advanced topics", "text": "Practice diagnosing probe failures, credential issues, MID server connectivity problems, and incomplete CI data. Review ECC queue entries, MID server logs, and Discovery status records."},
+    {"@type": "HowToStep", "name": "Week 5: Full-length practice exams under test conditions", "text": "Take timed practice tests: 60 questions, 90 minutes, no pausing. Review every wrong answer by domain. Target 80%+ on practice before sitting the real exam."}
+  ]
+}
+</script>
+
+<script>
+  (function() {
+    var t = localStorage.getItem('luckyx-theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+    else if (window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.setAttribute('data-theme', 'dark');
+    else document.documentElement.setAttribute('data-theme', 'light');
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BLYHHC76GG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BLYHHC76GG');
+</script>
+
+<style>
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --orange: #dd5c0c; --orange-bright: #ff8c42; --orange-deep: #8a3a08;
+  --bg: #111114; --bg-raised: #18181c; --bg-card: #1c1c21;
+  --border: rgba(255,255,255,0.06); --border-hover: rgba(221,92,12,0.35);
+  --text: #e0ddd8; --text-dim: #8a8580; --text-faint: #4a4540;
+  --star: #dd5c0c; --font: 'Outfit', sans-serif;
+  --card-shadow: 0 2px 12px rgba(0,0,0,0.35);
+  --grain-opacity: 0.022;
+}
+[data-theme="light"] {
+  --bg: #eeebe5; --bg-raised: #f7f5f1; --bg-card: #f7f5f1;
+  --border: rgba(0,0,0,0.08); --border-hover: rgba(221,92,12,0.4);
+  --text: #2a2725; --text-dim: #6b6560; --text-faint: #b0aaa3;
+  --card-shadow: 0 2px 16px rgba(0,0,0,0.05);
+  --grain-opacity: 0.012;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--text); font-family: var(--font);
+  -webkit-font-smoothing: antialiased; line-height: 1.7;
+  transition: background-color 0.5s ease, color 0.4s ease;
+}
+body::after {
+  content: ''; position: fixed; inset: 0; pointer-events: none;
+  opacity: var(--grain-opacity); z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+a { color: var(--orange); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Theme toggle */
+.theme-toggle-wrap { position: fixed; top: 16px; right: 16px; z-index: 1001; }
+.theme-toggle { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border); background: var(--bg-raised); cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.theme-toggle svg { width: 18px; height: 18px; stroke: var(--text-dim); stroke-width: 2; fill: none; }
+
+/* Layout */
+.bp-wrap { max-width: 1040px; margin: 0 auto; padding: 40px 24px 80px; }
+.bp-back { display: inline-flex; align-items: center; gap: 6px; color: var(--text-dim); font-size: 0.9rem; margin-bottom: 12px; transition: color 0.2s; }
+.bp-back:hover { color: var(--orange); text-decoration: none; }
+.bp-back svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 2; fill: none; }
+
+.bp-breadcrumb { font-size: 0.82rem; color: var(--text-faint); margin-bottom: 32px; }
+.bp-breadcrumb a { color: var(--text-dim); }
+.bp-breadcrumb a:hover { color: var(--orange); }
+.bp-breadcrumb span { margin: 0 6px; }
+
+/* Grid: article + sidebar */
+.bp-grid { display: grid; grid-template-columns: 1fr; gap: 48px; }
+@media (min-width: 1040px) {
+  .bp-grid { grid-template-columns: 1fr 220px; }
+}
+
+/* Article header */
+.bp-tag { display: inline-block; background: rgba(221,92,12,0.1); color: var(--orange); font-size: 0.78rem; font-weight: 600; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.04em; }
+.bp-meta { display: flex; gap: 16px; font-size: 0.82rem; color: var(--text-dim); margin-bottom: 20px; flex-wrap: wrap; }
+.bp-header h1 { font-size: 2.2rem; font-weight: 800; line-height: 1.15; margin-bottom: 12px; }
+@media (max-width: 640px) { .bp-header h1 { font-size: 1.6rem; } }
+.bp-subtitle { font-size: 1.08rem; color: var(--text-dim); line-height: 1.6; margin-bottom: 40px; }
+
+/* Prose */
+.bp-body h2 { font-size: 1.45rem; font-weight: 700; margin: 48px 0 16px; line-height: 1.25; }
+.bp-body h3 { font-size: 1.15rem; font-weight: 600; margin: 32px 0 12px; }
+.bp-body p { margin-bottom: 18px; max-width: 720px; }
+.bp-body ul, .bp-body ol { margin: 0 0 18px 24px; max-width: 720px; }
+.bp-body li { margin-bottom: 6px; }
+.bp-body blockquote { border-left: 3px solid var(--orange); padding: 12px 20px; margin: 24px 0; background: var(--bg-raised); border-radius: 0 10px 10px 0; font-style: italic; color: var(--text-dim); }
+
+/* Domain table */
+.bp-domain-table { width: 100%; max-width: 720px; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.92rem; }
+.bp-domain-table th { text-align: left; font-weight: 600; padding: 10px 14px; border-bottom: 2px solid var(--orange); color: var(--text); }
+.bp-domain-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); }
+.bp-domain-table tr:last-child td { border-bottom: none; }
+.bp-domain-table .bp-weight { color: var(--orange); font-weight: 600; text-align: right; white-space: nowrap; }
+
+/* Week cards */
+.bp-weeks { display: grid; gap: 16px; max-width: 720px; margin: 20px 0 28px; }
+.bp-week { background: var(--bg-raised); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+.bp-week-label { font-size: 0.78rem; font-weight: 600; color: var(--orange); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px; }
+.bp-week p { margin-bottom: 0; }
+
+/* CTA box */
+.bp-cta-box { background: var(--bg-raised); border-top: 3px solid var(--orange); border-radius: 0 0 14px 14px; padding: 28px 24px; margin: 36px 0; max-width: 720px; }
+.bp-cta-box p { margin-bottom: 14px; }
+.bp-cta-box .bp-cta-btn { display: inline-block; background: var(--orange); color: #fff; font-family: var(--font); font-size: 1rem; font-weight: 600; padding: 12px 28px; border-radius: 10px; transition: background 0.2s, transform 0.15s; }
+.bp-cta-box .bp-cta-btn:hover { background: var(--orange-bright); text-decoration: none; transform: translateY(-1px); }
+
+/* Email section */
+.bp-email-section { background: var(--bg-raised); border: 1px solid var(--border); border-radius: 14px; padding: 32px 24px; margin: 40px 0; max-width: 720px; text-align: center; }
+.bp-email-section h3 { font-size: 1.2rem; margin-bottom: 8px; }
+.bp-email-section p { color: var(--text-dim); margin-bottom: 16px; font-size: 0.95rem; }
+.bp-email-section form { display: flex; gap: 10px; max-width: 400px; margin: 0 auto; }
+.bp-email-section input[type="email"] {
+  flex: 1; padding: 10px 14px; border-radius: 8px; border: 1px solid var(--border);
+  background: var(--bg); color: var(--text); font-family: var(--font); font-size: 0.92rem;
+}
+.bp-email-section input[type="email"]::placeholder { color: var(--text-faint); }
+.bp-email-section button {
+  background: var(--orange); color: #fff; border: none; padding: 10px 20px;
+  border-radius: 8px; font-family: var(--font); font-weight: 600; font-size: 0.92rem; cursor: pointer;
+  transition: background 0.2s;
+}
+.bp-email-section button:hover { background: var(--orange-bright); }
+
+/* Sidebar TOC */
+.bp-toc { display: none; }
+@media (min-width: 1040px) {
+  .bp-toc {
+    display: block; position: sticky; top: 80px; align-self: start;
+    border-left: 2px solid var(--border); padding-left: 16px;
+  }
+}
+.bp-toc-title { font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-faint); margin-bottom: 12px; }
+.bp-toc a { display: block; font-size: 0.84rem; color: var(--text-dim); padding: 5px 0; transition: color 0.2s; line-height: 1.35; }
+.bp-toc a:hover { color: var(--orange); text-decoration: none; }
+.bp-toc a.active { color: var(--orange); }
+
+/* Footer */
+.bp-footer { text-align: center; padding: 40px 24px; font-size: 0.84rem; color: var(--text-faint); border-top: 1px solid var(--border); margin-top: 60px; }
+.bp-footer a { color: var(--text-dim); }
+</style>
+</head>
+
+<body>
+
+<!-- Theme toggle -->
+<div class="theme-toggle-wrap">
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+  </button>
+</div>
+
+<div class="bp-wrap">
+
+  <!-- Back link -->
+  <a href="/blog/" class="bp-back">
+    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    Back to Study Guides
+  </a>
+
+  <!-- Breadcrumb -->
+  <nav class="bp-breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Lucky X</a><span>/</span>
+    <a href="/blog/">Study Guides</a><span>/</span>
+    How to pass CIS-Discovery in 2026
+  </nav>
+
+  <div class="bp-grid">
+    <!-- Main article -->
+    <article class="bp-article">
+      <header class="bp-header">
+        <span class="bp-tag">Study guide</span>
+        <div class="bp-meta">
+          <span>March 16, 2026</span>
+          <span>16 min read</span>
+        </div>
+        <h1>How to pass CIS-Discovery in 2026</h1>
+        <p class="bp-subtitle">A complete breakdown of the CIS-Discovery exam: what ServiceNow Discovery does, how the exam is structured, domain weights, a 5-week study plan with PDI labs, and how to avoid the mistakes that fail most candidates.</p>
+      </header>
+
+      <div class="bp-body">
+
+        <h2 id="what-is-cis-discovery">What is CIS-Discovery?</h2>
+
+        <p>ServiceNow Discovery is the platform feature that automatically finds and maps your IT infrastructure. It scans your network, identifies servers, switches, routers, storage devices, and applications, then populates the CMDB with configuration items and their relationships. Without Discovery, teams spend hundreds of hours manually entering CI data that goes stale within weeks.</p>
+
+        <p>The CIS-Discovery certification (Certified Implementation Specialist - Discovery) tests whether you can configure Discovery from scratch, run it across different network environments, troubleshoot failures when probes and sensors return errors, and optimize the entire process so it runs efficiently at scale.</p>
+
+        <p>The exam has approximately 60 questions. You get 90 minutes. It runs on the Pearson VUE platform, either at a testing center or proctored online using the OnVUE app. The passing score uses ServiceNow's scaled scoring model. No exact cutoff is published, but candidates who consistently score 80% or higher on practice tests report passing on the real exam.</p>
+
+        <p>This is not a conceptual certification. The questions assume you have actually configured Discovery, created credentials, troubleshot probe failures, and read ECC queue entries. Candidates who only study documentation without touching a PDI consistently underperform.</p>
+
+        <p>If you are deciding between certifications, the <a href="/blog/which-servicenow-certification-first.html">which certification first guide</a> covers how Discovery fits into the broader <a href="/blog/servicenow-certification-path-2026.html">ServiceNow certification path</a>.</p>
+
+
+        <h2 id="prerequisites">Prerequisites</h2>
+
+        <p>CIS-Discovery has two important prerequisites in 2026.</p>
+
+        <p>First, ServiceNow recommends holding the <a href="/courses/csa.html">Certified System Administrator (CSA)</a> certification before attempting any CIS exam. CSA is not technically mandatory for CIS-Discovery, but the exam assumes you understand the ServiceNow platform fundamentals that CSA covers: tables, forms, ACLs, scheduled jobs, system properties, and basic administration. Without CSA-level knowledge, you will struggle with Discovery configuration questions that reference these platform concepts.</p>
+
+        <p>Second, and this one is mandatory: <a href="/blog/cis-df-mandate-explained.html">CIS-Data Foundations (CIS-DF) is now a required prerequisite</a> for CIS-Discovery. ServiceNow introduced this mandate in 2025, and it affects exactly seven CIS certifications: ITSM, Discovery, HAM, SAM, Service Mapping, SIR, and VR. You cannot earn CIS-Discovery without first holding CIS-DF.</p>
+
+        <p>The good news is that <a href="/blog/how-to-pass-cis-df-2026.html">CIS-DF is free through June 30, 2026</a>. Your first attempt costs nothing. After that date, it costs $450 per attempt with retakes at $225. If you have not passed CIS-DF yet, do that first. The <a href="/courses/cis-data-foundations.html">CIS-DF practice test</a> covers all five domains with detailed explanations.</p>
+
+        <p>If you already hold CIS-Discovery but do not have CIS-DF, you need to pass it by December 31, 2026 or your Discovery certification expires. Do not wait until November to start studying.</p>
+
+
+        <h2 id="domain-weights">Domain weights</h2>
+
+        <p>ServiceNow publishes the official domain weights in the CIS-Discovery exam blueprint. These weights tell you exactly where to allocate your study time. Getting the ratio wrong is why people who "studied everything" still fail.</p>
+
+        <table class="bp-domain-table">
+          <thead>
+            <tr>
+              <th>Domain</th>
+              <th>What it covers</th>
+              <th class="bp-weight">Weight</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Discovery fundamentals</td>
+              <td>MID server architecture, probes and sensors, ECC queue, Discovery phases, CI creation process</td>
+              <td class="bp-weight">25%</td>
+            </tr>
+            <tr>
+              <td>Horizontal discovery</td>
+              <td>IP-based scanning, network discovery, Discovery schedules, credentials, port probes, classification</td>
+              <td class="bp-weight">25%</td>
+            </tr>
+            <tr>
+              <td>Pattern-based discovery</td>
+              <td>Application patterns, custom patterns, pattern variables, horizontal patterns vs top-down patterns</td>
+              <td class="bp-weight">20%</td>
+            </tr>
+            <tr>
+              <td>Service mapping integration</td>
+              <td>Application service maps, entry points, connection attributes, Traffic-Based Discovery, map completion</td>
+              <td class="bp-weight">15%</td>
+            </tr>
+            <tr>
+              <td>Troubleshooting</td>
+              <td>Probe/sensor failures, credential errors, MID server issues, incomplete discovery, log analysis</td>
+              <td class="bp-weight">15%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="bp-chart-wrap" role="img" aria-label="CIS-Discovery domain weight distribution chart" style="max-width:720px;margin:20px 0 28px;">
+          <svg viewBox="0 0 600 220" width="100%" xmlns="http://www.w3.org/2000/svg">
+            <!-- Fundamentals: 25% -->
+            <text x="0" y="20" fill="currentColor" font-size="13" font-family="inherit">Fundamentals</text>
+            <rect x="120" y="8" width="400" height="20" rx="4" fill="rgba(255,255,255,0.06)"/>
+            <rect x="120" y="8" width="400" height="20" rx="4" fill="#dd5c0c" opacity="1.0"/>
+            <text x="530" y="22" fill="currentColor" font-size="13" font-family="inherit" text-anchor="start">25%</text>
+
+            <!-- Horizontal: 25% -->
+            <text x="0" y="60" fill="currentColor" font-size="13" font-family="inherit">Horizontal</text>
+            <rect x="120" y="48" width="400" height="20" rx="4" fill="rgba(255,255,255,0.06)"/>
+            <rect x="120" y="48" width="400" height="20" rx="4" fill="#dd5c0c" opacity="0.85"/>
+            <text x="530" y="62" fill="currentColor" font-size="13" font-family="inherit" text-anchor="start">25%</text>
+
+            <!-- Pattern-based: 20% -->
+            <text x="0" y="100" fill="currentColor" font-size="13" font-family="inherit">Patterns</text>
+            <rect x="120" y="88" width="400" height="20" rx="4" fill="rgba(255,255,255,0.06)"/>
+            <rect x="120" y="88" width="320" height="20" rx="4" fill="#dd5c0c" opacity="0.7"/>
+            <text x="530" y="102" fill="currentColor" font-size="13" font-family="inherit" text-anchor="start">20%</text>
+
+            <!-- Service Mapping: 15% -->
+            <text x="0" y="140" fill="currentColor" font-size="13" font-family="inherit">Svc Mapping</text>
+            <rect x="120" y="128" width="400" height="20" rx="4" fill="rgba(255,255,255,0.06)"/>
+            <rect x="120" y="128" width="240" height="20" rx="4" fill="#dd5c0c" opacity="0.55"/>
+            <text x="530" y="142" fill="currentColor" font-size="13" font-family="inherit" text-anchor="start">15%</text>
+
+            <!-- Troubleshooting: 15% -->
+            <text x="0" y="180" fill="currentColor" font-size="13" font-family="inherit">Troubleshoot</text>
+            <rect x="120" y="168" width="400" height="20" rx="4" fill="rgba(255,255,255,0.06)"/>
+            <rect x="120" y="168" width="240" height="20" rx="4" fill="#dd5c0c" opacity="0.4"/>
+            <text x="530" y="182" fill="currentColor" font-size="13" font-family="inherit" text-anchor="start">15%</text>
+          </svg>
+        </div>
+
+        <p>Discovery fundamentals and horizontal discovery together account for half your score. These two domains cover the core mechanics of how Discovery works: what the MID server does, how probes and sensors function, how IP ranges are scanned, and how classification turns raw data into typed CIs. If you only have time to study two domains deeply, these are the two.</p>
+
+        <p>Pattern-based discovery at 20% is the third-largest domain. This is where ServiceNow has invested the most development effort in recent releases. Patterns detect application-layer components that basic horizontal discovery misses. The exam tests whether you understand the difference between horizontal patterns and top-down patterns, how pattern variables work, and when to use custom patterns.</p>
+
+        <p>Service mapping integration (15%) and troubleshooting (15%) round out the exam. Service mapping builds on Discovery output to create visual application service maps. Troubleshooting tests your ability to diagnose real-world problems: why a probe failed, why a CI was not created, why credentials are not working.</p>
+
+        <p>For more context on how exam costs factor into your study investment, see the <a href="/blog/servicenow-certification-cost-2026.html">ServiceNow certification cost breakdown</a>.</p>
+
+
+        <h2 id="study-plan">5-week study plan</h2>
+
+        <p>This plan assumes 8 to 12 hours per week. The extra week compared to other CIS exams accounts for the hands-on lab work that CIS-Discovery demands. You cannot pass this exam on reading alone. You need time in a PDI running actual Discovery operations.</p>
+
+        <div class="bp-weeks">
+          <div class="bp-week">
+            <div class="bp-week-label">Week 1: Discovery fundamentals and architecture</div>
+            <p>Start with how Discovery works end to end. Study the MID server: what it is, where it sits in the network, how it communicates with your ServiceNow instance. Learn the probe-and-sensor model. A probe is a command sent from the MID server to a target device. A sensor processes the probe's output and writes data to the CMDB. Understand the ECC queue as the communication channel between the instance and the MID server. Set up a PDI this week and install a MID server. You will need it for every week that follows.</p>
+          </div>
+          <div class="bp-week">
+            <div class="bp-week-label">Week 2: Horizontal discovery and credentials</div>
+            <p>Focus on IP-based network discovery. Create Discovery schedules that target specific IP ranges and subnets. Configure credentials for Windows (WMI), Linux (SSH), and SNMP devices. Run your first horizontal discovery and review the results. Check the ECC queue for probe output. Look at the Discovery Status record to see which CIs were created, updated, or skipped. This week is where most candidates start building real confidence, because you can see Discovery working in your PDI.</p>
+          </div>
+          <div class="bp-week">
+            <div class="bp-week-label">Week 3: Pattern-based discovery</div>
+            <p>Move to patterns. Horizontal discovery finds devices. Pattern-based discovery finds what is running on those devices: databases, web servers, middleware, custom applications. Study the pattern editor, pattern variables, and pattern operations. Understand the difference between horizontal patterns (run during network scanning) and top-down patterns (triggered from a known entry point). Review the out-of-box patterns that ship with ServiceNow and how they detect common applications like Oracle, SQL Server, and Apache.</p>
+          </div>
+          <div class="bp-week">
+            <div class="bp-week-label">Week 4: Service mapping and troubleshooting</div>
+            <p>This week covers two domains. For service mapping integration, study how Discovery output feeds into Service Mapping to build application service maps. Learn entry points, connection attributes, and how Traffic-Based Discovery supplements pattern-based approaches. For troubleshooting, work through common failure scenarios: credential failures, port probe timeouts, MID server connectivity issues, and incomplete CI data. Practice reading ECC queue entries and MID server logs. The <a href="/courses/cis-service-mapping.html">CIS-Service Mapping course page</a> has additional context on the mapping side.</p>
+          </div>
+          <div class="bp-week">
+            <div class="bp-week-label">Week 5: Full-length practice exams</div>
+            <p>Take timed practice tests under real exam conditions. 60 questions, 90 minutes, no pausing, no looking things up. After each test, review every wrong answer and identify which domain it belongs to. If you score below 80% in any domain, go back to that domain's documentation and PDI exercises before taking another test. Aim for 80% or higher on at least two consecutive practice tests before booking your real exam. Stress costs you 5 to 10 points on exam day, so 80% on practice gives you a safety margin.</p>
+          </div>
+        </div>
+
+        <p>For general study strategies that apply across all ServiceNow exams, the <a href="/blog/how-to-study-for-servicenow-exams.html">how to study for ServiceNow exams guide</a> covers time management, note-taking, and retention techniques.</p>
+
+
+        <!-- MID-ARTICLE CTA -->
+        <div class="bp-cta-box">
+          <p>The CIS-Discovery practice test on Udemy covers all five exam domains with detailed per-option explanations. Every question links back to official ServiceNow documentation so you can verify answers yourself.</p>
+          <p>The exam costs $450 per attempt. A retake costs $225. Preparation with real practice questions is the most cost-effective insurance against a failed attempt.</p>
+          <a href="/courses/cis-discovery.html" class="bp-cta-btn">View CIS-Discovery practice tests</a>
+        </div>
+
+
+        <h2 id="pdi-labs">PDI practice labs</h2>
+
+        <p>A Personal Developer Instance (PDI) is free from ServiceNow. Request one at developer.servicenow.com. These labs are not optional for CIS-Discovery. The exam tests practical knowledge that you can only build by doing.</p>
+
+        <h3>Lab 1: Install and validate a MID server</h3>
+
+        <p>Download the MID server installer from your PDI. Install it on your local machine or a cloud VM. Configure the config.xml with your instance URL, MID server user credentials, and a unique name. Start the MID server service and verify it shows as "Up" in your instance under MID Servers. Test the connection by running a simple ECC queue test. This lab teaches you the architecture that every other Discovery feature depends on.</p>
+
+        <h3>Lab 2: Create Discovery credentials</h3>
+
+        <p>Go to Discovery > Credentials in your PDI. Create a Windows credential using a local admin account. Create a Linux/Unix credential using SSH with either password or key-based authentication. Create an SNMP credential with a community string. Assign each credential to a credential set. Understanding how credentials are organized, prioritized, and tested is critical. The exam will ask you what happens when credentials fail and how the fallback process works.</p>
+
+        <h3>Lab 3: Configure and run a Discovery schedule</h3>
+
+        <p>Create a new Discovery schedule. Set the IP range to a small subnet (your local network or a range that includes your MID server host). Select the MID server you installed in Lab 1. Choose the appropriate Discovery type (IP-based for horizontal discovery). Run the schedule. Watch the Discovery Status record update in real time. Check which CIs were created. Review the ECC queue to see the probes that ran and the sensor output that came back.</p>
+
+        <h3>Lab 4: Run horizontal patterns</h3>
+
+        <p>After horizontal discovery completes, check whether any patterns triggered on the discovered CIs. Look at the Discovery Status for pattern matches. If your MID server host is running any detectable applications (a web server, a database), you should see pattern-based CIs appear in addition to the base server CI. If no patterns matched, review the pattern logs to understand why. This teaches you how horizontal and pattern-based discovery work together.</p>
+
+        <h3>Lab 5: Troubleshoot a failed discovery</h3>
+
+        <p>Intentionally break something. Change a credential to the wrong password. Run Discovery against a host that is firewalled. Point a schedule at a non-existent IP range. Then walk through the troubleshooting process: check the Discovery Status, look for error messages, open the ECC queue entries, read the MID server log on disk. This lab builds the diagnostic skill that the troubleshooting domain tests. Most candidates never practice failure scenarios, which is exactly why those questions trip them up.</p>
+
+        <p>For additional free resources and lab ideas, see the <a href="/blog/free-servicenow-study-resources.html">free ServiceNow study resources guide</a>.</p>
+
+
+        <h2 id="common-mistakes">Common mistakes</h2>
+
+        <p><strong>Not understanding MID server architecture.</strong> The MID server is the foundation of everything in Discovery. It sits between your ServiceNow instance and your network. Every probe goes through it. Every sensor result comes back through it. Candidates who treat the MID server as "just a thing you install" miss questions about MID server clustering, load balancing, network segmentation, and which protocols the MID server uses to communicate with both the instance and the targets. Study the MID server deeply. It appears in questions across all five domains.</p>
+
+        <p><strong>Ignoring the ECC queue.</strong> The External Communication Channel queue is where all Discovery communication is logged. When a probe fails, the ECC queue shows you what was sent and what came back. When a sensor produces unexpected output, the ECC queue has the raw data. Candidates who never look at the ECC queue during their PDI practice cannot answer questions that show ECC queue entries and ask what went wrong. Spend time in the ECC queue during every lab exercise.</p>
+
+        <p><strong>Confusing horizontal and pattern-based discovery.</strong> Horizontal discovery scans IP ranges and identifies devices at the network layer. Pattern-based discovery detects applications running on those devices. They are not alternatives to each other. They work in sequence. Horizontal discovery runs first to find hosts. Patterns run on the discovered hosts to detect applications. The exam tests whether you know which type of discovery found a given CI and what triggers each type to run. Get this distinction clear in week 1 and reinforce it in every lab.</p>
+
+        <p><strong>Not practicing Service Mapping integration.</strong> Discovery and Service Mapping are separate products that work together. Discovery populates the CMDB with individual CIs. Service Mapping connects those CIs into application service maps that show how an application's components relate to each other. The exam tests the integration points: how Discovery data feeds into Service Mapping, what entry points are, and how connection attributes define relationships. If you only study Discovery in isolation, you will miss 15% of the exam.</p>
+
+        <p><strong>Studying without a timer.</strong> Knowing the material and answering 60 questions in 90 minutes are different skills. That is 90 seconds per question on average. Multi-select questions require you to evaluate every option carefully, which takes longer. If you never practice under timed conditions, you will run out of time on the real exam or rush through the last 10 questions and get them wrong. Take at least three full-length timed practice tests before exam day.</p>
+
+        <p><strong>Skipping the CIS-DF prerequisite.</strong> Some candidates plan to pass CIS-DF "later" and focus on CIS-Discovery first. That does not work. CIS-DF is mandatory. You cannot register for CIS-Discovery without it. And the CMDB knowledge from CIS-DF directly applies to Discovery questions about how CIs are created, classified, and reconciled. Pass <a href="/courses/cis-data-foundations.html">CIS-DF</a> first. It makes CIS-Discovery easier, not harder.</p>
+
+
+        <h2 id="practice-tests">Practice tests</h2>
+
+        <p>Practice tests serve two purposes for CIS-Discovery. First, they show you what the questions actually look like. ServiceNow certification questions have a specific style: scenario-based, often multi-select, with answer options that are close enough to require precise knowledge. Reading documentation does not prepare you for that format. Answering practice questions does.</p>
+
+        <p>Second, practice tests reveal your weak domains before the real exam does. After each practice test, sort your wrong answers by domain. If you missed four questions in troubleshooting but only one in horizontal discovery, your study time should shift toward troubleshooting. This domain-based review strategy is more effective than re-reading everything equally.</p>
+
+        <p>The <a href="/courses/cis-discovery.html">CIS-Discovery practice test course</a> has questions mapped to all five exam domains. Each question includes a detailed explanation that covers why the correct answer is right and why each wrong answer is wrong. The explanations link back to official ServiceNow documentation so you can verify everything independently.</p>
+
+        <p>When you take practice tests, simulate real conditions. Set a timer for 90 minutes. Close all other tabs. Do not look anything up. Mark questions you are unsure about and come back to them at the end, just like you would on the real exam. Your practice score under these conditions is the best predictor of your real score.</p>
+
+        <p>If you want a quick self-assessment before committing to full practice tests, the <a href="/quiz.html">certification recommendation quiz</a> can help you gauge your readiness across different ServiceNow certification paths.</p>
+
+
+        <h2 id="faq">Frequently asked questions</h2>
+
+        <h3>How much does the CIS-Discovery exam cost?</h3>
+
+        <p>The CIS-Discovery exam costs $450 for the first attempt and $225 for each retake. Unlike CIS-DF, there is no free first attempt promotion for CIS-Discovery. That $450 price tag makes preparation especially important. One failed attempt costs more than any study materials you could buy. For a full breakdown of all ServiceNow exam pricing, see the <a href="/blog/servicenow-certification-cost-2026.html">certification cost guide</a>.</p>
+
+        <h3>Do I need CIS-DF before CIS-Discovery?</h3>
+
+        <p>Yes. CIS-Data Foundations became a mandatory prerequisite for CIS-Discovery as part of ServiceNow's 2025 mandate. You cannot register for CIS-Discovery without holding CIS-DF. The mandate affects seven CIS certifications total: ITSM, Discovery, HAM, SAM, Service Mapping, SIR, and VR. Read the <a href="/blog/cis-df-mandate-explained.html">full mandate explanation</a> for details and deadlines.</p>
+
+        <h3>Can I pass CIS-Discovery without hands-on experience?</h3>
+
+        <p>It is possible but unlikely. The exam asks scenario-based questions that assume you have configured Discovery, read ECC queue entries, troubleshot credential failures, and worked with Discovery schedules. Candidates with hands-on PDI experience consistently score higher than those who only read documentation. A PDI is free. There is no reason to skip the hands-on work.</p>
+
+        <h3>How long should I study for CIS-Discovery?</h3>
+
+        <p>Plan for 5 weeks at 8 to 12 hours per week. That gives you approximately 40 to 60 hours of total study time. Candidates with existing Discovery experience on real projects can compress this to 3 to 4 weeks. Candidates new to Discovery should not compress below 5 weeks because the PDI labs need time to set up and iterate through.</p>
+
+        <h3>What is the difference between CIS-Discovery and CIS-Service Mapping?</h3>
+
+        <p>CIS-Discovery focuses on how ServiceNow finds and classifies individual CIs: the MID server, probes, sensors, credentials, horizontal scanning, and pattern-based detection. CIS-Service Mapping focuses on how those individual CIs get connected into application service maps that show business service dependencies. Discovery populates the CMDB. Service Mapping organizes what Discovery found into meaningful service views. Many candidates pursue both certifications because the technologies work together, but they are separate exams with separate study paths.</p>
+
+
+        <!-- BOTTOM CTA -->
+        <div class="bp-cta-box">
+          <p>CIS-DF is free through June 30, 2026. It is mandatory before you can take CIS-Discovery. If you have not passed it yet, start there.</p>
+          <p>The CIS-DF practice test has 470 questions covering all five domains with per-option explanations sourced from official Zurich documentation. Your free first exam attempt is worth $450. Preparation protects that investment.</p>
+          <a href="/courses/cis-data-foundations.html" class="bp-cta-btn">Get ready for the free CIS-DF exam</a>
+        </div>
+
+
+        <!-- EMAIL CAPTURE -->
+        <div class="bp-email-section">
+          <h3>Get the free certification roadmap</h3>
+          <p>A PDF with all 18 ServiceNow certifications, recommended order, and prerequisite chains. Yours for free.</p>
+          <form class="lead-form" id="blogLeadForm" action="#" method="POST">
+            <input type="email" name="email" placeholder="your@email.com" required autocomplete="email">
+            <button type="submit">Download</button>
+          </form>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- Sidebar TOC -->
+    <aside class="bp-toc" aria-label="Table of contents">
+      <div class="bp-toc-title">Contents</div>
+      <a href="#what-is-cis-discovery">What is CIS-Discovery?</a>
+      <a href="#prerequisites">Prerequisites</a>
+      <a href="#domain-weights">Domain weights</a>
+      <a href="#study-plan">5-week study plan</a>
+      <a href="#pdi-labs">PDI practice labs</a>
+      <a href="#common-mistakes">Common mistakes</a>
+      <a href="#practice-tests">Practice tests</a>
+      <a href="#faq">FAQ</a>
+    </aside>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="bp-footer">
+  &copy; 2026 Lucky X &middot; <a href="/">luckyx.dev</a> &middot; <a href="/blog/">Study Guides</a>
+</footer>
+
+<!-- Theme toggle JS -->
+<script>
+document.getElementById('themeToggle').addEventListener('click', function() {
+  var cur = document.documentElement.getAttribute('data-theme') || 'dark';
+  var next = cur === 'light' ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('luckyx-theme', next);
+});
+</script>
+
+<!-- ConvertKit form handler -->
+<script>
+(function() {
+  var form = document.getElementById('blogLeadForm');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var email = form.querySelector('input[type="email"]').value;
+    if (!email) return;
+    var data = new FormData();
+    data.append('email_address', email);
+    data.append('api_key', 'x1gPqIj1iFC0OPrvMFrxag');
+    fetch('https://api.convertkit.com/v3/forms/9183962/subscribe', {
+      method: 'POST',
+      body: data
+    })
+    .then(function(r) { return r.json(); })
+    .then(function() {
+      form.innerHTML = '<p style="color:var(--orange);font-weight:600;">Check your inbox for the roadmap PDF.</p>';
+    })
+    .catch(function() {
+      form.innerHTML = '<p style="color:#c44;">Something went wrong. Try again later.</p>';
+    });
+  });
+})();
+</script>
+
+<!-- TOC active state tracking -->
+<script>
+(function() {
+  var toc = document.querySelector('.bp-toc');
+  if (!toc) return;
+  var links = toc.querySelectorAll('a');
+  var sections = [];
+  links.forEach(function(link) {
+    var id = link.getAttribute('href').replace('#', '');
+    var el = document.getElementById(id);
+    if (el) sections.push({ id: id, el: el, link: link });
+  });
+  if (!sections.length) return;
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        links.forEach(function(l) { l.classList.remove('active'); });
+        var match = sections.find(function(s) { return s.el === entry.target; });
+        if (match) match.link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-80px 0px -70% 0px' });
+
+  sections.forEach(function(s) { observer.observe(s.el); });
+})();
+</script>
+
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How to Pass the ServiceNow CSA Exam in 2026 | Lucky X Blog</title>
+<title>How to Pass the ServiceNow CSA Exam in 2026 | Lucky X Study Guides</title>
 <meta name="description" content="Everything you need to pass CSA on the first attempt: Zurich domain weights, a 5-week study plan, the five mistakes that fail people, and how to use your PDI effectively.">
 <meta name="keywords" content="ServiceNow CSA exam 2026, how to pass CSA, Certified System Administrator study guide, CSA exam prep, ServiceNow CSA practice test, CSA domain weights Zurich">
 <meta name="author" content="Lukasz Szumilas">
@@ -72,8 +72,26 @@
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Lucky X", "item": "https://luckyx.dev/" },
-    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://luckyx.dev/blog/" },
+    { "@type": "ListItem", "position": 2, "name": "Study Guides", "item": "https://luckyx.dev/blog/" },
     { "@type": "ListItem", "position": 3, "name": "How to Pass CSA in 2026" }
+  ]
+}
+</script>
+
+<!-- Structured Data: HowTo -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Pass CSA (Certified System Administrator) in 2026",
+  "description": "A 5-week study plan to pass the ServiceNow CSA exam on your first attempt.",
+  "totalTime": "PT40H",
+  "step": [
+    {"@type": "HowToStep", "name": "Week 1: Platform fundamentals and navigation", "text": "Set up a PDI from developer.servicenow.com. Cover Platform Overview (~7%) and Instance Configuration (~11%). Navigate the application menu, explore lists and forms, experiment with filters and views."},
+    {"@type": "HowToStep", "name": "Week 2: Database administration and security", "text": "This is 27% of the exam. Learn tables, columns, data dictionary, ACLs, roles, groups, import sets, and data policies. Master ACL evaluation order."},
+    {"@type": "HowToStep", "name": "Week 3: Self-service and process automation", "text": "Another 20% domain. Build a service catalog item from scratch. Study knowledge management, SLAs, notifications, and inbound email actions."},
+    {"@type": "HowToStep", "name": "Week 4: Collaboration apps and development basics", "text": "Cover task management, incident/problem/change workflows (20%), then client scripts, UI policies, business rules, and UI actions (15%)."},
+    {"@type": "HowToStep", "name": "Week 5: Full-length practice exams", "text": "Take at least two timed tests. 60 questions, 90 minutes, no pausing. Review wrong answers by domain. Aim for 80%+ before exam day."}
   ]
 }
 </script>
@@ -244,13 +262,13 @@ a:hover { text-decoration: underline; }
   <!-- Back link -->
   <a href="/blog/" class="bp-back">
     <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-    Back to blog
+    Back to Study Guides
   </a>
 
   <!-- Breadcrumb -->
   <nav class="bp-breadcrumb" aria-label="Breadcrumb">
     <a href="/">Lucky X</a><span>/</span>
-    <a href="/blog/">Blog</a><span>/</span>
+    <a href="/blog/">Study Guides</a><span>/</span>
     How to pass CSA in 2026
   </nav>
 
@@ -264,7 +282,7 @@ a:hover { text-decoration: underline; }
           <span>14 min read</span>
         </div>
         <h1>How to pass the ServiceNow CSA exam in 2026</h1>
-        <p class="bp-subtitle">The Certified System Administrator exam is the entry point for every ServiceNow career path. This guide covers the Zurich domain weights, a week-by-week study plan, and the mistakes that cost people a $225 retake.</p>
+        <p class="bp-subtitle">The Certified System Administrator exam is the entry point for every ServiceNow career path. This guide covers the Zurich domain weights, a week-by-week study plan, and the mistakes that cost people a $150 retake.</p>
       </header>
 
       <div class="bp-body">
@@ -286,11 +304,11 @@ a:hover { text-decoration: underline; }
 
         <p>Most questions are multiple-choice with a single correct answer. Some ask you to select two or three options. Those multi-select questions are the hardest to get right because partial credit does not exist. Miss one correct option out of three and you score zero on that question.</p>
 
-        <p>The exam runs on the Pearson VUE platform. ServiceNow migrated from Kryterion/Webassessor in November 2025. You can take it at a Pearson VUE testing center or online with the OnVUE app. The online option requires a webcam, a clear desk, and no second monitor.</p>
+        <p>The exam runs on the Pearson VUE platform. You can take it at a Pearson VUE testing center or online with the OnVUE app. The online option requires a webcam, a clear desk, and no second monitor.</p>
 
         <p>All questions target the Zurich release. If you study from Xanadu or Washington documentation, some answers will be wrong. Always check the release selector on docs.servicenow.com before trusting a page.</p>
 
-        <p>The exam costs $450 for the first attempt. Retakes cost $225. Unlike CIS-DF, there is no free first attempt for CSA. That makes preparation worth more per dollar: a $9.99 practice test versus a $225 retake is a 22x return on investment if it helps you pass on the first try.</p>
+        <p>The exam costs $300 for the first attempt. Retakes cost $150. Unlike CIS-DF, there is no free first attempt for CSA. That makes preparation worth more per dollar: a $9.99 practice test versus a $150 retake is a 15x return on investment if it helps you pass on the first try.</p>
 
 
         <h2 id="domains">Domain breakdown and weights</h2>
@@ -341,6 +359,46 @@ a:hover { text-decoration: underline; }
         </table>
         </div>
 
+        <div class="bp-chart-wrap" role="img" aria-label="CSA domain weight distribution chart" style="max-width:720px;margin:20px 0 28px;">
+          <svg viewBox="0 0 600 260" width="100%" xmlns="http://www.w3.org/2000/svg">
+            <!-- Database Administration & Security: 27% -->
+            <text x="0" y="20" fill="currentColor" font-size="13" font-family="inherit">Database Admin &amp; Security</text>
+            <rect x="220" y="8" width="300" height="20" rx="4" fill="rgba(255,255,255,0.06)"/>
+            <rect x="220" y="8" width="300" height="20" rx="4" fill="#dd5c0c" opacity="1.0"/>
+            <text x="530" y="22" fill="currentColor" font-size="13" font-family="inherit" text-anchor="start">27%</text>
+
+            <!-- Collaboration & Automation: 20% -->
+            <text x="0" y="60" fill="currentColor" font-size="13" font-family="inherit">Collaboration &amp; Automation</text>
+            <rect x="220" y="48" width="300" height="20" rx="4" fill="rgba(255,255,255,0.06)"/>
+            <rect x="220" y="48" width="222" height="20" rx="4" fill="#dd5c0c" opacity="0.85"/>
+            <text x="530" y="62" fill="currentColor" font-size="13" font-family="inherit" text-anchor="start">20%</text>
+
+            <!-- Self-Service & Process Automation: 20% -->
+            <text x="0" y="100" fill="currentColor" font-size="13" font-family="inherit">Self-Service &amp; Process Auto</text>
+            <rect x="220" y="88" width="300" height="20" rx="4" fill="rgba(255,255,255,0.06)"/>
+            <rect x="220" y="88" width="222" height="20" rx="4" fill="#dd5c0c" opacity="0.7"/>
+            <text x="530" y="102" fill="currentColor" font-size="13" font-family="inherit" text-anchor="start">20%</text>
+
+            <!-- Application Development: 15% -->
+            <text x="0" y="140" fill="currentColor" font-size="13" font-family="inherit">Application Development</text>
+            <rect x="220" y="128" width="300" height="20" rx="4" fill="rgba(255,255,255,0.06)"/>
+            <rect x="220" y="128" width="167" height="20" rx="4" fill="#dd5c0c" opacity="0.55"/>
+            <text x="530" y="142" fill="currentColor" font-size="13" font-family="inherit" text-anchor="start">15%</text>
+
+            <!-- Instance Configuration: 11% -->
+            <text x="0" y="180" fill="currentColor" font-size="13" font-family="inherit">Instance Configuration</text>
+            <rect x="220" y="168" width="300" height="20" rx="4" fill="rgba(255,255,255,0.06)"/>
+            <rect x="220" y="168" width="122" height="20" rx="4" fill="#dd5c0c" opacity="0.4"/>
+            <text x="530" y="182" fill="currentColor" font-size="13" font-family="inherit" text-anchor="start">11%</text>
+
+            <!-- Platform Overview & Navigation: 7% -->
+            <text x="0" y="220" fill="currentColor" font-size="13" font-family="inherit">Platform Overview &amp; Nav</text>
+            <rect x="220" y="208" width="300" height="20" rx="4" fill="rgba(255,255,255,0.06)"/>
+            <rect x="220" y="208" width="78" height="20" rx="4" fill="#dd5c0c" opacity="0.25"/>
+            <text x="530" y="222" fill="currentColor" font-size="13" font-family="inherit" text-anchor="start">7%</text>
+          </svg>
+        </div>
+
         <p>Database Administration and Security alone is 27% of the exam. That is more than a quarter of your score from one domain. If you are weak on ACLs, data policies, or user/group/role relationships, fix that before anything else.</p>
 
         <p>The two 20% domains (Self-Service and Collaboration) together account for 40%. Combined with Database Admin, those three domains make up 67% of the exam. Two-thirds of your score comes from three sections. Prioritize them.</p>
@@ -351,7 +409,7 @@ a:hover { text-decoration: underline; }
         <!-- MID-ARTICLE CTA -->
         <div class="bp-cta-box">
           <p>The CSA practice test on Udemy has 392 questions mapped to all six domains. Every question includes a per-option explanation that links to official Zurich documentation. The course costs $9.99 with the referral link below.</p>
-          <p>A retake costs $225. Preparation costs less than a coffee.</p>
+          <p>A retake costs $150. Preparation costs less than a coffee.</p>
           <a href="https://www.udemy.com/course/pass-your-servicenow-csa-certified-system-administrator/?referralCode=2AE0DFA7BE468BCA8888" target="_blank" rel="noopener" class="bp-cta-btn">Get the 392-question practice test ($9.99)</a>
         </div>
 
@@ -432,13 +490,13 @@ a:hover { text-decoration: underline; }
 
         <p>ServiceNow's free training on <a href="https://nowlearning.servicenow.com" target="_blank" rel="noopener">Now Learning</a> includes a CSA learning path. The on-demand courses cover all six domains with labs and quizzes. The material is solid if you have the time to work through it.</p>
 
-        <p>For practice questions, the <a href="https://www.udemy.com/course/pass-your-servicenow-csa-certified-system-administrator/?referralCode=2AE0DFA7BE468BCA8888" target="_blank" rel="noopener">CSA practice test on Udemy</a> has 392 questions with per-option explanations and Zurich source links. At $9.99, you are spending less than 5% of what a single retake costs.</p>
+        <p>For practice questions, the <a href="https://www.udemy.com/course/pass-your-servicenow-csa-certified-system-administrator/?referralCode=2AE0DFA7BE468BCA8888" target="_blank" rel="noopener">CSA practice test on Udemy</a> has 392 questions with per-option explanations and Zurich source links. At $9.99, you are spending less than 7% of what a single retake costs.</p>
 
 
         <!-- BOTTOM CTA -->
         <div class="bp-cta-box">
-          <p>The CSA exam costs $450. A retake costs $225. The entire 392-question practice test costs $9.99.</p>
-          <p>That is 4.4% of one retake fee, for a course that covers all six domains with explanations sourced from Zurich documentation.</p>
+          <p>The CSA exam costs $300. A retake costs $150. The entire 392-question practice test costs $9.99.</p>
+          <p>That is 6.7% of one retake fee, for a course that covers all six domains with explanations sourced from Zurich documentation.</p>
           <a href="https://www.udemy.com/course/pass-your-servicenow-csa-certified-system-administrator/?referralCode=2AE0DFA7BE468BCA8888" target="_blank" rel="noopener" class="bp-cta-btn">Get the 392-question practice test ($9.99)</a>
         </div>
 
@@ -475,7 +533,7 @@ a:hover { text-decoration: underline; }
 
 <!-- Footer -->
 <footer class="bp-footer">
-  &copy; 2026 Lucky X &middot; <a href="/">luckyx.dev</a> &middot; <a href="/blog/">Blog</a>
+  &copy; 2026 Lucky X &middot; <a href="/">luckyx.dev</a> &middot; <a href="/blog/">Study Guides</a>
 </footer>
 
 <!-- Theme toggle JS -->

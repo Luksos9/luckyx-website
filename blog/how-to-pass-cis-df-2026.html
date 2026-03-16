@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How to Pass CIS-DF in 2026: The Complete Study Guide | Lucky X Blog</title>
+<title>How to Pass CIS-DF in 2026: The Complete Study Guide | Lucky X Study Guides</title>
 <meta name="description" content="Everything you need to pass CIS-Data Foundations. Covers CMDB, CSDM, exam format, domain weights, study timeline, and free practice questions. Already mandatory for 7 CIS certs.">
 <meta name="keywords" content="CIS-DF study guide, CIS-Data Foundations exam prep, CMDB CSDM certification 2026, ServiceNow CIS-DF practice test, how to pass CIS-DF">
 <meta name="author" content="Lukasz Szumilas">
@@ -72,8 +72,25 @@
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Lucky X", "item": "https://luckyx.dev/" },
-    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://luckyx.dev/blog/" },
+    { "@type": "ListItem", "position": 2, "name": "Study Guides", "item": "https://luckyx.dev/blog/" },
     { "@type": "ListItem", "position": 3, "name": "How to Pass CIS-DF in 2026" }
+  ]
+}
+</script>
+
+<!-- Structured Data: HowTo -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Pass CIS-Data Foundations in 2026",
+  "description": "A 4-week study plan to pass the ServiceNow CIS-Data Foundations exam on your first attempt.",
+  "totalTime": "PT32H",
+  "step": [
+    {"@type": "HowToStep", "name": "Week 1: CSDM and CMDB configuration", "text": "Start with CSDM fundamentals (11%) and Configure (15%). Read the official CSDM 4.0 documentation. Set up a PDI and explore the CMDB workspace, CI class manager, and relationship editor."},
+    {"@type": "HowToStep", "name": "Week 2: Data ingestion", "text": "Cover the Ingest domain (19%). Focus on Discovery, the identification and reconciliation engine (IRE), import sets, and Service Mapping. Run Discovery in your PDI if possible."},
+    {"@type": "HowToStep", "name": "Week 3: Governance and insights", "text": "These two domains make up 55% of the exam. Study health policies, data certification workflows, attestation rules, CMDB health dashboards, and Performance Analytics indicators for data quality."},
+    {"@type": "HowToStep", "name": "Week 4: Practice exams under test conditions", "text": "Take full-length timed tests. 60 questions, 90 minutes, no pausing. Review every wrong answer by domain. Aim for 80%+ on practice tests before sitting the real exam."}
   ]
 }
 </script>
@@ -238,13 +255,13 @@ a:hover { text-decoration: underline; }
   <!-- Back link -->
   <a href="/blog/" class="bp-back">
     <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-    Back to blog
+    Back to Study Guides
   </a>
 
   <!-- Breadcrumb -->
   <nav class="bp-breadcrumb" aria-label="Breadcrumb">
     <a href="/">Lucky X</a><span>/</span>
-    <a href="/blog/">Blog</a><span>/</span>
+    <a href="/blog/">Study Guides</a><span>/</span>
     How to pass CIS-DF in 2026
   </nav>
 
@@ -289,7 +306,7 @@ a:hover { text-decoration: underline; }
 
         <p>Questions are multiple-choice. Some have a single correct answer, others ask you to "select two" or "select three." The multi-select ones are where most people lose points, because partial credit is not awarded. Miss one option and the entire question scores zero.</p>
 
-        <p>The exam runs on the Pearson VUE platform (ServiceNow migrated from Kryterion/Webassessor in November 2025). You can take it at a Pearson VUE testing center or proctored online from home using the OnVUE app. The online option only requires your built-in webcam, but you need a clear desk and no second monitor.</p>
+        <p>The exam runs on the Pearson VUE platform. You can take it at a Pearson VUE testing center or proctored online from home using the OnVUE app. The online option only requires your built-in webcam, but you need a clear desk and no second monitor.</p>
 
         <p>All questions reference the Zurich release. If you have been studying from Xanadu or Washington documentation, some answers will be wrong. Check which release the docs page references before you trust it.</p>
 
@@ -334,6 +351,40 @@ a:hover { text-decoration: underline; }
             </tr>
           </tbody>
         </table>
+
+        <div class="bp-chart-wrap" role="img" aria-label="CIS-DF domain weight distribution chart" style="max-width:720px;margin:20px 0 28px;">
+          <svg viewBox="0 0 600 220" width="100%" xmlns="http://www.w3.org/2000/svg">
+            <!-- Govern: 35% -->
+            <text x="0" y="20" fill="currentColor" font-size="13" font-family="inherit">Govern</text>
+            <rect x="120" y="8" width="400" height="20" rx="4" fill="rgba(255,255,255,0.06)"/>
+            <rect x="120" y="8" width="400" height="20" rx="4" fill="#dd5c0c" opacity="1.0"/>
+            <text x="530" y="22" fill="currentColor" font-size="13" font-family="inherit" text-anchor="start">35%</text>
+
+            <!-- Insight: 20% -->
+            <text x="0" y="60" fill="currentColor" font-size="13" font-family="inherit">Insight</text>
+            <rect x="120" y="48" width="400" height="20" rx="4" fill="rgba(255,255,255,0.06)"/>
+            <rect x="120" y="48" width="228" height="20" rx="4" fill="#dd5c0c" opacity="0.85"/>
+            <text x="530" y="62" fill="currentColor" font-size="13" font-family="inherit" text-anchor="start">20%</text>
+
+            <!-- Ingest: 19% -->
+            <text x="0" y="100" fill="currentColor" font-size="13" font-family="inherit">Ingest</text>
+            <rect x="120" y="88" width="400" height="20" rx="4" fill="rgba(255,255,255,0.06)"/>
+            <rect x="120" y="88" width="217" height="20" rx="4" fill="#dd5c0c" opacity="0.7"/>
+            <text x="530" y="102" fill="currentColor" font-size="13" font-family="inherit" text-anchor="start">19%</text>
+
+            <!-- Configure: 15% -->
+            <text x="0" y="140" fill="currentColor" font-size="13" font-family="inherit">Configure</text>
+            <rect x="120" y="128" width="400" height="20" rx="4" fill="rgba(255,255,255,0.06)"/>
+            <rect x="120" y="128" width="171" height="20" rx="4" fill="#dd5c0c" opacity="0.55"/>
+            <text x="530" y="142" fill="currentColor" font-size="13" font-family="inherit" text-anchor="start">15%</text>
+
+            <!-- CSDM: 11% -->
+            <text x="0" y="180" fill="currentColor" font-size="13" font-family="inherit">CSDM</text>
+            <rect x="120" y="168" width="400" height="20" rx="4" fill="rgba(255,255,255,0.06)"/>
+            <rect x="120" y="168" width="126" height="20" rx="4" fill="#dd5c0c" opacity="0.4"/>
+            <text x="530" y="182" fill="currentColor" font-size="13" font-family="inherit" text-anchor="start">11%</text>
+          </svg>
+        </div>
 
         <p>The Govern domain alone is 35% of your score. If you spend equal time on all five domains, you are under-studying the section that accounts for more than a third of the exam. Weight your preparation the way ServiceNow weights the test.</p>
 
@@ -383,9 +434,9 @@ a:hover { text-decoration: underline; }
         <p>Studying from the wrong release. ServiceNow documentation defaults to the latest release. The CIS-DF exam targets Zurich. Features introduced in later releases (or removed in Zurich) will lead you to wrong answers. Always check the release selector on docs.servicenow.com before trusting a page.</p>
 
 
-        <h2 id="free-questions">Try 10 free practice questions</h2>
+        <h2 id="free-questions">Try free practice questions</h2>
 
-        <p>The <a href="/courses/cis-data-foundations.html#free-quiz">CIS-DF course page</a> has a 10-question free preview. Each question shows per-option explanations after you answer, so you can see exactly why an option is correct or incorrect. No email required, no paywall. Just scroll to the quiz section and start.</p>
+        <p>The <a href="/courses/cis-data-foundations.html#free-quiz">CIS-DF course page</a> has free practice questions you can try before buying. Each question shows per-option explanations after you answer, so you can see exactly why an option is correct or incorrect. No email required, no paywall. Just scroll to the quiz section and start.</p>
 
         <p>If you want to go deeper, the <a href="/quiz.html">certification recommendation quiz</a> can help you figure out which cert to tackle first based on your current role and experience. And the <a href="/compare.html">certification comparison table</a> shows how CIS-DF stacks up against the other 17 ServiceNow certifications.</p>
 
@@ -436,7 +487,7 @@ a:hover { text-decoration: underline; }
 
 <!-- Footer -->
 <footer class="bp-footer">
-  &copy; 2026 Lucky X &middot; <a href="/">luckyx.dev</a> &middot; <a href="/blog/">Blog</a>
+  &copy; 2026 Lucky X &middot; <a href="/">luckyx.dev</a> &middot; <a href="/blog/">Study Guides</a>
 </footer>
 
 <!-- Theme toggle JS -->
