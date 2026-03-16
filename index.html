@@ -1287,23 +1287,34 @@ h3.card-title,
 .why-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1px;
-  background: var(--border);
-  border-radius: 14px;
-  overflow: hidden;
+  gap: 16px;
   margin-bottom: 60px;
 }
 
 .why-card {
   background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 14px;
   padding: 36px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.why-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+.why-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--orange), var(--orange-bright));
+  border-radius: 14px 14px 0 0;
 }
 
 .why-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: var(--orange-dim);
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--orange-dim), rgba(221,92,12,0.2));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1311,8 +1322,8 @@ h3.card-title,
 }
 
 .why-icon svg {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   stroke: var(--orange);
   stroke-width: 1.8;
   fill: none;
@@ -1322,6 +1333,57 @@ h3.card-title,
 
 .why-title { font-size: 16px; font-weight: 600; margin-bottom: 8px; letter-spacing: -0.2px; }
 .why-desc { font-size: 13px; color: var(--text-dim); line-height: 1.55; }
+
+/* ============ STUDY GUIDES SECTION ============ */
+.guides-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.guide-card {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.guide-card:hover { border-color: var(--border-hover); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(221,92,12,0.08); text-decoration: none; }
+
+.guide-tag {
+  display: inline-block;
+  background: rgba(221,92,12,0.1);
+  color: var(--orange);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  align-self: flex-start;
+  margin-bottom: 12px;
+}
+
+.guide-card h3 { font-size: 1.05rem; font-weight: 700; line-height: 1.3; margin-bottom: 8px; color: var(--text); }
+.guide-card p { font-size: 0.85rem; color: var(--text-dim); line-height: 1.5; margin-bottom: 14px; flex: 1; }
+.guide-read { font-size: 0.8rem; color: var(--orange); font-weight: 600; }
+
+.guides-more { text-align: center; padding: 12px 0 48px; }
+.guides-more-link {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--orange);
+  padding: 10px 24px;
+  border: 1px solid rgba(221,92,12,0.3);
+  border-radius: 10px;
+  transition: all 0.2s;
+}
+.guides-more-link:hover { background: rgba(221,92,12,0.08); border-color: var(--orange); text-decoration: none; }
 
 /* ============ NUMBERS STRIP ============ */
 .num-strip {
@@ -1334,9 +1396,9 @@ h3.card-title,
   content: '';
   position: absolute;
   top: 0; left: 50%;
-  width: 500px; height: 300px;
+  width: 600px; height: 350px;
   transform: translateX(-50%);
-  background: radial-gradient(circle, rgba(221,92,12,0.04) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(221,92,12,0.08) 0%, transparent 65%);
   pointer-events: none;
 }
 
@@ -1630,48 +1692,35 @@ h3.card-title,
 }
 
 .ft-inner {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  text-align: center;
+  gap: 32px;
 }
 
-.ft-brand { font-weight: 700; font-size: 16px; color: var(--text-dim); letter-spacing: 1.5px; }
-.ft-tagline { font-size: 13px; color: var(--text-dim); max-width: 400px; line-height: 1.5; }
-
-.ft-links {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-  justify-content: center;
+.ft-top {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 32px;
+  align-items: start;
 }
+@media (max-width: 640px) { .ft-top { grid-template-columns: 1fr 1fr; gap: 24px; } }
 
-.ft-links a {
-  color: var(--text-dim);
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: 500;
-  transition: color 0.2s ease;
-}
+.ft-brand-col .ft-brand { font-weight: 700; font-size: 16px; color: var(--text-dim); letter-spacing: 1.5px; margin-bottom: 8px; }
+.ft-brand-col .ft-tagline { font-size: 13px; color: var(--text-dim); line-height: 1.5; max-width: 260px; }
 
-.ft-links a:hover { color: var(--orange); }
-
-.ft-links a svg {
-  width: 14px;
-  height: 14px;
-  vertical-align: -2px;
-  margin-right: 4px;
-  fill: currentColor;
-}
+.ft-col-title { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--text-dim); font-weight: 700; margin-bottom: 12px; }
+.ft-col a { display: block; color: var(--text-faint); text-decoration: none; font-size: 12.5px; font-weight: 500; padding: 3px 0; transition: color 0.2s ease; }
+.ft-col a:hover { color: var(--orange); }
+.ft-col a svg { width: 14px; height: 14px; vertical-align: -2px; margin-right: 4px; fill: currentColor; }
 
 .ft-bottom {
   font-size: 11px;
   color: var(--text-faint);
   padding-top: 16px;
   border-top: 1px solid var(--border);
+  text-align: center;
   width: 100%;
   text-align: center;
 }
@@ -1947,6 +1996,7 @@ h3.card-title,
   .stat-item { padding: 18px 20px; }
   .course-card { flex: 0 1 100%; min-width: 0; }
   .why-grid { grid-template-columns: 1fr; }
+  .guides-grid { grid-template-columns: 1fr; }
   .cta-inner { padding: 56px 20px 48px; }
   .cta-price-card { padding: 20px 22px; flex: 0 1 160px; }
   .cta-price-amount { font-size: 28px; }
@@ -1962,7 +2012,6 @@ h3.card-title,
   [data-theme="light"] .toggle-orb { transform: translateX(30px); }
   .faq-q { font-size: 13.5px; padding: 18px 20px; }
   .faq-a-inner { padding: 0 20px 18px; }
-  .ft-links { gap: 16px; }
   .course-grid { gap: 12px; }
 }
 
@@ -2153,7 +2202,7 @@ h3.card-title,
       <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
     </button>
     <div class="nav-divider"></div>
-    <a class="nav-btn" href="/blog/" aria-label="Study Guides (opens study guides page)" data-tip="Study Guides">
+    <a class="nav-btn" href="#guides" aria-label="Study Guides" data-tip="Study Guides">
       <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
     </a>
     <div class="nav-divider"></div>
@@ -2180,7 +2229,7 @@ h3.card-title,
   <div class="hero-links">
     <a href="/quiz.html" class="hero-link hero-link-primary">Which cert should I take first? &rarr;</a>
     <a href="/compare.html" class="hero-link">Compare all 18 certifications &rarr;</a>
-    <a href="/blog/" class="hero-link">Study Guides &rarr;</a>
+    <a href="#guides" class="hero-link">Study Guides &rarr;</a>
   </div>
 
   <div class="stats-row">
@@ -2400,6 +2449,55 @@ h3.card-title,
   </div>
 </section>
 
+<!-- Study Guides -->
+<section class="section" id="guides">
+  <div class="sec-head reveal">
+    <div class="sec-label">Study Guides</div>
+    <h2 class="sec-title">Free exam prep guides for every certification</h2>
+  </div>
+  <div class="guides-grid reveal-stagger">
+    <a href="/blog/how-to-pass-cis-df-2026.html" class="guide-card reveal" style="--i:0">
+      <span class="guide-tag">Most popular</span>
+      <h3>How to pass CIS-Data Foundations</h3>
+      <p>CMDB, CSDM, domain weights, 4-week study plan. The prerequisite that unlocks 7 other CIS certs.</p>
+      <span class="guide-read">14 min read &rarr;</span>
+    </a>
+    <a href="/blog/servicenow-certification-path-2026.html" class="guide-card reveal" style="--i:1">
+      <span class="guide-tag">Career path</span>
+      <h3>The complete certification path for 2026</h3>
+      <p>CSA to CTA. Which certs build on each other, which tracks pay the most, and the order that saves time.</p>
+      <span class="guide-read">14 min read &rarr;</span>
+    </a>
+    <a href="/blog/cis-df-mandate-explained.html" class="guide-card reveal" style="--i:2">
+      <span class="guide-tag">Must read</span>
+      <h3>The CIS-DF mandate explained</h3>
+      <p>7 CIS certs now require Data Foundations. Deadline is Dec 2026. Free exam window, affected certs, and what to do.</p>
+      <span class="guide-read">10 min read &rarr;</span>
+    </a>
+    <a href="/blog/servicenow-salary-guide-2026.html" class="guide-card reveal" style="--i:3">
+      <span class="guide-tag">Career guide</span>
+      <h3>ServiceNow salary guide 2026</h3>
+      <p>CSA $118K, CAD $126K, Security $143K, Architect $163K+. Which tracks pay the most and why.</p>
+      <span class="guide-read">14 min read &rarr;</span>
+    </a>
+    <a href="/blog/how-to-pass-cis-itsm-2026.html" class="guide-card reveal" style="--i:4">
+      <span class="guide-tag">Study guide</span>
+      <h3>How to pass CIS-ITSM in 2026</h3>
+      <p>Incident, problem, change, request. Domain weights, 5-week study plan, and the CIS-DF prerequisite.</p>
+      <span class="guide-read">14 min read &rarr;</span>
+    </a>
+    <a href="/blog/free-servicenow-study-resources.html" class="guide-card reveal" style="--i:5">
+      <span class="guide-tag">Free resources</span>
+      <h3>Free ServiceNow study resources</h3>
+      <p>PDI, Now Learning, docs, community forums, practice tests, and the free CIS-DF exam offer. No paid tools needed.</p>
+      <span class="guide-read">12 min read &rarr;</span>
+    </a>
+  </div>
+  <div class="guides-more">
+    <a href="/blog/" class="guides-more-link">View all 26 study guides &rarr;</a>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="faq-section" id="faq">
   <div class="sec-head reveal">
@@ -2504,29 +2602,33 @@ h3.card-title,
 
 <footer class="site-footer" role="contentinfo">
   <div class="ft-inner">
-    <div class="ft-brand">LUCKY X</div>
-    <p class="ft-tagline">ServiceNow certification practice tests with realistic questions, rich explanations, and lifetime access.</p>
-    <nav class="ft-links" aria-label="Footer navigation">
-      <a href="#hero">Home</a>
-      <a href="#courses">Practice Tests</a>
-      <a href="#why">Why Lucky X</a>
-      <a href="#faq">FAQ</a>
-      <a href="/quiz.html">Which Cert First?</a>
-      <a href="/compare.html">Compare Certs</a>
-      <a href="/blog/">Study Guides</a>
-      <a href="/about.html">About</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/terms.html">Terms</a>
-      <a href="#roadmap">Free Roadmap</a>
-      <a href="https://www.udemy.com/user/lucky-x/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm-1.66 14.58V7.42l6.36 4.58-6.36 4.58Z"/></svg>Udemy</a>
-    </nav>
-    <div class="ft-email">
-      <form class="lead-form" id="footerLeadForm" action="#" method="POST">
-        <input type="email" name="email" placeholder="your@email.com" required autocomplete="email">
-        <button type="submit">Get the roadmap</button>
-      </form>
+    <div class="ft-top">
+      <div class="ft-brand-col">
+        <div class="ft-brand">LUCKY X</div>
+        <p class="ft-tagline">ServiceNow certification practice tests with realistic questions, rich explanations, and lifetime access.</p>
+      </div>
+      <nav class="ft-col" aria-label="Explore">
+        <div class="ft-col-title">Explore</div>
+        <a href="#courses">Practice Tests</a>
+        <a href="/compare.html">Compare Certs</a>
+        <a href="/quiz.html">Which Cert First?</a>
+        <a href="#roadmap">Free Roadmap</a>
+        <a href="https://www.udemy.com/user/lucky-x/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm-1.66 14.58V7.42l6.36 4.58-6.36 4.58Z"/></svg>Udemy Profile</a>
+      </nav>
+      <nav class="ft-col" aria-label="Resources">
+        <div class="ft-col-title">Resources</div>
+        <a href="#guides">Study Guides</a>
+        <a href="#why">Why Lucky X</a>
+        <a href="#faq">FAQ</a>
+        <a href="/about.html">About</a>
+      </nav>
+      <nav class="ft-col" aria-label="Legal">
+        <div class="ft-col-title">Legal</div>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Service</a>
+      </nav>
     </div>
-    <div class="ft-bottom">&copy; 2026 Lucky X</div>
+    <div class="ft-bottom">&copy; 2026 Lucky X &middot; All rights reserved</div>
   </div>
 </footer>
 
