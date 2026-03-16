@@ -1311,9 +1311,9 @@ h3.card-title,
 }
 
 .why-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
   background: linear-gradient(135deg, var(--orange-dim), rgba(221,92,12,0.2));
   display: flex;
   align-items: center;
@@ -1322,8 +1322,8 @@ h3.card-title,
 }
 
 .why-icon svg {
-  width: 22px;
-  height: 22px;
+  width: 26px;
+  height: 26px;
   stroke: var(--orange);
   stroke-width: 1.8;
   fill: none;
@@ -2992,16 +2992,15 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
   var statsRow = document.querySelector('.stats-row');
   if (!statsRow) return;
 
-  var nums = statsRow.querySelectorAll('.stat-num[data-count-to]');
-  nums.forEach(function(num) {
-    var suffix = num.dataset.countSuffix || '';
-    num.innerHTML = '0' + (suffix ? '<span class="acc">' + suffix + '</span>' : '');
-  });
-
   var statsObs = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
       if (e.isIntersecting) {
         var items = e.target.querySelectorAll('.stat-num[data-count-to]');
+        /* Zero out right before animating — keeps HTML fallback for SEO / no-JS */
+        items.forEach(function(el) {
+          var suffix = el.dataset.countSuffix || '';
+          el.innerHTML = '0' + (suffix ? '<span class="acc">' + suffix + '</span>' : '');
+        });
         items.forEach(function(el, i) { animateCountUp(el, i * 120); });
         statsObs.unobserve(e.target);
       }
