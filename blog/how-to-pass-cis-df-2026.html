@@ -78,6 +78,23 @@
 }
 </script>
 
+<!-- Structured Data: HowTo -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Pass CIS-Data Foundations in 2026",
+  "description": "A 4-week study plan to pass the ServiceNow CIS-Data Foundations exam on your first attempt.",
+  "totalTime": "PT32H",
+  "step": [
+    {"@type": "HowToStep", "name": "Week 1: CSDM and CMDB configuration", "text": "Start with CSDM fundamentals (11%) and Configure (15%). Read the official CSDM 4.0 documentation. Set up a PDI and explore the CMDB workspace, CI class manager, and relationship editor."},
+    {"@type": "HowToStep", "name": "Week 2: Data ingestion", "text": "Cover the Ingest domain (19%). Focus on Discovery, the identification and reconciliation engine (IRE), import sets, and Service Mapping. Run Discovery in your PDI if possible."},
+    {"@type": "HowToStep", "name": "Week 3: Governance and insights", "text": "These two domains make up 55% of the exam. Study health policies, data certification workflows, attestation rules, CMDB health dashboards, and Performance Analytics indicators for data quality."},
+    {"@type": "HowToStep", "name": "Week 4: Practice exams under test conditions", "text": "Take full-length timed tests. 60 questions, 90 minutes, no pausing. Review every wrong answer by domain. Aim for 80%+ on practice tests before sitting the real exam."}
+  ]
+}
+</script>
+
 <script>
   (function() {
     var t = localStorage.getItem('luckyx-theme');
@@ -289,7 +306,7 @@ a:hover { text-decoration: underline; }
 
         <p>Questions are multiple-choice. Some have a single correct answer, others ask you to "select two" or "select three." The multi-select ones are where most people lose points, because partial credit is not awarded. Miss one option and the entire question scores zero.</p>
 
-        <p>The exam runs on the Pearson VUE platform (ServiceNow migrated from Kryterion/Webassessor in November 2025). You can take it at a Pearson VUE testing center or proctored online from home using the OnVUE app. The online option only requires your built-in webcam, but you need a clear desk and no second monitor.</p>
+        <p>The exam runs on the Pearson VUE platform. You can take it at a Pearson VUE testing center or proctored online from home using the OnVUE app. The online option only requires your built-in webcam, but you need a clear desk and no second monitor.</p>
 
         <p>All questions reference the Zurich release. If you have been studying from Xanadu or Washington documentation, some answers will be wrong. Check which release the docs page references before you trust it.</p>
 
