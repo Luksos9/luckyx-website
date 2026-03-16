@@ -29,7 +29,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#eeebe5">
 
-<!-- Structured Data: ProfilePage + Person -->
+<!-- Structured Data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -111,22 +111,53 @@ a:hover { text-decoration: underline; }
 
 /* Page layout */
 .bp-page { max-width: 720px; margin: 0 auto; padding: 60px 24px 80px; }
-.bp-page h1 { font-size: 2rem; font-weight: 800; line-height: 1.2; margin-bottom: 32px; }
+.bp-page h1 { font-size: 2rem; font-weight: 800; line-height: 1.2; margin-bottom: 12px; }
 @media (max-width: 640px) { .bp-page h1 { font-size: 1.5rem; } }
-.bp-page h2 { font-size: 1.3rem; font-weight: 700; margin: 40px 0 14px; line-height: 1.25; }
+.bp-page h2 { font-size: 1.2rem; font-weight: 700; margin: 40px 0 14px; line-height: 1.25; display: flex; align-items: center; gap: 10px; }
+.bp-page h2 svg { width: 22px; height: 22px; stroke: var(--orange); stroke-width: 2; fill: none; flex-shrink: 0; }
 .bp-page p { margin-bottom: 18px; }
-.bp-page ul { margin: 0 0 18px 24px; }
-.bp-page li { margin-bottom: 6px; }
 
 /* Back link */
 .bp-back { display: inline-flex; align-items: center; gap: 6px; color: var(--text-dim); font-size: 0.85rem; margin-bottom: 32px; }
 .bp-back svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 2; fill: none; }
 .bp-back:hover { color: var(--orange); text-decoration: none; }
 
-/* Links list */
-.bp-links { list-style: none; margin: 0 0 18px 0; padding: 0; }
-.bp-links li { margin-bottom: 10px; }
-.bp-links a { font-weight: 500; }
+/* Subtitle */
+.bp-subtitle { color: var(--text-dim); font-size: 1.05rem; margin-bottom: 40px; }
+
+/* Stats row */
+.bp-stats { display: flex; gap: 24px; flex-wrap: wrap; margin: 32px 0 40px; }
+.bp-stat { background: var(--bg-raised); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; flex: 1; min-width: 140px; text-align: center; }
+.bp-stat-num { font-size: 1.6rem; font-weight: 800; color: var(--orange); line-height: 1.2; }
+.bp-stat-label { font-size: 0.8rem; color: var(--text-dim); margin-top: 4px; }
+@media (max-width: 480px) { .bp-stats { gap: 12px; } .bp-stat { padding: 16px 12px; } .bp-stat-num { font-size: 1.3rem; } }
+
+/* Feature cards */
+.bp-features { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0 40px; }
+@media (max-width: 560px) { .bp-features { grid-template-columns: 1fr; } }
+.bp-feature { background: var(--bg-raised); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+.bp-feature-icon { width: 36px; height: 36px; border-radius: 10px; background: rgba(221,92,12,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+.bp-feature-icon svg { width: 20px; height: 20px; stroke: var(--orange); stroke-width: 2; fill: none; }
+.bp-feature h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
+.bp-feature p { font-size: 0.85rem; color: var(--text-dim); line-height: 1.5; margin: 0; }
+
+/* CTA links */
+.bp-cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 20px 0 40px; }
+.bp-cta-link { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 10px; font-weight: 600; font-size: 0.9rem; transition: all 0.2s; }
+.bp-cta-link svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 2; fill: none; }
+.bp-cta-link:hover { text-decoration: none; }
+.bp-cta-primary { background: var(--orange); color: #fff; }
+.bp-cta-primary:hover { background: var(--orange-bright); }
+.bp-cta-primary svg { stroke: #fff; }
+.bp-cta-secondary { background: var(--bg-raised); border: 1px solid var(--border); color: var(--text); }
+.bp-cta-secondary:hover { border-color: var(--orange); color: var(--orange); }
+
+/* Contact */
+.bp-contact { background: var(--bg-raised); border: 1px solid var(--border); border-radius: 12px; padding: 24px; display: flex; align-items: center; gap: 16px; }
+.bp-contact-icon { width: 44px; height: 44px; border-radius: 50%; background: rgba(221,92,12,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.bp-contact-icon svg { width: 20px; height: 20px; stroke: var(--orange); stroke-width: 2; fill: none; }
+.bp-contact-text { font-size: 0.9rem; }
+.bp-contact-text a { font-weight: 600; }
 
 /* Footer */
 .bp-footer { text-align: center; padding: 40px 24px; font-size: 0.84rem; color: var(--text-faint); border-top: 1px solid var(--border); margin-top: 60px; }
@@ -151,27 +182,95 @@ a:hover { text-decoration: underline; }
   </a>
 
   <h1>About Lucky X</h1>
+  <p class="bp-subtitle">ServiceNow certification practice tests on Udemy.</p>
 
-  <p>Lucky X publishes ServiceNow certification practice tests on Udemy. 18 courses. Over 10,000 students. 4.6 average rating.</p>
+  <!-- Stats -->
+  <div class="bp-stats">
+    <div class="bp-stat">
+      <div class="bp-stat-num">18</div>
+      <div class="bp-stat-label">Practice tests</div>
+    </div>
+    <div class="bp-stat">
+      <div class="bp-stat-num">10,000+</div>
+      <div class="bp-stat-label">Students</div>
+    </div>
+    <div class="bp-stat">
+      <div class="bp-stat-num">4.6</div>
+      <div class="bp-stat-label">Average rating</div>
+    </div>
+  </div>
 
-  <h2>What we do</h2>
+  <!-- What we do -->
+  <h2>
+    <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+    What we do
+  </h2>
 
-  <p>Every practice test is written by a certified professional who passed the exam. The question bank covers all exam domains with the correct weight distribution. Questions are sourced from official ServiceNow Zurich documentation.</p>
+  <div class="bp-features">
+    <div class="bp-feature">
+      <div class="bp-feature-icon">
+        <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+      </div>
+      <h3>Official sources only</h3>
+      <p>Every question sourced from official ServiceNow Zurich documentation. No guesswork.</p>
+    </div>
+    <div class="bp-feature">
+      <div class="bp-feature-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </div>
+      <h3>Wrong answers explained</h3>
+      <p>Understanding why an option is wrong teaches more than memorizing the right one.</p>
+    </div>
+    <div class="bp-feature">
+      <div class="bp-feature-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+      </div>
+      <h3>Correct domain weights</h3>
+      <p>Question distribution matches the official exam blueprint. Study what actually gets tested.</p>
+    </div>
+    <div class="bp-feature">
+      <div class="bp-feature-icon">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <h3>Exam-tested content</h3>
+      <p>Every practice test written by a certified professional who passed the exam.</p>
+    </div>
+  </div>
 
-  <p>Wrong answers get explanations too. Understanding why an option is wrong teaches more than memorizing the right one. That is the difference between passing a practice test and passing the real exam.</p>
-
-  <h2>Courses</h2>
+  <!-- Courses -->
+  <h2>
+    <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+    Courses
+  </h2>
 
   <p>The catalog covers 18 ServiceNow certifications: CSA, CAD, CIS-ITSM, CIS-DF, CIS-CSM, CIS-Discovery, CIS-HAM, CIS-SAM, CIS-SPM, CIS-SIR, CIS-VR, CIS-FSM, CIS-HRSD, CIS-TPRM, CIS-Event Management, CIS-GRC/IRM, CIS-Service Mapping, and CAS-PA.</p>
 
-  <ul class="bp-links">
-    <li><a href="https://www.udemy.com/user/lucky-x/" target="_blank" rel="noopener">All courses on Udemy</a></li>
-    <li><a href="/blog/">Free study guides</a></li>
-  </ul>
+  <div class="bp-cta-row">
+    <a href="https://www.udemy.com/user/lucky-x/" target="_blank" rel="noopener" class="bp-cta-link bp-cta-primary">
+      <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      All courses on Udemy
+    </a>
+    <a href="/blog/" class="bp-cta-link bp-cta-secondary">
+      <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+      Free study guides
+    </a>
+  </div>
 
-  <h2>Contact</h2>
+  <!-- Contact -->
+  <h2>
+    <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    Contact
+  </h2>
 
-  <p>For questions, corrections, or partnership inquiries: <a href="mailto:luckyx.servicenow@gmail.com">luckyx.servicenow@gmail.com</a></p>
+  <div class="bp-contact">
+    <div class="bp-contact-icon">
+      <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    </div>
+    <div class="bp-contact-text">
+      Questions, corrections, or partnerships<br>
+      <a href="mailto:luckyx.servicenow@gmail.com">luckyx.servicenow@gmail.com</a>
+    </div>
+  </div>
 
 </main>
 
