@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy | Lucky X</title>
+<meta name="description" content="Privacy policy for luckyx.dev. How we handle your data, what analytics we use, and your rights.">
+<meta name="author" content="Lukasz Szumilas">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://luckyx.dev/privacy.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Privacy Policy | Lucky X">
+<meta property="og:description" content="Privacy policy for luckyx.dev. How we handle your data, what analytics we use, and your rights.">
+<meta property="og:url" content="https://luckyx.dev/privacy.html">
+<meta property="og:site_name" content="Lucky X">
+<meta property="og:image" content="https://luckyx.dev/og-image.png">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Privacy Policy | Lucky X">
+<meta name="twitter:description" content="Privacy policy for luckyx.dev.">
+<meta name="twitter:image" content="https://luckyx.dev/og-image.png">
+
+<link rel="icon" type="image/svg+xml" href="/luckyx-icon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#eeebe5">
+
+<script>
+  (function() {
+    var t = localStorage.getItem('luckyx-theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+    else if (window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.setAttribute('data-theme', 'dark');
+    else document.documentElement.setAttribute('data-theme', 'light');
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BLYHHC76GG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BLYHHC76GG');
+</script>
+
+<style>
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --orange: #dd5c0c; --orange-bright: #ff8c42; --orange-deep: #8a3a08;
+  --bg: #111114; --bg-raised: #18181c; --bg-card: #1c1c21;
+  --border: rgba(255,255,255,0.06); --border-hover: rgba(221,92,12,0.35);
+  --text: #e0ddd8; --text-dim: #8a8580; --text-faint: #4a4540;
+  --star: #dd5c0c; --font: 'Outfit', sans-serif;
+  --card-shadow: 0 2px 12px rgba(0,0,0,0.35);
+  --grain-opacity: 0.022;
+}
+[data-theme="light"] {
+  --bg: #eeebe5; --bg-raised: #f7f5f1; --bg-card: #f7f5f1;
+  --border: rgba(0,0,0,0.08); --border-hover: rgba(221,92,12,0.4);
+  --text: #2a2725; --text-dim: #6b6560; --text-faint: #b0aaa3;
+  --card-shadow: 0 2px 16px rgba(0,0,0,0.05);
+  --grain-opacity: 0.012;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--text); font-family: var(--font);
+  -webkit-font-smoothing: antialiased; line-height: 1.7;
+  transition: background-color 0.5s ease, color 0.4s ease;
+}
+body::after {
+  content: ''; position: fixed; inset: 0; pointer-events: none;
+  opacity: var(--grain-opacity); z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+a { color: var(--orange); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Theme toggle */
+.theme-toggle-wrap { position: fixed; top: 16px; right: 16px; z-index: 1001; }
+.theme-toggle { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border); background: var(--bg-raised); cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.theme-toggle svg { width: 18px; height: 18px; stroke: var(--text-dim); stroke-width: 2; fill: none; }
+
+/* Page layout */
+.bp-page { max-width: 720px; margin: 0 auto; padding: 60px 24px 80px; }
+.bp-page h1 { font-size: 2rem; font-weight: 800; line-height: 1.2; margin-bottom: 12px; }
+@media (max-width: 640px) { .bp-page h1 { font-size: 1.5rem; } }
+.bp-page .bp-updated { font-size: 0.88rem; color: var(--text-dim); margin-bottom: 32px; }
+.bp-page h2 { font-size: 1.3rem; font-weight: 700; margin: 36px 0 14px; line-height: 1.25; }
+.bp-page p { margin-bottom: 18px; }
+.bp-page ul { margin: 0 0 18px 24px; }
+.bp-page li { margin-bottom: 6px; }
+
+/* Footer */
+.bp-footer { text-align: center; padding: 40px 24px; font-size: 0.84rem; color: var(--text-faint); border-top: 1px solid var(--border); margin-top: 60px; }
+.bp-footer a { color: var(--text-dim); margin: 0 4px; }
+</style>
+</head>
+
+<body>
+
+<!-- Theme toggle -->
+<div class="theme-toggle-wrap">
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+  </button>
+</div>
+
+<main class="bp-page">
+
+  <h1>Privacy Policy</h1>
+  <p class="bp-updated">Last updated: March 2026</p>
+
+  <p>This privacy policy explains how Lucky X ("we", "us") collects and uses information when you visit luckyx.dev ("the Site").</p>
+
+  <h2>What we collect</h2>
+
+  <p>The Site uses Google Analytics 4 (measurement ID: G-BLYHHC76GG) to collect anonymous usage data. This includes pages visited, time on site, approximate geographic location (country/city level), device type, browser, and referral source. Google Analytics uses cookies to distinguish unique visitors. We do not collect names, email addresses, or other personally identifiable information through analytics.</p>
+
+  <p>If you subscribe to our email newsletter, we collect your email address through ConvertKit (form ID: 9183962). ConvertKit processes and stores this data on our behalf. You can unsubscribe at any time using the link in every email.</p>
+
+  <h2>Cookies</h2>
+
+  <p>The Site does not set its own cookies beyond a localStorage preference for theme (light/dark mode). Google Analytics 4 sets cookies (_ga, _ga_*) to measure traffic. These are first-party cookies set by Google's script. No third-party advertising cookies are used.</p>
+
+  <h2>Hosting</h2>
+
+  <p>The Site is hosted on GitHub Pages. GitHub may collect technical information such as IP addresses in server logs. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub's privacy statement</a> for details.</p>
+
+  <h2>Data sharing and selling</h2>
+
+  <p>We do not sell, rent, or trade your personal data to any third party. Data collected through Google Analytics is processed by Google under their <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">privacy policy</a>. Data collected through ConvertKit is processed under their <a href="https://convertkit.com/privacy" target="_blank" rel="noopener">privacy policy</a>.</p>
+
+  <h2>Data retention</h2>
+
+  <p>Google Analytics data is retained for 14 months (the default GA4 retention period). Email subscriber data is retained in ConvertKit until you unsubscribe or request deletion.</p>
+
+  <h2>Your rights</h2>
+
+  <p>You can opt out of Google Analytics by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>. You can unsubscribe from emails at any time. To request deletion of your data, contact us at the email below.</p>
+
+  <h2>Children</h2>
+
+  <p>The Site is not directed at children under 13. We do not knowingly collect personal information from children under 13. If you believe a child under 13 has provided us with personal information, please contact us and we will delete it.</p>
+
+  <h2>Changes to this policy</h2>
+
+  <p>We may update this policy from time to time. Changes will be posted on this page with an updated "Last updated" date.</p>
+
+  <h2>Contact</h2>
+
+  <p>For privacy-related questions or data deletion requests: <a href="mailto:lukaszszumilas25@gmail.com">lukaszszumilas25@gmail.com</a></p>
+
+</main>
+
+<!-- Footer -->
+<footer class="bp-footer">
+  &copy; 2026 Lucky X &middot;
+  <a href="/">Home</a> &middot;
+  <a href="/blog/">Study Guides</a> &middot;
+  <a href="/about.html">About</a> &middot;
+  <a href="/privacy.html">Privacy</a> &middot;
+  <a href="/terms.html">Terms</a>
+</footer>
+
+<!-- Theme toggle JS -->
+<script>
+document.getElementById('themeToggle').addEventListener('click', function() {
+  var cur = document.documentElement.getAttribute('data-theme') || 'dark';
+  var next = cur === 'light' ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('luckyx-theme', next);
+});
+</script>
+
+</body>
+</html>
