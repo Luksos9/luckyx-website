@@ -135,6 +135,18 @@
   </url>
   <!-- Blog articles (priority 0.8) -->
   <url>
+    <loc>https://luckyx.dev/blog/servicenow-certification-path-2026.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://luckyx.dev/blog/is-servicenow-certification-worth-it.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://luckyx.dev/blog/how-to-pass-cis-df-2026.html</loc>
     <lastmod>2026-03-16</lastmod>
     <changefreq>monthly</changefreq>
