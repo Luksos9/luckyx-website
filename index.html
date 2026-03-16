@@ -2192,9 +2192,9 @@ h3.card-title,
       <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
     </button>
     <div class="nav-divider"></div>
-    <a class="nav-btn" href="#guides" aria-label="Study Guides" data-tip="Study Guides">
+    <button class="nav-btn" data-s="guides" aria-label="Study Guides" data-tip="Study Guides">
       <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-    </a>
+    </button>
     <div class="nav-divider"></div>
     <button class="nav-btn" data-s="cta" aria-label="Get Started" data-tip="Get Started">
       <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -2812,7 +2812,7 @@ function setNav(btnIdx) {
 
 let navLocked = false;
 btns.forEach((b, i) => {
-  if (!b.dataset.s) return; /* skip blog link (it's an <a>, navigates away) */
+  if (!b.dataset.s) return;
   b.addEventListener('click', () => {
     navLocked = true;
     setNav(i);
@@ -2823,7 +2823,7 @@ btns.forEach((b, i) => {
 });
 
 /* Map section IDs to their button index in the nav bar */
-const secs = ['hero', 'courses', 'why', 'faq', 'cta'];
+const secs = ['hero', 'courses', 'why', 'faq', 'guides', 'cta'];
 const secToBtnIdx = {};
 btns.forEach((b, i) => { if (b.dataset.s) secToBtnIdx[b.dataset.s] = i; });
 
