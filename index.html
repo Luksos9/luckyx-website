@@ -1105,6 +1105,16 @@ body::after {
 .b-high { background: #9a5a1e; color: #fff; }
 .b-hot { background: #c43030; color: #fff; }
 .b-new { background: #1f7a50; color: #fff; }
+.b-pop { background: linear-gradient(135deg, #d4a017, #dd5c0c); color: #fff; }
+.b-begin { background: #2a7b9b; color: #fff; }
+
+.course-card:has(.b-pop) {
+  border-color: rgba(221,92,12,0.3);
+  box-shadow: 0 0 24px rgba(221,92,12,0.1);
+}
+.course-card:has(.b-pop):hover {
+  box-shadow: 0 16px 48px rgba(221,92,12,0.14);
+}
 
 /* Next cert suggestion on card */
 .card-next {
@@ -1151,24 +1161,29 @@ body::after {
   text-align: center;
   font-size: 12px;
   color: var(--orange);
-  font-weight: 500;
-  padding: 6px 0 0;
+  font-weight: 600;
+  padding: 8px 16px;
   margin-top: auto;
   cursor: pointer;
-  transition: opacity 0.2s;
+  border: 1px solid var(--orange);
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
 }
-.card-details:hover { opacity: 0.8; }
+.card-details:hover { background: var(--orange); color: #fff; }
 .card-free-quiz {
   display: block;
   text-align: center;
   font-size: 11px;
   color: var(--text-dim);
   font-weight: 500;
-  padding: 4px 0 0;
+  padding: 6px 0 2px;
   cursor: pointer;
-  transition: color 0.2s;
+  transition: color 0.2s, text-decoration-color 0.2s;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: rgba(255,255,255,0.15);
 }
-.card-free-quiz:hover { color: var(--orange); }
+.card-free-quiz:hover { color: var(--orange); text-decoration-color: var(--orange); }
 
 .card-body {
   padding: 16px 18px 18px;
@@ -2498,8 +2513,8 @@ h3.card-title,
 <script>
 /* ======== COURSE DATA WITH REFERRAL LINKS + CROSS-SELL ======== */
 const courses = [
-  { title:"CIS Data Foundations / CSDM", code:"DF", slug:"cis-data-foundations", desc:"CMDB health, CSDM, and the prerequisite that unlocks seven more certs.", rating:4.9, ratings:144, q:470, badge:null, price:9.99, orig:99.99, track:"data", ref:"https://www.udemy.com/course/pass-servicenow-cis-data-foundations-cmdbcsdm/?referralCode=442CA6D450663B1D42AF", next:"SM" },
-  { title:"CSA System Administrator", code:"CSA", slug:"csa", desc:"The broadest ServiceNow exam needs the broadest question bank.", rating:4.5, ratings:2, q:392, badge:null, price:9.99, orig:99.99, track:"core", ref:"https://www.udemy.com/course/pass-your-servicenow-csa-certified-system-administrator/?referralCode=2AE0DFA7BE468BCA8888", next:"CAD" },
+  { title:"CIS Data Foundations / CSDM", code:"DF", slug:"cis-data-foundations", desc:"CMDB health, CSDM, and the prerequisite that unlocks seven more certs.", rating:4.9, ratings:144, q:470, badge:"pop", price:9.99, orig:99.99, track:"data", ref:"https://www.udemy.com/course/pass-servicenow-cis-data-foundations-cmdbcsdm/?referralCode=442CA6D450663B1D42AF", next:"SM" },
+  { title:"CSA System Administrator", code:"CSA", slug:"csa", desc:"The broadest ServiceNow exam needs the broadest question bank.", rating:4.5, ratings:2, q:392, badge:"begin", price:9.99, orig:99.99, track:"core", ref:"https://www.udemy.com/course/pass-your-servicenow-csa-certified-system-administrator/?referralCode=2AE0DFA7BE468BCA8888", next:"CAD" },
   { title:"CIS Strategic Portfolio Mgmt", code:"SPM", slug:"cis-spm", desc:"Demand, project, portfolio, resource. The SPM stack in plain English.", rating:5.0, ratings:13, q:350, badge:"high", price:9.99, orig:99.99, track:"service", ref:"https://www.udemy.com/course/pass-your-servicenow-cis-strategic-portfolio-management-spm/?referralCode=D08240CA36DE435A8CD0", next:"PA" },
   { title:"CIS Customer Service Mgmt", code:"CSM", slug:"cis-csm", desc:"Case work, portals, entitlements, communities, and tricky channel questions.", rating:4.6, ratings:25, q:340, badge:"high", price:9.99, orig:99.99, track:"service", ref:"https://www.udemy.com/course/pass-your-servicenow-cis-customer-service-management-csm/?referralCode=211B4B7795C55DA7281A", next:"FSM" },
   { title:"Certified Application Developer", code:"CAD", slug:"cad", desc:"Scripting, Flow Designer, scoping. The domains that trip up developers.", rating:4.5, ratings:208, q:325, badge:null, price:9.99, orig:99.99, track:"dev", ref:"https://www.udemy.com/course/pass-your-servicenow-cad-exam/?referralCode=CF61F2B36C7F02F40EFB", next:"ITSM" },
@@ -2561,8 +2576,8 @@ Object.entries(tracks).forEach(([key, label]) => {
 });
 
 const grid = document.getElementById('grid');
-const bc = { best:'b-best', high:'b-high', hot:'b-hot', new:'b-new' };
-const bl = { best:'Bestseller', high:'Highest Rated', hot:'Hot & New', new:'New' };
+const bc = { best:'b-best', high:'b-high', hot:'b-hot', new:'b-new', pop:'b-pop', begin:'b-begin' };
+const bl = { best:'Bestseller', high:'Highest Rated', hot:'Hot & New', new:'New', pop:'Most Popular', begin:'Beginner Friendly' };
 
 /* Map course codes to hero image filenames */
 const heroImg = {};
