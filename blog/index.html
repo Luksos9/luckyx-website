@@ -103,33 +103,91 @@ a:hover { text-decoration: underline; }
 .theme-toggle svg { width: 18px; height: 18px; stroke: var(--text-dim); stroke-width: 2; fill: none; }
 
 /* Layout */
-.bl-wrap { max-width: 800px; margin: 0 auto; padding: 40px 24px 80px; }
+.bl-wrap { max-width: 960px; margin: 0 auto; padding: 40px 24px 80px; }
 .bl-back { display: inline-flex; align-items: center; gap: 6px; color: var(--text-dim); font-size: 0.9rem; margin-bottom: 32px; transition: color 0.2s; }
 .bl-back:hover { color: var(--orange); text-decoration: none; }
 .bl-back svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 2; fill: none; }
 
 /* Header */
-.bl-header { text-align: center; margin-bottom: 48px; }
-.bl-header h1 { font-size: 2rem; font-weight: 800; margin-bottom: 12px; }
-.bl-header p { font-size: 1rem; color: var(--text-dim); max-width: 520px; margin: 0 auto; }
+.bl-header { text-align: center; margin-bottom: 56px; }
+.bl-header h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 12px; }
+.bl-header p { font-size: 1rem; color: var(--text-dim); max-width: 540px; margin: 0 auto; line-height: 1.6; }
+.bl-stat-row { display: flex; gap: 32px; justify-content: center; margin-top: 24px; }
+.bl-stat { font-size: 0.85rem; color: var(--text-dim); }
+.bl-stat strong { color: var(--orange); font-weight: 700; }
+
+/* Section headings */
+.bl-section { margin-bottom: 48px; }
+.bl-section-head { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+.bl-section-icon { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, rgba(221,92,12,0.12), rgba(221,92,12,0.22)); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.bl-section-icon svg { width: 18px; height: 18px; stroke: var(--orange); stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.bl-section-title { font-size: 1.2rem; font-weight: 700; }
+.bl-section-count { font-size: 0.78rem; color: var(--text-faint); margin-left: auto; }
 
 /* Card grid */
-.bl-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+.bl-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
 @media (min-width: 640px) {
   .bl-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 820px) {
+  .bl-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
 }
 
 /* Card */
 .bl-card {
   background: var(--bg-raised); border: 1px solid var(--border); border-radius: 14px;
-  padding: 28px 24px; transition: border-color 0.2s, box-shadow 0.2s;
-  display: flex; flex-direction: column;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  display: flex; flex-direction: column; overflow: hidden;
 }
-.bl-card:hover { border-color: var(--border-hover); box-shadow: var(--card-shadow); text-decoration: none; }
-.bl-card-tag { display: inline-block; background: rgba(221,92,12,0.1); color: var(--orange); font-size: 0.72rem; font-weight: 600; padding: 3px 10px; border-radius: 16px; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.04em; align-self: flex-start; }
-.bl-card h2 { font-size: 1.15rem; font-weight: 700; line-height: 1.3; margin-bottom: 10px; color: var(--text); }
-.bl-card p { font-size: 0.9rem; color: var(--text-dim); line-height: 1.5; margin-bottom: 14px; flex: 1; }
-.bl-card-meta { font-size: 0.78rem; color: var(--text-faint); display: flex; gap: 12px; }
+.bl-card:hover { border-color: var(--border-hover); box-shadow: var(--card-shadow); text-decoration: none; transform: translateY(-2px); }
+
+/* Card banner with icon */
+.bl-card-banner {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+}
+.bl-card-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.5' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.bl-card-banner svg {
+  width: 28px; height: 28px; stroke-width: 1.8; fill: none;
+  stroke-linecap: round; stroke-linejoin: round;
+  position: relative; z-index: 1;
+}
+.bl-card-banner .banner-code {
+  font-size: 0.85rem; font-weight: 700; letter-spacing: 0.5px;
+  position: relative; z-index: 1;
+}
+
+/* Banner color variants */
+.banner-study { background: linear-gradient(135deg, rgba(221,92,12,0.15), rgba(255,140,66,0.08)); }
+.banner-study svg, .banner-study .banner-code { stroke: var(--orange); color: var(--orange); }
+.banner-career { background: linear-gradient(135deg, rgba(76,175,80,0.12), rgba(129,199,132,0.06)); }
+.banner-career svg, .banner-career .banner-code { stroke: #66bb6a; color: #66bb6a; }
+.banner-reference { background: linear-gradient(135deg, rgba(66,165,245,0.12), rgba(100,181,246,0.06)); }
+.banner-reference svg, .banner-reference .banner-code { stroke: #42a5f5; color: #42a5f5; }
+.banner-compare { background: linear-gradient(135deg, rgba(171,71,188,0.12), rgba(186,104,200,0.06)); }
+.banner-compare svg, .banner-compare .banner-code { stroke: #ab47bc; color: #ab47bc; }
+
+/* Card body */
+.bl-card-body { padding: 20px 24px 24px; display: flex; flex-direction: column; flex: 1; }
+.bl-card-tag { display: inline-block; background: rgba(221,92,12,0.1); color: var(--orange); font-size: 0.7rem; font-weight: 600; padding: 3px 10px; border-radius: 16px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.04em; align-self: flex-start; }
+.bl-card-tag.tag-career { background: rgba(76,175,80,0.1); color: #66bb6a; }
+.bl-card-tag.tag-reference { background: rgba(66,165,245,0.1); color: #42a5f5; }
+.bl-card-tag.tag-compare { background: rgba(171,71,188,0.1); color: #ab47bc; }
+.bl-card h2 { font-size: 1.05rem; font-weight: 700; line-height: 1.3; margin-bottom: 8px; color: var(--text); }
+.bl-card p { font-size: 0.85rem; color: var(--text-dim); line-height: 1.5; margin-bottom: 12px; flex: 1; }
+.bl-card-meta { font-size: 0.78rem; color: var(--text-faint); display: flex; gap: 12px; align-items: center; }
+.bl-card-meta svg { width: 14px; height: 14px; stroke: var(--text-faint); stroke-width: 2; fill: none; }
 
 /* Footer */
 .bl-footer { text-align: center; padding: 40px 24px; font-size: 0.84rem; color: var(--text-faint); border-top: 1px solid var(--border); margin-top: 60px; }
@@ -158,245 +216,397 @@ a:hover { text-decoration: underline; }
   <header class="bl-header">
     <h1>Study Guides</h1>
     <p>Study guides, exam breakdowns, and career advice for ServiceNow certifications. Written for people who want to pass on the first attempt.</p>
+    <div class="bl-stat-row">
+      <span class="bl-stat"><strong>26</strong> guides</span>
+      <span class="bl-stat"><strong>18</strong> exams covered</span>
+      <span class="bl-stat"><strong>Zurich</strong> release</span>
+    </div>
   </header>
 
-  <!-- Article cards -->
-  <div class="bl-grid">
+  <!-- ═══════ EXAM STUDY GUIDES ═══════ -->
+  <div class="bl-section">
+    <div class="bl-section-head">
+      <div class="bl-section-icon"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.1 2.7 3 6 3s6-1.9 6-3v-5"/></svg></div>
+      <div class="bl-section-title">Exam Study Guides</div>
+      <div class="bl-section-count">10 guides</div>
+    </div>
+    <div class="bl-grid">
 
-    <a href="/blog/how-to-pass-cis-csm-2026.html" class="bl-card">
-      <span class="bl-card-tag">Study guide</span>
-      <h2>How to pass CIS-CSM in 2026</h2>
-      <p>Complete CIS-CSM study guide. Covers Customer Service Management domains, exam format, a 5-week study plan, PDI labs, and common mistakes to avoid.</p>
-      <div class="bl-card-meta">
-        <span>14 min read</span>
-      </div>
-    </a>
+      <a href="/blog/how-to-pass-cis-df-2026.html" class="bl-card">
+        <div class="bl-card-banner banner-study">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          <span class="banner-code">CIS-DF</span>
+        </div>
+        <div class="bl-card-body">
+          <span class="bl-card-tag">Study guide</span>
+          <h2>How to pass CIS-DF in 2026</h2>
+          <p>CMDB, CSDM, domain weights, a 4-week study plan, and why the December 2026 deadline changes everything.</p>
+          <div class="bl-card-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>12 min read</span></div>
+        </div>
+      </a>
 
-    <a href="/blog/how-to-pass-cis-spm-2026.html" class="bl-card">
-      <span class="bl-card-tag">Study guide</span>
-      <h2>How to pass CIS-SPM in 2026</h2>
-      <p>Everything you need to pass CIS-Strategic Portfolio Management. Demand management, project portfolios, resource management, agile development, domain weights, and a 5-week study plan.</p>
-      <div class="bl-card-meta">
-        <span>14 min read</span>
-      </div>
-    </a>
+      <a href="/blog/how-to-pass-csa-2026.html" class="bl-card">
+        <div class="bl-card-banner banner-study">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          <span class="banner-code">CSA</span>
+        </div>
+        <div class="bl-card-body">
+          <span class="bl-card-tag">Study guide</span>
+          <h2>How to pass the ServiceNow CSA exam in 2026</h2>
+          <p>Zurich domain weights, a 5-week study plan, PDI tips, and the five mistakes that cost people a $225 retake.</p>
+          <div class="bl-card-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>14 min read</span></div>
+        </div>
+      </a>
 
-    <a href="/blog/how-to-pass-cis-discovery-2026.html" class="bl-card">
-      <span class="bl-card-tag">Study guide</span>
-      <h2>How to pass CIS-Discovery in 2026</h2>
-      <p>Complete study guide for the CIS-Discovery exam. Covers domain weights, a 5-week study plan, PDI labs, MID server setup, and practice test strategy.</p>
-      <div class="bl-card-meta">
-        <span>14 min read</span>
-      </div>
-    </a>
+      <a href="/blog/how-to-pass-cad-2026.html" class="bl-card">
+        <div class="bl-card-banner banner-study">
+          <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <span class="banner-code">CAD</span>
+        </div>
+        <div class="bl-card-body">
+          <span class="bl-card-tag">Study guide</span>
+          <h2>How to pass the ServiceNow CAD exam in 2026</h2>
+          <p>Zurich domain weights, a 6-week study plan focused on scripting and security, and how the developer track differs.</p>
+          <div class="bl-card-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>14 min read</span></div>
+        </div>
+      </a>
 
-    <a href="/blog/how-to-pass-cis-ham-sam-2026.html" class="bl-card">
-      <span class="bl-card-tag">Study guide</span>
-      <h2>How to pass CIS-HAM and CIS-SAM in 2026</h2>
-      <p>A combined study guide for Hardware and Software Asset Management certifications. Exam format, domain weights, shared concepts, study order, and week-by-week plans for both.</p>
-      <div class="bl-card-meta">
-        <span>16 min read</span>
-      </div>
-    </a>
+      <a href="/blog/how-to-pass-cis-itsm-2026.html" class="bl-card">
+        <div class="bl-card-banner banner-study">
+          <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          <span class="banner-code">CIS-ITSM</span>
+        </div>
+        <div class="bl-card-body">
+          <span class="bl-card-tag">Study guide</span>
+          <h2>How to pass CIS-ITSM in 2026</h2>
+          <p>Domain weights, a 5-week study plan, CIS-DF prerequisite explained, and the mistakes that cost a $225 retake.</p>
+          <div class="bl-card-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>14 min read</span></div>
+        </div>
+      </a>
 
-    <a href="/blog/how-to-pass-cis-sir-vr-2026.html" class="bl-card">
-      <span class="bl-card-tag">Study guide</span>
-      <h2>How to pass CIS-SIR and CIS-VR in 2026</h2>
-      <p>Complete study guide for both Security Incident Response and Vulnerability Response. Domain weights, study plans, shared concepts, and practice test links for ServiceNow's SecOps track.</p>
-      <div class="bl-card-meta">
-        <span>16 min read</span>
-      </div>
-    </a>
+      <a href="/blog/how-to-pass-cis-csm-2026.html" class="bl-card">
+        <div class="bl-card-banner banner-study">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span class="banner-code">CIS-CSM</span>
+        </div>
+        <div class="bl-card-body">
+          <span class="bl-card-tag">Study guide</span>
+          <h2>How to pass CIS-CSM in 2026</h2>
+          <p>Customer Service Management domains, exam format, a 5-week study plan, PDI labs, and common mistakes to avoid.</p>
+          <div class="bl-card-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>14 min read</span></div>
+        </div>
+      </a>
 
-    <a href="/blog/how-to-pass-cis-itsm-2026.html" class="bl-card">
-      <span class="bl-card-tag">Study guide</span>
-      <h2>How to pass CIS-ITSM in 2026</h2>
-      <p>Domain weights, a 5-week study plan, CIS-DF prerequisite explained, and the mistakes that cost people a $225 retake. Built for the Zurich release.</p>
-      <div class="bl-card-meta">
-        <span>14 min read</span>
-      </div>
-    </a>
+      <a href="/blog/how-to-pass-cis-spm-2026.html" class="bl-card">
+        <div class="bl-card-banner banner-study">
+          <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          <span class="banner-code">CIS-SPM</span>
+        </div>
+        <div class="bl-card-body">
+          <span class="bl-card-tag">Study guide</span>
+          <h2>How to pass CIS-SPM in 2026</h2>
+          <p>Demand management, project portfolios, resource management, agile development, domain weights, and a 5-week plan.</p>
+          <div class="bl-card-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>14 min read</span></div>
+        </div>
+      </a>
 
-    <a href="/blog/servicenow-salary-guide-2026.html" class="bl-card">
-      <span class="bl-card-tag">Career guide</span>
-      <h2>ServiceNow salary guide 2026</h2>
-      <p>Salary data by certification level: CSA $118K, CAD $126K, Security $143K, Architect $163K+. How certifications impact earning potential and which tracks pay the most.</p>
-      <div class="bl-card-meta">
-        <span>14 min read</span>
-      </div>
-    </a>
+      <a href="/blog/how-to-pass-cis-discovery-2026.html" class="bl-card">
+        <div class="bl-card-banner banner-study">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <span class="banner-code">CIS-Discovery</span>
+        </div>
+        <div class="bl-card-body">
+          <span class="bl-card-tag">Study guide</span>
+          <h2>How to pass CIS-Discovery in 2026</h2>
+          <p>Domain weights, a 5-week study plan, PDI labs, MID server setup, and practice test strategy.</p>
+          <div class="bl-card-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>14 min read</span></div>
+        </div>
+      </a>
 
-    <a href="/blog/csa-vs-cad.html" class="bl-card">
-      <span class="bl-card-tag">Comparison guide</span>
-      <h2>CSA vs CAD: admin or developer path?</h2>
-      <p>Side-by-side comparison of ServiceNow CSA and CAD. What each tests, career trajectories, salary differences, and a clear recommendation based on your role.</p>
-      <div class="bl-card-meta">
-        <span>12 min read</span>
-      </div>
-    </a>
+      <a href="/blog/how-to-pass-cis-ham-sam-2026.html" class="bl-card">
+        <div class="bl-card-banner banner-study">
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          <span class="banner-code">CIS-HAM / SAM</span>
+        </div>
+        <div class="bl-card-body">
+          <span class="bl-card-tag">Study guide</span>
+          <h2>How to pass CIS-HAM and CIS-SAM in 2026</h2>
+          <p>Combined study guide for Hardware and Software Asset Management. Domain weights, shared concepts, and study order.</p>
+          <div class="bl-card-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>16 min read</span></div>
+        </div>
+      </a>
 
-    <a href="/blog/cis-df-mandate-explained.html" class="bl-card">
-      <span class="bl-card-tag">Reference guide</span>
-      <h2>The CIS-DF mandate explained</h2>
-      <p>ServiceNow now requires CIS-Data Foundations for 7 CIS specializations. Which certs are affected, key dates, the free exam window, and what to do if you already hold a CIS cert.</p>
-      <div class="bl-card-meta">
-        <span>10 min read</span>
-      </div>
-    </a>
+      <a href="/blog/how-to-pass-cis-sir-vr-2026.html" class="bl-card">
+        <div class="bl-card-banner banner-study">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span class="banner-code">CIS-SIR / VR</span>
+        </div>
+        <div class="bl-card-body">
+          <span class="bl-card-tag">Study guide</span>
+          <h2>How to pass CIS-SIR and CIS-VR in 2026</h2>
+          <p>Security Incident Response and Vulnerability Response. Domain weights, study plans, and shared concepts.</p>
+          <div class="bl-card-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>16 min read</span></div>
+        </div>
+      </a>
 
-    <a href="/blog/free-servicenow-study-resources.html" class="bl-card">
-      <span class="bl-card-tag">Resource guide</span>
-      <h2>Free ServiceNow study resources in 2026</h2>
-      <p>Every free resource worth using: PDI, Now Learning, official docs, community forums, practice tests, and the free CIS-DF exam offer. No paid tools required to start.</p>
-      <div class="bl-card-meta">
-        <span>12 min read</span>
-      </div>
-    </a>
+      <a href="/blog/how-to-study-for-servicenow-exams.html" class="bl-card">
+        <div class="bl-card-banner banner-study">
+          <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          <span class="banner-code">All exams</span>
+        </div>
+        <div class="bl-card-body">
+          <span class="bl-card-tag">Study guide</span>
+          <h2>How to study for ServiceNow exams</h2>
+          <p>The three-phase study method: learn, practice, test. Scheduling, PDI hands-on work, and exam day logistics.</p>
+          <div class="bl-card-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>12 min read</span></div>
+        </div>
+      </a>
 
-    <a href="/blog/servicenow-vs-salesforce-certification.html" class="bl-card">
-      <span class="bl-card-tag">Comparison guide</span>
-      <h2>ServiceNow vs Salesforce certification</h2>
-      <p>Two enterprise platforms, two certification ecosystems. Exam costs, salary ranges, job market demand, and the supply/demand ratio that favors ServiceNow professionals.</p>
-      <div class="bl-card-meta">
-        <span>14 min read</span>
-      </div>
-    </a>
+    </div>
+  </div>
 
-    <a href="/blog/how-to-study-for-servicenow-exams.html" class="bl-card">
-      <span class="bl-card-tag">Study guide</span>
-      <h2>How to study for ServiceNow exams</h2>
-      <p>The three-phase study method: learn, practice, test. A proven approach that covers scheduling, PDI hands-on work, practice test strategy, and exam day logistics.</p>
-      <div class="bl-card-meta">
-        <span>12 min read</span>
-      </div>
-    </a>
+  <!-- ═══════ CAREER & PLANNING ═══════ -->
+  <div class="bl-section">
+    <div class="bl-section-head">
+      <div class="bl-section-icon"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+      <div class="bl-section-title">Career &amp; Planning</div>
+      <div class="bl-section-count">5 guides</div>
+    </div>
+    <div class="bl-grid">
 
-    <a href="/blog/exam-dumps-vs-practice-tests.html" class="bl-card">
-      <span class="bl-card-tag">Career guide</span>
-      <h2>Exam dumps vs practice tests: why dumps fail you</h2>
-      <p>Why memorizing leaked questions is a $450 gamble. The risks of brain dumps, what makes a good practice test, and a better study strategy that actually works.</p>
-      <div class="bl-card-meta">
-        <span>10 min read</span>
-      </div>
-    </a>
+      <a href="/blog/servicenow-salary-guide-2026.html" class="bl-card">
+        <div class="bl-card-banner banner-career">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <span class="banner-code">Salaries</span>
+        </div>
+        <div class="bl-card-body">
+          <span class="bl-card-tag tag-career">Career guide</span>
+          <h2>ServiceNow salary guide 2026</h2>
+          <p>CSA $118K, CAD $126K, Security $143K, Architect $163K+. Which tracks pay the most and why.</p>
+          <div class="bl-card-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>14 min read</span></div>
+        </div>
+      </a>
 
-    <a href="/blog/servicenow-certification-path-2026.html" class="bl-card">
-      <span class="bl-card-tag">Reference guide</span>
-      <h2>The complete ServiceNow certification path for 2026</h2>
-      <p>Every ServiceNow certification mapped: CSA, CAD, CIS-DF, 15 CIS specializations, and expert-level certs. Prerequisites, salary data, exam costs, and the CIS-DF mandate explained.</p>
-      <div class="bl-card-meta">
-        <span>20 min read</span>
-      </div>
-    </a>
+      <a href="/blog/is-servicenow-certification-worth-it.html" class="bl-card">
+        <div class="bl-card-banner banner-career">
+          <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          <span class="banner-code">ROI</span>
+        </div>
+        <div class="bl-card-body">
+          <span class="bl-card-tag tag-career">Career guide</span>
+          <h2>Is ServiceNow certification worth it in 2026?</h2>
+          <p>Salary data, ROI analysis, and career impact stats. The math behind the investment, and when it is not worth it.</p>
+          <div class="bl-card-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>14 min read</span></div>
+        </div>
+      </a>
 
-    <a href="/blog/is-servicenow-certification-worth-it.html" class="bl-card">
-      <span class="bl-card-tag">Career guide</span>
-      <h2>Is ServiceNow certification worth it in 2026?</h2>
-      <p>Salary data, ROI analysis, and career impact stats. CSA holders average $118K, security specialists reach $160K. The math behind the investment, and when certification is not worth it.</p>
-      <div class="bl-card-meta">
-        <span>14 min read</span>
-      </div>
-    </a>
+      <a href="/blog/which-servicenow-certification-first.html" class="bl-card">
+        <div class="bl-card-banner banner-career">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+          <span class="banner-code">First cert</span>
+        </div>
+        <div class="bl-card-body">
+          <span class="bl-card-tag tag-career">Career guide</span>
+          <h2>Which ServiceNow certification should you get first?</h2>
+          <p>Four entry points, a decision flowchart, track-by-track breakdown, and salary data.</p>
+          <div class="bl-card-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>15 min read</span></div>
+        </div>
+      </a>
 
-    <a href="/blog/cis-df-vs-csa.html" class="bl-card">
-      <span class="bl-card-tag">Comparison guide</span>
-      <h2>CIS-DF vs CSA: which exam should you take first?</h2>
-      <p>A direct comparison of CIS-Data Foundations and CSA. Side-by-side table, study time, career impact, and a clear recommendation based on your background.</p>
-      <div class="bl-card-meta">
-        <span>10 min read</span>
-      </div>
-    </a>
+      <a href="/blog/csa-to-cta-career-path.html" class="bl-card">
+        <div class="bl-card-banner banner-career">
+          <svg viewBox="0 0 24 24"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+          <span class="banner-code">CSA &rarr; CTA</span>
+        </div>
+        <div class="bl-card-body">
+          <span class="bl-card-tag tag-career">Career guide</span>
+          <h2>CSA to CTA: the ServiceNow architect career path</h2>
+          <p>Milestone certifications, realistic timelines, salary progression, and CTA board exam details.</p>
+          <div class="bl-card-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>14 min read</span></div>
+        </div>
+      </a>
 
-    <a href="/blog/how-to-pass-csa-2026.html" class="bl-card">
-      <span class="bl-card-tag">Study guide</span>
-      <h2>How to pass the ServiceNow CSA exam in 2026</h2>
-      <p>Zurich domain weights, a 5-week study plan, PDI tips, and the five mistakes that cost people a $225 retake. Everything you need to pass CSA on the first attempt.</p>
-      <div class="bl-card-meta">
-        <span>14 min read</span>
-      </div>
-    </a>
+      <a href="/blog/exam-dumps-vs-practice-tests.html" class="bl-card">
+        <div class="bl-card-banner banner-career">
+          <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span class="banner-code">Warning</span>
+        </div>
+        <div class="bl-card-body">
+          <span class="bl-card-tag tag-career">Career guide</span>
+          <h2>Exam dumps vs practice tests: why dumps fail you</h2>
+          <p>Why memorizing leaked questions is a $450 gamble. The risks and a better study strategy.</p>
+          <div class="bl-card-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>10 min read</span></div>
+        </div>
+      </a>
 
-    <a href="/blog/which-servicenow-certification-first.html" class="bl-card">
-      <span class="bl-card-tag">Career guide</span>
-      <h2>Which ServiceNow certification should you get first?</h2>
-      <p>Four entry points, a decision flowchart, track-by-track breakdown, and salary data. Covers the CIS-DF mandate, the ITSM-plus-one hiring trend, and links to all 18 course pages.</p>
-      <div class="bl-card-meta">
-        <span>15 min read</span>
-      </div>
-    </a>
+    </div>
+  </div>
 
-    <a href="/blog/servicenow-certification-landscape-2026.html" class="bl-card">
-      <span class="bl-card-tag">Reference guide</span>
-      <h2>ServiceNow certification landscape 2026</h2>
-      <p>Prerequisites, salaries, exam formats, and job market demand across all 20+ ServiceNow certifications. Every claim sourced with links to official documentation.</p>
-      <div class="bl-card-meta">
-        <span>25 min read</span>
-      </div>
-    </a>
+  <!-- ═══════ COMPARISONS ═══════ -->
+  <div class="bl-section">
+    <div class="bl-section-head">
+      <div class="bl-section-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+      <div class="bl-section-title">Comparisons</div>
+      <div class="bl-section-count">3 guides</div>
+    </div>
+    <div class="bl-grid bl-grid-3">
 
-    <a href="/blog/how-to-pass-cad-2026.html" class="bl-card">
-      <span class="bl-card-tag">Study guide</span>
-      <h2>How to pass the ServiceNow CAD exam in 2026</h2>
-      <p>Zurich domain weights, a 6-week study plan focused on scripting and security, common mistakes, and how the developer track differs from the admin path.</p>
-      <div class="bl-card-meta">
-        <span>14 min read</span>
-      </div>
-    </a>
+      <a href="/blog/csa-vs-cad.html" class="bl-card">
+        <div class="bl-card-banner banner-compare">
+          <svg viewBox="0 0 24 24"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3"/><path d="m15 9 6-6"/></svg>
+          <span class="banner-code">CSA vs CAD</span>
+        </div>
+        <div class="bl-card-body">
+          <span class="bl-card-tag tag-compare">Comparison</span>
+          <h2>CSA vs CAD: admin or developer path?</h2>
+          <p>What each tests, career trajectories, salary differences, and a clear recommendation.</p>
+          <div class="bl-card-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>12 min read</span></div>
+        </div>
+      </a>
 
-    <a href="/blog/how-to-pass-cis-df-2026.html" class="bl-card">
-      <span class="bl-card-tag">Study guide</span>
-      <h2>How to pass CIS-DF in 2026</h2>
-      <p>A complete breakdown of the CIS-Data Foundations exam: domain weights, a 4-week study plan, common mistakes, and why the December 2026 deadline changes everything.</p>
-      <div class="bl-card-meta">
-        <span>12 min read</span>
-      </div>
-    </a>
+      <a href="/blog/cis-df-vs-csa.html" class="bl-card">
+        <div class="bl-card-banner banner-compare">
+          <svg viewBox="0 0 24 24"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3"/><path d="m15 9 6-6"/></svg>
+          <span class="banner-code">CIS-DF vs CSA</span>
+        </div>
+        <div class="bl-card-body">
+          <span class="bl-card-tag tag-compare">Comparison</span>
+          <h2>CIS-DF vs CSA: which exam should you take first?</h2>
+          <p>Side-by-side table, study time, career impact, and a clear recommendation.</p>
+          <div class="bl-card-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>10 min read</span></div>
+        </div>
+      </a>
 
-    <a href="/blog/servicenow-certification-cost-2026.html" class="bl-card">
-      <span class="bl-card-tag">Cost guide</span>
-      <h2>ServiceNow certification cost in 2026</h2>
-      <p>Every exam fee, retake price, free voucher option, and hidden cost. Three budget scenarios from $10 to $900, plus a platform comparison table.</p>
-      <div class="bl-card-meta">
-        <span>10 min read</span>
-      </div>
-    </a>
+      <a href="/blog/servicenow-vs-salesforce-certification.html" class="bl-card">
+        <div class="bl-card-banner banner-compare">
+          <svg viewBox="0 0 24 24"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3"/><path d="m15 9 6-6"/></svg>
+          <span class="banner-code">SN vs SF</span>
+        </div>
+        <div class="bl-card-body">
+          <span class="bl-card-tag tag-compare">Comparison</span>
+          <h2>ServiceNow vs Salesforce certification</h2>
+          <p>Exam costs, salary ranges, job market demand, and the supply/demand ratio.</p>
+          <div class="bl-card-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>14 min read</span></div>
+        </div>
+      </a>
 
-    <a href="/blog/csa-to-cta-career-path.html" class="bl-card">
-      <span class="bl-card-tag">Career guide</span>
-      <h2>CSA to CTA: the ServiceNow architect career path</h2>
-      <p>The complete roadmap from CSA to CTA. Milestone certifications, realistic timelines, salary progression at each stage, CTA board exam details, and alternative expert paths.</p>
-      <div class="bl-card-meta">
-        <span>14 min read</span>
-      </div>
-    </a>
+    </div>
+  </div>
 
-    <a href="/blog/pearson-vue-servicenow-exam-guide.html" class="bl-card">
-      <span class="bl-card-tag">Reference guide</span>
-      <h2>Pearson VUE: ServiceNow exam registration guide</h2>
-      <p>Step-by-step guide to registering for ServiceNow exams through Pearson VUE. Account setup, test center vs online proctored, scheduling, exam day tips, and retake policies.</p>
-      <div class="bl-card-meta">
-        <span>12 min read</span>
-      </div>
-    </a>
+  <!-- ═══════ REFERENCE ═══════ -->
+  <div class="bl-section">
+    <div class="bl-section-head">
+      <div class="bl-section-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+      <div class="bl-section-title">Reference &amp; Resources</div>
+      <div class="bl-section-count">8 guides</div>
+    </div>
+    <div class="bl-grid">
 
-    <a href="/blog/servicenow-certification-maintenance-guide.html" class="bl-card">
-      <span class="bl-card-tag">Reference guide</span>
-      <h2>ServiceNow certification maintenance guide</h2>
-      <p>Complete guide to maintaining your ServiceNow certifications in 2026. Delta exams, renewal timelines, deadlines, costs, and strategies for keeping multiple certs current.</p>
-      <div class="bl-card-meta">
-        <span>14 min read</span>
-      </div>
-    </a>
+      <a href="/blog/cis-df-mandate-explained.html" class="bl-card">
+        <div class="bl-card-banner banner-reference">
+          <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span class="banner-code">CIS-DF Mandate</span>
+        </div>
+        <div class="bl-card-body">
+          <span class="bl-card-tag tag-reference">Must read</span>
+          <h2>The CIS-DF mandate explained</h2>
+          <p>7 CIS certs now require Data Foundations. Affected certs, key dates, the free exam window, and what to do.</p>
+          <div class="bl-card-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>10 min read</span></div>
+        </div>
+      </a>
 
-    <a href="/blog/servicenow-micro-certifications-guide.html" class="bl-card">
-      <span class="bl-card-tag">Reference guide</span>
-      <h2>ServiceNow micro-certifications guide</h2>
-      <p>Complete guide to ServiceNow micro-certifications in 2026. Which free Now Learning credentials are available, how to earn them, and how they fit alongside full certifications.</p>
-      <div class="bl-card-meta">
-        <span>10 min read</span>
-      </div>
-    </a>
+      <a href="/blog/servicenow-certification-path-2026.html" class="bl-card">
+        <div class="bl-card-banner banner-reference">
+          <svg viewBox="0 0 24 24"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><path d="M6 9v12"/></svg>
+          <span class="banner-code">Cert path</span>
+        </div>
+        <div class="bl-card-body">
+          <span class="bl-card-tag tag-reference">Reference</span>
+          <h2>The complete ServiceNow certification path for 2026</h2>
+          <p>Every cert mapped: CSA, CAD, CIS-DF, 15 specializations, and expert-level certs. Prerequisites and salary data.</p>
+          <div class="bl-card-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>20 min read</span></div>
+        </div>
+      </a>
 
+      <a href="/blog/servicenow-certification-cost-2026.html" class="bl-card">
+        <div class="bl-card-banner banner-reference">
+          <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          <span class="banner-code">Costs</span>
+        </div>
+        <div class="bl-card-body">
+          <span class="bl-card-tag tag-reference">Reference</span>
+          <h2>ServiceNow certification cost in 2026</h2>
+          <p>Every exam fee, retake price, free voucher option, and hidden cost. Three budget scenarios from $10 to $900.</p>
+          <div class="bl-card-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>10 min read</span></div>
+        </div>
+      </a>
+
+      <a href="/blog/free-servicenow-study-resources.html" class="bl-card">
+        <div class="bl-card-banner banner-reference">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span class="banner-code">Free</span>
+        </div>
+        <div class="bl-card-body">
+          <span class="bl-card-tag tag-reference">Resource</span>
+          <h2>Free ServiceNow study resources in 2026</h2>
+          <p>PDI, Now Learning, docs, forums, practice tests, and the free CIS-DF exam offer. No paid tools needed.</p>
+          <div class="bl-card-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>12 min read</span></div>
+        </div>
+      </a>
+
+      <a href="/blog/servicenow-certification-landscape-2026.html" class="bl-card">
+        <div class="bl-card-banner banner-reference">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          <span class="banner-code">Landscape</span>
+        </div>
+        <div class="bl-card-body">
+          <span class="bl-card-tag tag-reference">Reference</span>
+          <h2>ServiceNow certification landscape 2026</h2>
+          <p>Prerequisites, salaries, exam formats, and job demand across all 20+ ServiceNow certifications.</p>
+          <div class="bl-card-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>25 min read</span></div>
+        </div>
+      </a>
+
+      <a href="/blog/pearson-vue-servicenow-exam-guide.html" class="bl-card">
+        <div class="bl-card-banner banner-reference">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span class="banner-code">Pearson VUE</span>
+        </div>
+        <div class="bl-card-body">
+          <span class="bl-card-tag tag-reference">Reference</span>
+          <h2>Pearson VUE: ServiceNow exam registration guide</h2>
+          <p>Account setup, test center vs online proctored, scheduling, exam day tips, and retake policies.</p>
+          <div class="bl-card-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>12 min read</span></div>
+        </div>
+      </a>
+
+      <a href="/blog/servicenow-certification-maintenance-guide.html" class="bl-card">
+        <div class="bl-card-banner banner-reference">
+          <svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>
+          <span class="banner-code">Maintenance</span>
+        </div>
+        <div class="bl-card-body">
+          <span class="bl-card-tag tag-reference">Reference</span>
+          <h2>ServiceNow certification maintenance guide</h2>
+          <p>Delta exams, renewal timelines, deadlines, costs, and strategies for keeping multiple certs current.</p>
+          <div class="bl-card-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>14 min read</span></div>
+        </div>
+      </a>
+
+      <a href="/blog/servicenow-micro-certifications-guide.html" class="bl-card">
+        <div class="bl-card-banner banner-reference">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+          <span class="banner-code">Micro-certs</span>
+        </div>
+        <div class="bl-card-body">
+          <span class="bl-card-tag tag-reference">Reference</span>
+          <h2>ServiceNow micro-certifications guide</h2>
+          <p>Free Now Learning credentials, how to earn them, and how they fit alongside full certifications.</p>
+          <div class="bl-card-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>10 min read</span></div>
+        </div>
+      </a>
+
+    </div>
   </div>
 
 </div>
