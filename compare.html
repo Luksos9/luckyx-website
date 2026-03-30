@@ -172,7 +172,8 @@ a:hover { text-decoration: underline; }
   background: rgba(221,92,12,0.08); color: var(--orange); font-weight: 500;
 }
 .cert-rating { display: flex; align-items: center; gap: 6px; }
-.cert-stars { color: var(--star); font-size: 0.85rem; letter-spacing: 1px; }
+.cert-stars { color: var(--star); font-size: 0.85rem; letter-spacing: 1px; white-space: nowrap; }
+.cert-half { background: linear-gradient(90deg, var(--star) 50%, var(--text-faint) 50%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .cert-rating-num { font-weight: 600; }
 .cert-difficulty { display: flex; gap: 3px; }
 .cert-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); }
@@ -275,24 +276,24 @@ a:hover { text-decoration: underline; }
 
   /* Cert data */
   var certs = [
-    { name:'CSA System Administrator', code:'CSA', slug:'csa', track:'Core', trackKey:'core', difficulty:2, questions:392, rating:4.5, reviews:2, prereq:'None', next:'CAD or CIS-ITSM', ref:'https://www.udemy.com/course/pass-your-servicenow-csa-certified-system-administrator/?referralCode=2AE0DFA7BE468BCA8888' },
-    { name:'Certified Application Developer', code:'CAD', slug:'cad', track:'Developer', trackKey:'dev', difficulty:3, questions:325, rating:4.5, reviews:208, prereq:'CSA recommended', next:'CIS-ITSM', ref:'https://www.udemy.com/course/pass-your-servicenow-cad-exam/?referralCode=CF61F2B36C7F02F40EFB' },
-    { name:'CIS-IT Service Management', code:'ITSM', slug:'cis-itsm', track:'Core', trackKey:'core', difficulty:2, questions:198, rating:4.2, reviews:17, prereq:'CSA', next:'CIS-DF', ref:'https://www.udemy.com/course/pass-your-servicenow-cis-itsm-exam/?referralCode=3D0B3C1C48CE64275156' },
-    { name:'CIS-Data Foundations / CSDM', code:'DF', slug:'cis-data-foundations', track:'Data & CMDB', trackKey:'data', difficulty:3, questions:470, rating:4.9, reviews:144, prereq:'CSA', next:'CIS-Discovery', ref:'https://www.udemy.com/course/pass-servicenow-cis-data-foundations-cmdbcsdm/?referralCode=442CA6D450663B1D42AF' },
-    { name:'CIS-Discovery / RISCO', code:'DISCO', slug:'cis-discovery', track:'Infrastructure', trackKey:'infra', difficulty:4, questions:173, rating:4.9, reviews:261, prereq:'CSA + CIS-DF (2027)', next:'CIS-Service Mapping', ref:'https://www.udemy.com/course/pass-your-servicenow-cis-discovery-exam-vancouver-2023/?referralCode=752D974C366D4DEBE963' },
-    { name:'CIS-Service Mapping', code:'SM', slug:'cis-service-mapping', track:'Infrastructure', trackKey:'infra', difficulty:4, questions:270, rating:4.2, reviews:27, prereq:'CSA + CIS-DF (2027)', next:'CIS-Discovery', ref:'https://www.udemy.com/course/pass-servicenow-cis-service-mapping-sm-exam/?referralCode=E4C8DC2D2F2DDEEA86D5' },
-    { name:'CIS-Event Management', code:'EM', slug:'cis-event-management', track:'Infrastructure', trackKey:'infra', difficulty:3, questions:200, rating:3.8, reviews:1, prereq:'CSA + CIS-DF (2027)', next:'CIS-Discovery', ref:'https://www.udemy.com/course/pass-servicenow-cis-event-management-cis-em/?referralCode=CA03695C46AF6880DDE1' },
-    { name:'CIS-Software Asset Mgmt', code:'SAM', slug:'cis-sam', track:'Asset Mgmt', trackKey:'asset', difficulty:3, questions:220, rating:4.8, reviews:50, prereq:'CSA + CIS-DF (2027)', next:'CIS-HAM', ref:'https://www.udemy.com/course/pass-your-servicenow-cis-software-asset-mgmt-sam-exam/?referralCode=627AA3E200F1159EDF94' },
-    { name:'CIS-Hardware Asset Mgmt', code:'HAM', slug:'cis-ham', track:'Asset Mgmt', trackKey:'asset', difficulty:3, questions:240, rating:5.0, reviews:1, prereq:'CSA + CIS-DF (2027)', next:'CIS-SAM', ref:'https://www.udemy.com/course/pass-servicenow-cis-hardware-asset-management-ham/?referralCode=58ECB1F51A94EC5A7F09' },
-    { name:'CIS-Customer Service Mgmt', code:'CSM', slug:'cis-csm', track:'Service Mgmt', trackKey:'service', difficulty:3, questions:340, rating:4.6, reviews:25, prereq:'CSA + CIS-DF (2027)', next:'CIS-FSM', ref:'https://www.udemy.com/course/pass-your-servicenow-cis-customer-service-management-csm/?referralCode=211B4B7795C55DA7281A' },
-    { name:'CIS-Field Service Mgmt', code:'FSM', slug:'cis-fsm', track:'Service Mgmt', trackKey:'service', difficulty:3, questions:264, rating:4.5, reviews:31, prereq:'CSA + CIS-DF (2027)', next:'CIS-CSM', ref:'https://www.udemy.com/course/pass-servicenow-cis-field-service-mangement-fsm/?referralCode=411E2ADCD2ACF3DE5FC7' },
-    { name:'CIS-HR Service Delivery', code:'HRSD', slug:'cis-hrsd', track:'Service Mgmt', trackKey:'service', difficulty:3, questions:220, rating:4.0, reviews:10, prereq:'CSA + CIS-DF (2027)', next:'CIS-CSM', ref:'https://www.udemy.com/course/pass-your-servicenow-cis-hrsd-exam/?referralCode=AE0D8C9891F0CAAD71D1' },
-    { name:'CIS-Strategic Portfolio Mgmt', code:'SPM', slug:'cis-spm', track:'Service Mgmt', trackKey:'service', difficulty:3, questions:350, rating:5.0, reviews:13, prereq:'CSA + CIS-DF (2027)', next:'CAS-PA', ref:'https://www.udemy.com/course/pass-your-servicenow-cis-strategic-portfolio-management-spm/?referralCode=D08240CA36DE435A8CD0' },
-    { name:'CAS-Performance Analytics', code:'PA', slug:'cas-pa', track:'Developer', trackKey:'dev', difficulty:3, questions:216, rating:4.0, reviews:1, prereq:'CSA', next:'CIS-SPM', ref:'https://www.udemy.com/course/pass-your-servicenow-cas-pa-exam/?referralCode=A8ACE29CC7E537680674' },
-    { name:'CIS-Security Incident Response', code:'SIR', slug:'cis-sir', track:'Security', trackKey:'security', difficulty:4, questions:281, rating:5.0, reviews:17, prereq:'CSA + CIS-DF (2027)', next:'CIS-VR', ref:'https://www.udemy.com/course/pass-servicenow-cis-security-incident-response-sir/?referralCode=FF6F1DFCBBA2F3C7188D' },
-    { name:'CIS-Vulnerability Response', code:'VR', slug:'cis-vr', track:'Security', trackKey:'security', difficulty:3, questions:213, rating:5.0, reviews:20, prereq:'CSA + CIS-DF (2027)', next:'CIS-SIR', ref:'https://www.udemy.com/course/pass-your-servicenow-cis-vulnerability-response-vr-exam/?referralCode=EE503A8EA58C23039100' },
-    { name:'CIS-Risk & Compliance GRC/IRM', code:'GRC', slug:'cis-grc-irm', track:'Risk & Compliance', trackKey:'risk', difficulty:4, questions:300, rating:4.0, reviews:null, prereq:'CSA + CIS-DF (2027)', next:'CIS-TPRM', ref:'https://www.udemy.com/course/pass-servicenow-cis-risk-and-compliance-grc-irm-rc/?referralCode=BAC69ADCBF13729F4018' },
-    { name:'CIS-Third-Party Risk Mgmt', code:'TPRM', slug:'cis-tprm', track:'Risk & Compliance', trackKey:'risk', difficulty:3, questions:180, rating:4.5, reviews:null, prereq:'CSA + CIS-DF (2027)', next:'CIS-GRC', ref:'https://www.udemy.com/course/pass-servicenow-cis-third-party-risk-management-tprm/?referralCode=D6DDF7F1E21D051B5047' },
+    { name:'CSA System Administrator', code:'CSA', slug:'csa', track:'Core', trackKey:'core', difficulty:2, questions:392, rating:4.53, reviews:59, prereq:'None', next:'CAD or CIS-ITSM', ref:'https://www.udemy.com/course/pass-your-servicenow-csa-certified-system-administrator/?referralCode=2AE0DFA7BE468BCA8888' },
+    { name:'Certified Application Developer', code:'CAD', slug:'cad', track:'Developer', trackKey:'dev', difficulty:3, questions:325, rating:4.33, reviews:278, prereq:'CSA recommended', next:'CIS-ITSM', ref:'https://www.udemy.com/course/pass-your-servicenow-cad-exam/?referralCode=CF61F2B36C7F02F40EFB' },
+    { name:'CIS-IT Service Management', code:'ITSM', slug:'cis-itsm', track:'Core', trackKey:'core', difficulty:2, questions:198, rating:4.67, reviews:195, prereq:'CSA', next:'CIS-DF', ref:'https://www.udemy.com/course/pass-your-servicenow-cis-itsm-exam/?referralCode=3D0B3C1C48CE64275156' },
+    { name:'CIS-Data Foundations / CSDM', code:'DF', slug:'cis-data-foundations', track:'Data & CMDB', trackKey:'data', difficulty:3, questions:470, rating:4.56, reviews:998, prereq:'CSA', next:'CIS-Discovery', ref:'https://www.udemy.com/course/pass-servicenow-cis-data-foundations-cmdbcsdm/?referralCode=442CA6D450663B1D42AF' },
+    { name:'CIS-Discovery / RISCO', code:'DISCO', slug:'cis-discovery', track:'Infrastructure', trackKey:'infra', difficulty:4, questions:173, rating:4.67, reviews:112, prereq:'CSA + CIS-DF (2027)', next:'CIS-Service Mapping', ref:'https://www.udemy.com/course/pass-your-servicenow-cis-discovery-exam-vancouver-2023/?referralCode=752D974C366D4DEBE963' },
+    { name:'CIS-Service Mapping', code:'SM', slug:'cis-service-mapping', track:'Infrastructure', trackKey:'infra', difficulty:4, questions:270, rating:4.47, reviews:33, prereq:'CSA + CIS-DF (2027)', next:'CIS-Discovery', ref:'https://www.udemy.com/course/pass-servicenow-cis-service-mapping-sm-exam/?referralCode=E4C8DC2D2F2DDEEA86D5' },
+    { name:'CIS-Event Management', code:'EM', slug:'cis-event-management', track:'Infrastructure', trackKey:'infra', difficulty:3, questions:200, rating:5.00, reviews:44, prereq:'CSA + CIS-DF (2027)', next:'CIS-Discovery', ref:'https://www.udemy.com/course/pass-servicenow-cis-event-management-cis-em/?referralCode=CA03695C46AF6880DDE1' },
+    { name:'CIS-Software Asset Mgmt', code:'SAM', slug:'cis-sam', track:'Asset Mgmt', trackKey:'asset', difficulty:3, questions:220, rating:4.62, reviews:40, prereq:'CSA + CIS-DF (2027)', next:'CIS-HAM', ref:'https://www.udemy.com/course/pass-your-servicenow-cis-software-asset-mgmt-sam-exam/?referralCode=627AA3E200F1159EDF94' },
+    { name:'CIS-Hardware Asset Mgmt', code:'HAM', slug:'cis-ham', track:'Asset Mgmt', trackKey:'asset', difficulty:3, questions:240, rating:4.66, reviews:52, prereq:'CSA + CIS-DF (2027)', next:'CIS-SAM', ref:'https://www.udemy.com/course/pass-servicenow-cis-hardware-asset-management-ham/?referralCode=58ECB1F51A94EC5A7F09' },
+    { name:'CIS-Customer Service Mgmt', code:'CSM', slug:'cis-csm', track:'Service Mgmt', trackKey:'service', difficulty:3, questions:340, rating:4.77, reviews:70, prereq:'CSA + CIS-DF (2027)', next:'CIS-FSM', ref:'https://www.udemy.com/course/pass-your-servicenow-cis-customer-service-management-csm/?referralCode=211B4B7795C55DA7281A' },
+    { name:'CIS-Field Service Mgmt', code:'FSM', slug:'cis-fsm', track:'Service Mgmt', trackKey:'service', difficulty:3, questions:264, rating:4.64, reviews:44, prereq:'CSA + CIS-DF (2027)', next:'CIS-CSM', ref:'https://www.udemy.com/course/pass-servicenow-cis-field-service-mangement-fsm/?referralCode=411E2ADCD2ACF3DE5FC7' },
+    { name:'CIS-HR Service Delivery', code:'HRSD', slug:'cis-hrsd', track:'Service Mgmt', trackKey:'service', difficulty:3, questions:220, rating:4.59, reviews:117, prereq:'CSA + CIS-DF (2027)', next:'CIS-CSM', ref:'https://www.udemy.com/course/pass-your-servicenow-cis-hrsd-exam/?referralCode=AE0D8C9891F0CAAD71D1' },
+    { name:'CIS-Strategic Portfolio Mgmt', code:'SPM', slug:'cis-spm', track:'Service Mgmt', trackKey:'service', difficulty:3, questions:350, rating:4.88, reviews:63, prereq:'CSA + CIS-DF (2027)', next:'CAS-PA', ref:'https://www.udemy.com/course/pass-your-servicenow-cis-strategic-portfolio-management-spm/?referralCode=D08240CA36DE435A8CD0' },
+    { name:'CAS-Performance Analytics', code:'PA', slug:'cas-pa', track:'Developer', trackKey:'dev', difficulty:3, questions:216, rating:4.05, reviews:27, prereq:'CSA', next:'CIS-SPM', ref:'https://www.udemy.com/course/pass-your-servicenow-cas-pa-exam/?referralCode=A8ACE29CC7E537680674' },
+    { name:'CIS-Security Incident Response', code:'SIR', slug:'cis-sir', track:'Security', trackKey:'security', difficulty:4, questions:281, rating:5.00, reviews:36, prereq:'CSA + CIS-DF (2027)', next:'CIS-VR', ref:'https://www.udemy.com/course/pass-servicenow-cis-security-incident-response-sir/?referralCode=FF6F1DFCBBA2F3C7188D' },
+    { name:'CIS-Vulnerability Response', code:'VR', slug:'cis-vr', track:'Security', trackKey:'security', difficulty:3, questions:213, rating:4.79, reviews:37, prereq:'CSA + CIS-DF (2027)', next:'CIS-SIR', ref:'https://www.udemy.com/course/pass-your-servicenow-cis-vulnerability-response-vr-exam/?referralCode=EE503A8EA58C23039100' },
+    { name:'CIS-Risk & Compliance GRC/IRM', code:'GRC', slug:'cis-grc-irm', track:'Risk & Compliance', trackKey:'risk', difficulty:4, questions:300, rating:5.00, reviews:59, prereq:'CSA + CIS-DF (2027)', next:'CIS-TPRM', ref:'https://www.udemy.com/course/pass-servicenow-cis-risk-and-compliance-grc-irm-rc/?referralCode=BAC69ADCBF13729F4018' },
+    { name:'CIS-Third-Party Risk Mgmt', code:'TPRM', slug:'cis-tprm', track:'Risk & Compliance', trackKey:'risk', difficulty:3, questions:180, rating:4.59, reviews:13, prereq:'CSA + CIS-DF (2027)', next:'CIS-GRC', ref:'https://www.udemy.com/course/pass-servicenow-cis-third-party-risk-management-tprm/?referralCode=D6DDF7F1E21D051B5047' },
   ];
 
   var tracks = { all:'All Certs', core:'Core', dev:'Developer', data:'Data & CMDB', infra:'Infrastructure', service:'Service Mgmt', asset:'Asset Mgmt', security:'Security', risk:'Risk & Compliance' };
@@ -302,9 +303,15 @@ a:hover { text-decoration: underline; }
 
   /* Stars helper */
   function stars(r) {
-    var f = Math.floor(r);
-    var h = (r % 1) >= 0.3 ? 1 : 0;
-    return '\u2605'.repeat(f) + (h ? '\u2606' : '') + '\u2606'.repeat(5 - f - h);
+    var full, half;
+    if (r > 4.5) { full = 5; half = 0; }
+    else if (r > 4.0) { full = 4; half = 1; }
+    else { full = Math.floor(r); half = 0; }
+    var empty = 5 - full - half;
+    var s = '\u2605'.repeat(full);
+    if (half) s += '<span class="cert-half">\u2605</span>';
+    s += '\u2606'.repeat(empty);
+    return s;
   }
 
   /* Difficulty dots */
