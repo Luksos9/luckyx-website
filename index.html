@@ -1176,31 +1176,34 @@ body::after {
 .card-details {
   display: block;
   text-align: center;
-  font-size: 12px;
-  color: var(--orange);
+  font-size: 12.5px;
+  color: #fff;
   font-weight: 600;
-  padding: 8px 16px;
+  padding: 10px 16px;
   margin-top: auto;
   cursor: pointer;
-  border: 1px solid var(--orange);
+  background: var(--orange);
+  border: none;
   border-radius: 8px;
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.2s, transform 0.15s;
 }
-.card-details:hover { background: var(--orange); color: #fff; }
+.card-details:hover { background: var(--orange-bright); transform: translateY(-1px); }
 .card-free-quiz {
   display: block;
   text-align: center;
-  font-size: 11px;
-  color: var(--text-dim);
-  font-weight: 500;
-  padding: 6px 0 2px;
+  font-size: 11.5px;
+  color: var(--orange);
+  font-weight: 600;
+  padding: 8px 16px;
+  margin-top: 8px;
+  margin-bottom: 6px;
   cursor: pointer;
-  transition: color 0.2s, text-decoration-color 0.2s;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  text-decoration-color: rgba(255,255,255,0.15);
+  border: 1px solid rgba(221,92,12,0.35);
+  border-radius: 8px;
+  transition: background 0.2s, border-color 0.2s;
+  text-decoration: none;
 }
-.card-free-quiz:hover { color: var(--orange); text-decoration-color: var(--orange); }
+.card-free-quiz:hover { background: rgba(221,92,12,0.08); border-color: var(--orange); }
 
 .card-body {
   padding: 16px 18px 18px;
@@ -1938,6 +1941,7 @@ h3.card-title,
 }
 
 [data-theme="light"] .num-sub { color: #5c5856; }
+[data-theme="light"] .card-free-quiz { border-color: rgba(221,92,12,0.45); }
 [data-theme="light"] .card-desc { color: #5c5856; }
 [data-theme="light"] .card-pub { color: #9e9a96; }
 [data-theme="light"] .r-count { color: #9e9a96; }
