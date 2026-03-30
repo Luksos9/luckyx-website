@@ -2698,7 +2698,7 @@ function stars(r) {
   else { full = Math.floor(r); half = 0; }
   var empty = 5 - full - half;
   var s = '\u2605'.repeat(full);
-  if (half) s += '<span style="display:inline-block;width:.55em;overflow:hidden">\u2605</span>';
+  if (half) s += '<span style="display:inline-block;width:.5em;overflow:hidden;vertical-align:baseline;line-height:1">\u2605</span>';
   s += '\u2606'.repeat(empty);
   return s;
 }
