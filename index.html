@@ -1244,6 +1244,7 @@ h3.card-title,
 
 .r-num { font-weight: 700; color: var(--orange); }
 .r-stars { color: var(--orange); font-size: 11px; letter-spacing: 1px; white-space: nowrap; }
+.r-half { background: linear-gradient(90deg, var(--orange) 50%, var(--text-faint) 50%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .r-count { color: var(--text-faint); font-size: 11px; }
 
 .card-tags {
@@ -2691,14 +2692,14 @@ courses.forEach(c => {
 });
 
 function stars(r) {
-  /* >4.6 = 5 full, >4.0 = 4.5, <=4.0 = floor */
+  /* >4.5 = 5 full, >4.0 = 4.5, <=4.0 = floor */
   var full, half;
-  if (r > 4.6) { full = 5; half = 0; }
+  if (r > 4.5) { full = 5; half = 0; }
   else if (r > 4.0) { full = 4; half = 1; }
   else { full = Math.floor(r); half = 0; }
   var empty = 5 - full - half;
   var s = '\u2605'.repeat(full);
-  if (half) s += '<span style="opacity:.45">\u2605</span>';
+  if (half) s += '<span class="r-half">\u2605</span>';
   s += '\u2606'.repeat(empty);
   return s;
 }
