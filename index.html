@@ -2825,7 +2825,9 @@ function setNav(btnIdx) {
 }
 
 /* Smooth scroll with easeInOutCubic for a premium feel */
-function smoothScrollTo(targetY, duration) {
+let scrollId = 0;
+function smoothScrollTo(targetY, duration, onDone) {
+  const id = ++scrollId;
   const startY = window.scrollY;
   const diff = targetY - startY;
   let startTime = null;
@@ -2833,11 +2835,13 @@ function smoothScrollTo(targetY, duration) {
     return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
   }
   function step(ts) {
+    if (id !== scrollId) return;
     if (!startTime) startTime = ts;
     const elapsed = ts - startTime;
     const progress = Math.min(elapsed / duration, 1);
     window.scrollTo(0, startY + diff * ease(progress));
     if (progress < 1) requestAnimationFrame(step);
+    else if (onDone) onDone();
   }
   requestAnimationFrame(step);
 }
@@ -2851,9 +2855,10 @@ btns.forEach((b, i) => {
     const el = document.getElementById(b.dataset.s);
     if (el) {
       const targetY = el.getBoundingClientRect().top + window.scrollY;
-      smoothScrollTo(targetY, 1400);
+      smoothScrollTo(targetY, 1400, () => { navLocked = false; });
+    } else {
+      navLocked = false;
     }
-    setTimeout(() => { navLocked = false; }, 1200);
   });
 });
 
