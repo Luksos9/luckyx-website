@@ -313,7 +313,7 @@
   --invert: 0;
 }
 
-html { scroll-behavior: smooth; overflow-x: hidden; }
+html { scroll-behavior: auto; overflow-x: hidden; }
 
 body {
   background: var(--bg);
@@ -2822,6 +2822,24 @@ function setNav(btnIdx) {
   ind.style.transform = `translateX(${btnIdx * 53}px)`;
 }
 
+/* Smooth scroll with easeInOutCubic for a premium feel */
+function smoothScrollTo(targetY, duration) {
+  const startY = window.scrollY;
+  const diff = targetY - startY;
+  let startTime = null;
+  function ease(t) {
+    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
+  function step(ts) {
+    if (!startTime) startTime = ts;
+    const elapsed = ts - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    window.scrollTo(0, startY + diff * ease(progress));
+    if (progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
 let navLocked = false;
 btns.forEach((b, i) => {
   if (!b.dataset.s) return;
@@ -2829,7 +2847,10 @@ btns.forEach((b, i) => {
     navLocked = true;
     setNav(i);
     const el = document.getElementById(b.dataset.s);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (el) {
+      const targetY = el.getBoundingClientRect().top + window.scrollY;
+      smoothScrollTo(targetY, 900);
+    }
     setTimeout(() => { navLocked = false; }, 1200);
   });
 });
