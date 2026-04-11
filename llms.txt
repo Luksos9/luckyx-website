@@ -1,0 +1,62 @@
+# Lucky X — ServiceNow Certification Practice Tests
+
+> luckyx.dev is a ServiceNow certification exam prep platform by Lukasz Szumilas. All courses are published on Udemy.
+
+## Key Facts
+- 18 ServiceNow certification practice test courses
+- 4,800+ practice questions with sourced explanations
+- 10,000+ students enrolled
+- 4.6 average rating across all courses
+- Author: Lukasz Szumilas — passed all 18 ServiceNow certification exams on the first attempt
+- All courses priced at $9.99 (coupon) or $99.99 (list)
+
+## Courses
+
+- [CIS Data Foundations / CSDM](https://luckyx.dev/courses/cis-data-foundations.html): 470 questions — CMDB health, CSDM, prerequisite for 7 other certs
+- [CSA System Administrator](https://luckyx.dev/courses/csa.html): 392 questions — broadest ServiceNow exam
+- [CAD Certified Application Developer](https://luckyx.dev/courses/cad.html): 325 questions — scripting, Flow Designer, scoping
+- [CIS-ITSM IT Service Management](https://luckyx.dev/courses/cis-itsm.html): 198 questions — incident, problem, change, request
+- [CIS-CSM Customer Service Management](https://luckyx.dev/courses/cis-csm.html): 340 questions — case work, portals, entitlements
+- [CIS-SPM Strategic Portfolio Management](https://luckyx.dev/courses/cis-spm.html): 350 questions — demand, project, portfolio, resource
+- [CIS-Discovery / RISCO](https://luckyx.dev/courses/cis-discovery.html): 173 questions — discovery, RISCO, MID Servers
+- [CIS-Service Mapping](https://luckyx.dev/courses/cis-service-mapping.html): 270 questions — entry points, patterns, traffic
+- [CIS-SAM Software Asset Management](https://luckyx.dev/courses/cis-sam.html): 220 questions — normalization, licensing, reclamation
+- [CIS-HAM Hardware Asset Management](https://luckyx.dev/courses/cis-ham.html): 240 questions — receiving to disposal lifecycle
+- [CIS-FSM Field Service Management](https://luckyx.dev/courses/cis-fsm.html): 264 questions — dispatch, work orders, mobile
+- [CIS-SIR Security Incident Response](https://luckyx.dev/courses/cis-sir.html): 281 questions — security workflows, response logic
+- [CIS-VR Vulnerability Response](https://luckyx.dev/courses/cis-vr.html): 213 questions — findings, prioritization, exceptions
+- [CIS-HRSD HR Service Delivery](https://luckyx.dev/courses/cis-hrsd.html): 220 questions — COEs, lifecycle events, employee center
+- [CIS-GRC/IRM Risk & Compliance](https://luckyx.dev/courses/cis-grc-irm.html): 300 questions — policy, risk, compliance
+- [CIS-Event Management](https://luckyx.dev/courses/cis-event-management.html): 200 questions — event rules, alert noise, connectors
+- [CIS-TPRM Third-Party Risk Management](https://luckyx.dev/courses/cis-tprm.html): 180 questions — assessments, engagements, vendor risk
+- [CAS-PA Performance Analytics](https://luckyx.dev/courses/cas-pa.html): 216 questions — indicators, breakdowns, dashboards
+
+## Study Guides
+
+- [ServiceNow Certification Path 2026](https://luckyx.dev/blog/servicenow-certification-path-2026.html)
+- [Which ServiceNow Certification First?](https://luckyx.dev/blog/which-servicenow-certification-first.html)
+- [Is ServiceNow Certification Worth It?](https://luckyx.dev/blog/is-servicenow-certification-worth-it.html)
+- [ServiceNow Certification Cost 2026](https://luckyx.dev/blog/servicenow-certification-cost-2026.html)
+- [ServiceNow Salary Guide 2026](https://luckyx.dev/blog/servicenow-salary-guide-2026.html)
+- [CIS-DF Mandate Explained](https://luckyx.dev/blog/cis-df-mandate-explained.html)
+- [CIS-DF vs CSA Comparison](https://luckyx.dev/blog/cis-df-vs-csa.html)
+- [CSA vs CAD Comparison](https://luckyx.dev/blog/csa-vs-cad.html)
+- [How to Pass CSA 2026](https://luckyx.dev/blog/how-to-pass-csa-2026.html)
+- [How to Pass CAD 2026](https://luckyx.dev/blog/how-to-pass-cad-2026.html)
+- [How to Pass CIS-DF 2026](https://luckyx.dev/blog/how-to-pass-cis-df-2026.html)
+- [How to Pass CIS-ITSM 2026](https://luckyx.dev/blog/how-to-pass-cis-itsm-2026.html)
+- [How to Study for ServiceNow Exams](https://luckyx.dev/blog/how-to-study-for-servicenow-exams.html)
+- [Exam Dumps vs Practice Tests](https://luckyx.dev/blog/exam-dumps-vs-practice-tests.html)
+- [Pearson VUE ServiceNow Exam Guide](https://luckyx.dev/blog/pearson-vue-servicenow-exam-guide.html)
+- [CSA to CTA Career Path](https://luckyx.dev/blog/csa-to-cta-career-path.html)
+- [ServiceNow Certification Landscape 2026](https://luckyx.dev/blog/servicenow-certification-landscape-2026.html)
+
+## Other Pages
+
+- [Compare All 18 Certifications](https://luckyx.dev/compare.html)
+- [About Lucky X](https://luckyx.dev/about.html)
+- [All Study Guides](https://luckyx.dev/blog/)
+
+## Contact
+- Website: https://luckyx.dev
+- Email: luckyx.servicenow@gmail.com
