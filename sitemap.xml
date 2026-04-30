@@ -133,6 +133,24 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://luckyx.dev/blog/servicenow-certified-no-experience.html</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://luckyx.dev/blog/best-servicenow-practice-tests-2026.html</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://luckyx.dev/blog/free-csa-practice-test.html</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <!-- Blog articles (priority 0.8) -->
   <url>
     <loc>https://luckyx.dev/blog/servicenow-certification-path-2026.html</loc>

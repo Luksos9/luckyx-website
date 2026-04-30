@@ -33,6 +33,7 @@
 
 ## Study Guides
 
+- [How to Get ServiceNow Certified with No Experience](https://luckyx.dev/blog/servicenow-certified-no-experience.html)
 - [ServiceNow Certification Path 2026](https://luckyx.dev/blog/servicenow-certification-path-2026.html)
 - [Which ServiceNow Certification First?](https://luckyx.dev/blog/which-servicenow-certification-first.html)
 - [Is ServiceNow Certification Worth It?](https://luckyx.dev/blog/is-servicenow-certification-worth-it.html)

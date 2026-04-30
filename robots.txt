@@ -1,5 +1,9 @@
 User-agent: *
 Allow: /
+Disallow: /preview_source/
+Disallow: /lucky-x-site-v2.html
+Disallow: /HEAD_SNIPPET.html
+Disallow: /ServiceNow_Certification_Roadmap_2026.html
 
 # AI search crawlers — explicitly welcome
 User-agent: GPTBot
