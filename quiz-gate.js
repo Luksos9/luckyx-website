@@ -170,7 +170,7 @@
       var btn = bd.querySelector('.qg-submit');
       btn.textContent = 'Unlocking\u2026';
       btn.disabled = true;
-      ga4('quiz_gate_email_submitted', { email: email });
+      ga4('quiz_gate_email_submitted');
 
       fetch(CK_ENDPOINT, {
         method: 'POST',

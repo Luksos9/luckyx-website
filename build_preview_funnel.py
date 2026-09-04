@@ -636,6 +636,9 @@ def render_page(raw: str, slug: str, title: str, code: str, udemy: str, total_q:
     output = QUIZ_SECTION_RE.sub(lambda _: quiz_section(total_q, udemy, rendered_cards), output, count=1)
     output = QUIZ_SCHEMA_RE.sub(lambda _: quiz_schema(title, code, slug, cards, answers), output, count=1)
     output = POPUP_RE.sub("\n", output)
+    output = output.replace("https://www.googletagmanager.com/gtag/js-id=", "https://www.googletagmanager.com/gtag/js?id=")
+    if 'src="/analytics.js"' not in output:
+        output = output.replace("</head>", '<script defer src="/analytics.js"></script>\n</head>', 1)
     output = re.sub(r'<meta name="robots" content="[^"]+">', '<meta name="robots" content="index, follow">', output, count=1)
     output = patch_course_copy(output, total_q)
     return replace_last_script(output, script_block(page_config(slug, code, total_q), answers, countdown))
@@ -683,6 +686,8 @@ def validate(path: Path, slug: str) -> None:
         raise ValueError(f"{path.name}: expected question count {QUESTION_COUNTS[slug]} not found.")
     if any(marker in raw for marker in MOJIBAKE_MARKERS):
         raise ValueError(f"{path.name}: mojibake remains in output.")
+    if "googletagmanager.com/gtag/js-id=" in raw or 'src="/analytics.js"' not in raw:
+        raise ValueError(f"{path.name}: analytics loader is missing or malformed.")
 
 
 def main() -> None:
