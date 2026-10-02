@@ -51,6 +51,17 @@
 - [Pearson VUE ServiceNow Exam Guide](https://luckyx.dev/blog/pearson-vue-servicenow-exam-guide.html)
 - [CSA to CTA Career Path](https://luckyx.dev/blog/csa-to-cta-career-path.html)
 - [ServiceNow Certification Landscape 2026](https://luckyx.dev/blog/servicenow-certification-landscape-2026.html)
+- [How to Pass CIS-CSM 2026](https://luckyx.dev/blog/how-to-pass-cis-csm-2026.html)
+- [How to Pass CIS-SPM 2026](https://luckyx.dev/blog/how-to-pass-cis-spm-2026.html)
+- [How to Pass CIS-Discovery 2026](https://luckyx.dev/blog/how-to-pass-cis-discovery-2026.html)
+- [How to Pass CIS-HAM and CIS-SAM 2026](https://luckyx.dev/blog/how-to-pass-cis-ham-sam-2026.html)
+- [How to Pass CIS-SIR and CIS-VR 2026](https://luckyx.dev/blog/how-to-pass-cis-sir-vr-2026.html)
+- [Best ServiceNow Practice Tests 2026](https://luckyx.dev/blog/best-servicenow-practice-tests-2026.html)
+- [Free ServiceNow CSA Practice Test](https://luckyx.dev/blog/free-csa-practice-test.html)
+- [Free ServiceNow Study Resources](https://luckyx.dev/blog/free-servicenow-study-resources.html)
+- [ServiceNow Certification Maintenance Guide 2026](https://luckyx.dev/blog/servicenow-certification-maintenance-guide.html)
+- [ServiceNow Micro-Certifications Guide 2026](https://luckyx.dev/blog/servicenow-micro-certifications-guide.html)
+- [ServiceNow vs Salesforce Certification](https://luckyx.dev/blog/servicenow-vs-salesforce-certification.html)
 
 ## Other Pages
 

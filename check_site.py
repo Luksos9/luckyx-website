@@ -15,7 +15,7 @@ from urllib.parse import unquote, urlparse
 
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT / 'scripts'))
-from fix_course_pages import BLOCK, MARK_BEFORE_QUOTE, MARK_BEFORE_TAG, MARK_BEFORE_TEXT  # noqa: E402
+from fix_course_pages import BLOCK, MARK_BEFORE_QUOTE, MARK_BEFORE_TAG, MARK_BEFORE_TEXT, RUN_ON, STEM, STEM_MARK  # noqa: E402
 
 COURSES = json.loads((ROOT / 'data' / 'courses.json').read_text(encoding='utf-8'))
 SKIP_DIRS = {'legacy', 'preview_source', 'node_modules', '.git', 'scripts', 'data'}
@@ -65,6 +65,11 @@ def check_marks():
             for pat in (MARK_BEFORE_TAG, MARK_BEFORE_TEXT, MARK_BEFORE_QUOTE):
                 for m in pat.finditer(part):
                     err(rel(path), 'hyphen where a question mark was lost: ...%s' % part[max(0, m.start() - 30):m.end() + 10].strip())
+        for m in STEM.finditer(text):
+            if RUN_ON.search(re.sub(r'<[^>]+>', '', m.group(2))):
+                err(rel(path), 'question stem has two sentences run together: ...%s' % re.sub(r'<[^>]+>', '', m.group(2))[-60:])
+            if STEM_MARK.search(m.group(2)):
+                err(rel(path), 'question stem still ends with a spaced hyphen: ...%s' % re.sub(r'<[^>]+>', '', m.group(2))[-50:])
         if 'css2-family=' in text:
             err(rel(path), 'broken Google Fonts URL (css2-family)')
 
@@ -161,7 +166,34 @@ def check_links():
             err('sitemap.xml', 'URL has no file: %s' % loc)
 
 
+def check_article_count():
+    count = len([p for p in (ROOT / 'blog').glob('*.html') if p.name != 'index.html'])
+    index = (ROOT / 'index.html').read_text(encoding='utf-8')
+    m = re.search(r'View all (\d+) study guides', index)
+    if not m or int(m.group(1)) != count:
+        err('index.html', 'study guide count says %s, blog has %d articles' % (m.group(1) if m else 'nothing', count))
+    blog_index = (ROOT / 'blog' / 'index.html').read_text(encoding='utf-8')
+    for path in sorted((ROOT / 'blog').glob('*.html')):
+        if path.name != 'index.html' and ('/blog/%s' % path.name) not in blog_index:
+            err('blog/index.html', 'no card links to %s' % path.name)
+    llms = (ROOT / 'llms.txt').read_text(encoding='utf-8')
+    for path in sorted((ROOT / 'blog').glob('*.html')):
+        if path.name != 'index.html' and ('/blog/%s' % path.name) not in llms:
+            err('llms.txt', 'article not listed: %s' % path.name)
+
+
+def check_generators():
+    """The generated parts must match what the scripts produce, so hand edits do not drift."""
+    import subprocess
+    for script in ('fix_course_pages.py', 'enhance_course_pages.py', 'render_compare.py', 'mark_affiliate_links.py', 'add_consent.py'):
+        result = subprocess.run([sys.executable, str(ROOT / 'scripts' / script), '--check'], capture_output=True, text=True)
+        if result.returncode != 0:
+            err('scripts/' + script, 'output is out of date, run it without --check. ' + result.stdout.strip().replace('\n', ' | ')[:160])
+
+
 def main():
+    check_article_count()
+    check_generators()
     check_stale()
     check_marks()
     check_json_ld()

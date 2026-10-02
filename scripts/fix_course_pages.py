@@ -163,6 +163,16 @@ def fix_analytics(html):
     return html
 
 
+def spell_out_management(html):
+    """"Mgmt" does not match what people search for. Change titles and headings, not question text."""
+    head, sep, body = html.partition('</head>')
+    head = head.replace(' Mgmt', ' Management')
+    body = re.sub(r'(<h1 class="cp-title">.*?</h1>)', lambda m: m.group(1).replace(' Mgmt', ' Management'), body, count=1, flags=re.S)
+    body = re.sub(r'(<li style="color:var\(--text\)">.*?</li>)', lambda m: m.group(1).replace(' Mgmt', ' Management'), body, count=1, flags=re.S)
+    body = re.sub(r'(<img class="cp-hero-img"[^>]*>)', lambda m: m.group(1).replace(' Mgmt', ' Management'), body, count=1)
+    return head + sep + body
+
+
 def process(path):
     slug = path.stem
     course = COURSES[slug]
@@ -175,6 +185,7 @@ def process(path):
     new = fix_rating_count(new, course)
     new = fix_json_ld(new, course)
     new = fix_analytics(new)
+    new = spell_out_management(new)
     return html, new
 
 
