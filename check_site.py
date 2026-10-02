@@ -185,7 +185,8 @@ def check_article_count():
 def check_generators():
     """The generated parts must match what the scripts produce, so hand edits do not drift."""
     import subprocess
-    for script in ('fix_course_pages.py', 'enhance_course_pages.py', 'render_compare.py', 'mark_affiliate_links.py', 'add_consent.py'):
+    for script in ('fix_course_pages.py', 'enhance_course_pages.py', 'inject_article_cta.py', 'render_compare.py', 'apply_coupons.py',
+                   'mark_affiliate_links.py', 'add_consent.py'):
         result = subprocess.run([sys.executable, str(ROOT / 'scripts' / script), '--check'], capture_output=True, text=True)
         if result.returncode != 0:
             err('scripts/' + script, 'output is out of date, run it without --check. ' + result.stdout.strip().replace('\n', ' | ')[:160])

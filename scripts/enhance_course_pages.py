@@ -151,7 +151,7 @@ def path_html(course):
 def process(path):
     course = BY_SLUG[path.stem]
     html = path.read_text(encoding='utf-8')
-    url = course['udemy_url']
+    url = course['udemy_url'] + ('&amp;couponCode=' + course['coupon'] if course['coupon'] else '')
     n = course['questions']
 
     # hero CTA gets a stage so analytics can tell it from the final CTA

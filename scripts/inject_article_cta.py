@@ -47,7 +47,7 @@ def block(slugs):
         parts.append('          <p><strong>%s</strong>: %d practice questions, with an explanation for every answer option.</p>'
                      % (escape(c['page_title']), c['questions']))
         parts.append('          <a href="%s" target="_blank" rel="sponsored noopener" class="bp-cta-btn">Get the %s practice test</a>'
-                     % (escape(c['udemy_url']), escape(c['code'])))
+                     % (escape(c['udemy_url']) + ('&amp;couponCode=' + escape(c['coupon']) if c['coupon'] else ''), escape(c['code'])))
     first = COURSES[slugs[0]]['slug']
     parts.append('          <p style="margin-top:14px"><a href="/courses/%s.html#free-quiz">Try 15 free questions first</a></p>' % first)
     parts.append('        </div>')
@@ -75,6 +75,7 @@ def main():
         before, after = process(path, slugs)
         if before != after:
             changed += 1
+            print(('would change ' if check else 'updated ') + name)
             if not check:
                 path.write_text(after, encoding='utf-8')
     print('%d file(s) %s' % (changed, 'need changes' if check else 'updated'))

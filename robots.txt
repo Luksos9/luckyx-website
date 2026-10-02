@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
-Disallow: /preview_source/
+Disallow: /scripts/
+Disallow: /data/
 
 # AI search crawlers — explicitly welcome
 User-agent: GPTBot
