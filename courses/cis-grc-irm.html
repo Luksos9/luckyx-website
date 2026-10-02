@@ -48,11 +48,9 @@
   },
   "educationalLevel": "Professional Certification",
   "teaches": "ServiceNow GRC Certification",
-  "numberOfCredits": "300",
   "hasCourseInstance": {
     "@type": "CourseInstance",
-    "courseMode": "online",
-    "courseWorkload": "PT750M"
+    "courseMode": "online"
   },
   "offers": {
     "@type": "Offer",
@@ -61,6 +59,13 @@
     "availability": "https://schema.org/InStock",
     "url": "https://www.udemy.com/course/pass-servicenow-cis-risk-and-compliance-grc-irm-rc/?referralCode=BAC69ADCBF13729F4018",
     "validFrom": "2026-01-01"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "59",
+    "bestRating": "5",
+    "worstRating": "1"
   }
 }
 </script>
@@ -191,7 +196,7 @@
     },
     {
       "@type": "Question",
-      "name": "What would you use in order to accommodate a customer's unique process around policy approvals- For example each policy needs a second layer of approval.",
+      "name": "What would you use in order to accommodate a customer's unique process around policy approvals? For example each policy needs a second layer of approval.",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Create a new workflow in the workflow editor"
@@ -275,7 +280,7 @@
     },
     {
       "@type": "Question",
-      "name": "Who can request approval for a policy- (Choose two.) (choose 2)",
+      "name": "Who can request approval for a policy? (Choose two.) (choose 2)",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Policy owner | Policy requester"
@@ -301,7 +306,7 @@
     },
     {
       "@type": "Question",
-      "name": "What are the most common baseline tables used in an entity filter to generate entities for an entity type- (Choose three.) (choose 3)",
+      "name": "What are the most common baseline tables used in an entity filter to generate entities for an entity type? (Choose three.) (choose 3)",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "cmn_department | cmn_location | core_company"
@@ -319,7 +324,7 @@
     },
     {
       "@type": "Question",
-      "name": "For classic risk assessment indicator failure factor represents the impact of risk indicator failures on what score-",
+      "name": "For classic risk assessment indicator failure factor represents the impact of risk indicator failures on what score?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Calculated ALE"
@@ -359,7 +364,7 @@
     },
     {
       "@type": "Question",
-      "name": "For a particular risk assessment methodology (RAM) the control effectiveness score is calculated based on an individual assessment of controls. What are options for control identification- (Choose three.) (choose 3)",
+      "name": "For a particular risk assessment methodology (RAM) the control effectiveness score is calculated based on an individual assessment of controls. What are options for control identification? (Choose three.) (choose 3)",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Controls are identified from library and ad-hoc | Controls are identified from library | Controls are identified ad-hoc"
@@ -430,7 +435,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2-family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <!-- GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLYHHC76GG"></script>
@@ -700,7 +705,7 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
     <div class="cp-rating" aria-label="Rating: 5.0 out of 5 stars, 59 reviews">
       <span class="cp-rating-num">5.0</span>
       <span class="cp-rating-stars" aria-hidden="true">★★★★★</span>
-      <span class="cp-rating-count"></span>
+      <span class="cp-rating-count">(59 reviews)</span>
     </div>
     <div class="cp-stat">
       <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
@@ -819,7 +824,7 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
 <details class="quiz-overall" id="qexp1">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>B - Policy exception target table</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-governance-risk-compliance/page/product/policy-and-compliance-management/task/configure-integration-registry.html" target="_blank">ServiceNow Zurich Documentation - Configure Integration Registry</a></p><h5>Expert Explanation</h5><p>The Integration Registry enables cross-application policy exception requests. The Policy exception target table field is mandatory because the system must know which table to create exception records in when an external application triggers a request. This mapping is the core purpose of the registry configuration.</p><h5>Why the Others Are Wrong</h5><p>Source application (A) provides context but is not mandatory. Flow Designer flow (C) is a separate automation tool. Requesting user (D) is a runtime value, not a configuration field.</p><h5>Memory Tip</h5><p>Integration Registry = "Where do exceptions land-" The target table is the landing pad - without it, the system has nowhere to put the exception record.</p><h5>Real-World Example</h5><p>A company wants Incident Management agents to request policy exceptions when a critical incident requires bypassing a security policy. The admin configures the Integration Registry with the policy exception target table so the exception record is created in the correct GRC table when triggered from an incident.</p>
+<h5>Correct Answer</h5><p>B - Policy exception target table</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-governance-risk-compliance/page/product/policy-and-compliance-management/task/configure-integration-registry.html" target="_blank">ServiceNow Zurich Documentation - Configure Integration Registry</a></p><h5>Expert Explanation</h5><p>The Integration Registry enables cross-application policy exception requests. The Policy exception target table field is mandatory because the system must know which table to create exception records in when an external application triggers a request. This mapping is the core purpose of the registry configuration.</p><h5>Why the Others Are Wrong</h5><p>Source application (A) provides context but is not mandatory. Flow Designer flow (C) is a separate automation tool. Requesting user (D) is a runtime value, not a configuration field.</p><h5>Memory Tip</h5><p>Integration Registry = "Where do exceptions land?" The target table is the landing pad - without it, the system has nowhere to put the exception record.</p><h5>Real-World Example</h5><p>A company wants Incident Management agents to request policy exceptions when a critical incident requires bypassing a security policy. The admin configures the Integration Registry with the policy exception target table so the exception record is created in the correct GRC table when triggered from an incident.</p>
 </div>
 </details>
 </div></div></div>
@@ -872,7 +877,7 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
 </details>
 </div></div></div>
 <div class="quiz-card is-email-locked" data-question-index="5" data-tier="2" hidden="" id="qcard5">
-<div class="quiz-q"><span class="quiz-q-num">6.</span>What would you use in order to accommodate a customer's unique process around policy approvals- For example each policy needs a second layer of approval.</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
+<div class="quiz-q"><span class="quiz-q-num">6.</span>What would you use in order to accommodate a customer's unique process around policy approvals? For example each policy needs a second layer of approval.</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: Creating a new field and notifications can alert users about approvals, but fields and notifications alone do not control the approval routing logic. You need a structured workflow to enforce approval sequences." data-idx="0" data-q="5"><span class="quiz-opt-letter">A</span><span>Create a new field and create notifications</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: A related list can display approval history but does not drive the approval process. Related lists are display components, not process engines. They show data but do not enforce approval steps." data-idx="1" data-q="5"><span class="quiz-opt-letter">B</span><span>Add a new related list to keep track of who has already approved it and who hasn't approved yet</span></li>
@@ -937,7 +942,7 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
 </details>
 </div></div></div>
 <div class="quiz-card quiz-multi is-email-locked" data-question-index="9" data-tier="2" hidden="" id="qcard9">
-<div class="quiz-q"><span class="quiz-q-num">10.</span>Who can request approval for a policy- (Choose two.) <span class="quiz-choose">(choose 2)</span></div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
+<div class="quiz-q"><span class="quiz-q-num">10.</span>Who can request approval for a policy? (Choose two.) <span class="quiz-choose">(choose 2)</span></div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="CORRECT: The Policy owner is one of the users who can request approval for a policy. As the person responsible for the policy content and lifecycle, the owner has the authority to submit it for the formal approval process." data-idx="0" data-q="9"><span class="quiz-opt-letter">A</span><span>Policy owner</span></li>
 <li class="quiz-opt" data-exp="CORRECT: The Policy requester can also request approval for a policy. This is the person who initiated the policy creation request, and they retain the ability to push it forward into the approval workflow." data-idx="1" data-q="9"><span class="quiz-opt-letter">B</span><span>Policy requester</span></li>
@@ -956,7 +961,7 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
 </details>
 </div></div></div>
 <div class="quiz-card quiz-multi is-email-locked" data-question-index="10" data-tier="2" hidden="" id="qcard10">
-<div class="quiz-q"><span class="quiz-q-num">11.</span>What are the most common baseline tables used in an entity filter to generate entities for an entity type- (Choose three.) <span class="quiz-choose">(choose 3)</span></div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
+<div class="quiz-q"><span class="quiz-q-num">11.</span>What are the most common baseline tables used in an entity filter to generate entities for an entity type? (Choose three.) <span class="quiz-choose">(choose 3)</span></div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: cmn_job_center is not a commonly used baseline table for entity generation in GRC. Job centers are not a standard organizational unit used for GRC entity scoping." data-idx="0" data-q="10"><span class="quiz-opt-letter">A</span><span>cmn_job_center</span></li>
 <li class="quiz-opt" data-exp="CORRECT: cmn_department is one of the most common baseline tables for entity generation. Departments represent organizational units that frequently need GRC controls, policies, and risk assessments applied to them." data-idx="1" data-q="10"><span class="quiz-opt-letter">B</span><span>cmn_department</span></li>
@@ -974,7 +979,7 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
 </details>
 </div></div></div>
 <div class="quiz-card is-email-locked" data-question-index="11" data-tier="2" hidden="" id="qcard11">
-<div class="quiz-q"><span class="quiz-q-num">12.</span>For classic risk assessment indicator failure factor represents the impact of risk indicator failures on what score-</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
+<div class="quiz-q"><span class="quiz-q-num">12.</span>For classic risk assessment indicator failure factor represents the impact of risk indicator failures on what score?</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: Inherent ALE represents the loss expectancy before any controls are applied. The indicator failure factor affects the calculated score after considering control effectiveness, not the raw inherent value." data-idx="0" data-q="11"><span class="quiz-opt-letter">A</span><span>Inherent ALE</span></li>
 <li class="quiz-opt" data-exp="CORRECT: The indicator failure factor represents the impact of risk indicator failures on the Calculated ALE. When risk indicators (such as control tests or monitoring checks) fail, the failure factor adjusts the calculated ALE upward to reflect the increased risk exposure due to control deficiencies." data-idx="1" data-q="11"><span class="quiz-opt-letter">B</span><span>Calculated ALE</span></li>
@@ -1003,12 +1008,12 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
 <details class="quiz-overall" id="qexp12">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>B - Feed Source, C - Connection and Credentials, D - Provider</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-governance-risk-compliance/page/product/regulatory-change-management/task/configure-rss-feed-integration.html" target="_blank">ServiceNow Zurich Documentation - Configure RSS Feed Integration</a></p><h5>Expert Explanation</h5><p>Setting up a Regulatory Change Management RSS feed integration requires three configuration records: Provider (who supplies the content), Feed Source (the specific RSS feed to poll), and Connection and Credentials (how to authenticate). These three form the integration chain from authentication to content retrieval.</p><h5>Why the Others Are Wrong</h5><p>Regulatory Taxonomy (A) categorizes content after ingestion but is not part of the feed setup. Regulatory Event (E) is an output of the feed processing, not an input to the configuration.</p><h5>Memory Tip</h5><p>"P-F-C: Provider, Feed, Credentials" - Who provides it- Where is the feed- How do we connect- Three questions, three required records.</p><h5>Real-World Example</h5><p>A bank sets up a Thomson Reuters Regulatory Intelligence feed: they create a Provider record for Thomson Reuters, configure Connection and Credentials with their API key, and define a Feed Source pointing to the specific RSS URL for banking regulations.</p>
+<h5>Correct Answer</h5><p>B - Feed Source, C - Connection and Credentials, D - Provider</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-governance-risk-compliance/page/product/regulatory-change-management/task/configure-rss-feed-integration.html" target="_blank">ServiceNow Zurich Documentation - Configure RSS Feed Integration</a></p><h5>Expert Explanation</h5><p>Setting up a Regulatory Change Management RSS feed integration requires three configuration records: Provider (who supplies the content), Feed Source (the specific RSS feed to poll), and Connection and Credentials (how to authenticate). These three form the integration chain from authentication to content retrieval.</p><h5>Why the Others Are Wrong</h5><p>Regulatory Taxonomy (A) categorizes content after ingestion but is not part of the feed setup. Regulatory Event (E) is an output of the feed processing, not an input to the configuration.</p><h5>Memory Tip</h5><p>"P-F-C: Provider, Feed, Credentials" - Who provides it? Where is the feed? How do we connect? Three questions, three required records.</p><h5>Real-World Example</h5><p>A bank sets up a Thomson Reuters Regulatory Intelligence feed: they create a Provider record for Thomson Reuters, configure Connection and Credentials with their API key, and define a Feed Source pointing to the specific RSS URL for banking regulations.</p>
 </div>
 </details>
 </div></div></div>
 <div class="quiz-card quiz-multi is-email-locked" data-question-index="13" data-tier="2" hidden="" id="qcard13">
-<div class="quiz-q"><span class="quiz-q-num">14.</span>For a particular risk assessment methodology (RAM) the control effectiveness score is calculated based on an individual assessment of controls. What are options for control identification- (Choose three.) <span class="quiz-choose">(choose 3)</span></div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
+<div class="quiz-q"><span class="quiz-q-num">14.</span>For a particular risk assessment methodology (RAM) the control effectiveness score is calculated based on an individual assessment of controls. What are options for control identification? (Choose three.) <span class="quiz-choose">(choose 3)</span></div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="CORRECT: 'Controls are identified from library and ad-hoc' is a valid option that combines both approaches - pulling controls from the predefined Control Library and allowing users to add controls manually during the assessment." data-idx="0" data-q="13"><span class="quiz-opt-letter">A</span><span>Controls are identified from library and ad-hoc</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: 'Controls are identified from indicator results' is not a valid control identification option in the RAM configuration. Indicators monitor control performance but do not serve as a source for identifying which controls to assess." data-idx="1" data-q="13"><span class="quiz-opt-letter">B</span><span>Controls are identified from indicator results</span></li>
@@ -1064,7 +1069,7 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
       <h3>You scored <span id="quizFinalScoreText">0/15</span> on the 15-question preview.</h3>
       <div class="quiz-final-score" id="quizFinalScoreValue">0/15</div>
       <p class="quiz-final-copy">The full course keeps the same answer breakdown style across all 300 questions.</p>
-      <p class="quiz-final-anchor">Your first exam attempt is free. Your second costs $350.</p>
+      <p class="quiz-final-anchor">A failed exam attempt costs $225 to retake.</p>
       <div class="quiz-final-actions">
         <a href="https://www.udemy.com/course/pass-servicenow-cis-risk-and-compliance-grc-irm-rc/?referralCode=BAC69ADCBF13729F4018" target="_blank" rel="noopener" class="cp-cta" data-buy-stage="final">Get all 300 questions for $9.99
           <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -1083,7 +1088,7 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
   </section>
 
   <div class="cp-bottom">
-    <p>Looking for a different certification-</p>
+    <p>Looking for a different certification?</p>
     <a href="/#courses">Browse all 18 practice tests &rarr;</a>
     <p style="margin-top:12px"><a href="/blog/which-servicenow-certification-first.html">Not sure which cert? See the full certification guide &rarr;</a></p>
   </div>
