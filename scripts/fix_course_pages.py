@@ -30,6 +30,19 @@ MARK_BEFORE_TEXT = re.compile(LOOKBEHIND + r"-(?=\s+(?:\(?(?:[Cc]hoose|[Ss]elect
 MARK_BEFORE_QUOTE = re.compile(LOOKBEHIND + r"-(?=[\"\u201d)])")
 
 
+# Inside a question stem a spaced hyphen at the end, or right before "(Choose n)", is also a lost "?".
+STEM = re.compile(r'(<div class="quiz-q">)(.*?)(</div>)', re.S)
+STEM_MARK = re.compile(r'\s+-(?=\s*$|\s+\(?(?:[Cc]hoose|[Ss]elect)\b)')
+
+
+# Two sentences run together in a few stems ("...support.What additional...").
+RUN_ON = re.compile(r'(?<=[a-z)"\u201d])\.(?=[A-Z][a-z])')
+
+
+def repair_stems(text):
+    return STEM.sub(lambda m: m.group(1) + RUN_ON.sub('. ', STEM_MARK.sub('?', m.group(2))) + m.group(3), text)
+
+
 def repair_marks_text(text):
     return MARK_BEFORE_QUOTE.sub('?', MARK_BEFORE_TEXT.sub('?', MARK_BEFORE_TAG.sub('?', text)))
 
@@ -39,19 +52,20 @@ def repair_marks_str(value):
     return MARK_BEFORE_QUOTE.sub('?', MARK_BEFORE_TEXT.sub('?', re.sub(LOOKBEHIND + r'-$', '?', value)))
 
 
-def repair_marks_json(node):
+def repair_marks_json(node, key=None):
     if isinstance(node, str):
-        return repair_marks_str(node)
+        node = repair_marks_str(node)
+        return RUN_ON.sub('. ', STEM_MARK.sub('?', node)) if key == 'name' else node
     if isinstance(node, list):
         return [repair_marks_json(item) for item in node]
     if isinstance(node, dict):
-        return {key: repair_marks_json(item) for key, item in node.items()}
+        return {k: repair_marks_json(item, k) for k, item in node.items()}
     return node
 
 
 def repair_marks(html):
     parts = BLOCK.split(html)
-    return ''.join(p if BLOCK.fullmatch(p) else repair_marks_text(p) for p in parts)
+    return ''.join(p if BLOCK.fullmatch(p) else repair_stems(repair_marks_text(p)) for p in parts)
 
 
 def fix_fonts(html):

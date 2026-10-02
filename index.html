@@ -240,18 +240,17 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" as="style">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  /* Prevent FOUT layout shift on hero title */
-  .hero h1 { opacity: 0; }
-  .fonts-loaded .hero h1 { opacity: 1; }
+  /* Hold the decorative wordmark until the font loads so it does not jump. The headline is never hidden. */
+  .hero-brand { opacity: 0; }
+  .fonts-loaded .hero-brand { opacity: 1; }
 </style>
 <script>
-  if (document.fonts) {
-    document.fonts.ready.then(function() {
-      document.documentElement.classList.add('fonts-loaded');
-    });
-  } else {
-    document.documentElement.classList.add('fonts-loaded');
-  }
+  (function () {
+    var root = document.documentElement;
+    function ready() { root.classList.add('fonts-loaded'); }
+    if (document.fonts) document.fonts.ready.then(ready); else ready();
+    setTimeout(ready, 1500);
+  })();
 </script>
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <link rel="dns-prefetch" href="https://app.convertkit.com">
@@ -639,21 +638,32 @@ body::after {
 @keyframes pulse-dot { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
 @keyframes fadeUp { from{opacity:0;transform:translateY(16px);} to{opacity:1;transform:translateY(0);} }
 
-.hero h1 {
+.hero-brand {
   font-size: clamp(52px, 9vw, 110px);
   font-weight: 800;
   line-height: 0.95;
   letter-spacing: -3px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   animation: fadeUp 0.7s ease 0.08s both;
 }
 
-.hero h1 .x {
+.hero-title {
+  font-size: clamp(22px, 3.4vw, 34px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  max-width: 720px;
+  margin: 0 auto 14px;
+  color: var(--text);
+  animation: fadeUp 0.7s ease 0.12s both;
+}
+
+.hero-brand .x {
   position: relative;
   color: var(--orange);
 }
 
-.hero h1 .x::after {
+.hero-brand .x::after {
   content: 'X';
   position: absolute;
   top: 0; left: 0;
@@ -691,6 +701,8 @@ body::after {
 .hero-link:hover { background: rgba(221,92,12,0.14); transform: translateY(-1px); text-decoration: none; }
 .hero-link-primary { background: var(--orange); color: #fff; border-color: var(--orange); }
 .hero-link-primary:hover { background: var(--orange-bright); }
+.hero-link-primary { padding: 10px 24px; font-size: 0.95rem; }
+.hero-note { font-size: 0.8rem; color: var(--text-dim); margin: -12px 0 28px; animation: fadeUp 0.7s ease 0.24s both; }
 
 /* Stats */
 .stats-row {
@@ -1004,6 +1016,7 @@ body::after {
 }
 
 .course-card {
+  position: relative;
   flex: 0 1 calc(25% - 11px);
   min-width: 280px;
   background: var(--bg-card);
@@ -1141,6 +1154,8 @@ body::after {
 
 /* Next cert suggestion on card */
 .card-next {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -1179,7 +1194,7 @@ body::after {
   font-weight: 600;
 }
 
-.card-details {
+.card-buy {
   display: block;
   text-align: center;
   font-size: 12.5px;
@@ -1191,25 +1206,30 @@ body::after {
   background: var(--orange);
   border: none;
   border-radius: 8px;
+  text-decoration: none;
   transition: background 0.2s, transform 0.15s;
 }
-.card-details:hover { background: var(--orange-bright); transform: translateY(-1px); }
+.card-buy:hover { background: var(--orange-bright); transform: translateY(-1px); text-decoration: none; }
+/* One real link stretches over the whole card. The links below sit above it. */
+.card-buy::after { content: ""; position: absolute; inset: 0; }
+.card-secondary { display: flex; gap: 8px; margin-top: 8px; margin-bottom: 6px; position: relative; z-index: 2; }
+.card-details,
 .card-free-quiz {
+  flex: 1;
   display: block;
   text-align: center;
   font-size: 11.5px;
   color: var(--orange);
   font-weight: 600;
-  padding: 8px 16px;
-  margin-top: 8px;
-  margin-bottom: 6px;
+  padding: 8px 10px;
   cursor: pointer;
   border: 1px solid rgba(221,92,12,0.35);
   border-radius: 8px;
   transition: background 0.2s, border-color 0.2s;
   text-decoration: none;
 }
-.card-free-quiz:hover { background: rgba(221,92,12,0.08); border-color: var(--orange); }
+.card-details:hover,
+.card-free-quiz:hover { background: rgba(221,92,12,0.08); border-color: var(--orange); text-decoration: none; }
 
 .card-body {
   padding: 16px 18px 18px;
@@ -1575,6 +1595,8 @@ h3.card-title,
   position: relative;
 }
 
+.cta-secondary { display: block; margin-top: 14px; font-size: 14px; color: var(--text-dim); text-decoration: underline; text-underline-offset: 3px; }
+.cta-secondary:hover { color: var(--orange); }
 .cta-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 40px rgba(221,92,12,0.3);
@@ -1863,8 +1885,8 @@ h3.card-title,
 }
 
 /* ============ LIGHT MODE OVERRIDES ============ */
-[data-theme="light"] .hero h1 { color: var(--text); }
-[data-theme="light"] .hero h1 .x::after {
+[data-theme="light"] .hero-brand { color: var(--text); }
+[data-theme="light"] .hero-brand .x::after {
   background: linear-gradient(90deg, var(--orange), var(--orange-bright), #fff, var(--orange-bright), var(--orange));
   background-size: 300% 100%;
   -webkit-background-clip: text;
@@ -1947,7 +1969,8 @@ h3.card-title,
 }
 
 [data-theme="light"] .num-sub { color: #5c5856; }
-[data-theme="light"] .card-free-quiz { border-color: rgba(221,92,12,0.45); }
+[data-theme="light"] .card-free-quiz,
+[data-theme="light"] .card-details { border-color: rgba(221,92,12,0.45); }
 [data-theme="light"] .card-desc { color: #5c5856; }
 [data-theme="light"] .card-pub { color: #9e9a96; }
 [data-theme="light"] .r-count { color: #9e9a96; }
@@ -2024,7 +2047,7 @@ h3.card-title,
 }
 
 @media (max-width: 375px) {
-  .hero h1 { font-size: 44px; letter-spacing: -2px; }
+  .hero-brand { font-size: 44px; letter-spacing: -2px; }
   .hero-sub { font-size: 15px; }
   .stat-item { padding: 14px 16px; }
   .stat-num { font-size: 24px; }
@@ -2225,14 +2248,16 @@ h3.card-title,
     <div class="hero-orb hero-orb-3"></div>
     <div class="hero-scan"></div>
   </div>
-  <div class="hero-pill"><span class="pulse"></span>18 ServiceNow practice exams &bull; 4,800+ questions</div>
-  <h1>Lucky <span class="x">X</span></h1>
+  <div class="hero-pill"><span class="pulse"></span>Lucky X &bull; 18 ServiceNow practice exams &bull; 4,800+ questions</div>
+  <div class="hero-brand" aria-hidden="true">Lucky <span class="x">X</span></div>
+  <h1 class="hero-title">ServiceNow practice exams that explain every answer</h1>
   <p class="hero-sub">You finished the official ServiceNow learning path.<br>Now let's make sure you pass the certification exam.</p>
   <div class="hero-links">
-    <a href="/quiz.html" class="hero-link hero-link-primary">Which cert should I take first? &rarr;</a>
-    <a href="/compare.html" class="hero-link">Compare all 18 certifications &rarr;</a>
-    <a href="#guides" class="hero-link">Study Guides &rarr;</a>
+    <a href="#courses" class="hero-link hero-link-primary">See the 18 practice tests &rarr;</a>
+    <a href="/quiz.html" class="hero-link">Which cert should I take first? &rarr;</a>
+    <a href="/compare.html" class="hero-link">Compare all 18 &rarr;</a>
   </div>
+  <p class="hero-note">Lifetime access on Udemy with a 30-day refund window. Price is shown at checkout.</p>
 
   <div class="stats-row">
     <div class="stat-item">
@@ -2544,7 +2569,7 @@ h3.card-title,
   <div class="guides-more">
     <div class="guides-more-hint">+ 22 more study guides covering CSA, CAD, ITSM, Discovery, and more</div>
     <a href="/blog/" class="cta-btn">
-      View all 26 study guides
+      View all 29 study guides
       <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
   </div>
@@ -2567,10 +2592,11 @@ h3.card-title,
       </div>
     </div>
     <p class="cta-headline">Check the explanations. Click the source links. Not convinced? Full refund within 30 days.</p>
-    <a href="https://www.udemy.com/user/lucky-x/" target="_blank" rel="noopener" class="cta-btn" data-track="cta-browse-all">
-      Find your exam on Udemy
+    <a href="#courses" class="cta-btn" data-track="cta-browse-all">
+      Choose your practice test
       <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
+    <a href="/quiz.html" class="cta-secondary">Not sure which exam? Take the 2-minute quiz</a>
     <div class="cta-guarantee">
       <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
       30-day money-back guarantee on Udemy
@@ -2727,20 +2753,15 @@ function renderGrid(trackFilter) {
     const pct = Math.round((1 - c.price / c.orig) * 100);
     const nextCourse = c.next ? getNextCourse(c.next) : null;
 
-    const a = document.createElement('a');
+    const a = document.createElement('article');
     a.className = 'course-card';
-    a.href = c.ref;
-    a.target = '_blank';
-    a.rel = 'noopener';
-    a.dataset.track = 'click-course-' + c.code;
 
     let nextHtml = '';
     if (nextCourse) {
-      nextHtml = `<a href="${nextCourse.ref}" target="_blank" rel="noopener" class="card-next" onclick="event.stopPropagation()"><span class="arrow-icon">&rarr;</span> Next cert: <strong>${nextCourse.code}</strong></a>`;
+      nextHtml = `<a href="${nextCourse.ref}" target="_blank" rel="sponsored noopener" class="card-next" data-track-placement="card-next"><span class="arrow-icon">&rarr;</span> Next cert: <strong>${nextCourse.code}</strong></a>`;
     }
 
     const imgPath = heroImg[c.code];
-    a.setAttribute('aria-label', `${c.title} - ${c.q} practice questions, $${c.price.toFixed(2)}`);
     a.innerHTML = `
       <div class="card-top">
         <div class="card-top-bg${imgPath ? ' has-img' : ''}"${imgPath ? ` data-bg="${imgPath}" role="img" aria-label="${c.title} course hero image"` : ''}></div>
@@ -2768,8 +2789,11 @@ function renderGrid(trackFilter) {
           <span class="p-was" aria-label="Original price $${c.orig.toFixed(2)}">$${c.orig.toFixed(2)}</span>
           <span class="p-off">${pct}% off</span>
         </div>
-        <span class="card-details" data-slug="${c.slug}">View details &rarr;</span>
-        <span class="card-free-quiz" data-slug="${c.slug}">Try free practice test</span>
+        <a href="${c.ref}" target="_blank" rel="sponsored noopener" class="card-buy" data-track="click-course-${c.code}" data-track-placement="card" aria-label="Buy ${c.title} on Udemy">Buy on Udemy &rarr;</a>
+        <div class="card-secondary">
+          <a href="/courses/${c.slug}.html" class="card-details" aria-label="${c.title} details">Details</a>
+          <a href="/courses/${c.slug}.html#free-quiz" class="card-free-quiz" aria-label="Try a free ${c.code} practice test">Free test</a>
+        </div>
         ${nextHtml}
       </div>`;
     grid.appendChild(a);
@@ -2782,22 +2806,6 @@ function renderGrid(trackFilter) {
 
 let imgObs = null;
 renderGrid(null);
-
-/* Handle course detail page navigation */
-document.getElementById('grid').addEventListener('click', function(e) {
-  const details = e.target.closest('.card-details');
-  if (details) {
-    e.preventDefault();
-    e.stopPropagation();
-    window.location.href = '/courses/' + details.dataset.slug + '.html';
-  }
-  const freeQuiz = e.target.closest('.card-free-quiz');
-  if (freeQuiz) {
-    e.preventDefault();
-    e.stopPropagation();
-    window.location.href = '/courses/' + freeQuiz.dataset.slug + '.html#free-quiz';
-  }
-});
 
 /* ======== LAZY LOAD HERO IMAGES ======== */
 imgObs = new IntersectionObserver(entries => {
