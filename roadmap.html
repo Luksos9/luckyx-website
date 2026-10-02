@@ -182,6 +182,16 @@
   @media screen{body{background:#444;padding:20px 0;}.page{margin:0 auto 20px;box-shadow:0 4px 30px rgba(0,0,0,0.3);}}
 </style>
 <!-- Lucky X analytics: no personal data -->
+<!-- lx:consent -->
+<script>
+  /* Consent Mode v2: analytics stays off until the visitor accepts the notice (consent.js). */
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  try { if (localStorage.getItem('luckyx-consent') === 'granted') gtag('consent', 'update', { analytics_storage: 'granted' }); } catch (e) {}
+</script>
+<script defer src="/consent.js"></script>
+<!-- /lx:consent -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLYHHC76GG"></script>
 <script>
 window.dataLayer = window.dataLayer || [];

@@ -489,6 +489,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <!-- GA4 -->
+<!-- lx:consent -->
+<script>
+  /* Consent Mode v2: analytics stays off until the visitor accepts the notice (consent.js). */
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  try { if (localStorage.getItem('luckyx-consent') === 'granted') gtag('consent', 'update', { analytics_storage: 'granted' }); } catch (e) {}
+</script>
+<script defer src="/consent.js"></script>
+<!-- /lx:consent -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLYHHC76GG"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
