@@ -406,6 +406,7 @@ a:hover { text-decoration: underline; }
 
   function answer(step, el) {
     answers[step] = el.dataset.value;
+    if (step === 0 && typeof gtag === 'function') gtag('event', 'quiz_recommender_start');
 
     /* Visual feedback */
     var opts = el.parentElement.querySelectorAll('.step-opt');

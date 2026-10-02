@@ -2921,7 +2921,7 @@ function handleLeadSubmit(form) {
   fetch('https://app.convertkit.com/forms/' + CONVERTKIT_FORM_ID + '/subscriptions', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json; charset=utf-8' },
-    body: JSON.stringify({ email_address: rawEmail })
+    body: JSON.stringify({ email_address: rawEmail, fields: { source: 'home-' + (form.id || 'form') } })
   })
   .then(function(r) {
     if (r.ok || r.status === 200 || r.status === 201) {
@@ -2932,6 +2932,7 @@ function handleLeadSubmit(form) {
         gtag('event', 'generate_lead', {
           event_category: 'email_capture',
           event_label: form.id || 'unknown_form',
+          source: 'home-' + (form.id || 'form'),
           value: 1
         });
       }
@@ -2980,6 +2981,20 @@ function handleLeadSubmit(form) {
   document.addEventListener('mouseout', function(e) {
     if (e.clientY < 5 && e.relatedTarget === null) showPopup();
   });
+
+  /* Touch devices have no mouse to leave with. A fast flick back toward the top, after the visitor
+     has read a good part of the page, is the closest signal. */
+  if (window.matchMedia('(hover: none)').matches) {
+    var openedAt = Date.now(), lastY = window.scrollY, lastT = openedAt, deepest = 0;
+    window.addEventListener('scroll', function() {
+      var y = window.scrollY, t = Date.now();
+      deepest = Math.max(deepest, y);
+      var depth = deepest / Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      var upwardSpeed = (lastY - y) / Math.max(1, t - lastT);
+      if (depth > 0.4 && t - openedAt > 20000 && upwardSpeed > 1.5 && lastY - y > 40) showPopup();
+      lastY = y; lastT = t;
+    }, { passive: true });
+  }
 
   closeBtn.addEventListener('click', hidePopup);
   overlay.addEventListener('click', function(e) { if (e.target === overlay) hidePopup(); });

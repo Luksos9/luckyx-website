@@ -146,6 +146,23 @@ def fix_json_ld(html, course):
     return LD_JSON.sub(edit, html)
 
 
+BUY_LISTENER = ("document.querySelectorAll('a[href*=\"udemy.com\"]').forEach((link)=>{link.addEventListener('click',()=>{const total=scoreSlice(0,14),"
+                "stage=link.dataset.buyStage||(link.closest('#quizFinal')?'final':'hero');evt('quiz_buy_click',{tier:stage,score:total.correct});});});")
+CLICK_CONTEXT = ("window.luckyxClickContext=function(){const total=scoreSlice(0,14);"
+                 "return{cert:QUIZ.code,quiz_answered:total.answered,quiz_score:total.correct,quiz_unlocked:emailReady?'yes':'no'};};")
+GATE_EVENT = "evt('quiz_email_submit');"
+GATE_LEAD = (GATE_EVENT + "if(typeof gtag==='function')gtag('event','generate_lead',"
+             "{event_category:'email_capture',event_label:'quiz-gate',source:'quiz-gate',cert:QUIZ.code,value:1});")
+
+
+def fix_analytics(html):
+    """analytics.js sends one udemy_click per click and asks the page for the quiz state."""
+    html = html.replace(BUY_LISTENER, CLICK_CONTEXT)
+    if GATE_LEAD not in html:
+        html = html.replace(GATE_EVENT, GATE_LEAD, 1)
+    return html
+
+
 def process(path):
     slug = path.stem
     course = COURSES[slug]
@@ -157,6 +174,7 @@ def process(path):
     new = fix_meta_description(new, slug)
     new = fix_rating_count(new, course)
     new = fix_json_ld(new, course)
+    new = fix_analytics(new)
     return html, new
 
 
