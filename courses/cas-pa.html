@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CAS Performance Analytics Practice Test 2026 | ServiceNow PA Exam Prep | Lucky X</title>
-<meta name="description" content="Performance Analytics has its own language: indicators, breakdowns, widgets, thresholds, forecasting, and collection jobs. These 216 questions focus.">
+<meta name="description" content="Performance Analytics has its own language: indicators, breakdowns, widgets, thresholds, forecasting, and collection jobs. These 216 questions focus on how the pieces work together in practice.">
 <meta name="keywords" content="CAS-PA, Performance Analytics, ServiceNow PA practice test, PA exam prep, indicators, dashboards, analytics hub, ServiceNow certification 2026, ServiceNow practice test, Lucky X">
 <meta name="author" content="Lucky X">
 <meta name="robots" content="index, follow">
@@ -48,11 +48,9 @@
   },
   "educationalLevel": "Professional Certification",
   "teaches": "ServiceNow PA Certification",
-  "numberOfCredits": "216",
   "hasCourseInstance": {
     "@type": "CourseInstance",
-    "courseMode": "online",
-    "courseWorkload": "PT327M"
+    "courseMode": "online"
   },
   "offers": {
     "@type": "Offer",
@@ -64,8 +62,8 @@
   },
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "4",
-    "reviewCount": "1",
+    "ratingValue": "4.05",
+    "reviewCount": "27",
     "bestRating": "5",
     "worstRating": "1"
   }
@@ -88,7 +86,7 @@
   "hasPart": [
     {
       "@type": "Question",
-      "name": "According to the CAS-PA Mainline Blueprint, which Learning Domain carries the highest percentage weight on the certification exam-",
+      "name": "According to the CAS-PA Mainline Blueprint, which Learning Domain carries the highest percentage weight on the certification exam?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Configure Indicators and Indicator Sources"
@@ -110,7 +108,7 @@
     },
     {
       "@type": "Question",
-      "name": "The formula for the \"% of incidents resolved by first assigned group\" is configured as: ([[Number of resolved incidents by first assigned group]] / [[Number of resolved incidents]]) * 100. You observe a \"No Score\" output when the denominator indicator equals 0. What is the best method to enhance this formula so it returns 0 instead of \"No Score\"-",
+      "name": "The formula for the \"% of incidents resolved by first assigned group\" is configured as: ([[Number of resolved incidents by first assigned group]] / [[Number of resolved incidents]]) * 100. You observe a \"No Score\" output when the denominator indicator equals 0. What is the best method to enhance this formula so it returns 0 instead of \"No Score\"?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Add a conditional JavaScript statement in the formula to return 0 if the value of Number of Resolved Incidents is 0."
@@ -132,7 +130,7 @@
     },
     {
       "@type": "Question",
-      "name": "What architectural change happens to the legacy pa_scores table during an upgrade to the Washington DC release (assuming the instance has fewer than 43 million scores)-",
+      "name": "What architectural change happens to the legacy pa_scores table during an upgrade to the Washington DC release (assuming the instance has fewer than 43 million scores)?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "The scores are migrated automatically to the pa_scores_l1 and pa_scores_l2 tables."
@@ -154,7 +152,7 @@
     },
     {
       "@type": "Question",
-      "name": "To generate reliable and accurate predictive trends using Performance Analytics forecasting, what minimum amount of historical data is generally recommended by ServiceNow best practices-",
+      "name": "To generate reliable and accurate predictive trends using Performance Analytics forecasting, what minimum amount of historical data is generally recommended by ServiceNow best practices?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "At least 12 months"
@@ -176,7 +174,7 @@
     },
     {
       "@type": "Question",
-      "name": "When configuring a Bucket Group for a continuous variable like 'Incident Age (Days)', what happens to records whose age exceeds the maximum value defined in the highest available bucket during data collection-",
+      "name": "When configuring a Bucket Group for a continuous variable like 'Incident Age (Days)', what happens to records whose age exceeds the maximum value defined in the highest available bucket during data collection?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "The record is processed but placed into the 'Unassigned' or empty breakdown element category."
@@ -198,7 +196,7 @@
     },
     {
       "@type": "Question",
-      "name": "What is the primary reason for running a Historic Data Collection job immediately after activating a new Analytics and Reporting Solution (Content Pack)-",
+      "name": "What is the primary reason for running a Historic Data Collection job immediately after activating a new Analytics and Reporting Solution (Content Pack)?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "To populate the new indicators with past data, providing immediate insight into existing trends."
@@ -220,7 +218,7 @@
     },
     {
       "@type": "Question",
-      "name": "Interactive Filters allow users to dynamically adjust the data displayed on a dashboard. Which system role is required to create new Interactive Filters-",
+      "name": "Interactive Filters allow users to dynamically adjust the data displayed on a dashboard. Which system role is required to create new Interactive Filters?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "report_admin"
@@ -242,7 +240,7 @@
     },
     {
       "@type": "Question",
-      "name": "What 'related lists' are available on the formula indicator form- (Choose 3.) (choose 3)",
+      "name": "What 'related lists' are available on the formula indicator form? (Choose 3.) (choose 3)",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Contributing Indicators | Targets | Breakdowns"
@@ -256,7 +254,7 @@
     },
     {
       "@type": "Question",
-      "name": "When utilizing Text Analytics in Performance Analytics, which of the following is an allowed visualization type specifically for Text Analytics Widgets-",
+      "name": "When utilizing Text Analytics in Performance Analytics, which of the following is an allowed visualization type specifically for Text Analytics Widgets?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Word Cloud"
@@ -278,7 +276,7 @@
     },
     {
       "@type": "Question",
-      "name": "Within the Platform Analytics Library, administrators are tasked with identifying and deprecating unused indicators to reduce daily processing overhead. Which new columns introduced in the Zurich release directly facilitate this auditing process- (choose 2)",
+      "name": "Within the Platform Analytics Library, administrators are tasked with identifying and deprecating unused indicators to reduce daily processing overhead. Which new columns introduced in the Zurich release directly facilitate this auditing process? (choose 2)",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Viewed | Views"
@@ -307,7 +305,7 @@
       "name": "A Performance Analytics Widget does not follow the Dashboard Breakdown Source. Select the possible reasons for this behavior. (Choose 3) (choose 3)",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The Indicator in the Widget has no configured Breakdowns. | \u201cFollow Element\u201d is not checked in the Widget data settings. | The Widget is prevented from seeing the data due to Element security."
+        "text": "The Indicator in the Widget has no configured Breakdowns. | “Follow Element” is not checked in the Widget data settings. | The Widget is prevented from seeing the data due to Element security."
       },
       "suggestedAnswer": [
         {
@@ -326,7 +324,7 @@
     },
     {
       "@type": "Question",
-      "name": "How are responsible users reminded when a signal remains unresolved -",
+      "name": "How are responsible users reminded when a signal remains unresolved?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "By email notification"
@@ -366,7 +364,7 @@
     },
     {
       "@type": "Question",
-      "name": "When deploying Now Assist for Platform Analytics, users can create \"Explorations.\" Which of the following advanced capabilities are supported within the Explorations interface- (choose 3)",
+      "name": "When deploying Now Assist for Platform Analytics, users can create \"Explorations.\" Which of the following advanced capabilities are supported within the Explorations interface? (choose 3)",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Adding a generated data visualization directly to a dashboard. | Sharing the exploration with tagged users for collaboration. | Summarizing the entire exploration via Generative AI."
@@ -388,7 +386,7 @@
     },
     {
       "@type": "Question",
-      "name": "How many levels of Breakdowns are collected if the \"Collect breakdown matrix\" property is NOT checked on the Indicator record-",
+      "name": "How many levels of Breakdowns are collected if the \"Collect breakdown matrix\" property is NOT checked on the Indicator record?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "1 - Without the matrix, a single level of Breakdowns is collected."
@@ -424,6 +422,49 @@
   ]
 }
 </script>
+<!-- lx:faq-ld -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many questions are in the full PA practice test?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The full course has 216 questions on Udemy. Every answer option has its own explanation, and the explanations link to official ServiceNow documentation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a refund if the course is not right for me?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Udemy courses come with a 30-day money-back guarantee."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will this practice test guarantee I pass?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Practice tests show you where you are weak. They do not replace hands-on work, so pair them with a free ServiceNow Personal Developer Instance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which certification should I take first?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most people start with CSA. If you are unsure, take the 2-minute recommendation quiz or read the certification path guide."
+      }
+    }
+  ]
+}
+</script>
+<!-- /lx:faq-ld -->
+
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -441,9 +482,19 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2-family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <!-- GA4 -->
+<!-- lx:consent -->
+<script>
+  /* Consent Mode v2: analytics stays off until the visitor accepts the notice (consent.js). */
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  try { if (localStorage.getItem('luckyx-consent') === 'granted') gtag('consent', 'update', { analytics_storage: 'granted' }); } catch (e) {}
+</script>
+<script defer src="/consent.js"></script>
+<!-- /lx:consent -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLYHHC76GG"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -673,6 +724,28 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
   .quiz-card { padding: 16px; }
 }
 </style>
+<!-- lx:css -->
+<style>
+.cp-price-note{margin:-22px 0 26px;color:var(--text-dim);font-size:.85rem}
+.cp-path{margin-top:22px;padding:16px 18px;border:1px solid var(--border);border-radius:12px;background:var(--bg-raised);font-size:.92rem;line-height:1.6;color:var(--text-dim)}
+.cp-path p{margin:0}.cp-path p+p{margin-top:6px}.cp-path strong{color:var(--text)}.cp-path a{color:var(--orange);font-weight:600}
+.quiz-buybar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;margin:14px 0 0;padding:12px 16px;border-radius:12px;border:1px solid rgba(221,92,12,.25);background:rgba(221,92,12,.06);font-size:.9rem;color:var(--text-dim)}
+.quiz-buybar a{display:inline-flex;padding:9px 16px;border-radius:10px;background:var(--orange);color:#fff;font-weight:600;font-size:.88rem;text-decoration:none;white-space:nowrap}
+.quiz-buybar a:hover{background:#c75400;text-decoration:none}
+.quiz-gate-alt{margin-top:12px;font-size:.88rem;color:var(--text-dim)}
+.quiz-gate-alt a{color:var(--orange);font-weight:600}
+.cp-faq{margin-top:48px}.cp-faq h2{font-size:1.3rem;font-weight:600;margin-bottom:16px}
+.cp-faq details{border:1px solid var(--border);border-radius:12px;background:var(--bg-raised);margin-bottom:10px}
+.cp-faq summary{cursor:pointer;padding:14px 18px;font-weight:600;font-size:.95rem;list-style:none}
+.cp-faq summary::-webkit-details-marker{display:none}
+.cp-faq summary::after{content:"+";float:right;color:var(--orange)}
+.cp-faq details[open] summary::after{content:"\2212"}
+.cp-faq details p{margin:0;padding:0 18px 16px;color:var(--text-dim);font-size:.92rem;line-height:1.65}
+.cp-faq details a{color:var(--orange);font-weight:600}
+.cp-related{margin-top:6px}.cp-related a{display:inline-block;margin:4px 6px 0 0;padding:6px 12px;border:1px solid var(--border);border-radius:999px;font-size:.82rem}
+@media (max-width:720px){.quiz-gate-email-input{flex:0 0 auto;width:100%}}
+</style>
+<!-- /lx:css -->
 <script defer src="/analytics.js"></script>
 </head>
 <body>
@@ -730,11 +803,21 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
     <span class="cp-price-was">$99.99</span>
     <span class="cp-price-off">90% off</span>
   </div>
+<!-- lx:price-note -->
+<p class="cp-price-note">Price is shown at checkout on Udemy. 30-day money-back guarantee.</p>
+<!-- /lx:price-note -->
 
-  <a href="https://www.udemy.com/course/pass-your-servicenow-cas-pa-exam/?referralCode=A8ACE29CC7E537680674" target="_blank" rel="noopener" class="cp-cta">
+
+  <a href="https://www.udemy.com/course/pass-your-servicenow-cas-pa-exam/?referralCode=A8ACE29CC7E537680674" target="_blank" rel="sponsored noopener" class="cp-cta" data-buy-stage="hero">
     Start practicing now
     <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
   </a>
+<!-- lx:path -->
+<div class="cp-path">
+  <p><strong>Next step:</strong> <a href="/courses/cis-spm.html">CIS Strategic Portfolio Management</a>.</p>
+</div>
+<!-- /lx:path -->
+
 
   <div class="cp-features">
     <h2>What's included</h2>
@@ -799,11 +882,15 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
         <span class="preview-dot" data-slot="13" title="Question 14"></span>
         <span class="preview-dot" data-slot="14" title="Question 15"></span>
       </div>
+<!-- lx:buybar -->
+<div class="quiz-buybar"><span>Skip the preview and get all 216 questions on Udemy.</span><a href="https://www.udemy.com/course/pass-your-servicenow-cas-pa-exam/?referralCode=A8ACE29CC7E537680674" target="_blank" rel="sponsored noopener" data-buy-stage="stepper">Get the full course &rarr;</a></div>
+<!-- /lx:buybar -->
+
     </div>
     <div class="quiz-stage" id="quizStage">
       <div class="quiz-card-stack">
 <div class="quiz-card" data-question-index="0" data-tier="1" id="qcard0">
-<div class="quiz-q"><span class="quiz-q-num">1.</span>According to the CAS-PA Mainline Blueprint, which Learning Domain carries the highest percentage weight on the certification exam-</div><div class="quiz-answer-shell"><div class="quiz-answer-content">
+<div class="quiz-q"><span class="quiz-q-num">1.</span>According to the CAS-PA Mainline Blueprint, which Learning Domain carries the highest percentage weight on the certification exam?</div><div class="quiz-answer-shell"><div class="quiz-answer-content">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: Data Visualization is a tested domain on the CAS-PA exam, but it does not carry the highest weight. It typically accounts for a smaller portion compared to the core configuration domains. Understanding dashboards, widgets, and reports falls under this domain, but the blueprint allocates more emphasis to the foundational indicator configuration work." data-idx="0" data-q="0"><span class="quiz-opt-letter">A</span><span>Data Visualization</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Configure Breakdowns and Breakdown Sources is an important domain covering how data is segmented and sliced for analysis. While breakdowns are essential to PA functionality, this domain carries a lower percentage weight than the indicator configuration domain. Breakdowns depend on indicators being properly configured first, which is why indicators receive more exam emphasis." data-idx="1" data-q="0"><span class="quiz-opt-letter">B</span><span>Configure Breakdowns and Breakdown Sources</span></li>
@@ -819,7 +906,7 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
 </details>
 </div></div></div>
 <div class="quiz-card" data-question-index="1" data-tier="1" hidden="" id="qcard1">
-<div class="quiz-q"><span class="quiz-q-num">2.</span>The formula for the "% of incidents resolved by first assigned group" is configured as: ([[Number of resolved incidents by first assigned group]] / [[Number of resolved incidents]]) * 100. You observe a "No Score" output when the denominator indicator equals 0. What is the best method to enhance this formula so it returns 0 instead of "No Score"-</div><div class="quiz-answer-shell"><div class="quiz-answer-content">
+<div class="quiz-q"><span class="quiz-q-num">2.</span>The formula for the "% of incidents resolved by first assigned group" is configured as: ([[Number of resolved incidents by first assigned group]] / [[Number of resolved incidents]]) * 100. You observe a "No Score" output when the denominator indicator equals 0. What is the best method to enhance this formula so it returns 0 instead of "No Score"?</div><div class="quiz-answer-shell"><div class="quiz-answer-content">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: The 'Allow formula component to be NULL' property controls whether a formula indicator treats missing component values as NULL rather than skipping the calculation entirely. Enabling this property does not solve the division-by-zero scenario. When the denominator is literally zero (not NULL), the system still attempts the division and produces 'No Score'. This property addresses missing data, not zero-value data." data-idx="0" data-q="1"><span class="quiz-opt-letter">A</span><span>Enable the property "Allow formula component to be NULL".</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: The 'Value when nil' system property defines a default display value when no score exists for a given period. While setting this to 0 would visually show 0 in the absence of a score, it does not fix the root cause. The formula still attempts division by zero during data collection, and 'Value when nil' only applies at the display layer. The score record itself would still reflect 'No Score' in the underlying data, making downstream calculations and aggregations unreliable." data-idx="1" data-q="1"><span class="quiz-opt-letter">B</span><span>Set the system property "Value when nil" to 0.</span></li>
@@ -835,7 +922,7 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
 </details>
 </div></div></div>
 <div class="quiz-card" data-question-index="2" data-tier="1" hidden="" id="qcard2">
-<div class="quiz-q"><span class="quiz-q-num">3.</span>What architectural change happens to the legacy pa_scores table during an upgrade to the Washington DC release (assuming the instance has fewer than 43 million scores)-</div><div class="quiz-answer-shell"><div class="quiz-answer-content">
+<div class="quiz-q"><span class="quiz-q-num">3.</span>What architectural change happens to the legacy pa_scores table during an upgrade to the Washington DC release (assuming the instance has fewer than 43 million scores)?</div><div class="quiz-answer-shell"><div class="quiz-answer-content">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: In the Washington DC release, the legacy pa_scores table does not remain the sole repository. ServiceNow introduced a new two-level scoring architecture specifically to improve query performance and reduce table bloat. Instances that qualify for automatic migration (fewer than 43 million scores) are transitioned away from the single pa_scores table to the new split-table model." data-idx="0" data-q="2"><span class="quiz-opt-letter">A</span><span>The table remains the sole repository for RaptorDB operations.</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: The pa_scores table is not converted to an offline data repository. While older data handling strategies in some platforms involve archiving to offline storage, ServiceNow's Washington DC approach actively migrates the score data into new production tables that remain fully online and queryable. The migration is about restructuring for performance, not archiving for cold storage." data-idx="1" data-q="2"><span class="quiz-opt-letter">B</span><span>The table is converted to an offline data repository.</span></li>
@@ -851,7 +938,7 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
 </details>
 </div></div></div>
 <div class="quiz-card" data-question-index="3" data-tier="1" hidden="" id="qcard3">
-<div class="quiz-q"><span class="quiz-q-num">4.</span>To generate reliable and accurate predictive trends using Performance Analytics forecasting, what minimum amount of historical data is generally recommended by ServiceNow best practices-</div><div class="quiz-answer-shell"><div class="quiz-answer-content">
+<div class="quiz-q"><span class="quiz-q-num">4.</span>To generate reliable and accurate predictive trends using Performance Analytics forecasting, what minimum amount of historical data is generally recommended by ServiceNow best practices?</div><div class="quiz-answer-shell"><div class="quiz-answer-content">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: 30 days of historical data is far too little for reliable PA forecasting. Predictive algorithms need enough data points to identify seasonal patterns, cyclical trends, and anomalies. With only 30 days, the model would have roughly one month of daily scores, making it impossible to detect weekly cycles, monthly patterns, or seasonal variations. Any forecast produced would be statistically unreliable." data-idx="0" data-q="3"><span class="quiz-opt-letter">A</span><span>At least 30 days</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: While 3 months provides more data than 30 days, it is still insufficient for ServiceNow's recommended forecasting accuracy. Three months of data might capture some weekly patterns but would miss quarterly seasonality and longer-term trends. The predictive model would lack enough historical context to distinguish between genuine trends and short-term fluctuations." data-idx="1" data-q="3"><span class="quiz-opt-letter">B</span><span>At least 3 months</span></li>
@@ -867,7 +954,7 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
 </details>
 </div></div></div>
 <div class="quiz-card" data-question-index="4" data-tier="1" hidden="" id="qcard4">
-<div class="quiz-q"><span class="quiz-q-num">5.</span>When configuring a Bucket Group for a continuous variable like 'Incident Age (Days)', what happens to records whose age exceeds the maximum value defined in the highest available bucket during data collection-</div><div class="quiz-answer-shell"><div class="quiz-answer-content">
+<div class="quiz-q"><span class="quiz-q-num">5.</span>When configuring a Bucket Group for a continuous variable like 'Incident Age (Days)', what happens to records whose age exceeds the maximum value defined in the highest available bucket during data collection?</div><div class="quiz-answer-shell"><div class="quiz-answer-content">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: The data collection job does not abort when a record falls outside defined bucket ranges. PA data collection is designed to be resilient and process all qualifying records. Aborting the entire job because one record exceeds a bucket boundary would be an unacceptable design flaw, as it would prevent all other valid records from being scored. The collection job continues processing normally." data-idx="0" data-q="4"><span class="quiz-opt-letter">A</span><span>The entire data collection job aborts immediately.</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: The system does not dynamically generate new buckets during data collection. Bucket groups are administrative configurations that define static ranges. If the system created buckets on the fly, it would produce unpredictable and inconsistent breakdown elements across collection cycles, making trend analysis unreliable. Bucket definitions must be explicitly configured by a PA administrator." data-idx="1" data-q="4"><span class="quiz-opt-letter">B</span><span>The record is automatically assigned to a newly generated dynamic bucket.</span></li>
@@ -883,7 +970,7 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
 </details>
 </div></div></div>
 <div class="quiz-card is-email-locked" data-question-index="5" data-tier="2" hidden="" id="qcard5">
-<div class="quiz-q"><span class="quiz-q-num">6.</span>What is the primary reason for running a Historic Data Collection job immediately after activating a new Analytics and Reporting Solution (Content Pack)-</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
+<div class="quiz-q"><span class="quiz-q-num">6.</span>What is the primary reason for running a Historic Data Collection job immediately after activating a new Analytics and Reporting Solution (Content Pack)?</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: Running a Historic Data Collection job has nothing to do with caching. Dashboard caching is managed separately through widget cache settings and browser cache mechanisms. Content packs introduce new indicators and dashboards, and the historic collection job addresses data population, not cache invalidation. Any caching issues would be resolved through cache flush operations, not data collection jobs." data-idx="0" data-q="5"><span class="quiz-opt-letter">A</span><span>To clear outdated caching issues on the dashboard.</span></li>
 <li class="quiz-opt" data-exp="CORRECT: The primary reason for running a Historic Data Collection job after activating a content pack is to populate the newly created indicators with historical data from past records. Content packs (Analytics and Reporting Solutions) install pre-built indicators, breakdowns, dashboards, and widgets. However, these indicators initially have no score data. A regular daily data collection job would only begin scoring from the current day forward, meaning dashboards would show empty time series with no trend context. Historic Data Collection processes records from a defined lookback period (such as the past 12 months), generating scores for each collection period as if the indicator had been active all along. This gives users immediate insight into existing trends, baselines, and patterns from day one." data-idx="1" data-q="5"><span class="quiz-opt-letter">B</span><span>To populate the new indicators with past data, providing immediate insight into existing trends.</span></li>
@@ -899,7 +986,7 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
 </details>
 </div></div></div>
 <div class="quiz-card is-email-locked" data-question-index="6" data-tier="2" hidden="" id="qcard6">
-<div class="quiz-q"><span class="quiz-q-num">7.</span>Interactive Filters allow users to dynamically adjust the data displayed on a dashboard. Which system role is required to create new Interactive Filters-</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
+<div class="quiz-q"><span class="quiz-q-num">7.</span>Interactive Filters allow users to dynamically adjust the data displayed on a dashboard. Which system role is required to create new Interactive Filters?</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: The pa_admin role grants full administrative access to Performance Analytics configuration, including indicators, breakdowns, targets, and data collection. However, Interactive Filters are a reporting and dashboard feature, not a PA-specific feature. While a user with pa_admin can certainly use Interactive Filters on PA dashboards, the role required to create new Interactive Filters is specifically a reporting role, not a PA role." data-idx="0" data-q="6"><span class="quiz-opt-letter">A</span><span>pa_admin</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: The pa_power_user role allows users to create and modify PA indicators, breakdowns, and other PA-specific configurations. Like pa_admin, this is a PA-centric role. Interactive Filters, while used on dashboards that may contain PA widgets, are a reporting platform feature. Creating new Interactive Filter definitions requires a reporting administrative role, not a PA power user role." data-idx="1" data-q="6"><span class="quiz-opt-letter">B</span><span>pa_power_user</span></li>
@@ -915,7 +1002,7 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
 </details>
 </div></div></div>
 <div class="quiz-card quiz-multi is-email-locked" data-question-index="7" data-tier="2" hidden="" id="qcard7">
-<div class="quiz-q"><span class="quiz-q-num">8.</span>What 'related lists' are available on the formula indicator form- (Choose 3.) <span class="quiz-choose">(choose 3)</span></div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
+<div class="quiz-q"><span class="quiz-q-num">8.</span>What 'related lists' are available on the formula indicator form? (Choose 3.) <span class="quiz-choose">(choose 3)</span></div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="CORRECT: Targets is a related list available on the formula indicator form. Targets allow PA administrators to define threshold values (such as a goal of 90% first-contact resolution) against the formula indicator's calculated scores. When a target is associated with a formula indicator, the target line appears on time series widgets, enabling visual comparison between actual performance and desired performance." data-idx="0" data-q="7"><span class="quiz-opt-letter">A</span><span>Targets</span></li>
 <li class="quiz-opt" data-exp="CORRECT: Contributing Indicators is a related list on the formula indicator form. This is one of the most important related lists because it defines which component indicators feed into the formula calculation. Each contributing indicator record specifies the variable name used in the formula expression and links to the actual indicator whose scores are used. Without contributing indicators, the formula has no data inputs to calculate." data-idx="1" data-q="7"><span class="quiz-opt-letter">B</span><span>Contributing Indicators</span></li>
@@ -932,7 +1019,7 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
 </details>
 </div></div></div>
 <div class="quiz-card is-email-locked" data-question-index="8" data-tier="2" hidden="" id="qcard8">
-<div class="quiz-q"><span class="quiz-q-num">9.</span>When utilizing Text Analytics in Performance Analytics, which of the following is an allowed visualization type specifically for Text Analytics Widgets-</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
+<div class="quiz-q"><span class="quiz-q-num">9.</span>When utilizing Text Analytics in Performance Analytics, which of the following is an allowed visualization type specifically for Text Analytics Widgets?</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: 'Keyword List' is not a standard PA Text Analytics widget visualization type. While text analytics involves analyzing keywords and phrases extracted from text fields, the visualization of these keywords uses specific widget types defined by ServiceNow. 'Keyword List' may sound logical but is not an available option in the Text Analytics widget configuration." data-idx="0" data-q="8"><span class="quiz-opt-letter">A</span><span>Keyword List</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: 'Breakdown' is a general PA concept for segmenting data by dimensional attributes, not a Text Analytics-specific visualization type. Standard PA widgets use breakdowns to show data by categories like assignment group or priority. Text Analytics widgets have their own specialized visualization types designed for displaying text analysis results, and 'Breakdown' is not among them." data-idx="1" data-q="8"><span class="quiz-opt-letter">B</span><span>Breakdown</span></li>
@@ -948,7 +1035,7 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
 </details>
 </div></div></div>
 <div class="quiz-card quiz-multi is-email-locked" data-question-index="9" data-tier="2" hidden="" id="qcard9">
-<div class="quiz-q"><span class="quiz-q-num">10.</span>Within the Platform Analytics Library, administrators are tasked with identifying and deprecating unused indicators to reduce daily processing overhead. Which new columns introduced in the Zurich release directly facilitate this auditing process- <span class="quiz-choose">(choose 2)</span></div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
+<div class="quiz-q"><span class="quiz-q-num">10.</span>Within the Platform Analytics Library, administrators are tasked with identifying and deprecating unused indicators to reduce daily processing overhead. Which new columns introduced in the Zurich release directly facilitate this auditing process? <span class="quiz-choose">(choose 2)</span></div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="CORRECT: The 'Viewed' column was introduced in the Zurich release within the Platform Analytics Library. This column indicates whether a specific indicator has been viewed (accessed or displayed on any dashboard or report) within a defined period. If an indicator shows as not viewed, it is a strong candidate for cleanup or deactivation. This column directly supports auditing by revealing which indicators are actively consumed by users versus which sit idle, consuming data collection resources without providing value." data-idx="0" data-q="9"><span class="quiz-opt-letter">A</span><span>Viewed</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: 'Collection Inserts' is not a column introduced in the Zurich release for auditing unused indicators. While PA does track data collection metrics, a column specifically named 'Collection Inserts' was not added to the Platform Analytics Library view in Zurich for the purpose of identifying unused indicators." data-idx="1" data-q="9"><span class="quiz-opt-letter">B</span><span>Collection Inserts</span></li>
@@ -962,7 +1049,7 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
 <details class="quiz-overall" id="qexp9">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>A) Viewed, C) Views</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-it-operations-management/page/use/performance-analytics/concept/analytics-library.html">ServiceNow Docs - Platform Analytics Library</a> | <a href="https://www.google.com/search-q=ServiceNow+Zurich+Platform+Analytics+Library+Viewed+Views+columns+unused+indicators">Google fallback</a></p><h5>Expert Explanation</h5><p>The Zurich release enhanced the Platform Analytics Library with new columns specifically designed to help administrators audit and clean up their indicator inventory. Over time, PA implementations accumulate hundreds of indicators, many of which may no longer be relevant or actively used. Before Zurich, identifying unused indicators required manually checking each indicator against dashboard configurations and user access logs. The two new columns solve this: 'Viewed' is a boolean that indicates whether the indicator has been accessed (viewed on a dashboard or report) within the tracking period, and 'Views' provides the numeric count of how many times the indicator was viewed. Together, these columns enable administrators to sort and filter the indicator library to quickly find indicators with zero views, which are prime candidates for deactivation. Deactivating unused indicators reduces data collection overhead, improves collection job performance, and simplifies the PA environment.</p><h5>Why the Others Are Wrong</h5><p><b>B) Collection Inserts</b> is not a standard column in the Platform Analytics Library for this purpose. Data collection metrics exist elsewhere in the PA diagnostic tools but were not added as library columns for utilization auditing.<br/><br/><b>D) Target Gap</b> measures performance against goals (actual vs. target). It tells you how well a metric is performing, not whether anyone is looking at it.<br/><br/><b>E) Diagnostic Status</b> relates to PA troubleshooting and health checks, not to indicator utilization tracking.<br/><br/><b>F) Related Dashboards</b> would show configuration relationships but not actual usage. An indicator could be on a dashboard that nobody visits, so dashboard association alone does not prove utilization.</p><h5>Memory Tip</h5><p>The two new columns both relate to 'viewing': 'Viewed' (yes/no - has anyone looked-) and 'Views' (how many times-). One is the boolean flag, the other is the counter. Both answer the same question from different angles: is this indicator being consumed-</p><h5>Real-World Example</h5><p>A PA administrator inherited an instance with 800 active indicators. Data collection jobs took over 4 hours to complete. Using the new Zurich 'Viewed' and 'Views' columns in the Platform Analytics Library, she filtered for indicators with 0 views in the past 90 days and found 340 indicators that nobody had accessed. After confirming with stakeholders, she deactivated those indicators, reducing data collection time to under 90 minutes and freeing up significant database storage.</p>
+<h5>Correct Answer</h5><p>A) Viewed, C) Views</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-it-operations-management/page/use/performance-analytics/concept/analytics-library.html">ServiceNow Docs - Platform Analytics Library</a> | <a href="https://www.google.com/search-q=ServiceNow+Zurich+Platform+Analytics+Library+Viewed+Views+columns+unused+indicators">Google fallback</a></p><h5>Expert Explanation</h5><p>The Zurich release enhanced the Platform Analytics Library with new columns specifically designed to help administrators audit and clean up their indicator inventory. Over time, PA implementations accumulate hundreds of indicators, many of which may no longer be relevant or actively used. Before Zurich, identifying unused indicators required manually checking each indicator against dashboard configurations and user access logs. The two new columns solve this: 'Viewed' is a boolean that indicates whether the indicator has been accessed (viewed on a dashboard or report) within the tracking period, and 'Views' provides the numeric count of how many times the indicator was viewed. Together, these columns enable administrators to sort and filter the indicator library to quickly find indicators with zero views, which are prime candidates for deactivation. Deactivating unused indicators reduces data collection overhead, improves collection job performance, and simplifies the PA environment.</p><h5>Why the Others Are Wrong</h5><p><b>B) Collection Inserts</b> is not a standard column in the Platform Analytics Library for this purpose. Data collection metrics exist elsewhere in the PA diagnostic tools but were not added as library columns for utilization auditing.<br/><br/><b>D) Target Gap</b> measures performance against goals (actual vs. target). It tells you how well a metric is performing, not whether anyone is looking at it.<br/><br/><b>E) Diagnostic Status</b> relates to PA troubleshooting and health checks, not to indicator utilization tracking.<br/><br/><b>F) Related Dashboards</b> would show configuration relationships but not actual usage. An indicator could be on a dashboard that nobody visits, so dashboard association alone does not prove utilization.</p><h5>Memory Tip</h5><p>The two new columns both relate to 'viewing': 'Viewed' (yes/no - has anyone looked?) and 'Views' (how many times?). One is the boolean flag, the other is the counter. Both answer the same question from different angles: is this indicator being consumed?</p><h5>Real-World Example</h5><p>A PA administrator inherited an instance with 800 active indicators. Data collection jobs took over 4 hours to complete. Using the new Zurich 'Viewed' and 'Views' columns in the Platform Analytics Library, she filtered for indicators with 0 views in the past 90 days and found 340 indicators that nobody had accessed. After confirming with stakeholders, she deactivated those indicators, reducing data collection time to under 90 minutes and freeing up significant database storage.</p>
 </div>
 </details>
 </div></div></div>
@@ -981,12 +1068,12 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
 <details class="quiz-overall" id="qexp10">
 <summary class="quiz-overall-toggle">Show full explanation</summary>
 <div class="quiz-overall-content">
-<h5>Correct Answer</h5><p>B) The Indicator in the Widget has no configured Breakdowns, C) 'Follow Element' is not checked in the Widget data settings, D) The Widget is prevented from seeing the data due to Element security</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-it-operations-management/page/use/performance-analytics/concept/dashboard-breakdown-source.html">ServiceNow Docs - Dashboard Breakdown Source</a> | <a href="https://www.google.com/search-q=ServiceNow+PA+widget+not+following+dashboard+breakdown+source+follow+element+element+security">Google fallback</a></p><h5>Expert Explanation</h5><p>The Dashboard Breakdown Source is a dashboard-level control that, when set, filters all responsive widgets to show data for a specific breakdown element (such as a particular assignment group or category). For a widget to respond to this control, three conditions must be met: (1) the widget's indicator must have the relevant breakdown configured, (2) the 'Follow Element' setting must be enabled in the widget's data configuration, and (3) the current user must have element security permissions to view the selected breakdown element's data. If any of these three conditions fails, the widget will not follow the Dashboard Breakdown Source. The indicator's breakdown configuration determines capability (can it break down by this dimension-). The Follow Element setting determines intent (should it respond to dashboard-level selections-). Element security determines permission (is the user allowed to see this breakdown element's data-).</p><h5>Why the Others Are Wrong</h5><p><b>A) Time series widget type</b> does not prevent following the breakdown source. All widget visualization types (time series, single score, dial, bar chart, pie chart) can follow the Dashboard Breakdown Source when properly configured.<br/><br/><b>E) Different Breakdown Source</b> does not prevent following. The Dashboard Breakdown Source applies to all widgets that have the matching breakdown configured, regardless of which breakdown source the widget uses internally.<br/><br/><b>F) Following an Interactive Filter</b> is independent of following the Dashboard Breakdown Source. These are complementary filtering mechanisms, not mutually exclusive ones.</p><h5>Memory Tip</h5><p>Three reasons a widget ignores the Dashboard Breakdown Source map to 'Can-Will-May': Can it- (breakdown must be configured), Will it- (Follow Element must be checked), May it- (element security must allow it).</p><h5>Real-World Example</h5><p>A dashboard has a breakdown source set to 'Assignment Group: Network Team'. Widget A (incident count) follows correctly because its indicator has the Assignment Group breakdown, Follow Element is checked, and the user has network team element access. Widget B (change success rate) shows all groups because Follow Element is not checked. Widget C (P1 incident count) shows no data because element security blocks the user from seeing Network Team data. Widget D (customer satisfaction) shows its aggregate score because its indicator has no Assignment Group breakdown configured.</p>
+<h5>Correct Answer</h5><p>B) The Indicator in the Widget has no configured Breakdowns, C) 'Follow Element' is not checked in the Widget data settings, D) The Widget is prevented from seeing the data due to Element security</p><h5>Source</h5><p><a href="https://servicenow.com/docs/bundle/zurich-it-operations-management/page/use/performance-analytics/concept/dashboard-breakdown-source.html">ServiceNow Docs - Dashboard Breakdown Source</a> | <a href="https://www.google.com/search-q=ServiceNow+PA+widget+not+following+dashboard+breakdown+source+follow+element+element+security">Google fallback</a></p><h5>Expert Explanation</h5><p>The Dashboard Breakdown Source is a dashboard-level control that, when set, filters all responsive widgets to show data for a specific breakdown element (such as a particular assignment group or category). For a widget to respond to this control, three conditions must be met: (1) the widget's indicator must have the relevant breakdown configured, (2) the 'Follow Element' setting must be enabled in the widget's data configuration, and (3) the current user must have element security permissions to view the selected breakdown element's data. If any of these three conditions fails, the widget will not follow the Dashboard Breakdown Source. The indicator's breakdown configuration determines capability (can it break down by this dimension?). The Follow Element setting determines intent (should it respond to dashboard-level selections?). Element security determines permission (is the user allowed to see this breakdown element's data?).</p><h5>Why the Others Are Wrong</h5><p><b>A) Time series widget type</b> does not prevent following the breakdown source. All widget visualization types (time series, single score, dial, bar chart, pie chart) can follow the Dashboard Breakdown Source when properly configured.<br/><br/><b>E) Different Breakdown Source</b> does not prevent following. The Dashboard Breakdown Source applies to all widgets that have the matching breakdown configured, regardless of which breakdown source the widget uses internally.<br/><br/><b>F) Following an Interactive Filter</b> is independent of following the Dashboard Breakdown Source. These are complementary filtering mechanisms, not mutually exclusive ones.</p><h5>Memory Tip</h5><p>Three reasons a widget ignores the Dashboard Breakdown Source map to 'Can-Will-May': Can it? (breakdown must be configured), Will it? (Follow Element must be checked), May it? (element security must allow it).</p><h5>Real-World Example</h5><p>A dashboard has a breakdown source set to 'Assignment Group: Network Team'. Widget A (incident count) follows correctly because its indicator has the Assignment Group breakdown, Follow Element is checked, and the user has network team element access. Widget B (change success rate) shows all groups because Follow Element is not checked. Widget C (P1 incident count) shows no data because element security blocks the user from seeing Network Team data. Widget D (customer satisfaction) shows its aggregate score because its indicator has no Assignment Group breakdown configured.</p>
 </div>
 </details>
 </div></div></div>
 <div class="quiz-card is-email-locked" data-question-index="11" data-tier="2" hidden="" id="qcard11">
-<div class="quiz-q"><span class="quiz-q-num">12.</span>How are responsible users reminded when a signal remains unresolved -</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
+<div class="quiz-q"><span class="quiz-q-num">12.</span>How are responsible users reminded when a signal remains unresolved?</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: Virtual Agent is ServiceNow's conversational AI interface used for self-service interactions, typically handling routine requests and questions through a chat bot. Virtual Agent is not used as a mechanism for PA signal notification or reminder delivery. Signals are part of the Performance Analytics module's alerting framework and use different notification channels." data-idx="0" data-q="11"><span class="quiz-opt-letter">A</span><span>Via Virtual Agent</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: Connect Chat (now part of ServiceNow's collaboration features) is a real-time messaging tool within the platform. While Connect Chat can be used for various collaboration purposes, it is not the mechanism through which PA signals send reminders about unresolved conditions. Signal notifications use the platform's standard notification framework, which relies on email delivery." data-idx="1" data-q="11"><span class="quiz-opt-letter">B</span><span>Via Connect Chat</span></li>
@@ -1019,7 +1106,7 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
 </details>
 </div></div></div>
 <div class="quiz-card quiz-multi is-email-locked" data-question-index="13" data-tier="2" hidden="" id="qcard13">
-<div class="quiz-q"><span class="quiz-q-num">14.</span>When deploying Now Assist for Platform Analytics, users can create "Explorations." Which of the following advanced capabilities are supported within the Explorations interface- <span class="quiz-choose">(choose 3)</span></div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
+<div class="quiz-q"><span class="quiz-q-num">14.</span>When deploying Now Assist for Platform Analytics, users can create "Explorations." Which of the following advanced capabilities are supported within the Explorations interface? <span class="quiz-choose">(choose 3)</span></div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: Executing scripted breakdown mappings via natural language is not a supported capability of Now Assist within the Explorations interface. Breakdown mappings are administrative configurations that define how breakdown elements are determined, and they require scripting knowledge applied through the PA configuration interface. The natural language capabilities of Now Assist in Explorations focus on data exploration and visualization, not on executing PA administrative scripts." data-idx="0" data-q="13"><span class="quiz-opt-letter">A</span><span>Executing scripted breakdown mappings via natural language.</span></li>
 <li class="quiz-opt" data-exp="CORRECT: Adding a generated data visualization directly to a dashboard is a supported capability of Now Assist within the Explorations interface. After a user creates an exploration using natural language queries and the AI generates a visualization (chart, graph, or table), the user can promote that visualization directly to an existing dashboard. This bridges the gap between ad-hoc exploration and persistent reporting, allowing insights discovered through natural language interaction to become permanent dashboard components." data-idx="1" data-q="13"><span class="quiz-opt-letter">B</span><span>Adding a generated data visualization directly to a dashboard.</span></li>
@@ -1038,7 +1125,7 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
 </details>
 </div></div></div>
 <div class="quiz-card is-email-locked" data-question-index="14" data-tier="2" hidden="" id="qcard14">
-<div class="quiz-q"><span class="quiz-q-num">15.</span>How many levels of Breakdowns are collected if the "Collect breakdown matrix" property is NOT checked on the Indicator record-</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
+<div class="quiz-q"><span class="quiz-q-num">15.</span>How many levels of Breakdowns are collected if the "Collect breakdown matrix" property is NOT checked on the Indicator record?</div><div class="quiz-answer-shell"><div class="quiz-answer-content quiz-gate-blur">
 <ul class="quiz-opts">
 <li class="quiz-opt" data-exp="INCORRECT: Setting 'Collect breakdown matrix' to unchecked does not prevent all breakdown collection. Even without the matrix property enabled, PA still collects single-level breakdown scores during data collection. The breakdown matrix property specifically controls whether multi-level (cross-tabulated) breakdown combinations are collected. Disabling it reduces the scope of breakdown collection but does not eliminate it entirely." data-idx="0" data-q="14"><span class="quiz-opt-letter">A</span><span>0 - This must be checked to collect any Breakdowns.</span></li>
 <li class="quiz-opt" data-exp="INCORRECT: There is a defined limit on breakdown collection levels when the matrix property is not checked. Without the matrix, the PA engine restricts collection to a single level of breakdowns. Saying there is 'no limit' would only apply if the matrix were enabled and multiple breakdowns were configured, and even then the practical limit depends on the number of configured breakdowns and system resources." data-idx="1" data-q="14"><span class="quiz-opt-letter">B</span><span>There is no limit on the levels of Breakdowns collected.</span></li>
@@ -1068,6 +1155,10 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
           <button type="submit" class="quiz-gate-submit" id="quizGateSubmit">Continue with 10 More Questions</button>
         </form>
         <p class="quiz-gate-message" id="quizGateMessage"></p>
+<!-- lx:gate-alt -->
+<p class="quiz-gate-alt">Prefer to skip the email? <a href="https://www.udemy.com/course/pass-your-servicenow-cas-pa-exam/?referralCode=A8ACE29CC7E537680674" target="_blank" rel="sponsored noopener" data-buy-stage="gate">Get all 216 questions on Udemy</a>. 30-day money-back guarantee.</p>
+<!-- /lx:gate-alt -->
+
       </div>
     </div>
     </div>
@@ -1076,9 +1167,9 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
       <h3>You scored <span id="quizFinalScoreText">0/15</span> on the 15-question preview.</h3>
       <div class="quiz-final-score" id="quizFinalScoreValue">0/15</div>
       <p class="quiz-final-copy">The full course keeps the same answer breakdown style across all 216 questions.</p>
-      <p class="quiz-final-anchor">Your first exam attempt is free. Your second costs $350.</p>
+      <p class="quiz-final-anchor">A failed exam attempt means paying a retake fee.</p>
       <div class="quiz-final-actions">
-        <a href="https://www.udemy.com/course/pass-your-servicenow-cas-pa-exam/?referralCode=A8ACE29CC7E537680674" target="_blank" rel="noopener" class="cp-cta" data-buy-stage="final">Get all 216 questions for $9.99
+        <a href="https://www.udemy.com/course/pass-your-servicenow-cas-pa-exam/?referralCode=A8ACE29CC7E537680674" target="_blank" rel="sponsored noopener" class="cp-cta" data-buy-stage="final">Get all 216 questions for $9.99
           <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
@@ -1094,11 +1185,23 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
     <div class="quiz-toast" id="quizToast">Questions 6-15 are ready.</div>
   </section>
 
-  <div class="cp-bottom">
-    <p>Looking for a different certification-</p>
-    <a href="/#courses">Browse all 18 practice tests &rarr;</a>
-    <p style="margin-top:12px"><a href="/blog/which-servicenow-certification-first.html">Not sure which cert? See the full certification guide &rarr;</a></p>
-  </div>
+  <!-- lx:faq -->
+<section class="cp-faq" id="faq"><h2>Common questions</h2>
+<details><summary>How many questions are in the full PA practice test?</summary><p>The full course has 216 questions on Udemy. Every answer option has its own explanation, and the explanations link to official ServiceNow documentation.</p></details>
+<details><summary>Is there a refund if the course is not right for me?</summary><p>Yes. Udemy courses come with a 30-day money-back guarantee.</p></details>
+<details><summary>Will this practice test guarantee I pass?</summary><p>No. Practice tests show you where you are weak. They do not replace hands-on work, so pair them with a free ServiceNow Personal Developer Instance.</p></details>
+<details><summary>Which certification should I take first?</summary><p>Most people start with CSA. If you are unsure, take the <a href="/quiz.html">2-minute recommendation quiz</a> or read the <a href="/blog/which-servicenow-certification-first.html">certification path guide</a>.</p></details>
+</section>
+<!-- /lx:faq -->
+
+  <!-- lx:bottom -->
+<div class="cp-bottom">
+  <p>Next step after PA: <a href="/courses/cis-spm.html">CIS Strategic Portfolio Management</a>. Not the right exam? Take the <a href="/quiz.html">2-minute quiz</a> or <a href="/compare.html">compare all 18</a>.</p>
+  <p class="cp-related">Related practice tests: <a href="/courses/cis-spm.html">CIS Strategic Portfolio Management</a> <a href="/courses/cad.html">Certified Application Developer</a> <a href="/courses/csa.html">CSA System Administrator</a></p>
+  <a href="/#courses">Browse all 18 practice tests &rarr;</a>
+  <p style="margin-top:12px"><a href="/blog/which-servicenow-certification-first.html">Not sure which cert? See the full certification guide &rarr;</a></p>
+</div>
+<!-- /lx:bottom -->
 
 </main>
 
@@ -1155,9 +1258,9 @@ function submitAnswer(){const qi=parseInt(this.dataset.q,10);if(!isUnlocked(qi)|
 document.querySelectorAll('.quiz-submit-btn[data-q]').forEach((btn)=>btn.addEventListener('click',submitAnswer));
 if(prevBtn){prevBtn.addEventListener('click',()=>{if(currentIndex===0||currentIndex===5&&!emailReady)return;currentIndex-=1;render();scrollToCurrent();});}
 if(nextBtn){nextBtn.addEventListener('click',()=>{const complete=scoreSlice(0,14).answered===15,limit=complete?14:navigationLimit();if(currentIndex===5&&!emailReady)return;if(!storedAnswers[currentIndex]||currentIndex>=limit)return;currentIndex+=1;render();scrollToCurrent();if(currentIndex===5&&!emailReady&&gateEmail)window.setTimeout(()=>gateEmail.focus(),180);});}
-function handleGateSubmit(event){event.preventDefault();const email=gateEmail.value.trim().toLowerCase(),valid=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)&&email.length<=254;if(!valid){setMessage('Use a valid email address.','is-error');return;}gateSubmit.disabled=true;gateSubmit.textContent='Sending...';setMessage('');fetch('https://app.convertkit.com/forms/'+QUIZ.convertKitFormId+'/subscriptions',{method:'POST',headers:{'Content-Type':'application/json; charset=utf-8'},body:JSON.stringify({email_address:email,fields:{source:'quiz-gate-'+QUIZ.slug}})}).then((response)=>{if(!response.ok&&response.status!==200&&response.status!==201)throw new Error('gate failed');localStorage.setItem(STORAGE_EMAIL,'1');localStorage.setItem(STORAGE_EMAIL_SOURCE,QUIZ.slug);cleanupLegacyEmailKeys();evt('quiz_email_submit');showToast('Questions 6-15 are ready.');gateForm.reset();setMessage('');gateSubmit.disabled=false;gateSubmit.textContent='Continue with 10 More Questions';setEmailAccess(true);currentIndex=Math.max(currentIndex,5);render();}).catch(()=>{gateSubmit.disabled=false;gateSubmit.textContent='Continue with 10 More Questions';setMessage('That did not go through. Please try again.','is-error');});}
+function handleGateSubmit(event){event.preventDefault();const email=gateEmail.value.trim().toLowerCase(),valid=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)&&email.length<=254;if(!valid){setMessage('Use a valid email address.','is-error');return;}gateSubmit.disabled=true;gateSubmit.textContent='Sending...';setMessage('');fetch('https://app.convertkit.com/forms/'+QUIZ.convertKitFormId+'/subscriptions',{method:'POST',headers:{'Content-Type':'application/json; charset=utf-8'},body:JSON.stringify({email_address:email,fields:{source:'quiz-gate-'+QUIZ.slug}})}).then((response)=>{if(!response.ok&&response.status!==200&&response.status!==201)throw new Error('gate failed');localStorage.setItem(STORAGE_EMAIL,'1');localStorage.setItem(STORAGE_EMAIL_SOURCE,QUIZ.slug);cleanupLegacyEmailKeys();evt('quiz_email_submit');if(typeof gtag==='function')gtag('event','generate_lead',{event_category:'email_capture',event_label:'quiz-gate',source:'quiz-gate',cert:QUIZ.code,value:1});showToast('Questions 6-15 are ready.');gateForm.reset();setMessage('');gateSubmit.disabled=false;gateSubmit.textContent='Continue with 10 More Questions';setEmailAccess(true);currentIndex=Math.max(currentIndex,5);render();}).catch(()=>{gateSubmit.disabled=false;gateSubmit.textContent='Continue with 10 More Questions';setMessage('That did not go through. Please try again.','is-error');});}
 if(gateForm)gateForm.addEventListener('submit',handleGateSubmit);
-document.querySelectorAll('a[href*="udemy.com"]').forEach((link)=>{link.addEventListener('click',()=>{const total=scoreSlice(0,14),stage=link.dataset.buyStage||(link.closest('#quizFinal')?'final':'hero');evt('quiz_buy_click',{tier:stage,score:total.correct});});});
+window.luckyxClickContext=function(){const total=scoreSlice(0,14);return{cert:QUIZ.code,quiz_answered:total.answered,quiz_score:total.correct,quiz_unlocked:emailReady?'yes':'no'};};
 migrateLegacyUnlock();storedAnswers=readAnswers();emailReady=hasGlobalUnlock();if(emailReady){currentIndex=readCurrent();}else{sanitizeLockedState();}startEventSent=Object.keys(storedAnswers).length>0;tier1EventSent=scoreSlice(0,4).answered===5;tier2EventSent=scoreSlice(0,14).answered===15;setEmailAccess(emailReady);render();evt('quiz_page_view');
 </script>
 </body>

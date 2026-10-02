@@ -21,11 +21,30 @@
   }
 
   function pageType() {
-    if (window.location.pathname.indexOf('/courses/') === 0) return 'course';
-    if (window.location.pathname.indexOf('/blog/') === 0) return 'blog';
-    if (window.location.pathname.indexOf('roadmap') !== -1) return 'roadmap';
-    if (window.location.pathname.indexOf('quiz') !== -1) return 'quiz';
-    return window.location.pathname === '/' || window.location.pathname.endsWith('/index.html') ? 'home' : 'other';
+    var path = window.location.pathname;
+    if (path.indexOf('/courses/') === 0) return 'course';
+    if (path.indexOf('/blog/') === 0) return 'blog';
+    if (path === '/' || path === '/index.html') return 'home';
+    if (path === '/quiz.html') return 'quiz';
+    if (path === '/compare.html') return 'compare';
+    if (path === '/roadmap.html') return 'roadmap';
+    if (path === '/about.html') return 'about';
+    return 'other';
+  }
+
+  /* An explicit data-track-placement wins. Otherwise the placement comes from where the link sits,
+     so every Udemy click says which button sold. */
+  function placementFor(link) {
+    if (link.dataset.trackPlacement) return link.dataset.trackPlacement;
+    if (link.dataset.buyStage) return 'course-' + link.dataset.buyStage;
+    if (link.closest('.course-card')) return 'card';
+    if (link.closest('.cta-section')) return 'final-cta';
+    if (link.closest('.site-footer, .cp-footer')) return 'footer';
+    if (link.closest('.hero')) return 'hero';
+    if (link.closest('.bp-cta-box, .bp-cta-row')) return 'blog-cta';
+    if (link.closest('.bp-article')) return 'blog-inline';
+    if (link.closest('.cp-wrap')) return 'course-page';
+    return 'other';
   }
 
   function sendUdemyClick(link) {
@@ -44,9 +63,17 @@
       page_path: window.location.pathname,
       page_type: pageType(),
       destination_path: destination.pathname,
-      placement: (link.dataset.trackPlacement || link.dataset.buyStage || 'link').slice(0, 60),
+      placement: placementFor(link).slice(0, 60),
       has_referral_code: destination.searchParams.has('referralCode') ? 'yes' : 'no'
     };
+
+    /* Course pages describe the quiz state here: cert, answered, score, unlocked. */
+    if (typeof window.luckyxClickContext === 'function') {
+      try {
+        var extra = window.luckyxClickContext() || {};
+        Object.keys(extra).forEach(function (key) { parameters[key] = extra[key]; });
+      } catch (error) { /* tracking must never break a click */ }
+    }
 
     campaignKeys.forEach(function (key) {
       if (campaign[key]) parameters['session_' + key] = campaign[key];

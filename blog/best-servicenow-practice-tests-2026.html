@@ -42,7 +42,7 @@
   "description": "More options than ever for ServiceNow cert prep. Here's an honest comparison of practice test platforms and what matters when choosing between them.",
   "image": "https://luckyx.dev/og-image.png",
   "datePublished": "2026-04-01",
-  "dateModified": "2026-04-01",
+  "dateModified": "2026-10-02",
   "author": {
     "@type": "Person",
     "name": "Lucky X",
@@ -89,9 +89,19 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <!-- GA4 -->
+<!-- lx:consent -->
+<script>
+  /* Consent Mode v2: analytics stays off until the visitor accepts the notice (consent.js). */
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  try { if (localStorage.getItem('luckyx-consent') === 'granted') gtag('consent', 'update', { analytics_storage: 'granted' }); } catch (e) {}
+</script>
+<script defer src="/consent.js"></script>
+<!-- /lx:consent -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLYHHC76GG"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -417,6 +427,16 @@ a:hover { text-decoration: underline; }
         </div>
 
         <!-- END CTA -->
+        <!-- lx:article-cta -->
+        <div class="bp-cta-box">
+          <p><strong>CSA System Administrator</strong>: 392 practice questions, with an explanation for every answer option.</p>
+          <a href="https://www.udemy.com/course/pass-your-servicenow-csa-certified-system-administrator/?referralCode=2AE0DFA7BE468BCA8888" target="_blank" rel="sponsored noopener" class="bp-cta-btn">Get the CSA practice test</a>
+          <p><strong>CIS Data Foundations / CSDM</strong>: 470 practice questions, with an explanation for every answer option.</p>
+          <a href="https://www.udemy.com/course/pass-servicenow-cis-data-foundations-cmdbcsdm/?referralCode=442CA6D450663B1D42AF" target="_blank" rel="sponsored noopener" class="bp-cta-btn">Get the DF practice test</a>
+          <p style="margin-top:14px"><a href="/courses/csa.html#free-quiz">Try 15 free questions first</a></p>
+        </div>
+<!-- /lx:article-cta -->
+
         <div class="bp-email-section">
           <h3>Stay updated on ServiceNow cert prep</h3>
           <p>Get the latest strategies for passing certifications and building your ServiceNow career.</p>

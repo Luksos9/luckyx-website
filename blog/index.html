@@ -76,9 +76,19 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <!-- GA4 -->
+<!-- lx:consent -->
+<script>
+  /* Consent Mode v2: analytics stays off until the visitor accepts the notice (consent.js). */
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  try { if (localStorage.getItem('luckyx-consent') === 'granted') gtag('consent', 'update', { analytics_storage: 'granted' }); } catch (e) {}
+</script>
+<script defer src="/consent.js"></script>
+<!-- /lx:consent -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLYHHC76GG"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -534,7 +544,7 @@ a:hover { text-decoration: underline; }
     <div class="bl-section-head">
       <div class="bl-section-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
       <div class="bl-section-title">Reference &amp; Resources</div>
-      <div class="bl-section-count">8 guides</div>
+      <div class="bl-section-count">10 guides</div>
     </div>
     <div class="bl-grid">
 
@@ -546,7 +556,7 @@ a:hover { text-decoration: underline; }
         <div class="bl-card-body">
           <span class="bl-card-tag tag-reference">Must read</span>
           <h2>The CIS-DF mandate explained</h2>
-          <p>7 CIS certs now require Data Foundations. Affected certs, key dates, the free exam window, and what to do.</p>
+          <p>7 CIS certs now require Data Foundations. Affected certs, key dates, and what to do.</p>
           <div class="bl-card-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>10 min read</span></div>
         </div>
       </a>
@@ -585,7 +595,7 @@ a:hover { text-decoration: underline; }
         <div class="bl-card-body">
           <span class="bl-card-tag tag-reference">Resource</span>
           <h2>Free ServiceNow study resources in 2026</h2>
-          <p>PDI, Now Learning, docs, forums, practice tests, and the free CIS-DF exam offer. No paid tools needed.</p>
+          <p>PDI, Now Learning, docs, forums, practice tests, and study guides. No paid tools needed.</p>
           <div class="bl-card-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>12 min read</span></div>
         </div>
       </a>
@@ -626,6 +636,32 @@ a:hover { text-decoration: underline; }
           <h2>ServiceNow certification maintenance guide</h2>
           <p>Delta exams, renewal timelines, deadlines, costs, and strategies for keeping multiple certs current.</p>
           <div class="bl-card-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>14 min read</span></div>
+        </div>
+      </a>
+
+      <a href="/blog/best-servicenow-practice-tests-2026.html" class="bl-card">
+        <div class="bl-card-banner banner-reference">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span class="banner-code">Practice tests</span>
+        </div>
+        <div class="bl-card-body">
+          <span class="bl-card-tag tag-reference">Comparison</span>
+          <h2>Best ServiceNow practice tests in 2026: an honest comparison</h2>
+          <p>NowLearning, crowd-sourced banks, official partners and Udemy compared, with what each is good for.</p>
+          <div class="bl-card-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>10 min read</span></div>
+        </div>
+      </a>
+
+      <a href="/blog/free-csa-practice-test.html" class="bl-card">
+        <div class="bl-card-banner banner-reference">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span class="banner-code">Free CSA test</span>
+        </div>
+        <div class="bl-card-body">
+          <span class="bl-card-tag tag-reference">Resource</span>
+          <h2>Free ServiceNow CSA practice test</h2>
+          <p>10 free CSA practice questions with a full explanation for every answer. No signup required.</p>
+          <div class="bl-card-meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>8 min read</span></div>
         </div>
       </a>
 

@@ -40,9 +40,19 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <!-- GA4 -->
+<!-- lx:consent -->
+<script>
+  /* Consent Mode v2: analytics stays off until the visitor accepts the notice (consent.js). */
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  try { if (localStorage.getItem('luckyx-consent') === 'granted') gtag('consent', 'update', { analytics_storage: 'granted' }); } catch (e) {}
+</script>
+<script defer src="/consent.js"></script>
+<!-- /lx:consent -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLYHHC76GG"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -131,13 +141,13 @@ a:hover { text-decoration: underline; }
 
   <h2>What we collect</h2>
 
-  <p>The Site uses Google Analytics 4 (measurement ID: G-BLYHHC76GG) to collect anonymous usage data. This includes pages visited, time on site, approximate geographic location (country/city level), device type, browser, and referral source. Google Analytics uses cookies to distinguish unique visitors. We do not collect names, email addresses, or other personally identifiable information through analytics.</p>
+  <p>The Site uses Google Analytics 4 (measurement ID: G-BLYHHC76GG) to collect anonymous usage data. This includes pages visited, time on site, approximate geographic location (country/city level), device type, browser, and referral source. Google Analytics uses cookies to distinguish unique visitors, but only after you accept the cookie notice. If you decline, no analytics cookies are set, although Google Analytics may still receive anonymous pings that carry no persistent identifier. We do not collect names, email addresses, or other personally identifiable information through analytics.</p>
 
   <p>If you subscribe to our email newsletter, we collect your email address through ConvertKit (form ID: 9183962). ConvertKit processes and stores this data on our behalf. You can unsubscribe at any time using the link in every email.</p>
 
   <h2>Cookies</h2>
 
-  <p>The Site does not set its own cookies beyond a localStorage preference for theme (light/dark mode). Google Analytics 4 sets cookies (_ga, _ga_*) to measure traffic. These are first-party cookies set by Google's script. No third-party advertising cookies are used.</p>
+  <p>The Site does not set its own cookies beyond a localStorage preference for theme (light/dark mode). Google Analytics 4 sets cookies (_ga, _ga_*) to measure traffic, but only after you accept the cookie notice. These are first-party cookies set by Google's script. You can change your choice at any time: <a href="#" onclick="luckyxConsent.open();return false;">show the cookie notice again</a>. No third-party advertising cookies are used.</p>
 
   <h2>Hosting</h2>
 

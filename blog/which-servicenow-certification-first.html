@@ -42,7 +42,7 @@
   "description": "A decision guide for choosing your first ServiceNow certification. Covers CSA, CAD, CIS-DF, and CPOA entry points, career tracks, salary impact, and the CIS-DF mandate.",
   "image": "https://luckyx.dev/og-image.png",
   "datePublished": "2026-03-17",
-  "dateModified": "2026-03-17",
+  "dateModified": "2026-10-02",
   "author": {
     "@type": "Person",
     "name": "Lucky X",
@@ -90,9 +90,19 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <!-- GA4 -->
+<!-- lx:consent -->
+<script>
+  /* Consent Mode v2: analytics stays off until the visitor accepts the notice (consent.js). */
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  try { if (localStorage.getItem('luckyx-consent') === 'granted') gtag('consent', 'update', { analytics_storage: 'granted' }); } catch (e) {}
+</script>
+<script defer src="/consent.js"></script>
+<!-- /lx:consent -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLYHHC76GG"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -302,7 +312,7 @@ a:hover { text-decoration: underline; }
           <div class="bp-track">
             <div class="bp-track-label">Entry point 3</div>
             <h3>CIS-DF (CIS Data Foundations)</h3>
-            <p>For people who already work with CMDB, CSDM, or data quality in ServiceNow. CIS-DF has no prerequisites and is now mandatory for 7 other CIS certifications. If you plan to pursue any CIS cert in the ITSM, ITOM, ITAM, or SecOps tracks, start here. The first attempt is free through June 30, 2026.</p>
+            <p>For people who already work with CMDB, CSDM, or data quality in ServiceNow. CIS-DF has no prerequisites and is now mandatory for 7 other CIS certifications. If you plan to pursue any CIS cert in the ITSM, ITOM, ITAM, or SecOps tracks, start here.</p>
             <p><a href="/courses/cis-data-foundations.html">CIS-DF practice test</a> | <a href="/blog/how-to-pass-cis-df-2026.html">CIS-DF study guide</a></p>
           </div>
           <div class="bp-track">
@@ -464,12 +474,12 @@ a:hover { text-decoration: underline; }
 
         <div class="bp-decision">
           <h3>Do you already hold CIS-ITSM, CIS-Discovery, CIS-HAM, CIS-SAM, CIS-Service Mapping, CIS-SIR, or CIS-VR?</h3>
-          <p><strong>Start with CIS-DF immediately.</strong> You must pass it by December 31, 2026 or your existing certification expires. The first attempt is free through June 2026. Do not wait.</p>
+          <p><strong>Start with CIS-DF immediately.</strong> You must pass it by December 31, 2026 or your existing certification expires. Do not wait.</p>
         </div>
 
         <div class="bp-decision">
           <h3>Do you plan to get any of those seven CIS certs in the next 12 months?</h3>
-          <p><strong>Start with CIS-DF.</strong> It is a hard prerequisite. You cannot register for any of those seven exams without CIS-DF. Take advantage of the free first attempt before June 30, 2026, then move to your target CIS cert.</p>
+          <p><strong>Start with CIS-DF.</strong> It is a hard prerequisite. You cannot register for any of those seven exams without CIS-DF. Pass it first, then move to your target CIS cert.</p>
         </div>
 
         <div class="bp-decision">
@@ -548,12 +558,12 @@ a:hover { text-decoration: underline; }
 
         <p>CIS-DF changed the certification landscape more than any other single update. Seven CIS certifications now require it as a hard prerequisite. If you hold any of those seven, you must pass CIS-DF by December 31, 2026 or your certification expires. If that happens, you need to retake both CIS-DF and the original CIS exam.</p>
 
-        <p>The free first attempt runs through June 30, 2026. After that, the exam costs $450, with retakes at $225. If you are going to need CIS-DF at any point in the next two years, take it now while it is free.</p>
+        <p>The free first attempt ended June 30, 2026. The exam now costs $450, with retakes at $225. If you are going to need CIS-DF at any point in the next two years, take it before the 2027 enforcement date.</p>
 
         <p>For the full breakdown of CIS-DF exam format, domain weights, and a 4-week study plan, read the <a href="/blog/how-to-pass-cis-df-2026.html">CIS-DF study guide</a>.</p>
 
         <div class="bp-note">
-          <strong>Which CIS certs do NOT require CIS-DF?</strong> CIS-CSM, CIS-HRSD, CIS-FSM, CIS-SPM, CIS-TPRM, CIS-Event Management, and CIS-GRC/IRM. If your target is one of these, you can skip CIS-DF entirely (though the free attempt still makes it worth considering).
+          <strong>Which CIS certs do NOT require CIS-DF?</strong> CIS-CSM, CIS-HRSD, CIS-FSM, CIS-SPM, CIS-TPRM, CIS-Event Management, and CIS-GRC/IRM. If your target is one of these, you can skip CIS-DF entirely.
         </div>
 
 
@@ -637,8 +647,8 @@ a:hover { text-decoration: underline; }
               <td class="bp-weight">$225</td>
             </tr>
             <tr>
-              <td>CIS-DF (promotional)</td>
-              <td>Free until June 30, 2026</td>
+              <td>CIS-DF</td>
+              <td>$450</td>
               <td class="bp-weight">$225</td>
             </tr>
           </tbody>
@@ -657,14 +667,14 @@ a:hover { text-decoration: underline; }
 
         <p>Collecting certifications without depth. Three CIS certs at surface level is worth less on the job market than one CIS cert with deep implementation experience. Employers hire for project delivery, not badge counts. Pick one specialization and go deep before broadening.</p>
 
-        <p>Waiting too long for CIS-DF. The free first attempt ends June 30, 2026. The deadline for existing cert holders is December 31, 2026. Both of these dates are closer than they feel. If CIS-DF is anywhere in your future plan, move it to now.</p>
+        <p>Waiting too long for CIS-DF. The deadline for existing cert holders is December 31, 2026, and enforcement for new registrations starts January 1, 2027. Both of these dates are closer than they feel. If CIS-DF is anywhere in your future plan, move it to now.</p>
 
 
         <h2 id="recommendation">The recommendation</h2>
 
-        <p>If you are new to ServiceNow: <strong>start with CSA</strong>. It is the foundation of everything. Once you pass CSA, pick a CIS specialization based on the module you work with or the job market you want to enter. If that CIS cert requires CIS-DF, take CIS-DF while the free attempt is still available.</p>
+        <p>If you are new to ServiceNow: <strong>start with CSA</strong>. It is the foundation of everything. Once you pass CSA, pick a CIS specialization based on the module you work with or the job market you want to enter. If that CIS cert requires CIS-DF, take CIS-DF before the 2027 enforcement date.</p>
 
-        <p>If you already have CSA and want to specialize: <strong>take CIS-DF now</strong> (free attempt), then your target CIS certification. The "ITSM plus one" pattern is what gets you hired. CIS-ITSM is the most common next step, but GRC/IRM and SecOps have less competition and are growing faster.</p>
+        <p>If you already have CSA and want to specialize: <strong>take CIS-DF now</strong>, then your target CIS certification. The "ITSM plus one" pattern is what gets you hired. CIS-ITSM is the most common next step, but GRC/IRM and SecOps have less competition and are growing faster.</p>
 
         <p>If you are a developer: <strong>start with CAD</strong>, then consider CSA as a complement. The combination of CAD + CSA positions you for architect-level roles down the line.</p>
 
@@ -679,6 +689,16 @@ a:hover { text-decoration: underline; }
           <a href="/#courses" class="bp-cta-btn">Browse all 18 practice tests</a>
         </div>
 
+
+        <!-- lx:article-cta -->
+        <div class="bp-cta-box">
+          <p><strong>CSA System Administrator</strong>: 392 practice questions, with an explanation for every answer option.</p>
+          <a href="https://www.udemy.com/course/pass-your-servicenow-csa-certified-system-administrator/?referralCode=2AE0DFA7BE468BCA8888" target="_blank" rel="sponsored noopener" class="bp-cta-btn">Get the CSA practice test</a>
+          <p><strong>CIS Data Foundations / CSDM</strong>: 470 practice questions, with an explanation for every answer option.</p>
+          <a href="https://www.udemy.com/course/pass-servicenow-cis-data-foundations-cmdbcsdm/?referralCode=442CA6D450663B1D42AF" target="_blank" rel="sponsored noopener" class="bp-cta-btn">Get the DF practice test</a>
+          <p style="margin-top:14px"><a href="/courses/csa.html#free-quiz">Try 15 free questions first</a></p>
+        </div>
+<!-- /lx:article-cta -->
 
         <!-- EMAIL CAPTURE -->
         <div class="bp-email-section">

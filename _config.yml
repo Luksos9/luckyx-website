@@ -1,0 +1,7 @@
+# GitHub Pages publishes the repository as it is. Keep tooling and notes out of the site.
+exclude:
+  - README.md
+  - check_site.py
+  - scripts
+  - serve.js
+  - data

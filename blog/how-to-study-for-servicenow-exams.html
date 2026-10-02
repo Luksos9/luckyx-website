@@ -42,7 +42,7 @@
   "description": "A proven three-phase study method for passing ServiceNow certification exams. Covers study schedules, PDI practice, practice test strategy, common mistakes, exam day tips, and cert-specific guidance.",
   "image": "https://luckyx.dev/og-image.png",
   "datePublished": "2026-03-17",
-  "dateModified": "2026-03-17",
+  "dateModified": "2026-10-02",
   "author": {
     "@type": "Person",
     "name": "Lucky X",
@@ -106,9 +106,19 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <!-- GA4 -->
+<!-- lx:consent -->
+<script>
+  /* Consent Mode v2: analytics stays off until the visitor accepts the notice (consent.js). */
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  try { if (localStorage.getItem('luckyx-consent') === 'granted') gtag('consent', 'update', { analytics_storage: 'granted' }); } catch (e) {}
+</script>
+<script defer src="/consent.js"></script>
+<!-- /lx:consent -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLYHHC76GG"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -286,7 +296,7 @@ a:hover { text-decoration: underline; }
 
       <div class="bp-body">
 
-        <p>ServiceNow certifications cost real money. CSA and CAD exams are $300 each, with $150 retakes. Every CIS exam is $450, with retakes at $225. The one exception right now is <a href="/blog/how-to-pass-cis-df-2026.html">CIS-Data Foundations</a>, which ServiceNow is offering for free through June 30, 2026. After that, it goes to $450 like the rest.</p>
+        <p>ServiceNow certifications cost real money. CSA and CAD exams are $300 each, with $150 retakes. Every CIS exam is $450, with retakes at $225. <a href="/blog/how-to-pass-cis-df-2026.html">CIS-Data Foundations</a> had a free first attempt through June 30, 2026. That offer has ended, so it now costs $450 like the rest.</p>
 
         <p>Those numbers make preparation the cheapest investment you can make. A $10 practice test and 40 hours of focused study can save you hundreds of dollars in retake fees. But the way you study matters more than the hours you log. Reading documentation for 80 hours without touching a keyboard will not prepare you. Taking practice tests without reviewing explanations will not prepare you either.</p>
 
@@ -561,7 +571,7 @@ a:hover { text-decoration: underline; }
 
         <h3>CIS-DF (CIS-Data Foundations)</h3>
 
-        <p>CIS-DF is the mandatory CMDB and CSDM exam. It tests data governance, CMDB health, data ingestion, and CSDM layer knowledge. The exam has about 60 questions and is currently free through June 30, 2026 (normally $450, with $225 retakes).</p>
+        <p>CIS-DF is the mandatory CMDB and CSDM exam. It tests data governance, CMDB health, data ingestion, and CSDM layer knowledge. The exam has about 60 questions and costs $450, with $225 retakes (the free first-attempt offer ended June 30, 2026).</p>
 
         <p>For CIS-DF, the Govern domain alone carries 35% of the score. Phase 1 study time should be weighted heavily toward governance, health policies, and data certification. Phase 2 should include exploring the CMDB workspace, health dashboards, and CI class manager in your PDI.</p>
 
@@ -578,9 +588,9 @@ a:hover { text-decoration: underline; }
 
         <!-- BOTTOM CTA -->
         <div class="bp-cta-box">
-          <p>CIS-Data Foundations is free through June 30, 2026. That is a $450 exam with no cost for your first attempt. If you are planning to earn any CIS certification this year, CIS-DF is the prerequisite you need to clear first.</p>
+          <p>CIS-Data Foundations is a $450 exam, and its free first-attempt offer ended June 30, 2026. If you are planning to earn one of the seven CIS certifications that require it, CIS-DF is the prerequisite you need to clear first.</p>
           <p>The <a href="/courses/cis-data-foundations.html">CIS-DF practice test</a> has 470 questions mapped to all five exam domains, with per-option explanations sourced from official Zurich documentation.</p>
-          <a href="/courses/cis-data-foundations.html" class="bp-cta-btn">Prepare for CIS-DF (free exam through June 2026)</a>
+          <a href="/courses/cis-data-foundations.html" class="bp-cta-btn">Prepare for CIS-DF</a>
         </div>
 
 
@@ -594,6 +604,16 @@ a:hover { text-decoration: underline; }
 
         <p>Good luck on your exam. You will do well if you prepare well.</p>
 
+
+        <!-- lx:article-cta -->
+        <div class="bp-cta-box">
+          <p><strong>CSA System Administrator</strong>: 392 practice questions, with an explanation for every answer option.</p>
+          <a href="https://www.udemy.com/course/pass-your-servicenow-csa-certified-system-administrator/?referralCode=2AE0DFA7BE468BCA8888" target="_blank" rel="sponsored noopener" class="bp-cta-btn">Get the CSA practice test</a>
+          <p><strong>Certified Application Developer</strong>: 325 practice questions, with an explanation for every answer option.</p>
+          <a href="https://www.udemy.com/course/pass-your-servicenow-cad-exam/?referralCode=CF61F2B36C7F02F40EFB" target="_blank" rel="sponsored noopener" class="bp-cta-btn">Get the CAD practice test</a>
+          <p style="margin-top:14px"><a href="/courses/csa.html#free-quiz">Try 15 free questions first</a></p>
+        </div>
+<!-- /lx:article-cta -->
 
         <!-- EMAIL CAPTURE -->
         <div class="bp-email-section">

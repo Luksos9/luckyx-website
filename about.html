@@ -99,9 +99,19 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <!-- GA4 -->
+<!-- lx:consent -->
+<script>
+  /* Consent Mode v2: analytics stays off until the visitor accepts the notice (consent.js). */
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  try { if (localStorage.getItem('luckyx-consent') === 'granted') gtag('consent', 'update', { analytics_storage: 'granted' }); } catch (e) {}
+</script>
+<script defer src="/consent.js"></script>
+<!-- /lx:consent -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLYHHC76GG"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -287,9 +297,9 @@ a:hover { text-decoration: underline; }
   <p>The catalog covers 18 ServiceNow certifications: CSA, CAD, CIS-ITSM, CIS-DF, CIS-CSM, CIS-Discovery, CIS-HAM, CIS-SAM, CIS-SPM, CIS-SIR, CIS-VR, CIS-FSM, CIS-HRSD, CIS-TPRM, CIS-Event Management, CIS-GRC/IRM, CIS-Service Mapping, and CAS-PA.</p>
 
   <div class="bp-cta-row">
-    <a href="https://www.udemy.com/user/lucky-x/" target="_blank" rel="noopener" class="bp-cta-link bp-cta-primary">
+    <a href="/#courses" class="bp-cta-link bp-cta-primary">
       <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-      All courses on Udemy
+      Browse the 18 practice tests
     </a>
     <a href="/blog/" class="bp-cta-link bp-cta-secondary">
       <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>

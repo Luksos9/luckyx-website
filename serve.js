@@ -16,13 +16,21 @@ const MIME = {
   '.ico': 'image/x-icon',
   '.webp': 'image/webp',
   '.woff2': 'font/woff2',
+  '.xml': 'application/xml',
+  '.txt': 'text/plain',
+  '.pdf': 'application/pdf',
 };
 
 http.createServer((req, res) => {
   let url = req.url.split('?')[0];
   if (url === '/') url = '/index.html';
   if (url.endsWith('/')) url += 'index.html';
-  const fp = path.join(ROOT, url);
+  const fp = path.join(ROOT, decodeURIComponent(url));
+  if (fp !== ROOT && !fp.startsWith(ROOT + path.sep)) {
+    res.writeHead(403, { 'Content-Type': 'text/plain' });
+    res.end('Forbidden');
+    return;
+  }
   fs.readFile(fp, (err, data) => {
     if (err) {
       res.writeHead(404, { 'Content-Type': 'text/plain' });
@@ -33,6 +41,6 @@ http.createServer((req, res) => {
       res.end(data);
     }
   });
-}).listen(PORT, () => {
+}).listen(PORT, '127.0.0.1', () => {
   console.log(`listening on ${PORT}`);
 });

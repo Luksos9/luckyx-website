@@ -42,7 +42,7 @@
   "description": "A combined study guide for CIS-HAM and CIS-SAM in 2026. Covers exam format, domain weights, shared concepts, study order, and week-by-week plans for both certifications.",
   "image": "https://luckyx.dev/og-image.png",
   "datePublished": "2026-03-17",
-  "dateModified": "2026-03-17",
+  "dateModified": "2026-10-02",
   "author": {
     "@type": "Person",
     "name": "Lucky X",
@@ -88,7 +88,7 @@
   "description": "A combined 8-week study plan to pass the ServiceNow CIS-HAM and CIS-SAM exams. Take HAM first (4 weeks), then SAM (4 weeks).",
   "totalTime": "PT64H",
   "step": [
-    {"@type": "HowToStep", "name": "Pass CIS-DF first", "text": "Both CIS-HAM and CIS-SAM require CIS-Data Foundations as a prerequisite. Complete CIS-DF before starting either exam path. The first attempt is free through June 30, 2026."},
+    {"@type": "HowToStep", "name": "Pass CIS-DF first", "text": "Both CIS-HAM and CIS-SAM require CIS-Data Foundations as a prerequisite. Complete CIS-DF before starting either exam path. The free first-attempt offer ended June 30, 2026."},
     {"@type": "HowToStep", "name": "CIS-HAM Week 1: Asset lifecycle and stockrooms", "text": "Study the hardware asset lifecycle from request through disposal. Learn stockroom types, transfer orders, and receiving shipments. Set up a PDI and configure asset states."},
     {"@type": "HowToStep", "name": "CIS-HAM Week 2: Asset tasks and management", "text": "Focus on asset tasks, refresh cycles, lease management, and hardware model normalization. Practice creating and managing hardware assets end to end in your PDI."},
     {"@type": "HowToStep", "name": "CIS-HAM Week 3: CMDB integration and reporting", "text": "Study how HAM integrates with the CMDB, Discovery, and import sets. Cover hardware asset dashboards, reports, and compliance tracking."},
@@ -112,9 +112,19 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <!-- GA4 -->
+<!-- lx:consent -->
+<script>
+  /* Consent Mode v2: analytics stays off until the visitor accepts the notice (consent.js). */
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  try { if (localStorage.getItem('luckyx-consent') === 'granted') gtag('consent', 'update', { analytics_storage: 'granted' }); } catch (e) {}
+</script>
+<script defer src="/consent.js"></script>
+<!-- /lx:consent -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLYHHC76GG"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -320,7 +330,7 @@ a:hover { text-decoration: underline; }
 
         <p>ServiceNow updated the HAM application significantly in recent releases. Make sure you study documentation for the correct release version. Check the release selector on docs.servicenow.com before relying on any page.</p>
 
-        <p>If you have not yet passed the prerequisite, read the <a href="/blog/cis-df-mandate-explained.html">CIS-DF mandate explainer</a> to understand why it is required and what happens if you skip it. The CIS-DF exam is free through June 30, 2026. After that date, the first attempt costs $450.</p>
+        <p>If you have not yet passed the prerequisite, read the <a href="/blog/cis-df-mandate-explained.html">CIS-DF mandate explainer</a> to understand why it is required and what happens if you skip it. The free first-attempt offer for CIS-DF ended June 30, 2026, so the first attempt now costs $450.</p>
 
 
         <h2 id="cis-ham-domains">CIS-HAM domain weights and study plan</h2>
@@ -588,7 +598,7 @@ a:hover { text-decoration: underline; }
         <p>The recommended sequence is:</p>
 
         <ol>
-          <li><strong>CIS-Data Foundations</strong> (prerequisite for both, <a href="/blog/how-to-pass-cis-df-2026.html">free through June 2026</a>)</li>
+          <li><strong>CIS-Data Foundations</strong> (prerequisite for both, <a href="/blog/how-to-pass-cis-df-2026.html">study guide</a>)</li>
           <li><strong>CIS-HAM</strong> (4 weeks of preparation)</li>
           <li><strong>CIS-SAM</strong> (4 weeks of preparation, faster because of HAM overlap)</li>
         </ol>
@@ -627,7 +637,7 @@ a:hover { text-decoration: underline; }
 
         <h3>Do I need CIS-DF before taking CIS-HAM or CIS-SAM?</h3>
 
-        <p>Yes. CIS-Data Foundations is a mandatory prerequisite for both CIS-HAM and CIS-SAM. You cannot register for either exam without a valid CIS-DF certification. The good news: your first CIS-DF attempt is free through June 30, 2026. After that, it costs $450. Take advantage of the free window.</p>
+        <p>Yes. CIS-Data Foundations is a mandatory prerequisite for both CIS-HAM and CIS-SAM. You cannot register for either exam without a valid CIS-DF certification. The free first-attempt offer ended June 30, 2026, so a first attempt now costs $450. Plan your preparation accordingly.</p>
 
         <h3>How much do CIS-HAM and CIS-SAM cost?</h3>
 
@@ -669,6 +679,16 @@ a:hover { text-decoration: underline; }
           <a href="/courses/cis-sam.html" class="bp-cta-btn">CIS-SAM practice test</a>
         </div>
 
+
+        <!-- lx:article-cta -->
+        <div class="bp-cta-box">
+          <p><strong>CIS Hardware Asset Management</strong>: 240 practice questions, with an explanation for every answer option.</p>
+          <a href="https://www.udemy.com/course/pass-servicenow-cis-hardware-asset-management-ham/?referralCode=58ECB1F51A94EC5A7F09" target="_blank" rel="sponsored noopener" class="bp-cta-btn">Get the HAM practice test</a>
+          <p><strong>CIS Software Asset Management</strong>: 220 practice questions, with an explanation for every answer option.</p>
+          <a href="https://www.udemy.com/course/pass-your-servicenow-cis-software-asset-mgmt-sam-exam/?referralCode=627AA3E200F1159EDF94" target="_blank" rel="sponsored noopener" class="bp-cta-btn">Get the SAM practice test</a>
+          <p style="margin-top:14px"><a href="/courses/cis-ham.html#free-quiz">Try 15 free questions first</a></p>
+        </div>
+<!-- /lx:article-cta -->
 
         <!-- EMAIL CAPTURE -->
         <div class="bp-email-section">

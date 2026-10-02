@@ -42,7 +42,7 @@
   "description": "Everything you need to pass CSA on the first attempt: Zurich domain weights, a 5-week study plan, the five mistakes that fail people, and how to use your PDI effectively.",
   "image": "https://luckyx.dev/og-image.png",
   "datePublished": "2026-03-17",
-  "dateModified": "2026-03-17",
+  "dateModified": "2026-10-02",
   "author": {
     "@type": "Person",
     "name": "Lucky X",
@@ -108,9 +108,19 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <!-- GA4 -->
+<!-- lx:consent -->
+<script>
+  /* Consent Mode v2: analytics stays off until the visitor accepts the notice (consent.js). */
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  try { if (localStorage.getItem('luckyx-consent') === 'granted') gtag('consent', 'update', { analytics_storage: 'granted' }); } catch (e) {}
+</script>
+<script defer src="/consent.js"></script>
+<!-- /lx:consent -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLYHHC76GG"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -315,7 +325,7 @@ a:hover { text-decoration: underline; }
 
         <p>All questions target the Zurich release. If you study from Xanadu or Washington documentation, some answers will be wrong. Always check the release selector on docs.servicenow.com before trusting a page.</p>
 
-        <p>The exam costs $300 for the first attempt. Retakes cost $150. Unlike CIS-DF, there is no free first attempt for CSA. That makes preparation worth more per dollar: a $9.99 practice test versus a $150 retake is a 15x return on investment if it helps you pass on the first try.</p>
+        <p>The exam costs $300 for the first attempt. Retakes cost $150. There is no free first attempt for CSA. That makes preparation worth more per dollar: a $9.99 practice test versus a $150 retake is a 15x return on investment if it helps you pass on the first try.</p>
 
 
         <h2 id="domains">Domain breakdown and weights</h2>
@@ -417,7 +427,7 @@ a:hover { text-decoration: underline; }
         <div class="bp-cta-box">
           <p>The CSA practice test on Udemy has 392 questions mapped to all six domains. Every question includes a per-option explanation that links to official Zurich documentation. The course costs $9.99 with the referral link below.</p>
           <p>A retake costs $150. Preparation costs less than a coffee.</p>
-          <a href="https://www.udemy.com/course/pass-your-servicenow-csa-certified-system-administrator/?referralCode=2AE0DFA7BE468BCA8888" target="_blank" rel="noopener" class="bp-cta-btn">Get the 392-question practice test ($9.99)</a>
+          <a href="https://www.udemy.com/course/pass-your-servicenow-csa-certified-system-administrator/?referralCode=2AE0DFA7BE468BCA8888" target="_blank" rel="sponsored noopener" class="bp-cta-btn">Get the 392-question practice test ($9.99)</a>
         </div>
 
 
@@ -475,7 +485,7 @@ a:hover { text-decoration: underline; }
 
         <h2 id="csa-vs-cis-df">CSA or CIS-DF first?</h2>
 
-        <p>This is the most common question from people starting their ServiceNow certification journey. The short answer: if you are new to the platform, take CSA first. If you already work on ServiceNow, consider <a href="/blog/cis-df-vs-csa.html">taking CIS-DF first</a> while the free first attempt is available through June 2026.</p>
+        <p>This is the most common question from people starting their ServiceNow certification journey. The short answer: if you are new to the platform, take CSA first. If you already work on ServiceNow, consider <a href="/blog/cis-df-vs-csa.html">taking CIS-DF first</a> if your target certification requires it.</p>
 
         <p>CSA and CIS-DF test completely different material. There is almost no overlap. Passing one does not help you pass the other. But CSA gives you the platform vocabulary that makes every other certification easier to study for, including CIS-DF.</p>
 
@@ -497,14 +507,14 @@ a:hover { text-decoration: underline; }
 
         <p>ServiceNow's free training on <a href="https://nowlearning.servicenow.com" target="_blank" rel="noopener">Now Learning</a> includes a CSA learning path. The on-demand courses cover all six domains with labs and quizzes. The material is solid if you have the time to work through it.</p>
 
-        <p>For practice questions, the <a href="https://www.udemy.com/course/pass-your-servicenow-csa-certified-system-administrator/?referralCode=2AE0DFA7BE468BCA8888" target="_blank" rel="noopener">CSA practice test on Udemy</a> has 392 questions with per-option explanations and Zurich source links. At $9.99, you are spending less than 7% of what a single retake costs.</p>
+        <p>For practice questions, the <a href="https://www.udemy.com/course/pass-your-servicenow-csa-certified-system-administrator/?referralCode=2AE0DFA7BE468BCA8888" target="_blank" rel="sponsored noopener">CSA practice test on Udemy</a> has 392 questions with per-option explanations and Zurich source links. At $9.99, you are spending less than 7% of what a single retake costs.</p>
 
 
         <!-- BOTTOM CTA -->
         <div class="bp-cta-box">
           <p>The CSA exam costs $300. A retake costs $150. The entire 392-question practice test costs $9.99.</p>
           <p>That is 6.7% of one retake fee, for a course that covers all six domains with explanations sourced from Zurich documentation.</p>
-          <a href="https://www.udemy.com/course/pass-your-servicenow-csa-certified-system-administrator/?referralCode=2AE0DFA7BE468BCA8888" target="_blank" rel="noopener" class="bp-cta-btn">Get the 392-question practice test ($9.99)</a>
+          <a href="https://www.udemy.com/course/pass-your-servicenow-csa-certified-system-administrator/?referralCode=2AE0DFA7BE468BCA8888" target="_blank" rel="sponsored noopener" class="bp-cta-btn">Get the 392-question practice test ($9.99)</a>
         </div>
 
 

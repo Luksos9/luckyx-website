@@ -69,9 +69,19 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <!-- GA4 -->
+<!-- lx:consent -->
+<script>
+  /* Consent Mode v2: analytics stays off until the visitor accepts the notice (consent.js). */
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  try { if (localStorage.getItem('luckyx-consent') === 'granted') gtag('consent', 'update', { analytics_storage: 'granted' }); } catch (e) {}
+</script>
+<script defer src="/consent.js"></script>
+<!-- /lx:consent -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLYHHC76GG"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -148,6 +158,7 @@ a:hover { text-decoration: underline; }
   cursor: pointer; transition: all 0.2s; color: var(--text); font-size: 0.95rem;
 }
 .step-opt:hover { background: rgba(221,92,12,0.06); border-color: var(--border-hover); }
+.step-opt:focus-visible, .result-retake:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
 .step-opt .opt-icon { font-size: 1.3rem; width: 32px; text-align: center; flex-shrink: 0; }
 .step-opt .opt-text strong { display: block; margin-bottom: 2px; }
 .step-opt .opt-text span { font-size: 0.85rem; color: var(--text-dim); }
@@ -197,8 +208,10 @@ a:hover { text-decoration: underline; }
 .result-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(221,92,12,0.3); text-decoration: none; }
 .result-cta svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; fill: none; }
 
+.result-buy { display: inline-block; margin-top: 14px; color: var(--orange); font-weight: 600; font-size: 0.95rem; }
 .result-retake {
   display: inline-block; margin-top: 16px; color: var(--text-dim); font-size: 0.9rem; cursor: pointer;
+  background: none; border: none; font-family: inherit; padding: 0;
 }
 .result-retake:hover { color: var(--orange); }
 
@@ -239,19 +252,19 @@ a:hover { text-decoration: underline; }
   <div class="quiz-step active" id="step0">
     <div class="step-q"><span class="step-num">1.</span> What best describes your current role?</div>
     <ul class="step-opts">
-      <li class="step-opt" data-value="admin" onclick="answer(0, this)">
+      <li class="step-opt" role="button" tabindex="0" data-value="admin" onclick="answer(0, this)">
         <span class="opt-icon">&#9881;</span>
         <div class="opt-text"><strong>System Administrator</strong><span>I configure, manage, and maintain ServiceNow instances</span></div>
       </li>
-      <li class="step-opt" data-value="dev" onclick="answer(0, this)">
+      <li class="step-opt" role="button" tabindex="0" data-value="dev" onclick="answer(0, this)">
         <span class="opt-icon">&#60;/&#62;</span>
         <div class="opt-text"><strong>Developer</strong><span>I build applications, scripts, and integrations on ServiceNow</span></div>
       </li>
-      <li class="step-opt" data-value="analyst" onclick="answer(0, this)">
+      <li class="step-opt" role="button" tabindex="0" data-value="analyst" onclick="answer(0, this)">
         <span class="opt-icon">&#128200;</span>
         <div class="opt-text"><strong>Business Analyst / Process Owner</strong><span>I define requirements and optimize ITSM/business processes</span></div>
       </li>
-      <li class="step-opt" data-value="new" onclick="answer(0, this)">
+      <li class="step-opt" role="button" tabindex="0" data-value="new" onclick="answer(0, this)">
         <span class="opt-icon">&#127891;</span>
         <div class="opt-text"><strong>New to ServiceNow</strong><span>I'm learning or transitioning into the ServiceNow ecosystem</span></div>
       </li>
@@ -262,15 +275,15 @@ a:hover { text-decoration: underline; }
   <div class="quiz-step" id="step1">
     <div class="step-q"><span class="step-num">2.</span> How much ServiceNow experience do you have?</div>
     <ul class="step-opts">
-      <li class="step-opt" data-value="none" onclick="answer(1, this)">
+      <li class="step-opt" role="button" tabindex="0" data-value="none" onclick="answer(1, this)">
         <span class="opt-icon">&#127793;</span>
         <div class="opt-text"><strong>Less than 6 months</strong><span>Still learning the platform basics</span></div>
       </li>
-      <li class="step-opt" data-value="some" onclick="answer(1, this)">
+      <li class="step-opt" role="button" tabindex="0" data-value="some" onclick="answer(1, this)">
         <span class="opt-icon">&#127807;</span>
         <div class="opt-text"><strong>6 months &ndash; 2 years</strong><span>Comfortable navigating and configuring the platform</span></div>
       </li>
-      <li class="step-opt" data-value="experienced" onclick="answer(1, this)">
+      <li class="step-opt" role="button" tabindex="0" data-value="experienced" onclick="answer(1, this)">
         <span class="opt-icon">&#127795;</span>
         <div class="opt-text"><strong>2+ years</strong><span>Deep platform knowledge, looking to specialize or add certs</span></div>
       </li>
@@ -281,11 +294,11 @@ a:hover { text-decoration: underline; }
   <div class="quiz-step" id="step2">
     <div class="step-q"><span class="step-num">3.</span> Do you already hold the CSA (Certified System Administrator)?</div>
     <ul class="step-opts">
-      <li class="step-opt" data-value="yes" onclick="answer(2, this)">
+      <li class="step-opt" role="button" tabindex="0" data-value="yes" onclick="answer(2, this)">
         <span class="opt-icon">&#9989;</span>
         <div class="opt-text"><strong>Yes, I have CSA</strong><span>Ready to specialize into a CIS track</span></div>
       </li>
-      <li class="step-opt" data-value="no" onclick="answer(2, this)">
+      <li class="step-opt" role="button" tabindex="0" data-value="no" onclick="answer(2, this)">
         <span class="opt-icon">&#10060;</span>
         <div class="opt-text"><strong>No, not yet</strong><span>Haven't taken or haven't passed CSA yet</span></div>
       </li>
@@ -296,19 +309,19 @@ a:hover { text-decoration: underline; }
   <div class="quiz-step" id="step3">
     <div class="step-q"><span class="step-num">4.</span> Which area interests you most?</div>
     <ul class="step-opts">
-      <li class="step-opt" data-value="itsm" onclick="answer(3, this)">
+      <li class="step-opt" role="button" tabindex="0" data-value="itsm" onclick="answer(3, this)">
         <span class="opt-icon">&#127899;</span>
         <div class="opt-text"><strong>IT Service Management</strong><span>Incident, problem, change management</span></div>
       </li>
-      <li class="step-opt" data-value="data" onclick="answer(3, this)">
+      <li class="step-opt" role="button" tabindex="0" data-value="data" onclick="answer(3, this)">
         <span class="opt-icon">&#128451;</span>
         <div class="opt-text"><strong>Data, CMDB &amp; Infrastructure</strong><span>Discovery, service mapping, CMDB, CSDM</span></div>
       </li>
-      <li class="step-opt" data-value="security" onclick="answer(3, this)">
+      <li class="step-opt" role="button" tabindex="0" data-value="security" onclick="answer(3, this)">
         <span class="opt-icon">&#128274;</span>
         <div class="opt-text"><strong>Security &amp; Risk</strong><span>Security incidents, vulnerability response, GRC/IRM</span></div>
       </li>
-      <li class="step-opt" data-value="service" onclick="answer(3, this)">
+      <li class="step-opt" role="button" tabindex="0" data-value="service" onclick="answer(3, this)">
         <span class="opt-icon">&#129309;</span>
         <div class="opt-text"><strong>Business Services</strong><span>HR, customer service, field service, portfolio management</span></div>
       </li>
@@ -319,15 +332,15 @@ a:hover { text-decoration: underline; }
   <div class="quiz-step" id="step4">
     <div class="step-q"><span class="step-num">5.</span> What's your primary goal?</div>
     <ul class="step-opts">
-      <li class="step-opt" data-value="job" onclick="answer(4, this)">
+      <li class="step-opt" role="button" tabindex="0" data-value="job" onclick="answer(4, this)">
         <span class="opt-icon">&#128188;</span>
         <div class="opt-text"><strong>Land a ServiceNow role</strong><span>Building credentials for the job market</span></div>
       </li>
-      <li class="step-opt" data-value="promo" onclick="answer(4, this)">
+      <li class="step-opt" role="button" tabindex="0" data-value="promo" onclick="answer(4, this)">
         <span class="opt-icon">&#128640;</span>
         <div class="opt-text"><strong>Get promoted / advance my career</strong><span>Already working in ServiceNow, want to level up</span></div>
       </li>
-      <li class="step-opt" data-value="skill" onclick="answer(4, this)">
+      <li class="step-opt" role="button" tabindex="0" data-value="skill" onclick="answer(4, this)">
         <span class="opt-icon">&#128218;</span>
         <div class="opt-text"><strong>Deepen my skills</strong><span>Want to truly master a specific area</span></div>
       </li>
@@ -345,14 +358,16 @@ a:hover { text-decoration: underline; }
       <ol class="path-steps" id="resultPath"></ol>
     </div>
 
-    <a href="#" class="result-cta" id="resultCta" target="_blank" rel="noopener">
+    <a href="#" class="result-cta" id="resultCta">
       See the 15-question preview
       <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
     <br>
+    <a href="#" class="result-buy" id="resultBuy" target="_blank" rel="sponsored noopener" data-track-placement="quiz-result">Or get the full course on Udemy &rarr;</a>
+    <br>
     <a href="/blog/which-servicenow-certification-first.html" style="display:inline-block;color:var(--text-dim);font-size:0.9rem;margin-top:12px;">Read the full certification path guide &rarr;</a>
     <br>
-    <span class="result-retake" onclick="retake()">Retake quiz</span>
+    <button type="button" class="result-retake" onclick="retake()">Retake quiz</button>
   </div>
 
 </main>
@@ -392,8 +407,16 @@ a:hover { text-decoration: underline; }
     });
   }
 
+  document.addEventListener('keydown', function(e) {
+    if ((e.key === 'Enter' || e.key === ' ') && e.target.classList && e.target.classList.contains('step-opt')) {
+      e.preventDefault();
+      e.target.click();
+    }
+  });
+
   function answer(step, el) {
     answers[step] = el.dataset.value;
+    if (step === 0 && typeof gtag === 'function') gtag('event', 'quiz_recommender_start');
 
     /* Visual feedback */
     var opts = el.parentElement.querySelectorAll('.step-opt');
@@ -406,6 +429,8 @@ a:hover { text-decoration: underline; }
         document.getElementById('step' + step).classList.remove('active');
         document.getElementById('step' + (step + 1)).classList.add('active');
         updateProgress();
+        var firstOpt = document.querySelector('#step' + (step + 1) + ' .step-opt');
+        if (firstOpt) firstOpt.focus();
       } else {
         showResult();
       }
@@ -439,22 +464,26 @@ a:hover { text-decoration: underline; }
     itsm: {
       noCSA: ['CSA', 'ITSM', 'DF'],
       withCSA: ['ITSM', 'DF', 'CSM'],
-      dev: ['CSA', 'CAD', 'ITSM']
+      dev: ['CSA', 'CAD', 'ITSM'],
+      devWithCSA: ['CAD', 'ITSM', 'DF']
     },
     data: {
       noCSA: ['CSA', 'DF', 'DISCO'],
       withCSA: ['DF', 'DISCO', 'EM'],
-      dev: ['CSA', 'CAD', 'DF']
+      dev: ['CSA', 'CAD', 'DF'],
+      devWithCSA: ['CAD', 'DF', 'DISCO']
     },
     security: {
       noCSA: ['CSA', 'SIR', 'VR'],
       withCSA: ['GRC', 'TPRM', 'SIR'],
-      dev: ['CSA', 'CAD', 'SIR']
+      dev: ['CSA', 'CAD', 'SIR'],
+      devWithCSA: ['CAD', 'SIR', 'VR']
     },
     service: {
       noCSA: ['CSA', 'CSM', 'HRSD'],
       withCSA: ['CSM', 'HRSD', 'FSM'],
-      dev: ['CSA', 'CAD', 'PA']
+      dev: ['CSA', 'CAD', 'PA'],
+      devWithCSA: ['CAD', 'PA', 'CSM']
     }
   };
 
@@ -468,7 +497,7 @@ a:hover { text-decoration: underline; }
     /* Determine path key */
     var pathKey;
     if (role === 'dev') {
-      pathKey = 'dev';
+      pathKey = hasCSA === 'yes' ? 'devWithCSA' : 'dev';
     } else if (hasCSA === 'yes') {
       pathKey = 'withCSA';
     } else {
@@ -488,6 +517,7 @@ a:hover { text-decoration: underline; }
     document.getElementById('resultCert').textContent = cert.name;
     document.getElementById('resultDesc').textContent = cert.desc;
     document.getElementById('resultCta').href = '/courses/' + cert.slug + '.html#free-quiz';
+    document.getElementById('resultBuy').href = cert.ref;
 
     /* Build path */
     var pathEl = document.getElementById('resultPath');

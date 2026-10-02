@@ -42,7 +42,7 @@
   "description": "The complete CIS-ITSM study guide: domain weights, a 5-week study plan, common mistakes, and free practice questions. CIS-DF is now a mandatory prerequisite.",
   "image": "https://luckyx.dev/og-image.png",
   "datePublished": "2026-03-17",
-  "dateModified": "2026-03-17",
+  "dateModified": "2026-10-02",
   "author": {
     "@type": "Person",
     "name": "Lucky X",
@@ -108,9 +108,19 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <!-- GA4 -->
+<!-- lx:consent -->
+<script>
+  /* Consent Mode v2: analytics stays off until the visitor accepts the notice (consent.js). */
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+  try { if (localStorage.getItem('luckyx-consent') === 'granted') gtag('consent', 'update', { analytics_storage: 'granted' }); } catch (e) {}
+</script>
+<script defer src="/consent.js"></script>
+<!-- /lx:consent -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLYHHC76GG"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -311,9 +321,9 @@ a:hover { text-decoration: underline; }
 
         <p>This is not optional. The registration system checks your certification history. If you do not have CIS-DF on your profile, the CIS-ITSM exam will not appear as an available booking option on Pearson VUE.</p>
 
-        <p>The good news: CIS-DF is free through June 30, 2026. ServiceNow is waiving the exam fee for your first attempt during the rollout period. After that date, CIS-DF costs $450 for a first attempt and $225 for a retake, just like every other CIS exam.</p>
+        <p>The free first-attempt offer for CIS-DF ended June 30, 2026. CIS-DF now costs $450 for a first attempt and $225 for a retake, just like every other CIS exam.</p>
 
-        <p>If you are reading this and planning to take CIS-ITSM, the sequence matters. Pass CIS-DF first while it is still free. Then move to CIS-ITSM. Doing it in the wrong order means you either wait (and risk the free window closing) or you pay $450 for a prerequisite that was available at no cost.</p>
+        <p>If you are reading this and planning to take CIS-ITSM, the sequence matters. Pass CIS-DF first. Then move to CIS-ITSM. Doing it in the wrong order risks being unable to register for ITSM once enforcement starts on January 1, 2027.</p>
 
         <p>CIS-DF covers CMDB, CSDM, data governance, and the identification and reconciliation engine. It is a different exam from ITSM, but the CMDB knowledge it tests is directly relevant. Every incident, problem, change, and request record in ServiceNow connects to configuration items in the CMDB. Understanding how that data layer works makes you a better ITSM practitioner, not just a certified one.</p>
 
@@ -451,7 +461,7 @@ a:hover { text-decoration: underline; }
         <div class="bp-cta-box">
           <p>The CIS-ITSM practice test has 198 questions covering all five exam domains. Every question includes per-option explanations linked to official ServiceNow Zurich documentation. You see exactly why each option is correct or incorrect, with source references you can verify yourself.</p>
           <p>The course costs $9.99 with the referral link below. That is lifetime access to all 198 questions, including any updates when ServiceNow releases new exam blueprints.</p>
-          <a href="https://www.udemy.com/course/pass-your-servicenow-cis-itsm-exam/?referralCode=3D0B3C1C48CE64275156" target="_blank" rel="noopener" class="bp-cta-btn">Get the 198-question practice test ($9.99)</a>
+          <a href="https://www.udemy.com/course/pass-your-servicenow-cis-itsm-exam/?referralCode=3D0B3C1C48CE64275156" target="_blank" rel="sponsored noopener" class="bp-cta-btn">Get the 198-question practice test ($9.99)</a>
         </div>
 
 
@@ -500,9 +510,9 @@ a:hover { text-decoration: underline; }
 
         <p>Set up a Personal Developer Instance at <a href="https://developer.servicenow.com" target="_blank" rel="noopener">developer.servicenow.com</a>. A PDI gives you a full ServiceNow environment where you can create incidents, configure assignment rules, build catalog items, set up SLA definitions, and walk through the change management process. Reading about configuration is useful. Doing it in a live instance is what makes it stick.</p>
 
-        <p>For practice questions, the <a href="https://www.udemy.com/course/pass-your-servicenow-cis-itsm-exam/?referralCode=3D0B3C1C48CE64275156" target="_blank" rel="noopener">CIS-ITSM practice test on Udemy</a> has 198 questions with per-option explanations and source links to official Zurich documentation. At $9.99, you are spending 2.2% of what a single exam attempt costs, for a resource that covers every domain on the blueprint.</p>
+        <p>For practice questions, the <a href="https://www.udemy.com/course/pass-your-servicenow-cis-itsm-exam/?referralCode=3D0B3C1C48CE64275156" target="_blank" rel="sponsored noopener">CIS-ITSM practice test on Udemy</a> has 198 questions with per-option explanations and source links to official Zurich documentation. At $9.99, you are spending 2.2% of what a single exam attempt costs, for a resource that covers every domain on the blueprint.</p>
 
-        <p>Remember the sequence: pass <a href="/courses/cis-data-foundations.html">CIS-DF first</a> (free through June 30, 2026), then sit CIS-ITSM. Doing it in the right order saves you $450 on the prerequisite and ensures you can register for ITSM without delays.</p>
+        <p>Remember the sequence: pass <a href="/courses/cis-data-foundations.html">CIS-DF first</a>, then sit CIS-ITSM. Doing it in the right order ensures you can register for ITSM without delays.</p>
 
         <p>If you are already certified in <a href="/courses/csa.html">CSA</a> and looking at the broader certification landscape, the <a href="/blog/servicenow-certification-path-2026.html">certification path guide</a> maps out every route from CSA through the CIS and CAS certifications.</p>
 
@@ -511,7 +521,7 @@ a:hover { text-decoration: underline; }
         <div class="bp-cta-box">
           <p>$450 exam. $225 retake. $9.99 practice test with 198 questions. That is 2.2% of one exam attempt.</p>
           <p>Every question includes per-option explanations sourced from official ServiceNow Zurich documentation. You do not just learn the right answer. You learn why every other option is wrong.</p>
-          <a href="https://www.udemy.com/course/pass-your-servicenow-cis-itsm-exam/?referralCode=3D0B3C1C48CE64275156" target="_blank" rel="noopener" class="bp-cta-btn">Get the 198-question practice test ($9.99)</a>
+          <a href="https://www.udemy.com/course/pass-your-servicenow-cis-itsm-exam/?referralCode=3D0B3C1C48CE64275156" target="_blank" rel="sponsored noopener" class="bp-cta-btn">Get the 198-question practice test ($9.99)</a>
         </div>
 
 
