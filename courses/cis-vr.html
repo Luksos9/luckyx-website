@@ -422,6 +422,65 @@
   ]
 }
 </script>
+<!-- lx:faq-ld -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many questions are in the full VR practice test?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The full course has 213 questions on Udemy. Every answer option has its own explanation, and the explanations link to official ServiceNow documentation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a refund if the course is not right for me?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Udemy courses come with a 30-day money-back guarantee."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will this practice test guarantee I pass?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Practice tests show you where you are weak. They do not replace hands-on work, so pair them with a free ServiceNow Personal Developer Instance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does the real VR exam cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The exam costs $450 for a first attempt and $225 for a retake. Fees can change, so check ServiceNow University before you register."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need CIS-DF before VR?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. From January 1, 2027 you cannot register for this exam without CIS-DF. If you already hold this certification, you must pass CIS-DF by December 31, 2026. See the CIS-DF practice test."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which certification should I take first?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most people start with CSA. If you are unsure, take the 2-minute recommendation quiz or read the certification path guide."
+      }
+    }
+  ]
+}
+</script>
+<!-- /lx:faq-ld -->
+
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -671,6 +730,28 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
   .quiz-card { padding: 16px; }
 }
 </style>
+<!-- lx:css -->
+<style>
+.cp-price-note{margin:-22px 0 26px;color:var(--text-dim);font-size:.85rem}
+.cp-path{margin-top:22px;padding:16px 18px;border:1px solid var(--border);border-radius:12px;background:var(--bg-raised);font-size:.92rem;line-height:1.6;color:var(--text-dim)}
+.cp-path p{margin:0}.cp-path p+p{margin-top:6px}.cp-path strong{color:var(--text)}.cp-path a{color:var(--orange);font-weight:600}
+.quiz-buybar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;margin:14px 0 0;padding:12px 16px;border-radius:12px;border:1px solid rgba(221,92,12,.25);background:rgba(221,92,12,.06);font-size:.9rem;color:var(--text-dim)}
+.quiz-buybar a{display:inline-flex;padding:9px 16px;border-radius:10px;background:var(--orange);color:#fff;font-weight:600;font-size:.88rem;text-decoration:none;white-space:nowrap}
+.quiz-buybar a:hover{background:#c75400;text-decoration:none}
+.quiz-gate-alt{margin-top:12px;font-size:.88rem;color:var(--text-dim)}
+.quiz-gate-alt a{color:var(--orange);font-weight:600}
+.cp-faq{margin-top:48px}.cp-faq h2{font-size:1.3rem;font-weight:600;margin-bottom:16px}
+.cp-faq details{border:1px solid var(--border);border-radius:12px;background:var(--bg-raised);margin-bottom:10px}
+.cp-faq summary{cursor:pointer;padding:14px 18px;font-weight:600;font-size:.95rem;list-style:none}
+.cp-faq summary::-webkit-details-marker{display:none}
+.cp-faq summary::after{content:"+";float:right;color:var(--orange)}
+.cp-faq details[open] summary::after{content:"\2212"}
+.cp-faq details p{margin:0;padding:0 18px 16px;color:var(--text-dim);font-size:.92rem;line-height:1.65}
+.cp-faq details a{color:var(--orange);font-weight:600}
+.cp-related{margin-top:6px}.cp-related a{display:inline-block;margin:4px 6px 0 0;padding:6px 12px;border:1px solid var(--border);border-radius:999px;font-size:.82rem}
+@media (max-width:720px){.quiz-gate-email-input{flex:0 0 auto;width:100%}}
+</style>
+<!-- /lx:css -->
 <script defer src="/analytics.js"></script>
 </head>
 <body>
@@ -728,11 +809,22 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
     <span class="cp-price-was">$99.99</span>
     <span class="cp-price-off">90% off</span>
   </div>
+<!-- lx:price-note -->
+<p class="cp-price-note">Price is shown at checkout on Udemy. 30-day money-back guarantee.</p>
+<!-- /lx:price-note -->
 
-  <a href="https://www.udemy.com/course/pass-your-servicenow-cis-vulnerability-response-vr-exam/?referralCode=EE503A8EA58C23039100" target="_blank" rel="noopener" class="cp-cta">
+
+  <a href="https://www.udemy.com/course/pass-your-servicenow-cis-vulnerability-response-vr-exam/?referralCode=EE503A8EA58C23039100" target="_blank" rel="sponsored noopener" class="cp-cta" data-buy-stage="hero">
     Start practicing now
     <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
   </a>
+<!-- lx:path -->
+<div class="cp-path">
+  <p><strong>Before you start:</strong> CIS-DF is a prerequisite for this exam from Jan 1, 2027. <a href="/courses/cis-data-foundations.html">See the CIS-DF practice test</a>.</p>
+  <p><strong>Next step:</strong> <a href="/courses/cis-sir.html">CIS Security Incident Response</a>.</p>
+</div>
+<!-- /lx:path -->
+
 
   <div class="cp-features">
     <h2>What's included</h2>
@@ -797,6 +889,10 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
         <span class="preview-dot" data-slot="13" title="Question 14"></span>
         <span class="preview-dot" data-slot="14" title="Question 15"></span>
       </div>
+<!-- lx:buybar -->
+<div class="quiz-buybar"><span>Skip the preview and get all 213 questions on Udemy.</span><a href="https://www.udemy.com/course/pass-your-servicenow-cis-vulnerability-response-vr-exam/?referralCode=EE503A8EA58C23039100" target="_blank" rel="sponsored noopener" data-buy-stage="stepper">Get the full course &rarr;</a></div>
+<!-- /lx:buybar -->
+
     </div>
     <div class="quiz-stage" id="quizStage">
       <div class="quiz-card-stack">
@@ -1065,6 +1161,10 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
           <button type="submit" class="quiz-gate-submit" id="quizGateSubmit">Continue with 10 More Questions</button>
         </form>
         <p class="quiz-gate-message" id="quizGateMessage"></p>
+<!-- lx:gate-alt -->
+<p class="quiz-gate-alt">Prefer to skip the email? <a href="https://www.udemy.com/course/pass-your-servicenow-cis-vulnerability-response-vr-exam/?referralCode=EE503A8EA58C23039100" target="_blank" rel="sponsored noopener" data-buy-stage="gate">Get all 213 questions on Udemy</a>. 30-day money-back guarantee.</p>
+<!-- /lx:gate-alt -->
+
       </div>
     </div>
     </div>
@@ -1075,7 +1175,7 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
       <p class="quiz-final-copy">The full course keeps the same answer breakdown style across all 213 questions.</p>
       <p class="quiz-final-anchor">A failed exam attempt costs $225 to retake.</p>
       <div class="quiz-final-actions">
-        <a href="https://www.udemy.com/course/pass-your-servicenow-cis-vulnerability-response-vr-exam/?referralCode=EE503A8EA58C23039100" target="_blank" rel="noopener" class="cp-cta" data-buy-stage="final">Get all 213 questions for $9.99
+        <a href="https://www.udemy.com/course/pass-your-servicenow-cis-vulnerability-response-vr-exam/?referralCode=EE503A8EA58C23039100" target="_blank" rel="sponsored noopener" class="cp-cta" data-buy-stage="final">Get all 213 questions for $9.99
           <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
@@ -1091,11 +1191,26 @@ details.quiz-overall[open] .quiz-overall-toggle::before{transform:rotate(90deg)}
     <div class="quiz-toast" id="quizToast">Questions 6-15 are ready.</div>
   </section>
 
-  <div class="cp-bottom">
-    <p>Looking for a different certification?</p>
-    <a href="/#courses">Browse all 18 practice tests &rarr;</a>
-    <p style="margin-top:12px"><a href="/blog/which-servicenow-certification-first.html">Not sure which cert? See the full certification guide &rarr;</a></p>
-  </div>
+  <!-- lx:faq -->
+<section class="cp-faq" id="faq"><h2>Common questions</h2>
+<details><summary>How many questions are in the full VR practice test?</summary><p>The full course has 213 questions on Udemy. Every answer option has its own explanation, and the explanations link to official ServiceNow documentation.</p></details>
+<details><summary>Is there a refund if the course is not right for me?</summary><p>Yes. Udemy courses come with a 30-day money-back guarantee.</p></details>
+<details><summary>Will this practice test guarantee I pass?</summary><p>No. Practice tests show you where you are weak. They do not replace hands-on work, so pair them with a free ServiceNow Personal Developer Instance.</p></details>
+<details><summary>How much does the real VR exam cost?</summary><p>The exam costs $450 for a first attempt and $225 for a retake. Fees can change, so check ServiceNow University before you register.</p></details>
+<details><summary>Do I need CIS-DF before VR?</summary><p>Yes. From January 1, 2027 you cannot register for this exam without CIS-DF. If you already hold this certification, you must pass CIS-DF by December 31, 2026. See the <a href="/courses/cis-data-foundations.html">CIS-DF practice test</a>.</p></details>
+<details><summary>Which certification should I take first?</summary><p>Most people start with CSA. If you are unsure, take the <a href="/quiz.html">2-minute recommendation quiz</a> or read the <a href="/blog/which-servicenow-certification-first.html">certification path guide</a>.</p></details>
+</section>
+<!-- /lx:faq -->
+
+  <!-- lx:bottom -->
+<div class="cp-bottom">
+  <p>Read the full <a href="/blog/how-to-pass-cis-sir-vr-2026.html">VR study guide</a> for domain weights, a study plan, and common mistakes.</p>
+  <p>Next step after VR: <a href="/courses/cis-sir.html">CIS Security Incident Response</a>. Not the right exam? Take the <a href="/quiz.html">2-minute quiz</a> or <a href="/compare.html">compare all 18</a>.</p>
+  <p class="cp-related">Related practice tests: <a href="/courses/cis-sir.html">CIS Security Incident Response</a> <a href="/courses/csa.html">CSA System Administrator</a> <a href="/courses/cis-data-foundations.html">CIS Data Foundations / CSDM</a></p>
+  <a href="/#courses">Browse all 18 practice tests &rarr;</a>
+  <p style="margin-top:12px"><a href="/blog/which-servicenow-certification-first.html">Not sure which cert? See the full certification guide &rarr;</a></p>
+</div>
+<!-- /lx:bottom -->
 
 </main>
 
